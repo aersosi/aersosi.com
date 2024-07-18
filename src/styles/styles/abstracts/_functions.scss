@@ -81,7 +81,7 @@
   $browser-max: tc.is-unitless-number($size-min, 'browser-max');
   $browser-max: tc.is-unitless-number($size-max, 'browser-max');
 
-  $factor: calc(1 / $browser-max - $browser-min) * ($size-max - $size-min);
+  $factor: calc(1 / ($browser-max - $browser-min)) * ($size-max - $size-min);
   $px: decimal-round(($size-min * 1px) - ($browser-min * $factor), 4);
   $vw: decimal-round(100vw * $factor, 4);
   $min-size: if($size-min > $size-max, #{$size-max}px, #{$size-min}px);

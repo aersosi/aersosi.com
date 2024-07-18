@@ -1,13 +1,18 @@
 ---
-import "./_index.style.scss"
+import "./_index.scss"
 import {Image} from 'astro:assets';
-import myImage from '../../assets/ae_logo.svg';
+import myPortrait from '../../assets/IMG_6502_02_480.webp';
 import Layout from '../layouts/Skeleton.astro';
 import CodeBlock from '../components/CodeBlock.astro';
 import Email from '../components/EmailObfuscation.astro';
+import Loading from '../components/Loading.astro';
 ---
 
 <Layout title="Arthur Ersosi" description="Arthur Ersosi personal website">
+    <div class="loading">
+        <!--Animation happening here-->
+    </div>
+
     <main class="flex flex-col gap-4 justify-around items-center font-mono-400">
         <h1 class="flex flex-col gap-2">
             <div class="flex gap-x-4 flex-wrap justify-center">
@@ -21,7 +26,7 @@ import Email from '../components/EmailObfuscation.astro';
         <CodeBlock title="CLI"
                    body="$ npx @aersosi/clicv"
         />
-        <div class="flex flex-col items-center gap-4">
+        <div class="flex flex-col items-center gap-4 text-base">
             <p class="color-primary-500">
                 <Email address="hello@aersosi.com"/>
             </p>
@@ -34,6 +39,7 @@ import Email from '../components/EmailObfuscation.astro';
                    download="CV_Ersosi_2024_en.pdf">EN</a>
             </div>
         </div>
+
         <div class="animation-wrapper">
             <div class="animation">
                 <div class="circle-1"></div>
@@ -41,4 +47,32 @@ import Email from '../components/EmailObfuscation.astro';
             </div>
         </div>
     </main>
+
+
+
+    <div class="portrait-wrapper width-[360px]">
+        <Image src={myPortrait} alt="Portrait of Arthur Ersosi"/>
+    </div>
+
+    <Loading/>
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            function surprise(): void {
+                const emailComponent = document.querySelector('.email-obfuscation');
+                const portraitWrapper = document.querySelector('.portrait-wrapper');
+
+                emailComponent.addEventListener('mouseenter', () => {
+                    portraitWrapper.classList.add('visible');
+                });
+
+                emailComponent.addEventListener('mouseleave', () => {
+                    portraitWrapper.classList.remove('visible');
+                });
+            }
+
+            surprise();
+        });
+    </script>
 </Layout>
