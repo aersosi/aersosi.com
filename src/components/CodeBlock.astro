@@ -1,0 +1,27 @@
+---
+import "./CodeBlock.style.scss"
+
+interface Props {
+    title: string;
+    body: string;
+}
+
+const {href, title, body} = Astro.props;
+---
+
+<div class="cli-card">
+    <div class="head">
+        <div class="navigation">
+            <div class="circle red"></div>
+            <div class="circle yellow"></div>
+            <div class="circle green"></div>
+        </div>
+        <h2 class="title">
+            {title}
+        </h2>
+    </div>
+    <div class="body">
+        <pre class="italic opacity-20 pb-4"><code>My CV in your CLI</code></pre>
+        <pre><code class="npx">{body}</code><div class="blink"></div></pre>
+    </div>
+</div>

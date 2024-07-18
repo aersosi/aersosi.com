@@ -1,0 +1,32 @@
+---
+import "./_index.style.scss"
+import {Image} from 'astro:assets';
+import myImage from '../../assets/ae_logo.svg';
+import Layout from '../layouts/Skeleton.astro';
+import CodeBlock from '../components/CodeBlock.astro';
+
+---
+
+<Layout title="Arthur Ersosi" description="Arthur Ersosi personal website">
+    <main>
+        <h1>Welcome to <span class="text-gradient">Astro</span></h1>
+        <Image src={myImage} class="mx-auto py-4 w-full max-h-28" alt="Arthur Ersosi – Design Engineer"/>
+
+        <CodeBlock
+                title="CLI"
+                body="$ npx @aersosi/clicv"
+        />
+        <div class="flex flex-col items-center py-8">
+            <p>Download my CV PDF</p>
+            <div class="flex gap-4">
+                <a class="text-link" aria-label="Open german CV" href="/CV_Ersosi_2024_de.pdf"
+                   download="CV_Ersosi_2024_de.pdf">German</a>
+                <a class="text-link" aria-label="Open english CV" href="/CV_Ersosi_2024_en.pdf"
+                   download="CV_Ersosi_2024_en.pdf">English</a>
+            </div>
+        </div>
+
+        <p><Obfuscate linkText="e-mail" email="hello@aersosi.com" /></p>
+
+    </main>
+</Layout>

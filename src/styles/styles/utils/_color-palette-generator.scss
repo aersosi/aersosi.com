@@ -1,0 +1,28 @@
+@use 'sass:math';
+@use 'sass:color';
+
+// monochromatic-palette-generator
+@function generate($base-color, $shade) {
+  $base-rgb: color.red($base-color), color.green($base-color), color.blue($base-color);
+    $factor: math.div($shade - 500, 1000);
+    $r: nth($base-rgb, 1);
+    $g: nth($base-rgb, 2);
+    $b: nth($base-rgb, 3);
+
+    @if $factor < 0 {
+      // Lighter shades
+      $r: $r + (255 - $r) * math.abs($factor);
+      $g: $g + (255 - $g) * math.abs($factor);
+      $b: $b + (255 - $b) * math.abs($factor);
+    } @else {
+      // Darker shades
+      $r: $r * (1 - $factor);
+      $g: $g * (1 - $factor);
+      $b: $b * (1 - $factor);
+    }
+
+    @return rgb(round($r), round($g), round($b));
+}
+
+// Get a specific shade
+//$shade-500: generate(#FF6E00, 500);
