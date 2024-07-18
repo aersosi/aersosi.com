@@ -1,6 +1,7 @@
 .text-link {
-  opacity: 0.5;
+  color: black;
+  transition: color 0.2s ease;
   &:hover {
-    opacity: 1;
+    color: var(--color-primary-500);
   }
 }

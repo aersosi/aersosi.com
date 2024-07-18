@@ -4,7 +4,10 @@ html, body {
 
 html {
   font-family: system-ui, sans-serif;
-  background: #3d4049;
+  background: #f6f2d9;
+  //background: var(--color-primary-1);
+  //background-image: var(--gradient-primary);
+
 }
 
 code {

@@ -4,7 +4,7 @@
 // monochromatic-palette-generator
 @function generate($base-color, $shade) {
   $base-rgb: color.red($base-color), color.green($base-color), color.blue($base-color);
-    $factor: math.div($shade - 500, 1000);
+    $factor: calc($shade - 500 / 1000);
     $r: nth($base-rgb, 1);
     $g: nth($base-rgb, 2);
     $b: nth($base-rgb, 3);

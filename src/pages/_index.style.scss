@@ -1,29 +1,58 @@
+@use '../styles/styles/utils/spinning-glow' as res;
+
 main {
   margin: auto;
   padding: 1rem;
   width: 800px;
   max-width: calc(100% - 2rem);
-  color: white;
   font-size: 20px;
   line-height: 1.6;
   height: 100%;
+
+  .cli-card {
+    height: clamp(200px, calc(100vh - 600px), 300px);
+    z-index: 10;
+  }
+
+  h1 {
+    --base: 2.5rem;
+    line-height: var(--base);
+    text-align: center;
+    .arthur {
+      font-size: var(--base);
+    }
+    .ersosi {
+      font-size: calc(var(--base) * 1.1);
+      letter-spacing: calc(var(--base) * 0.05);
+      -webkit-text-stroke: 1px black;
+    }
+    .engineer {
+      font-size: calc(var(--base) * 0.7);
+      letter-spacing: calc(var(--base) * 0.05);
+    }
+  }
 }
 
-.astro-a {
+
+@include res.spinning-glow(
+        $animation-min-blur: 70,
+        $animation-max-blur: 95,
+        $circle-1-size: 7.5,
+        $circle-1-color: var(--color-primary-500),
+        $circle-2-size: 8,
+        $circle-2-color: var(--color-secondary-500));
+
+.animation-wrapper {
   position: absolute;
-  top: -32px;
-  left: 50%;
-  transform: translatex(-50%);
-  width: 220px;
-  height: auto;
-  z-index: -1;
+  inset: 0;
+  z-index: -5;
 }
+
 
 h1 {
   font-size: 4rem;
   font-weight: 700;
   line-height: 1;
   text-align: center;
-  margin-bottom: 1em;
 }
 

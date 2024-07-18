@@ -4,29 +4,41 @@ import {Image} from 'astro:assets';
 import myImage from '../../assets/ae_logo.svg';
 import Layout from '../layouts/Skeleton.astro';
 import CodeBlock from '../components/CodeBlock.astro';
-
+import Email from '../components/EmailObfuscation.astro';
 ---
 
 <Layout title="Arthur Ersosi" description="Arthur Ersosi personal website">
-    <main>
-        <h1>Welcome to <span class="text-gradient">Astro</span></h1>
-        <Image src={myImage} class="mx-auto py-4 w-full max-h-28" alt="Arthur Ersosi – Design Engineer"/>
+    <main class="flex flex-col gap-4 justify-around items-center font-mono-400">
+        <h1 class="flex flex-col gap-2">
+            <div class="flex gap-x-4 flex-wrap justify-center">
+                <span class="font-mono-500 arthur">arthur</span>
+                <span class="font-serif-500 ersosi">ersosi</span>
+            </div>
+            <div class="font-mono-400 uppercase engineer">Design Engineer</div>
+        </h1>
 
-        <CodeBlock
-                title="CLI"
-                body="$ npx @aersosi/clicv"
+
+        <CodeBlock title="CLI"
+                   body="$ npx @aersosi/clicv"
         />
-        <div class="flex flex-col items-center py-8">
-            <p>Download my CV PDF</p>
+        <div class="flex flex-col items-center gap-4">
+            <p class="color-primary-500">
+                <Email address="hello@aersosi.com"/>
+            </p>
+            <p>Download my CV</p>
             <div class="flex gap-4">
-                <a class="text-link" aria-label="Open german CV" href="/CV_Ersosi_2024_de.pdf"
-                   download="CV_Ersosi_2024_de.pdf">German</a>
-                <a class="text-link" aria-label="Open english CV" href="/CV_Ersosi_2024_en.pdf"
-                   download="CV_Ersosi_2024_en.pdf">English</a>
+                <a class="text-link font-mono-500" aria-label="Open german CV" href="/CV_Ersosi_2024_de.pdf"
+                   download="CV_Ersosi_2024_de.pdf">DE</a>
+                <span class="opacity-30">|</span>
+                <a class="text-link font-mono-500" aria-label="Open english CV" href="/CV_Ersosi_2024_en.pdf"
+                   download="CV_Ersosi_2024_en.pdf">EN</a>
             </div>
         </div>
-
-        <p><Obfuscate linkText="e-mail" email="hello@aersosi.com" /></p>
-
+        <div class="animation-wrapper">
+            <div class="animation">
+                <div class="circle-1"></div>
+                <div class="circle-2"></div>
+            </div>
+        </div>
     </main>
 </Layout>

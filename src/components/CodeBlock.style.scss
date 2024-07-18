@@ -1,9 +1,11 @@
 .cli-card {
+  display: flex;
+  flex-direction: column;
   color: white;
   width: 100%;
+  height: 100%;
   max-width: 480px;
   min-width: 260px;
-  margin: auto;
 
   .head {
     display: flex;
@@ -53,7 +55,7 @@
   //colors & border
   .head, .body {
     padding-inline: 1rem;
-    padding-block: 0.75rem;
+    padding-block: 0.5rem;
     border-width: 1px;
     border-style: solid;
   }
@@ -68,6 +70,7 @@
   }
 
   .body {
+    flex-grow: 1;
     background-color: #121213;
     border-radius: 0 0 8px 8px;
     border-top-width: 0;
@@ -76,7 +79,6 @@
   }
 
   .body {
-    height: clamp(160px, calc(100vh - 600px), 240px);
     pre {
       white-space: pre-wrap;
     }
@@ -108,7 +110,7 @@
 
 .cli-card:is(:hover, :focus-within) {
   .npx {
-    color: var(--accent-500);
+    color: var(--color-primary-500);
     &:after {
       background-color: transparent;
     }

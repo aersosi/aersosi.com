@@ -6,7 +6,7 @@ interface Props {
     body: string;
 }
 
-const {href, title, body} = Astro.props;
+const { title, body} = Astro.props;
 ---
 
 <div class="cli-card">
@@ -21,7 +21,7 @@ const {href, title, body} = Astro.props;
         </h2>
     </div>
     <div class="body">
-        <pre class="italic opacity-20 pb-4"><code>My CV in your CLI</code></pre>
-        <pre><code class="npx">{body}</code><div class="blink"></div></pre>
+        <pre class="opacity-20 pb-4"><code class="font-mono-400">My CV in your CLI</code></pre>
+        <pre><code class="npx font-mono-400">{body}</code></pre>
     </div>
 </div>
