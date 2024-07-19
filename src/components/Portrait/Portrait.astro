@@ -1,0 +1,28 @@
+---
+import {Image} from "astro:assets";
+import myPortrait from '../../../assets/IMG_6502_02_480.webp';
+import "./Portrait.scss"
+
+---
+<div class="portrait-wrapper width-[360px]">
+    <Image src={myPortrait} alt="Portrait of Arthur Ersosi"/>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        function surprise(): void {
+            const emailComponent = document.querySelector('.more-info');
+            const portraitWrapper = document.querySelector('.portrait-wrapper');
+
+            emailComponent.addEventListener('mouseenter', () => {
+                portraitWrapper.classList.add('active');
+            });
+
+            emailComponent.addEventListener('mouseleave', () => {
+                portraitWrapper.classList.remove('active');
+            });
+        }
+
+        surprise();
+    });
+</script>

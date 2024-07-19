@@ -1,5 +1,3 @@
-@use '../styles/styles/utils/spinning-glow' as res;
-@use '../styles/styles/abstracts/variables' as v;
 
 main {
   margin: auto;
@@ -35,41 +33,8 @@ main {
 }
 
 
-@include res.spinning-glow(
-        $animation-min-blur: 70,
-        $animation-max-blur: 95,
-        $circle-1-size: 6.5,
-        $circle-1-color: var(--color-primary-500),
-        $circle-2-size: 7,
-        $circle-2-color: var(--color-secondary-500));
-
-.animation-wrapper {
-  position: absolute;
-  inset: 0;
-  z-index: -5;
-}
 
 
-h1 {
-  font-size: 4rem;
-  font-weight: 700;
-  line-height: 1;
-  text-align: center;
-}
-
-.portrait-wrapper {
-  pointer-events: none;
-  position: fixed;
-  bottom: -100%;
-  right: -5rem;
-  transition: bottom 0.5s ease-in-out;
-  width: clamp(22.5rem, 19.8913rem + 13.0435vw, 30rem);
-
-  @media screen and (min-width: v.$break-smd) {
-    &.visible {
-      bottom: 0;
-    }
-  }
 
 
-}
+
