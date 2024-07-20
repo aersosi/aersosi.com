@@ -7,7 +7,7 @@ import "./Loading.scss"
         function spinner(): void {
             const main = document.querySelector('main');
             const showContent = () => {
-                main.classList.add('loaded');
+                main?.classList.add('loaded');
             };
 
             // Check if the page has already loaded

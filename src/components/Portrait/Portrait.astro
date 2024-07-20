@@ -14,12 +14,12 @@ import "./Portrait.scss"
             const emailComponent = document.querySelector('.more-info');
             const portraitWrapper = document.querySelector('.portrait-wrapper');
 
-            emailComponent.addEventListener('mouseenter', () => {
-                portraitWrapper.classList.add('active');
+            emailComponent?.addEventListener('mouseenter', () => {
+                portraitWrapper?.classList.add('active');
             });
 
-            emailComponent.addEventListener('mouseleave', () => {
-                portraitWrapper.classList.remove('active');
+            emailComponent?.addEventListener('mouseleave', () => {
+                portraitWrapper?.classList.remove('active');
             });
         }
 

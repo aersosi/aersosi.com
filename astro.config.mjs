@@ -1,27 +1,28 @@
 import {defineConfig} from 'astro/config';
-
+import sitemap from '@astrojs/sitemap';
+import tailwind from '@astrojs/tailwind';
+import prefetch from '@astrojs/prefetch';
+import inlinePlayform from '@playform/inline';
+import formatPlayform from '@playform/format';
+import compressPlayform from '@playform/compress';
 
 // https://astro.build/config
-export default defineConfig(defineConfig(await import("astro/config")).defineConfig({
+export default defineConfig({
     srcDir: "./src",
     publicDir: "./assets",
     outDir: "./dist",
-    // TODO: Place your site URL here
-    // site: "",
+    site: "https://aersosi.com",
     compressHTML: false,
     integrations: [
         // @ts-ignore
         import.meta.env.MODE === "production" ? (await import("astrojs-service-worker")).default() : null,
-        (await import("@astrojs/sitemap")).default(),
-        (await import("@astrojs/tailwind")).default(),
-        (await import("@astrojs/prefetch")).default(),
-        (await import("@playform/inline")).default({
-            Logger: 1
-        }), (await import("@playform/format")).default({
-            Logger: 1
-        }), (await import("@playform/compress")).default({
-            Logger: 1
-        })],
+        sitemap(),
+        tailwind(),
+        prefetch(),
+        inlinePlayform({ Logger: 1 }),
+        formatPlayform({ Logger: 1 }),
+        compressPlayform({ Logger: 1 }),
+    ],
     experimental: {
         directRenderScript: true
     },
@@ -30,4 +31,4 @@ export default defineConfig(defineConfig(await import("astro/config")).defineCon
             sourcemap: true
         }
     }
-}));
+});

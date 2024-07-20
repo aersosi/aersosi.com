@@ -34,7 +34,6 @@
     "@playform/compress": "0.0.13",
     "@playform/format": "0.0.7",
     "@playform/inline": "0.0.7",
-
     "astro": "^4.11.6",
     "astrojs-service-worker": "2.0.0",
     "autoprefixer": "^10.4.19",
