@@ -31,7 +31,7 @@ const {title, body} = Astro.props;
 
 <script>
     document.addEventListener('DOMContentLoaded', () => {
-        const card = document.querySelector('.cli-card');
+        const card = document.querySelector('.cli-card') as HTMLElement;
         const ROTATION_RANGE = 4;
         let currentRotation = { x: 0, y: 0 };
 
