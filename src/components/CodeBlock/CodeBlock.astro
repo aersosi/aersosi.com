@@ -1,27 +1,67 @@
 ---
 import "./CodeBlock.scss"
+import "./CodeBlockTilt.scss"
 
 interface Props {
     title: string;
     body: string;
 }
 
-const { title, body} = Astro.props;
+const {title, body} = Astro.props;
 ---
 
-<div class="cli-card">
-    <div class="head">
-        <div class="navigation">
-            <div class="circle red"></div>
-            <div class="circle yellow"></div>
-            <div class="circle green"></div>
+<div class="cli-card-wrapper">
+    <div class="cli-card">
+        <div class="head">
+            <div class="navigation">
+                <div class="circle red"></div>
+                <div class="circle yellow"></div>
+                <div class="circle green"></div>
+            </div>
+            <h2 class="title">
+                {title}
+            </h2>
         </div>
-        <h2 class="title">
-            {title}
-        </h2>
-    </div>
-    <div class="body">
-        <pre class="opacity-20 pb-4"><code class="font-mono-400">My CV in your CLI</code></pre>
-        <pre><code class="npx font-mono-400">{body}</code></pre>
+        <div class="body">
+            <pre class="comment opacity-20 pb-4"><code class="font-mono-400">My CV in your CLI</code></pre>
+            <pre class="npx"><code class="font-mono-400">{body}</code></pre>
+        </div>
     </div>
 </div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const card = document.querySelector('.cli-card');
+        const ROTATION_RANGE = 3;
+        let currentRotation = { x: 0, y: 0 };
+
+        function handleMouseMove(event) {
+
+            const rect = card.getBoundingClientRect();
+            const centerX = rect.left + rect.width / 2;
+            const centerY = rect.top + rect.height / 2;
+            const mouseX = (event.clientX - centerX) / (rect.width / 2) * ROTATION_RANGE;
+            const mouseY = (event.clientY - centerY) / (rect.height / 2) * ROTATION_RANGE;
+
+            currentRotation = { x: -mouseY, y: mouseX };
+            updateCardRotation();
+        }
+
+        function updateCardRotation() {
+            card.style.transform = `rotateX(${currentRotation.x}deg) rotateY(${currentRotation.y}deg)`;
+        }
+
+        function resetCardPosition() {
+            currentRotation = { x: 0, y: 0 };
+            updateCardRotation();
+        }
+
+        document.addEventListener('mousemove', handleMouseMove);
+
+        card.addEventListener('mouseenter', () => {
+        });
+
+        card.addEventListener('mouseleave', () => {
+            resetCardPosition();
+        });
+    });
