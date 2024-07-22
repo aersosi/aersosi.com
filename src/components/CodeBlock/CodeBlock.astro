@@ -35,7 +35,7 @@ const {title, body} = Astro.props;
         const ROTATION_RANGE = 4;
         let currentRotation = { x: 0, y: 0 };
 
-        function handleMouseMove(event) {
+        function handleMouseMove(event: MouseEvent) {
 
             const rect = card.getBoundingClientRect();
             const centerX = rect.left + rect.width / 2;
