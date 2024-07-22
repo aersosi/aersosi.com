@@ -4,13 +4,25 @@
   font-style: italic;
   color: #000;
 }
+
+
+[class^="font-mono-"] {
+  font-style: normal;
+}
+
 .font-mono-500 {
   font-family: 'Slussen Mono Medium', monospace;
   font-weight: 500;
-  font-style: normal;
 }
 .font-mono-400 {
-  font-family: 'Slussen Mono';
+  font-family: 'Slussen Mono', monospace;
   font-weight: 400;
-  font-style: normal;
+}
+.font-mono-300 {
+  font-family: 'Slussen Mono Light', monospace;
+  font-weight: 300;
+}
+.font-mono-200 {
+  font-family: 'Slussen Mono Extralight', monospace;
+  font-weight: 200;
 }

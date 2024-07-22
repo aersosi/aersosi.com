@@ -23,7 +23,7 @@ const {title, body} = Astro.props;
             </h2>
         </div>
         <div class="body">
-            <pre class="comment opacity-20 pb-4"><code class="font-mono-400">My CV in your CLI</code></pre>
+            <pre class="comment pb-4"><code class="font-mono-300">My CV in your CLI</code></pre>
             <pre class="npx"><code class="font-mono-400">{body}</code></pre>
         </div>
     </div>
@@ -32,7 +32,7 @@ const {title, body} = Astro.props;
 <script>
     document.addEventListener('DOMContentLoaded', () => {
         const card = document.querySelector('.cli-card');
-        const ROTATION_RANGE = 3;
+        const ROTATION_RANGE = 4;
         let currentRotation = { x: 0, y: 0 };
 
         function handleMouseMove(event) {
@@ -65,3 +65,4 @@ const {title, body} = Astro.props;
             resetCardPosition();
         });
     });
+</script>
