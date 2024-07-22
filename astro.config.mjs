@@ -9,7 +9,6 @@ import compressPlayform from '@playform/compress';
 // https://astro.build/config
 export default defineConfig({
     srcDir: "./src",
-    publicDir: "./assets",
     outDir: "./dist",
     site: "https://aersosi.com",
     compressHTML: false,
