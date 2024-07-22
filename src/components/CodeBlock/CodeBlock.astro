@@ -40,10 +40,10 @@ const {title, body} = Astro.props;
             const rect = card.getBoundingClientRect();
             const centerX = rect.left + rect.width / 2;
             const centerY = rect.top + rect.height / 2;
-            const mouseX = (event.clientX - centerX) / (rect.width / 2) * ROTATION_RANGE;
-            const mouseY = (event.clientY - centerY) / (rect.height / 2) * ROTATION_RANGE;
+            const tiltY = (event.clientX - centerX) / (rect.width / 2) * ROTATION_RANGE;
+            const tiltX = (event.clientY - centerY) / (rect.height / 2) * ROTATION_RANGE;
 
-            currentRotation = { x: -mouseY, y: mouseX };
+            currentRotation = { x: -tiltX, y: tiltY };
             updateCardRotation();
         }
 
