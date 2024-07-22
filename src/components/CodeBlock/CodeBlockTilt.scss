@@ -1,0 +1,18 @@
+.cli-card-wrapper {
+  perspective: 150rem;
+}
+
+.head, .body, .cli-card {
+  transform-style: preserve-3d;
+}
+
+.cli-card {
+  transition: transform 0.15s ease-out;
+}
+
+.head, .body,
+.navigation, .title,
+.comment, .npx {
+  transition: transform 0.15s ease-out;
+  transform: translateZ(3rem);
+}

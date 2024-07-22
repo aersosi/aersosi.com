@@ -1,0 +1,62 @@
+@use 'sass:math';
+@use 'sass:color';
+@use '_private-css-type-check' as tc;
+
+
+/// Generates a monochromatic color palette based on a base hex color.
+///
+/// @param {Color} $base-color - The base color to generate the palette from
+/// @param {Number} $shade - The shade value (0-1000) to generate
+/// @param {Number} $min-intensity [0] - The minimum intensity of the generated color (0-1)
+/// @param {Number} $max-intensity [1] - The maximum intensity of the generated color (0-1)
+///
+/// @return {Color} The generated color for the given shade and intensity range
+///
+/// @example scss
+///   $primary-color: #ff7300;
+///
+///   // Default usage (full range)
+///   .color-500 {
+///     background-color: generate($primary-color, 500);
+///   }
+///
+///   // Custom intensity range (e.g., 0.1 to 0.9)
+///   .color-500-custom {
+///     background-color: generate($primary-color, 500, 0.1, 0.9);
+///   }
+
+@function generate($base-color, $shade, $min-intensity: 0, $max-intensity: 1) {
+  // type checking
+  $base-color: tc.is-color($base-color, 'base-color');
+  $shade: tc.is-unitless-number($shade, 'shade');
+  $min-intensity: tc.is-unitless-number($min-intensity, 'min-intensity');
+  $max-intensity: tc.is-unitless-number($max-intensity, 'max-intensity');
+
+  $base-rgb: color.red($base-color), color.green($base-color), color.blue($base-color);
+
+
+  // Calculate factor based on min and max intensity
+  $factor: math.div($shade, 1000);
+  $factor: $min-intensity + ($max-intensity - $min-intensity) * $factor;
+
+  $r: nth($base-rgb, 1);
+  $g: nth($base-rgb, 2);
+  $b: nth($base-rgb, 3);
+
+  @if $shade < 500 {
+    // Lighter shades
+    $r: $r + (255 - $r) * (1 - $factor * 2);
+    $g: $g + (255 - $g) * (1 - $factor * 2);
+    $b: $b + (255 - $b) * (1 - $factor * 2);
+  } @else {
+    // Darker shades
+    $r: $r * (2 - $factor * 2);
+    $g: $g * (2 - $factor * 2);
+    $b: $b * (2 - $factor * 2);
+  }
+
+  @return rgb(round($r), round($g), round($b));
+}
+
+// Get a specific shade
+//$shade-500: generate(#FF6E00, 500);

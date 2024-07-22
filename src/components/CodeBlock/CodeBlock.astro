@@ -1,0 +1,68 @@
+---
+import "./CodeBlock.scss"
+import "./CodeBlockTilt.scss"
+
+interface Props {
+    title: string;
+    body: string;
+}
+
+const {title, body} = Astro.props;
+---
+
+<div class="cli-card-wrapper">
+    <div class="cli-card">
+        <div class="head">
+            <div class="navigation">
+                <div class="circle red"></div>
+                <div class="circle yellow"></div>
+                <div class="circle green"></div>
+            </div>
+            <h2 class="title">
+                {title}
+            </h2>
+        </div>
+        <div class="body">
+            <pre class="comment pb-4"><code class="font-mono-300">My CV in your CLI</code></pre>
+            <pre class="npx"><code class="font-mono-400">{body}</code></pre>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const card = document.querySelector('.cli-card') as HTMLElement;
+        const ROTATION_RANGE = 4;
+        let currentRotation = { x: 0, y: 0 };
+
+        function handleMouseMove(event: MouseEvent) {
+
+            const rect = card.getBoundingClientRect();
+            const centerX = rect.left + rect.width / 2;
+            const centerY = rect.top + rect.height / 2;
+            const tiltY = (event.clientX - centerX) / (rect.width / 2) * ROTATION_RANGE;
+            const tiltX = (event.clientY - centerY) / (rect.height / 2) * ROTATION_RANGE;
+
+            currentRotation = { x: -tiltX, y: tiltY };
+            updateCardRotation();
+        }
+
+        function updateCardRotation() {
+            card.style.transform = `rotateX(${currentRotation.x}deg) rotateY(${currentRotation.y}deg)`;
+        }
+
+        function resetCardPosition() {
+            currentRotation = { x: 0, y: 0 };
+            updateCardRotation();
+        }
+
+        document.addEventListener('mousemove', handleMouseMove);
+
+        card.addEventListener('mouseenter', () => {
+        });
+
+        card.addEventListener('mouseleave', () => {
+            resetCardPosition();
+        });
+    });
+</script>

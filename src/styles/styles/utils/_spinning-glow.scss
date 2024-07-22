@@ -1,0 +1,222 @@
+@use '../abstracts' as v;
+@use '../abstracts/functions' as f;
+
+// @mixin spinning-glow();
+
+// @description
+// This mixin creates a dynamic, animated glow effect around elements, with customizable colors,
+// sizes, and animation speeds. It adopts the effect responsively across different browser widths.
+
+// @param $responsive-from [Number] - The minimum browser width where the glow effect begins to scale.
+// @param $responsive-to [Number] - The maximum browser width where the glow effect stops scaling.
+
+// @param $animation-min-size [Number] - The minimum size of the glow effect.
+// @param $animation-max-size [Number] - The maximum size of the glow effect.
+// @param $animation-min-blur [Number] - The minimum blur radius of the glow effect.
+// @param $animation-max-blur [Number] - The maximum blur radius of the glow effect.
+// @param $animation-direction [String] - The direction of the spinning animation. Accepts 'normal' or 'reverse'.
+// @param $animation-duration [Time] - The duration of the spinning animation.
+
+// @param $circle-1-size [Number] - The size of the first glow circle.
+// @param $circle-1-speed [Time] - The animation speed of the first glow circle.
+// @param $circle-1-offset [Percentage] - The offset of the first glow circle from its origin.
+// @param $circle-1-color [Color] - The color of the first glow circle.
+// @param $circle-1-x [Percentage] - The horizontal position of the first glow circle.
+// @param $circle-1-y [Percentage] - The vertical position of the first glow circle.
+
+// @param $circle-2-size [Number] - The size of the second glow circle.
+// @param $circle-2-speed [Time] - The animation speed of the second glow circle.
+// @param $circle-2-offset [Percentage] - The offset of the second glow circle from its origin.
+// @param $circle-2-color [Color] - The color of the second glow circle.
+// @param $circle-2-x [Percentage] - The horizontal position of the second glow circle.
+// @param $circle-2-y [Percentage] - The vertical position of the second glow circle.
+
+// @example
+// scss
+// .loading-animation-wrapper {
+//   height: 100vh;
+//   position: relative; // important
+//
+//   @include res.spinning-glow(); // include the animation
+// }
+
+// @description
+// In the foreground is e.g. a logo, in the background some illustration and the animation is in between
+
+// html
+//  <div class="loading-animation-wrapper">
+//    <div class="animation-wrapper">
+//      <div class="foreground-wrapper">
+//        <img
+//          class="w-auto h-20 foreground-element responsive-120-240"
+//          src="../public/CARY_Medical_Logo.svg"
+//        />
+//      </div>
+//      <div class="animation">
+//        <div class="circle-1"></div>
+//        <div class="circle-2"></div>
+//      </div>
+//      <img class="background-element responsive-160-320" src="../public/CARY_Icon_outline.svg" />
+//    </div>
+//  </div>
+
+@mixin spinning-glow(
+  $responsive-from: 360,
+  $responsive-to: 1024,
+  $animation-min-size: 75,
+  $animation-max-size: 200,
+  $animation-min-blur: 50,
+  $animation-max-blur: 85,
+
+  $animation-direction: normal,
+  $animation-duration: 10s,
+  $circle-1-size: 4,
+  $circle-1-speed: 6.25s,
+  $circle-1-offset: 17%,
+  $circle-1-color: #00c8ff,
+  $circle-1-x: -50%,
+  $circle-1-y: -20%,
+
+  $circle-2-size: 4.25,
+  $circle-2-speed: 4.75s,
+  $circle-2-offset: 17%,
+  $circle-2-color: #a1fe27,
+  $circle-2-x: -55%,
+  $circle-2-y: -25%
+) {
+  // config
+  .animation {
+    --clamp-size: #{f.clamp-size(
+        $responsive-from,
+        $responsive-to,
+        $animation-min-size,
+        $animation-max-size
+      )};
+    --blur: #{f.clamp-size(
+        $responsive-from,
+        $responsive-to,
+        $animation-min-blur,
+        $animation-max-blur
+      )};
+    --animation-duration: #{$animation-duration};
+  }
+
+  .circle-1 {
+    --size: #{$circle-1-size};
+    --speed: #{$circle-1-speed};
+    --circle-1-offset: #{$circle-1-offset};
+    --circle-1-color: #{$circle-1-color};
+    --circle-1-x: #{$circle-1-x};
+    --circle-1-y: #{$circle-1-y};
+  }
+
+  .circle-2 {
+    --size: #{$circle-2-size};
+    --speed: #{$circle-2-speed};
+    --circle-2-offset: #{$circle-2-offset};
+    --circle-2-color: #{$circle-2-color};
+    --circle-2-x: #{$circle-2-x};
+    --circle-2-y: #{$circle-2-y};
+  }
+
+  // general animation styles
+  .animation-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    @media (max-width: v.$break-md) {
+      position: absolute;
+      inset: 0;
+    }
+  }
+
+  .animation {
+    position: relative;
+    width: var(--clamp-size);
+    padding-top: var(--clamp-size);
+
+    .circle-1,
+    .circle-2 {
+      position: absolute;
+      display: inline-flex;
+      justify-content: flex-end;
+      width: calc(var(--size) * 100%);
+      height: calc(var(--size) * 50%);
+      filter: blur(var(--blur));
+      mix-blend-mode: hard-light;
+
+      &::before {
+        content: '';
+        width: 50%;
+        height: 100%;
+        border-radius: 50%;
+        display: inline-block;
+      }
+    }
+
+    .circle-1 {
+      right: calc(var(--size) * var(--circle-1-x));
+      top: calc(var(--size) * var(--circle-1-y));
+      animation: rotation-circle-1 var(--speed) cubic-bezier(0.25, 0.35, 0.85, 0.75) infinite;
+
+      &::before {
+        margin-right: var(--circle-1-offset);
+        background: var(--circle-1-color);
+      }
+    }
+
+    .circle-2 {
+      left: calc(var(--size) * var(--circle-2-x));
+      bottom: calc(var(--size) * var(--circle-2-y));
+      animation: rotation-circle-2 var(--speed) cubic-bezier(0.25, 0.35, 0.85, 0.75) infinite
+        reverse;
+
+      &::before {
+        margin-right: var(--circle-2-offset);
+        background: var(--circle-2-color);
+      }
+    }
+  }
+
+  .animation {
+    animation: spin cubic-bezier(0.55, 0, 0.55, 1) $animation-direction infinite;
+    animation-duration: var(--animation-duration);
+
+    @keyframes spin {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+    }
+  }
+
+  @keyframes rotation-circle-1 {
+    0% {
+      transform: rotate(0deg) scale(1);
+    }
+    50% {
+      transform: rotate(180deg) scale(1.2);
+    }
+    100% {
+      transform: rotate(360deg) scale(1);
+    }
+  }
+
+  @keyframes rotation-circle-2 {
+    0% {
+      transform: rotate(0deg) scale(1.2);
+    }
+    50% {
+      transform: rotate(180deg) scale(1);
+    }
+    100% {
+      transform: rotate(360deg) scale(1.2);
+    }
+  }
+}
