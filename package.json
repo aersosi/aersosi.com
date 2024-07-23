@@ -2,11 +2,14 @@
   "name": "aersosi.com",
   "version": "0.0.1",
   "private": false,
-  "type": "module",
   "description": "Arthur Ersosi personal website",
   "homepage": "https://github.com/aersosi/aersosi.com#readme",
   "bugs": {
     "url": "https://github.com/aersosi/aersosi.com/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aersosi/aersosi.com.git"
   },
   "license": "SEE LICENSE IN LICENSE",
   "author": {
@@ -14,20 +17,15 @@
     "email": "hello@aersosi.com",
     "url": "https://aersosi.com"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/aersosi/aersosi.com.git"
-  },
+  "type": "module",
   "scripts": {
-    "dev": "astro dev",
-    "start": "astro dev",
-    "checkBuild": "astro check && astro build",
+    "astro": "astro",
     "build": "astro build",
+    "check": "astro check",
+    "dev": "astro dev",
     "preview": "astro preview",
-    "astro": "astro"
-  },
-  "engines": {
-    "node": "22.2.0"
+    "sort": "npx sort-package-json",
+    "start": "astro dev"
   },
   "dependencies": {
     "@astrojs/check": "^0.8.2",
@@ -52,6 +50,9 @@
     "sass": "^1.77.8",
     "tailwindcss": "^3.4.6",
     "typescript": "^5.5.3"
+  },
+  "engines": {
+    "node": "22.2.0"
   },
   "publishConfig": {
     "access": "public"
