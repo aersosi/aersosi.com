@@ -21,13 +21,16 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "astro check && astro build",
+    "checkBuild": "astro check && astro build",
+    "build": "astro build",
     "preview": "astro preview",
     "astro": "astro"
   },
+  "engines": {
+    "node": "22.2.0"
+  },
   "dependencies": {
     "@astrojs/check": "^0.8.2",
-    "@astrojs/cloudflare": "^11.0.1",
     "@astrojs/prefetch": "0.4.1",
     "@astrojs/sitemap": "^3.1.6",
     "@astrojs/tailwind": "^5.1.0",

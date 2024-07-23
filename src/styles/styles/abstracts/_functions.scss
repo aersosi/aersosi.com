@@ -20,7 +20,7 @@
 //   - If `$mode` is not one of the defined keywords, it triggers a warning and returns the original `$number`.
 
 // @example
-//   decimal-round(1.005, 2); // Returns 1.01 with default rounding mode.
+//   decimal-round(1.005, 2); // Returns 1.01 width default rounding mode.
 // @example
 //   decimal-round(2.5, 0, 'floor'); // Returns 2.
 // @example
