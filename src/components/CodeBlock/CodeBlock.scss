@@ -1,7 +1,9 @@
+@use '../../styles/styles/abstracts/variables/index' as v;
+
 .cli-card-wrapper {
-  max-width: 480px;
-  min-width: 360px;
-  height: clamp(200px, calc(100vh - 600px), 300px);
+  max-width: 420px;
+  min-width: 320px;
+  height: clamp(260px, 100vh - 600px, 300px);
   width: 100%;
   padding: 1rem;
 }
@@ -131,4 +133,21 @@
       background-color: var(--color-primary-500);
     }
   }
+}
+
+@media (max-width: v.$break-smd) {
+  .cli-card {
+    .head, .body {
+      padding-inline: 1rem;
+      padding-block: 0.5rem;
+    }
+
+    .title,
+    .comment,
+    .npx {
+      transform-origin: center left;
+      transform: scale(0.95);
+    }
+  }
+
 }
