@@ -1,9 +1,9 @@
 export type siteParams = {
-    defaultEmail: string;
+  defaultEmail: string;
 };
 
 const siteParams: siteParams = {
-    defaultEmail: "email@example.com"
-}
+  defaultEmail: "email@example.com",
+};
 
 export default siteParams;

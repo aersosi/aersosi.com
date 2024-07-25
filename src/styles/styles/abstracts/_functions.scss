@@ -1,5 +1,5 @@
-@use 'sass:math';
-@use '../utils/_private-css-type-check' as tc;
+@use "sass:math";
+@use "../utils/_private-css-type-check" as tc;
 
 // @function decimal-round();
 
@@ -32,9 +32,9 @@
   $n: 1;
 
   // $number must be a number
-  $number: tc.is-number($number, 'number');
+  $number: tc.is-number($number, "number");
   // $digits must be a unitless number
-  $digits: tc.is-unitless-number($digits, 'digits');
+  $digits: tc.is-unitless-number($digits, "digits");
 
   @if $digits > 0 {
     @for $i from 1 through $digits {
@@ -76,10 +76,10 @@
 
 @function clamp-size($browser-min, $browser-max, $size-min, $size-max) {
   // Passed values must be unitless numbers
-  $browser-min: tc.is-unitless-number($browser-min, 'browser-min');
-  $browser-max: tc.is-unitless-number($browser-max, 'browser-max');
-  $browser-max: tc.is-unitless-number($size-min, 'browser-max');
-  $browser-max: tc.is-unitless-number($size-max, 'browser-max');
+  $browser-min: tc.is-unitless-number($browser-min, "browser-min");
+  $browser-max: tc.is-unitless-number($browser-max, "browser-max");
+  $browser-max: tc.is-unitless-number($size-min, "browser-max");
+  $browser-max: tc.is-unitless-number($size-max, "browser-max");
 
   $factor: calc(1 / ($browser-max - $browser-min)) * ($size-max - $size-min);
   $px: decimal-round(($size-min * 1px) - ($browser-min * $factor), 4);
@@ -89,5 +89,3 @@
 
   @return clamp(#{$min-size}, #{$px} + #{$vw}, #{$max-size});
 }
-
-

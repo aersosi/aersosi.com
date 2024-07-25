@@ -1,4 +1,4 @@
-@use '../../styles/styles/abstracts/variables/index' as v;
+@use "../../styles/styles/abstracts/variables/index" as v;
 
 .portrait-wrapper {
   pointer-events: none;
@@ -13,6 +13,4 @@
       bottom: 0;
     }
   }
-
-
 }
