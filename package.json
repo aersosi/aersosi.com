@@ -23,7 +23,7 @@
     "pretty-src": "prettier --write ./src",
     "check-src": "astro check",
     "clean-dist": "rm -rf ./dist",
-    "build-dist": "astro build",
+    "build": "astro build",
     "preview-dist": "astro preview",
     "astro": "astro"
   },
