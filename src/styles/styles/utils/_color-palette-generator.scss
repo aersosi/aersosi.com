@@ -1,7 +1,6 @@
-@use 'sass:math';
-@use 'sass:color';
-@use '_private-css-type-check' as tc;
-
+@use "sass:math";
+@use "sass:color";
+@use "_private-css-type-check" as tc;
 
 /// Generates a monochromatic color palette based on a base hex color.
 ///
@@ -27,13 +26,13 @@
 
 @function generate($base-color, $shade, $min-intensity: 0, $max-intensity: 1) {
   // type checking
-  $base-color: tc.is-color($base-color, 'base-color');
-  $shade: tc.is-unitless-number($shade, 'shade');
-  $min-intensity: tc.is-unitless-number($min-intensity, 'min-intensity');
-  $max-intensity: tc.is-unitless-number($max-intensity, 'max-intensity');
+  $base-color: tc.is-color($base-color, "base-color");
+  $shade: tc.is-unitless-number($shade, "shade");
+  $min-intensity: tc.is-unitless-number($min-intensity, "min-intensity");
+  $max-intensity: tc.is-unitless-number($max-intensity, "max-intensity");
 
-  $base-rgb: color.red($base-color), color.green($base-color), color.blue($base-color);
-
+  $base-rgb: color.red($base-color), color.green($base-color),
+    color.blue($base-color);
 
   // Calculate factor based on min and max intensity
   $factor: math.div($shade, 1000);

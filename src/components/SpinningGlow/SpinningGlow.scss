@@ -1,12 +1,13 @@
-@use '../../styles/styles/utils/spinning-glow' as res;
+@use "../../styles/styles/utils/spinning-glow" as res;
 
 @include res.spinning-glow(
-        $animation-min-blur: 70,
-        $animation-max-blur: 95,
-        $circle-1-size: 6.5,
-        $circle-1-color: var(--color-primary-500),
-        $circle-2-size: 7,
-        $circle-2-color: var(--color-secondary-500));
+  $animation-min-blur: 70,
+  $animation-max-blur: 95,
+  $circle-1-size: 6.5,
+  $circle-1-color: var(--color-primary-500),
+  $circle-2-size: 7,
+  $circle-2-color: var(--color-secondary-500)
+);
 
 .animation-wrapper {
   position: absolute;

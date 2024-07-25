@@ -21,7 +21,6 @@ body {
   background-clip: content-box;
   border-radius: 12px;
   background-color: rgba(var(--scroll-color), 0.15);
-
 }
 
 ::-webkit-scrollbar-thumb {
@@ -29,6 +28,4 @@ body {
   background-clip: padding-box;
   border-radius: 12px;
   background-color: rgba(var(--scroll-color), 0.25);
-
 }
-

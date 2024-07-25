@@ -1,5 +1,5 @@
-@use '../abstracts' as v;
-@use '../abstracts/functions' as f;
+@use "../abstracts" as v;
+@use "../abstracts/functions" as f;
 
 // @mixin spinning-glow();
 
@@ -150,7 +150,7 @@
       mix-blend-mode: hard-light;
 
       &::before {
-        content: '';
+        content: "";
         width: 50%;
         height: 100%;
         border-radius: 50%;
@@ -161,7 +161,8 @@
     .circle-1 {
       right: calc(var(--size) * var(--circle-1-x));
       top: calc(var(--size) * var(--circle-1-y));
-      animation: rotation-circle-1 var(--speed) cubic-bezier(0.25, 0.35, 0.85, 0.75) infinite;
+      animation: rotation-circle-1 var(--speed)
+        cubic-bezier(0.25, 0.35, 0.85, 0.75) infinite;
 
       &::before {
         margin-right: var(--circle-1-offset);
@@ -172,8 +173,8 @@
     .circle-2 {
       left: calc(var(--size) * var(--circle-2-x));
       bottom: calc(var(--size) * var(--circle-2-y));
-      animation: rotation-circle-2 var(--speed) cubic-bezier(0.25, 0.35, 0.85, 0.75) infinite
-        reverse;
+      animation: rotation-circle-2 var(--speed)
+        cubic-bezier(0.25, 0.35, 0.85, 0.75) infinite reverse;
 
       &::before {
         margin-right: var(--circle-2-offset);
