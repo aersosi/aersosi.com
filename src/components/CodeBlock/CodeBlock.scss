@@ -1,4 +1,4 @@
-@use '../../styles/styles/abstracts/variables/index' as v;
+@use "../../styles/styles/abstracts/variables/index" as v;
 
 .cli-card-wrapper {
   max-width: 420px;
@@ -7,7 +7,6 @@
   width: 100%;
   padding: 1rem;
 }
-
 
 .cli-card {
   display: flex;
@@ -23,7 +22,7 @@
 
     &:after {
       // spacer
-      content: '';
+      content: "";
       width: 64px;
     }
 
@@ -31,7 +30,6 @@
       margin: 0;
       font-size: 1.25rem;
       transition: color 0.6s cubic-bezier(0.22, 1, 0.36, 1);
-
     }
 
     .navigation {
@@ -49,19 +47,19 @@
         }
 
         &.yellow {
-          background: #F3BD4F;
+          background: #f3bd4f;
         }
 
         &.green {
-          background: #62C554;
+          background: #62c554;
         }
       }
     }
-
   }
 
   //colors & border
-  .head, .body {
+  .head,
+  .body {
     padding-inline: 1.5rem;
     padding-block: 0.75rem;
     border-width: 1px;
@@ -69,7 +67,7 @@
   }
 
   .head {
-    background-color: #3B3D3F;
+    background-color: #3b3d3f;
     border-radius: 8px 8px 0 0;
     border-bottom-width: 0;
     border-color: rgba(black, 0.1);
@@ -82,7 +80,7 @@
     border-radius: 0 0 8px 8px;
     border-top-width: 0;
     border-color: rgba(white, 0.1);
-    box-shadow: inset 3px 0 2px -1px rgba(white, .15);
+    box-shadow: inset 3px 0 2px -1px rgba(white, 0.15);
   }
 
   .body {
@@ -96,12 +94,12 @@
       transition: color 0.2s;
 
       &:before {
-        content: '$ ';
-        font-family: 'Slussen Mono', monospace;
+        content: "$ ";
+        font-family: "Slussen Mono", monospace;
       }
 
       &:after {
-        content: '';
+        content: "";
         background-color: white;
         transition: background-color 0.2s;
         width: 16px;
@@ -137,7 +135,8 @@
 
 @media (max-width: v.$break-smd) {
   .cli-card {
-    .head, .body {
+    .head,
+    .body {
       padding-inline: 1rem;
       padding-block: 0.5rem;
     }
@@ -149,5 +148,4 @@
       transform: scale(0.95);
     }
   }
-
 }

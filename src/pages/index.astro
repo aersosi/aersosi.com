@@ -1,43 +1,50 @@
 ---
-import "./_index.scss"
-import Layout from '../layouts/Skeleton.astro';
-import CodeBlock from '../components/CodeBlock/CodeBlock.astro';
-import Email from '../components/EmailObfuscation/EmailObfuscation.astro';
-import Loading from '../components/Loading/Loading.astro';
-import Portrait from '../components/Portrait/Portrait.astro';
-import SpinningGlow from '../components/SpinningGlow/SpinningGlow.astro';
+import "./_index.scss";
+import Layout from "../layouts/Skeleton.astro";
+import CodeBlock from "../components/CodeBlock/CodeBlock.astro";
+import Email from "../components/EmailObfuscation/EmailObfuscation.astro";
+import Loading from "../components/Loading/Loading.astro";
+import Portrait from "../components/Portrait/Portrait.astro";
+import SpinningGlow from "../components/SpinningGlow/SpinningGlow.astro";
 ---
 
 <Layout title="Arthur Ersosi" description="Arthur Ersosi personal website">
-    <main class="flex flex-col gap-4 justify-around items-center font-mono-400">
-        <h1 class="flex flex-col gap-2">
-            <span class="flex gap-x-4 flex-wrap justify-center">
-                <span class="font-mono-500 arthur">arthur</span>
-                <span class="font-serif-500 ersosi">ersosi</span>
-            </span>
-            <span class="font-mono-400 uppercase engineer">Design Engineer</span>
-        </h1>
+  <main class="flex flex-col gap-4 justify-around items-center font-mono-400">
+    <h1 class="flex flex-col gap-2">
+      <span class="flex gap-x-4 flex-wrap justify-center">
+        <span class="font-mono-500 arthur">arthur</span>
+        <span class="font-serif-500 ersosi">ersosi</span>
+      </span>
+      <span class="font-mono-400 uppercase engineer">Design Engineer</span>
+    </h1>
 
-        <CodeBlock title="CLI" body="npx @aersosi/clicv"/>
+    <CodeBlock title="CLI" body="npx @aersosi/clicv" />
 
-        <div class="flex flex-col items-center gap-4 text-base more-info">
-            <p class="color-primary-500">
-                <Email address="hello@aersosi.com"/>
-            </p>
-            <p>Download my CV</p>
-            <div class="flex gap-4">
-                <a class="text-link font-mono-500" aria-label="Open german CV" href="/CV_Ersosi_2024_de.pdf"
-                   download="CV_Ersosi_2024_de.pdf">DE</a>
-                <span class="opacity-30">|</span>
-                <a class="text-link font-mono-500" aria-label="Open english CV" href="/CV_Ersosi_2024_en.pdf"
-                   download="CV_Ersosi_2024_en.pdf">EN</a>
-            </div>
-        </div>
+    <div class="flex flex-col items-center gap-4 text-base more-info">
+      <p class="color-primary-500">
+        <Email address="hello@aersosi.com" />
+      </p>
+      <p>Download my CV</p>
+      <div class="flex gap-4">
+        <a
+          class="text-link font-mono-500"
+          aria-label="Open german CV"
+          href="/CV_Ersosi_2024_de.pdf"
+          download="CV_Ersosi_2024_de.pdf">DE</a
+        >
+        <span class="opacity-30">|</span>
+        <a
+          class="text-link font-mono-500"
+          aria-label="Open english CV"
+          href="/CV_Ersosi_2024_en.pdf"
+          download="CV_Ersosi_2024_en.pdf">EN</a
+        >
+      </div>
+    </div>
 
-        <SpinningGlow/>
-    </main>
+    <SpinningGlow />
+  </main>
 
-    <Portrait/>
-    <Loading/>
-
+  <Portrait />
+  <Loading />
 </Layout>

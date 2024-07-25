@@ -1,5 +1,5 @@
 main {
-  -webkit-transition : -webkit-filter 500ms ease-in-out;
+  -webkit-transition: -webkit-filter 500ms ease-in-out;
   filter: blur(30rem);
   &.loaded {
     filter: blur(0);

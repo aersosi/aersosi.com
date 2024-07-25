@@ -2,7 +2,9 @@
   perspective: 150rem;
 }
 
-.head, .body, .cli-card {
+.head,
+.body,
+.cli-card {
   transform-style: preserve-3d;
 }
 
@@ -10,9 +12,12 @@
   transition: transform 0.15s ease-out;
 }
 
-.head, .body,
-.navigation, .title,
-.comment, .npx {
+.head,
+.body,
+.navigation,
+.title,
+.comment,
+.npx {
   transition: transform 0.15s ease-out;
   transform: translateZ(3rem);
 }
