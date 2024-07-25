@@ -22,9 +22,9 @@
     "start": "astro dev",
     "pretty-src": "prettier --write ./src",
     "check-src": "astro check",
-    "clean-dist": "rm -rf ./dist",
+    "clean-build": "rm -rf ./dist",
     "build": "astro build",
-    "preview-dist": "astro preview",
+    "preview-build": "astro preview",
     "astro": "astro"
   },
   "engines": {
