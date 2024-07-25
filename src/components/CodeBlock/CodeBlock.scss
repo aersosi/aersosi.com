@@ -1,7 +1,7 @@
 @use "../../styles/styles/abstracts/variables/index" as v;
 
 .cli-card-wrapper {
-  max-width: 420px;
+  max-width: 460px;
   min-width: 320px;
   height: clamp(260px, 100vh - 600px, 300px);
   width: 100%;
