@@ -2,7 +2,7 @@
 title: 'Second post'
 description: 'Lorem ipsum dolor sit amet'
 categories: ['cat1', 'cat2', 'cat3']
-tags: ['tag1', 'tag2', 'tag3']
+tags: ['tag4', 'tag5', 'tag6']
 pubDate: 'Jul 15 2022'
 heroImage: 'blogImg/blog-placeholder-1.jpg'
 heroAltText: 'Lorem Ipsum'

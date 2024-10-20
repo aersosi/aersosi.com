@@ -12,8 +12,6 @@ export const getStaticPaths = async () => {
   }));
 };
 
-type BlogPost = CollectionEntry<"blog">["data"];
-
 const post = Astro.props;
 const { Content } = await post.render();
 const readingTime = getReadingTime(post.body) ?? "1 min read";

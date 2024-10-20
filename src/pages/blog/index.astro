@@ -2,12 +2,15 @@
 import { getCollection } from "astro:content";
 import BlogPostLink from "../../components/BlogPostLink/BlogPostLink.astro";
 import LayoutBase from "../../layouts/LayoutBase.astro";
+import { mergeArrUnduplicate } from "../../utils/merge-arr-unduplicate";
 
 const posts = (await getCollection("blog")).sort(
   (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
 );
+const allTags = mergeArrUnduplicate(posts, "tags");
+const allCategories = mergeArrUnduplicate(posts, "categories");
 
-const title = "Blog test";
+const title = "Blog posts";
 const description = "Blog description is cool";
 ---
 
@@ -15,7 +18,16 @@ const description = "Blog description is cool";
   <h1>{title}</h1>
 
   <main>
-    <section class="blog-post-filter"></section>
+    <section class="blog-post-filter">
+      <div class="categories-list">
+        {allCategories.map((category) => <span class="tag">{category}</span>)}
+      </div>
+
+      <div class="tag-list">
+        {allTags.map((tag) => <span class="tag">{tag}</span>)}
+      </div>
+    </section>
+
     <section class="blog-post-links">
       {posts.map((post) => <BlogPostLink post={post} />)}
     </section>
