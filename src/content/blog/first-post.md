@@ -1,6 +1,8 @@
 ---
 title: 'First post'
 description: 'Lorem ipsum dolor sit amet'
+categories: ['cat1', 'cat2', 'cat3']
+tags: ['tag1', 'tag2', 'tag3']
 pubDate: '15.09.2022'
 heroImage: 'blogImg/blog-placeholder-1.jpg'
 heroAltText: 'Lorem Ipsum'

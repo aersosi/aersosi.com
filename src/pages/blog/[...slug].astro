@@ -1,6 +1,8 @@
 ---
 import { type CollectionEntry, getCollection } from "astro:content";
-import BlogPost from "../../layouts/BlogPost.astro";
+import LayoutBase from "../../layouts/LayoutBase.astro";
+import { getReadingTime } from "../../utils/reading-time";
+import FormattedDate from "../../components/FormattedDate/FormattedDate.astro";
 
 export const getStaticPaths = async () => {
   const posts = await getCollection("blog");
@@ -10,12 +12,52 @@ export const getStaticPaths = async () => {
   }));
 };
 
-type Props = CollectionEntry<"blog">;
+type BlogPost = CollectionEntry<"blog">["data"];
 
 const post = Astro.props;
 const { Content } = await post.render();
+const readingTime = getReadingTime(post.body) ?? "1 min read";
 ---
 
-<BlogPost {...post.data}>
-  <Content />
-</BlogPost>
+<LayoutBase {...post.data}>
+  {post.data.title}
+
+  <main>
+    <article>
+      <div class="article-head">
+        <h1>{post.data.title}</h1>
+        <p>{readingTime}</p>
+
+        <p>
+          {
+            post.data.categories.map((category: string) => (
+              <span>{category}</span>
+            ))
+          }
+        </p>
+        <p>
+          {post.data.tags.map((tag: string) => <span>{tag}</span>)}
+        </p>
+        <img
+          width={720}
+          height={240}
+          src={`/${post.data.heroImage}`}
+          alt={post.data.heroAltText}
+        />
+        <p>{post.data.description}</p>
+
+        <FormattedDate date={post.data.pubDate} />
+        {
+          post.data.updateDate && (
+            <div>
+              Last updated on <FormattedDate date={post.data.updateDate} />
+            </div>
+          )
+        }
+      </div>
+      <div class="article-body">
+        <Content />
+      </div>
+    </article>
+  </main>
+</LayoutBase>

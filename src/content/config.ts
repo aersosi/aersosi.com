@@ -12,6 +12,8 @@ const blog = defineCollection({
 	schema: z.object({
 		title: z.string(),
 		description: z.string(),
+		categories: z.string().array(),
+		tags: z.string().array(),
 		// Transform string to Date object
 		pubDate: z.preprocess(
 			(val) => germanDateToDate(val as string),

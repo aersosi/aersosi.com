@@ -1,0 +1,28 @@
+---
+import type { CollectionEntry } from "astro:content";
+import FormattedDate from "../../components/FormattedDate/FormattedDate.astro";
+import { getReadingTime } from "../../utils/reading-time";
+
+interface Props {
+  post: CollectionEntry<"blog">;
+}
+
+const { post } = Astro.props;
+const readingTime = getReadingTime(post.body);
+---
+
+<a href={`/blog/${post.slug}/`}>
+  <img
+    width={720}
+    height={360}
+    src={post.data.heroImage}
+    alt={post.data.heroAltText}
+  />
+  <p>{post.data.categories}</p>
+  <p>{post.data.tags}</p>
+  <h4>{post.data.title}</h4>
+  <p>
+    <FormattedDate date={post.data.pubDate} />
+  </p>
+  <p>{readingTime}</p>
+</a>

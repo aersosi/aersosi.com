@@ -1,6 +1,5 @@
 ---
-import "./_index.scss";
-import Layout from "../layouts/Skeleton.astro";
+import LayoutBase from "../layouts/LayoutBase.astro";
 import CodeBlock from "../components/CodeBlock/CodeBlock.astro";
 import Email from "../components/EmailObfuscation/EmailObfuscation.astro";
 import Loading from "../components/Loading/Loading.astro";
@@ -8,7 +7,7 @@ import Portrait from "../components/Portrait/Portrait.astro";
 import SpinningGlow from "../components/SpinningGlow/SpinningGlow.astro";
 ---
 
-<Layout title="Arthur Ersosi" description="Arthur Ersosi personal website">
+<LayoutBase title="Arthur Ersosi" description="Arthur Ersosi personal website">
   <main class="flex flex-col gap-4 justify-around items-center font-mono-400">
     <h1 class="flex flex-col gap-2">
       <span class="flex gap-x-4 flex-wrap justify-center">
@@ -17,13 +16,6 @@ import SpinningGlow from "../components/SpinningGlow/SpinningGlow.astro";
       </span>
       <span class="font-mono-400 uppercase engineer">Design Engineer</span>
     </h1>
-    <nav>
-      <a href="/">Home</a>
-      <a href="/work">Work</a>
-      <a href="/blog">Blog</a>
-      <a href="/about">About</a>
-      <a href="/contact">Contact</a>
-    </nav>
 
     <CodeBlock title="CLI" body="npx @aersosi/clicv" />
 
@@ -54,4 +46,4 @@ import SpinningGlow from "../components/SpinningGlow/SpinningGlow.astro";
 
   <Portrait />
   <Loading />
-</Layout>
+</LayoutBase>
