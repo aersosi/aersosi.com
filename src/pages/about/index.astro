@@ -1,4 +1,5 @@
 ---
+import H1 from "../../components/H1/H1.astro";
 import LayoutBase from "../../layouts/LayoutBase.astro";
 
 const title = "About me";
@@ -6,7 +7,7 @@ const description = "About me description is cool";
 ---
 
 <LayoutBase title={title} description={description}>
-  <h1>{title}</h1>
+  <H1 title={title} />
 
   <main>
     <section></section>

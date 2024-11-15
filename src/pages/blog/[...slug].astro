@@ -3,6 +3,7 @@ import { type CollectionEntry, getCollection } from "astro:content";
 import LayoutBase from "../../layouts/LayoutBase.astro";
 import { getReadingTime } from "../../utils/reading-time";
 import FormattedDate from "../../components/FormattedDate/FormattedDate.astro";
+import H1 from "../../components/H1/H1.astro";
 
 export const getStaticPaths = async () => {
   const posts = await getCollection("blog");
@@ -18,12 +19,11 @@ const readingTime = getReadingTime(post.body) ?? "1 min read";
 ---
 
 <LayoutBase {...post.data}>
-  {post.data.title}
-
   <main>
     <article>
       <div class="article-head">
-        <h1>{post.data.title}</h1>
+        <H1 title={post.data.title} />
+        <!-- <h1>{post.data.title}</h1> -->
         <p>{readingTime}</p>
 
         <p>
@@ -42,9 +42,11 @@ const readingTime = getReadingTime(post.body) ?? "1 min read";
           src={`/${post.data.heroImage}`}
           alt={post.data.heroAltText}
         />
-        <p>{post.data.description}</p>
+        <div class="flex justify-between bg-red-500">
+          <p>{post.data.description}</p>
 
-        <FormattedDate date={post.data.pubDate} />
+          <FormattedDate date={post.data.pubDate} />
+        </div>
         {
           post.data.updateDate && (
             <div>
