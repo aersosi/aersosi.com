@@ -1,0 +1,18 @@
+---
+import H1 from "../../../components/H1/H1.astro";
+import LayoutBase from "../../../layouts/LayoutBase.astro";
+import HowMuchIsMyWhey from "../../../components/FreeTools/HowMuchIsMyWhey";
+
+const title = "How much is my WHEY?";
+const description = "How much is my WHEY?";
+---
+
+<LayoutBase title={title} description={description}>
+  <H1 title={title} />
+
+  <main>
+    <section>
+      <HowMuchIsMyWhey client:load/>
+    </section>
+  </main>
+</LayoutBase>
