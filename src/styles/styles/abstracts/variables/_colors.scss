@@ -1,24 +1,22 @@
 @use "../../utils/color-palette-generator" as palette;
 
-$primary-color: #ff7300;
-$secondary-color: #3c4884;
+$primary-color: #1745CE;
+$secondary-color: #FFE917;
 
-$shades: 1, 5, 10, 50, 100, 200, 300, 400, 500, 600, 700, 800, 900, 950, 1000;
-//
-//@each $shade in $shades {
-//  .color-primary-#{$shade} {
-//    color: palette.generate($primary-color, $shade);
-//  }
-//  .bg-primary-#{$shade} {
-//    background-color: palette.generate($primary-color, $shade);
-//  }
-//}
 $shades: 10, 50, 100, 200, 300, 400, 500, 600, 700, 800, 900;
 
 :root {
   @each $shade in $shades {
     --color-primary-#{$shade}: #{palette.generate(
         $primary-color,
+        $shade,
+        0.025,
+        0.95
+      )};
+  }
+  @each $shade in $shades {
+    --color-secondary-#{$shade}: #{palette.generate(
+        $secondary-color,
         $shade,
         0.025,
         0.95
@@ -39,9 +37,9 @@ $shades: 10, 50, 100, 200, 300, 400, 500, 600, 700, 800, 900;
   --color-secondary-500: #{$secondary-color};
   --gradient-primary: linear-gradient(
     45deg,
-    var(--color-primary-500),
-    var(--color-primary-100) 30%,
-    var(--color-primary-50) 50%,
+    var(--color-secondary-500),
+    var(--color-secondary-100) 30%,
+    var(--color-secondary-50) 50%,
     white 80%
   );
 }
