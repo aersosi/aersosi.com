@@ -125,10 +125,10 @@
 
 .cli-card:is(:hover, :focus-within) {
   .npx {
-    color: var(--color-primary-500);
+    color: var(--color-secondary-500);
 
     &:after {
-      background-color: var(--color-primary-500);
+      background-color: var(--color-secondary-500);
     }
   }
 }
