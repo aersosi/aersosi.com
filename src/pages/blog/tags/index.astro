@@ -1,0 +1,60 @@
+---
+// Assets
+import { Image } from "astro:assets";
+// Fundations
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import Text from "@/components/fundations/elements/Text.astro";
+import Wrapper from "@/components/fundations/containers/Wrapper.astro";
+// Content
+import { getCollection } from "astro:content";
+import GoBack from "../../../components/assets/GoBack.astro";
+import Link from "../../../components/fundations/elements/Link.astro";
+// Get all posts
+const allPosts = await getCollection("posts");
+// Extract tags from all posts and count occurrences
+const tagCounts = allPosts.reduce((acc, post) => {
+    post.data.tags.forEach((tag) => {
+        acc[tag] = (acc[tag] || 0) + 1; // Count each tag per post
+    });
+    return acc;
+}, {});
+// Extract unique tags for display
+const tags = Object.keys(tagCounts);
+// Function to get the image for a specific tag
+function getTagImage(tag) {
+    const filteredPosts = allPosts.filter((post) => post.data.tags.includes(tag));
+    if (filteredPosts.length > 0) {
+        return filteredPosts[0].data.image.url; // Return the image of the first post with that tag
+    }
+}
+---
+
+<BaseLayout>
+    <section>
+        <Wrapper variant="standard">
+            <div
+                    class="grid grid-cols-1 gap-x-12 gap-y-8 lg:grid-cols-3 pb-16 pt-24 lg:pt-40"
+            >
+                <div class="lg:sticky lg:top-16 lg:z-40 self-start">
+                    <div class="flex gap-8 flex-col">
+                        <GoBack/>
+
+                        <Text tag="h1" variant="textLG" class="font-medium text-base-900 dark:text-white">
+                            Explore all categories
+                        </Text>
+                    </div>
+                </div>
+
+                <div class="flex flex-col gap-2 lg:col-span-2">
+                    {tags.map((tag) => (
+                            <Link title={tag} aria-label={tag} href={`/blog/tags/${tag}`} size="sm"
+                                  variant="accent">
+                                <span>{tagCounts[tag]}</span>
+                                <span>{tag}</span>
+                            </Link>
+                    ))}
+                </div>
+            </div>
+        </Wrapper>
+    </section>
+</BaseLayout>

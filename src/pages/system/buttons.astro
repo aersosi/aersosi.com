@@ -1,0 +1,266 @@
+---
+// Fundations
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import Text from "@/components/fundations/elements/Text.astro";
+import Button from "@/components/fundations/elements/Button.astro";
+import Wrapper from "@/components/fundations/containers/Wrapper.astro";
+// Icons
+import User from "@/components/fundations/icons/User.astro";
+---
+
+<BaseLayout>
+    <section>
+        <Wrapper variant="standard" class="pb-8 pt-24">
+            <Text
+                    tag="h1"
+                    variant="textSM"
+                    class="font-medium text-base-900 dark:text-white"
+            >
+                Buttons
+            </Text>
+            <div class="flex flex-col py-8 mt-8 gap-12 border-t border-base-300 dark:border-base-600">
+                <!-- Default -->
+                <div class="grid grid-cols-2 md:grid-cols-2 gap-8">
+                    <div class="w-full">
+                        <Text tag="p" variant="textSM" class="font-medium uppercase text-base-900 dark:text-white">
+                            Default text
+                        </Text>
+                        <div class="flex flex-col mt-4 gap-4">
+                            <Button size="xxs" variant="default">Default XXS</Button>
+                            <Button size="xs" variant="default">Default XS</Button>
+                            <Button size="sm" variant="default">Default SM</Button>
+                            <Button size="base" variant="default">Default Base</Button>
+                            <Button size="lg" variant="default">Default LG</Button>
+                            <Button size="xl" variant="default">Default XL</Button>
+                        </div>
+                    </div>
+                    <div>
+                        <Text tag="p" variant="textSM" class="font-medium uppercase text-base-900 dark:text-white">
+                            Icon
+                        </Text>
+                        <div class="flex flex-col mt-4 gap-4">
+
+                            <Button isLink={true} href="#_" size="xxs" variant="default" iconOnly>
+                                <User slot="icon" size="xs"/>
+                            </Button>
+
+                            <Button isLink={true} href="#_" size="xs" variant="default" iconOnly>
+                                <User slot="icon" size="xs"/>
+                            </Button>
+
+                            <Button isLink={true} href="#_" size="sm" variant="default" iconOnly>
+                                <User slot="icon" size="sm"/>
+                            </Button>
+
+                            <Button isLink={true} href="#_" size="base" variant="default" iconOnly>
+                                <User slot="icon" size="base"/>
+                            </Button>
+
+                            <Button isLink={true} href="#_" size="lg" variant="default" iconOnly>
+                                <User slot="icon" size="lg"/>
+                            </Button>
+
+                            <Button isLink={true} href="#_" size="xl" variant="default" iconOnly>
+                                <User slot="icon" size="xl"/>
+                            </Button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Primary -->
+                <div class="grid grid-cols-2 md:grid-cols-2 gap-8">
+                    <div class="w-full">
+                        <Text tag="p" variant="textSM" class="font-medium uppercase text-base-900 dark:text-white">
+                            Primary text
+                        </Text>
+                        <div class="flex flex-col mt-4 gap-4">
+                            <Button size="xxs" variant="primary">Primary XXS</Button>
+                            <Button size="xs" variant="primary">Primary XS</Button>
+                            <Button size="sm" variant="primary">Primary SM</Button>
+                            <Button size="base" variant="primary">Primary Base</Button>
+                            <Button size="lg" variant="primary">Primary LG</Button>
+                            <Button size="xl" variant="primary">Primary XL</Button>
+                        </div>
+                    </div>
+                    <div>
+                        <Text tag="p" variant="textSM" class="font-medium uppercase text-base-900 dark:text-white">
+                            Icon
+                        </Text>
+                        <div class="flex flex-col mt-4 gap-4">
+
+                            <Button isLink={true} href="#_" size="xxs" variant="primary" iconOnly>
+                                <User slot="icon" size="xs"/>
+                            </Button>
+
+                            <Button isLink={true} href="#_" size="xs" variant="primary" iconOnly>
+                                <User slot="icon" size="xs"/>
+                            </Button>
+
+                            <Button isLink={true} href="#_" size="sm" variant="primary" iconOnly>
+                                <User slot="icon" size="sm"/>
+                            </Button>
+
+                            <Button isLink={true} href="#_" size="base" variant="primary" iconOnly>
+                                <User slot="icon" size="base"/>
+                            </Button>
+
+                            <Button isLink={true} href="#_" size="lg" variant="primary" iconOnly>
+                                <User slot="icon" size="lg"/>
+                            </Button>
+
+                            <Button isLink={true} href="#_" size="xl" variant="primary" iconOnly>
+                                <User slot="icon" size="xl"/>
+                            </Button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Secondary -->
+                <div class="grid grid-cols-2 md:grid-cols-2 gap-8">
+                    <div class="w-full">
+                        <Text tag="p" variant="textSM" class="font-medium uppercase text-base-900 dark:text-white">
+                            Secondary text
+                        </Text>
+                        <div class="flex flex-col mt-4 gap-4">
+                            <Button size="xxs" variant="secondary">Secondary XXS</Button>
+                            <Button size="xs" variant="secondary">Secondary XS</Button>
+                            <Button size="sm" variant="secondary">Secondary SM</Button>
+                            <Button size="base" variant="secondary">Secondary Base</Button>
+                            <Button size="lg" variant="secondary">Secondary LG</Button>
+                            <Button size="xl" variant="secondary">Secondary XL</Button>
+                        </div>
+                    </div>
+                    <div>
+                        <Text tag="p" variant="textSM" class="font-medium uppercase text-base-900 dark:text-white">
+                            Icon
+                        </Text>
+                        <div class="flex flex-col mt-4 gap-4">
+
+                            <Button isLink={true} href="#_" size="xxs" variant="secondary" iconOnly>
+                                <User slot="icon" size="xs"/>
+                            </Button>
+
+                            <Button isLink={true} href="#_" size="xs" variant="secondary" iconOnly>
+                                <User slot="icon" size="xs"/>
+                            </Button>
+
+                            <Button isLink={true} href="#_" size="sm" variant="secondary" iconOnly>
+                                <User slot="icon" size="sm"/>
+                            </Button>
+
+                            <Button isLink={true} href="#_" size="base" variant="secondary" iconOnly>
+                                <User slot="icon" size="base"/>
+                            </Button>
+
+                            <Button isLink={true} href="#_" size="lg" variant="secondary" iconOnly>
+                                <User slot="icon" size="lg"/>
+                            </Button>
+
+                            <Button isLink={true} href="#_" size="xl" variant="secondary" iconOnly>
+                                <User slot="icon" size="xl"/>
+                            </Button>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Accent -->
+                <div class="grid grid-cols-2 md:grid-cols-2 gap-8">
+                    <div class="w-full">
+                        <Text tag="p" variant="textSM" class="font-medium uppercase text-base-900 dark:text-white">
+                            Accent text
+                        </Text>
+                        <div class="flex flex-col mt-4 gap-4">
+                            <Button size="xxs" variant="accent">Accent XXS</Button>
+                            <Button size="xs" variant="accent">Accent XS</Button>
+                            <Button size="sm" variant="accent">Accent SM</Button>
+                            <Button size="base" variant="accent">Accent Base</Button>
+                            <Button size="lg" variant="accent">Accent LG</Button>
+                            <Button size="xl" variant="accent">Accent XL</Button>
+                        </div>
+                    </div>
+                    <div>
+                        <Text tag="p" variant="textSM" class="font-medium uppercase text-base-900 dark:text-white">
+                            Icon
+                        </Text>
+                        <div class="flex flex-col mt-4 gap-4">
+
+                            <Button isLink={true} href="#_" size="xxs" variant="accent" iconOnly>
+                                <User slot="icon" size="xs"/>
+                            </Button>
+
+                            <Button isLink={true} href="#_" size="xs" variant="accent" iconOnly>
+                                <User slot="icon" size="xs"/>
+                            </Button>
+
+                            <Button isLink={true} href="#_" size="sm" variant="accent" iconOnly>
+                                <User slot="icon" size="sm"/>
+                            </Button>
+
+                            <Button isLink={true} href="#_" size="base" variant="accent" iconOnly>
+                                <User slot="icon" size="base"/>
+                            </Button>
+
+                            <Button isLink={true} href="#_" size="lg" variant="accent" iconOnly>
+                                <User slot="icon" size="lg"/>
+                            </Button>
+
+                            <Button isLink={true} href="#_" size="xl" variant="accent" iconOnly>
+                                <User slot="icon" size="xl"/>
+                            </Button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Muted -->
+                <div class="grid grid-cols-2 md:grid-cols-2 gap-8">
+                    <div class="w-full">
+                        <Text tag="p" variant="textSM" class="font-medium uppercase text-base-900 dark:text-white">
+                            Muted text
+                        </Text>
+                        <div class="flex flex-col mt-4 gap-4">
+                            <Button size="xxs" variant="muted">Muted XXS</Button>
+                            <Button size="xs" variant="muted">Muted XS</Button>
+                            <Button size="sm" variant="muted">Muted SM</Button>
+                            <Button size="base" variant="muted">Muted Base</Button>
+                            <Button size="lg" variant="muted">Muted LG</Button>
+                            <Button size="xl" variant="muted">Muted XL</Button>
+                        </div>
+                    </div>
+                    <div>
+                        <Text tag="p" variant="textSM" class="font-medium uppercase text-base-900 dark:text-white">
+                            Icon
+                        </Text>
+                        <div class="flex flex-col mt-4 gap-4">
+
+                            <Button isLink={true} href="#_" size="xxs" variant="muted" iconOnly>
+                                <User slot="icon" size="xs"/>
+                            </Button>
+
+                            <Button isLink={true} href="#_" size="xs" variant="muted" iconOnly>
+                                <User slot="icon" size="xs"/>
+                            </Button>
+
+                            <Button isLink={true} href="#_" size="sm" variant="muted" iconOnly>
+                                <User slot="icon" size="sm"/>
+                            </Button>
+
+                            <Button isLink={true} href="#_" size="base" variant="muted" iconOnly>
+                                <User slot="icon" size="base"/>
+                            </Button>
+
+                            <Button isLink={true} href="#_" size="lg" variant="muted" iconOnly>
+                                <User slot="icon" size="lg"/>
+                            </Button>
+
+                            <Button isLink={true} href="#_" size="xl" variant="muted" iconOnly>
+                                <User slot="icon" size="xl"/>
+                            </Button>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </Wrapper>
+    </section>
+</BaseLayout>

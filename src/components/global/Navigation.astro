@@ -1,0 +1,118 @@
+---
+// Fundations
+import Button from "@/components/fundations/elements/Button.astro";
+// Icons
+import Eye from "@/components/fundations/icons/Eye.astro";
+import Book from "@/components/fundations/icons/Book.astro";
+import AlignLeft from "../fundations/icons/AlignLeft.astro";
+import Tool from "../fundations/icons/Tool.astro";
+import User from "../fundations/icons/User.astro";
+// Scripts
+import ThemeToggle from "@/components/assets/ThemeToggle.astro";
+import Zap from "../fundations/icons/Zap.astro";
+
+const baseClass = [
+    "fixed",
+    "w-fit",
+    "z-50",
+
+    // mobile center
+    "top-5",
+    "left-1/2",
+    "-translate-x-1/2",
+
+    // lg right fixed
+    "lg:top-14",
+    "lg:right-14",
+    "lg:left-auto",
+    "lg:translate-x-0",
+
+    // xl right aligned
+    "xl:left-1/2",
+    "xl:translate-x-60",
+];
+
+const activeClass = [
+    "!bg-accent-800",
+    "!dark:bg-accent-100",
+    "",
+    "",
+]
+---
+
+
+<div class:list={[
+    ...baseClass,
+]}>
+
+    <script is:inline>
+        window.addEventListener('DOMContentLoaded', () => {
+            function highlightHashNav() {
+                const hash = window.location.hash;
+                const currentUrl = window.location.pathname + hash;
+
+                const allLinks = document.querySelectorAll('nav a[href]');
+                const classes = [
+                    'bg-secondary-500',
+                    'hover:bg-secondary-400',
+                    'dark:bg-secondary-400',
+                    'dark:hover:bg-secondary-300',
+                    '!text-base-800',
+                ];
+
+                allLinks.forEach((el) => {
+                    const linkHref = el.getAttribute('href');
+
+                    if (linkHref === currentUrl || linkHref === hash) {
+                        classes.forEach(c => el.classList.add(c));
+                    } else {
+                        classes.forEach(c => el.classList.remove(c));
+                    }
+                });
+            }
+
+            highlightHashNav();
+            window.addEventListener('hashchange', highlightHashNav);
+        });
+    </script>
+
+
+    <nav class="bg-base-200/50 dark:bg-base-800/50 backdrop-blur-xs rounded-xl w-auto">
+        <div class="flex items-center p-2 gap-2">
+            <!-- Logo/Home button -->
+
+            <Button isLink={true} iconOnly size="sm" variant="accent"
+                    href="/#home" title="Home" aria-label="Home">
+                <Zap slot="icon" class="p-2"/>
+            </Button>
+
+            <Button isLink={true} iconOnly size="sm" variant="accent"
+                    href="/blog/tags/project" title="My Projects" aria-label="My Projects">
+                <Tool slot="icon" size="sm"/>
+            </Button>
+
+            <Button isLink={true} iconOnly size="sm" variant="accent"
+                    href="/#cv" title="Curriculum Vitae" aria-label="Curriculum Vitae">
+                <AlignLeft slot="icon" size="sm"/>
+            </Button>
+
+
+            <Button isLink={true} iconOnly size="sm" variant="accent"
+                    href="/blog/" title="Writings" aria-label="Writings">
+                <Book slot="icon" size="sm"/>
+            </Button>
+
+            <Button isLink={true} iconOnly size="sm" variant="accent"
+                    href="/blog/posts/about-me" title="About me" aria-label="About me">
+                <User slot="icon" size="sm"/>
+            </Button>
+
+            <ThemeToggle title="Toggle theme" aria-label="Toggle theme"/>
+
+            <Button isLink={true} iconOnly size="sm" variant="accent"
+                    href="/system/overview" title="System Overview" aria-label="System Overview">
+                <Eye slot="icon" size="sm"/>
+            </Button>
+        </div>
+    </nav>
+</div>
