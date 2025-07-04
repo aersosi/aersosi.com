@@ -2,9 +2,10 @@
 // Fundations
 import Text from "@/components/fundations/elements/Text.astro";
 import Wrapper from "@/components/fundations/containers/Wrapper.astro";
-import { Image } from 'astro:assets';
 import Link from "../fundations/elements/Link.astro";
 import ArrowRight from "../fundations/icons/ArrowRight.astro";
+import { Image } from 'astro:assets';
+import portrait from '/src/images/portrait.webp';
 ---
 
 <section>
@@ -30,7 +31,7 @@ import ArrowRight from "../fundations/icons/ArrowRight.astro";
                                loading="eager"
                                decoding="async"
                                alt="Portrait Arthur Ersosi"
-                               src="/src/images/portrait.webp"
+                               src={portrait}
                                class="aspect-12/10 lg:aspect-square object-cover object-center rounded-xl"
                         />
                     </span>

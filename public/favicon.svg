@@ -1,9 +1,0 @@
-<svg width="128" height="128" viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <style>
-        .ae_favColor { fill: #1745CE; }
-        @media (prefers-color-scheme: dark) {
-        .ae_favColor { fill: #FFE917; }
-        }
-    </style>
-    <circle class="ae_favColor" cx="64" cy="64" r="64"/>
-</svg>
