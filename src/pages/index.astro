@@ -1,18 +1,39 @@
 ---
-// Fundation
-import BaseLayout from "@/layouts/BaseLayout.astro";
-// Sections
-import Intro from "@/components/landing/Intro.astro";
-import Projects from "@/components/landing/Projects.astro";
-import Writings from "@/components/landing/Writings.astro";
-import Social from "@/components/landing/Socials.astro";
-// import CV from "@/components/landing/CV.astro";
+import "./_index.scss";
+import Layout from "../layouts/Skeleton.astro";
+import CodeBlock from "../components/CodeBlock/CodeBlock.astro";
+import Email from "../components/EmailObfuscation/EmailObfuscation.astro";
+import Loading from "../components/Loading/Loading.astro";
+import Portrait from "../components/Portrait/Portrait.astro";
+import SpinningGlow from "../components/SpinningGlow/SpinningGlow.astro";
 ---
 
-<BaseLayout>
-  <Intro />
-  <Projects />
-  <!--<CV />-->
-  <Writings />
-  <Social />
-</BaseLayout>
+<Layout title="Arthur Ersosi" description="Arthur Ersosi personal website">
+  <main class="flex flex-col gap-4 justify-around items-center font-mono-400">
+    <h1 class="flex flex-col gap-2">
+      <span class="flex gap-x-4 flex-wrap justify-center">
+        <span class="font-serif-500 name">Arthur Ersosi</span>
+      </span>
+      <span class="font-mono-400 uppercase engineer">Design Engineer</span>
+    </h1>
+
+    <CodeBlock title="CLI" body="npx @aersosi/clicv" />
+
+    <div class="flex flex-col items-center gap-4 text-base more-info">
+      <p class="color-primary-500">
+        <Email address="hello@aersosi.com" />
+      </p>
+        <a
+          class="text-link font-mono-500"
+          aria-label="Open german CV"
+          href="/CV_Ersosi_12_2024.pdf"
+          download="CV_Ersosi_12_2024.pdf">Download my CV</a
+        >
+    </div>
+
+    <SpinningGlow />
+  </main>
+
+  <Portrait />
+  <Loading />
+</Layout>

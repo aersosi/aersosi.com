@@ -1,0 +1,75 @@
+@use "sass:meta";
+
+@function is-unitless-number($value, $name: "value") {
+  @if type-of($value) != number {
+    @warn '#{ $name } (#{ $value }) is not a number.';
+    @return null;
+  } @else if not unitless($value) {
+    @warn '#{ $name } (#{ $value }) has a unit.';
+    @return null;
+  }
+  @return $value;
+}
+
+@function is-number($value, $name: "value") {
+  @if type-of($value) != number {
+    @warn '#{ $name } (#{ $value }) is not a number.';
+    @return null;
+  }
+  @return $value;
+}
+
+@function is-list($value, $name: "value") {
+  @if type-of($value) != list {
+    @warn '#{ $name } (#{ $value }) is not a list.';
+    @return null;
+  }
+  @return $value;
+}
+
+@function is-map($value, $name: "value") {
+  @if type-of($value) != map {
+    @warn '#{ $name } (#{ $value }) is not a map.';
+    @return null;
+  }
+  @return $value;
+}
+
+@function is-color($value, $name: "value") {
+  @if type-of($value) != color {
+    @warn '#{ $name } (#{ $value }) is not a color.';
+    @return null;
+  }
+  @return $value;
+}
+
+@function is-string($value, $name: "value") {
+  @if type-of($value) != string {
+    @warn '#{ $name } (#{ $value }) is not a string.';
+    @return null;
+  }
+  @return $value;
+}
+
+@function is-bool($value, $name: "value") {
+  @if type-of($value) != bool {
+    @warn '#{ $name } (#{ $value }) is not a boolean.';
+    @return null;
+  }
+  @return $value;
+}
+
+@function is-null($value, $name: "value") {
+  @if type-of($value) != null {
+    @warn '#{ $name } (#{ $value }) is not null.';
+    @return null;
+  }
+  @return $value;
+}
+
+@function is-left-right($value) {
+  @if $value == left or $value == right {
+    @return true;
+  }
+  @return false;
+}

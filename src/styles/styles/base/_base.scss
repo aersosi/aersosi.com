@@ -1,0 +1,22 @@
+html,
+body {
+  height: 100%;
+}
+
+html {
+  font-family: system-ui, sans-serif;
+  background: #fffbe6;
+  background: var(--color-secondary-5);
+}
+
+code {
+  font-family:
+    Menlo,
+    Monaco,
+    Lucida Console,
+    Liberation Mono,
+    DejaVu Sans Mono,
+    Bitstream Vera Sans Mono,
+    Courier New,
+    monospace;
+}
