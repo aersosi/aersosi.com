@@ -34,6 +34,8 @@ const currentPath = pathname.slice(1);
 - [ ] Impressum
 - [ ] Google Font selbst hosten
 - [ ] Sitemap
+- [ ] Robots.txt
+
 ```plain text
 My name is Rasmus Andersson. I’m a Swedish he/him living in San Francisco, California. 
 Software is the medium through which I express myself.
