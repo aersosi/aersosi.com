@@ -1,23 +1,23 @@
-import {defineConfig} from 'astro/config';
-import sitemap from '@astrojs/sitemap';
-import tailwind from '@astrojs/tailwind';
-import prefetch from '@astrojs/prefetch';
-import inlinePlayform from '@playform/inline';
-import formatPlayform from '@playform/format';
-import compressPlayform from '@playform/compress';
-
+import { defineConfig } from 'astro/config';
+import tailwindcss from '@tailwindcss/vite';
+import sitemap from "@astrojs/sitemap";
+import mdx from '@astrojs/mdx';
 // https://astro.build/config
 export default defineConfig({
-    site: "https://aersosi.com",
-    integrations: [
-        sitemap(),
-        tailwind(),
-        prefetch(),
-        inlinePlayform({
-            Logger: 1
-        }), formatPlayform({
-            Logger: 1
-        }), compressPlayform({
-            Logger: 1
-        })]
+  vite: {
+    plugins: [tailwindcss()],
+  },
+  markdown: {
+    drafts: true,
+    shikiConfig: {
+      theme: "css-variables"
+    }
+  },
+  shikiConfig: {
+    wrap: true,
+    skipInline: false,
+    drafts: true
+  },
+  site: 'https://yourdomain.com',
+  integrations: [sitemap(), mdx()]
 });

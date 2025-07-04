@@ -1,0 +1,203 @@
+---
+// Fundations
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import Text from "@/components/fundations/elements/Text.astro";
+import Link from "@/components/fundations/elements/Link.astro";
+import Wrapper from "@/components/fundations/containers/Wrapper.astro";
+// Icons
+import ArrowRight from "@/components/fundations/icons/ArrowRight.astro";
+---
+
+<BaseLayout>
+    <section>
+        <Wrapper variant="standard" class="pb-8 pt-24">
+            <Text
+                    tag="h1"
+                    variant="textSM"
+                    class="font-medium text-base-900 dark:text-white"
+            >
+                Links
+            </Text>
+            <div
+                    class="flex flex-col pt-8 mt-8 border-t gap-12 border-base-300 dark:border-base-600"
+            >
+                <!-- Default -->
+                <div class="grid grid-cols-2 md:grid-cols-2 gap-8">
+                    <div class="w-full">
+                        <Text
+                                tag="p"
+                                variant="textSM"
+                                class="font-medium uppercase text-base-900 dark:text-white"
+                        >
+                            Default text
+                        </Text>
+                        <div class="flex flex-col mt-4 gap-4">
+                            <Link href="#_" size="xs" variant="default">
+                                Default XS
+                            </Link>
+                            <Link href="#_" size="sm" variant="default">
+                                Default SM
+                            </Link>
+                            <Link href="#_" size="base" variant="default">
+                                Default Base
+                            </Link>
+                            <Link href="#_" size="lg" variant="default">
+                                Default LG
+                            </Link>
+                            <Link href="#_" size="xl" variant="default">
+                                Default XL
+                            </Link>
+                        </div>
+                    </div>
+                    <div>
+                        <Text tag="p" variant="textSM"
+                              class="font-medium uppercase text-base-900 dark:text-white">
+                            Icon
+                        </Text>
+                        <div class="flex flex-col mt-4 gap-4">
+                            <Link href="#_" size="xs" variant="default">
+                                Default XS
+                                <ArrowRight size="xs"/>
+                            </Link>
+                            <Link href="#_" size="sm" variant="default">
+                                Default SM
+                                <ArrowRight size="sm"/>
+                            </Link>
+                            <Link href="#_" size="base" variant="default">
+                                Default Base
+                                <ArrowRight size="base"/>
+                            </Link>
+                            <Link href="#_" size="lg" variant="default">
+                                Default LG
+                                <ArrowRight size="lg"/>
+                            </Link>
+                            <Link href="#_" size="xl" variant="default">
+                                Default XL
+                                <ArrowRight size="xl"/>
+                            </Link>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Accent -->
+                <div class="grid grid-cols-2 md:grid-cols-2 gap-8">
+                    <div class="w-full">
+                        <Text
+                                tag="p"
+                                variant="textSM"
+                                class="font-medium uppercase text-base-900 dark:text-white"
+                        >
+                            Accent text
+                        </Text>
+                        <div class="flex flex-col mt-4 gap-4">
+                            <Link href="#_" size="xs" variant="accent">
+                                Accent XS
+                            </Link>
+                            <Link href="#_" size="sm" variant="accent">
+                                Accent SM
+                            </Link>
+                            <Link href="#_" size="base" variant="accent">
+                                Accent Base
+                            </Link>
+                            <Link href="#_" size="lg" variant="accent">
+                                Accent LG
+                            </Link>
+                            <Link href="#_" size="xl" variant="accent">
+                                Accent XL
+                            </Link>
+                        </div>
+                    </div>
+                    <div>
+                        <Text tag="p" variant="textSM"
+                              class="font-medium uppercase text-base-900 dark:text-white">
+                            Icon
+                        </Text>
+                        <div class="flex flex-col mt-4 gap-4">
+                            <Link href="#_" size="xs" variant="accent">
+                                Accent XS
+                                <ArrowRight size="xs"/>
+                            </Link>
+                            <Link href="#_" size="sm" variant="accent">
+                                Accent SM
+                                <ArrowRight size="sm"/>
+                            </Link>
+                            <Link href="#_" size="base" variant="accent">
+                                Accent Base
+                                <ArrowRight size="base"/>
+                            </Link>
+                            <Link href="#_" size="lg" variant="accent">
+                                Accent LG
+                                <ArrowRight size="lg"/>
+                            </Link>
+                            <Link href="#_" size="xl" variant="accent">
+                                Accent XL
+                                <ArrowRight size="xl"/>
+                            </Link>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Primary -->
+                <div class="grid grid-cols-2 md:grid-cols-2 gap-8">
+                    <div class="w-full">
+                        <Text
+                                tag="p"
+                                variant="textSM"
+                                class="font-medium uppercase text-base-900 dark:text-white"
+                        >
+                            Primary text
+                        </Text>
+                        <div class="flex flex-col mt-4 gap-4">
+                            <Link href="#_" size="xs" variant="primary">
+                                Primary XS
+                            </Link>
+                            <Link href="#_" size="sm" variant="primary">
+                                Primary SM
+                            </Link>
+                            <Link href="#_" size="base" variant="primary">
+                                Primary Base
+                            </Link>
+                            <Link href="#_" size="lg" variant="primary">
+                                Primary LG
+                            </Link>
+                            <Link href="#_" size="xl" variant="primary">
+                                Primary XL
+                            </Link>
+                        </div>
+                    </div>
+                    <div>
+                        <Text tag="p" variant="textSM"
+                              class="font-medium uppercase text-base-900 dark:text-white">
+                            Icon
+                        </Text>
+                        <div class="flex flex-col mt-4 gap-4">
+                            <Link href="#_" size="xs" variant="primary">
+                                Primary XS
+                                <ArrowRight size="xs"/>
+                            </Link>
+                            <Link href="#_" size="sm" variant="primary">
+                                Primary SM
+                                <ArrowRight size="sm"/>
+                            </Link>
+                            <Link href="#_" size="base" variant="primary">
+                                Primary Base
+                                <ArrowRight size="base"/>
+                            </Link>
+                            <Link href="#_" size="lg" variant="primary">
+                                Primary LG
+                                <ArrowRight size="lg"/>
+                            </Link>
+                            <Link href="#_" size="xl" variant="primary">
+                                Primary XL
+                                <ArrowRight size="xl"/>
+                            </Link>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </Wrapper>
+    </section>
+</BaseLayout>
