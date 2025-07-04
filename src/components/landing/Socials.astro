@@ -1,0 +1,58 @@
+---
+// Fundations
+import Text from "@/components/fundations/elements/Text.astro";
+import Wrapper from "@/components/fundations/containers/Wrapper.astro";
+import Link from "../fundations/elements/Link.astro";
+import ExternalLink from "../fundations/icons/ExternalLink.astro";
+
+const links = [
+    {
+        platform: "twitter",
+        name: "@aersosi",
+        url: "https://x.com/aersosi",
+    },
+    {
+        platform: "GitHub",
+        name: "/aersosi",
+
+        url: "https://github.com/aersosi",
+    },
+    {
+        platform: "Linkedin",
+        name: "/aersosi",
+
+        url: "https://www.linkedin.com/in/aersosi/",
+    },
+    {
+        platform: "Email",
+        name: "hello@aersosi.com",
+        url: "hello@aersosi.com",
+    },
+];
+---
+
+<section>
+    <Wrapper variant="standard">
+        <div
+                class="grid grid-cols-1 gap-x-12 gap-y-8 lg:grid-cols-3 py-24"
+        >
+            <div class="lg:sticky lg:top-16 lg:z-40 self-start">
+                <Text tag="h2" variant="textBase" class="font-medium text-base-900 dark:text-white">
+                    Netzwerke
+                </Text>
+            </div>
+            <div class="flex flex-col gap-2 lg:col-span-2">
+                {
+                    links.map((social) => (
+                            <Link target="_blank" href={social.url} size="base" variant="accent" class="group">
+                                <span>{social.platform}</span>
+                                <span>{social.name}</span>
+                                <ExternalLink size="base"
+                                              class="-mt-0.5 transition duration-300 opacity-0 group-hover:opacity-100"/>
+                            </Link>
+                    ))
+                }
+            </div>
+        </div>
+    </Wrapper>
+</section>

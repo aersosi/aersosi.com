@@ -1,0 +1,96 @@
+---
+const {
+    variant,
+    size,
+    gap,
+    class: className,
+    ...rest
+} = Astro.props;
+
+
+const defaultClass = [
+    // light
+    "text-base-800",
+    "hover:text-base-500",
+    "focus:ring-base-800",
+    // dark
+    "dark:text-base-50",
+    "dark:hover:text-base-400",
+    "dark:focus:ring-base-50",
+];
+
+const primaryClass = [
+    // light
+    "text-primary-400",
+    "hover:text-primary-300",
+    "focus:ring-primary-400",
+    // dark
+    "dark:text-primary-300",
+    "dark:hover:text-primary-100",
+    "dark:focus:ring-primary-300",
+];
+
+
+const accentClass = [
+    // light
+    "text-accent-700",
+    "hover:text-accent-400",
+    "focus:ring-accent-600",
+    // dark
+    "dark:text-accent-400",
+    "dark:hover:text-accent-200",
+    "dark:focus:ring-accent-400",
+];
+
+
+// Size
+const sizes = {
+    xs: ["gap-1.25", "text-xs", "xl:text-sm", "2xl:text-base"],
+    sm: ["gap-1.25", "text-sm", "xl:text-base", "2xl:text-lg"],
+    base: ["gap-1.5", "text-base", "xl:text-lg", "2xl:text-xl"],
+    lg: ["gap-1.75", "text-lg", "xl:text-xl", "2xl:text-2xl"],
+    xl: ["gap-1.75", "text-xl", "xl:text-2xl", "2xl:text-3xl"],
+};
+
+
+const variantClass = {
+    default: defaultClass,
+    primary: primaryClass,
+    accent: accentClass,
+    none: [],
+};
+
+const sizeClass = sizes[size] || [];
+
+const additionalClasses = className ? className.split(" ") : [];
+const baseClass = [
+    "flex",
+    "w-fit",
+    "items-center",
+    "font-medium",
+    "rounded-sm",
+    "transition-colors",
+    "duration-300",
+    "focus:ring-2",
+    "focus:ring-none",
+    "focus:ring-offset-1",
+    "focus:ring-offset-white",
+    // Dark
+    "dark:focus:ring-offset-base-900",
+];
+---
+
+{
+<a href={rest.href}
+   class:list={[
+       ...baseClass,
+       ...(variantClass[variant] || []),
+       ...sizeClass,
+       ...additionalClasses,
+   ]}
+   {...rest}
+>
+    <slot/>
+</a>
+
+    }
