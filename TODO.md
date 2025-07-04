@@ -21,13 +21,14 @@ const currentPath = pathname.slice(1);
 - [ ] übertragen ion aersosi repo
 - [ ] testen hosten
 - [ ] SEO
+- [ ] Dünnere Icons
 - [ ] CV einbauen
 - [ ] CV Download
 - [ ] Projekte einbauen
 - [ ] Dynamische Bilder
 - [ ] DE/EN switch
 - [ ] Echte Tooltips
-- [ ] Accesibilty
+- [ ] Accesibiltyq
 - [ ] Checkliste
 - [ ] Into Text
 - [ ] 404 Text
@@ -35,6 +36,7 @@ const currentPath = pathname.slice(1);
 - [ ] Google Font selbst hosten
 - [ ] Sitemap
 - [ ] Robots.txt
+- [ ] design system seite raus nehmen
 
 ```plain text
 My name is Rasmus Andersson. I’m a Swedish he/him living in San Francisco, California. 
