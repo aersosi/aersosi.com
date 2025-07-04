@@ -12,19 +12,6 @@ Astro’s appeal isn’t just in the websites it builds—it’s in *how* you bu
 
 ### About Me
 
-```html
-<section>
-  <Wrapper variant="standard">
-      <Link aria-label="Download german CV"
-            download="CV_Ersosi_12_2024.pdf"
-            href="/CV_Ersosi_12_2024.pdf"
-            size="base" variant="accent">
-        Download CV
-      </Link>
-  </Wrapper>
-</section>
-```
-
 ### Minimal setup, maximum results
 
 Astro gives you a solid starting point without overloading you with decisions. Add Tailwind, bring in React components, or keep it 100% HTML—Astro stays out of your way.
