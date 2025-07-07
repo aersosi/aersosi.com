@@ -1,0 +1,19 @@
+/* Footer Clock Ticking Animation*/
+:root {
+    --color-text: var(--color-base-500);
+    --color-flash: var(--color-black);
+}
+.dark {
+    --color-text: var(--color-base-400);
+    --color-flash: var(--color-white);
+}
+
+.flash-text {
+    animation: flash 1s infinite;
+}
+
+@keyframes flash {
+    0%, 30% { color: var(--color-text); }
+    50%     { color: var(--color-flash); }
+    70%, 100% { color: var(--color-text); }
+}
