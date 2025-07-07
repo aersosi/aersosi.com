@@ -70,36 +70,10 @@ const LinkData = [
                     <Text id="clock" tag="p" variant="textSM" class="text-base-600 dark:text-base-300 flash-text"/>
                 </div>
                 <Text tag="p" variant="textSM" class="text-base-600 dark:text-base-300">
-                    © Copyright <span id="year"></span> durch Arthur Ersosi. <br>Alle Rechte vorbehalten.
+                    © Copyright <span id="copyrightYear">2025</span> durch Arthur Ersosi. <br>Alle Rechte vorbehalten.
                 </Text>
             </div>
         </div>
     </Wrapper>
 </footer>
-<script type="module">
-    // Function to update the clock display with Hamburg time
-    function updateClock() {
-        // Get current date/time
-        const now = new Date();
-        // Format time for Hamburg timezone in 12-hour format
-        const time = now.toLocaleTimeString("de-DE", {
-            timeZone: "Europe/Berlin", // Convert to Hamburg time
-            hour: "2-digit", // Always show 2 digits for hour (01, 02, etc.)
-            minute: "2-digit", // Always show 2 digits for minutes (01, 02, etc.)
-        }) + " Uhr";
-        // Update the clock element in the DOM with the formatted time
-        document.getElementById("clock").textContent = time;
-    }
 
-    // Function to update the copyright year
-    function updateYear() {
-        // Get current year and update the year span element
-        document.getElementById("year").textContent = new Date().getFullYear();
-    }
-
-    // Initialize both clock and year on page load
-    updateClock();
-    updateYear();
-    // Set up automatic clock updates every 1000ms (1 second)
-    setInterval(updateClock, 1000);
-</script>

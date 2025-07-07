@@ -1,0 +1,18 @@
+<script type="module">
+    // Function to update the clock display with Hamburg time
+    function updateClock() {
+        // Get current date/time
+        const now = new Date();
+        // Format time for Hamburg timezone in 12-hour format
+        const time = now.toLocaleTimeString("de-DE", {
+            timeZone: "Europe/Berlin", // Convert to Hamburg time
+            hour: "2-digit", // Always show 2 digits for hour (01, 02, etc.)
+            minute: "2-digit", // Always show 2 digits for minutes (01, 02, etc.)
+        }) + " Uhr";
+        // Update the clock element in the DOM with the formatted time
+        document.getElementById("clock").textContent = time;
+    }
+
+    updateClock();
+    setInterval(updateClock, 1000);
+</script>
