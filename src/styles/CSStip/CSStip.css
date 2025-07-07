@@ -1,0 +1,108 @@
+/* Configuration */
+:root {
+    /* Text */
+    --CSStip-text-size: 1rem;
+    --CSStip-text-color: white;
+
+    /* Box */
+    --CSStip-bg-color: var(--color-base-700, black);
+    --CSStip-padding-x: 0.375rem;
+    --CSStip-padding-y: 0.5rem;
+    --CSStip-border-radius: 0.375rem;
+    --CSStip-max-width: 10ch;
+
+    /* Animation */
+    --CSStip-start-position: calc(100% + 4px);
+    --CSStip-end-position: calc(100% + 12px);
+    --CSStip-transition-duration: 350ms;
+}
+
+/* Dark Theme */
+:root.dark {
+    --CSStip-text-color: black;
+    --CSStip-bg-color: var(--color-base-100, white);
+}
+
+/* Base Styles */
+[CSStip-top],
+[CSStip-right],
+[CSStip-bottom],
+[CSStip-left] {
+    position: relative;
+
+    &::after {
+        /* Base */
+        content: attr(aria-label);
+        display: inline-block;
+        position: absolute;
+        overflow: hidden;
+        pointer-events: none;
+        width: max-content;
+        max-width: attr(data-CSStip-max-width type(<length>), var(--CSStip-max-width));
+        text-align: center;
+
+        /* Text */
+        font-size: attr(data-CSStip-text-size type(<length>), var(--CSStip-text-size));
+        font-weight: normal;
+        color: attr(data-CSStip-text-color type(<color>), var(--CSStip-text-color));
+
+        /* Box */
+        background-color: attr(data-CSStip-bg-color type(<color>), var(--CSStip-bg-color));
+        padding-block: attr(data-CSStip-padding-x type(<length>), var(--CSStip-padding-x));
+        padding-inline: attr(data-CSStip-padding-y type(<length>), var(--CSStip-padding-y));
+        border-radius: attr(data-CSStip-border-radius type(<length>), var(--CSStip-border-radius));
+
+        /* Animation */
+        opacity: 0;
+        transition-duration: attr(data-CSStip-transition-duration type(<time>), var(--CSStip-transition-duration));
+        transition-timing-function: ease-out;
+    }
+}
+
+.CSStip-active::after {
+    opacity: 1;
+}
+
+/* Position Start */
+[CSStip-top]::after {
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: attr(data-CSStip-start-position type(<length>), var(--CSStip-start-position));
+}
+
+[CSStip-right]::after {
+    top: 50%;
+    transform: translateY(-50%);
+    left: attr(data-CSStip-start-position type(<length>), var(--CSStip-start-position));
+}
+
+[CSStip-bottom]::after {
+    left: 50%;
+    transform: translateX(-50%);
+    top: attr(data-CSStip-start-position type(<length>), var(--CSStip-start-position));
+}
+
+[CSStip-left]::after {
+    top: 50%;
+    transform: translateY(-50%);
+    right: attr(data-CSStip-start-position type(<length>), var(--CSStip-start-position));
+}
+
+/* Position End */
+.CSStip-active {
+    &[CSStip-top]::after {
+        bottom: attr(data-CSStip-end-position type(<length>), var(--CSStip-end-position));
+    }
+
+    &[CSStip-right]::after {
+        left: attr(data-CSStip-end-position type(<length>), var(--CSStip-end-position));
+    }
+
+    &[CSStip-bottom]::after {
+        top: attr(data-CSStip-end-position type(<length>), var(--CSStip-end-position));
+    }
+
+    &[CSStip-left]::after {
+        right: attr(data-CSStip-end-position type(<length>), var(--CSStip-end-position));
+    }
+}

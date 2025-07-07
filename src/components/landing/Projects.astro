@@ -7,8 +7,10 @@ import ProjectEntry from "../blog/ProjectEntry.astro";
 import Link from "../fundations/elements/Link.astro";
 import ArrowRight from "../fundations/icons/ArrowRight.astro";
 
-const allPostsUnsorted = await getCollection("posts");
-const allProjects = allPostsUnsorted.filter((post) => post.data.tags[0] === "project" && post)
+const allProjectsUnsorted = await getCollection("projects");
+const allProjects = allProjectsUnsorted.sort(
+    (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+)
 ---
 
 <section>
@@ -18,7 +20,7 @@ const allProjects = allPostsUnsorted.filter((post) => post.data.tags[0] === "pro
                 <Text tag="h2" variant="textBase" class="font-medium text-base-900 dark:text-white pb-2">
                     Neuste Projekte
                 </Text>
-                <Link href="/blog/tags/project" size="sm" variant="accent">
+                <Link href="/projects" size="sm" variant="accent">
                     Alle Projekte
                     <ArrowRight size="sm"/>
                 </Link>

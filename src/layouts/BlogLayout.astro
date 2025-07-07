@@ -10,24 +10,18 @@ import BlogEntry from "@/components/blog/BlogEntry.astro";
 const {frontmatter} = Astro.props;
 // Get all posts and filter by tag
 import { getCollection } from "astro:content";
-import GoBack from "../components/assets/GoBack.astro";
+import GoBack from "../components/fundations/elements/GoBack.astro";
 import Button from "../components/fundations/elements/Button.astro";
-import Link from "../components/fundations/elements/Link.astro";
 const allPosts = await getCollection("posts");
 const relatedPosts = allPosts.filter((post) =>
     post.data.tags.some((tag) => frontmatter.tags.includes(tag))
 );
-
-const pathname = new URL(Astro.request.url).pathname;
-const currentPath = pathname.slice(1); // remove the first "/"
 ---
 
 <BaseLayout>
     <section>
         <Wrapper variant="standard">
-            <div
-                    class="grid grid-cols-1 gap-x-12 gap-y-8 lg:grid-cols-3  pb-16 pt-24 lg:pt-40 border-b border-base-400 dark:border-base-600"
-            >
+            <div class="grid grid-cols-1 gap-x-12 gap-y-8 lg:grid-cols-3  pb-16 pt-24 lg:pt-40 border-b border-base-400 dark:border-base-600">
                 <div class="lg:sticky lg:top-16 lg:z-40 self-start text-balance">
                     <div class="flex gap-8 flex-col">
                         <GoBack/>
@@ -38,15 +32,6 @@ const currentPath = pathname.slice(1); // remove the first "/"
                         <Text tag="p" variant="textSM" class="text-base-600 dark:text-base-300">
                             {frontmatter.description}
                         </Text>
-
-                        {currentPath === "blog/posts/about-me" &&
-                                <Button aria-label="Download german CV"
-                                        download="CV_Ersosi_12_2024.pdf"
-                                        href="/CV_Ersosi_12_2024.pdf"
-                                        size="sm" variant="accent">
-                                    Download CV
-                                </Button>
-                        }
                     </div>
                 </div>
                 <div class="lg:col-span-2">

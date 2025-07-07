@@ -24,9 +24,8 @@ import portrait from '/src/images/portrait.webp';
                             Design Engineer
                         </Text>
                     </div>
-                    <span>
-                        <Image title="Portrait Arthur Ersosi"
-                               width={800}
+                    <div>
+                        <Image width={800}
                                height={800}
                                loading="eager"
                                decoding="async"
@@ -34,7 +33,7 @@ import portrait from '/src/images/portrait.webp';
                                src={portrait}
                                class="aspect-12/10 lg:aspect-square object-cover object-center rounded-xl"
                         />
-                    </span>
+                    </div>
                 </div>
 
             </div>
@@ -47,6 +46,11 @@ import portrait from '/src/images/portrait.webp';
                         Design Engineer
                     </Text>
                 </div>
+
+                <Text tag="p" variant="textSM" class="text-base-900 dark:text-white">
+                    10+ years of design expertise meets <br>
+                    6+ years of modern web development
+                </Text>
                 <Text tag="p" variant="textBase" class="text-base-600 dark:text-base-300">
                     I’m a self-taught front-end developer and UI designer with a strong
                     passion for building my own projects. My philosophy revolves around
@@ -55,8 +59,8 @@ import portrait from '/src/images/portrait.webp';
                     reliably, with consistency being the foundation that keeps everything on
                     track.
                 </Text>
-                <Link href="/blog/posts/about-me" size="sm" variant="accent">
-                    CV & Mehr
+                <Link href="about-me" size="sm" variant="accent">
+                    Über mich & CV
                     <ArrowRight size="sm"/>
                 </Link>
 

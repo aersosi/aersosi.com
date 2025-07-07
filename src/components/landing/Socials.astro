@@ -8,45 +8,40 @@ import ExternalLink from "../fundations/icons/ExternalLink.astro";
 const links = [
     {
         platform: "twitter",
-        name: "@aersosi",
+        ariaLabel: "twitter aersosi",
         url: "https://x.com/aersosi",
     },
     {
         platform: "GitHub",
-        name: "/aersosi",
-
+        ariaLabel: "GitHub aersosi",
         url: "https://github.com/aersosi",
     },
     {
         platform: "Linkedin",
-        name: "/aersosi",
-
+        ariaLabel: "linkedin aersosi",
         url: "https://www.linkedin.com/in/aersosi/",
     },
     {
         platform: "Email",
-        name: "hello@aersosi.com",
-        url: "hello@aersosi.com",
+        ariaLabel: "Email hello@aersosi.com",
+        url: "mailto:hello@aersosi.com",
     },
 ];
 ---
 
 <section>
     <Wrapper variant="standard">
-        <div
-                class="grid grid-cols-1 gap-x-12 gap-y-8 lg:grid-cols-3 py-24"
-        >
+        <div id="socials" class="grid grid-cols-1 gap-x-12 gap-y-8 lg:grid-cols-3 py-24">
             <div class="lg:sticky lg:top-16 lg:z-40 self-start">
                 <Text tag="h2" variant="textBase" class="font-medium text-base-900 dark:text-white">
-                    Netzwerke
+                    Kontakt
                 </Text>
             </div>
             <div class="flex flex-col gap-2 lg:col-span-2">
                 {
                     links.map((social) => (
-                            <Link target="_blank" href={social.url} size="base" variant="accent" class="group">
-                                <span>{social.platform}</span>
-                                <span>{social.name}</span>
+                            <Link aria-label={social.ariaLabel} target="_blank" href={social.url} size="base" variant="accent" class="group">
+                                {social.platform}
                                 <ExternalLink size="base"
                                               class="-mt-0.5 transition duration-300 opacity-0 group-hover:opacity-100"/>
                             </Link>

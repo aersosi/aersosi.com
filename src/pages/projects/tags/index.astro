@@ -9,10 +9,10 @@ import Wrapper from "@/components/fundations/containers/Wrapper.astro";
 import { getCollection } from "astro:content";
 import GoBack from "../../../components/fundations/elements/GoBack.astro";
 import Link from "../../../components/fundations/elements/Link.astro";
-// Get all posts
-const allPosts = await getCollection("posts")
-// Extract tags from all posts and count occurrences
-const tagCounts = allPosts.reduce((acc, post) => {
+// Get all projects
+const allProjects = await getCollection("projects")
+// Extract tags from all projects and count occurrences
+const tagCounts = allProjects.reduce((acc, post) => {
     post.data.tags.forEach((tag) => {
         acc[tag] = (acc[tag] || 0) + 1; // Count each tag per post
     });
@@ -22,9 +22,9 @@ const tagCounts = allPosts.reduce((acc, post) => {
 const tags = Object.keys(tagCounts);
 // Function to get the image for a specific tag
 function getTagImage(tag) {
-    const filteredPosts = allPosts.filter((post) => post.data.tags.includes(tag));
-    if (filteredPosts.length > 0) {
-        return filteredPosts[0].data.image.url; // Return the image of the first post with that tag
+    const filteredProjects = allProjects.filter((post) => post.data.tags.includes(tag));
+    if (filteredProjects.length > 0) {
+        return filteredProjects[0].data.image.url; // Return the image of the first post with that tag
     }
 }
 ---
@@ -47,7 +47,7 @@ function getTagImage(tag) {
 
                 <div class="flex flex-col gap-2 lg:col-span-2">
                     {tags.map((tag) => (
-                            <Link title={tag} aria-label={tag} href={`/blog/tags/${tag}`} size="sm"
+                            <Link title={tag} aria-label={tag} href={`/projects/tags/${tag}`} size="sm"
                                   variant="accent">
                                 <span>{tagCounts[tag]}</span>
                                 <span>{tag}</span>

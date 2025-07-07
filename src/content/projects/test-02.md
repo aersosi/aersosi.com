@@ -5,7 +5,7 @@ description: "You’ve heard the buzz—Astro’s island architecture changes ho
 image:
   url: "/src/images/blog/5.jpg"
   alt: "Diagram of islands architecture with interactive sections highlighted."
-tags: ["project"]
+tags: ["sit", "amet"]
 ---
 
 Astro’s biggest selling point is its use of **islands architecture**—but what does that really mean, and how does it impact your projects?

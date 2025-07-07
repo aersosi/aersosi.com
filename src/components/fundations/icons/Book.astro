@@ -1,5 +1,5 @@
 ---
-const {variant, size, class: className, ...rest} = Astro.props;
+const {variant, size, strokeWidth = "2.125", class: className, ...rest} = Astro.props;
 const xs = ["size-4"];
 const sm = ["size-4.5"];
 const base = ["size-5"];
@@ -11,7 +11,7 @@ const xl = ["size-6"];
         viewBox="0 0 24 24"
         fill="none"
         stroke="currentColor"
-        stroke-width="2.5"
+        stroke-width={strokeWidth}
         stroke-linecap="round"
         stroke-linejoin="round"
         class:list={[

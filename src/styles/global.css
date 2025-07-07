@@ -1,11 +1,15 @@
 @import "tailwindcss";
+@import "./CSStip/CSStip.css";
+@import "./scrollbar.css";
+@import "./footer-clock-ticking.css";
+
 @plugin "@tailwindcss/typography";
 @plugin "tailwind-scrollbar-hide";
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
   /* Typography */
-   --font-sans: Inter, sans-serif;
+  --font-sans: Inter, sans-serif;
   --font-display: InterVariable, sans-serif;
 
   --color-primary-50: oklch(0.862 0.23 151.27);
@@ -31,8 +35,6 @@
   --color-secondary-800: oklch(47.6% 0.114 61.907);
   --color-secondary-900: oklch(42.1% 0.095 57.708);
   --color-secondary-950: oklch(28.6% 0.066 53.813);
-
-
 
   --color-accent-50: oklch(0.965 0.017 259.418);
   --color-accent-100: oklch(0.923 0.037 256.969);
@@ -184,22 +186,4 @@ code .line::before {
   color: #999999;
 }
 
-/* Footer Clock Ticking Animation*/
-:root {
-  --color-text: var(--color-base-600);
-  --color-flash: var(--color-black);
-}
-.dark {
-  --color-text: var(--color-base-300);
-  --color-flash: var(--color-white);
-}
 
-.flash-text {
-  animation: flash 1s infinite;
-}
-
-@keyframes flash {
-  0%, 30% { color: var(--color-text); }
-  50%     { color: var(--color-flash); }
-  70%, 100% { color: var(--color-text); }
-}

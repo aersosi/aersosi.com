@@ -18,29 +18,58 @@ const currentPath = pathname.slice(1);
 
 ```
 
-- [x] übertragen ion aersosi repo
-- [ ] testen hosten
-  - [ ] Bilder funktionieren nicht? 
-- [ ] MDX für About me Seite
-- [ ] SEO
-- [ ] Dünnere Icons
-- [ ] CV einbauen
-- [ ] CV Download
-- [ ] CV Nav-link auf nav-blog artikel
-- [ ] Projekte einbauen
-- [ ] Dynamische Bilder
-- [ ] DE/EN switch
-- [ ] Echte Tooltips
-- [ ] Accesibiltyq
-- [ ] Checkliste
-- [ ] Into Text
-- [ ] 404 Text
-- [ ] Impressum
-- [ ] Google Font selbst hosten
-- [ ] Sitemap
+
+Diese Seite existiert nicht, hat nie existiert oder wurde versehentlich oder absichtlich entfernt.
+Überprüfen Sie, ob Sie sich vertippt haben oder gehen sie zum Start zurück.
+
+
+### Best practices
+- [ ] SEO (überall steht "your page title")
+- [ ] Accesibilty
+- [ ] Dynamische Bilder load
 - [ ] Robots.txt
+- [ ] Sitemap (plugin bereits vorhanden)
+
+### Content
+- [ ] Projekte einbauen
+- [ ] Google Font selbst hosten
+- [ ] Alle Scripts in scripts folder
+- [ ] Footer Seiten verlinken
+- [ ] Bug: wenn ich im footer auf start klicke, werden die links gelb
+- [ ] Tooltips überall
+
+
+### CV
+- [ ] CV Seite Text
+
+### Impressum
+- [ ] Impressum Seite Text
+
+### Artikel schreiben
+- [ ] Toolip, siehe styles/tooltip/README.md
+
+### Text
+- [ ] Intro Text
+
+### Auf deutsch
+- [ ] title attribute checken
+- [ ] aria-label attribute
+
+### Nice to have
+- [ ] Internationalisation
+  - [ ] DE/EN switch
+
+### ganz am Ende
+- [ ] tracked branches die nicht mehr gebraucht werden löschen
+- [ ] readme.md sauber schreiben
 - [ ] design system seite rausnehmen
-- 
+- [ ] Navigation ausrichten
+
+
+
+- [ ] ../../ imports checken
+- [ ] data-astro-prefetch für blog artikel und projects
+- [ ] Checkliste - mindestanforderungen Website
 
 ```plain text
 My name is Rasmus Andersson. I’m a Swedish he/him living in San Francisco, California. 
@@ -72,6 +101,5 @@ passion for building my own projects. My philosophy revolves around
 simplicity and practicality, focusing on straightforward principles 
 that deliver results. I value sticking to a clear plan and executing 
 it reliably, with consistency being the foundation that keeps everything on track.
-
 
 ```

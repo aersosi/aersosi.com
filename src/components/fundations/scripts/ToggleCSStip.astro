@@ -1,0 +1,48 @@
+<script is:inline>
+    window.addEventListener('DOMContentLoaded', () => {
+        const CSStipElements = document.querySelectorAll('[CSStip-top], [CSStip-right], [CSStip-bottom], [CSStip-left]');
+        let activeCSStipDelayMap = new WeakMap();
+        const showCSStipDelay = 500;
+
+        CSStipElements.forEach((el) => {
+            let timeout;
+
+            const show = () => {
+                timeout = setTimeout(() => {
+                    el.classList.add('CSStip-active');
+                }, showCSStipDelay);
+                activeCSStipDelayMap.set(el, timeout);
+            };
+
+            const hide = () => {
+                clearTimeout(activeCSStipDelayMap.get(el));
+                el.classList.remove('CSStip-active');
+            };
+
+            el.addEventListener('mouseenter', show);
+            el.addEventListener('mouseleave', hide);
+        });
+
+        // Check if mouse moves over the CSStip element on the page load
+        window.addEventListener('mousemove', function onFirstMouseMove(e) {
+            CSStipElements.forEach((el) => {
+                const rect = el.getBoundingClientRect();
+                if (
+                    e.clientX >= rect.left &&
+                    e.clientX <= rect.right &&
+                    e.clientY >= rect.top &&
+                    e.clientY <= rect.bottom
+                ) {
+                    // Trigger CSStip
+                    const timeout = setTimeout(() => {
+                        el.classList.add('CSStip-active');
+                    }, showCSStipDelay);
+                    activeCSStipDelayMap.set(el, timeout);
+                }
+            });
+
+            // Check only at the first mouse move after page load
+            window.removeEventListener('mousemove', onFirstMouseMove);
+        });
+    });
+</script>
