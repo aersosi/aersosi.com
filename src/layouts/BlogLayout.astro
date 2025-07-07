@@ -32,6 +32,7 @@ const relatedPosts = allPosts.filter((post) =>
                         <Text tag="p" variant="textSM" class="text-base-600 dark:text-base-300">
                             {frontmatter.description}
                         </Text>
+                        <slot name="extra"/>
                     </div>
                 </div>
                 <div class="lg:col-span-2">

@@ -1,11 +1,21 @@
 ---
 import { getEntry } from 'astro:content';
 import PageLayout from "@/layouts/PageLayout.astro";
+import Button from "../../components/fundations/elements/Button.astro";
 
 const entry = await getEntry('pages', 'about-me');
-const { Content } = await entry.render();
+const {Content} = await entry.render();
 ---
 
 <PageLayout frontmatter={entry.data}>
-    <Content />
+    <Fragment slot="extra">
+        <Button aria-label="Download german CV"
+                download="CV_Ersosi_12_2024.pdf"
+                href="/CV_Ersosi_12_2024.pdf"
+                size="sm" variant="accent">
+            Download CV
+        </Button>
+    </Fragment>
+
+    <Content/>
 </PageLayout>

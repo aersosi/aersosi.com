@@ -35,15 +35,7 @@ const currentPath = pathname.slice(1);
                         <Text tag="p" variant="textSM" class="text-base-600 dark:text-base-300">
                             {frontmatter.description}
                         </Text>
-
-                        {currentPath === "about-me" &&
-                                <Button aria-label="Download german CV"
-                                        download="CV_Ersosi_12_2024.pdf"
-                                        href="/CV_Ersosi_12_2024.pdf"
-                                        size="sm" variant="accent">
-                                    Download CV
-                                </Button>
-                        }
+                        <slot name="extra"/>
                     </div>
                 </div>
                 <div class="lg:col-span-2">
