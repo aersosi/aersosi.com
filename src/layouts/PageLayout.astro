@@ -2,30 +2,29 @@
 import { Image } from "astro:assets";
 // Fundations
 import BaseLayout from "@/layouts/BaseLayout.astro";
-import Text from "@/components/fundations/elements/Text.astro";
-import Wrapper from "@/components/fundations/containers/Wrapper.astro";
+import Text from "../components/lib/elements/Text.astro";
+import Wrapper from "../components/lib/containers/Wrapper.astro";
 // Components
 import BlogEntry from "@/components/blog/BlogEntry.astro";
 // Content
 const {frontmatter} = Astro.props;
 // Get all posts and filter by tag
 import { getCollection } from "astro:content";
-import GoBack from "../components/fundations/elements/GoBack.astro";
-import Button from "../components/fundations/elements/Button.astro";
+import GoBack from "../components/lib/elements/GoBack.astro";
+import Button from "../components/lib/elements/Button.astro";
 const allPosts = await getCollection("posts");
 const relatedPosts = allPosts.filter((post) =>
     post.data.tags.some((tag) => frontmatter.tags.includes(tag))
 );
-
-const pathname = new URL(Astro.request.url).pathname;
-const currentPath = pathname.slice(1);
 ---
 
 <BaseLayout>
     <section>
         <Wrapper variant="standard">
-            <div class="grid grid-cols-1 gap-x-12 gap-y-8 lg:grid-cols-3  pb-16 pt-24 lg:pt-40 border-b border-base-400 dark:border-base-600">
-                <div class="lg:sticky lg:top-16 lg:z-40 self-start text-balance">
+
+            <!--About Me-->
+            <div class="grid grid-cols-1 gap-x-12 gap-y-8 lg:grid-cols-3  pb-16 pt-24 lg:pt-40 text-balance">
+                <div class="lg:sticky lg:top-16 lg:z-40 self-start ">
                     <div class="flex gap-8 flex-col">
                         <GoBack/>
 
@@ -35,7 +34,7 @@ const currentPath = pathname.slice(1);
                         <Text tag="p" variant="textSM" class="text-base-600 dark:text-base-300">
                             {frontmatter.description}
                         </Text>
-                        <slot name="extra"/>
+                        <slot name="intro"/>
                     </div>
                 </div>
                 <div class="lg:col-span-2">
@@ -49,7 +48,21 @@ const currentPath = pathname.slice(1);
                             class="object-cover object-center w-full aspect-12/6 lg:col-span-2 rounded-xl"
                     />
                     <Wrapper variant="prose" class="mt-4">
-                        <slot/>
+                        <slot name="one-col-right"/>
+                    </Wrapper>
+                </div>
+            </div>
+
+            <!--CV-->
+            <div class="grid grid-cols-1 gap-x-12 gap-y-8 lg:grid-cols-3 pb-16 pt-24 lg:pt-40 text-balance">
+                <div class="lg:sticky lg:top-16 lg:z-40 self-start ">
+                    <Wrapper variant="prose" class="mt-4">
+                        <slot name="two-col-left"/>
+                    </Wrapper>
+                </div>
+                <div class="lg:col-span-2">
+                    <Wrapper variant="prose" class="mt-4">
+                        <slot name="two-col-right"/>
                     </Wrapper>
                 </div>
             </div>

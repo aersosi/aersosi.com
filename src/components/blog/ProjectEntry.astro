@@ -1,6 +1,6 @@
 ---
 // Fundations
-import Text from "@/components/fundations/elements/Text.astro";
+import Text from "../lib/elements/Text.astro";
 // Content
 const {url, title, description, pubDate} = {
     url: "/projects/posts/" + Astro.props.post.slug,
@@ -18,8 +18,8 @@ const {url, title, description, pubDate} = {
     <div class="lg:col-span-2">
         <Text tag="h3"
               variant="textBase"
-              class="font-medium tracking-tight text-accent-700 dark:text-accent-400">
-            <div class="absolute -inset-x-1 -inset-y-4 z-0 scale-95 bg-accent-500/10 dark:bg-accent-600/10 opacity-0 transition group-hover:scale-100 group-hover:opacity-100 -inset-x-4 rounded-2xl duration-300">
+              class="font-medium tracking-tight text-base-900 dark:text-white">
+            <div class="absolute -inset-x-1 -inset-y-4 z-0 scale-95 bg-base-500/10 dark:bg-base-600/10 opacity-0 transition group-hover:scale-100 group-hover:opacity-100 -inset-x-4 rounded-2xl duration-300">
             </div>
             <a href={url} aria-label={title}>
                 <>
@@ -30,13 +30,13 @@ const {url, title, description, pubDate} = {
         </Text>
         <Text tag="p"
               variant="textSM"
-              class="relative z-10 mt-1 text-accent-700 dark:text-accent-400">
+              class="relative z-10 mt-1 text-base-600 dark:text-base-300">
             {description}
         </Text>
     </div>
     <Text tag="p"
           variant="textBase"
-          class="relative z-10 flex items-center text-accent-700 dark:text-accent-400 lg:ml-auto">
+          class="relative z-10 flex items-center text-base-600 dark:text-base-300 lg:ml-auto">
         <time datetime={pubDate}> {pubDate}</time>
     </Text>
 </article>

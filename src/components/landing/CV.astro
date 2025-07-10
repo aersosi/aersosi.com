@@ -1,8 +1,8 @@
 ---
 // Fundations
-import Text from "@/components/fundations/elements/Text.astro";
-import Wrapper from "@/components/fundations/containers/Wrapper.astro";
-import Link from "../fundations/elements/Link.astro";
+import Text from "../lib/elements/Text.astro";
+import Wrapper from "../lib/containers/Wrapper.astro";
+import Link from "../lib/elements/Link.astro";
 // Data
 const data = [
     {
@@ -46,8 +46,9 @@ const data = [
             </div>
             <div class="flex flex-col gap-12 lg:col-span-2">
                 {
-                    data.map((data, index) => (
-                            <article class="group relative grid grid-cols-1 gap-x-12 gap-y-8 lg:grid-cols-3 lg:items-start ">
+                    data.map((data) => (
+                            <article
+                                    class="group relative grid grid-cols-1 gap-x-12 gap-y-8 lg:grid-cols-3 lg:items-start ">
                                 <div class="lg:col-span-2">
                                     <Text
                                             tag="h3"

@@ -1,15 +1,15 @@
 ---
 // Fundations
-import Button from "@/components/fundations/elements/Button.astro";
+import Button from "../lib/elements/Button.astro";
 // Icons
-import Eye from "@/components/fundations/icons/Eye.astro";
-import Book from "@/components/fundations/icons/Book.astro";
-import AtSign from "../fundations/icons/AtSign.astro";
-import Tool from "../fundations/icons/Tool.astro";
-import User from "../fundations/icons/User.astro";
-import Zap from "../fundations/icons/Zap.astro";
+import Eye from "../lib/icons/Eye.astro";
+import Book from "../lib/icons/Book.astro";
+import AtSign from "../lib/icons/AtSign.astro";
+import Tool from "../lib/icons/Tool.astro";
+import User from "../lib/icons/User.astro";
+import Zap from "../lib/icons/Zap.astro";
 // Scripts
-import ThemeToggle from "../fundations/elements/ThemeToggle.astro";
+import ThemeToggle from "../lib/elements/ThemeToggle.astro";
 
 const baseClass = [
     "fixed",
@@ -33,14 +33,13 @@ const baseClass = [
 ];
 
 const navItems = [
-    { href: "/#home", ariaLabel: "Startseite", Icon: Zap },
-    { href: "/projects", ariaLabel: "Projekte", Icon: Tool },
-    { href: "/blog/", ariaLabel: "Artikel", Icon: Book },
-    { href: "/about-me", ariaLabel: "Über mich", Icon: User },
-    { href: "/#socials", ariaLabel: "Kontakt", Icon: AtSign },
-    { href: "/system/overview", ariaLabel: "System Overview", Icon: Eye },
+    {href: "/#home", ariaLabel: "Startseite", Icon: Zap},
+    {href: "/projects", ariaLabel: "Projekte", Icon: Tool},
+    {href: "/blog/", ariaLabel: "Artikel", Icon: Book},
+    {href: "/about-me", ariaLabel: "Über mich", Icon: User},
+    {href: "/#socials", ariaLabel: "Kontakt", Icon: AtSign},
+    {href: "/system/overview", ariaLabel: "System Overview", Icon: Eye},
 ];
-
 ---
 
 
@@ -81,22 +80,21 @@ const navItems = [
 
     <nav id="mainNav" class="bg-base-50/50 dark:bg-base-900/50 backdrop-blur-xs rounded-xl w-auto">
         <div class="flex items-center p-2 gap-2">
-            {navItems.map(({ href, ariaLabel, Icon }) => (
-                    <Button
-                            isLink={true}
+            {navItems.map(({href, ariaLabel, Icon}) => (
+                    <Button isLink={true}
                             iconOnly
                             size="sm"
                             variant="accent"
                             href={href}
                             aria-label={ariaLabel}
-                            CSStip-bottom
+                            a11ytip-bottom
                             key={href}
                     >
-                        <Icon slot="icon" size="sm" />
+                        <Icon slot="icon" size="sm"/>
                     </Button>
             ))}
 
-            <ThemeToggle aria-label="Hell/Dunkel Modus" CSStip-bottom />
+            <ThemeToggle aria-label="Hell/Dunkel Modus" a11ytip-bottom/>
         </div>
     </nav>
 </div>

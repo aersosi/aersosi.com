@@ -1,0 +1,57 @@
+<script type="module">
+    window.addEventListener('DOMContentLoaded', () => {
+        const selectors = [
+            '[a11ytip-top]',
+            '[a11ytip-top-left]',
+            '[a11ytip-top-right]',
+            '[a11ytip-right]',
+            '[a11ytip-right-top]',
+            '[a11ytip-right-bottom]',
+            '[a11ytip-bottom]',
+            '[a11ytip-bottom-left]',
+            '[a11ytip-bottom-right]',
+            '[a11ytip-left]',
+            '[a11ytip-left-top]',
+            '[a11ytip-left-bottom]'
+        ];
+
+        const a11ytips = document.querySelectorAll(selectors.join(', '));
+        const activeTooltipDelays = new WeakMap(); // Element removed from DOM = automatically removed from WeakMap
+        const SHOW_DELAY = 500;
+        const A11YTIP_CLASS = 'a11ytip-active';
+
+        a11ytips.forEach((el) => {
+            // initial check after DOMContentLoaded whether the mouse is over an element
+            if (el.matches(':hover')) {
+                const timeout = setTimeout(() => {
+                    el.classList.add(A11YTIP_CLASS);
+                }, SHOW_DELAY);
+                activeTooltipDelays.set(el, timeout);
+            }
+
+            const show = () => {
+                if (!activeTooltipDelays.has(el)) {
+                    const timeout = setTimeout(() => {
+                        el.classList.add(A11YTIP_CLASS);
+                        activeTooltipDelays.delete(el);
+                    }, SHOW_DELAY);
+                    activeTooltipDelays.set(el, timeout);
+                }
+            };
+
+            const hide = () => {
+                const timeout = activeTooltipDelays.get(el);
+                if (timeout) {
+                    clearTimeout(timeout);
+                    activeTooltipDelays.delete(el);
+                }
+                el.classList.remove(A11YTIP_CLASS);
+            };
+
+            el.addEventListener('mouseenter', show);
+            el.addEventListener('mouseleave', hide);
+            el.addEventListener('focus', show);
+            el.addEventListener('blur', hide);
+        });
+    });
+</script>

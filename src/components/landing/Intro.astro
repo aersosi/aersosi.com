@@ -1,9 +1,9 @@
 ---
 // Fundations
-import Text from "@/components/fundations/elements/Text.astro";
-import Wrapper from "@/components/fundations/containers/Wrapper.astro";
-import Link from "../fundations/elements/Link.astro";
-import ArrowRight from "../fundations/icons/ArrowRight.astro";
+import Text from "../lib/elements/Text.astro";
+import Wrapper from "../lib/containers/Wrapper.astro";
+import Link from "../lib/elements/Link.astro";
+import ArrowRight from "../lib/icons/ArrowRight.astro";
 import { Image } from 'astro:assets';
 import portrait from '/src/images/portrait.webp';
 ---
@@ -51,15 +51,20 @@ import portrait from '/src/images/portrait.webp';
                     <span id="designYear">10</span>+ Jahre Design Expertise trifft auf<br>
                     <span id="devYear">8</span>+ Jahre modernes Web-Development
                 </Text>
-                <Text tag="p" variant="textBase" class="text-base-600 dark:text-base-300">
-                    I’m a self-taught front-end developer and UI designer with a strong
-                    passion for building my own projects. My philosophy revolves around
-                    simplicity and practicality, focusing on straightforward principles that
-                    deliver results. I value sticking to a clear plan and executing it
-                    reliably, with consistency being the foundation that keeps everything on
-                    track.
+                <Text tag="p" variant="textBase" class="text-base-600 dark:text-base-300 text-balance">
+                    Moin, ich heiße Arthur (er/ihm) und ich lebe in Hamburg.
                 </Text>
-                <Link href="about-me" size="sm" variant="accent">
+                <Text tag="p" variant="textBase" class="text-base-600 dark:text-base-300 text-balance">
+                    Als Frontend-Developer und UI/UX-Designer Hybrid habe ich eine unbedingte Leidenschaft
+                    für moderne Webanwendungen. Ich liebe es, Probleme zu durchdringen und und durch
+                    durchdachte Software elegante Lösungen zu finden.
+                </Text>
+                <Text tag="p" variant="textBase" class="text-base-600 dark:text-base-300 text-balance">
+                    Das gelingt durch eine klare Vision und Liebe zum Detail, mit dem Anspruch, exzellente Interfaces,
+                    eine harmonische Journey und skalierbare Systeme zu schaffen. Software muss für alle, die sie nutzen,
+                    ebenso wertvoll sein wie für jene, die sie entwickeln.
+                </Text>
+                <Link href="/about-me" size="sm" variant="accent">
                     Über mich & CV
                     <ArrowRight size="sm"/>
                 </Link>

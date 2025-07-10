@@ -67,7 +67,7 @@ Updated on 20th June 2025
 <!-- Button with icon -->
 <Button iconOnly size="small" variant="primary">·</Button>
 <!-- Button as link -->
-<Button isLink={true} href="#_" size="small" variant="primary">Primary small</Button>
+<Button isLink={true} href="#href" size="small" variant="primary">Primary small</Button>
 ```
 
 - Wrapper Component  
