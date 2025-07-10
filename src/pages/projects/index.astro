@@ -1,15 +1,15 @@
 ---
 // Fundations
 import BaseLayout from "@/layouts/BaseLayout.astro";
-import Text from "../../components/lib/elements/Text.astro";
-import Wrapper from "../../components/lib/containers/Wrapper.astro";
+import Text from "@/components/lib/elements/Text.astro";
+import Wrapper from "@/components/lib/containers/Wrapper.astro";
 // Component
 import ProjectEntry from "@/components/blog/ProjectEntry.astro";
 // Content
 import { getCollection } from "astro:content";
-import GoBack from "../../components/lib/elements/GoBack.astro";
-import Link from "../../components/lib/elements/Link.astro";
-import ArrowRight from "../../components/lib/icons/ArrowRight.astro";
+import GoBack from "@/components/lib/elements/GoBack.astro";
+import Link from "@/components/lib/elements/Link.astro";
+import ArrowRight from "@/components/lib/icons/ArrowRight.astro";
 
 const allProjectsUnsorted = await getCollection("projects")
 const allProjects = allProjectsUnsorted.sort(

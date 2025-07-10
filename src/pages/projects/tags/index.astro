@@ -3,12 +3,12 @@
 import { Image } from "astro:assets";
 // Fundations
 import BaseLayout from "@/layouts/BaseLayout.astro";
-import Text from "../../../components/lib/elements/Text.astro";
-import Wrapper from "../../../components/lib/containers/Wrapper.astro";
+import Text from "@/components/lib/elements/Text.astro";
+import Wrapper from "@/components/lib/containers/Wrapper.astro";
 // Content
 import { getCollection } from "astro:content";
-import GoBack from "../../../components/lib/elements/GoBack.astro";
-import Link from "../../../components/lib/elements/Link.astro";
+import GoBack from "@/components/lib/elements/GoBack.astro";
+import Link from "@/components/lib/elements/Link.astro";
 // Get all projects
 const allProjects = await getCollection("projects")
 // Extract tags from all projects and count occurrences
