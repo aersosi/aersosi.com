@@ -21,12 +21,12 @@ const relatedPosts = allPosts.filter((post) =>
 <BaseLayout>
     <section>
         <Wrapper variant="standard">
-            <div class="grid grid-cols-1 gap-x-12 gap-y-8 lg:grid-cols-3  pb-16 pt-24 lg:pt-40 border-b border-base-400 dark:border-base-600">
-                <div class="lg:sticky lg:top-16 lg:z-40 self-start text-balance">
+            <div class="grid grid-cols-1 gap-x-12 gap-y-8 lg:grid-cols-3 py-16 lg:py-24 lg:pt-40">
+                <div class="lg:sticky lg:top-16 lg:z-40 self-start">
                     <div class="flex gap-8 flex-col">
                         <GoBack/>
 
-                        <Text tag="h1" variant="textLG" class="font-medium text-base-900 dark:text-white">
+                        <Text tag="h1" variant="textXL" class="font-medium text-base-900 dark:text-white">
                             {frontmatter.title}
                         </Text>
                         <Text tag="p" variant="textSM" class="text-base-600 dark:text-base-300">
@@ -36,16 +36,17 @@ const relatedPosts = allPosts.filter((post) =>
                     </div>
                 </div>
                 <div class="lg:col-span-2">
-                    <Image
-                            width={1000}
-                            height={800}
-                            loading="eager"
-                            decoding="async"
-                            alt={frontmatter.image.alt}
-                            src={frontmatter.image.url}
-                            class="object-cover object-center w-full aspect-12/6 lg:col-span-2 rounded-xl"
-                    />
-                    <Wrapper variant="prose" class="mt-4">
+
+                    <Wrapper variant="prose">
+                        <Image
+                                width={1000}
+                                height={800}
+                                loading="eager"
+                                decoding="async"
+                                alt={frontmatter.image.alt}
+                                src={frontmatter.image.url}
+                                class="object-cover object-center w-full aspect-12/6 lg:col-span-2 rounded-xl"
+                        />
                         <slot/>
                     </Wrapper>
                 </div>
@@ -56,7 +57,7 @@ const relatedPosts = allPosts.filter((post) =>
         relatedPosts.length > 0 && (
                     <section>
                         <Wrapper variant="standard">
-                            <div class="grid grid-cols-1 gap-x-12 gap-y-8 lg:gap-4 lg:grid-cols-3 py-24">
+                            <div class="grid grid-cols-1 gap-x-12 gap-y-8 lg:gap-4 lg:grid-cols-3 py-16 lg:py-24">
                                 <Text
                                         tag="h2"
                                         variant="textBase"

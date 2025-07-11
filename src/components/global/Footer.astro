@@ -39,7 +39,7 @@ const LinkData = [
 
 <footer>
     <Wrapper variant="standard">
-        <div class="flex flex-col gap-16 py-24 border-t border-base-400 dark:border-base-600">
+        <div class="flex flex-col gap-16 py-16 lg:py-24 border-t border-base-400 dark:border-base-600">
             <nav class="grid grid-cols-1 gap-x-12 gap-y-8 md:grid-cols-2 lg:grid-cols-3">
                 {LinkData.map(({category, links, linkClass, headerClass}) => (
                         <div class="flex flex-col gap-2">
@@ -50,7 +50,7 @@ const LinkData = [
                                     <Link
                                             href={href}
                                             aria-label={ariaLabel}
-                                            size="xs"
+                                            size="sm"
                                             variant="muted"
                                             class={linkClass}
                                             key={href}
