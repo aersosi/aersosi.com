@@ -7,8 +7,8 @@ import ExternalLink from "@/components/lib/icons/ExternalLink.astro";
 
 const links = [
     {
-        platform: "twitter",
-        ariaLabel: "twitter aersosi",
+        platform: "Twitter",
+        ariaLabel: "Twitter aersosi",
         url: "https://x.com/aersosi",
     },
     {
@@ -19,7 +19,7 @@ const links = [
     {
         platform: "Linkedin",
         ariaLabel: "linkedin aersosi",
-        url: "https://www.linkedin.com/in/aersosi/",
+        url: "https://www.linkedin.com/in/aersosi",
     },
     {
         platform: "Email",
@@ -40,7 +40,7 @@ const links = [
             <div class="flex flex-col gap-2 lg:col-span-2">
                 {
                     links.map((social) => (
-                            <Link aria-label={social.ariaLabel} target="_blank" href={social.url} size="base" variant="accent" class="group">
+                            <Link data-obfuscation="0" aria-label={social.ariaLabel} target="_blank" href={social.url} size="base" variant="accent" class="group">
                                 {social.platform}
                                 <ExternalLink size="base"
                                               class="-mt-0.5 transition duration-300 opacity-0 group-hover:opacity-100"/>

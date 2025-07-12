@@ -3,6 +3,8 @@ import tailwindcss from '@tailwindcss/vite';
 import sitemap from "@astrojs/sitemap";
 import mdx from '@astrojs/mdx';
 
+import mailObfuscation from 'astro-mail-obfuscation';
+
 // https://astro.build/config
 export default defineConfig({
   vite: {
@@ -20,5 +22,5 @@ export default defineConfig({
     drafts: true
   },
   site: 'https://yourdomain.com',
-  integrations: [sitemap(), mdx()]
+  integrations: [sitemap(), mdx(), mailObfuscation()]
 });
