@@ -12,7 +12,8 @@ import ExternalLink from "../components/lib/icons/ExternalLink.astro";
 const allProjects = await getCollection("projects");
 const relatedProjects = allProjects.filter((project) =>
     project.data.tags.some((tag) => frontmatter.tags.includes(tag)) &&
-    project.data.title !== frontmatter.title
+    project.data.title !== frontmatter.title &&
+    project.data.title === "Template"
 );
 ---
 
@@ -62,33 +63,45 @@ const relatedProjects = allProjects.filter((project) =>
                                             )}
                                         </div>
                                 ) : (
-                                    frontmatter.noLinks && (
+                                    frontmatter.noLinksText && (
                                             <Text tag="p" variant="textBase" class="dark:text-white">
-                                                {frontmatter.noLinks}
+                                                {frontmatter.noLinksText}
                                             </Text>
                                     )
                                 )}
                             </div>
 
-                            <div class="grid gap-2">
-                                <Text tag="h3" variant="textSM" class="font-medium text-base-600 dark:text-base-300">
-                                    Firma ({frontmatter.company.companySize} Pers.)
-                                </Text>
+                            {frontmatter.company.companyName === "" ? (
+                                    <div class="grid gap-2">
+                                        <Text tag="h3" variant="textSM" class="font-medium text-base-600 dark:text-base-300">
+                                            Firma ({frontmatter.company.companySize} Pers.)
+                                        </Text>
 
-                                <Text tag="p" variant="textBase" class="dark:text-white">
-                                    {frontmatter.company.companyName}
-                                </Text>
-                            </div>
+                                        <Text tag="p" variant="textBase" class="dark:text-white">
+                                            {frontmatter.company.companyName}
+                                        </Text>
+                                    </div>
 
-                            <div class="grid gap-2">
-                                <Text tag="h3" variant="textSM" class="font-medium text-base-600 dark:text-base-300">
-                                    Team ({frontmatter.company.teamSize} Pers.)
-                                </Text>
+                                    <div class="grid gap-2">
+                                        <Text tag="h3" variant="textSM" class="font-medium text-base-600 dark:text-base-300">
+                                            Aufgabe (Team {frontmatter.company.teamSize} Pers.)
+                                        </Text>
 
-                                <Text tag="p" variant="textBase" class="dark:text-white">
-                                    {frontmatter.company.myRole}
-                                </Text>
-                            </div>
+                                        <Text tag="p" variant="textBase" class="dark:text-white text-balance">
+                                            {frontmatter.company.myRole}
+                                        </Text>
+                                    </div>
+                            ) : (
+                                    <div class="grid gap-2">
+                                        <Text tag="h3" variant="textSM" class="font-medium text-base-600 dark:text-base-300">
+                                            Aufgabe
+                                        </Text>
+
+                                        <Text tag="p" variant="textBase" class="dark:text-white text-balance">
+                                            {frontmatter.company.myRole}
+                                        </Text>
+                                    </div>
+                            )}
                         </div>
 
                     </div>

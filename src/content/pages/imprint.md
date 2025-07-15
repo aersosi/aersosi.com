@@ -3,7 +3,7 @@ pubDate: 2025-06-08
 title: "Impressum"
 description: "Transparenz und Erreichbarkeit sind mir wichtig. Hier findest du alle relevanten Daten auf einen Blick."
 image:
-  url: "/src/images/articles/3.jpg"
+  url: "/src/images/pages/1.jpg"
   alt: "Lorem Ipsum Image Text"
 tags: ["CSS", "A11y", "Tooltip"]
 ---

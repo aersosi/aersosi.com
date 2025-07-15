@@ -31,8 +31,13 @@ const allProjectsUnsorted = await getCollection("projects")
 const allProjects = allProjectsUnsorted.sort(
     (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
 )
-// Tags
-const tags = [...new Set(allProjects.map((project) => project.data.tags).flat())];
+
+const allTags = [...new Set(allProjects.map((post) => post.data.tags).flat())];
+const priorityTags = ["Professionelles Projekt", "Privates Projekt"];
+const projectTypes = allTags.filter((tag) => priorityTags.includes(tag));
+const otherTags = allTags
+    .filter((tag) => !priorityTags.includes(tag))
+    .sort((a, b) => a.localeCompare(b, "de"));
 ---
 
 <BaseLayout pageTitle={tag}>
@@ -57,7 +62,17 @@ const tags = [...new Set(allProjects.map((project) => project.data.tags).flat())
                                 )
                             </div>
                         </Text>
-                        {tags.map((tag) => (
+
+                        {projectTypes.map((tag) => (
+                                <Link title={tag} aria-label={tag} href={`/projects/tags/${tag}`} size="sm"
+                                      variant="accent">
+                                    {tag}
+                                </Link>
+                        ))}
+
+                        <hr class="my-4 text-base-400 dark:text-base-60">
+
+                        {otherTags.map((tag) => (
                                 <Link title={tag} aria-label={tag} href={`/projects/tags/${tag}`} size="sm"
                                       variant="accent">
                                     {tag}

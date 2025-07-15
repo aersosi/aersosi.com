@@ -1,6 +1,6 @@
 ---
 pubDate: 2022-06-08
-title: "Projekt 1"
+title: "Template"
 description: "Lorem ipsum dolor sit."
 image:
   url: "/src/images/projects/1.jpg"
@@ -15,12 +15,12 @@ demo:
   name: "Live"
   href: "https://"
   ariaLabel: "ariaLabel"
-noLinks: "Internes Projekt"
+noLinksText: "Internes Projekt"
 
 company:
   companyName: "companyName"
-  companySize: 240
-  teamSize: 24
+  companySize: "250"
+  teamSize: "x-y"
   myRole: "myRole"
 ---
 

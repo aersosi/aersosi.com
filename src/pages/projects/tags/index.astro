@@ -1,32 +1,25 @@
 ---
-// Assets
-import { Image } from "astro:assets";
-// Fundations
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import Text from "@/components/lib/elements/Text.astro";
 import Wrapper from "@/components/lib/containers/Wrapper.astro";
-// Content
 import { getCollection } from "astro:content";
 import GoBack from "@/components/lib/elements/GoBack.astro";
 import Link from "@/components/lib/elements/Link.astro";
-// Get all projects
 const allProjects = await getCollection("projects")
-// Extract tags from all projects and count occurrences
+
+const allTags = [...new Set(allProjects.map((post) => post.data.tags).flat())];
 const tagCounts = allProjects.reduce((acc, post) => {
     post.data.tags.forEach((tag) => {
         acc[tag] = (acc[tag] || 0) + 1; // Count each tag per post
     });
     return acc;
 }, {});
-// Extract unique tags for display
-const tags = Object.keys(tagCounts);
-// Function to get the image for a specific tag
-function getTagImage(tag) {
-    const filteredProjects = allProjects.filter((post) => post.data.tags.includes(tag));
-    if (filteredProjects.length > 0) {
-        return filteredProjects[0].data.image.url; // Return the image of the first post with that tag
-    }
-}
+
+const priorityTags = ["Professionelles Projekt", "Privates Projekt"];
+const projectTypes = allTags.filter((tag) => priorityTags.includes(tag));
+const otherTags = allTags
+    .filter((tag) => !priorityTags.includes(tag))
+    .sort((a, b) => a.localeCompare(b, "de"));
 ---
 
 <BaseLayout>
@@ -44,10 +37,21 @@ function getTagImage(tag) {
                 </div>
 
                 <div class="flex flex-col gap-2 lg:col-span-2">
-                    {tags.map((tag) => (
+
+                    {projectTypes.map((tag) => (
                             <Link title={tag} aria-label={tag} href={`/projects/tags/${tag}`} size="sm"
                                   variant="accent">
-                                <span>{tagCounts[tag]}</span>
+                                <span>{tagCounts[tag]} - </span>
+                                <span>{tag}</span>
+                            </Link>
+                    ))}
+
+                    <hr class="my-4 text-base-400 dark:text-base-60">
+
+                    {otherTags.map((tag) => (
+                            <Link title={tag} aria-label={tag} href={`/projects/tags/${tag}`} size="sm"
+                                  variant="accent">
+                                <span>{tagCounts[tag]} - </span>
                                 <span>{tag}</span>
                             </Link>
                     ))}

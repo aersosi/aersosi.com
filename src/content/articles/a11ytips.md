@@ -3,7 +3,7 @@ pubDate: 2025-06-08
 title: "a11ytips – Barrierefreie Tooltips"
 description: "Mit viel gutem CSS und wenig JavaScript."
 image:
-  url: "/src/images/articles/2.jpg"
+  url: "/src/images/articles/1.jpg"
   alt: "Lorem Ipsum Image Text"
 tags: [ "CSS", "A11y", "Tooltip" ]
 ---

@@ -15,8 +15,12 @@ const allProjects = allProjectsUnsorted.sort(
     (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
 );
 
-// Tags
-const tags = [...new Set(allProjects.map((post) => post.data.tags).flat())];
+const allTags = [...new Set(allProjects.map((post) => post.data.tags).flat())];
+const priorityTags = ["Professionelles Projekt", "Privates Projekt"];
+const projectTypes = allTags.filter((tag) => priorityTags.includes(tag));
+const otherTags = allTags
+    .filter((tag) => !priorityTags.includes(tag))
+    .sort((a, b) => a.localeCompare(b, "de"));
 ---
 
 <BaseLayout>
@@ -30,8 +34,6 @@ const tags = [...new Set(allProjects.map((post) => post.data.tags).flat())];
                         <Text tag="h1" variant="textXL" class="font-medium text-base-900 dark:text-white">
                             Projekte
                         </Text>
-
-
                     </div>
 
                     <div class="relative flex h-full mt-1 overflow-x-scroll gap-2 scrollable-content snap-x snap-proximity scrollbar-hide lg:flex-col lg:gap-1 lg:mt-8">
@@ -45,7 +47,16 @@ const tags = [...new Set(allProjects.map((post) => post.data.tags).flat())];
                         </Text>
 
 
-                        {tags.map((tag) => (
+                        {projectTypes.map((tag) => (
+                                <Link title={tag} aria-label={tag} href={`/projects/tags/${tag}`} size="sm"
+                                      variant="accent">
+                                    {tag}
+                                </Link>
+                        ))}
+
+                        <hr class="my-4 text-base-400 dark:text-base-60">
+
+                        {otherTags.map((tag) => (
                                 <Link title={tag} aria-label={tag} href={`/projects/tags/${tag}`} size="sm"
                                       variant="accent">
                                     {tag}

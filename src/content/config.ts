@@ -43,12 +43,12 @@ const projectsCollection = defineCollection({
                 ariaLabel: z.string(),
             }).optional(),
 
-            noLinks: z.string().optional(),
+            noLinksText: z.string().optional(),
 
             company: z.object({
                 companyName: z.string(),
-                companySize: z.number(),
-                teamSize: z.number(),
+                companySize: z.string(),
+                teamSize: z.string(),
                 myRole: z.string(),
             }),
 

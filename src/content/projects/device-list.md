@@ -4,24 +4,16 @@ title: "Device List"
 description: "Interne Anwendung für das Datenmanagement von Kunden-Hardware und -Software"
 image:
   url: "/src/images/projects/1.jpg"
-  alt: "Lorem ipsum dolor sit."
-tags: [ "Professionell","ProjectTag2","ProjectTag3" ]
+  alt: "Dashboard der Device List"
+tags: [ "Professionelles Projekt","UX (User Experience)", "UI (User Interface)", "Frontend-Entwicklung" ]
 
-#repo:
-#  name: "GitHub"
-#  href: "https://"
-#  ariaLabel: "AriaLabel"
-#demo:
-#  name: "Live"
-#  href: "https://"
-#  ariaLabel: "ariaLabel"
-noLinks: "Internes Projekt"
+noLinksText: "Firmeninternes Projekt"
 
 company:
-  companyName: "companyName"
-  companySize: 240
-  teamSize: 24
-  myRole: "myRole"
+  companyName: "avodaq AG, Hamburg"
+  companySize: "ca. 250"
+  teamSize: "3–5"
+  myRole: "UX/UI-Design & Frontend-Entwicklung (Angular v.18)"
 ---
 
 ## Projektbeschreibung
@@ -42,7 +34,7 @@ Entwicklung des UI/UX-Designs der Anwendung in Figma und technische Umsetzung in
 
 **UX-Research & Konzept**
 
-- Durchführung von Interviews mit technischen Kolleg:innen zur Erhebung konkreter Anforderungen und Nutzungskontexte 
+- Durchführung von Interviews mit technischen Kolleg:innen zur Erhebung konkreter Anforderungen und Nutzungskontexte
   (**User Research, Contextual Inquiry**).
 - Beobachtung realer Nutzungsszenarien zur Identifikation von Prozessmustern und Optimierungspotenzialen (**User
   Observation**).
@@ -54,13 +46,13 @@ Entwicklung des UI/UX-Designs der Anwendung in Figma und technische Umsetzung in
 
 - Erstellung von Wireframes und interaktiven Prototypen als Grundlage für Designentscheidungen (**Wireframing,
   Prototyping**).
-- Iterative Verbesserung des Interface-Designs in enger Abstimmung mit Stakeholdern, Entwicklerteam und Product Owner 
+- Iterative Verbesserung des Interface-Designs in enger Abstimmung mit Stakeholdern, Entwicklerteam und Product Owner
   (**Iteratives Design**).
 
 **Technische Umsetzung**
 
-- Fokus auf modulare, wartbare Komponenten: Implementierung des Frontends in Angular, Angular-Material, TypeScript,
-  SCSS, und HTML.
+- Fokus auf modulare, wartbare Komponenten. Implementierung des Frontends in Angular, Angular-Material, TypeScript, SCSS
+und HTML.
 
 ## Technologien
 
