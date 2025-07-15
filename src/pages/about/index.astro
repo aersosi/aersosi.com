@@ -104,11 +104,9 @@ const cvData = [
             <div class="grid grid-cols-1 gap-x-12 gap-y-8 lg:grid-cols-3 py-16 lg:py-24 lg:pt-40 border-b border-base-400 dark:border-base-600">
                 <div class="grid gap-8">
                     <GoBack/>
-                    <div class="grid items-center lg:sticky lg:top-14 rounded-lg px-2 -mx-2 w-fit h-14 backdrop-blur-xs">
-                        <Text tag="h1" variant="textXL" class="font-medium text-base-800 dark:text-base-100">
-                            {pageData.title}
-                        </Text>
-                    </div>
+                    <Text tag="h1" variant="textXL" class="font-medium text-base-800 dark:text-base-100">
+                        {pageData.title}
+                    </Text>
                     <Text tag="p" variant="textSM" class="text-base-600 dark:text-base-300 -mt-8 ">
                         Aktualisiert am <span id="publishedDate">14.06.1985</span>
                     </Text>
@@ -218,16 +216,11 @@ const cvData = [
             <!--CV-->
 
             <Wrapper variant="prose" class=" py-16 lg:py-24">
-                <div class="lg:sticky top-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 sm:gap-x-12 items-start sm:items-center pb-8 sm:pb-0 lg:pb-8">
-                    <div class="h-14 flex lg:justify-end w-full">
-                        <div class="flex items-center col-span-1 h-14 w-fit backdrop-blur-xs rounded-xl text-end px-2 lg:-mx-2">
-                            <Text tag="h3" variant="textXL" class="font-medium !my-0 lg:ml-auto">
-                                Curriculum Vitae
-                            </Text>
-                        </div>
-                    </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-x-12 items-start sm:items-center">
+                    <Text tag="h3" variant="textXL" class="font-medium !my-0 lg:ml-auto">
+                        Curriculum Vitae
+                    </Text>
                     <div class="col-span-1">
-                        <div class="sm:ml-auto p-2 w-fit rounded-xl lg:-mx-2 backdrop-blur-xs bg-base-200/50 dark:bg-base-800/50">
                             <Button aria-label="CV herunterladen"
                                     isLink={true}
                                     download="CV_Arthur_Ersosi_2025_DE.pdf"
@@ -237,7 +230,6 @@ const cvData = [
                                     class="sm:ml-auto lg:ml-0 w-fit no-underline !text-white !dark:text-base-950">
                                 CV herunterladen
                             </Button>
-                        </div>
                     </div>
                 </div>
 

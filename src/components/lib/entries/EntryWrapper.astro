@@ -1,0 +1,35 @@
+---
+import Text from "../elements/Text.astro";
+
+const {url, title, description} = Astro.props;
+---
+
+<article class="group relative grid grid-cols-1 gap-x-12 gap-y-8 lg:grid-cols-3 lg:items-start">
+    <div class="lg:col-span-2">
+        <Text tag="h3"
+              variant="textBase"
+              class="font-medium tracking-tight transition-colors text-base-900 dark:text-white group-hover:text-accent-700 group-hover:dark:text-accent-300"
+        >
+            <div class="absolute -inset-x-4 -inset-y-3 z-0 scale-95 opacity-0 transition group-hover:scale-100 group-hover:opacity-100 rounded-2xl bg-accent-500/10 dark:bg-accent-600/10"></div>
+            <a href={url} aria-label={title}>
+                <>
+                    <div class="absolute -inset-x-3 -inset-y-4 z-20 rounded-2xl"></div>
+                    <div class="relative z-10">{title}</div>
+                </>
+            </a>
+        </Text>
+        <Text tag="p"
+              variant="textBase"
+              class="relative z-10 mt-1 transition-colors text-base-600 dark:text-base-300 group-hover:text-accent-700 group-hover:dark:text-accent-300"
+        >
+            {description}
+        </Text>
+    </div>
+
+    <Text tag="p"
+          variant="textBase"
+          class="relative z-10 flex items-center lg:ml-auto transition-colors text-base-600 dark:text-base-300 group-hover:text-accent-700 group-hover:dark:text-accent-300"
+    >
+        <slot/>
+    </Text>
+</article>

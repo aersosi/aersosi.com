@@ -4,7 +4,7 @@
 import Text from "@/components/lib/elements/Text.astro";
 import Wrapper from "@/components/lib/containers/Wrapper.astro";
 // Component
-import BlogEntry from "../lib/entries/BlogEntry.astro";
+import ArticlesEntry from "../lib/entries/ArticlesEntry.astro";
 // Content
 import { getCollection } from "astro:content";
 import Link from "@/components/lib/elements/Link.astro";
@@ -35,7 +35,7 @@ const allPosts = allPostsUnsorted.sort(
         </Link>
       </div>
       <div class="flex flex-col gap-12 lg:col-span-2">
-        {allPosts.slice(0, 3).map((post) => <BlogEntry post={post} />)}
+        {allPosts.slice(0, 3).map((post) => <ArticlesEntry post={post} />)}
       </div>
     </div>
   </Wrapper>

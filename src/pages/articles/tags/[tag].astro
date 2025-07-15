@@ -4,7 +4,7 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
 import Text from "@/components/lib/elements/Text.astro";
 import Wrapper from "@/components/lib/containers/Wrapper.astro";
 // Components
-import BlogEntry from "../../../components/lib/entries/BlogEntry.astro";
+import ArticlesEntry from "../../../components/lib/entries/ArticlesEntry.astro";
 // Content
 import { getCollection } from "astro:content";
 import GoBack from "@/components/lib/elements/GoBack.astro";
@@ -38,9 +38,7 @@ const tags = [...new Set(allPosts.map((post) => post.data.tags).flat())];
 <BaseLayout pageTitle={tag}>
     <section>
         <Wrapper variant="standard">
-            <div
-                    class="grid grid-cols-1 gap-x-12 gap-y-8 lg:grid-cols-3  py-16 lg:py-24 lg:pt-40"
-            >
+            <div class="grid grid-cols-1 gap-x-12 gap-y-8 lg:grid-cols-3 py-16 lg:py-24 lg:pt-40">
                 <div class="lg:sticky lg:top-16 lg:z-40 self-start">
                     <div class="flex gap-8 flex-col">
                         <GoBack/>
@@ -69,7 +67,7 @@ const tags = [...new Set(allPosts.map((post) => post.data.tags).flat())];
                 </div>
                 <div class="flex flex-col gap-12 lg:col-span-2">
                     {articles.map((post) =>
-                            <BlogEntry post={post}/>)}
+                            <ArticlesEntry post={post}/>)}
                 </div>
             </div>
         </Wrapper>

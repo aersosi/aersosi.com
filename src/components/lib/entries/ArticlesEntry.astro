@@ -1,0 +1,18 @@
+---
+import EntryWrapper from "./EntryWrapper.astro";
+
+const { url, title, description, pubDate } = {
+    url: "/articles/" + Astro.props.post.slug,
+    title: Astro.props.post.data.title,
+    description: Astro.props.post.data.description,
+    pubDate: new Date(Astro.props.post.data.pubDate).toLocaleDateString("en-US", {
+        year: "numeric",
+        month: "long",
+        day: "2-digit",
+    }),
+};
+---
+
+<EntryWrapper url={url} title={title} description={description}>
+    <time datetime={pubDate}>{pubDate}</time>
+</EntryWrapper>

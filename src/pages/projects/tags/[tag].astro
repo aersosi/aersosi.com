@@ -38,9 +38,7 @@ const tags = [...new Set(allProjects.map((project) => project.data.tags).flat())
 <BaseLayout pageTitle={tag}>
     <section>
         <Wrapper variant="standard">
-            <div
-                    class="grid grid-cols-1 gap-x-12 gap-y-8 lg:grid-cols-3  py-16 lg:py-24 lg:pt-40"
-            >
+            <div class="grid grid-cols-1 gap-x-12 gap-y-8 lg:grid-cols-3  py-16 lg:py-24 lg:pt-40">
                 <div class="lg:sticky lg:top-16 lg:z-40 self-start">
                     <div class="flex gap-8 flex-col">
                         <GoBack/>

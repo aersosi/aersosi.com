@@ -4,7 +4,7 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
 import Text from "@/components/lib/elements/Text.astro";
 import Wrapper from "@/components/lib/containers/Wrapper.astro";
 // Component
-import BlogEntry from "../../components/lib/entries/BlogEntry.astro";
+import ArticlesEntry from "../../components/lib/entries/ArticlesEntry.astro";
 // Content
 import { getCollection } from "astro:content";
 import GoBack from "@/components/lib/elements/GoBack.astro";
@@ -53,7 +53,7 @@ const tags = [...new Set(allPosts.map((post) => post.data.tags).flat())];
                 </div>
                 <div class="flex flex-col gap-12 lg:col-span-2">
                     {allPosts.map((post) =>
-                            <BlogEntry post={post}/>)}
+                            <ArticlesEntry post={post}/>)}
                 </div>
             </div>
         </Wrapper>
