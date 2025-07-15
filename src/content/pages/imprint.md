@@ -1,9 +1,9 @@
 ---
 pubDate: 2025-06-08
 title: "Impressum"
-description: "Lorem Ipsum Description"
+description: "Transparenz und Erreichbarkeit sind mir wichtig. Hier findest du alle relevanten Daten auf einen Blick."
 image:
-  url: "/src/images/blog/3.jpg"
+  url: "/src/images/articles/3.jpg"
   alt: "Lorem Ipsum Image Text"
 tags: ["CSS", "A11y", "Tooltip"]
 ---

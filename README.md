@@ -43,7 +43,7 @@ Updated on 20th June 2025
 - Full redesign
 - Added light/dark mode
 - Added navigation
-- Added blog and content collections
+- Added articles and content collections
 ## This update includes:
  Added Image component from Astro
   The Astro Image component is coming back to the themes

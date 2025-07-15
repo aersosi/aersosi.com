@@ -4,13 +4,13 @@
 import Text from "@/components/lib/elements/Text.astro";
 import Wrapper from "@/components/lib/containers/Wrapper.astro";
 // Component
-import BlogEntry from "@/components/blog/BlogEntry.astro";
+import BlogEntry from "../lib/entries/BlogEntry.astro";
 // Content
 import { getCollection } from "astro:content";
 import Link from "@/components/lib/elements/Link.astro";
 import ArrowRight from "@/components/lib/icons/ArrowRight.astro";
 
-const allPostsUnsorted = await getCollection("posts");
+const allPostsUnsorted = await getCollection("articles");
 const allPosts = allPostsUnsorted.sort(
     (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
 )
@@ -29,7 +29,7 @@ const allPosts = allPostsUnsorted.sort(
         >
           Neueste Artikel
         </Text>
-        <Link href="/blog" size="sm" variant="accent">
+        <Link href="/articles" size="sm" variant="accent">
           Alle Artikel
           <ArrowRight size="sm"/>
         </Link>

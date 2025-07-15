@@ -1,9 +1,9 @@
 ---
 // Fundations
-import Text from "@/components/lib/elements/Text.astro";
+import Text from "../elements/Text.astro";
 // Content
 const {url, title, description, pubDate} = {
-    url: "/blog/posts/" + Astro.props.post.slug,
+    url: "/articles/" + Astro.props.post.slug,
     title: Astro.props.post.data.title,
     description: Astro.props.post.data.description,
     pubDate: new Date(Astro.props.post.data.pubDate).toLocaleDateString("en-US", {
@@ -17,7 +17,7 @@ const {url, title, description, pubDate} = {
 <article class="group relative grid grid-cols-1 gap-x-12 gap-y-8 lg:grid-cols-3 lg:items-start">
     <div class="lg:col-span-2">
         <Text tag="h3" variant="textBase" class="font-medium tracking-tight text-base-900 dark:text-white">
-            <div class="absolute -inset-x-1 -inset-y-4 z-0 scale-95 bg-base-500/10 dark:bg-base-600/10 opacity-0 transition group-hover:scale-100 group-hover:opacity-100 -inset-x-4 rounded-2xl duration-300">
+            <div class="absolute -inset-x-4 -inset-y-4 z-0 scale-95 bg-base-500/10 dark:bg-base-600/10 opacity-0 transition group-hover:scale-100 group-hover:opacity-100 rounded-2xl duration-300">
             </div>
             <a href={url} aria-label={title}>
                 <>
@@ -26,7 +26,7 @@ const {url, title, description, pubDate} = {
                 </>
             </a>
         </Text>
-        <Text tag="p" variant="textSM" class="relative z-10 mt-1 text-base-600 dark:text-base-300">
+        <Text tag="p" variant="textBase" class="relative z-10 mt-1 text-base-600 dark:text-base-300">
             {description}
         </Text>
     </div>

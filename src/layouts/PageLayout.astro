@@ -1,21 +1,10 @@
 ---
 import { Image } from "astro:assets";
-// Fundations
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import Text from "@/components/lib/elements/Text.astro";
 import Wrapper from "@/components/lib/containers/Wrapper.astro";
-// Components
-import BlogEntry from "@/components/blog/BlogEntry.astro";
-// Content
 const {frontmatter} = Astro.props;
-// Get all posts and filter by tag
-import { getCollection } from "astro:content";
 import GoBack from "@/components/lib/elements/GoBack.astro";
-import Button from "@/components/lib/elements/Button.astro";
-const allPosts = await getCollection("posts");
-const relatedPosts = allPosts.filter((post) =>
-    post.data.tags.some((tag) => frontmatter.tags.includes(tag))
-);
 ---
 
 <BaseLayout>

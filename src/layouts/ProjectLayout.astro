@@ -1,0 +1,135 @@
+---
+import { Image } from "astro:assets";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import Text from "@/components/lib/elements/Text.astro";
+import Wrapper from "@/components/lib/containers/Wrapper.astro";
+import Link from "../components/lib/elements/Link.astro";
+import ProjectEntry from "../components/lib/entries/ProjectEntry.astro";
+const {frontmatter} = Astro.props;
+import { getCollection } from "astro:content";
+import GoBack from "@/components/lib/elements/GoBack.astro";
+import ExternalLink from "../components/lib/icons/ExternalLink.astro";
+const allProjects = await getCollection("projects");
+const relatedProjects = allProjects.filter((project) =>
+    project.data.tags.some((tag) => frontmatter.tags.includes(tag)) &&
+    project.data.title !== frontmatter.title
+);
+---
+
+<BaseLayout>
+    <section>
+        <Wrapper variant="standard">
+            <div class="grid grid-cols-1 gap-x-12 gap-y-8 lg:grid-cols-3 py-16 lg:py-24 lg:pt-40">
+                <div class="lg:sticky lg:top-16 lg:z-40 self-start">
+                    <div class="flex gap-8 flex-col">
+                        <GoBack/>
+
+                        <Text tag="h1" variant="textXL" class="font-medium text-base-900 dark:text-white">
+                            {frontmatter.title}
+                        </Text>
+
+                        <div class="grid gap-8">
+                            <div class="grid gap-2">
+                                <Text tag="h3" variant="textSM" class="font-medium text-base-600 dark:text-base-300">
+                                    Online
+                                </Text>
+
+                                {frontmatter.repo || frontmatter.demo ? (
+                                        <div class="flex gap-6">
+                                            {frontmatter.repo && (
+                                                    <Link target="_blank"
+                                                          href={frontmatter.repo.href}
+                                                          aria-label={frontmatter.repo.ariaLabel}
+                                                          size="base"
+                                                          variant="accent"
+                                                          a11ytip-bottom
+                                                    >
+                                                        {frontmatter.repo.name}
+                                                        <ExternalLink size="base" class="-mt-0.5"/>
+                                                    </Link>
+                                            )}
+                                            {frontmatter.demo && (
+                                                    <Link target="_blank"
+                                                          href={frontmatter.demo.href}
+                                                          aria-label={frontmatter.demo.ariaLabel}
+                                                          size="base"
+                                                          variant="accent"
+                                                          a11ytip-bottom
+                                                    >
+                                                        {frontmatter.demo.name}
+                                                        <ExternalLink size="base" class="-mt-0.5"/>
+                                                    </Link>
+                                            )}
+                                        </div>
+                                ) : (
+                                    frontmatter.noLinks && (
+                                            <Text tag="p" variant="textBase" class="dark:text-white">
+                                                {frontmatter.noLinks}
+                                            </Text>
+                                    )
+                                )}
+                            </div>
+
+                            <div class="grid gap-2">
+                                <Text tag="h3" variant="textSM" class="font-medium text-base-600 dark:text-base-300">
+                                    Firma ({frontmatter.company.companySize} Pers.)
+                                </Text>
+
+                                <Text tag="p" variant="textBase" class="dark:text-white">
+                                    {frontmatter.company.companyName}
+                                </Text>
+                            </div>
+
+                            <div class="grid gap-2">
+                                <Text tag="h3" variant="textSM" class="font-medium text-base-600 dark:text-base-300">
+                                    Team ({frontmatter.company.teamSize} Pers.)
+                                </Text>
+
+                                <Text tag="p" variant="textBase" class="dark:text-white">
+                                    {frontmatter.company.myRole}
+                                </Text>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="lg:col-span-2">
+
+                    <Wrapper variant="prose">
+                        <Image
+                                width={1000}
+                                height={800}
+                                loading="eager"
+                                decoding="async"
+                                alt={frontmatter.image.alt}
+                                src={frontmatter.image.url}
+                                class="object-cover object-center w-full aspect-12/6 lg:col-span-2 rounded-xl"
+                        />
+                        <slot/>
+                    </Wrapper>
+                </div>
+            </div>
+        </Wrapper>
+    </section>
+    {
+        relatedProjects.length > 0 && (
+                    <section>
+                        <Wrapper variant="standard">
+                            <div class="grid grid-cols-1 gap-x-12 gap-y-8 lg:gap-4 lg:grid-cols-3 py-16 lg:py-24 border-t border-base-400 dark:border-base-600">
+                                <Text tag="h2"
+                                      variant="textBase"
+                                      class="font-medium text-base-900 dark:text-white"
+                                >
+                                    Ähnliche Projekte
+                                </Text>
+                                <div class="flex flex-col gap-12 lg:col-span-2">
+                                    {relatedProjects.slice(0, 3).map((project) => (
+                                            <ProjectEntry project={project}/>
+                                    ))}
+                                </div>
+                            </div>
+                        </Wrapper>
+                    </section>
+        )
+    }
+</BaseLayout>

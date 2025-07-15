@@ -1,9 +1,9 @@
 ---
 pubDate: 2025-06-08
 title: "Datenschutz"
-description: "Lorem Ipsum Description"
+description: "Keine Cookies, kein Tracking! Diese Website ist rein informativ und verzichtet bewusst auf Analyse- oder Marketingtechnologien."
 image:
-  url: "/src/images/blog/3.jpg"
+  url: "/src/images/articles/3.jpg"
   alt: "Lorem Ipsum Image Text"
 tags: ["CSS", "A11y", "Tooltip"]
 ---

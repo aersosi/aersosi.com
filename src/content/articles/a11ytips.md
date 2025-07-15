@@ -3,9 +3,9 @@ pubDate: 2025-06-08
 title: "a11ytips – Barrierefreie Tooltips"
 description: "Mit viel gutem CSS und wenig JavaScript."
 image:
-  url: "/src/images/blog/2.jpg"
+  url: "/src/images/articles/2.jpg"
   alt: "Lorem Ipsum Image Text"
-tags: ["CSS", "A11y", "Tooltip"]
+tags: [ "CSS", "A11y", "Tooltip" ]
 ---
 
 ## A11ytips – Barrierefreie Tooltips
@@ -98,6 +98,10 @@ aber sollte bald überall implementiert sein.
   Hover mich
 </button>
 ```
+
+<button a11ytip-top aria-label="Hover mich">
+    Hover mich
+</button>
 
 ### Ein wildes **a11tip** ist erschienen!
 Easy peasy positionierung!
