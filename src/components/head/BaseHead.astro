@@ -1,12 +1,13 @@
 ---
-import Seo from "@/components/lib/head/Seo.astro";
-import Meta from "@/components/lib/head/Meta.astro";
-import Fonts from "@/components/lib/head/Fonts.astro";
-import Favicons from "@/components/lib/head/Favicons.astro";
+import Seo from "./Seo.astro";
+import Meta from "./Meta.astro";
+import Fonts from "./Fonts.astro";
+import Favicons from "./Favicons.astro";
 // Scripts
 import ToggleLocalStorage from "@/components/lib/scripts/ToggleLocalStorage.astro";
 import ToggleA11ytip from "@/components/lib/scripts/ToggleA11ytip.astro";
 import UpdateYear from "@/components/lib/scripts/UpdateYear.astro";
+import UpdatePublishedDate from "@/components/lib/scripts/UpdatePublishedDate.astro";
 import UpdateClock from "@/components/lib/scripts/UpdateClock.astro";
 import ToggleNavActive from "@/components/lib/scripts/ToggleNavActive.astro";
 import UpdateTheme from "@/components/lib/scripts/UpdateTheme.astro";
@@ -21,6 +22,7 @@ import UpdateTheme from "@/components/lib/scripts/UpdateTheme.astro";
 <ToggleLocalStorage />
 <ToggleA11ytip />
 <UpdateYear />
+<UpdatePublishedDate />
 <UpdateClock />
 <ToggleNavActive />
 <UpdateTheme />

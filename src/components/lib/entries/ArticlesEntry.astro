@@ -5,14 +5,14 @@ const { url, title, description, pubDate } = {
     url: "/articles/" + Astro.props.post.slug,
     title: Astro.props.post.data.title,
     description: Astro.props.post.data.description,
-    pubDate: new Date(Astro.props.post.data.pubDate).toLocaleDateString("en-US", {
+    pubDate: new Date(Astro.props.post.data.pubDate).toLocaleDateString("de-DE", {
         year: "numeric",
-        month: "long",
+        month: "2-digit",
         day: "2-digit",
     }),
 };
 ---
 
 <EntryWrapper url={url} title={title} description={description}>
-    <time datetime={pubDate}>{pubDate}</time>
+    <time datetime={new Date(Astro.props.post.data.pubDate).toISOString()}>{pubDate}</time>
 </EntryWrapper>
