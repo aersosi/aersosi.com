@@ -1,6 +1,6 @@
 ---
 pubDate: 2025-06-08
-title: "a11ytips – Barrierefreie Tooltips"
+title: "a11ytip – Barrierefreie Tooltips"
 description: "Mit viel gutem CSS und wenig JavaScript."
 image:
   url: "/src/images/articles/1.jpg"
@@ -8,7 +8,7 @@ image:
 tags: [ "CSS", "A11y", "Tooltip" ]
 ---
 
-## A11ytips – Barrierefreie Tooltips
+## a11ytip – Barrierefreie Tooltips
 
 Kennen Sie das? Sie sind ein junger, ziemlich gut aussehender Web-Entwickler (trotzdem Single) und wollen ihrer
 minimalistisch designten trendy Website/App ein bisschen mehr informativen Kontext durch Tooltips geben? Die Tooltips
@@ -74,7 +74,7 @@ Animations-Delay zu Beginn. Aber das Tooltip soll auch sofort verschwinden, wenn
 herunterhuscht. Ich habe also doch das Nötigste in JavaScript geschrieben. Weiterhin checke ich im JavaScript ob das a11ytip
 **beim Seitenladen** erscheint, **wenn die Maus bereits über dem** getooltippten Element ist.
 
-Dann wollen wir ja alle mehr A11y sein bzw. ist es inzwischen Legislatur. Deswegen wird der A11ytip-Text aus dem
+Dann wollen wir ja alle mehr A11y sein bzw. ist es inzwischen Legislatur. Deswegen wird der a11ytip-Text aus dem
 aria-label des Elements erzeugt.
 
 Zur Erklärung:
@@ -83,14 +83,14 @@ Zur Erklärung:
 steigern/ergänzen. Da ist es naheliegend, beides zusammen zu denken.
 
 Was auch richtig nice ist: Die CSS `attr()`-Funktion hat vor kurzem ein Upgrade erhalten, und damit konnte ich eine
-gezielte Anpassung einzelner a11ytips durch Data-Attribute implementieren. Das ist, stand heute, nur in Chrome drin,
+gezielte Anpassung einzelner a11ytip durch Data-Attribute implementieren. Das ist, stand heute, nur in Chrome drin,
 aber sollte bald überall implementiert sein.
 
 ## Betriebsanleitung
 
 1. Einfach das CSS und JavaScript in dein Projekt kopieren, wohin du es eben haben willst und verlinken.
-2. CSS: `<link rel="stylesheet" href="a11ytips.css">`
-3. JavaScript: `<script src="a11ytips.js"></script>`
+2. CSS: `<link rel="stylesheet" href="a11ytip.css">`
+3. JavaScript: `<script src="a11ytip.js"></script>`
 4. HTML: Bam, Tooltip!
 
 ```html
@@ -153,7 +153,7 @@ Easy peasy positionierung!
 
 ### Globales Looksmaxing
 
-Die a11ytips sind dir nicht Alpha genug? Bam, Config!
+Die a11ytip sind dir nicht Alpha genug? Bam, Config!
 
 ```css
 /* a11ytip_config.css */
@@ -293,7 +293,7 @@ Beide Attribute: Screenreader sagt "Dokument im Projektordner speichern", Toolti
 
 ### Zwei Wege führen nach Rom
 
-Du hast zwei Möglichkeiten, um a11ytips zu verwenden:
+Du hast zwei Möglichkeiten, um a11ytip zu verwenden:
 
 **Variante 1: Nur `aria-label`**
 ```html
@@ -337,5 +337,6 @@ Grab & run, meine lieben Freunde der Sonne! Einfach CSS/JavaScript stehlen und e
 
 Falls ich hier irgendwelchen Quatsch schreibe und du was besser weißt: Bitte nicht anzeigen!
 
-Pullrequest: [https://github.com/aersosi/A11ytip](https://github.com/aersosi/A11ytip)
+Pullrequest: [https://github.com/aersosi/a11ytip](https://github.com/aersosi/a11ytip)
+<br/>
 Oder SMS: https://aersosi.com/#socials

@@ -62,9 +62,9 @@ Hinweise:
 
 ---
 
-### Anpassen von a11ytips mit a11ytip_config.css
+### Anpassen von a11ytip mit a11ytip_config.css
 
-Die CSS-Variablen sind selbsterklärend und steuern die Eigenschaften der a11ytips.
+Die CSS-Variablen sind selbsterklärend und steuern die Eigenschaften der a11ytip.
 Ändern Sie die Variablen entsprechend Ihren Bedürfnissen.
 
 ```css
@@ -124,11 +124,11 @@ Tailwind-Konfiguration:
 }
 ```
 
-### Anpassen von a11ytips mit Data-Attributen
+### Anpassen von a11ytip mit Data-Attributen
 
-Die CSS a11ytips unterstützen optionale `data-*` Attribute, die es Ihnen ermöglichen, die Standardstile
+Die CSS a11ytip unterstützen optionale `data-*` Attribute, die es Ihnen ermöglichen, die Standardstile
 zu überschreiben, die in den CSS-Variablen definiert sind. Diese Attribute bieten eine einfache Möglichkeit,
-a11ytips individuell in Ihrem Markup zu konfigurieren.
+a11ytip individuell in Ihrem Markup zu konfigurieren.
 
 Verfügbare Data-Attribute:
 
@@ -210,9 +210,9 @@ Dieses Prioritätssystem ermöglicht es Ihnen:
 </button>
 ```
 
-### Verschiedene Texte für Bildschirmlesegeräte vs. Visuelle a11ytips
+### Verschiedene Texte für Bildschirmlesegeräte vs. Visuelle a11ytip
 
-Beispiel, das zeigt, wie man verschiedene Texte für Bildschirmlesegeräte und visuelle a11ytips bereitstellt:
+Beispiel, das zeigt, wie man verschiedene Texte für Bildschirmlesegeräte und visuelle a11ytip bereitstellt:
 ```html
 <button a11ytip-top
         aria-label="Schließe das Dialogfenster für besseres Chackra"
