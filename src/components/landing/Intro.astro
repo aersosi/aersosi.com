@@ -16,12 +16,13 @@ import portrait from '/src/images/portrait.webp';
             <div class="lg:sticky lg:top-16 lg:z-40 self-start">
                 <div class="flex flex-col-reverse sm:flex-row gap-x-12 gap-y-8 sm:items-end">
                     <div class="flex lg:hidden flex-col shrink-0  sm:text-end">
-                        <Text tag="h1" variant="textXL"
-                              class="font-medium text-accent-700 dark:text-accent-300 whitespace-nowrap">
-                            Arthur Ersosi
-                        </Text>
-                        <Text tag="p" variant="textLG" class="text-base-600 dark:text-base-300 whitespace-nowrap">
-                            Design Engineer
+                        <Text tag="h1" variant="textXL" class="grid">
+                            <span class="font-medium text-accent-700 dark:text-accent-300 whitespace-nowrap">
+                                Arthur Ersosi
+                            </span>
+                            <span class="font-light text-base-600 dark:text-base-300 whitespace-nowrap">
+                                Design Engineer
+                            </span>
                         </Text>
                     </div>
                     <div>
@@ -38,21 +39,21 @@ import portrait from '/src/images/portrait.webp';
 
             </div>
             <div class="flex flex-col justify-between gap-6 lg:col-span-2">
-                <div class="hidden lg:flex flex-col">
-                    <Text tag="h1" variant="textXL" class="font-medium text-accent-700 dark:text-accent-300">
+                <Text tag="h1" variant="textXL" class="hidden lg:grid">
+                    <span class="font-medium text-accent-700 dark:text-accent-300 whitespace-nowrap">
                         Arthur Ersosi
-                    </Text>
-                    <Text tag="p" variant="textBase" class="text-base-600 dark:text-base-300">
+                    </span>
+                    <span class="font-light text-base-600 dark:text-base-300 whitespace-nowrap">
                         Design Engineer
-                    </Text>
-                </div>
+                    </span>
+                </Text>
 
                 <Wrapper variant="prose" class="text-balance">
                     <Text tag="p" variant="textSM" class="font-medium text-base-900 dark:text-white">
                         <span id="designYear">10</span>+ Jahre Design Expertise trifft auf<br>
                         <span id="devYear">8</span>+ Jahre modernes Web-Development
                     </Text>
-                    <Text tag="p" variant="textBase" >
+                    <Text tag="p" variant="textBase">
                         Moin, ich heiße Arthur (er/ihm) und ich lebe in Hamburg.
                     </Text>
                     <Text tag="p" variant="textBase">
@@ -61,12 +62,13 @@ import portrait from '/src/images/portrait.webp';
                         durchdachte Software elegante Lösungen zu finden.
                     </Text>
                     <Text tag="p" variant="textBase">
-                        Das gelingt durch eine klare Vision und Liebe zum Detail, mit dem Anspruch, exzellente Interfaces,
-                        eine harmonische Journey und skalierbare Systeme zu schaffen. Software muss für alle, die sie nutzen,
+                        Das gelingt durch eine klare Vision und Liebe zum Detail, mit dem Anspruch, exzellente
+                        Interfaces,
+                        eine harmonische Journey und skalierbare Systeme zu schaffen. Software muss für alle, die sie
+                        nutzen,
                         ebenso wertvoll sein wie für jene, die sie entwickeln.
                     </Text>
                 </Wrapper>
-
 
                 <Link href="/about" size="sm" variant="accent">
                     Über mich & CV

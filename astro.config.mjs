@@ -21,6 +21,6 @@ export default defineConfig({
     skipInline: false,
     drafts: true
   },
-  site: 'https://yourdomain.com',
+  site: 'https://aersosi.com',
   integrations: [sitemap(), mdx(), mailObfuscation()]
 });

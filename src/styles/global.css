@@ -63,7 +63,7 @@
 
 :root {
   /* Stylistic settings for Inter font*/
-  font-family: Inter, sans-serif;
+  /*font-family: Inter, sans-serif;*/
   font-feature-settings:
     /*-------- NUMBERS --------*/
     /* Tabular numbers */ "tnum" 1,

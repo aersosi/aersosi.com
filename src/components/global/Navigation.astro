@@ -17,7 +17,9 @@ const baseClass = [
     "z-50",
 
     // mobile center
-    "top-5",
+    "transition-[top]",
+    "duration-500",
+    "top-2",
     "left-1/2",
     "-translate-x-1/2",
 
@@ -42,10 +44,28 @@ const navItems = [
 ];
 ---
 
-
-<div class:list={[
+<div id="mainNavWrapper" class:list={[
     ...baseClass,
 ]}>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const navWrapper = document.getElementById("mainNavWrapper");
+
+        // Überprüfen, ob das Element existiert
+        if (navWrapper) {
+            window.addEventListener("scroll", () => {
+                if (window.scrollY > 100) {
+                    navWrapper.classList.remove("lg:top-14");
+                    navWrapper.classList.add("lg:top-2");
+                } else {
+                    navWrapper.classList.remove("lg:top-2");
+                    navWrapper.classList.add("lg:top-14");
+                }
+            });
+        }
+    });
+</script>
 
     <nav id="mainNav" class="bg-base-200/50 dark:bg-base-800/50 backdrop-blur-xs rounded-xl w-auto">
         <div class="flex items-center p-2 gap-2">

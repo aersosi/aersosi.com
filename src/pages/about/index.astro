@@ -1,10 +1,8 @@
 ---
 import { Image } from "astro:assets";
-import { getEntry } from "astro:content";
 
 import Button from "@/components/lib/elements/Button.astro";
 import Wrapper from "@/components/lib/containers/Wrapper.astro";
-import GoBack from "@/components/lib/elements/GoBack.astro";
 import Text from "@/components/lib/elements/Text.astro";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 
@@ -20,7 +18,6 @@ import MapPin from "@/components/lib/icons/MapPin.astro";
             <!--About Me-->
             <div class="grid grid-cols-1 gap-x-12 gap-y-8 lg:grid-cols-3 py-16 lg:py-24 lg:pt-40 border-b border-base-400 dark:border-base-600">
                 <div class="grid gap-8">
-                    <GoBack/>
                     <Text tag="h1" variant="textXL" class="font-medium text-base-800 dark:text-base-100">
                         {pageData.title}
                     </Text>
