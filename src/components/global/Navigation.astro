@@ -19,15 +19,14 @@ const baseClass = [
     // mobile center
     "transition-[top]",
     "duration-500",
-    "top-2",
+    "top-4",
     "left-1/2",
     "-translate-x-1/2",
 
     // lg right fixed
-    "lg:top-14",
-    "lg:right-14",
-    "lg:left-auto",
-    "lg:translate-x-0",
+    "md:right-10",
+    "md:left-auto",
+    "md:translate-x-0",
 
     // xl right aligned
     "xl:left-1/2",
@@ -47,26 +46,6 @@ const navItems = [
 <div id="mainNavWrapper" class:list={[
     ...baseClass,
 ]}>
-
-<script>
-    document.addEventListener("DOMContentLoaded", () => {
-        const navWrapper = document.getElementById("mainNavWrapper");
-
-        // Überprüfen, ob das Element existiert
-        if (navWrapper) {
-            window.addEventListener("scroll", () => {
-                if (window.scrollY > 100) {
-                    navWrapper.classList.remove("lg:top-14");
-                    navWrapper.classList.add("lg:top-2");
-                } else {
-                    navWrapper.classList.remove("lg:top-2");
-                    navWrapper.classList.add("lg:top-14");
-                }
-            });
-        }
-    });
-</script>
-
     <nav id="mainNav" class="bg-base-200/50 dark:bg-base-800/50 backdrop-blur-xs rounded-xl w-auto">
         <div class="flex items-center p-2 gap-2">
             {navItems.map(({href, ariaLabel, Icon}) => (

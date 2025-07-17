@@ -19,10 +19,10 @@ const relatedPosts = allPosts.filter((post) =>
             <div class="grid grid-cols-1 gap-x-12 gap-y-8 lg:grid-cols-3 py-16 lg:py-24 lg:pt-40">
                 <div class="lg:sticky lg:top-4 lg:z-40 self-start">
                     <div class="flex gap-8 flex-col">
-                        <Text tag="h1" variant="textXL" class="font-medium text-base-900 dark:text-white">
+                        <Text tag="h1" variant="text2XL" class="font-medium text-base-900 dark:text-white">
                             {frontmatter.title}
                         </Text>
-                        <Text tag="p" variant="textSM" class="text-base-600 dark:text-base-300">
+                        <Text tag="p" variant="textBase" class="text-base-600 dark:text-base-300">
                             {frontmatter.description}
                         </Text>
                         <slot name="extra"/>

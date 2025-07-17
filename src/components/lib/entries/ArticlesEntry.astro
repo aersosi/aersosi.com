@@ -11,8 +11,10 @@ const { url, title, description, pubDate } = {
         day: "2-digit",
     }),
 };
+
+const date = new Date(Astro.props.post.data.pubDate).toISOString();
 ---
 
 <EntryWrapper url={url} title={title} description={description}>
-    <time datetime={new Date(Astro.props.post.data.pubDate).toISOString()}>{pubDate}</time>
+    <time datetime={date}>{pubDate}</time>
 </EntryWrapper>
