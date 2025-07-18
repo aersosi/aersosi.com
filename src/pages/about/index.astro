@@ -139,7 +139,7 @@ import { stackGrid, stackGridPadding, stickyElement } from "@/shared/classes.js"
                 <div class="grid gap-6">
                     {
                         cvData.map((item) => (
-                                <div class={stackGrid}>
+                                <div class:list={[...stackGrid]}>
                                     <span></span>
                                     <div class="lg:col-span-2">
                                         <Text tag="h2">
