@@ -1,61 +1,54 @@
 ---
 export interface Props {
-    tag?:
-        | "a"
-        | "p"
-        | "em"
-        | "span"
-        | "small"
-        | "strong"
-        | "summary"
-        | "blockquote"
-        | "h1"
-        | "h2"
-        | "h3"
-        | "h4"
-        | "h5"
-        | "h6";
-    id?: string;
-    href?: string;
-    class?: string;
-    variant?: string;
+	tag?:
+		| "a"
+		| "p"
+		| "em"
+		| "span"
+		| "small"
+		| "strong"
+		| "summary"
+		| "blockquote"
+		| "h1"
+		| "h2"
+		| "h3"
+		| "h4"
+		| "h5"
+		| "h6";
+	id?: string;
+	href?: string;
+	class?: string;
+	variant?: string;
 }
 
 const textStyles: Record<string, string> = {
-    display6XL: "text-4xl sm:text-7xl md:text-9xl lg:text-[12rem] leading-tight tracking-tight",
-    display5XL: "text-4xl sm:text-7xl md:text-8xl lg:text-[10rem] leading-tight tracking-tight",
-    display4XL: "text-4xl sm:text-7xl md:text-8xl lg:text-9xl leading-tight tracking-tight",
-    display3XL: "text-4xl sm:text-6xl md:text-7xl lg:text-8xl leading-tight tracking-tight",
-    display2XL: "text-5xl sm:text-5xl md:text-6xl lg:text-7xl leading-tight tracking-tight",
-    displayXL: "text-4xl sm:text-4xl md:text-5xl lg:text-6xl leading-tight tracking-tight",
-    displayLG: "text-3xl sm:text-3xl md:text-4xl lg:text-5xl leading-tight tracking-tight",
-    displayMD: "text-2xl sm:text-2xl md:text-3xl lg:text-4xl leading-tight tracking-tight",
-    displaySM: "text-lg sm:text-xl md:text-2xl lg:text-3xl leading-tight",
-    displayXS: "text-base sm:text-lg md:text-xl lg:text-2xl leading-tight",
-    text2XL: "text-2xl xl:text-3xl 2xl:text-4xl",
-    textXL: "text-xl xl:text-2xl 2xl:text-3xl",
-    textLG: "text-lg xl:text-xl 2xl:text-2xl",
-    textBase: "text-base xl:text-lg 2xl:text-xl",
-    textSM: "text-sm xl:text-base 2xl:text-lg",
-    textXS: "text-xs xl:text-sm 2xl:text-base",
+	display6XL: "text-4xl sm:text-7xl md:text-9xl lg:text-[12rem] leading-tight tracking-tight",
+	display5XL: "text-4xl sm:text-7xl md:text-8xl lg:text-[10rem] leading-tight tracking-tight",
+	display4XL: "text-4xl sm:text-7xl md:text-8xl lg:text-9xl leading-tight tracking-tight",
+	display3XL: "text-4xl sm:text-6xl md:text-7xl lg:text-8xl leading-tight tracking-tight",
+	display2XL: "text-5xl sm:text-5xl md:text-6xl lg:text-7xl leading-tight tracking-tight",
+	displayXL: "text-4xl sm:text-4xl md:text-5xl lg:text-6xl leading-tight tracking-tight",
+	displayLG: "text-3xl sm:text-3xl md:text-4xl lg:text-5xl leading-tight tracking-tight",
+	displayMD: "text-2xl sm:text-2xl md:text-3xl lg:text-4xl leading-tight tracking-tight",
+	displaySM: "text-lg sm:text-xl md:text-2xl lg:text-3xl leading-tight",
+	displayXS: "text-base sm:text-lg md:text-xl lg:text-2xl leading-tight",
+	text2XL: "text-2xl xl:text-3xl 2xl:text-4xl",
+	textXL: "text-xl xl:text-2xl 2xl:text-3xl",
+	textLG: "text-lg xl:text-xl 2xl:text-2xl",
+	textBase: "text-base xl:text-lg 2xl:text-xl",
+	textSM: "text-sm xl:text-base 2xl:text-lg",
+	textXS: "text-xs xl:text-sm 2xl:text-base",
 };
 
-const {
-    tag: Tag = "p",
-    variant = "textBase",
-    class: className = "",
-    ...rest
-} = Astro.props;
+const { tag: Tag = "p", variant = "textBase", class: className = "", ...rest } = Astro.props;
 
 const baseClasses = textStyles[variant] || textStyles.textBase;
 
 const combinedClasses = `${baseClasses} ${className}`.trim();
 ---
-<Tag
-        class={combinedClasses}
-        {...rest}
->
-    <slot name="left-icon"/>
-    <slot/>
-    <slot name="right-icon"/>
+
+<Tag class={combinedClasses} {...rest}>
+	<slot name="left-icon" />
+	<slot />
+	<slot name="right-icon" />
 </Tag>

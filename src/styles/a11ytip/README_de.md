@@ -20,20 +20,19 @@ Um ein a11ytip auf ein Element anzuwenden, muss das Element folgende Eigenschaft
 2. Entweder ein `aria-label` Attribut ODER ein `data-a11ytip-text` Attribut zur Definition des Textinhalts des a11ytip.
 
 Beispiel mit `aria-label`:
+
 ```html
-<button a11ytip-top aria-label="Hover mich">
-  Hover mich
-</button>
+<button a11ytip-top aria-label="Hover mich">Hover mich</button>
 ```
 
 Beispiel mit `data-a11ytip-text`:
+
 ```html
-<button a11ytip-top data-a11ytip-text="Hover mich">
-  Hover mich
-</button>
+<button a11ytip-top data-a11ytip-text="Hover mich">Hover mich</button>
 ```
 
 Positionierung:
+
 ```html
 <button a11ytip-top aria-label="Ich erscheine oben!">Hover mich</button>
 <button a11ytip-top-left aria-label="Ich bin oben links ausgerichtet!">Hover mich</button>
@@ -53,6 +52,7 @@ Positionierung:
 ```
 
 Hinweise:
+
 - Das `a11ytip-*` Attribut bestimmt, wo das a11ytip relativ zum Element erscheint.
 - Bei einfachen Positionen (`top`, `right`, `bottom`, `left`) sind die Tooltips zentriert ausgerichtet.
 - Bei kombinierten Positionen (z.B. `right-top`) wird das Tooltip am entsprechenden Rand des Elements ausgerichtet.
@@ -71,56 +71,57 @@ Die CSS-Variablen sind selbsterklärend und steuern die Eigenschaften der a11yti
 /* a11ytip_config.css */
 
 :root {
-    /* Text */
-    --a11ytip-text-size: 1rem;
-    --a11ytip-text-color: white;
+	/* Text */
+	--a11ytip-text-size: 1rem;
+	--a11ytip-text-color: white;
 
-    /* Box */
-    --a11ytip-bg-color: var(--color-base-700, black);
-    --a11ytip-padding-x: 0.375rem;
-    --a11ytip-padding-y: 0.5rem;
-    --a11ytip-border-radius: 0.375rem;
-    --a11ytip-max-width: 10ch;
+	/* Box */
+	--a11ytip-bg-color: var(--color-base-700, black);
+	--a11ytip-padding-x: 0.375rem;
+	--a11ytip-padding-y: 0.5rem;
+	--a11ytip-border-radius: 0.375rem;
+	--a11ytip-max-width: 10ch;
 
-    /* Animation */
-    --a11ytip-start-position: calc(100% + 4px);
-    --a11ytip-end-position: calc(100% + 12px);
-    --a11ytip-transition-duration: 350ms;
+	/* Animation */
+	--a11ytip-start-position: calc(100% + 4px);
+	--a11ytip-end-position: calc(100% + 12px);
+	--a11ytip-transition-duration: 350ms;
 }
 
 /* Dark Theme */
 :root.dark {
-    --a11ytip-text-color: black;
-    --a11ytip-bg-color: var(--color-base-100, white);
+	--a11ytip-text-color: black;
+	--a11ytip-bg-color: var(--color-base-100, white);
 }
 ```
 
 Tailwind-Konfiguration:
+
 ```css
 /* a11ytip_config.css */
 
 :root {
- /* Text */
- --a11ytip-text-size: theme(fontSize.sm, 0.875rem);
- --a11ytip-text-color: theme(colors.white, #ffffff);
+	/* Text */
+	--a11ytip-text-size: theme(fontSize.sm, 0.875rem);
+	--a11ytip-text-color: theme(colors.white, #ffffff);
 
- /* Box */
- --a11ytip-bg-color: theme(colors.gray.900, #111827);
- --a11ytip-padding-x: theme(spacing.1.5, 0.375rem);
- --a11ytip-padding-y: theme(spacing.2, 0.5rem);
- --a11ytip-border-radius: theme(borderRadius.md, 0.375rem);
- --a11ytip-max-width: theme(spacing.40, 10rem);
+	/* Box */
+	--a11ytip-bg-color: theme(colors.gray.900, #111827);
+	--a11ytip-padding-x: theme(spacing.1.5, 0.375rem);
+	--a11ytip-padding-y: theme(spacing.2, 0.5rem);
+	--a11ytip-border-radius: theme(borderRadius.md, 0.375rem);
+	--a11ytip-max-width: theme(spacing.40, 10rem);
 
- /* Animation */
- --a11ytip-start-position: calc(100% + theme(spacing.1, 0.25rem));
- --a11ytip-end-position: calc(100% + theme(spacing.3, 0.75rem));
- --a11ytip-transition-duration: theme(transitionDuration.300, 300ms);
+	/* Animation */
+	--a11ytip-start-position: calc(100% + theme(spacing.1, 0.25rem));
+	--a11ytip-end-position: calc(100% + theme(spacing.3, 0.75rem));
+	--a11ytip-transition-duration: theme(transitionDuration.300, 300ms);
 }
 
 /* Dark Theme */
 :root.dark {
- --a11ytip-text-color: theme(colors.black, #000000);
- --a11ytip-bg-color: theme(colors.white, #ffffff);
+	--a11ytip-text-color: theme(colors.black, #000000);
+	--a11ytip-bg-color: theme(colors.white, #ffffff);
 }
 ```
 
@@ -172,6 +173,7 @@ Verfügbare Data-Attribute:
    - Werteformat: Eine gültige Zeitdauer (z.B. `350ms`, `0.5s`).
 
 Hinweise:
+
 - Jedes `data-*` Attribut ist optional. Wenn ein Attribut nicht definiert ist, wird der CSS-Fallback-Wert
   aus den `:root` benutzerdefinierten Eigenschaften (`var(...)`) verwendet.
 - Um die Anpassung über Data-Attribute zu gewährleisten, stellen Sie sicher, dass der a11ytip-Container
@@ -187,6 +189,7 @@ Das a11ytip-System bestimmt den Textinhalt basierend auf der folgenden Prioritä
 2. **Fallback**: `aria-label` - Falls `data-a11ytip-text` nicht vorhanden ist, wird der `aria-label` Wert verwendet.
 
 Dieses Prioritätssystem ermöglicht es Ihnen:
+
 - `aria-label` für Bildschirmlesegeräte zu verwenden, während Sie verschiedenen Text im visuellen a11ytip anzeigen
 - Den a11ytip-Text zu überschreiben, ohne die Barrierefreiheitsbeschriftung zu beeinträchtigen
 - Flexibilität in Ihrem Markup zu bewahren
@@ -196,31 +199,37 @@ Dieses Prioritätssystem ermöglicht es Ihnen:
 ### Beispiel mit allen Data-Attributen
 
 ```html
-<button a11ytip-top
-        aria-label="Ich bin ein freches Tooltip!"
-        data-a11ytip-text-size="18px"
-        data-a11ytip-text-color="hotpink"
-        data-a11ytip-bg-color="#1a1a1a"
-        data-a11ytip-padding-x="1rem"
-        data-a11ytip-padding-y="0.8rem"
-        data-a11ytip-border-radius="1rem"
-        data-a11ytip-max-width="20ch"
-        data-a11ytip-transition-duration="200ms">
-   Hover mich
+<button
+	a11ytip-top
+	aria-label="Ich bin ein freches Tooltip!"
+	data-a11ytip-text-size="18px"
+	data-a11ytip-text-color="hotpink"
+	data-a11ytip-bg-color="#1a1a1a"
+	data-a11ytip-padding-x="1rem"
+	data-a11ytip-padding-y="0.8rem"
+	data-a11ytip-border-radius="1rem"
+	data-a11ytip-max-width="20ch"
+	data-a11ytip-transition-duration="200ms"
+>
+	Hover mich
 </button>
 ```
 
 ### Verschiedene Texte für Bildschirmlesegeräte vs. Visuelle a11ytip
 
 Beispiel, das zeigt, wie man verschiedene Texte für Bildschirmlesegeräte und visuelle a11ytip bereitstellt:
+
 ```html
-<button a11ytip-top
-        aria-label="Schließe das Dialogfenster für besseres Chackra"
-        data-a11ytip-text="Schließen">
-   Schließen
+<button
+	a11ytip-top
+	aria-label="Schließe das Dialogfenster für besseres Chackra"
+	data-a11ytip-text="Schließen"
+>
+	Schließen
 </button>
 ```
 
 In diesem Beispiel:
+
 - Bildschirmlesegeräte werden "Schließe das Dialogfenster für besseres Chackra" vorlesen (aus `aria-label`)
 - Das visuelle a11ytip wird "Schließen" anzeigen (aus `data-a11ytip-text`)

@@ -5,7 +5,7 @@ description: "Moderne Web-Applikation mit Fokus auf User Experience und Performa
 image:
   url: "/src/images/projects/1.jpg"
   alt: "memorycon App Interface"
-tags: [ "Privates Projekt", "Spiel", "Next.js", "React", "Frontend-Entwicklung" ]
+tags: ["Privates Projekt", "Spiel", "Next.js", "React", "Frontend-Entwicklung"]
 
 repo:
   name: "GitHub"

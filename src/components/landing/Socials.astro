@@ -6,48 +6,58 @@ import ExternalLink from "@/components/lib/icons/ExternalLink.astro";
 import { stackGrid, stackGridPadding, stickyElement } from "@/shared/classes.js";
 
 const links = [
-    {
-        platform: "Twitter",
-        ariaLabel: "Twitter aersosi",
-        url: "https://x.com/aersosi",
-    },
-    {
-        platform: "GitHub",
-        ariaLabel: "GitHub aersosi",
-        url: "https://github.com/aersosi",
-    },
-    {
-        platform: "Linkedin",
-        ariaLabel: "linkedin aersosi",
-        url: "https://www.linkedin.com/in/aersosi",
-    },
-    {
-        platform: "Email",
-        ariaLabel: "Email hello@aersosi.com",
-        url: "mailto:hello@aersosi.com",
-    },
+	{
+		platform: "Twitter",
+		ariaLabel: "Twitter aersosi",
+		url: "https://x.com/aersosi",
+	},
+	{
+		platform: "GitHub",
+		ariaLabel: "GitHub aersosi",
+		url: "https://github.com/aersosi",
+	},
+	{
+		platform: "Linkedin",
+		ariaLabel: "linkedin aersosi",
+		url: "https://www.linkedin.com/in/aersosi",
+	},
+	{
+		platform: "Email",
+		ariaLabel: "Email hello@aersosi.com",
+		url: "mailto:hello@aersosi.com",
+	},
 ];
 ---
 
 <section>
-    <Wrapper variant="standard">
-        <div id="socials" class:list={[...stackGrid, ...stackGridPadding]}>
-            <div class:list={[...stickyElement]}>
-                <Text tag="h2" variant="textLG" class="font-medium text-base-900 dark:text-white">
-                    Kontakt
-                </Text>
-            </div>
-            <div class="flex flex-col gap-2 lg:col-span-2">
-                {
-                    links.map((social) => (
-                            <Link data-obfuscation="0" aria-label={social.ariaLabel} target="_blank" href={social.url} size="base" variant="accent" class="group">
-                                {social.platform}
-                                <ExternalLink size="base"
-                                              class="-mt-0.5 transition duration-300 opacity-0 group-hover:opacity-100"/>
-                            </Link>
-                    ))
-                }
-            </div>
-        </div>
-    </Wrapper>
+	<Wrapper variant="standard">
+		<div id="socials" class:list={[...stackGrid, ...stackGridPadding]}>
+			<div class:list={[...stickyElement]}>
+				<Text tag="h2" variant="textLG" class="text-base-900 font-medium dark:text-white">
+					Kontakt
+				</Text>
+			</div>
+			<div class="flex flex-col gap-2 lg:col-span-2">
+				{
+					links.map((social) => (
+						<Link
+							data-obfuscation="0"
+							aria-label={social.ariaLabel}
+							target="_blank"
+							href={social.url}
+							size="base"
+							variant="accent"
+							class="group"
+						>
+							{social.platform}
+							<ExternalLink
+								size="base"
+								class="-mt-0.5 opacity-0 transition duration-300 group-hover:opacity-100"
+							/>
+						</Link>
+					))
+				}
+			</div>
+		</div>
+	</Wrapper>
 </section>

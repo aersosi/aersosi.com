@@ -20,7 +20,7 @@ Telefon: <span data-obfuscation="0">+49 163 / 868 1291</span> <br/>
 E-Mail: <span data-obfuscation="0">hello@aersosi.com</span>
 
 ## Redaktionell verantwortlich
+
 Arthur Ersosi <br/>
 Wandsedamm 2B <br/>
 22047 Hamburg
-

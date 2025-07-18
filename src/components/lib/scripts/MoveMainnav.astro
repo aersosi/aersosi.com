@@ -1,19 +1,18 @@
 <script>
-    document.addEventListener("DOMContentLoaded", () => {
-        const mainNavWrapper = document.getElementById("mainNavWrapper");
-        const SCROLL_THRESHOLD = 96;
+	document.addEventListener("DOMContentLoaded", () => {
+		const mainNavWrapper = document.getElementById("mainNavWrapper");
+		const SCROLL_THRESHOLD = 96;
 
-        if (mainNavWrapper) {
-            const updateNavWrapperPosition = (scrollY: number) => {
-                const addClass = scrollY > SCROLL_THRESHOLD ? "top-2" : "top-5";
-                const removeClass = scrollY > SCROLL_THRESHOLD ? "top-5" : "top-2";
+		if (mainNavWrapper) {
+			const updateNavWrapperPosition = (scrollY: number) => {
+				const addClass = scrollY > SCROLL_THRESHOLD ? "top-2" : "top-5";
+				const removeClass = scrollY > SCROLL_THRESHOLD ? "top-5" : "top-2";
 
-                mainNavWrapper.classList.remove(removeClass);
-                mainNavWrapper.classList.add(addClass);
-            };
+				mainNavWrapper.classList.remove(removeClass);
+				mainNavWrapper.classList.add(addClass);
+			};
 
-            window.addEventListener("scroll", () => updateNavWrapperPosition(window.scrollY));
-        }
-    });
-
+			window.addEventListener("scroll", () => updateNavWrapperPosition(window.scrollY));
+		}
+	});
 </script>

@@ -5,7 +5,7 @@ description: "Mit viel gutem CSS und wenig JavaScript."
 image:
   url: "/src/images/articles/1.jpg"
   alt: "Lorem Ipsum Image Text"
-tags: [ "CSS", "A11y", "Tooltip" ]
+tags: ["CSS", "A11y", "Tooltip"]
 ---
 
 ## a11ytip – Barrierefreie Tooltips
@@ -94,9 +94,7 @@ aber sollte bald überall implementiert sein.
 4. HTML: Bam, Tooltip!
 
 ```html
-<button a11ytip-top aria-label="Hover mich">
-  Hover mich
-</button>
+<button a11ytip-top aria-label="Hover mich">Hover mich</button>
 ```
 
 <button a11ytip-top aria-label="Hover mich">
@@ -104,52 +102,26 @@ aber sollte bald überall implementiert sein.
 </button>
 
 ### Ein wildes **a11tip** ist erschienen!
+
 Easy peasy positionierung!
 
 ```html
-<button a11ytip-top aria-label="Ich erscheine oben!">
-    Hover mich
-</button>
-<button a11ytip-top-left aria-label="Ich bin oben links ausgerichtet!">
-    Hover mich
-</button>
-<button a11ytip-top-right aria-label="Ich bin oben rechts ausgerichtet!">
-    Hover mich
-</button>
+<button a11ytip-top aria-label="Ich erscheine oben!">Hover mich</button>
+<button a11ytip-top-left aria-label="Ich bin oben links ausgerichtet!">Hover mich</button>
+<button a11ytip-top-right aria-label="Ich bin oben rechts ausgerichtet!">Hover mich</button>
 
-<button a11ytip-right aria-label="Ich erscheine rechts!">
-    Hover mich
-</button>
-<button a11ytip-right-top aria-label="Ich bin rechts oben ausgerichtet!">
-    Hover mich
-</button>
-<button a11ytip-right-bottom aria-label="Ich bin rechts unten ausgerichtet!">
-    Hover mich
-</button>
+<button a11ytip-right aria-label="Ich erscheine rechts!">Hover mich</button>
+<button a11ytip-right-top aria-label="Ich bin rechts oben ausgerichtet!">Hover mich</button>
+<button a11ytip-right-bottom aria-label="Ich bin rechts unten ausgerichtet!">Hover mich</button>
 
-<button a11ytip-bottom aria-label="Ich erscheine unten!">
-    Hover mich
-</button>
-<button a11ytip-bottom-left aria-label="Ich bin unten links ausgerichtet!">
-    Hover mich
-</button>
-<button a11ytip-bottom-right aria-label="Ich bin unten rechts ausgerichtet!">
-    Hover mich
-</button>
+<button a11ytip-bottom aria-label="Ich erscheine unten!">Hover mich</button>
+<button a11ytip-bottom-left aria-label="Ich bin unten links ausgerichtet!">Hover mich</button>
+<button a11ytip-bottom-right aria-label="Ich bin unten rechts ausgerichtet!">Hover mich</button>
 
-<button a11ytip-left aria-label="Ich erscheine links!">
-    Hover mich
-</button>
-<button a11ytip-left-top aria-label="Ich bin links oben ausgerichtet!">
-    Hover mich
-</button>
-<button a11ytip-left-bottom aria-label="Ich bin links unten ausgerichtet!">
-    Hover mich
-</button>
+<button a11ytip-left aria-label="Ich erscheine links!">Hover mich</button>
+<button a11ytip-left-top aria-label="Ich bin links oben ausgerichtet!">Hover mich</button>
+<button a11ytip-left-bottom aria-label="Ich bin links unten ausgerichtet!">Hover mich</button>
 ```
-
-
-
 
 ### Globales Looksmaxing
 
@@ -159,27 +131,27 @@ Die a11ytip sind dir nicht Alpha genug? Bam, Config!
 /* a11ytip_config.css */
 
 :root {
-  /* Text */
-  --a11ytip-text-size: 1rem;
-  --a11ytip-text-color: white;
+	/* Text */
+	--a11ytip-text-size: 1rem;
+	--a11ytip-text-color: white;
 
-  /* Box */
-  --a11ytip-bg-color: var(--color-base-700, black);
-  --a11ytip-padding-x: 0.375rem;
-  --a11ytip-padding-y: 0.5rem;
-  --a11ytip-border-radius: 0.375rem;
-  --a11ytip-max-width: 10ch;
+	/* Box */
+	--a11ytip-bg-color: var(--color-base-700, black);
+	--a11ytip-padding-x: 0.375rem;
+	--a11ytip-padding-y: 0.5rem;
+	--a11ytip-border-radius: 0.375rem;
+	--a11ytip-max-width: 10ch;
 
-  /* Animation */
-  --a11ytip-start-position: calc(100% + 4px);
-  --a11ytip-end-position: calc(100% + 12px);
-  --a11ytip-transition-duration: 350ms;
+	/* Animation */
+	--a11ytip-start-position: calc(100% + 4px);
+	--a11ytip-end-position: calc(100% + 12px);
+	--a11ytip-transition-duration: 350ms;
 }
 
 /* Dark Theme */
 :root.dark {
-  --a11ytip-text-color: black;
-  --a11ytip-bg-color: var(--color-base-100, white);
+	--a11ytip-text-color: black;
+	--a11ytip-bg-color: var(--color-base-100, white);
 }
 ```
 
@@ -189,27 +161,27 @@ Die a11ytip sind dir nicht Alpha genug? Bam, Config!
 /* a11ytip_config.css */
 
 :root {
- /* Text */
- --a11ytip-text-size: theme(fontSize.sm, 0.875rem);
- --a11ytip-text-color: theme(colors.white, #ffffff);
+	/* Text */
+	--a11ytip-text-size: theme(fontSize.sm, 0.875rem);
+	--a11ytip-text-color: theme(colors.white, #ffffff);
 
- /* Box */
- --a11ytip-bg-color: theme(colors.gray.900, #111827);
- --a11ytip-padding-x: theme(spacing.1.5, 0.375rem);
- --a11ytip-padding-y: theme(spacing.2, 0.5rem);
- --a11ytip-border-radius: theme(borderRadius.md, 0.375rem);
- --a11ytip-max-width: theme(spacing.40, 10rem);
+	/* Box */
+	--a11ytip-bg-color: theme(colors.gray.900, #111827);
+	--a11ytip-padding-x: theme(spacing.1.5, 0.375rem);
+	--a11ytip-padding-y: theme(spacing.2, 0.5rem);
+	--a11ytip-border-radius: theme(borderRadius.md, 0.375rem);
+	--a11ytip-max-width: theme(spacing.40, 10rem);
 
- /* Animation */
- --a11ytip-start-position: calc(100% + theme(spacing.1, 0.25rem));
- --a11ytip-end-position: calc(100% + theme(spacing.3, 0.75rem));
- --a11ytip-transition-duration: theme(transitionDuration.300, 300ms);
+	/* Animation */
+	--a11ytip-start-position: calc(100% + theme(spacing.1, 0.25rem));
+	--a11ytip-end-position: calc(100% + theme(spacing.3, 0.75rem));
+	--a11ytip-transition-duration: theme(transitionDuration.300, 300ms);
 }
 
 /* Dark Theme */
 :root.dark {
- --a11ytip-text-color: theme(colors.black, #000000);
- --a11ytip-bg-color: theme(colors.white, #ffffff);
+	--a11ytip-text-color: theme(colors.black, #000000);
+	--a11ytip-bg-color: theme(colors.white, #ffffff);
 }
 ```
 
@@ -230,17 +202,19 @@ Das System unterstützt eine Vielzahl von Data-Attributen für die individuelle 
 - `data-a11ytip-transition-duration` - Animationsdauer (z.B. `200ms`, `0.5s`)
 
 ```html
-<button a11ytip-top
-        aria-label="Ich bin ein freches Tooltip"
-        data-a11ytip-text-size="18px"
-        data-a11ytip-text-color="hotpink"
-        data-a11ytip-bg-color="#1a1a1a"
-        data-a11ytip-padding-x="1rem"
-        data-a11ytip-padding-y="0.8rem"
-        data-a11ytip-border-radius="1rem"
-        data-a11ytip-max-width="20ch"
-        data-a11ytip-transition-duration="200ms">
-  Hover mich
+<button
+	a11ytip-top
+	aria-label="Ich bin ein freches Tooltip"
+	data-a11ytip-text-size="18px"
+	data-a11ytip-text-color="hotpink"
+	data-a11ytip-bg-color="#1a1a1a"
+	data-a11ytip-padding-x="1rem"
+	data-a11ytip-padding-y="0.8rem"
+	data-a11ytip-border-radius="1rem"
+	data-a11ytip-max-width="20ch"
+	data-a11ytip-transition-duration="200ms"
+>
+	Hover mich
 </button>
 ```
 
@@ -253,41 +227,43 @@ Mind = blown!
 - Visuelles Tooltip zeigt: "Schließen"
 
 ```html
-<button a11ytip-top
-        aria-label="Schließe das Dialogfenster für besseres Chackra"
-        data-a11ytip-text="Schließen">
-  Schließen
+<button
+	a11ytip-top
+	aria-label="Schließe das Dialogfenster für besseres Chackra"
+	data-a11ytip-text="Schließen"
+>
+	Schließen
 </button>
 ```
 
 ### Content Priority (Weil ich bin ein Fuchs!)
 
 Der Text wird erzeugt nach folgenden Priorität:
+
 1. **Höchste Priorität**: `data-a11ytip-text` - Falls vorhanden, wird der Wert dieses Attributs als a11ytip-Text verwendet.
 2. **Fallback**: `aria-label` - Falls `data-a11ytip-text` nicht vorhanden ist, wird der `aria-label` Wert verwendet.
 
 Nur aria-label: Screenreader UND Tooltip zeigen "Dokument speichern"
+
 ```html
-<button a11ytip-bottom 
-        aria-label="Dokument speichern">
-    Speichern
-</button>
+<button a11ytip-bottom aria-label="Dokument speichern">Speichern</button>
 ```
 
 Nur data-a11ytip-text: Screenreader sagt nichts (kein aria-label), Tooltip zeigt "Dokument speichern"
+
 ```html
-<button a11ytip-bottom 
-        data-a11ytip-text="Dokument speichern">
-    Speichern
-</button>
+<button a11ytip-bottom data-a11ytip-text="Dokument speichern">Speichern</button>
 ```
 
 Beide Attribute: Screenreader sagt "Dokument im Projektordner speichern", Tooltip zeigt "Speichern"
+
 ```html
-<button a11ytip-bottom
-        aria-label="Dokument im Projektordner speichern"
-        data-a11ytip-text="Speichern">
-    Speichern
+<button
+	a11ytip-bottom
+	aria-label="Dokument im Projektordner speichern"
+	data-a11ytip-text="Speichern"
+>
+	Speichern
 </button>
 ```
 
@@ -296,17 +272,15 @@ Beide Attribute: Screenreader sagt "Dokument im Projektordner speichern", Toolti
 Du hast zwei Möglichkeiten, um a11ytip zu verwenden:
 
 **Variante 1: Nur `aria-label`**
+
 ```html
-<button a11ytip-top aria-label="Hover mich">
-  Hover mich
-</button>
+<button a11ytip-top aria-label="Hover mich">Hover mich</button>
 ```
 
 **Variante 2: Mit `data-a11ytip-text`**
+
 ```html
-<button a11ytip-top data-a11ytip-text="Hover mich">
-  Hover mich
-</button>
+<button a11ytip-top data-a11ytip-text="Hover mich">Hover mich</button>
 ```
 
 Beide Varianten funktionieren, aber wenn du verschiedene Texte für Screenreader und visuelles Tooltip willst, ist die Kombination aus `aria-label` + `data-a11ytip-text` der Weg zu gehen.

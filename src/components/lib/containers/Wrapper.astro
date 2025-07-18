@@ -1,73 +1,73 @@
 ---
 interface Props {
-    variant?: "standard" | "prose";
-    class?: string;
+	variant?: "standard" | "prose";
+	class?: string;
 }
-const {variant = "standard", class: extraClass = ""} = Astro.props;
+const { variant = "standard", class: extraClass = "" } = Astro.props;
 
 const variantClasses = {
-    standard: "max-w-7xl mx-auto px-4  sm:px-12 lg:px-16",
-    prose: [
-        "prose",
-        "prose-base",
+	standard: "max-w-7xl mx-auto px-4  sm:px-12 lg:px-16",
+	prose: [
+		"prose",
+		"prose-base",
 
-        "prose-h1:text-xl",
-        "xl:prose-h1:text-2xl",
-        "2xl:prose-h1:text-3xl",
+		"prose-h1:text-xl",
+		"xl:prose-h1:text-2xl",
+		"2xl:prose-h1:text-3xl",
 
-        "prose-h2:text-lg",
-        "xl:prose-h2:text-xl",
-        "2xl:prose-h2:text-2xl",
+		"prose-h2:text-lg",
+		"xl:prose-h2:text-xl",
+		"2xl:prose-h2:text-2xl",
 
-        "prose-h3:text-base",
-        "xl:prose-h3:text-lg",
-        "2xl:prose-h3:text-xl",
+		"prose-h3:text-base",
+		"xl:prose-h3:text-lg",
+		"2xl:prose-h3:text-xl",
 
-        "prose-h4:text-sm",
-        "xl:prose-h4:text-base",
-        "2xl:prose-h4:text-lg",
+		"prose-h4:text-sm",
+		"xl:prose-h4:text-base",
+		"2xl:prose-h4:text-lg",
 
-        "prose-p:text-base",
-        "xl:prose-p:text-lg",
-        "2xl:prose-p:text-xl",
+		"prose-p:text-base",
+		"xl:prose-p:text-lg",
+		"2xl:prose-p:text-xl",
 
-        "prose-strong:text-base",
-        "xl:prose-strong:text-lg",
-        "2xl:prose-strong:text-xl",
+		"prose-strong:text-base",
+		"xl:prose-strong:text-lg",
+		"2xl:prose-strong:text-xl",
 
-        "prose-headings:font-medium",
-        "text-base-600",
-        "dark:text-base-300",
-        "prose-headings:text-base-900",
-        "dark:prose-headings:text-white",
-        "prose-blockquote:text-base-500",
-        "dark:prose-blockquote:text-base-600",
-        "dark:text-base-300",
-        "dark:prose-blockquote:border-base-500",
-        "overflow-visible",
-        "prose-blockquote:font-normal",
-        "prose-blockquote:tracking-normal",
-        "prose-img:border",
-        "prose-img:border-base-300",
-        "dark:prose-img:border-base-700",
-        "dark:prose-code:text-white",
-        "prose-a:text-accent-300",
-        "hover:prose-a:text-accent-500",
-        "dark:prose-hr:border-base-800",
-        "prose-hr:border-base-300",
-        "prose-pre:border-none",
-        "prose-pre:rounded-xl",
-        "prose-strong:font-medium",
-        "prose-a:duration-200",
-        "dark:prose-strong:text-white",
-        "max-w-none",
-        "prose-pre:scrollbar-hide",
-    ].join(" "),
+		"prose-headings:font-medium",
+		"text-base-600",
+		"dark:text-base-300",
+		"prose-headings:text-base-900",
+		"dark:prose-headings:text-white",
+		"prose-blockquote:text-base-500",
+		"dark:prose-blockquote:text-base-600",
+		"dark:text-base-300",
+		"dark:prose-blockquote:border-base-500",
+		"overflow-visible",
+		"prose-blockquote:font-normal",
+		"prose-blockquote:tracking-normal",
+		"prose-img:border",
+		"prose-img:border-base-300",
+		"dark:prose-img:border-base-700",
+		"dark:prose-code:text-white",
+		"prose-a:text-accent-300",
+		"hover:prose-a:text-accent-500",
+		"dark:prose-hr:border-base-800",
+		"prose-hr:border-base-300",
+		"prose-pre:border-none",
+		"prose-pre:rounded-xl",
+		"prose-strong:font-medium",
+		"prose-a:duration-200",
+		"dark:prose-strong:text-white",
+		"max-w-none",
+		"prose-pre:scrollbar-hide",
+	].join(" "),
 };
 const classes = `${variantClasses[variant]} ${extraClass}`.trim();
 ---
 
 <div class={classes}>
-    <!-- Render the default slot content -->
-    <slot/>
+	<!-- Render the default slot content -->
+	<slot />
 </div>

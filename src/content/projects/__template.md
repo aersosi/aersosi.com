@@ -5,7 +5,7 @@ description: "Lorem ipsum dolor sit."
 image:
   url: "/src/images/projects/1.jpg"
   alt: "Lorem ipsum dolor sit."
-tags: [ "Template","ProjectTag2","ProjectTag3" ]
+tags: ["Template", "ProjectTag2", "ProjectTag3"]
 
 repo:
   name: "GitHub"
@@ -25,14 +25,17 @@ company:
 ---
 
 ## Meine Aufgaben
+
 - Lorem
 - Ipsum
 - Dolor
 
 ## Projektbeschreibung
+
 Lorem ipsum dolor sit amet.
 
 ## Technologien
+
 - Lorem
 - Ipsum
 - Dolor

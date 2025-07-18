@@ -1,27 +1,27 @@
 <script type="module">
-    function updateYear() {
-        const elements = [
-            {
-                elName: "designYear",
-                StartDate: 2016
-            },
-            {
-                elName: "devYear",
-                StartDate: 2018
-            }
-        ];
+	function updateYear() {
+		const elements = [
+			{
+				elName: "designYear",
+				StartDate: 2016,
+			},
+			{
+				elName: "devYear",
+				StartDate: 2018,
+			},
+		];
 
-        const currentYear = new Date().getFullYear();
+		const currentYear = new Date().getFullYear();
 
-        elements.forEach((el) => {
-            const yearsPassed = currentYear - el.StartDate;
-            const targetEl = document.getElementById(el.elName);
-            if (targetEl) {
-                targetEl.textContent = yearsPassed;
-            }
-        });
+		elements.forEach((el) => {
+			const yearsPassed = currentYear - el.StartDate;
+			const targetEl = document.getElementById(el.elName);
+			if (targetEl) {
+				targetEl.textContent = yearsPassed;
+			}
+		});
 
-        document.getElementById("copyrightYear").textContent = new Date().getFullYear();
-    }
-    updateYear();
+		document.getElementById("copyrightYear").textContent = new Date().getFullYear();
+	}
+	updateYear();
 </script>

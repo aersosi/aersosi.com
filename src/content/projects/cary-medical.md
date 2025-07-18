@@ -5,7 +5,8 @@ description: "UI/UX Design und Development einer medizinischen Terminplanungs-Ap
 image:
   url: "/src/images/projects/1.jpg"
   alt: "CARY Medical App Interface"
-tags: [ "Professionelles Projekt","UX (User Experience)", "UI (User Interface)", "Frontend-Entwicklung" ]
+tags:
+  ["Professionelles Projekt", "UX (User Experience)", "UI (User Interface)", "Frontend-Entwicklung"]
 
 repo:
   name: "GitHub"

@@ -1,12 +1,12 @@
 <script type="module">
-    function updatePublishedDate() {
-        const now = new Date();
-        const day = now.getDate();
-        const month = now.getMonth() + 1;
-        const year = now.getFullYear();
+	function updatePublishedDate() {
+		const now = new Date();
+		const day = now.getDate();
+		const month = now.getMonth() + 1;
+		const year = now.getFullYear();
 
-        const publishedDate = `${day.toString().padStart(2, '0')}.${month.toString().padStart(2, '0')}.${year}`;
-        document.getElementById("publishedDate").textContent = publishedDate;
-    }
-    updatePublishedDate();
+		const publishedDate = `${day.toString().padStart(2, "0")}.${month.toString().padStart(2, "0")}.${year}`;
+		document.getElementById("publishedDate").textContent = publishedDate;
+	}
+	updatePublishedDate();
 </script>

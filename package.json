@@ -1,57 +1,60 @@
 {
-  "name": "aersosi.com",
-  "version": "1.0.0",
-  "private": true,
-  "type": "module",
-  "description": "Arthur Ersosi personal website",
-  "homepage": "https://github.com/aersosi/aersosi.com#readme",
-  "bugs": {
-    "url": "https://github.com/aersosi/aersosi.com/issues"
-  },
-  "license": "SEE LICENSE IN LICENSE",
-  "author": {
-    "name": "Arthur Ersosi",
-    "email": "hello@aersosi.com",
-    "url": "https://aersosi.com"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/aersosi/aersosi.com.git"
-  },
-  "scripts": {
-    "dev": "astro dev",
-    "start": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview",
-    "astro": "astro",
-    "lint": "eslint . --ext .ts,.js,.astro",
-    "lint:fix": "npm run lint -- --fix",
-    "format": "prettier --write .",
-    "format:check": "prettier --check ."
-
-  },
-  "dependencies": {
-    "@astrojs/mdx": "^4.3.0",
-    "@astrojs/sitemap": "^3.4.1",
-    "@astrolib/seo": "^1.0.0-beta.8",
-    "astro": "^5.11.0",
-    "astro-mail-obfuscation": "^2.3.4",
-    "feather-icons": "^4.29.2",
-    "tailwind-scrollbar-hide": "^4.0.0"
-  },
-  "devDependencies": {
-    "@eslint/js": "^9.31.0",
-    "@tailwindcss/typography": "^0.5.16",
-    "@tailwindcss/vite": "^4.1.10",
-    "eslint": "^9.31.0",
-    "eslint-plugin-astro": "^1.3.1",
-    "eslint-plugin-jsx-a11y": "^6.10.2",
-    "eslint-plugin-prettier": "^5.5.3",
-    "globals": "^16.3.0",
-    "prettier": "^3.6.2",
-    "prettier-plugin-astro": "^0.14.1",
-    "prettier-plugin-tailwindcss": "^0.6.14",
-    "tailwindcss": "^4.1.10",
-    "typescript-eslint": "^8.37.0"
-  }
+	"name": "aersosi.com",
+	"version": "1.0.0",
+	"private": true,
+	"type": "module",
+	"description": "Arthur Ersosi personal website",
+	"homepage": "https://github.com/aersosi/aersosi.com#readme",
+	"bugs": {
+		"url": "https://github.com/aersosi/aersosi.com/issues"
+	},
+	"license": "SEE LICENSE IN LICENSE",
+	"author": {
+		"name": "Arthur Ersosi",
+		"email": "hello@aersosi.com",
+		"url": "https://aersosi.com"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/aersosi/aersosi.com.git"
+	},
+	"scripts": {
+		"dev": "astro dev",
+		"start": "astro dev",
+		"build": "astro build",
+		"preview": "astro preview",
+		"astro": "astro",
+		"lint": "eslint . --ext .ts,.js,.astro",
+		"lint:fix": "npm run lint -- --fix",
+		"format": "prettier --write .",
+		"format:check": "prettier --check .",
+		"prettier:all": "npx prettier --write ."
+	},
+	"dependencies": {
+		"@astrojs/mdx": "^4.3.0",
+		"@astrojs/sitemap": "^3.4.1",
+		"@astrolib/seo": "^1.0.0-beta.8",
+		"astro": "^5.11.0",
+		"astro-mail-obfuscation": "^2.3.4",
+		"feather-icons": "^4.29.2",
+		"tailwind-scrollbar-hide": "^4.0.0"
+	},
+	"devDependencies": {
+		"@eslint/js": "^9.31.0",
+		"@tailwindcss/typography": "^0.5.16",
+		"@tailwindcss/vite": "^4.1.10",
+		"@types/eslint-plugin-jsx-a11y": "^6.10.0",
+		"eslint": "^9.31.0",
+		"eslint-plugin-astro": "^1.3.1",
+		"eslint-plugin-jsx-a11y": "^6.10.2",
+		"eslint-plugin-prettier": "^5.5.3",
+		"globals": "^16.3.0",
+		"prettier": "^3.6.2",
+		"prettier-plugin-astro": "^0.14.1",
+		"prettier-plugin-tailwindcss": "^0.6.14",
+		"stylelint": "^16.22.0",
+		"stylelint-config-standard": "^38.0.0",
+		"tailwindcss": "^4.1.10",
+		"typescript-eslint": "^8.37.0"
+	}
 }

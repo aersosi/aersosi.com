@@ -6,12 +6,12 @@ import Footer from "@/components/global/Footer.astro";
 ---
 
 <html lang="en" class="selection:bg-secondary-300 selection:text-base-900">
-  <head>
-    <BaseHead />
-  </head>
-  <body class="bg-base-200 dark:bg-base-800 flex flex-col h-svh">
-    <Navigation />
-    <main class="grow"><slot /></main>
-    <Footer />
-  </body>
+	<head>
+		<BaseHead />
+	</head>
+	<body class="bg-base-200 dark:bg-base-800 flex h-svh flex-col">
+		<Navigation />
+		<main class="grow"><slot /></main>
+		<Footer />
+	</body>
 </html>

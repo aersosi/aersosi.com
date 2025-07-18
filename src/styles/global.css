@@ -7,180 +7,179 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
-  /* Typography */
-  --font-sans: Inter, sans-serif;
-  --font-display: Inter, sans-serif;
+	/* Typography */
+	--font-sans: Inter, sans-serif;
+	--font-display: Inter, sans-serif;
 
-  --color-primary-50: oklch(0.862 0.23 151.27);
-  --color-primary-100: oklch(0.85 0.221 152.658);
-  --color-primary-200: oklch(0.812 0.204 154.212);
-  --color-primary-300: oklch(0.765 0.185 156.138);
-  --color-primary-400: oklch(0.625 0.145 158.642);
-  --color-primary-500: oklch(0.492 0.105 163.627);
-  --color-primary-600: oklch(0.389 0.079 167.362);
-  --color-primary-700: oklch(0.331 0.064 170.85);
-  --color-primary-800: oklch(0.24 0.044 177.356);
-  --color-primary-900: oklch(0.214 0.04 177.508);
-  --color-primary-950: oklch(0.184 0.032 187.461);
+	--color-primary-50: oklch(0.862 0.23 151.27);
+	--color-primary-100: oklch(0.85 0.221 152.658);
+	--color-primary-200: oklch(0.812 0.204 154.212);
+	--color-primary-300: oklch(0.765 0.185 156.138);
+	--color-primary-400: oklch(0.625 0.145 158.642);
+	--color-primary-500: oklch(0.492 0.105 163.627);
+	--color-primary-600: oklch(0.389 0.079 167.362);
+	--color-primary-700: oklch(0.331 0.064 170.85);
+	--color-primary-800: oklch(0.24 0.044 177.356);
+	--color-primary-900: oklch(0.214 0.04 177.508);
+	--color-primary-950: oklch(0.184 0.032 187.461);
 
-  --color-secondary-50: oklch(98.7% 0.026 102.212);
-  --color-secondary-100: oklch(97.3% 0.071 103.193);
-  --color-secondary-200: oklch(94.5% 0.129 101.54);
-  --color-secondary-300: oklch(90.5% 0.182 98.111);
-  --color-secondary-400: oklch(85.2% 0.199 91.936);
-  --color-secondary-500: oklch(79.5% 0.184 86.047);
-  --color-secondary-600: oklch(68.1% 0.162 75.834);
-  --color-secondary-700: oklch(55.4% 0.135 66.442);
-  --color-secondary-800: oklch(47.6% 0.114 61.907);
-  --color-secondary-900: oklch(42.1% 0.095 57.708);
-  --color-secondary-950: oklch(28.6% 0.066 53.813);
+	--color-secondary-50: oklch(98.7% 0.026 102.212);
+	--color-secondary-100: oklch(97.3% 0.071 103.193);
+	--color-secondary-200: oklch(94.5% 0.129 101.54);
+	--color-secondary-300: oklch(90.5% 0.182 98.111);
+	--color-secondary-400: oklch(85.2% 0.199 91.936);
+	--color-secondary-500: oklch(79.5% 0.184 86.047);
+	--color-secondary-600: oklch(68.1% 0.162 75.834);
+	--color-secondary-700: oklch(55.4% 0.135 66.442);
+	--color-secondary-800: oklch(47.6% 0.114 61.907);
+	--color-secondary-900: oklch(42.1% 0.095 57.708);
+	--color-secondary-950: oklch(28.6% 0.066 53.813);
 
-  --color-accent-50: oklch(0.965 0.017 259.418);
-  --color-accent-100: oklch(0.923 0.037 256.969);
-  --color-accent-200: oklch(0.871 0.063 260.276);
-  --color-accent-300: oklch(0.813 0.093 263.56);
-  --color-accent-400: oklch(0.747 0.129 268.122);
-  --color-accent-500: oklch(0.662 0.18 272.812);
-  --color-accent-600: oklch(0.57 0.219 273.112);
-  --color-accent-700: oklch(0.452 0.237 271.721);
-  --color-accent-800: oklch(0.387 0.198 272.245);
-  --color-accent-900: oklch(0.35 0.137 272.8);
-  --color-accent-950: oklch(0.262 0.086 275.15);
+	--color-accent-50: oklch(0.965 0.017 259.418);
+	--color-accent-100: oklch(0.923 0.037 256.969);
+	--color-accent-200: oklch(0.871 0.063 260.276);
+	--color-accent-300: oklch(0.813 0.093 263.56);
+	--color-accent-400: oklch(0.747 0.129 268.122);
+	--color-accent-500: oklch(0.662 0.18 272.812);
+	--color-accent-600: oklch(0.57 0.219 273.112);
+	--color-accent-700: oklch(0.452 0.237 271.721);
+	--color-accent-800: oklch(0.387 0.198 272.245);
+	--color-accent-900: oklch(0.35 0.137 272.8);
+	--color-accent-950: oklch(0.262 0.086 275.15);
 
-  --color-base-50: oklch(98.5% 0.001 106.423);
-  --color-base-100: oklch(97% 0.001 106.424);
-  --color-base-200: oklch(92.3% 0.003 48.717);
-  --color-base-300: oklch(86.9% 0.005 56.366);
-  --color-base-400: oklch(70.9% 0.01 56.259);
-  --color-base-500: oklch(55.3% 0.013 58.071);
-  --color-base-600: oklch(44.4% 0.011 73.639);
-  --color-base-700: oklch(37.4% 0.01 67.558);
-  --color-base-800: oklch(26.8% 0.007 34.298);
-  --color-base-900: oklch(21.6% 0.006 56.043);
-  --color-base-950: oklch(14.7% 0.004 49.25);
+	--color-base-50: oklch(98.5% 0.001 106.423);
+	--color-base-100: oklch(97% 0.001 106.424);
+	--color-base-200: oklch(92.3% 0.003 48.717);
+	--color-base-300: oklch(86.9% 0.005 56.366);
+	--color-base-400: oklch(70.9% 0.01 56.259);
+	--color-base-500: oklch(55.3% 0.013 58.071);
+	--color-base-600: oklch(44.4% 0.011 73.639);
+	--color-base-700: oklch(37.4% 0.01 67.558);
+	--color-base-800: oklch(26.8% 0.007 34.298);
+	--color-base-900: oklch(21.6% 0.006 56.043);
+	--color-base-950: oklch(14.7% 0.004 49.25);
 }
 
 :root {
-  /* Stylistic settings for Inter font*/
-  /*font-family: Inter, sans-serif;*/
-  font-feature-settings:
+	/* Stylistic settings for Inter font*/
+	/*font-family: Inter, sans-serif;*/
+	font-feature-settings:
     /*-------- NUMBERS --------*/
-    /* Tabular numbers */ "tnum" 1,
-    /* Slashed zero */ "zero" 1,
-    /* Alternate one */ "cv01" 1,
-    /* Flat-top three */ "cv09" 1,
-    /* Open four */ "cv02" 1,
-    /* Open six */ "cv03" 1,
-    /* Open nine */ "cv04" 1,
-    /*-------- LETTERS --------*/
-    /* Square punctuation */ "ss08" 1,
-    /* Discretionary ligatures */ "dlig" 1,
-    /* Simplified u */ "cv06" 1,
-    /* Capital G with spur */ "cv10" 1,
-    /* Single-story a */ "cv11" 1,
-    /* Compact t */ "cv13" 1;
-     /* Shiki  code styles */
+    /* Tabular numbers */
+		"tnum" 1,
+		/* Slashed zero */ "zero" 1,
+		/* Alternate one */ "cv01" 1,
+		/* Flat-top three */ "cv09" 1,
+		/* Open four */ "cv02" 1,
+		/* Open six */ "cv03" 1,
+		/* Open nine */ "cv04" 1,
+		/*-------- LETTERS --------*/ /* Square punctuation */ "ss08" 1,
+		/* Discretionary ligatures */ "dlig" 1,
+		/* Simplified u */ "cv06" 1,
+		/* Capital G with spur */ "cv10" 1,
+		/* Single-story a */ "cv11" 1,
+		/* Compact t */ "cv13" 1;
+	/* Shiki  code styles */
 
-
-  --astro-code-color-text: theme(colors.base.900);
-  --astro-code-background: theme(colors.base.100);
-  --astro-code-token-punctuation: theme(colors.base.800);
-  --astro-code-token-parameter: theme(colors.base.900);
-  --astro-code-token-line-number: theme(colors.base.500);
-  --astro-code-token-comment: theme(colors.base.400);
-  --astro-code-token-cdata: theme(colors.base.900);
-  --astro-code-token-constant: theme(colors.accent.500);
-  --astro-code-token-function: theme(colors.accent.600);
-  --astro-code-token-attr-name: theme(colors.accent.700);
-  --astro-code-token-builtin: theme(colors.accent.400);
-  --astro-code-token-boolean: theme(colors.accent.500);
-  --astro-code-token-class-name: theme(colors.accent.700);
-  --astro-code-token-property: theme(colors.accent.500);
-  --astro-code-token-selector: theme(colors.accent.600);
-  --astro-code-token-string: theme(colors.emerald.600);
-  --astro-code-token-string-expression: theme(colors.accent.500);
-  --astro-code-token-variable: theme(colors.primary.500);
-  --astro-code-token-keyword: theme(colors.primary.700);
-  --astro-code-token-symbol: theme(colors.primary.600);
-  --astro-code-token-number: theme(colors.primary.500);
-  --astro-code-token-operator: theme(colors.primary.700);
-  --astro-code-token-deleted: theme(colors.primary.800);
-  --astro-code-token-changed: theme(colors.primary.400);
-  --astro-code-token-important: theme(colors.primary.600);
-  --astro-code-token-tag: theme(colors.primary.600);
-  --astro-code-token-inserted: theme(colors.primary.400);
-  --astro-code-token-namespace: theme(colors.primary.600);
-  --astro-code-token-atrule: theme(colors.primary.500);
-  --astro-code-token-entity: theme(colors.primary.500);
-  --astro-code-token-highlight: theme(colors.amber.500);
-  --astro-code-token-alert: theme(colors.amber.600);
-  --astro-code-token-emphasis: theme(colors.amber.400);
-  --astro-code-token-focus: theme(colors.amber.700);
-  --astro-code-token-notice: theme(colors.amber.600);
-  --astro-code-token-attr-value: theme(colors.accent.700);
-  --astro-code-token-regex: theme(colors.accent.500);
-  --astro-code-token-doctype: theme(colors.base.500);
-  --astro-code-token-prolog: theme(colors.base.400);
-  --astro-code-token-bold: inherit;
-  --astro-code-token-italic: italic;
-  --astro-code-token-underline: underline;
+	--astro-code-color-text: theme(colors.base.900);
+	--astro-code-background: theme(colors.base.100);
+	--astro-code-token-punctuation: theme(colors.base.800);
+	--astro-code-token-parameter: theme(colors.base.900);
+	--astro-code-token-line-number: theme(colors.base.500);
+	--astro-code-token-comment: theme(colors.base.400);
+	--astro-code-token-cdata: theme(colors.base.900);
+	--astro-code-token-constant: theme(colors.accent.500);
+	--astro-code-token-function: theme(colors.accent.600);
+	--astro-code-token-attr-name: theme(colors.accent.700);
+	--astro-code-token-builtin: theme(colors.accent.400);
+	--astro-code-token-boolean: theme(colors.accent.500);
+	--astro-code-token-class-name: theme(colors.accent.700);
+	--astro-code-token-property: theme(colors.accent.500);
+	--astro-code-token-selector: theme(colors.accent.600);
+	--astro-code-token-string: theme(colors.emerald.600);
+	--astro-code-token-string-expression: theme(colors.accent.500);
+	--astro-code-token-variable: theme(colors.primary.500);
+	--astro-code-token-keyword: theme(colors.primary.700);
+	--astro-code-token-symbol: theme(colors.primary.600);
+	--astro-code-token-number: theme(colors.primary.500);
+	--astro-code-token-operator: theme(colors.primary.700);
+	--astro-code-token-deleted: theme(colors.primary.800);
+	--astro-code-token-changed: theme(colors.primary.400);
+	--astro-code-token-important: theme(colors.primary.600);
+	--astro-code-token-tag: theme(colors.primary.600);
+	--astro-code-token-inserted: theme(colors.primary.400);
+	--astro-code-token-namespace: theme(colors.primary.600);
+	--astro-code-token-atrule: theme(colors.primary.500);
+	--astro-code-token-entity: theme(colors.primary.500);
+	--astro-code-token-highlight: theme(colors.amber.500);
+	--astro-code-token-alert: theme(colors.amber.600);
+	--astro-code-token-emphasis: theme(colors.amber.400);
+	--astro-code-token-focus: theme(colors.amber.700);
+	--astro-code-token-notice: theme(colors.amber.600);
+	--astro-code-token-attr-value: theme(colors.accent.700);
+	--astro-code-token-regex: theme(colors.accent.500);
+	--astro-code-token-doctype: theme(colors.base.500);
+	--astro-code-token-prolog: theme(colors.base.400);
+	--astro-code-token-bold: inherit;
+	--astro-code-token-italic: italic;
+	--astro-code-token-underline: underline;
 }
 :root.dark {
-  --astro-code-color-text: theme(colors.base.300);
-  --astro-code-background: #ffffff05;
-  --astro-code-token-punctuation: theme(colors.base.400);
-  --astro-code-token-parameter: theme(colors.base.300);
-  --astro-code-token-line-number: theme(colors.base.500);
-  --astro-code-token-comment: theme(colors.base.500);
-  --astro-code-token-cdata: theme(colors.base.300);
-  --astro-code-token-constant: theme(colors.accent.400);
-  --astro-code-token-function: theme(colors.accent.500);
-  --astro-code-token-attr-name: theme(colors.accent.400);
-  --astro-code-token-builtin: theme(colors.accent.300);
-  --astro-code-token-boolean: theme(colors.accent.400);
-  --astro-code-token-class-name: theme(colors.accent.300);
-  --astro-code-token-property: theme(colors.accent.400);
-  --astro-code-token-selector: theme(colors.accent.500);
-  --astro-code-token-string: theme(colors.emerald.400);
-  --astro-code-token-string-expression: theme(colors.accent.400);
-  --astro-code-token-variable: theme(colors.primary.400);
-  --astro-code-token-keyword: theme(colors.primary.300);
-  --astro-code-token-symbol: theme(colors.primary.400);
-  --astro-code-token-number: theme(colors.primary.400);
-  --astro-code-token-operator: theme(colors.primary.300);
-  --astro-code-token-deleted: theme(colors.primary.300);
-  --astro-code-token-changed: theme(colors.primary.300);
-  --astro-code-token-important: theme(colors.primary.400);
-  --astro-code-token-tag: theme(colors.primary.400);
-  --astro-code-token-inserted: theme(colors.primary.300);
-  --astro-code-token-namespace: theme(colors.primary.400);
-  --astro-code-token-atrule: theme(colors.primary.400);
-  --astro-code-token-entity: theme(colors.primary.400);
-  --astro-code-token-highlight: theme(colors.amber.400);
-  --astro-code-token-alert: theme(colors.amber.400);
-  --astro-code-token-emphasis: theme(colors.amber.300);
-  --astro-code-token-focus: theme(colors.amber.500);
-  --astro-code-token-notice: theme(colors.amber.400);
-  --astro-code-token-attr-value: theme(colors.accent.300);
-  --astro-code-token-regex: theme(colors.accent.400);
-  --astro-code-token-doctype: theme(colors.base.500);
-  --astro-code-token-prolog: theme(colors.base.500);
+	--astro-code-color-text: theme(colors.base.300);
+	--astro-code-background: #ffffff05;
+	--astro-code-token-punctuation: theme(colors.base.400);
+	--astro-code-token-parameter: theme(colors.base.300);
+	--astro-code-token-line-number: theme(colors.base.500);
+	--astro-code-token-comment: theme(colors.base.500);
+	--astro-code-token-cdata: theme(colors.base.300);
+	--astro-code-token-constant: theme(colors.accent.400);
+	--astro-code-token-function: theme(colors.accent.500);
+	--astro-code-token-attr-name: theme(colors.accent.400);
+	--astro-code-token-builtin: theme(colors.accent.300);
+	--astro-code-token-boolean: theme(colors.accent.400);
+	--astro-code-token-class-name: theme(colors.accent.300);
+	--astro-code-token-property: theme(colors.accent.400);
+	--astro-code-token-selector: theme(colors.accent.500);
+	--astro-code-token-string: theme(colors.emerald.400);
+	--astro-code-token-string-expression: theme(colors.accent.400);
+	--astro-code-token-variable: theme(colors.primary.400);
+	--astro-code-token-keyword: theme(colors.primary.300);
+	--astro-code-token-symbol: theme(colors.primary.400);
+	--astro-code-token-number: theme(colors.primary.400);
+	--astro-code-token-operator: theme(colors.primary.300);
+	--astro-code-token-deleted: theme(colors.primary.300);
+	--astro-code-token-changed: theme(colors.primary.300);
+	--astro-code-token-important: theme(colors.primary.400);
+	--astro-code-token-tag: theme(colors.primary.400);
+	--astro-code-token-inserted: theme(colors.primary.300);
+	--astro-code-token-namespace: theme(colors.primary.400);
+	--astro-code-token-atrule: theme(colors.primary.400);
+	--astro-code-token-entity: theme(colors.primary.400);
+	--astro-code-token-highlight: theme(colors.amber.400);
+	--astro-code-token-alert: theme(colors.amber.400);
+	--astro-code-token-emphasis: theme(colors.amber.300);
+	--astro-code-token-focus: theme(colors.amber.500);
+	--astro-code-token-notice: theme(colors.amber.400);
+	--astro-code-token-attr-value: theme(colors.accent.300);
+	--astro-code-token-regex: theme(colors.accent.400);
+	--astro-code-token-doctype: theme(colors.base.500);
+	--astro-code-token-prolog: theme(colors.base.500);
 }
 
 html {
-  scroll-behavior: smooth;
+	scroll-behavior: smooth;
 }
 
 code {
-  counter-reset: step;
-  counter-increment: step 0;
+	counter-reset: step;
+	counter-increment: step 0;
 }
 code .line::before {
-  content: counter(step);
-  counter-increment: step;
-  width: 1rem;
-  margin-right: 1.5rem;
-  display: inline-block;
-  text-align: right;
-  color: #999999;
+	content: counter(step);
+	counter-increment: step;
+	width: 1rem;
+	margin-right: 1.5rem;
+	display: inline-block;
+	text-align: right;
+	color: #999999;
 }

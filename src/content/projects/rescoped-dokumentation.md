@@ -5,7 +5,7 @@ description: "Eigenverantwortliche Konzeption und Entwicklung der rescoped.io Do
 image:
   url: "/src/images/projects/1.jpg"
   alt: "rescoped Dokumentation Website"
-tags: [ "Professionelles Projekt", "Dokumentation", "Open Source", "React", "Frontend-Entwicklung" ]
+tags: ["Professionelles Projekt", "Dokumentation", "Open Source", "React", "Frontend-Entwicklung"]
 
 repo:
   name: "GitHub"

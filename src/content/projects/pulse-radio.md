@@ -5,7 +5,7 @@ description: "Moderne Radio-Web-Applikation mit Fokus auf Audio-Streaming und Us
 image:
   url: "/src/images/projects/1.jpg"
   alt: "Pulse Radio App Interface"
-tags: [ "Privates Projekt", "Audio Streaming","Full-Stack", "React", "Frontend-Entwicklung" ]
+tags: ["Privates Projekt", "Audio Streaming", "Full-Stack", "React", "Frontend-Entwicklung"]
 
 repo:
   name: "GitHub"

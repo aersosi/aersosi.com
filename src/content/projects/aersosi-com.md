@@ -5,7 +5,7 @@ description: "Persönliche Portfolio-Website entwickelt mit modernen Web-Technol
 image:
   url: "/src/images/projects/1.jpg"
   alt: "aersosi.com Portfolio Website"
-tags: [ "Privates Projekt", "Portfolio", "Next.js", "React", "Frontend-Entwicklung" ]
+tags: ["Privates Projekt", "Portfolio", "Next.js", "React", "Frontend-Entwicklung"]
 
 repo:
   name: "GitHub"

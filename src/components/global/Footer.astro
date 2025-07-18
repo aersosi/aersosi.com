@@ -4,78 +4,88 @@ import Wrapper from "@/components/lib/containers/Wrapper.astro";
 import Link from "@/components/lib/elements/Link.astro";
 
 const LinkData = [
-    {
-        category: "Allgemein",
-        headerClass: "font-medium text-base-900 dark:text-white",
-        links: [
-            {text: "Start", href: "/#home", ariaLabel: "Start"},
-            {text: "Über mich", href: "/about", ariaLabel: "Über mich"},
-            {text: "Impressum", href: "/imprint", ariaLabel: "Impressum"},
-            {text: "Datenschutz", href: "/datasecurity", ariaLabel: "Datenschutz"},
-            {text: "404", href: "/404", ariaLabel: "404"}
-        ],
-        linkClass: "font-normal",
-    },
-    {
-        category: "Projekte",
-        headerClass: "font-medium text-base-900 dark:text-white",
-        links: [
-            {text: "Alle Projekte", href: "/projects", ariaLabel: "Alle Projekte"},
-            {text: "Kategorie Index", href: "/projects/tags", ariaLabel: "Kategorie Index"},
-        ],
-        linkClass: "font-normal",
-    },
-    {
-        category: "Artikel",
-        headerClass: "font-medium text-base-900 dark:text-white",
-        links: [
-            {text: "Alle Artikel", href: "/articles", ariaLabel: "Alle Artikel"},
-            {text: "Kategorie Index", href: "/articles/tags", ariaLabel: "Kategorie Index"},
-        ],
-        linkClass: "font-normal",
-    },
+	{
+		category: "Allgemein",
+		headerClass: "font-medium text-base-900 dark:text-white",
+		links: [
+			{ text: "Start", href: "/#home", ariaLabel: "Start" },
+			{ text: "Über mich", href: "/about", ariaLabel: "Über mich" },
+			{ text: "Impressum", href: "/imprint", ariaLabel: "Impressum" },
+			{ text: "Datenschutz", href: "/datasecurity", ariaLabel: "Datenschutz" },
+			{ text: "404", href: "/404", ariaLabel: "404" },
+		],
+		linkClass: "font-normal",
+	},
+	{
+		category: "Projekte",
+		headerClass: "font-medium text-base-900 dark:text-white",
+		links: [
+			{ text: "Alle Projekte", href: "/projects", ariaLabel: "Alle Projekte" },
+			{ text: "Kategorie Index", href: "/projects/tags", ariaLabel: "Kategorie Index" },
+		],
+		linkClass: "font-normal",
+	},
+	{
+		category: "Artikel",
+		headerClass: "font-medium text-base-900 dark:text-white",
+		links: [
+			{ text: "Alle Artikel", href: "/articles", ariaLabel: "Alle Artikel" },
+			{ text: "Kategorie Index", href: "/articles/tags", ariaLabel: "Kategorie Index" },
+		],
+		linkClass: "font-normal",
+	},
 ];
 
 import { stackGrid, stackGridPadding } from "@/shared/classes.js";
 ---
 
 <footer>
-    <Wrapper variant="standard">
-        <div class:list={[...stackGridPadding]} class="grid gap-16 border-base-400 dark:border-base-600 border-t">
-            <nav class:list={[...stackGrid]} class="md:grid-cols-2">
-                {LinkData.map(({category, links, linkClass, headerClass}) => (
-                        <div class="flex flex-col gap-2">
-                            <Text tag="h4" variant="textSM" class={headerClass}>
-                                {category}
-                            </Text>
-                            {links.map(({text, href, ariaLabel}) => (
-                                    <Link
-                                            href={href}
-                                            aria-label={ariaLabel}
-                                            size="sm"
-                                            variant="muted"
-                                            class={linkClass}
-                                            key={href}
-                                    >
-                                        {text}
-                                    </Link>
-                            ))}
-                        </div>
-                ))}
-            </nav>
+	<Wrapper variant="standard">
+		<div
+			class:list={[...stackGridPadding]}
+			class="border-base-400 dark:border-base-600 grid gap-16 border-t"
+		>
+			<nav class:list={[...stackGrid]} class="md:grid-cols-2">
+				{
+					LinkData.map(({ category, links, linkClass, headerClass }) => (
+						<div class="flex flex-col gap-2">
+							<Text tag="h4" variant="textSM" class={headerClass}>
+								{category}
+							</Text>
+							{links.map(({ text, href, ariaLabel }) => (
+								<Link
+									href={href}
+									aria-label={ariaLabel}
+									size="sm"
+									variant="muted"
+									class={linkClass}
+									key={href}
+								>
+									{text}
+								</Link>
+							))}
+						</div>
+					))
+				}
+			</nav>
 
-            <div class:list={[...stackGrid]} class="md:grid-cols-2">
-                <div>
-                    <Text tag="p" variant="textBase" class="text-base-900 dark:text-white">
-                        Hamburg, Germany
-                    </Text>
-                    <Text id="clock" tag="p" variant="textSM" class="text-base-600 dark:text-base-300 flash-text"/>
-                </div>
-                <Text tag="p" variant="textBase" class="text-base-600 dark:text-base-300">
-                    © Copyright <span id="copyrightYear">2025</span>, Arthur Ersosi. <br>Alle Rechte vorbehalten.
-                </Text>
-            </div>
-        </div>
-    </Wrapper>
+			<div class:list={[...stackGrid]} class="md:grid-cols-2">
+				<div>
+					<Text tag="p" variant="textBase" class="text-base-900 dark:text-white">
+						Hamburg, Germany
+					</Text>
+					<Text
+						id="clock"
+						tag="p"
+						variant="textSM"
+						class="text-base-600 dark:text-base-300 flash-text"
+					/>
+				</div>
+				<Text tag="p" variant="textBase" class="text-base-600 dark:text-base-300">
+					© Copyright <span id="copyrightYear">2025</span>, Arthur Ersosi. <br />Alle Rechte
+					vorbehalten.
+				</Text>
+			</div>
+		</div>
+	</Wrapper>
 </footer>
-

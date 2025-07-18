@@ -1,11 +1,11 @@
 ---
-import { getEntry } from 'astro:content';
+import { getEntry } from "astro:content";
 import PageLayout from "@/layouts/PageLayout.astro";
 
-const entry = await getEntry('pages', 'imprint');
+const entry = await getEntry("pages", "imprint");
 const { Content } = await entry.render();
 ---
 
 <PageLayout frontmatter={entry.data}>
-    <Content />
+	<Content />
 </PageLayout>

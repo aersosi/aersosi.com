@@ -5,7 +5,8 @@ description: "Entwicklung eines Open-Source-Datagrids mit besonderem Fokus auf D
 image:
   url: "/src/images/projects/1.jpg"
   alt: "rescoped Datagrid Interface"
-tags: [ "Professionelles Projekt", "Open Source", "DX (Developer Experience)", "Frontend-Entwicklung" ]
+tags:
+  ["Professionelles Projekt", "Open Source", "DX (Developer Experience)", "Frontend-Entwicklung"]
 
 demo:
   name: "Live Demo"

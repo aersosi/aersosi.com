@@ -5,7 +5,8 @@ description: "Interne Anwendung für das Datenmanagement von Kunden-Hardware und
 image:
   url: "/src/images/projects/1.jpg"
   alt: "Dashboard der Device List"
-tags: [ "Professionelles Projekt","UX (User Experience)", "UI (User Interface)", "Frontend-Entwicklung" ]
+tags:
+  ["Professionelles Projekt", "UX (User Experience)", "UI (User Interface)", "Frontend-Entwicklung"]
 
 noLinksText: "Firmeninternes Projekt"
 
@@ -52,7 +53,7 @@ Entwicklung des UI/UX-Designs der Anwendung in Figma und technische Umsetzung in
 **Technische Umsetzung**
 
 - Fokus auf modulare, wartbare Komponenten. Implementierung des Frontends in Angular, Angular-Material, TypeScript, SCSS
-und HTML.
+  und HTML.
 
 ## Technologien
 

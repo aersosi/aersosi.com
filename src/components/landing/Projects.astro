@@ -9,26 +9,25 @@ import { stackGrid, stackGridPadding, stickyElement } from "@/shared/classes.js"
 
 const allProjectsUnsorted = await getCollection("projects");
 const allProjects = allProjectsUnsorted.sort(
-    (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
-)
+	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+);
 ---
 
 <section>
-    <Wrapper variant="standard">
-        <div class:list={[...stackGrid, ...stackGridPadding]} class="border-b">
-            <div class:list={[...stickyElement]}>
-                <Text tag="h2" variant="textLG" class="font-medium text-base-900 dark:text-white pb-2">
-                    Neuste Projekte
-                </Text>
-                <Link href="/projects" size="base" variant="accent">
-                    Alle Projekte
-                    <ArrowRight size="base"/>
-                </Link>
-            </div>
-            <div class="lg:col-span-2 flex flex-col gap-8">
-                {allProjects.slice(0, 3).map((project) =>
-                        <ProjectEntry project={project}/>)}
-            </div>
-        </div>
-    </Wrapper>
+	<Wrapper variant="standard">
+		<div class:list={[...stackGrid, ...stackGridPadding]} class="border-b">
+			<div class:list={[...stickyElement]}>
+				<Text tag="h2" variant="textLG" class="text-base-900 pb-2 font-medium dark:text-white">
+					Neuste Projekte
+				</Text>
+				<Link href="/projects" size="base" variant="accent">
+					Alle Projekte
+					<ArrowRight size="base" />
+				</Link>
+			</div>
+			<div class="flex flex-col gap-8 lg:col-span-2">
+				{allProjects.slice(0, 3).map((project) => <ProjectEntry project={project} />)}
+			</div>
+		</div>
+	</Wrapper>
 </section>

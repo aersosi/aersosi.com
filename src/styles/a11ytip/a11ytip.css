@@ -14,155 +14,155 @@
 [a11ytip-left],
 [a11ytip-left-top],
 [a11ytip-left-bottom] {
-    position: relative;
+	position: relative;
 
-    &[aria-label]::after {
-        /* Only aria-label -> use aria-label text  */
-        content: attr(aria-label);
-    }
+	&[aria-label]::after {
+		/* Only aria-label -> use aria-label text  */
+		content: attr(aria-label);
+	}
 
-    &[data-a11ytip-text]::after,
-    &[aria-label][data-a11ytip-text]::after {
-        /* Only data-a11ytip-text -> use data-a11ytip-text  */
-        /* aria-label & data-a11ytip-text -> use data-a11ytip-text  */
-        content: attr(data-a11ytip-text);
-    }
+	&[data-a11ytip-text]::after,
+	&[aria-label][data-a11ytip-text]::after {
+		/* Only data-a11ytip-text -> use data-a11ytip-text  */
+		/* aria-label & data-a11ytip-text -> use data-a11ytip-text  */
+		content: attr(data-a11ytip-text);
+	}
 
-    &::after {
-        /* Base */
-        display: inline-block;
-        position: absolute;
-        overflow: hidden;
-        pointer-events: none;
-        width: max-content;
-        max-width: attr(data-a11ytip-max-width type(<length>), var(--a11ytip-max-width));
-        text-align: center;
+	&::after {
+		/* Base */
+		display: inline-block;
+		position: absolute;
+		overflow: hidden;
+		pointer-events: none;
+		width: max-content;
+		max-width: attr(data-a11ytip-max-width type(<length>), var(--a11ytip-max-width));
+		text-align: center;
 
-        /* Text */
-        font-size: attr(data-a11ytip-text-size type(<length>), var(--a11ytip-text-size));
-        font-weight: normal;
-        color: attr(data-a11ytip-text-color type(<color>), var(--a11ytip-text-color));
+		/* Text */
+		font-size: attr(data-a11ytip-text-size type(<length>), var(--a11ytip-text-size));
+		font-weight: normal;
+		color: attr(data-a11ytip-text-color type(<color>), var(--a11ytip-text-color));
 
-        /* Box */
-        background-color: attr(data-a11ytip-bg-color type(<color>), var(--a11ytip-bg-color));
-        padding-block: attr(data-a11ytip-padding-x type(<length>), var(--a11ytip-padding-x));
-        padding-inline: attr(data-a11ytip-padding-y type(<length>), var(--a11ytip-padding-y));
-        border-radius: attr(data-a11ytip-border-radius type(<length>), var(--a11ytip-border-radius));
+		/* Box */
+		background-color: attr(data-a11ytip-bg-color type(<color>), var(--a11ytip-bg-color));
+		padding-block: attr(data-a11ytip-padding-x type(<length>), var(--a11ytip-padding-x));
+		padding-inline: attr(data-a11ytip-padding-y type(<length>), var(--a11ytip-padding-y));
+		border-radius: attr(data-a11ytip-border-radius type(<length>), var(--a11ytip-border-radius));
 
-        /* Animation */
-        opacity: 0;
-        transition-duration: attr(data-a11ytip-transition-duration type(<time>), var(--a11ytip-transition-duration));
-        transition-timing-function: ease-out;
-    }
+		/* Animation */
+		opacity: 0;
+		transition-duration: attr(
+			data-a11ytip-transition-duration type(<time>),
+			var(--a11ytip-transition-duration)
+		);
+		transition-timing-function: ease-out;
+	}
 }
 
 .a11ytip-active::after {
-    opacity: 1;
+	opacity: 1;
 }
 
 /* Position Start */
 [a11ytip-top]::after,
 [a11ytip-top-left]::after,
 [a11ytip-top-right]::after {
-    bottom: attr(data-a11ytip-start-position type(<length>), var(--a11ytip-start-position));
+	bottom: attr(data-a11ytip-start-position type(<length>), var(--a11ytip-start-position));
 }
 
 [a11ytip-top]::after {
-    left: 50%;
-    transform: translateX(-50%);
+	left: 50%;
+	transform: translateX(-50%);
 }
 
 [a11ytip-top-left]::after {
-    left: 0;
+	left: 0;
 }
 
 [a11ytip-top-right]::after {
-    right: 0;
+	right: 0;
 }
-
 
 [a11ytip-right]::after,
 [a11ytip-right-top]::after,
 [a11ytip-right-bottom]::after {
-    left: attr(data-a11ytip-start-position type(<length>), var(--a11ytip-start-position));
+	left: attr(data-a11ytip-start-position type(<length>), var(--a11ytip-start-position));
 }
 
 [a11ytip-right]::after {
-    top: 50%;
-    transform: translateY(-50%);
+	top: 50%;
+	transform: translateY(-50%);
 }
 
 [a11ytip-right-top]::after {
-    top: 0;
+	top: 0;
 }
 
 [a11ytip-right-bottom]::after {
-    bottom: 0;
+	bottom: 0;
 }
-
 
 [a11ytip-bottom]::after,
 [a11ytip-bottom-left]::after,
 [a11ytip-bottom-right]::after {
-    top: attr(data-a11ytip-start-position type(<length>), var(--a11ytip-start-position));
+	top: attr(data-a11ytip-start-position type(<length>), var(--a11ytip-start-position));
 }
 
 [a11ytip-bottom]::after {
-    left: 50%;
-    transform: translateX(-50%);
+	left: 50%;
+	transform: translateX(-50%);
 }
 
 [a11ytip-bottom-left]::after {
-    right: 0;
+	right: 0;
 }
 
 [a11ytip-bottom-right]::after {
-    left: 0;
+	left: 0;
 }
 
 [a11ytip-left]::after,
 [a11ytip-left-top]::after,
 [a11ytip-left-bottom]::after {
-    right: attr(data-a11ytip-start-position type(<length>), var(--a11ytip-start-position));
+	right: attr(data-a11ytip-start-position type(<length>), var(--a11ytip-start-position));
 }
 
 [a11ytip-left]::after {
-    top: 50%;
-    transform: translateY(-50%);
+	top: 50%;
+	transform: translateY(-50%);
 }
 
 [a11ytip-left-top]::after {
-    top: 0;
+	top: 0;
 }
 
 [a11ytip-left-bottom]::after {
-    bottom: 0;
+	bottom: 0;
 }
 
 /* Position End */
 .a11ytip-active {
-    &[a11ytip-top]::after,
-    &[a11ytip-top-left]::after,
-    &[a11ytip-top-right]::after {
-        bottom: attr(data-a11ytip-end-position type(<length>), var(--a11ytip-end-position));
-    }
+	&[a11ytip-top]::after,
+	&[a11ytip-top-left]::after,
+	&[a11ytip-top-right]::after {
+		bottom: attr(data-a11ytip-end-position type(<length>), var(--a11ytip-end-position));
+	}
 
-    &[a11ytip-right]::after,
-    &[a11ytip-right-top]::after,
-    &[a11ytip-right-bottom]::after {
-        left: attr(data-a11ytip-end-position type(<length>), var(--a11ytip-end-position));
-    }
+	&[a11ytip-right]::after,
+	&[a11ytip-right-top]::after,
+	&[a11ytip-right-bottom]::after {
+		left: attr(data-a11ytip-end-position type(<length>), var(--a11ytip-end-position));
+	}
 
-    &[a11ytip-bottom]::after,
-    &[a11ytip-bottom-left]::after,
-    &[a11ytip-bottom-right]::after {
-        top: attr(data-a11ytip-end-position type(<length>), var(--a11ytip-end-position));
-    }
+	&[a11ytip-bottom]::after,
+	&[a11ytip-bottom-left]::after,
+	&[a11ytip-bottom-right]::after {
+		top: attr(data-a11ytip-end-position type(<length>), var(--a11ytip-end-position));
+	}
 
-
-    &[a11ytip-left]::after,
-    &[a11ytip-left-top]::after,
-    &[a11ytip-left-bottom]::after {
-        right: attr(data-a11ytip-end-position type(<length>), var(--a11ytip-end-position));
-    }
+	&[a11ytip-left]::after,
+	&[a11ytip-left-top]::after,
+	&[a11ytip-left-bottom]::after {
+		right: attr(data-a11ytip-end-position type(<length>), var(--a11ytip-end-position));
+	}
 }

@@ -5,7 +5,8 @@ description: "KI-basierte Web-Applikation mit modernem Frontend-Design"
 image:
   url: "/src/images/projects/1.jpg"
   alt: "reflectAI App Interface"
-tags: [ "Privates Projekt", "KI (Künstliche Intelligenz)", "Next.js", "React", "Frontend-Entwicklung" ]
+tags:
+  ["Privates Projekt", "KI (Künstliche Intelligenz)", "Next.js", "React", "Frontend-Entwicklung"]
 
 repo:
   name: "GitHub"

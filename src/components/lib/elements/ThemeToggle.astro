@@ -1,35 +1,35 @@
 ---
 import Button from "./Button.astro";
 import Contrast from "@/components/lib/icons/Contrast.astro";
-const {class: className = "", ...rest} = Astro.props;
+const { class: className = "", ...rest } = Astro.props;
 ---
 
 <div id="theme-toggle">
-    <Button iconOnly
-            size="sm"
-            variant="muted"
-            role="switch"
-            aria-checked="false"
-            aria-label="Toggle dark mode"
-            data-theme-toggle
-            class={`${className} hidden md:flex`}
-            {...rest}
-    >
-        <Contrast slot="icon" size="base"/>
-    </Button>
+	<Button
+		iconOnly
+		size="sm"
+		variant="muted"
+		role="switch"
+		aria-checked="false"
+		aria-label="Toggle dark mode"
+		data-theme-toggle
+		class={`${className} hidden md:flex`}
+		{...rest}
+	>
+		<Contrast slot="icon" size="base" />
+	</Button>
 
-    <Button size="sm"
-            variant="muted"
-            role="switch"
-            aria-checked="false"
-            aria-label="Toggle dark mode"
-            data-theme-toggle
-            class={`${className} md:hidden`}
-            {...rest}
-    >
-            <Contrast slot="left-icon" size="base"/>
-            <div class="ml-2 md:hidden">Hell/Dunkel</div>
-    </Button>
+	<Button
+		size="sm"
+		variant="muted"
+		role="switch"
+		aria-checked="false"
+		aria-label="Toggle dark mode"
+		data-theme-toggle
+		class={`${className} md:hidden`}
+		{...rest}
+	>
+		<Contrast slot="left-icon" size="base" />
+		<div class="ml-2 md:hidden">Hell/Dunkel</div>
+	</Button>
 </div>
-
-
