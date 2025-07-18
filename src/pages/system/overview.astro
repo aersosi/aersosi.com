@@ -3,6 +3,8 @@
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import Text from "@/components/lib/elements/Text.astro";
 import Wrapper from "@/components/lib/containers/Wrapper.astro";
+import { stackGrid, stackGridPadding } from "@/shared/classes.js";
+
 // Data array
 const pageData = [
   {
@@ -86,7 +88,7 @@ const pageData = [
         {
           pageData.map((category) => (
             <>
-              <div class="grid grid-cols-1 gap-x-12 gap-y-8 lg:grid-cols-3 py-16 lg:py-24">
+              <div class={`${stackGrid} ${stackGridPadding}`}>
                 <Text
                   tag="h3"
                   variant="textBase"

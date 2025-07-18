@@ -13,7 +13,7 @@ export const stackGrid = [
 
 export const stackGridPadding = [
     "py-20",
-    "lg:py-22",
+    // "lg:py-22",
 ].join(" ");
 
 

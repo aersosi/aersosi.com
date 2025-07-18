@@ -5,12 +5,14 @@ import Text from "@/components/lib/elements/Text.astro";
 import Link from "@/components/lib/elements/Link.astro";
 import Wrapper from "@/components/lib/containers/Wrapper.astro";
 import ArrowLeft from "@/components/lib/icons/ArrowLeft.astro";
+import { stackGrid, stackGridPadding } from "@/shared/classes.js";
+
 ---
 
 <BaseLayout>
     <section>
         <Wrapper variant="standard">
-            <div class="grid grid-cols-1 gap-x-12 gap-y-8 lg:grid-cols-3 py-16 lg:py-24 lg:pt-40">
+            <div class={`${stackGrid} ${stackGridPadding}`}>
                 <div class="flex gap-8 flex-col">
                     <Link href="/" size="base" variant="accent">
                         <ArrowLeft size="base"/>

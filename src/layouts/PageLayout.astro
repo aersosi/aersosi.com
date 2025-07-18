@@ -3,6 +3,7 @@ import { Image } from "astro:assets";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import Text from "@/components/lib/elements/Text.astro";
 import Wrapper from "@/components/lib/containers/Wrapper.astro";
+import { stackGrid, stackGridPadding } from "@/shared/classes.js";
 const {frontmatter} = Astro.props;
 ---
 
@@ -11,7 +12,7 @@ const {frontmatter} = Astro.props;
         <Wrapper variant="standard">
 
             <!--About Me-->
-            <div class="grid grid-cols-1 gap-x-12 gap-y-8 lg:grid-cols-3 py-16 lg:py-24 lg:pt-40">
+            <div class={`${stackGrid} ${stackGridPadding}`}>
                 <div class="lg:sticky lg:top-4 lg:z-40 self-start">
                     <div class="flex gap-8 flex-col">
                         <Text tag="h1" variant="text2XL" class="font-medium text-base-900 dark:text-white">
