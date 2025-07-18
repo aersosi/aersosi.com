@@ -1,10 +1,9 @@
 ---
 interface Props {
-    variant?: "standard" | "prose"; // Define any variants you need
-    class?: string; // Optional prop for additional classes
+    variant?: "standard" | "prose";
+    class?: string;
 }
 const {variant = "standard", class: extraClass = ""} = Astro.props;
-// Map each variant to its specific classes
 
 const variantClasses = {
     standard: "max-w-7xl mx-auto px-4  sm:px-12 lg:px-16",
@@ -65,7 +64,6 @@ const variantClasses = {
         "prose-pre:scrollbar-hide",
     ].join(" "),
 };
-// Combine the classes for the specified variant with any extra classes
 const classes = `${variantClasses[variant]} ${extraClass}`.trim();
 ---
 

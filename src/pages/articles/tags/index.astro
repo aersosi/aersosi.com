@@ -2,27 +2,22 @@
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import Text from "@/components/lib/elements/Text.astro";
 import Wrapper from "@/components/lib/containers/Wrapper.astro";
-// Content
 import { getCollection } from "astro:content";
 import Link from "@/components/lib/elements/Link.astro";
 import { stackGrid, stackGridPadding, stickyElement } from "@/shared/classes.js";
 
-// Get all articles
 const allPosts = await getCollection("articles")
-// Extract tags from all articles and count occurrences
 const tagCounts = allPosts.reduce((acc, post) => {
     post.data.tags.forEach((tag) => {
-        acc[tag] = (acc[tag] || 0) + 1; // Count each tag per post
+        acc[tag] = (acc[tag] || 0) + 1;
     });
     return acc;
 }, {});
-// Extract unique tags for display
 const tags = Object.keys(tagCounts);
-// Function to get the image for a specific tag
 function getTagImage(tag) {
     const filteredPosts = allPosts.filter((post) => post.data.tags.includes(tag));
     if (filteredPosts.length > 0) {
-        return filteredPosts[0].data.image.url; // Return the image of the first post with that tag
+        return filteredPosts[0].data.image.url;
     }
 }
 ---

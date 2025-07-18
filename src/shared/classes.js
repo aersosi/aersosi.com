@@ -22,5 +22,5 @@ export const stickyElement = [
     "lg:top-16",
     "lg:z-40",
     "self-start",
-]
+].join(" ");
 

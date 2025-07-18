@@ -14,14 +14,13 @@ export interface Props {
         | "h3"
         | "h4"
         | "h5"
-        | "h6"; // Defines allowed HTML tags
-    id?: string; // Optional 'id' attribute
-    href?: string; // Optional 'href' attribute for anchor tags
-    class?: string; // Optional prop for additional custom classes
-    variant?: string; // Specifies the style variant of the text
+        | "h6";
+    id?: string;
+    href?: string;
+    class?: string;
+    variant?: string;
 }
 
-// Define text styles for each variant
 const textStyles: Record<string, string> = {
     display6XL: "text-4xl sm:text-7xl md:text-9xl lg:text-[12rem] leading-tight tracking-tight",
     display5XL: "text-4xl sm:text-7xl md:text-8xl lg:text-[10rem] leading-tight tracking-tight",
@@ -41,18 +40,15 @@ const textStyles: Record<string, string> = {
     textXS: "text-xs xl:text-sm 2xl:text-base",
 };
 
-// Destructure props with default values
 const {
-    tag: Tag = "p", // Defaults to paragraph tag
-    variant = "textBase", // Defaults to textBase style variant
-    class: className = "", // No additional classes by default
-    ...rest // Collect remaining props
+    tag: Tag = "p",
+    variant = "textBase",
+    class: className = "",
+    ...rest
 } = Astro.props;
 
-// Get the base classes for the specified variant
-const baseClasses = textStyles[variant] || textStyles.textBase; // Fallback to textBase if variant not found
+const baseClasses = textStyles[variant] || textStyles.textBase;
 
-// Combine base classes with any additional custom classes
 const combinedClasses = `${baseClasses} ${className}`.trim();
 ---
 <Tag
