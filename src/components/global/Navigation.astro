@@ -1,7 +1,6 @@
 ---
 import Button from "@/components/lib/elements/Button.astro";
 import Link from "@/components/lib/elements/Link.astro";
-import Eye from "@/components/lib/icons/Eye.astro";
 import Book from "@/components/lib/icons/Book.astro";
 import AtSign from "@/components/lib/icons/AtSign.astro";
 import Tool from "@/components/lib/icons/Tool.astro";
@@ -40,28 +39,6 @@ const navItems = [
 ---
 
 <div id="mainNavWrapper" class:list={[...baseClass]}>
-    <script>
-        const toggleMobileNav = () => {
-            const mobileNav = document.getElementById("mobileNav");
-            const backdrop = document.getElementById("backdrop");
-
-            if (mobileNav) {
-                mobileNav.classList.toggle("translate-x-0");
-                mobileNav.classList.toggle("translate-x-full");
-            }
-
-            if (backdrop) {
-                backdrop.classList.toggle("hidden");
-                backdrop.classList.toggle("backdrop-blur-xs");
-            }
-
-            document.body.classList.toggle("overflow-hidden");
-        };
-        document.getElementById("mobileNavBtn")?.addEventListener("click", toggleMobileNav);
-        document.getElementById("closeMobileNavBtn")?.addEventListener("click", toggleMobileNav);
-    </script>
-
-
     <nav id="mainNav">
         <div class="md:hidden p-2">
             <Button id="mobileNavBtn" size="sm" variant="accent" class="flex gap-2">
@@ -89,9 +66,9 @@ const navItems = [
 </div>
 
 <nav id="mobileNav"
-     class="md:hidden fixed top-0 right-0 h-full z-100 bg-base-100 dark:bg-base-800 backdrop-blur-sm w-2/3 max-w-sm transform translate-x-full transition-transform duration-300">
+     class="md:hidden fixed top-0 right-0 h-full z-100 bg-base-100 dark:bg-base-800 backdrop-blur-sm  transform translate-x-full transition-transform duration-300">
     <div class="flex flex-col gap-8 px-8 py-6 h-full">
-        <div class="flex gap-2 justify-between pb-8 border-b border-base-400 dark:border-base-600">
+        <div class="flex gap-4 justify-between pb-8 border-b border-base-400 dark:border-base-600">
             <ThemeToggle/>
             <Button id="closeMobileNavBtn" size="sm" variant="accent" class="flex gap-2">
                 Schließen
@@ -108,5 +85,5 @@ const navItems = [
     </div>
 </nav>
 
-<div id="backdrop" class="border fixed inset-0 z-90 bg-base-800/30 dark:bg-base-200/30 backdrop-blur-lg hidden md:hidden">
+<div id="backdrop" class="border fixed inset-0 z-90 bg-base-800/30 dark:bg-base-200/30 backdrop-blur-xs hidden md:hidden">
 </div>

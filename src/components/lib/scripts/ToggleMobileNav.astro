@@ -1,0 +1,20 @@
+<script>
+    const toggleMobileNav = () => {
+        const mobileNav = document.getElementById("mobileNav");
+        const backdrop = document.getElementById("backdrop");
+
+        if (mobileNav) {
+            mobileNav.classList.toggle("translate-x-0");
+            mobileNav.classList.toggle("translate-x-full");
+        }
+
+        if (backdrop) {
+            backdrop.classList.toggle("hidden");
+        }
+
+        document.body.classList.toggle("overflow-hidden");
+    };
+    document.getElementById("mobileNavBtn")?.addEventListener("click", toggleMobileNav);
+    document.getElementById("closeMobileNavBtn")?.addEventListener("click", toggleMobileNav);
+    document.getElementById("backdrop")?.addEventListener("click", toggleMobileNav);
+</script>
