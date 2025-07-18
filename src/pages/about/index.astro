@@ -18,7 +18,7 @@ import { stackGrid, stackGridPadding, stickyElement } from "@/shared/classes.js"
     <section>
         <Wrapper variant="standard">
             <!--About Me-->
-            <div class={`${stackGrid} ${stackGridPadding} border-b`}>
+            <div class:list={[...stackGrid, ...stackGridPadding]} class="border-b">
                 <div class="grid gap-8">
                     <div class="grid gap-2">
                         <Text tag="h1" variant="text2XL" class="font-medium text-base-800 dark:text-base-100">
@@ -118,8 +118,8 @@ import { stackGrid, stackGridPadding, stickyElement } from "@/shared/classes.js"
             </div>
 
             <!--CV-->
-            <Wrapper variant="prose" class={`${stackGridPadding}`}>
-                <div class={`${stackGrid} sm:grid-cols-2 items-start sm:items-center`}>
+            <Wrapper variant="prose" class:list={[...stackGridPadding]}>
+                <div class:list={[...stackGrid]} class="sm:grid-cols-2 items-start sm:items-center">
                     <Text tag="h2" class="!text-xl !xl:text-2xl !2xl:text-3xl font-medium !my-0 lg:ml-auto">
                         Curriculum Vitae
                     </Text>
@@ -149,7 +149,7 @@ import { stackGrid, stackGridPadding, stickyElement } from "@/shared/classes.js"
                                 </div>
                                 <>
                                     {item.entries.map((entry) => (
-                                            <div class={`${stackGrid} !gap-y-0`} >
+                                            <div class:list={[...stackGrid]} class="!gap-y-0">
                                                 <Text tag="p" class="text-black dark:text-white lg:ml-auto mb-0">
                                                     {entry.date}
                                                 </Text>

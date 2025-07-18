@@ -11,7 +11,7 @@ import { stackGrid, stackGridPadding } from "@/shared/classes.js";
 <BaseLayout>
     <section>
         <Wrapper variant="standard">
-            <div class={`${stackGrid} ${stackGridPadding}`}>
+            <div class:list={[...stackGrid, ...stackGridPadding]}>
                 <div class="flex gap-8 flex-col">
                     <Link href="/" size="base" variant="accent">
                         <ArrowLeft size="base"/>

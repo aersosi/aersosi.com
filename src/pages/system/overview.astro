@@ -67,7 +67,7 @@ const pageData = [
   <section>
     <Wrapper variant="standard">
       <div
-        class={`${stackGrid} ${stackGridPadding} lg:pt-40 border-b`}
+        class:list={[...stackGrid, ...stackGridPadding]} class="lg:pt-40 border-b"
       >
         <Text
           tag="h1"
@@ -86,7 +86,7 @@ const pageData = [
         {
           pageData.map((category) => (
             <>
-              <div class={`${stackGrid} ${stackGridPadding}`}>
+              <div class:list={[...stackGrid, ...stackGridPadding]}>
                 <Text
                   tag="h3"
                   variant="textBase"

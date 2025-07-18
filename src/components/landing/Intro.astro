@@ -10,8 +10,8 @@ import { stackGrid, stackGridPadding, stickyElement } from "@/shared/classes.js"
 
 <section>
     <Wrapper variant="standard">
-        <div id="home" class={`${stackGrid} ${stackGridPadding} border-b`}>
-            <div class={`${stickyElement}`}>
+        <div id="home" class:list={[...stackGrid, ...stackGridPadding]} class="border-b">
+            <div class:list={[...stickyElement]}>
                 <div class="flex flex-col-reverse sm:flex-row gap-x-12 gap-y-6 sm:items-end">
                     <div class="grid lg:hidden shrink-0 text-accent-700 dark:text-accent-300 whitespace-nowrap">
                         <Text tag="h1" variant="text2XL">

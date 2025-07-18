@@ -26,8 +26,8 @@ const otherTags = allTags
 <BaseLayout>
     <section>
         <Wrapper variant="standard">
-            <div class={`${stackGrid} ${stackGridPadding}`}>
-                <div class={`${stickyElement}`}>
+            <div class:list={[...stackGrid, ...stackGridPadding]}>
+                <div class:list={[...stickyElement]}>
                     <div class="flex gap-8 flex-col">
                         <Text tag="h1" variant="text2XL" class="font-medium text-base-900 dark:text-white">
                             Kategorie Index

@@ -18,8 +18,8 @@ const tags = [...new Set(allPosts.map((post) => post.data.tags).flat())];
 <BaseLayout>
     <section>
         <Wrapper variant="standard">
-            <div class={`${stackGrid} ${stackGridPadding}`}>
-                <div class={`${stickyElement}`}>
+            <div class:list={[...stackGrid, ...stackGridPadding]}>
+                <div class:list={[...stickyElement]}>
                     <div class="grid gap-4">
                         <Text tag="h1" variant="text2XL" class="font-medium text-base-900 dark:text-white">
                             Artikel

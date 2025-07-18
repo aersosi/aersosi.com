@@ -15,16 +15,15 @@ const baseClass = [
 
     "transition-[top]",
     "duration-500",
-    "top-3",
-    "left-1/2",
-    "-translate-x-1/2",
 
-    "md:right-10",
-    "md:left-auto",
-    "md:translate-x-0",
-
+    "right-2",
+    "sm:right-10",
+    "lg:right-14",
     "xl:left-1/2",
-    "xl:translate-x-60",
+    "xl:translate-x-58",
+    "2xl:translate-x-60",
+
+    "top-5",
 ];
 
 const navItems = [
@@ -37,9 +36,27 @@ const navItems = [
 ];
 ---
 
-<div id="mainNavWrapper" class:list={[
-    ...baseClass,
-]}>
+<div id="mainNavWrapper" class:list={[...baseClass]}>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const navWrapper = document.getElementById("mainNavWrapper");
+
+            // Überprüfen, ob das Element existiert
+            if (navWrapper) {
+                window.addEventListener("scroll", () => {
+                    if (window.scrollY > 96) {
+                        navWrapper.classList.remove("top-5");
+                        navWrapper.classList.add("top-2");
+                    } else {
+                        navWrapper.classList.remove("top-2");
+                        navWrapper.classList.add("top-5");
+                    }
+                });
+            }
+        });
+
+    </script>
+
     <nav id="mainNav" class="bg-base-200/50 dark:bg-base-800/50 backdrop-blur-xs rounded-xl w-auto">
         <div class="flex items-center p-2 gap-2">
             {navItems.map(({href, ariaLabel, Icon}) => (

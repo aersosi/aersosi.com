@@ -31,8 +31,8 @@ const links = [
 
 <section>
     <Wrapper variant="standard">
-        <div id="socials" class={`${stackGrid} ${stackGridPadding}`}>
-            <div class={`${stickyElement}`}>
+        <div id="socials" class:list={[...stackGrid, ...stackGridPadding]}>
+            <div class:list={[...stickyElement]}>
                 <Text tag="h2" variant="textLG" class="font-medium text-base-900 dark:text-white">
                     Kontakt
                 </Text>

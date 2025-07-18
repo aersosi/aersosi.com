@@ -8,19 +8,16 @@ export const stackGrid = [
 
     "border-base-400",
     "dark:border-base-600",
-].join(" ");
-
+];
 
 export const stackGridPadding = [
-    "py-20",
-    // "lg:py-22",
-].join(" ");
-
+    "py-24",
+];
 
 export const stickyElement = [
     "lg:sticky",
     "lg:top-16",
     "lg:z-40",
     "self-start",
-].join(" ");
+];
 

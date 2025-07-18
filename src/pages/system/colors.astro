@@ -71,7 +71,7 @@ const colors = [
       <div class="mt-8 border-t border-base-300 dark:border-base-600">
         {
           colors.map((color) => (
-            <div class={`${stackGrid} ${stackGridPadding} border-b`}>
+            <div class:list={[...stackGrid, ...stackGridPadding]} class="border-b">
               <Text
                 tag="p"
                 variant="textSM"

@@ -16,9 +16,9 @@ const allPosts = allPostsUnsorted.sort(
 <section>
   <Wrapper variant="standard">
     <div
-      class={`${stackGrid} ${stackGridPadding} border-b`}
+      class:list={[...stackGrid, ...stackGridPadding]} class="border-b"
     >
-      <div class={`${stickyElement}`}>
+      <div class:list={[...stickyElement]}>
         <Text
           tag="h2"
           variant="textBase"
