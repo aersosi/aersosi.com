@@ -17,5 +17,10 @@ export const stackGridPadding = [
 ].join(" ");
 
 
-
+export const stickyElement = [
+    "lg:sticky",
+    "lg:top-16",
+    "lg:z-40",
+    "self-start",
+]
 

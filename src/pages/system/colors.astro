@@ -3,6 +3,7 @@
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import Text from "@/components/lib/elements/Text.astro";
 import Wrapper from "@/components/lib/containers/Wrapper.astro";
+import { stackGrid, stackGridPadding } from "@/shared/classes.js";
 const colors = [
   {
     name: "Primary",
@@ -71,7 +72,7 @@ const colors = [
       <div class="mt-8 border-t border-base-300 dark:border-base-600">
         {
           colors.map((color) => (
-            <div class="grid grid-cols-1 gap-x-12 gap-y-8 lg:grid-cols-3 py-16 lg:py-24 border-b border-base-400 dark:border-base-600">
+            <div class={`${stackGrid} ${stackGridPadding} border-b`}>
               <Text
                 tag="p"
                 variant="textSM"

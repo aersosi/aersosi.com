@@ -8,6 +8,7 @@ import ArticlesEntry from "@/components/lib/entries/ArticlesEntry.astro";
 // Content
 import { getCollection } from "astro:content";
 import Link from "@/components/lib/elements/Link.astro";
+import { stackGrid, stackGridPadding, stickyElement } from "@/shared/classes.js";
 import ArrowRight from "@/components/lib/icons/ArrowRight.astro";
 
 const allPostsUnsorted = await getCollection("articles");
@@ -19,9 +20,9 @@ const allPosts = allPostsUnsorted.sort(
 <section>
   <Wrapper variant="standard">
     <div
-      class="grid grid-cols-1 gap-x-12 gap-y-8 lg:grid-cols-3 py-16 lg:py-24 border-b border-base-400 dark:border-base-600"
+      class={`${stackGrid} ${stackGridPadding} border-b`}
     >
-      <div class="lg:sticky lg:top-16 lg:z-40 self-start">
+      <div class={`${stickyElement}`}>
         <Text
           tag="h2"
           variant="textBase"

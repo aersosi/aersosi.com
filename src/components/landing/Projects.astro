@@ -6,6 +6,7 @@ import { getCollection } from "astro:content";
 import ProjectEntry from "@/components/lib/entries/ProjectEntry.astro";
 import Link from "@/components/lib/elements/Link.astro";
 import ArrowRight from "@/components/lib/icons/ArrowRight.astro";
+import { stackGrid, stackGridPadding, stickyElement } from "@/shared/classes.js";
 
 const allProjectsUnsorted = await getCollection("projects");
 const allProjects = allProjectsUnsorted.sort(
@@ -15,8 +16,8 @@ const allProjects = allProjectsUnsorted.sort(
 
 <section>
     <Wrapper variant="standard">
-        <div class="grid grid-cols-1 gap-x-12 gap-y-8 lg:grid-cols-3 py-16 lg:py-24 border-b border-base-400 dark:border-base-600">
-            <div class="lg:sticky lg:top-16 lg:z-40 self-start">
+        <div class={`${stackGrid} ${stackGridPadding} border-b`}>
+            <div class={`${stickyElement}`}>
                 <Text tag="h2" variant="textLG" class="font-medium text-base-900 dark:text-white pb-2">
                     Neuste Projekte
                 </Text>

@@ -37,12 +37,12 @@ const LinkData = [
     },
 ];
 
-import { stackGrid, stackGridPadding } from "@/shared/classes.js";
+import { stackGrid } from "@/shared/classes.js";
 ---
 
 <footer>
     <Wrapper variant="standard">
-        <div class="grid gap-16 py-16 lg:py-24 border-t border-base-400 dark:border-base-600">
+        <div class="grid gap-16 py-16 lg:py-24 border-t">
             <nav class={`${stackGrid} md:grid-cols-2`}>
                 {LinkData.map(({category, links, linkClass, headerClass}) => (
                     <div class="flex flex-col gap-2">
