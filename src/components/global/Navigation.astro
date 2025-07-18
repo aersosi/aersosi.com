@@ -1,5 +1,6 @@
 ---
 import Button from "@/components/lib/elements/Button.astro";
+import Link from "@/components/lib/elements/Link.astro";
 import Eye from "@/components/lib/icons/Eye.astro";
 import Book from "@/components/lib/icons/Book.astro";
 import AtSign from "@/components/lib/icons/AtSign.astro";
@@ -7,6 +8,8 @@ import Tool from "@/components/lib/icons/Tool.astro";
 import User from "@/components/lib/icons/User.astro";
 import Zap from "@/components/lib/icons/Zap.astro";
 import ThemeToggle from "@/components/lib/elements/ThemeToggle.astro";
+import Menu from "../lib/icons/Menu.astro";
+import X from "../lib/icons/X.astro";
 
 const baseClass = [
     "fixed",
@@ -20,60 +23,90 @@ const baseClass = [
     "sm:right-10",
     "lg:right-14",
     "xl:left-1/2",
-    "xl:translate-x-58",
-    "2xl:translate-x-60",
+    "xl:translate-x-70",
+    "2xl:translate-x-72",
 
     "top-5",
 ];
 
 const navItems = [
-    {href: "/#home", ariaLabel: "Startseite", Icon: Zap},
-    {href: "/projects", ariaLabel: "Projekte", Icon: Tool},
-    {href: "/articles/", ariaLabel: "Artikel", Icon: Book},
-    {href: "/about", ariaLabel: "Über mich", Icon: User},
-    {href: "/#socials", ariaLabel: "Kontakt", Icon: AtSign},
-    {href: "/system/overview", ariaLabel: "System Overview", Icon: Eye},
+    {href: "/#home", name: "Startseite", Icon: Zap},
+    {href: "/projects", name: "Projekte", Icon: Tool},
+    {href: "/articles/", name: "Artikel", Icon: Book},
+    {href: "/about", name: "Über mich", Icon: User},
+    {href: "/#socials", name: "Kontakt", Icon: AtSign},
+    // {href: "/system/overview", name: "System Overview", Icon: Eye},
 ];
 ---
 
 <div id="mainNavWrapper" class:list={[...baseClass]}>
     <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const navWrapper = document.getElementById("mainNavWrapper");
+        const toggleMobileNav = () => {
+            const mobileNav = document.getElementById("mobileNav");
+            const backdrop = document.getElementById("backdrop");
 
-            // Überprüfen, ob das Element existiert
-            if (navWrapper) {
-                window.addEventListener("scroll", () => {
-                    if (window.scrollY > 96) {
-                        navWrapper.classList.remove("top-5");
-                        navWrapper.classList.add("top-2");
-                    } else {
-                        navWrapper.classList.remove("top-2");
-                        navWrapper.classList.add("top-5");
-                    }
-                });
+            if (mobileNav) {
+                mobileNav.classList.toggle("translate-x-0");
+                mobileNav.classList.toggle("translate-x-full");
             }
-        });
 
+            if (backdrop) {
+                backdrop.classList.toggle("hidden");
+                backdrop.classList.toggle("backdrop-blur-xs");
+            }
+
+            document.body.classList.toggle("overflow-hidden");
+        };
+        document.getElementById("mobileNavBtn")?.addEventListener("click", toggleMobileNav);
+        document.getElementById("closeMobileNavBtn")?.addEventListener("click", toggleMobileNav);
     </script>
 
-    <nav id="mainNav" class="bg-base-200/50 dark:bg-base-800/50 backdrop-blur-xs rounded-xl w-auto">
-        <div class="flex items-center p-2 gap-2">
-            {navItems.map(({href, ariaLabel, Icon}) => (
+
+    <nav id="mainNav">
+        <div class="md:hidden p-2">
+            <Button id="mobileNavBtn" size="sm" variant="accent" class="flex gap-2">
+                Menü
+                <Menu slot="left-icon" size="base"/>
+            </Button>
+        </div>
+        <div class="hidden md:flex items-center p-2 gap-2 bg-base-200/50 dark:bg-base-800/50 backdrop-blur-xs rounded-xl">
+            {navItems.map(({href, name, Icon}) => (
                     <Button isLink={true}
                             iconOnly
                             size="sm"
                             variant="accent"
                             href={href}
-                            aria-label={ariaLabel}
+                            aria-label={name}
                             a11ytip-bottom
                             key={href}
                     >
                         <Icon slot="icon" size="sm"/>
                     </Button>
             ))}
-
             <ThemeToggle aria-label="Hell/Dunkel Modus" a11ytip-bottom/>
         </div>
     </nav>
+</div>
+
+<nav id="mobileNav"
+     class="md:hidden fixed top-0 right-0 h-full z-100 bg-base-100 dark:bg-base-800 backdrop-blur-sm w-2/3 max-w-sm transform translate-x-full transition-transform duration-300">
+    <div class="flex flex-col gap-8 px-8 py-6 h-full">
+        <div class="flex gap-2 justify-between pb-8 border-b border-base-400 dark:border-base-600">
+            <ThemeToggle/>
+            <Button id="closeMobileNavBtn" size="sm" variant="accent" class="flex gap-2">
+                Schließen
+                <X slot="left-icon" size="base"/>
+            </Button>
+        </div>
+        <div class="grid gap-4">
+            {navItems.map(({href, name}) => (
+                    <Link href={href} size="lg" variant="accent">
+                        {name}
+                    </Link>
+            ))}
+        </div>
+    </div>
+</nav>
+
+<div id="backdrop" class="border fixed inset-0 z-90 bg-base-800/30 dark:bg-base-200/30 backdrop-blur-lg hidden md:hidden">
 </div>

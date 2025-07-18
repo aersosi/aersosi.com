@@ -1,7 +1,6 @@
 @import "tailwindcss";
 @import "./a11ytip/a11ytip.css";
 @import "./scrollbar.css";
-@import "./footer-clock-ticking.css";
 
 @plugin "@tailwindcss/typography";
 @plugin "tailwind-scrollbar-hide";
