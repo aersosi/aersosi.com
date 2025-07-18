@@ -1,0 +1,23 @@
+# Ignore artifacts:
+dist
+.astro
+
+# Standard
+**/.git
+**/.svn
+**/.hg
+**/node_modules
+
+# lockfiles
+pnpm-lock.yaml
+yarn.lock
+package-lock.json
+
+# jetbrains setting folder
+.idea/
+.vscode/
+
+#locals
+TODO.md
+hidden/
+font-inter-full/

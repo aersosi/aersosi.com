@@ -14,12 +14,6 @@ const tagCounts = allPosts.reduce((acc, post) => {
     return acc;
 }, {});
 const tags = Object.keys(tagCounts);
-function getTagImage(tag) {
-    const filteredPosts = allPosts.filter((post) => post.data.tags.includes(tag));
-    if (filteredPosts.length > 0) {
-        return filteredPosts[0].data.image.url;
-    }
-}
 ---
 
 <BaseLayout>
