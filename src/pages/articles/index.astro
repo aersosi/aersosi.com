@@ -29,22 +29,22 @@ const tags = [...new Set(allPosts.map((post) => post.data.tags).flat())];
                         </Text>
                     </div>
 
-                    <div class="relative flex h-full mt-1 overflow-x-scroll gap-2 scrollable-content snap-x snap-proximity scrollbar-hide lg:flex-col lg:gap-1 lg:mt-8">
-                        <Text tag="p" variant="textBase">
-                            <div class="flex font-medium text-base-900 dark:text-white">
+                    <div class="grid gap-2">
+                        <Text tag="p" variant="textBase" class="flex gap-1 justify-baseline font-medium text-base-900 dark:text-white">
                                 Alle Kategorien
-                                (
-                                <Link href="/articles/tags" size="base" variant="accent"> Index</Link>
-                                )
-                            </div>
+                                <span class="flex gap-0.5"> (<Link href="/articles/tags" size="base" variant="accent">Index</Link>)</span>
                         </Text>
 
-                        {tags.map((tag) => (
-                                <Link title={tag} aria-label={tag} href={`/articles/tags/${tag}`} size="sm"
-                                      variant="accent">
-                                    {tag}
-                                </Link>
-                        ))}
+                        <div class="overflow-x-scroll scrollable-content snap-x snap-proximity scrollbar-hide">
+                            <div class="flex gap-x-4 gap-y-1 lg:flex-col">
+                                {tags.map((tag) => (
+                                    <Link title={tag} aria-label={tag} href={`/articles/tags/${tag}`} size="sm"
+                                          variant="accent">
+                                        {tag}
+                                    </Link>
+                                ))}
+                            </div>
+                        </div>
                     </div>
 
                 </div>

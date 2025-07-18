@@ -150,11 +150,10 @@ import { stackGrid, stackGridPadding } from "@/shared/classes.js";
                                 </div>
                                 <>
                                     {item.entries.map((entry) => (
-                                            <div class={stackGrid}>
-                                                <Text tag="p" class="text-black dark:text-white lg:ml-auto">
+                                            <div class={`${stackGrid} !gap-y-0`} >
+                                                <Text tag="p" class="text-black dark:text-white lg:ml-auto mb-0">
                                                     {entry.date}
                                                 </Text>
-
                                                 <div class="lg:col-span-2">
                                                     <Text tag="p" class="font-medium text-black dark:text-white">
                                                         {entry.position}

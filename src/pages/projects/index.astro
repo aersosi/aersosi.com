@@ -33,32 +33,40 @@ const otherTags = allTags
                         </Text>
                     </div>
 
-                    <div class="relative flex h-full mt-1 overflow-x-scroll gap-2 scrollable-content snap-x snap-proximity scrollbar-hide lg:flex-col lg:gap-1 lg:mt-8">
-                        <Text tag="p" variant="textBase">
-                            <div class="flex font-medium text-base-900 dark:text-white">
-                                Alle Kategorien
-                                (
-                                <Link href="/projects/tags" size="base" variant="accent"> Index</Link>
-                                )
-                            </div>
+                    <div class="grid gap-2">
+                        <Text tag="p" variant="textBase"
+                              class="flex gap-1 justify-baseline font-medium text-base-900 dark:text-white">
+                            Alle Kategorien
+                            <span class="flex gap-0.5"> (<Link href="/articles/tags" size="base"
+                                                               variant="accent">Index</Link>)</span>
                         </Text>
 
+                        <div class="grid gap-2">
+                            <div class="overflow-x-scroll scrollable-content snap-x snap-proximity scrollbar-hide">
+                                <div class="flex gap-x-4 gap-y-1 lg:flex-col">
+                                    {projectTypes.map((tag) => (
+                                        <Link title={tag} aria-label={tag} href={`/projects/tags/${tag}`} size="sm"
+                                              variant="accent" class="whitespace-nowrap">
+                                            {tag}
+                                        </Link>
+                                    ))}
+                                </div>
+                            </div>
 
-                        {projectTypes.map((tag) => (
-                                <Link title={tag} aria-label={tag} href={`/projects/tags/${tag}`} size="sm"
-                                      variant="accent">
-                                    {tag}
-                                </Link>
-                        ))}
+                            <span class="hidden lg:block"></span>
 
-                        <hr class="my-4 text-base-400 dark:text-base-60">
 
-                        {otherTags.map((tag) => (
-                                <Link title={tag} aria-label={tag} href={`/projects/tags/${tag}`} size="sm"
-                                      variant="accent">
-                                    {tag}
-                                </Link>
-                        ))}
+                            <div class="overflow-x-scroll scrollable-content snap-x snap-proximity scrollbar-hide">
+                                <div class="flex gap-x-4 gap-y-1 lg:flex-col">
+                                    {otherTags.map((tag) => (
+                                        <Link title={tag} aria-label={tag} href={`/projects/tags/${tag}`} size="sm"
+                                              variant="accent" class="whitespace-nowrap">
+                                            {tag}
+                                        </Link>
+                                    ))}
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
                 </div>
