@@ -7,6 +7,7 @@ import Tool from "@/components/lib/icons/Tool.astro";
 import User from "@/components/lib/icons/User.astro";
 import Zap from "@/components/lib/icons/Zap.astro";
 import ThemeToggle from "@/components/lib/elements/ThemeToggle.astro";
+import Text from "../lib/elements/Text.astro";
 import Menu from "../lib/icons/Menu.astro";
 import X from "../lib/icons/X.astro";
 
@@ -72,17 +73,18 @@ const navItems = [
 
 <nav
 	id="mobileNav"
-	class="bg-base-100 dark:bg-base-800 fixed top-0 right-0 z-100 h-full translate-x-full transform backdrop-blur-sm transition-transform duration-300 md:hidden"
+	class="bg-base-100 dark:bg-base-800 fixed top-0 right-0 z-100 h-full min-w-2/3 translate-x-full transform backdrop-blur-sm transition-transform duration-300 sm:min-w-1/2 md:hidden"
 >
-	<div class="flex h-full flex-col gap-8 px-8 py-6">
-		<div class="border-base-400 dark:border-base-600 flex justify-between gap-4 border-b pb-8">
-			<ThemeToggle />
-			<Button id="closeMobileNavBtn" size="sm" variant="accent" class="flex gap-2">
-				Schließen
-				<X slot="left-icon" size="base" />
+	<div class="flex h-full flex-col gap-9 px-8 py-6">
+		<div class="flex items-center justify-between gap-8">
+			<Text tag="h3" variant="textLG" class="text-base-600 dark:text-base-300 font-medium">
+				Menü
+			</Text>
+			<Button iconOnly id="closeMobileNavBtn" size="sm" variant="accent" class="flex gap-2">
+				<X slot="icon" size="base" />
 			</Button>
 		</div>
-		<div class="grid gap-4">
+		<div class="border-base-400 dark:border-base-600 grid gap-4 border-t border-b py-8">
 			{
 				navItems.map(({ href, name }) => (
 					<Link href={href} size="lg" variant="accent">
@@ -91,6 +93,7 @@ const navItems = [
 				))
 			}
 		</div>
+		<ThemeToggle />
 	</div>
 </nav>
 
