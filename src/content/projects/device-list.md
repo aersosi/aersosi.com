@@ -19,7 +19,7 @@ company:
 
 ## Projektbeschreibung
 
-Ziel des Projekts war die Neugestaltung einer internen Anwendung zur strukturierten Verwaltung von Hardware-, Lizenz-
+Ziel des Projekts war die Entwicklung einer internen Anwendung zur strukturierten Verwaltung von Hardware-, Lizenz-
 und Servicedaten für Kundeninfrastrukturen. Bis dato erfolgte die Datenerfassung manuell über ein umfangreiches
 Excel-Dokument, das Informationen aus unterschiedlichen CISCO-Portalen und weiteren Quellen aggregierte. Dieser manuelle
 Prozess war zeitintensiv und führte durch begrenzte Kapazitäten häufig zu Verzögerungen bei der Datenpflege.
