@@ -1,0 +1,236 @@
+---
+import type { ComponentProps } from "astro/types";
+import CarouselSlide from "./CarouselSlide.astro";
+
+interface Props {
+	images: Array<ComponentProps<typeof CarouselSlide>>;
+	color?: string;
+}
+const { images = [], color = "#333" } = Astro.props;
+---
+
+<style lang="scss">
+	* {
+		box-sizing: border-box;
+	}
+
+	.carousel {
+		display: unset;
+		background-color: var(--astro-carousel-backdrop-color, black);
+		-webkit-backdrop-filter: blur(var(--astro-carousel-backdrop-blur, 1rem));
+		backdrop-filter: blur(var(--astro-carousel-backdrop-blur, 1rem));
+
+		&[aria-hidden="true"] {
+			display: none;
+		}
+
+		&,
+		&__overlay {
+			position: fixed;
+			inset: 0;
+			user-select: none;
+			z-index: 1000;
+		}
+
+		&--active {
+			display: unset;
+		}
+
+		&__close {
+			position: absolute;
+			right: 0;
+		}
+
+		&__wrapper {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			height: 100%;
+		}
+
+		&__main {
+			display: grid;
+			grid-template-columns: 0.1fr minmax(0, 100%) 0.1fr;
+			justify-content: space-between;
+			align-items: center;
+			width: 100%;
+			height: 100%;
+			@media screen and (min-width: 768px) {
+				grid-template-columns: 0.2fr minmax(0, 80%) 0.2fr;
+			}
+		}
+
+		&__slides {
+			padding: 0;
+			margin: 0;
+			position: relative;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			width: 100%;
+			height: calc(100% - 48px * 2);
+		}
+
+		&__button {
+			border: none;
+			background: none;
+			padding: 0.5rem;
+
+			color: var(--astro-carousel-icons-color, white);
+			z-index: 2000;
+			transition: 0.15s color ease;
+
+			@media screen and (min-width: 768px) {
+				padding: 1rem;
+			}
+
+			&:hover {
+				cursor: pointer;
+				color: var(--astro-carousel-icons-hover-color, white);
+			}
+
+			&--right {
+				justify-self: end;
+				justify-content: flex-end;
+			}
+
+			&--arrow {
+				width: 100%;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				height: 50vh;
+			}
+		}
+
+		&__svg {
+			width: 40px;
+			height: 40px;
+			@media screen and (min-width: 768px) {
+				width: 48px;
+				height: 48px;
+			}
+		}
+	}
+</style>
+
+<carousel-wrapper>
+	<div id="carousel-dialog" aria-hidden="true" class="carousel" aria-label="Carousel">
+		<div class="carousel__overlay" data-a11y-dialog-hide></div>
+		<div id="carousel" role="document">
+			<button
+				type="button"
+				id="closeButton"
+				class="carousel__button carousel__close"
+				aria-label="Close carousel"
+			>
+				<svg
+					class="carousel__svg"
+					xmlns="http://www.w3.org/2000/svg"
+					fill="none"
+					viewBox="0 0 24 24"
+					stroke-width="1.5"
+					stroke="currentColor"
+				>
+					<path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
+				</svg>
+			</button>
+			<div id="carousel__wrapper" class="carousel__wrapper">
+				<div class="carousel__main">
+					<!-- Prev Link -->
+					<a
+						class="carousel__button carousel__button--arrow"
+						aria-label="Go to previous photo"
+						id="prevLink"
+					>
+						<svg
+							class="carousel__svg"
+							id="prev"
+							fill="none"
+							stroke="currentColor"
+							viewBox="0 0 24 24"
+						>
+							<path
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								stroke-width="2"
+								d="M15 19l-7-7 7-7"></path>
+						</svg>
+					</a>
+
+					<!-- Slides -->
+					<ul class="carousel__slides" id="slides">
+						{images.map((image, i) => <CarouselSlide {...image} />)}
+					</ul>
+
+					<!-- Next Link -->
+					<a
+						class="carousel__button carousel__button--arrow carousel__button--right"
+						aria-label="Go to next photo"
+						id="nextLink"
+					>
+						<svg
+							class="carousel__svg"
+							id="next"
+							fill="none"
+							stroke="currentColor"
+							viewBox="0 0 24 24"
+						>
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"
+							></path>
+						</svg>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</carousel-wrapper>
+
+<script>
+	import { Carousel } from "./scripts/carousel";
+
+	class CarouselWrapper extends HTMLElement {
+		private carouselTargetList: HTMLElement | null = null;
+		private carousel: Carousel;
+		private _openHandler: (e: MouseEvent | KeyboardEvent) => void;
+
+		constructor() {
+			super();
+		}
+
+		connectedCallback() {
+			const carouselElement = this.querySelector("#carousel");
+			this.carousel = new Carousel(carouselElement as HTMLElement);
+			this.carouselTargetList = document.getElementById("carouselTargetList");
+
+			this._openHandler = this._handleOpen.bind(this);
+			this.carouselTargetList?.addEventListener("click", this._openHandler);
+			this.carouselTargetList?.addEventListener("keydown", this._openHandler);
+		}
+
+		disconnectedCallback() {
+			this.carouselTargetList?.removeEventListener("click", this._openHandler);
+			this.carouselTargetList?.removeEventListener("keydown", this._openHandler);
+			this.carousel.close();
+		}
+
+		private _handleOpen(this: CarouselWrapper, e: MouseEvent | KeyboardEvent) {
+			if (e.target instanceof HTMLElement) {
+				const carouselIndex =
+					e.target.closest<HTMLElement>("[data-carousel-index]")?.dataset.carouselIndex;
+
+				if (e instanceof KeyboardEvent && e.key !== "Enter") {
+					return;
+				}
+
+				e.preventDefault();
+
+				const imgIndex = Number(carouselIndex);
+				this.carousel.open(imgIndex);
+			}
+		}
+	}
+
+	customElements.define("carousel-wrapper", CarouselWrapper);
+</script>

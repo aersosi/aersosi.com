@@ -7,10 +7,12 @@ const articlesCollection = defineCollection({
 			pubDate: z.date(),
 			title: z.string(),
 			description: z.string(),
-			image: z.object({
-				url: image(),
-				alt: z.string(),
-			}),
+			images: z.array(
+				z.object({
+					src: image(),
+					alt: z.string(),
+				}),
+			),
 			tags: z.array(z.string()),
 		}),
 });
@@ -22,10 +24,12 @@ const projectsCollection = defineCollection({
 			pubDate: z.date(),
 			title: z.string(),
 			description: z.string(),
-			image: z.object({
-				url: image(),
-				alt: z.string(),
-			}),
+			images: z.array(
+				z.object({
+					src: image(),
+					alt: z.string(),
+				}),
+			),
 			tags: z.array(z.string()),
 
 			repo: z

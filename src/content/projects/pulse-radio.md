@@ -2,9 +2,16 @@
 pubDate: 2024-01-01
 title: "Pulse Radio"
 description: "Moderne Radio-Web-Applikation mit Fokus auf Audio-Streaming und User Experience"
-image:
-  url: "/src/images/projects/1.jpg"
-  alt: "Pulse Radio App Interface"
+images: [ {
+  src: "/src/images/projects/1.jpg",
+  alt: "Lorem Ipsum"
+},{
+  src: "/src/images/projects/2.jpg",
+  alt: "Lorem Ipsum"
+},{
+  src: "/src/images/projects/3.jpg",
+  alt: "Lorem Ipsum"
+} ]
 tags: ["Privates Projekt", "Audio Streaming", "Full-Stack", "React", "Frontend-Entwicklung"]
 
 repo:

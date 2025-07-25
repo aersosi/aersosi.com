@@ -1,18 +1,12 @@
 ---
 pubDate: 2025-06-08
-title: "a11ytip – Barrierefreie Tooltips"
+title: "a11ytip2"
 description: "Mit viel gutem CSS und wenig JavaScript."
 images: [ {
   src: "/src/images/articles/1.jpg",
   alt: "Lorem Ipsum"
-},{
-  src: "/src/images/articles/2.jpg",
-  alt: "Lorem Ipsum"
-},{
-  src: "/src/images/articles/3.jpg",
-  alt: "Lorem Ipsum"
 } ]
-tags: [ "CSS", "A11y", "Tooltip" ]
+tags: ["CSS", "A11y"]
 ---
 
 ## a11ytip – Barrierefreie Tooltips

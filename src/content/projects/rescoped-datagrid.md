@@ -2,9 +2,16 @@
 pubDate: 2024-01-01
 title: "rescoped Datagrid"
 description: "Entwicklung eines Open-Source-Datagrids mit besonderem Fokus auf Developer Experience und Skalierbarkeit"
-image:
-  url: "/src/images/projects/1.jpg"
-  alt: "rescoped Datagrid Interface"
+images: [ {
+  src: "/src/images/projects/1.jpg",
+  alt: "Lorem Ipsum"
+},{
+  src: "/src/images/projects/2.jpg",
+  alt: "Lorem Ipsum"
+},{
+  src: "/src/images/projects/3.jpg",
+  alt: "Lorem Ipsum"
+} ]
 tags:
   ["Professionelles Projekt", "Open Source", "DX (Developer Experience)", "Frontend-Entwicklung"]
 

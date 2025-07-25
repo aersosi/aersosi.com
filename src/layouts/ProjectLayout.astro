@@ -9,6 +9,7 @@ const {frontmatter} = Astro.props;
 import { getCollection } from "astro:content";
 import ExternalLink from "@/components/lib/icons/ExternalLink.astro";
 import { stackGrid, stackGridPadding, stickyElement } from "@/shared/classes.js";
+import CarouselWrapper from "@/components/lib/elements/CarouselWrapper.astro";
 
 const allProjects = await getCollection("projects");
 const relatedProjects = allProjects.filter((project) =>
@@ -106,17 +107,9 @@ const relatedProjects = allProjects.filter((project) =>
                     </div>
                 </div>
                 <div class="lg:col-span-2">
+                    <CarouselWrapper images={frontmatter.images} />
 
                     <Wrapper variant="prose">
-                        <Image
-                                width={1000}
-                                height={800}
-                                loading="eager"
-                                decoding="async"
-                                alt={frontmatter.image.alt}
-                                src={frontmatter.image.url}
-                                class="object-cover object-center w-full aspect-12/6 lg:col-span-2 rounded-xl"
-                        />
                         <slot/>
                     </Wrapper>
                 </div>

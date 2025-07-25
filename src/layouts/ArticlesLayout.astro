@@ -6,6 +6,7 @@ import Text from "@/components/lib/elements/Text.astro";
 import Wrapper from "@/components/lib/containers/Wrapper.astro";
 import ArticlesEntry from "@/components/lib/entries/ArticlesEntry.astro";
 import { stackGrid, stackGridPadding, stickyElement } from "@/shared/classes.js";
+import CarouselWrapper from "@/components/lib/elements/CarouselWrapper.astro";
 
 const { frontmatter } = Astro.props;
 const allPosts = await getCollection("articles");
@@ -32,16 +33,9 @@ const relatedPosts = allPosts.filter(
 					</div>
 				</div>
 				<div class="lg:col-span-2">
+					<CarouselWrapper images={frontmatter.images} />
+
 					<Wrapper variant="prose">
-						<Image
-							width={1000}
-							height={800}
-							loading="eager"
-							decoding="async"
-							alt={frontmatter.image.alt}
-							src={frontmatter.image.url}
-							class="aspect-12/6 w-full rounded-xl object-cover object-center lg:col-span-2"
-						/>
 						<slot />
 					</Wrapper>
 				</div>

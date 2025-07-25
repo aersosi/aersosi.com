@@ -2,10 +2,17 @@
 pubDate: 2024-01-01
 title: "aersosi.com"
 description: "Persönliche Portfolio-Website entwickelt mit modernen Web-Technologien"
-image:
-  url: "/src/images/projects/1.jpg"
-  alt: "aersosi.com Portfolio Website"
-tags: ["Privates Projekt", "Portfolio", "Next.js", "React", "Frontend-Entwicklung"]
+images: [ {
+  src: "/src/images/projects/1.jpg",
+  alt: "Lorem Ipsum"
+},{
+  src: "/src/images/projects/2.jpg",
+  alt: "Lorem Ipsum"
+},{
+  src: "/src/images/projects/3.jpg",
+  alt: "Lorem Ipsum"
+} ]
+tags: [ "Privates Projekt", "Portfolio", "Next.js", "React", "Frontend-Entwicklung" ]
 
 repo:
   name: "GitHub"

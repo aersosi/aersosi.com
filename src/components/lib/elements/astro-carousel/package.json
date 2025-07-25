@@ -1,0 +1,35 @@
+{
+  "name": "astro-carousel",
+  "version": "3.0.3",
+  "type": "module",
+  "main": "./index.ts",
+  "license": "MIT",
+  "exports": {
+    ".": "./index.ts"
+  },
+  "files": [
+    "src",
+    "index.ts"
+  ],
+  "keywords": [
+    "astro-component",
+    "astro",
+    "withastro",
+    "carousel",
+    "photos",
+    "images",
+    "a11y"
+  ],
+  "scripts": {
+    "dev": "cd demo && astro dev",
+    "build": "cd demo && astro build",
+    "preview": "cd demo && astro preview"
+  },
+  "devDependencies": {
+    "astro": "^5.1.7",
+    "sass": "^1.71.1"
+  },
+  "peerDependencies": {
+    "astro": "^5.1.7"
+  }
+}

@@ -2,9 +2,16 @@
 pubDate: 2024-01-01
 title: "memorycon"
 description: "Moderne Web-Applikation mit Fokus auf User Experience und Performance"
-image:
-  url: "/src/images/projects/1.jpg"
-  alt: "memorycon App Interface"
+images: [ {
+  src: "/src/images/projects/1.jpg",
+  alt: "Lorem Ipsum"
+},{
+  src: "/src/images/projects/2.jpg",
+  alt: "Lorem Ipsum"
+},{
+  src: "/src/images/projects/3.jpg",
+  alt: "Lorem Ipsum"
+} ]
 tags: ["Privates Projekt", "Spiel", "Next.js", "React", "Frontend-Entwicklung"]
 
 repo:

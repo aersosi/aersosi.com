@@ -2,9 +2,16 @@
 pubDate: 2025-06-08
 title: "Device List"
 description: "Interne Anwendung für das Datenmanagement von Kunden-Hardware und -Software"
-image:
-  url: "/src/images/projects/1.jpg"
-  alt: "Dashboard der Device List"
+images: [ {
+  src: "/src/images/projects/1.jpg",
+  alt: "Lorem Ipsum"
+},{
+  src: "/src/images/projects/2.jpg",
+  alt: "Lorem Ipsum"
+},{
+  src: "/src/images/projects/3.jpg",
+  alt: "Lorem Ipsum"
+} ]
 tags:
   ["Professionelles Projekt", "UX (User Experience)", "UI (User Interface)", "Frontend-Entwicklung"]
 

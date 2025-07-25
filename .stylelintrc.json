@@ -1,1 +1,17 @@
-{ "extends": ["stylelint-config-standard"] }
+{
+  "extends": [
+    "stylelint-config-standard"
+  ],
+  "rules": {
+    "at-rule-no-unknown": [
+      true,
+      {
+        "ignoreAtRules": [
+          "import"
+        ]
+      }
+    ],
+    "function-url-quotes": "always",
+    "import-notation": "string"
+  }
+}

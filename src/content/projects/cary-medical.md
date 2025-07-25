@@ -2,9 +2,16 @@
 pubDate: 2024-01-01
 title: "CARY Medical App"
 description: "UI/UX Design und Development einer medizinischen Terminplanungs-App"
-image:
-  url: "/src/images/projects/1.jpg"
-  alt: "CARY Medical App Interface"
+images: [ {
+  src: "/src/images/projects/1.jpg",
+  alt: "Lorem Ipsum"
+},{
+  src: "/src/images/projects/2.jpg",
+  alt: "Lorem Ipsum"
+},{
+  src: "/src/images/projects/3.jpg",
+  alt: "Lorem Ipsum"
+} ]
 tags:
   ["Professionelles Projekt", "UX (User Experience)", "UI (User Interface)", "Frontend-Entwicklung"]
 

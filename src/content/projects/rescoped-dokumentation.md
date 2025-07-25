@@ -2,9 +2,16 @@
 pubDate: 2024-01-01
 title: "rescoped Dokumentation"
 description: "Eigenverantwortliche Konzeption und Entwicklung der rescoped.io Dokumentationsplattform mit Docusaurus (React)"
-image:
-  url: "/src/images/projects/1.jpg"
-  alt: "rescoped Dokumentation Website"
+images: [ {
+  src: "/src/images/projects/1.jpg",
+  alt: "Lorem Ipsum"
+},{
+  src: "/src/images/projects/2.jpg",
+  alt: "Lorem Ipsum"
+},{
+  src: "/src/images/projects/3.jpg",
+  alt: "Lorem Ipsum"
+} ]
 tags: ["Professionelles Projekt", "Dokumentation", "Open Source", "React", "Frontend-Entwicklung"]
 
 repo:
