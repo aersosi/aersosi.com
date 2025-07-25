@@ -15,7 +15,7 @@ const { images } = Astro.props;
 					data-carousel-index={0}
 					aria-label={`Open image number 1`}
 					class="entry__link__overlay bg-accent-500/70 absolute inset-0 grid items-center justify-center rounded-xl opacity-0 transition-opacity duration-300 ease-in-out hover:opacity-100">
-					<div class="text-base-200 text-xl lg:text-3xl">Open Images</div>
+					<div class="text-base-200 font-light text-xl lg:text-2xl border-2 border-accent-100 rounded-xl px-4 py-2">Open</div>
 				</a>
 				<Image
 					width={1000}
@@ -32,7 +32,7 @@ const { images } = Astro.props;
 							 data-carousel-index={index}
 							 aria-label={`Open image number ${index}`}>
 							<div
-								class={`entry__link border-accent-500 transition hover:scale-130 hover:border-accent-100 bg-accent-500/50 h-3.5 w-3.5 rounded-full border-2 md:h-4 md:w-4 ${index === 0 && "!bg-accent-500"}`}
+								class={`entry__link border-accent-500 transition hover:scale-130 hover:border-accent-100 bg-accent-500/40 h-3.5 w-3.5 rounded-full border-2 md:h-4 md:w-4 ${index === 0 && "!bg-accent-500"}`}
 							/>
 						</a>
 					))}

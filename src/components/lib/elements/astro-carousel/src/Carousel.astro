@@ -29,7 +29,7 @@ const { images = [], color = "#333" } = Astro.props;
 			position: fixed;
 			inset: 0;
 			user-select: none;
-			z-index: 1000;
+			z-index: 150;
 		}
 
 		&--active {
@@ -52,24 +52,29 @@ const { images = [], color = "#333" } = Astro.props;
 		&__main {
 			display: grid;
 			grid-template-columns: 0.1fr minmax(0, 100%) 0.1fr;
-			justify-content: space-between;
 			align-items: center;
+			justify-content: center;
 			width: 100%;
 			height: 100%;
 			@media screen and (min-width: 768px) {
+				justify-content: space-between;
 				grid-template-columns: 0.2fr minmax(0, 80%) 0.2fr;
 			}
 		}
 
 		&__slides {
 			padding: 0;
-			margin: 0;
 			position: relative;
 			display: flex;
 			align-items: center;
 			justify-content: center;
-			width: 100%;
 			height: calc(100% - 48px * 2);
+
+			@media screen and (max-width: 768px) {
+				width: calc(100vw - 2rem);
+				margin-left: 1rem;
+				margin-right: 1rem;
+			}
 		}
 
 		&__button {
@@ -78,7 +83,7 @@ const { images = [], color = "#333" } = Astro.props;
 			padding: 0.5rem;
 
 			color: var(--astro-carousel-icons-color, white);
-			z-index: 2000;
+			z-index: 200;
 			transition: 0.15s color ease;
 
 			@media screen and (min-width: 768px) {
@@ -90,17 +95,28 @@ const { images = [], color = "#333" } = Astro.props;
 				color: var(--astro-carousel-icons-hover-color, white);
 			}
 
-			&--right {
-				justify-self: end;
-				justify-content: flex-end;
-			}
-
 			&--arrow {
 				width: 100%;
 				display: flex;
 				align-items: center;
 				justify-content: center;
 				height: 50vh;
+			}
+
+			&--left {
+				display: none;
+				@media screen and (min-width: 768px) {
+					display: flex;
+				}
+			}
+
+			&--right {
+				justify-self: end;
+				justify-content: flex-end;
+				display: none;
+				@media screen and (min-width: 768px) {
+					display: flex;
+				}
 			}
 		}
 
@@ -119,11 +135,13 @@ const { images = [], color = "#333" } = Astro.props;
 	<div id="carousel-dialog" aria-hidden="true" class="carousel" aria-label="Carousel">
 		<div class="carousel__overlay" data-a11y-dialog-hide></div>
 		<div id="carousel" role="document">
+			<!-- Close button -->
 			<button
 				type="button"
 				id="closeButton"
 				class="carousel__button carousel__close"
-				aria-label="Close carousel"
+				aria-label="Slideshow schließen"
+				a11ytip-left
 			>
 				<svg
 					class="carousel__svg"
@@ -137,12 +155,13 @@ const { images = [], color = "#333" } = Astro.props;
 				</svg>
 			</button>
 			<div id="carousel__wrapper" class="carousel__wrapper">
-				<div class="carousel__main">
+				<div class="carousel__main relative">
 					<!-- Prev Link -->
 					<a
-						class="carousel__button carousel__button--arrow"
-						aria-label="Go to previous photo"
+						class="carousel__button carousel__button--arrow carousel__button--left"
+						aria-label="Vorheriges Bild"
 						id="prevLink"
+						a11ytip-right
 					>
 						<svg
 							class="carousel__svg"
@@ -167,8 +186,9 @@ const { images = [], color = "#333" } = Astro.props;
 					<!-- Next Link -->
 					<a
 						class="carousel__button carousel__button--arrow carousel__button--right"
-						aria-label="Go to next photo"
+						aria-label="Nähstes Bild"
 						id="nextLink"
+						a11ytip-left
 					>
 						<svg
 							class="carousel__svg"
@@ -181,6 +201,23 @@ const { images = [], color = "#333" } = Astro.props;
 							></path>
 						</svg>
 					</a>
+
+					<!-- Navigation Circles -->
+					<div
+						id="circle-navigation"
+						class="absolute bottom-14 z-300 flex w-full justify-center gap-5 p-3 md:gap-4"
+					>
+						{
+							images.map((_, i) => (
+								<a
+									class={`carousel__circle-button carousel__circle border-accent-500 hover:border-accent-100 bg-accent-500/40 h-4.5 w-4.5 rounded-full border-2 transition hover:scale-130 md:h-3.5 md:w-3.5 ${i === 0 ? "border-accent-100 !bg-accent-500 scale-130" : ""}`}
+									data-index={i}
+									aria-label={`Bild ${i + 1}`}
+									a11ytip-top
+								/>
+							))
+						}
+					</div>
 				</div>
 			</div>
 		</div>
