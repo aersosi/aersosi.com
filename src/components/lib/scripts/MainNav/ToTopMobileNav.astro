@@ -1,0 +1,50 @@
+<script>
+	import { throttle } from "../throttle";
+
+	document.addEventListener("DOMContentLoaded", () => {
+		const mobileNavBtn = document.getElementById("mobileNavBtn");
+		const toTopBtn = document.getElementById("toTopBtn");
+		const SCROLL_THRESHOLD = 700;
+		let lastScrollY = window.scrollY;
+
+		if (!mobileNavBtn && !toTopBtn) return;
+
+		let isResizing = false;
+
+		const switchButtons = () => {
+			if (isResizing) return;
+
+			const currentScrollY = window.scrollY;
+			const isOverThreshold = currentScrollY > SCROLL_THRESHOLD;
+			const isScrollingDown = currentScrollY > lastScrollY;
+
+			if (isOverThreshold) {
+				if (mobileNavBtn) mobileNavBtn.classList.toggle("hidden", isScrollingDown);
+				if (toTopBtn) toTopBtn.classList.toggle("hidden", !isScrollingDown);
+			} else {
+				if (mobileNavBtn) mobileNavBtn.classList.remove("hidden");
+				if (toTopBtn) toTopBtn.classList.add("hidden");
+			}
+
+			lastScrollY = currentScrollY;
+		};
+
+		const scrollToTop = () => {
+			window.scrollTo({ top: 0, behavior: "smooth" });
+		};
+
+		switchButtons();
+
+		window.addEventListener("resize", () => {
+			isResizing = true;
+			setTimeout(() => {
+				isResizing = false;
+			}, 1000);
+		});
+
+		const throttledSwitchButtons = throttle(switchButtons, 20);
+		window.addEventListener("scroll", throttledSwitchButtons);
+
+		if (toTopBtn) toTopBtn.addEventListener("click", scrollToTop);
+	});
+</script>

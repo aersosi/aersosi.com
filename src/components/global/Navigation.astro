@@ -6,10 +6,12 @@ import AtSign from "@/components/lib/icons/AtSign.astro";
 import Tool from "@/components/lib/icons/Tool.astro";
 import User from "@/components/lib/icons/User.astro";
 import Zap from "@/components/lib/icons/Zap.astro";
+import Menu from "@/components/lib/icons/Menu.astro";
+import X from "@/components/lib/icons/X.astro";
+import ArrowUp from "@/components/lib/icons/ArrowUp.astro";
+
 import ThemeToggle from "@/components/lib/elements/ThemeToggle.astro";
-import Text from "../lib/elements/Text.astro";
-import Menu from "../lib/icons/Menu.astro";
-import X from "../lib/icons/X.astro";
+import Text from "@/components/lib/elements/Text.astro";
 
 const baseClass = [
 	"fixed",
@@ -41,12 +43,18 @@ const navItems = [
 
 <div id="mainNavWrapper" class:list={[...baseClass]}>
 	<nav id="mainNav">
+		<!--Mobile Nav-->
 		<div class="p-2 md:hidden">
 			<Button id="mobileNavBtn" size="sm" variant="accent" class="flex gap-2">
 				Menü
 				<Menu slot="left-icon" size="base" />
 			</Button>
+			<Button id="toTopBtn" size="sm" variant="accent" class="flex hidden gap-2">
+				Zum Anfang
+				<ArrowUp slot="left-icon" size="base" />
+			</Button>
 		</div>
+
 		<div
 			class="bg-base-200/50 dark:bg-base-800/50 hidden items-center gap-2 rounded-xl p-2 backdrop-blur-xs md:flex"
 		>
@@ -71,10 +79,12 @@ const navItems = [
 	</nav>
 </div>
 
+<!--Sidenav-->
 <nav
 	id="mobileNav"
 	class="bg-base-100 dark:bg-base-800 fixed top-0 right-0 z-100 h-full min-w-3/4 translate-x-full transform backdrop-blur-sm transition-transform duration-300 sm:min-w-1/2 md:hidden"
 >
+	<!--Sidenav Head-->
 	<div class="flex h-full flex-col gap-9 px-8 py-6">
 		<div class="flex items-center justify-between gap-8">
 			<Text tag="h3" variant="textXl" class="text-base-600 dark:text-base-300 font-medium">
@@ -84,6 +94,8 @@ const navItems = [
 				<X slot="icon" size="base" />
 			</Button>
 		</div>
+
+		<!--Sidenav Links-->
 		<div class="border-base-400 dark:border-base-600 grid gap-4 border-t border-b py-8">
 			{
 				navItems.map(({ href, name }) => (
@@ -93,6 +105,8 @@ const navItems = [
 				))
 			}
 		</div>
+
+		<!--Dark/Light mode-->
 		<ThemeToggle />
 	</div>
 </nav>

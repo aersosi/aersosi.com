@@ -1,0 +1,24 @@
+<script>
+	import { throttle } from "../throttle";
+
+	document.addEventListener("DOMContentLoaded", () => {
+		const mainNavWrapper = document.getElementById("mainNavWrapper");
+		const SCROLL_THRESHOLD = 96;
+
+		if (!mainNavWrapper) return;
+
+		const updateNavWrapperPosition = () => {
+			const isOverThreshold = window.scrollY > SCROLL_THRESHOLD;
+			const addClass = isOverThreshold ? "top-2" : "top-5";
+			const removeClass = isOverThreshold ? "top-5" : "top-2";
+
+			mainNavWrapper.classList.remove(removeClass);
+			mainNavWrapper.classList.add(addClass);
+		};
+
+		updateNavWrapperPosition(); // Initial
+
+		const throttledUpdateNav = throttle(updateNavWrapperPosition, 20);
+		window.addEventListener("scroll", throttledUpdateNav);
+	});
+</script>
