@@ -5,6 +5,7 @@
 		const mobileNavBtn = document.getElementById("mobileNavBtn");
 		const toTopBtn = document.getElementById("toTopBtn");
 		const SCROLL_THRESHOLD = 700;
+		const MIN_SCROLL_DISTANCE = 50;
 		let lastScrollY = window.scrollY;
 
 		if (!mobileNavBtn && !toTopBtn) return;
@@ -17,10 +18,16 @@
 			const currentScrollY = window.scrollY;
 			const isOverThreshold = currentScrollY > SCROLL_THRESHOLD;
 			const isScrollingDown = currentScrollY > lastScrollY;
+			const scrollDistance = Math.abs(currentScrollY - lastScrollY);
 
 			if (isOverThreshold) {
-				if (mobileNavBtn) mobileNavBtn.classList.toggle("hidden", isScrollingDown);
-				if (toTopBtn) toTopBtn.classList.toggle("hidden", !isScrollingDown);
+				if (!isScrollingDown && scrollDistance >= MIN_SCROLL_DISTANCE) {
+					if (mobileNavBtn) mobileNavBtn.classList.remove("hidden");
+					if (toTopBtn) toTopBtn.classList.add("hidden");
+				} else if (isScrollingDown) {
+					if (mobileNavBtn) mobileNavBtn.classList.add("hidden");
+					if (toTopBtn) toTopBtn.classList.remove("hidden");
+				}
 			} else {
 				if (mobileNavBtn) mobileNavBtn.classList.remove("hidden");
 				if (toTopBtn) toTopBtn.classList.add("hidden");
