@@ -3,11 +3,39 @@ import "@/styles/global.css";
 import BaseHead from "@/components/head/BaseHead.astro";
 import Navigation from "@/components/global/Navigation.astro";
 import Footer from "@/components/global/Footer.astro";
+
+export interface Props {
+  siteTitle?: string;
+  siteDescription?: string;
+  image?: string;
+  article?: boolean;
+  publishDate?: Date;
+  modifiedDate?: Date;
+  author?: string;
+}
+
+const { 
+  siteTitle = "Arthur Ersosi | Design Engineer", 
+  siteDescription = "Frontend-Developer und UI/UX-Designer mit 10+ Jahren Design Expertise und 8+ Jahren Web-Development Erfahrung aus Hamburg.", 
+  image, 
+  article, 
+  publishDate, 
+  modifiedDate, 
+  author 
+} = Astro.props;
 ---
 
 <html lang="en" class="selection:bg-secondary-300 selection:text-base-900">
 	<head>
-		<BaseHead />
+		<BaseHead 
+			siteTitle={siteTitle}
+			siteDescription={siteDescription}
+			image={image}
+			article={article}
+			publishDate={publishDate}
+			modifiedDate={modifiedDate}
+			author={author}
+		/>
 	</head>
 	<body class="bg-base-200 dark:bg-base-800 flex h-svh flex-col">
 		<Navigation />

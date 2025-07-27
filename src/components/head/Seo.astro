@@ -1,31 +1,147 @@
 ---
 import { AstroSeo } from "@astrolib/seo";
+
+export interface Props {
+	siteTitle?: string;
+	siteDescription?: string;
+	image?: string;
+	article?: boolean;
+	publishDate?: Date;
+	modifiedDate?: Date;
+	author?: string;
+}
+
+const {
+	siteTitle = "Arthur Ersosi | Design Engineer",
+	siteDescription = "Frontend-Developer und UI/UX-Designer mit 10+ Jahren Design Expertise und 8+ Jahren Web-Development Erfahrung aus Hamburg.",
+	image = "/images/og-default.jpg", // Default OG image - NOTE: This file needs to be created at /public/images/og-default.jpg
+	article = false,
+	publishDate,
+	modifiedDate,
+	author = "Arthur Ersosi",
+} = Astro.props;
+
+// Get current URL
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+
+// Handle image URL safely
+// If image starts with http(s), use it directly; otherwise, resolve it against the site URL
+const ogImageURL = image.startsWith("http") ? new URL(image) : new URL(image, Astro.site);
 ---
 
 <AstroSeo
-	title="Dein Seitentitel"
-	description="Eine detaillierte Beschreibung deines Seiteninhalts."
-	canonical="https://yourwebsite.com/current-page"
+	title={siteTitle}
+	description={siteDescription}
+	canonical={canonicalURL.toString()}
 	openGraph={{
-		url: "https://yourwebsite.com/current-page",
-		title: "Dein Seitentitel",
-		description: "Eine detaillierte Beschreibung deines Seiteninhalts.",
+		url: canonicalURL.toString(),
+		title: siteTitle,
+		description: siteDescription,
 		images: [
 			{
-				url: "https://yourwebsite.com/og-image.jpg",
+				url: ogImageURL.toString(),
 				width: 1200,
 				height: 630,
-				alt: "Open Graph Bild Beschreibung",
+				alt: `${siteTitle} - Vorschaubild`,
 				type: "image/jpeg",
 			},
 		],
-		site_name: "Dein Seitenname",
-		type: "website",
+		site_name: "Arthur Ersosi",
+		type: article ? "article" : "website",
 		locale: "de_DE",
+		...(article && publishDate
+			? {
+					article: {
+						publishedTime: publishDate.toISOString(),
+						modifiedTime: modifiedDate ? modifiedDate.toISOString() : undefined,
+						authors: [author],
+					},
+				}
+			: {}),
 	}}
 	twitter={{
-		handle: "@yourhandle",
-		site: "@yourwebsite",
+		handle: "@aersosi",
+		site: "@aersosi",
 		cardType: "summary_large_image",
 	}}
+	languageAlternates={[
+		{
+			hrefLang: "de",
+			href: canonicalURL.toString(),
+		},
+		{
+			hrefLang: "en",
+			href: canonicalURL.toString(),
+		},
+	]}
 />
+
+{
+	article ? (
+		<script
+			type="application/ld+json"
+			set:html={JSON.stringify({
+				"@context": "https://schema.org",
+				"@type": "Article",
+				headline: siteTitle,
+				description: siteDescription,
+				image: ogImageURL.toString(),
+				datePublished: publishDate?.toISOString(),
+				dateModified: modifiedDate?.toISOString() || publishDate?.toISOString(),
+				author: {
+					"@type": "Person",
+					name: author,
+					url: "https://aersosi.com/about",
+				},
+				publisher: {
+					"@type": "Person",
+					name: "Arthur Ersosi",
+					logo: {
+						"@type": "ImageObject",
+						url: new URL("/logo.png", Astro.site).toString(), // NOTE: This file needs to be created at /public/logo.png
+					},
+				},
+				mainEntityOfPage: {
+					"@type": "WebPage",
+					"@id": canonicalURL.toString(),
+				},
+			})}
+		/>
+	) : (
+		<script
+			type="application/ld+json"
+			set:html={JSON.stringify({
+				"@context": "https://schema.org",
+				"@type": "WebSite",
+				name: "Arthur Ersosi",
+				url: "https://aersosi.com",
+				description: siteDescription,
+				author: {
+					"@type": "Person",
+					name: "Arthur Ersosi",
+					url: "https://aersosi.com/about",
+				},
+			})}
+		/>
+	)
+}
+
+{
+	Astro.url.pathname === "/about" && (
+		<script
+			type="application/ld+json"
+			set:html={JSON.stringify({
+				"@context": "https://schema.org",
+				"@type": "Person",
+				name: "Arthur Ersosi",
+				jobTitle: "Design Engineer & Frontend-Developer",
+				url: "https://aersosi.com",
+				sameAs: [
+					"https://x.com/aersosi",
+					"https://github.com/aersosi",
+					"https://www.linkedin.com/in/aersosi",
+				],
+			})}
+		/>
+	)
+}

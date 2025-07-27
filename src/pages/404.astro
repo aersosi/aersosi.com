@@ -7,7 +7,10 @@ import ArrowLeft from "@/components/lib/icons/ArrowLeft.astro";
 import { stackGrid, stackGridPadding } from "@/shared/classes.js";
 ---
 
-<BaseLayout>
+<BaseLayout
+	siteTitle="404 - Seite nicht gefunden"
+	siteDescription="Diese Seite existiert nicht, hat nie existiert oder wurde versehentlich oder absichtlich entfernt."
+>
 	<section>
 		<Wrapper variant="standard">
 			<div class:list={[...stackGrid, ...stackGridPadding]}>
