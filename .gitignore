@@ -25,6 +25,7 @@ pnpm-debug.log*
 .vscode/
 
 #locals
-TODO.md
+docs/TODO.md
 hidden/
+docs/
 font-inter-full/
