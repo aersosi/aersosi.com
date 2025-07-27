@@ -1,7 +1,7 @@
 ---
 pubDate: 2024-01-01
-title: "aersosi.com"
-description: "Persönliche Portfolio-Website entwickelt mit modernen Web-Technologien"
+viewerTitle: "aersosi.com"
+viewerDescription: "Persönliche Portfolio-Website entwickelt mit modernen Web-Technologien"
 images: [ {
   src: "/src/images/projects/1.jpg",
   alt: "Lorem Ipsum"

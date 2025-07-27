@@ -1,7 +1,7 @@
 ---
 pubDate: 2025-06-08
-title: "a11ytip2"
-description: "Mit viel gutem CSS und wenig JavaScript."
+viewerTitle: "a11ytip2"
+viewerDescription: "Mit viel gutem CSS und wenig JavaScript."
 images: [ {
   src: "/src/images/articles/1.jpg",
   alt: "Lorem Ipsum"

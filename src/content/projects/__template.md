@@ -1,7 +1,7 @@
 ---
 pubDate: 2022-06-08
-title: "Template"
-description: "Lorem ipsum dolor sit."
+viewerTitle: "Template"
+viewerDescription: "Lorem ipsum dolor sit."
 image:
   url: "/src/images/projects/1.jpg"
   alt: "Lorem ipsum dolor sit."

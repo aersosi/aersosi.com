@@ -1,7 +1,7 @@
 ---
 pubDate: 2024-01-01
-title: "CARY Medical App"
-description: "UI/UX Design und Development einer medizinischen Terminplanungs-App"
+viewerTitle: "CARY Medical App"
+viewerDescription: "UI/UX Design und Development einer medizinischen Terminplanungs-App"
 images: [ {
   src: "/src/images/projects/1.jpg",
   alt: "Lorem Ipsum"

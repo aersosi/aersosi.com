@@ -1,7 +1,7 @@
 ---
 pubDate: 2024-01-01
-title: "rescoped Datagrid"
-description: "Entwicklung eines Open-Source-Datagrids mit besonderem Fokus auf Developer Experience und Skalierbarkeit"
+viewerTitle: "rescoped Datagrid"
+viewerDescription: "Entwicklung eines Open-Source-Datagrids mit besonderem Fokus auf Developer Experience und Skalierbarkeit"
 images: [ {
   src: "/src/images/projects/1.jpg",
   alt: "Lorem Ipsum"

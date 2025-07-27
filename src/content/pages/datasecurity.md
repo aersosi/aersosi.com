@@ -1,7 +1,7 @@
 ---
 pubDate: 2025-06-08
-title: "Datenschutz"
-description: "Keine Cookies, kein Tracking! Diese Website ist rein informativ und verzichtet bewusst auf Analyse- oder Marketingtechnologien."
+viewerTitle: "Datenschutz"
+viewerDescription: "Keine Cookies, kein Tracking! Diese Website ist rein informativ und verzichtet bewusst auf Analyse- oder Marketingtechnologien."
 image:
   url: "/src/images/pages/1.jpg"
   alt: "Lorem Ipsum Image Text"

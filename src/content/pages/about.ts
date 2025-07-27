@@ -1,6 +1,6 @@
 export const pageData = {
-	title: "Über mich",
-	description: "Lorem Ipsum dolor sit amet",
+	viewerTitle: "Über mich",
+	viewerDescription: "Lorem Ipsum dolor sit amet",
 	headerImgAlt: "über mich Image Beschreibung",
 };
 

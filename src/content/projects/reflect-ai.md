@@ -1,7 +1,7 @@
 ---
 pubDate: 2024-01-01
-title: "reflectAI"
-description: "KI-basierte Web-Applikation mit modernem Frontend-Design"
+viewerTitle: "reflectAI"
+viewerDescription: "KI-basierte Web-Applikation mit modernem Frontend-Design"
 images: [ {
   src: "/src/images/projects/1.jpg",
   alt: "Lorem Ipsum"

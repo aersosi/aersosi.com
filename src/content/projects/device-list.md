@@ -1,7 +1,7 @@
 ---
 pubDate: 2025-06-08
-title: "Device List"
-description: "Interne Anwendung für das Datenmanagement von Kunden-Hardware und -Software"
+viewerTitle: "Device List"
+viewerDescription: "Interne Anwendung für das Datenmanagement von Kunden-Hardware und -Software"
 images: [ {
   src: "/src/images/projects/1.jpg",
   alt: "Lorem Ipsum"

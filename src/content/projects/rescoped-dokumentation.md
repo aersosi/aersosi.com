@@ -1,7 +1,7 @@
 ---
 pubDate: 2024-01-01
-title: "rescoped Dokumentation"
-description: "Eigenverantwortliche Konzeption und Entwicklung der rescoped.io Dokumentationsplattform mit Docusaurus (React)"
+viewerTitle: "rescoped Dokumentation"
+viewerDescription: "Eigenverantwortliche Konzeption und Entwicklung der rescoped.io Dokumentationsplattform mit Docusaurus (React)"
 images: [ {
   src: "/src/images/projects/1.jpg",
   alt: "Lorem Ipsum"

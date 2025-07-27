@@ -3,8 +3,8 @@ import EntryWrapper from "./EntryWrapper.astro";
 
 const { url, title, description, projectType } = {
 	url: "/projects/" + Astro.props.project.slug,
-	title: Astro.props.project.data.title,
-	description: Astro.props.project.data.description,
+	title: Astro.props.project.data.viewerTitle,
+	description: Astro.props.project.data.viewerDescription,
 	projectType: Astro.props.project.data.tags[0],
 };
 ---

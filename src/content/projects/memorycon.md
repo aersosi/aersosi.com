@@ -1,7 +1,7 @@
 ---
 pubDate: 2024-01-01
-title: "memorycon"
-description: "Moderne Web-Applikation mit Fokus auf User Experience und Performance"
+viewerTitle: "memorycon"
+viewerDescription: "Moderne Web-Applikation mit Fokus auf User Experience und Performance"
 images: [ {
   src: "/src/images/projects/1.jpg",
   alt: "Lorem Ipsum"

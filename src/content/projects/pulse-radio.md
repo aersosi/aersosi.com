@@ -1,7 +1,7 @@
 ---
 pubDate: 2024-01-01
-title: "Pulse Radio"
-description: "Moderne Radio-Web-Applikation mit Fokus auf Audio-Streaming und User Experience"
+viewerTitle: "Pulse Radio"
+viewerDescription: "Moderne Radio-Web-Applikation mit Fokus auf Audio-Streaming und User Experience"
 images: [ {
   src: "/src/images/projects/1.jpg",
   alt: "Lorem Ipsum"

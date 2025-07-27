@@ -13,7 +13,7 @@ const allPosts = await getCollection("articles");
 const relatedPosts = allPosts.filter(
 	(post) =>
 		post.data.tags.some((tag) => frontmatter.tags.includes(tag)) &&
-		post.data.title !== frontmatter.title,
+		post.data.viewerTitle !== frontmatter.viewerTitle,
 );
 ---
 
