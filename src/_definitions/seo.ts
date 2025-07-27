@@ -1,4 +1,4 @@
-export interface SeoProps {
+export type SeoProps = {
 	pageTitle?: string;
 	pageTitleTemplate?: string;
 	pageDescription?: string;

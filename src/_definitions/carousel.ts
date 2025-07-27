@@ -17,7 +17,7 @@ export type CarouselSlideProps = ComponentProps<typeof Picture> & {
 };
 
 // Carousel component props
-export interface CarouselProps {
+export type CarouselProps = {
 	images: Array<CarouselSlideProps>;
 	color?: string;
 }

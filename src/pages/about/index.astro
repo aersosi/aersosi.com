@@ -11,13 +11,15 @@ import { pageData, cvData } from "@/content/pages/about.js";
 import headerImg from '/src/images/portrait.webp';
 import MapPin from "@/components/lib/icons/MapPin.astro";
 
-import { stackGrid, stackGridPadding, stickyElement } from "@/shared/classes.ts";
+import { stackGrid, stackGridPadding } from "@/shared/classes";
 ---
 
 <BaseLayout
-	pageTitle="Über mich | Arthur Ersosi"
-	pageDescription="Frontend-Developer und UI/UX-Designer mit 10+ Jahren Design Expertise und 8+ Jahren Web-Development Erfahrung aus Hamburg."
-	image="/images/portrait.webp">
+	pageTitle={pageData.pageTitle}
+	pageDescription={pageData.pageDescription}
+	image="/images/portrait.webp"
+
+>
     <section>
         <Wrapper variant="standard">
             <!--About Me-->

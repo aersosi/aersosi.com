@@ -1,6 +1,4 @@
-// todo: types statt interfaces
-
-export interface TextProps {
+export type TextProps = {
 	tag?:
 		| "a"
 		| "p"
@@ -22,7 +20,7 @@ export interface TextProps {
 	variant?: string;
 }
 
-export interface WrapperProps {
+export type WrapperProps = {
 	variant?: "standard" | "prose";
 	class?: string;
 }
