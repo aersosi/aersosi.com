@@ -21,8 +21,16 @@ const {
 	additionalLinkTags = [],
 } = Astro.props;
 
+// Ensure additionalLinkTags is an array and each item has the required properties
+const safeAdditionalLinkTags = Array.isArray(additionalLinkTags)
+	? additionalLinkTags.filter((tag) => tag && typeof tag === "object" && tag.rel && tag.href)
+	: [];
+
+// Get current URL
 const canonicalURL = new URL(Astro.url?.pathname || "/", Astro.site);
 
+// Handle image URL safely
+// If image starts with http(s), use it directly; otherwise, resolve it against the site URL
 const ogImageURL =
 	image && typeof image === "string" && image.startsWith("http")
 		? new URL(image)
@@ -71,12 +79,12 @@ const ogImageURL =
 	}}
 	languageAlternates={[
 		{
-			hreflang: "de",
-			href: "https://aersosi.com/",
+			hrefLang: "de",
+			href: canonicalURL.toString(),
 		},
 		{
-			hreflang: "en",
-			href: "https://aersosi.com/en",
+			hrefLang: "en",
+			href: canonicalURL.toString(),
 		},
 	]}
 	additionalMetaTags={ensureArray(additionalMetaTags)}

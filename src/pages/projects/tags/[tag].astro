@@ -5,7 +5,7 @@ import Wrapper from "@/components/lib/containers/Wrapper.astro";
 import ProjectEntry from "@/components/lib/entries/ProjectEntry.astro";
 import { getCollection } from "astro:content";
 import Link from "@/components/lib/elements/Link.astro";
-import { stackGrid, stackGridPadding, stickyElement } from "@/shared/classes.js";
+import { stackGrid, stackGridPadding, stickyElement } from "@/shared/classes.ts";
 
 export async function getStaticPaths() {
 	const allProjects = await getCollection("projects");

@@ -4,7 +4,7 @@ import Wrapper from "@/components/lib/containers/Wrapper.astro";
 import ArticlesEntry from "@/components/lib/entries/ArticlesEntry.astro";
 import { getCollection } from "astro:content";
 import Link from "@/components/lib/elements/Link.astro";
-import { stackGrid, stackGridPadding, stickyElement } from "@/shared/classes.js";
+import { stackGrid, stackGridPadding, stickyElement } from "@/shared/classes.ts";
 import ArrowRight from "@/components/lib/icons/ArrowRight.astro";
 
 const allPostsUnsorted = await getCollection("articles");

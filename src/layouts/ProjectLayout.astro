@@ -8,7 +8,7 @@ import ProjectEntry from "@/components/lib/entries/ProjectEntry.astro";
 const {frontmatter} = Astro.props;
 import { getCollection } from "astro:content";
 import ExternalLink from "@/components/lib/icons/ExternalLink.astro";
-import { stackGrid, stackGridPadding, stickyElement } from "@/shared/classes.js";
+import { stackGrid, stackGridPadding, stickyElement } from "@/shared/classes.ts";
 import CarouselWrapper from "@/components/lib/elements/CarouselWrapper.astro";
 
 const allProjects = await getCollection("projects");
