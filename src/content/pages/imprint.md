@@ -2,11 +2,16 @@
 pubDate: 2025-06-08
 viewerTitle: "Impressum"
 viewerDescription: "Transparenz und Erreichbarkeit sind mir wichtig. Hier findest du alle relevanten Daten auf einen Blick."
+pageTitle: "Impressum | Arthur Ersosi"
+pageDescription: "Dieses Impressum gilt für die Seite aersosi.com sowie für die aersosi-Seiten auf LinkedIn, Twitter und GitHub."
 image:
   url: "/src/images/pages/1.jpg"
   alt: "Lorem Ipsum Image Text"
-tags: ["CSS", "A11y", "Tooltip"]
+tags: [ "CSS", "A11y", "Tooltip" ]
 ---
+
+Dieses Impressum gilt für die Seite **aersosi.com** sowie für die aersosi-Seiten auf **LinkedIn**, 
+**Twitter** und **GitHub**.
 
 # Betreiber
 
