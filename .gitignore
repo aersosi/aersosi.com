@@ -25,7 +25,9 @@ pnpm-debug.log*
 .vscode/
 
 #locals
-docs/TODO.md
 hidden/
 docs/
 font-inter-full/
+
+#AI
+.junie
