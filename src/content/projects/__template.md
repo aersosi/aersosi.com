@@ -2,6 +2,8 @@
 pubDate: 2022-06-08
 viewerTitle: "Template"
 viewerDescription: "Lorem ipsum dolor sit."
+pageTitle: "Template | Projekt | Arthur Ersosi"
+pageDescription: "Beschreibung des Template-Projekts."
 image:
   url: "/src/images/projects/1.jpg"
   alt: "Lorem ipsum dolor sit."

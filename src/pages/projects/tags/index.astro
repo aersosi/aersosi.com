@@ -23,7 +23,10 @@ const otherTags = allTags
 	.sort((a, b) => a.localeCompare(b, "de"));
 ---
 
-<BaseLayout>
+<BaseLayout
+	pageTitle="Projekt Kategorien | Arthur Ersosi"
+	pageDescription="Eine Liste aller Projekt-Kategorien von Arthur Ersosi. Finden Sie Projekte zu Frontend-Entwicklung, UI/UX-Design und Web-Anwendungen."
+>
 	<section>
 		<Wrapper variant="standard">
 			<div class:list={[...stackGrid, ...stackGridPadding]}>

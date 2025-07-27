@@ -2,6 +2,8 @@
 pubDate: 2024-01-01
 viewerTitle: "rescoped Dokumentation"
 viewerDescription: "Eigenverantwortliche Konzeption und Entwicklung der rescoped.io Dokumentationsplattform mit Docusaurus (React)"
+pageTitle: "rescoped Dokumentation | Dokumentationsplattform | Arthur Ersosi"
+pageDescription: "Konzeption und Entwicklung der rescoped.io Dokumentationsplattform mit Docusaurus, inklusive Branding, UI-Design und interaktiver Grafiken."
 images: [ {
   src: "/src/images/projects/1.jpg",
   alt: "Lorem Ipsum"

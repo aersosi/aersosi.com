@@ -1,14 +1,14 @@
 ---
 import EntryWrapper from "./EntryWrapper.astro";
 
-const { url, title, description, projectType } = {
+const { url, viewerTitle, viewerDescription, projectType } = {
 	url: "/projects/" + Astro.props.project.slug,
-	title: Astro.props.project.data.viewerTitle,
-	description: Astro.props.project.data.viewerDescription,
+	viewerTitle: Astro.props.project.data.viewerTitle,
+	viewerDescription: Astro.props.project.data.viewerDescription,
 	projectType: Astro.props.project.data.tags[0],
 };
 ---
 
-<EntryWrapper url={url} title={title} description={description}>
+<EntryWrapper url={url} viewerTitle={viewerTitle} viewerDescription={viewerDescription}>
 	{projectType}
 </EntryWrapper>

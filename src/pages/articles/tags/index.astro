@@ -16,7 +16,10 @@ const tagCounts = allPosts.reduce((acc, post) => {
 const tags = Object.keys(tagCounts);
 ---
 
-<BaseLayout>
+<BaseLayout
+	pageTitle="Artikel Kategorien | Arthur Ersosi"
+	pageDescription="Eine Liste aller Artikel-Kategorien von Arthur Ersosi. Finden Sie Inhalte zu Frontend-Entwicklung, UI/UX-Design und Web-Technologien."
+>
 	<section>
 		<Wrapper variant="standard">
 			<div class:list={[...stackGrid, ...stackGridPadding]}>

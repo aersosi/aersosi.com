@@ -2,6 +2,8 @@
 pubDate: 2024-01-01
 viewerTitle: "reflectAI"
 viewerDescription: "KI-basierte Web-Applikation mit modernem Frontend-Design"
+pageTitle: "reflectAI | KI-basierte Web-Applikation | Arthur Ersosi"
+pageDescription: "Moderne KI-basierte Web-Applikation mit Fokus auf User Experience und innovative Technologien, entwickelt mit React und TypeScript."
 images: [ {
   src: "/src/images/projects/1.jpg",
   alt: "Lorem Ipsum"

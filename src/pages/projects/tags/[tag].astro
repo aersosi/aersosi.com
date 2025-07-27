@@ -34,7 +34,10 @@ const otherTags = allTags
 	.sort((a, b) => a.localeCompare(b, "de"));
 ---
 
-<BaseLayout pageTitle={tag}>
+<BaseLayout
+	pageTitle={`Projekt Kategorie | ${tag} | Arthur Ersosi`}
+	pageDescription={`Projekte zum Thema ${tag} von Arthur Ersosi. Entdecken Sie meine Projekte im Bereich Frontend-Entwicklung, UI/UX-Design und Web-Anwendungen.`}
+>
 	<section>
 		<Wrapper variant="standard">
 			<div class:list={[...stackGrid, ...stackGridPadding]}>

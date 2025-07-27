@@ -5,8 +5,8 @@ import Navigation from "@/components/global/Navigation.astro";
 import Footer from "@/components/global/Footer.astro";
 
 export interface Props {
-	siteTitle?: string;
-	siteDescription?: string;
+	pageTitle?: string;
+	pageDescription?: string;
 	image?: string;
 	article?: boolean;
 	publishDate?: Date;
@@ -15,8 +15,8 @@ export interface Props {
 }
 
 const {
-	siteTitle = "Arthur Ersosi | Design Engineer",
-	siteDescription = "Frontend-Developer und UI/UX-Designer mit 10+ Jahren Design Expertise und 8+ Jahren Web-Development Erfahrung aus Hamburg.",
+	pageTitle = "Arthur Ersosi | Design Engineer",
+	pageDescription = "Frontend-Developer und UI/UX-Designer mit 10+ Jahren Design Expertise und 8+ Jahren Web-Development Erfahrung aus Hamburg.",
 	image,
 	article,
 	publishDate,
@@ -28,8 +28,8 @@ const {
 <html lang="de" class="selection:bg-secondary-300 selection:text-base-900">
 	<head>
 		<BaseHead
-			siteTitle={siteTitle}
-			siteDescription={siteDescription}
+			pageTitle={pageTitle}
+			pageDescription={pageDescription}
 			image={image}
 			article={article}
 			publishDate={publishDate}

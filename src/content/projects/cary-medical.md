@@ -2,6 +2,8 @@
 pubDate: 2024-01-01
 viewerTitle: "CARY Medical App"
 viewerDescription: "UI/UX Design und Development einer medizinischen Terminplanungs-App"
+pageTitle: "CARY Medical App | Medizinische Terminplanungs-App | Arthur Ersosi"
+pageDescription: "UI/UX Design und Frontend-Entwicklung einer intuitiven medizinischen Terminplanungs-App mit Angular."
 images: [ {
   src: "/src/images/projects/1.jpg",
   alt: "Lorem Ipsum"

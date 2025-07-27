@@ -15,35 +15,35 @@ import ToggleMobileNav from "../lib/scripts/MainNav/ToggleMobileNav.astro";
 import ToTopMobileNav from "../lib/scripts/MainNav/ToTopMobileNav.astro";
 
 export interface Props {
-  siteTitle?: string;
-  siteDescription?: string;
-  image?: string;
-  article?: boolean;
-  publishDate?: Date;
-  modifiedDate?: Date;
-  author?: string;
+	pageTitle?: string;
+	pageDescription?: string;
+	image?: string;
+	article?: boolean;
+	publishDate?: Date;
+	modifiedDate?: Date;
+	author?: string;
 }
 
-const { 
-  siteTitle = "", 
-  siteDescription = "", 
-  image, 
-  article, 
-  publishDate, 
-  modifiedDate, 
-  author 
+const {
+	pageTitle = "",
+	pageDescription = "",
+	image,
+	article,
+	publishDate,
+	modifiedDate,
+	author,
 } = Astro.props;
 ---
 
 <Fonts />
-<Seo 
-  siteTitle={siteTitle}
-  siteDescription={siteDescription}
-  image={image}
-  article={article}
-  publishDate={publishDate}
-  modifiedDate={modifiedDate}
-  author={author}
+<Seo
+	pageTitle={pageTitle}
+	pageDescription={pageDescription}
+	image={image}
+	article={article}
+	publishDate={publishDate}
+	modifiedDate={modifiedDate}
+	author={author}
 />
 <Meta />
 <Favicons />

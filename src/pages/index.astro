@@ -1,12 +1,15 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro";
-import Intro from "@/components/landing/Intro.astro";
-import Projects from "@/components/landing/Projects.astro";
-import Articles from "@/components/landing/Articles.astro";
-import Social from "@/components/landing/Socials.astro";
+import Intro from "@/pages/_landing/Intro.astro";
+import Projects from "@/pages/_landing/Projects.astro";
+import Articles from "@/pages/_landing/Articles.astro";
+import Social from "@/pages/_landing/Socials.astro";
 ---
 
-<BaseLayout>
+<BaseLayout
+	pageTitle="Arthur Ersosi | Design Engineer"
+	pageDescription="Frontend-Developer und UI/UX-Designer mit 10+ Jahren Design Expertise und 8+ Jahren Web-Development Erfahrung aus Hamburg."
+>
 	<Intro />
 	<Projects />
 	<Articles />

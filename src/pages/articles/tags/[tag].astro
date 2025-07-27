@@ -28,7 +28,10 @@ const allPosts = allPostsUnsorted.sort(
 const tags = [...new Set(allPosts.map((post) => post.data.tags).flat())];
 ---
 
-<BaseLayout pageTitle={tag}>
+<BaseLayout
+	pageTitle={`Artikel Kategorie | ${tag} | Arthur Ersosi`}
+	pageDescription={`Artikel zum Thema ${tag} von Arthur Ersosi. Lesen Sie Tipps und Erfahrungen zu Frontend-Entwicklung, UI/UX-Design und Web-Technologien.`}
+>
 	<section>
 		<Wrapper variant="standard">
 			<div class:list={[...stackGrid, ...stackGridPadding]}>

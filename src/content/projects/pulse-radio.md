@@ -2,6 +2,8 @@
 pubDate: 2024-01-01
 viewerTitle: "Pulse Radio"
 viewerDescription: "Moderne Radio-Web-Applikation mit Fokus auf Audio-Streaming und User Experience"
+pageTitle: "Pulse Radio | Audio-Streaming Web-App | Arthur Ersosi"
+pageDescription: "Moderne Radio-Web-Applikation mit Audio-Streaming-Funktionalität und optimaler User Experience, entwickelt mit React und TypeScript."
 images: [ {
   src: "/src/images/projects/1.jpg",
   alt: "Lorem Ipsum"

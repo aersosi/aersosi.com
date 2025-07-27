@@ -17,7 +17,12 @@ const relatedPosts = allPosts.filter(
 );
 ---
 
-<BaseLayout>
+<BaseLayout
+	pageTitle={frontmatter.pageTitle}
+	pageDescription={frontmatter.pageDescription}
+	article={true}
+	publishDate={frontmatter.pubDate}
+>
 	<section>
 		<Wrapper variant="standard">
 			<div class:list={[...stackGrid, ...stackGridPadding]}>

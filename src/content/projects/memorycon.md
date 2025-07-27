@@ -2,6 +2,8 @@
 pubDate: 2024-01-01
 viewerTitle: "memorycon"
 viewerDescription: "Moderne Web-Applikation mit Fokus auf User Experience und Performance"
+pageTitle: "memorycon | Memory-Spiel Web-App | Arthur Ersosi"
+pageDescription: "Moderne Memory-Spiel Web-Applikation mit Fokus auf optimale User Experience und Performance, entwickelt mit React und TypeScript."
 images: [ {
   src: "/src/images/projects/1.jpg",
   alt: "Lorem Ipsum"

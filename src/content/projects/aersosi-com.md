@@ -2,6 +2,8 @@
 pubDate: 2024-01-01
 viewerTitle: "aersosi.com"
 viewerDescription: "Persönliche Portfolio-Website entwickelt mit modernen Web-Technologien"
+pageTitle: "aersosi.com | Portfolio-Projekt | Arthur Ersosi"
+pageDescription: "Persönliche Portfolio-Website entwickelt mit Next.js, React, TypeScript und Tailwind CSS."
 images: [ {
   src: "/src/images/projects/1.jpg",
   alt: "Lorem Ipsum"

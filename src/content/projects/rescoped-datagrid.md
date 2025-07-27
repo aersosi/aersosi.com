@@ -2,6 +2,8 @@
 pubDate: 2024-01-01
 viewerTitle: "rescoped Datagrid"
 viewerDescription: "Entwicklung eines Open-Source-Datagrids mit besonderem Fokus auf Developer Experience und Skalierbarkeit"
+pageTitle: "rescoped Datagrid | Open-Source-Projekt | Arthur Ersosi"
+pageDescription: "Entwicklung eines skalierbaren Open-Source-Datagrids mit Fokus auf optimale Developer Experience und robustem State-Management."
 images: [ {
   src: "/src/images/projects/1.jpg",
   alt: "Lorem Ipsum"

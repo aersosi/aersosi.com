@@ -1,7 +1,9 @@
 ---
 pubDate: 2025-06-08
-viewerTitle: "a11ytip – Barrierefreie Tooltips"
+viewerTitle: "a11ytip | Barrierefreie Tooltips"
 viewerDescription: "Mit viel gutem CSS und wenig JavaScript."
+pageTitle: "a11ytip | Barrierefreie Tooltips | Arthur Ersosi"
+pageDescription: "Eine barrierefreie und leichtgewichtige Alternative zu überladenen Tooltip-Bibliotheken."
 images: [ {
   src: "/src/images/articles/1.jpg",
   alt: "Lorem Ipsum"
@@ -15,7 +17,7 @@ images: [ {
 tags: [ "CSS", "A11y", "Tooltip" ]
 ---
 
-## a11ytip – Barrierefreie Tooltips
+## a11ytip | Barrierefreie Tooltips
 
 Kennen Sie das? Sie sind ein junger, ziemlich gut aussehender Web-Entwickler (trotzdem Single) und wollen ihrer
 minimalistisch designten trendy Website/App ein bisschen mehr informativen Kontext durch Tooltips geben? Die Tooltips

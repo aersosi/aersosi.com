@@ -2,6 +2,8 @@
 pubDate: 2025-06-08
 viewerTitle: "Device List"
 viewerDescription: "Interne Anwendung für das Datenmanagement von Kunden-Hardware und -Software"
+pageTitle: "Device List | Datenmanagement-Anwendung | Arthur Ersosi"
+pageDescription: "Interne Webanwendung zur automatisierten Verwaltung von Hardware-, Lizenz- und Servicedaten für Kundeninfrastrukturen."
 images: [ {
   src: "/src/images/projects/1.jpg",
   alt: "Lorem Ipsum"
