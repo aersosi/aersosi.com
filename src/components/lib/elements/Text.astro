@@ -44,7 +44,13 @@ const { tag: Tag = "p", variant = "textBase", class: className = "", ...rest } =
 
 const baseClasses = textStyles[variant] || textStyles.textBase;
 
-const combinedClasses = `${baseClasses} ${className}`.trim();
+const isHeading = ["h1", "h2", "h3", "h4", "h5", "h6"].includes(Tag);
+const headingStyles = isHeading ? "font-medium dark:text-white" : "";
+
+const isParagraph = ["p"].includes(Tag);
+const paragraphStyles = isParagraph ? "text-base-600 dark:text-base-300" : "";
+
+const combinedClasses = `${baseClasses} ${headingStyles} ${paragraphStyles} ${className}`.trim();
 ---
 
 <Tag class={combinedClasses} {...rest}>

@@ -1,5 +1,4 @@
 ---
-import { Image } from "astro:assets";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import Text from "@/components/lib/elements/Text.astro";
 import Wrapper from "@/components/lib/containers/Wrapper.astro";
@@ -30,13 +29,13 @@ const relatedProjects = allProjects.filter((project) =>
             <div class:list={[...stackGrid, ...stackGridPadding]}>
                 <div class:list={[...stickyElement]}>
                     <div class="flex gap-8 flex-col">
-                        <Text tag="h1" variant="text2XL" class="font-medium text-base-900 dark:text-white">
+                        <Text tag="h1" variant="text2XL" class="dark:text-white">
                             {frontmatter.viewerTitle}
                         </Text>
 
                         <div class="grid gap-8">
                             <div class="grid gap-2">
-                                <Text tag="h3" variant="textBase" class="font-medium text-base-600 dark:text-base-300">
+                                <Text tag="h3" variant="textBase" class="dark:text-white">
                                     Online
                                 </Text>
 
@@ -76,33 +75,33 @@ const relatedProjects = allProjects.filter((project) =>
                                 )}
                             </div>
 
-                            {frontmatter.company.companyName === "" ? (
+                            {frontmatter.company.companyName !== "" ? (
                                     <div class="grid gap-2">
-                                        <Text tag="h3" variant="textBase" class="font-medium text-base-600 dark:text-base-300">
+                                        <Text tag="h3" variant="textBase" class="dark:text-white">
                                             Firma ({frontmatter.company.companySize} Pers.)
                                         </Text>
 
-                                        <Text tag="p" variant="textBase" class="dark:text-white">
+                                        <Text tag="p" variant="textBase" class="text-base-600 dark:text-base-300">
                                             {frontmatter.company.companyName}
                                         </Text>
                                     </div>
 
                                     <div class="grid gap-2">
-                                        <Text tag="h3" variant="textBase" class="font-medium text-base-600 dark:text-base-300">
+                                        <Text tag="h3" variant="textBase" class="dark:text-white">
                                             Aufgabe (Team {frontmatter.company.teamSize} Pers.)
                                         </Text>
 
-                                        <Text tag="p" variant="textBase" class="dark:text-white text-balance">
+                                        <Text tag="p" variant="textBase" class="text-base-600 dark:text-base-300 text-balance">
                                             {frontmatter.company.myRole}
                                         </Text>
                                     </div>
                             ) : (
                                     <div class="grid gap-2">
-                                        <Text tag="h3" variant="textBase" class="font-medium text-base-600 dark:text-base-300">
+                                        <Text tag="h3" variant="textBase" class="dark:text-white">
                                             Aufgabe
                                         </Text>
 
-                                        <Text tag="p" variant="textBase" class="dark:text-white text-balance">
+                                        <Text tag="p" variant="textBase" class="text-base-600 dark:text-base-300 text-balance">
                                             {frontmatter.company.myRole}
                                         </Text>
                                     </div>
@@ -128,7 +127,7 @@ const relatedProjects = allProjects.filter((project) =>
                             <div class:list={[...stackGrid, ...stackGridPadding]} class="border-t">
                                 <Text tag="h2"
                                       variant="textBase"
-                                      class="font-medium text-base-900 dark:text-white"
+                                      class="text-base-900 dark:text-white"
                                 >
                                     Ähnliche Projekte
                                 </Text>
