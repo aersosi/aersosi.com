@@ -29,10 +29,10 @@ const relatedPosts = allPosts.filter(
 				<div class:list={[...stickyElement]}>
 					<div class="flex flex-col gap-8">
 						<Text tag="h1" variant="text2XL" class="text-base-900 font-medium dark:text-white">
-							{frontmatter.title}
+							{frontmatter.viewerTitle}
 						</Text>
 						<Text tag="p" variant="textBase" class="text-base-600 dark:text-base-300">
-							{frontmatter.description}
+							{frontmatter.viewerDescription}
 						</Text>
 						<slot name="extra" />
 					</div>

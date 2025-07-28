@@ -6,13 +6,12 @@ import Favicons from "./Favicons.astro";
 import ToggleLocalStorage from "@/components/lib/scripts/ToggleLocalStorage.astro";
 import ToggleA11ytip from "@/components/lib/scripts/ToggleA11ytip.astro";
 import UpdateYear from "@/components/lib/scripts/UpdateYear.astro";
-import UpdatePublishedDate from "@/components/lib/scripts/UpdatePublishedDate.astro";
 import UpdateClock from "@/components/lib/scripts/UpdateClock.astro";
-import ToggleNavActive from "../lib/scripts/MainNav/ToggleNavActive.astro";
+import ToggleNavActive from "@/components/lib/scripts/MainNav/ToggleNavActive.astro";
 import UpdateTheme from "@/components/lib/scripts/UpdateTheme.astro";
-import MoveMainnav from "../lib/scripts/MainNav/MoveMainnav.astro";
-import ToggleMobileNav from "../lib/scripts/MainNav/ToggleMobileNav.astro";
-import ToTopMobileNav from "../lib/scripts/MainNav/ToTopMobileNav.astro";
+import MoveMainnav from "@/components/lib/scripts/MainNav/MoveMainnav.astro";
+import ToggleMobileNav from "@/components/lib/scripts/MainNav/ToggleMobileNav.astro";
+import ToTopMobileNav from "@/components/lib/scripts/MainNav/ToTopMobileNav.astro";
 
 export interface Props {
 	pageTitle?: string;
@@ -52,7 +51,6 @@ const {
 <ToggleLocalStorage />
 <ToggleA11ytip />
 <UpdateYear />
-<UpdatePublishedDate />
 <UpdateClock />
 <ToggleNavActive />
 <MoveMainnav />

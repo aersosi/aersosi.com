@@ -4,9 +4,10 @@ import { Image } from "astro:assets";
 import Button from "@/components/lib/elements/Button.astro";
 import Wrapper from "@/components/lib/containers/Wrapper.astro";
 import Text from "@/components/lib/elements/Text.astro";
+import UpdatePublishedDate from "@/components/lib/scripts/UpdatePublishedDate.astro";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 
-import { pageData, cvData } from "@/content/pages/about.js";
+import { pageData, cvData } from "@/content/pages/about";
 
 import headerImg from '/src/images/portrait.webp';
 import MapPin from "@/components/lib/icons/MapPin.astro";
@@ -20,7 +21,8 @@ import { stackGrid, stackGridPadding } from "@/shared/classes";
 	image="/images/portrait.webp"
 
 >
-    <section>
+	<UpdatePublishedDate />
+	<section>
         <Wrapper variant="standard">
             <!--About Me-->
             <div class:list={[...stackGrid, ...stackGridPadding]} class="border-b">
