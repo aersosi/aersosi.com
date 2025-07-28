@@ -6,7 +6,6 @@ import Link from "@/components/lib/elements/Link.astro";
 const LinkData = [
 	{
 		category: "Allgemein",
-		headerClass: "font-medium text-base-900 dark:text-white",
 		links: [
 			{ text: "Start", href: "/#home", ariaLabel: "Start" },
 			{ text: "Über mich", href: "/about", ariaLabel: "Über mich" },
@@ -18,19 +17,17 @@ const LinkData = [
 	},
 	{
 		category: "Projekte",
-		headerClass: "font-medium text-base-900 dark:text-white",
 		links: [
 			{ text: "Alle Projekte", href: "/projects", ariaLabel: "Alle Projekte" },
-			{ text: "Kategorie Index", href: "/projects/tags", ariaLabel: "Kategorie Index" },
+			{ text: "Projektkategorie Index", href: "/projects/tags", ariaLabel: "Kategorie Index" },
 		],
 		linkClass: "font-normal",
 	},
 	{
 		category: "Artikel",
-		headerClass: "font-medium text-base-900 dark:text-white",
 		links: [
 			{ text: "Alle Artikel", href: "/articles", ariaLabel: "Alle Artikel" },
-			{ text: "Kategorie Index", href: "/articles/tags", ariaLabel: "Kategorie Index" },
+			{ text: "Artikelkategorie Index", href: "/articles/tags", ariaLabel: "Kategorie Index" },
 		],
 		linkClass: "font-normal",
 	},
@@ -47,9 +44,9 @@ import { stackGrid, stackGridPadding } from "@/shared/classes";
 		>
 			<nav class:list={[...stackGrid]} class="md:grid-cols-2">
 				{
-					LinkData.map(({ category, links, linkClass, headerClass }) => (
+					LinkData.map(({ category, links, linkClass }) => (
 						<div class="flex flex-col gap-2">
-							<Text tag="h4" variant="textSM" class={headerClass}>
+							<Text tag="h4" variant="textSM">
 								{category}
 							</Text>
 							{links.map(({ text, href, ariaLabel }) => (
@@ -71,17 +68,10 @@ import { stackGrid, stackGridPadding } from "@/shared/classes";
 
 			<div class:list={[...stackGrid]} class="md:grid-cols-2">
 				<div>
-					<Text tag="p" variant="textBase" class="text-base-900 dark:text-white">
-						Hamburg, Germany
-					</Text>
-					<Text
-						id="clock"
-						tag="p"
-						variant="textSM"
-						class="text-base-600 dark:text-base-300 flash-text"
-					/>
+					<Text tag="p" variant="textBase"> Hamburg, Germany </Text>
+					<Text id="clock" tag="p" variant="textSM" />
 				</div>
-				<Text tag="p" variant="textBase" class="text-base-600 dark:text-base-300">
+				<Text tag="p" variant="textBase">
 					© Copyright <span id="copyrightYear">2025</span>, Arthur Ersosi. <br />Alle Rechte
 					vorbehalten.
 				</Text>

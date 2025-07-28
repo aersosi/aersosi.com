@@ -28,10 +28,10 @@ import { stackGrid, stackGridPadding } from "@/shared/classes";
             <div class:list={[...stackGrid, ...stackGridPadding]} class="border-b">
                 <div class="grid gap-8">
                     <div class="grid gap-2">
-                        <Text tag="h1" variant="text2XL" class="text-base-800 dark:text-base-100">
+                        <Text tag="h1" variant="text2XL">
                             {pageData.viewerTitle}
                         </Text>
-                        <Text tag="p" class="text-base-600 dark:text-base-300">
+                        <Text tag="p">
                             Aktualisiert am <span id="publishedDate">14.06.1985</span>
                         </Text>
                     </div>
@@ -127,7 +127,7 @@ import { stackGrid, stackGridPadding } from "@/shared/classes";
             <!--CV-->
             <Wrapper variant="prose" class:list={[...stackGridPadding]}>
                 <div class:list={[...stackGrid]} class="sm:grid-cols-2 items-start sm:items-center">
-                    <Text tag="h2" class="!text-xl !xl:text-2xl !2xl:text-3xl !my-0 lg:ml-auto">
+                    <Text tag="h1" class="!text-xl !xl:text-2xl !2xl:text-3xl !my-0 lg:ml-auto">
                         Curriculum Vitae
                     </Text>
                     <div class="col-span-1">
@@ -157,11 +157,11 @@ import { stackGrid, stackGridPadding } from "@/shared/classes";
                                 <>
                                     {item.entries.map((entry) => (
                                             <div class:list={[...stackGrid]} class="!gap-y-0">
-                                                <Text tag="p" class="text-black dark:text-white lg:ml-auto mb-0">
+                                                <Text tag="h3" class="lg:ml-auto mb-0">
                                                     {entry.date}
                                                 </Text>
                                                 <div class="lg:col-span-2">
-                                                    <Text tag="p" class="font-medium text-black dark:text-white">
+                                                    <Text tag="h3">
                                                         {entry.position}
                                                     </Text>
 

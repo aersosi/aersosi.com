@@ -3,8 +3,7 @@ import Text from "@/components/lib/elements/Text.astro";
 
 const { url, viewerTitle, viewerDescription } = Astro.props;
 
-const textColorHeadline = "transition-colors text-base-900 dark:text-white";
-const textColorP = "text-base-600 dark:text-base-300";
+const textColorHeadline = "transition-colors";
 const textAccent = "group-hover:text-accent-700 group-hover:dark:text-accent-300";
 ---
 
@@ -28,7 +27,7 @@ const textAccent = "group-hover:text-accent-700 group-hover:dark:text-accent-300
 				</p>
 			</a>
 		</Text>
-		<Text tag="p" class={`text-balance relative z-10 mt-1 ${textColorP} ${textAccent}`}>
+		<Text tag="p" class={`text-balance relative z-10 mt-1 ${textAccent}`}>
 			{viewerDescription}
 		</Text>
 	</div>
