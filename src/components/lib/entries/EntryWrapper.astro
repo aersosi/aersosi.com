@@ -3,31 +3,27 @@ import Text from "@/components/lib/elements/Text.astro";
 
 const { url, viewerTitle, viewerDescription } = Astro.props;
 
-const textColorHeadline = "transition-colors";
 const textAccent = "group-hover:text-accent-700 group-hover:dark:text-accent-300";
+const hoverSize = "-inset-x-5 -top-2 -bottom-3";
 ---
 
-<article class="group relative grid grid-cols-1 gap-x-12 gap-y-8 lg:grid-cols-3 lg:items-start">
-	<div class="lg:col-span-2">
-		<Text
-			tag="h3"
-			variant="textLG"
-			class={`font-medium tracking-tight ${textColorHeadline} ${textAccent}`}
-		>
+<article class="group relative grid gap-x-12 gap-y-8 lg:items-start">
+	<div class="w-full">
+		<Text tag="h3" variant="textLG" class={`transition-colors w-full ${textAccent}`}>
 			<div
-				class="bg-accent-500/10 dark:bg-accent-600/10 absolute -inset-x-4 -inset-y-3 z-0 scale-95 rounded-2xl opacity-0 transition group-hover:scale-100 group-hover:opacity-100"
+				class={`bg-accent-500/10 dark:bg-accent-600/10 ${hoverSize} absolute z-0 scale-95 rounded-2xl opacity-0 transition group-hover:scale-100 group-hover:opacity-100`}
 			>
 			</div>
 			<a href={url} aria-label={viewerTitle}>
-				<div class="absolute -inset-x-3 -inset-y-4 z-20 rounded-2xl"></div>
-				<p class="relative z-10 flex flex-col gap-x-4 md:flex-row md:items-center">
+				<div class={`absolute ${hoverSize} z-20 rounded-2xl`}></div>
+				<div class="relative z-10 flex w-full flex-col gap-x-4 md:flex-row md:items-center">
 					<span class="whitespace-nowrap">{viewerTitle}</span>
 					<span class="hidden font-light md:block"> — </span>
 					<span class="py-1 text-sm md:text-lg"><slot /></span>
-				</p>
+				</div>
 			</a>
 		</Text>
-		<Text tag="p" class={`text-balance relative z-10 mt-1 ${textAccent}`}>
+		<Text tag="p" class={`transition-colors text-balance relative z-10 mt-1 ${textAccent}`}>
 			{viewerDescription}
 		</Text>
 	</div>
