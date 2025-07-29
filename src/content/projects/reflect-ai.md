@@ -4,18 +4,24 @@ viewerTitle: "reflectAI"
 viewerDescription: "KI-basierte Web-Applikation mit modernem Frontend-Design"
 pageTitle: "reflectAI | KI-basierte Web-Applikation | Arthur Ersosi"
 pageDescription: "Moderne KI-basierte Web-Applikation mit Fokus auf User Experience und innovative Technologien, entwickelt mit React und TypeScript."
-images: [ {
-  src: "/src/images/projects/1.jpg",
-  alt: "Lorem Ipsum"
-},{
-  src: "/src/images/projects/2.jpg",
-  alt: "Lorem Ipsum"
-},{
-  src: "/src/images/projects/3.jpg",
-  alt: "Lorem Ipsum"
-} ]
+images: [
+  {
+    src: "src/images/projects/reflectAI/reflect-ai-cover.webp",
+    alt: "Oberfläche von reflectAI"
+  },
+  {
+    src: "src/images/projects/reflectAI/reflect-ai-01.webp",
+    alt: "Oberfläche von reflectAI"
+  },{
+    src: "src/images/projects/reflectAI/reflect-ai-02.webp",
+    alt: "Oberfläche von reflectAI - Sessions"
+  },{
+    src: "src/images/projects/reflectAI/reflect-ai-03.webp",
+    alt: "Oberfläche von reflectAI - Session Settings"
+  }
+]
 tags:
-  ["Privates Projekt", "KI (Künstliche Intelligenz)", "Next.js", "React", "Frontend-Entwicklung"]
+  [ "Privates Projekt", "KI (Künstliche Intelligenz)", "Next.js", "React", "Frontend-Entwicklung" ]
 
 repo:
   name: "GitHub"

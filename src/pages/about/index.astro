@@ -7,7 +7,7 @@ import Text from "@/components/lib/elements/Text.astro";
 import UpdatePublishedDate from "@/components/lib/scripts/UpdatePublishedDate.astro";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 
-import { pageData, cvData } from "@/content/pages/about";
+import { aboutPageData, cvData } from "@/content/pages/about";
 
 import headerImg from '/src/images/portrait.webp';
 import MapPin from "@/components/lib/icons/MapPin.astro";
@@ -16,8 +16,8 @@ import { stackGrid, stackGridPadding } from "@/shared/classes";
 ---
 
 <BaseLayout
-	pageTitle={pageData.pageTitle}
-	pageDescription={pageData.pageDescription}
+	pageTitle={aboutPageData.pageTitle}
+	pageDescription={aboutPageData.pageDescription}
 	image="/images/portrait.webp"
 
 >
@@ -29,7 +29,7 @@ import { stackGrid, stackGridPadding } from "@/shared/classes";
                 <div class="grid gap-8">
                     <div class="grid gap-2">
                         <Text tag="h1" variant="text2XL">
-                            {pageData.viewerTitle}
+                            {aboutPageData.viewerTitle}
                         </Text>
                         <Text tag="p">
                             Aktualisiert am <span id="publishedDate">14.06.1985</span>
@@ -39,12 +39,12 @@ import { stackGrid, stackGridPadding } from "@/shared/classes";
                            height={800}
                            loading="eager"
                            decoding="async"
-                           alt={pageData.headerImgAlt}
+                           alt={aboutPageData.headerImgAlt}
                            src={headerImg}
                            class="lg:hidden object-cover object-center w-full aspect-12/6 lg:col-span-2 rounded-xl"
                     />
 
-                    <Wrapper variant="prose">
+                    <Wrapper variant="proseBase">
                         <Text tag="h2">Development</Text>
                         <Text tag="p">
                             Als Developer gieße ich Design in modernen, modularen und skalierbaren Code.
@@ -64,7 +64,7 @@ import { stackGrid, stackGridPadding } from "@/shared/classes";
                         </Text>
                     </Wrapper>
                     <hr class="my-2.5 opacity-30 dark:text-white"></hr>
-                    <Wrapper variant="prose">
+                    <Wrapper variant="proseBase">
                         <Text tag="h2">Design</Text>
                         <Text tag="p">
                             Als UI/UX Designer entwickle ich nutzerzentrierte Konzepte, Prototypen und Interfaces,
@@ -84,12 +84,12 @@ import { stackGrid, stackGridPadding } from "@/shared/classes";
                 <hr class="lg:hidden mt-6 opacity-30 dark:text-white"/>
 
                 <div class="lg:col-span-2">
-                    <Wrapper variant="prose">
+                    <Wrapper variant="proseBase">
                         <Image width={1000}
                                height={800}
                                loading="eager"
                                decoding="async"
-                               alt={pageData.headerImgAlt}
+                               alt={aboutPageData.headerImgAlt}
                                src={headerImg}
                                class="hidden lg:block object-cover object-center w-full aspect-12/6 lg:col-span-2 rounded-xl"
                         />
@@ -125,9 +125,9 @@ import { stackGrid, stackGridPadding } from "@/shared/classes";
             </div>
 
             <!--CV-->
-            <Wrapper variant="prose" class:list={[...stackGridPadding]}>
+            <Wrapper variant="proseBase" class:list={[...stackGridPadding]}>
                 <div class:list={[...stackGrid]} class="sm:grid-cols-2 items-start sm:items-center">
-                    <Text tag="h1" class="!text-xl !xl:text-2xl !2xl:text-3xl !my-0 lg:ml-auto">
+                    <Text tag="h1" class="!my-0 lg:ml-auto">
                         Curriculum Vitae
                     </Text>
                     <div class="col-span-1">
@@ -137,7 +137,7 @@ import { stackGrid, stackGridPadding } from "@/shared/classes";
                                 href="/CV_Arthur_Ersosi_2025_DE.pdf"
                                 size="sm"
                                 variant="accent"
-                                class="sm:ml-auto lg:ml-0 w-fit not-prose">
+                                class="sm:ml-auto lg:ml-0 w-fit not-proseBase">
                             CV herunterladen
                         </Button>
                     </div>

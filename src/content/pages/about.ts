@@ -1,10 +1,10 @@
-export const pageData = {
+export const aboutPageData = {
 	viewerTitle: "Über mich",
 	viewerDescription: "Lorem Ipsum dolor sit amet",
 	pageTitle: "Über mich | Arthur Ersosi",
 	pageDescription:
 		"Frontend-Developer und UI/UX-Designer mit 10+ Jahren Design Expertise und 8+ Jahren Web-Development Erfahrung aus Hamburg.",
-	headerImgAlt: "über mich Image Beschreibung",
+	headerImgAlt: "Über mich Image Beschreibung",
 };
 
 export const cvData = [

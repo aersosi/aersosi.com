@@ -33,6 +33,7 @@ const textStyles: Record<string, string> = {
 	displayMD: "text-2xl sm:text-2xl md:text-3xl lg:text-4xl leading-tight tracking-tight",
 	displaySM: "text-lg sm:text-xl md:text-2xl lg:text-3xl leading-tight",
 	displayXS: "text-base sm:text-lg md:text-xl lg:text-2xl leading-tight",
+
 	text2XL: "text-2xl xl:text-3xl 2xl:text-4xl",
 	textXL: "text-xl xl:text-2xl 2xl:text-3xl",
 	textLG: "text-lg xl:text-xl 2xl:text-2xl",
@@ -52,20 +53,32 @@ const {
 const baseClasses = textStyles[variant] || textStyles.textBase;
 
 const isHeading = ["h1", "h2", "h3", "h4", "h5", "h6"].includes(Tag);
-const headingStyles = isHeading ? "font-medium" : "";
-const headingTextColor = isHeading ? "dark:text-white" : "";
+
+// Individual heading styles
+const h1Styles = Tag === "h1" && "text-xl xl:text-2xl 2xl:text-3xl";
+const h2Styles = Tag === "h2" && "text-lg xl:text-xl 2xl:text-2xl";
+const h3Styles = Tag === "h3" && "text-base xl:text-lg 2xl:text-xl";
+const h4Styles = Tag === "h4" && "text-sm xl:text-base 2xl:text-lg";
+const h5Styles = Tag === "h5" && "text-sm xl:text-base 2xl:text-lg";
+const h6Styles = Tag === "h6" && "text-sm xl:text-base 2xl:text-lg";
+
+// Combine all heading styles
+const headingStyles =
+	variant === "textBase" &&
+	`${h1Styles} ${h2Styles} ${h3Styles} ${h4Styles} ${h5Styles} ${h6Styles}`.trim();
+const headingTextStyles = isHeading && "dark:text-white font-medium";
 
 const isParagraph = ["p"].includes(Tag);
-const paragraphTextColor = isParagraph ? "text-base-600 dark:text-base-300" : "";
+const paragraphTextStyles = isParagraph && "text-base-600 dark:text-base-300";
 
-const accentTextColor = isAccent ? "text-accent-700 dark:text-accent-300" : "";
+const accentTextColor = isAccent && "text-accent-700 dark:text-accent-300";
 const textColorStyles = isAccent
 	? accentTextColor
 	: isHeading
-		? headingTextColor
-		: paragraphTextColor;
+		? headingTextStyles
+		: paragraphTextStyles;
 
-const combinedClasses = `${baseClasses} ${headingStyles} ${textColorStyles} ${className}`.trim();
+const combinedClasses = `${textColorStyles} ${baseClasses} ${headingStyles} ${className}`.trim();
 ---
 
 <Tag class={combinedClasses} {...rest}>

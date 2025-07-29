@@ -1,12 +1,13 @@
 ---
 interface Props {
-	variant?: "standard" | "prose";
+	variant?: "standard" | "prose" | "proseBase";
 	class?: string;
 }
 const { variant = "standard", class: extraClass = "" } = Astro.props;
 
 const variantClasses = {
 	standard: "max-w-7xl mx-auto px-4  sm:px-12 lg:px-16",
+	proseBase: "prose-base",
 	prose: [
 		"prose",
 		"prose-base",
@@ -36,6 +37,7 @@ const variantClasses = {
 		"2xl:prose-strong:text-xl",
 
 		"prose-headings:font-medium",
+
 		"text-base-600",
 		"dark:text-base-300",
 		"prose-headings:text-base-900",
