@@ -123,9 +123,9 @@ export class Carousel {
 			const circles = this.circleNavigation.querySelectorAll(".carousel__circle-button");
 			circles.forEach((circle, i) => {
 				if (i === newIdx) {
-					circle.classList.add("border-accent-100", "!bg-accent-500", "scale-130");
+					circle.classList.add("bg-white", "scale-130");
 				} else {
-					circle.classList.remove("border-accent-100", "!bg-accent-500", "scale-130");
+					circle.classList.remove("bg-white", "scale-130");
 				}
 			});
 		}

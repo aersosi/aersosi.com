@@ -205,12 +205,12 @@ const { images = [], color = "#333" } = Astro.props;
 					<!-- Navigation Circles -->
 					<div
 						id="circle-navigation"
-						class="absolute bottom-14 z-300 flex w-full justify-center gap-5 p-3 md:gap-4"
+						class="absolute bottom-14 z-300 flex w-full justify-center gap-4 p-3 md:gap-4"
 					>
 						{
 							images.map((_, i) => (
 								<a
-									class={`carousel__circle-button carousel__circle border-accent-500 hover:border-accent-100 bg-accent-500/40 h-4.5 w-4.5 rounded-full border-2 transition hover:scale-130 md:h-3.5 md:w-3.5 ${i === 0 ? "border-accent-100 !bg-accent-500 scale-130" : ""}`}
+									class={`carousel__circle-button carousel__circle bg-accent-500 h-4 w-4 rounded-full border-2 border-white transition hover:scale-130 hover:bg-white md:h-3.5 md:w-3.5`}
 									data-index={i}
 									aria-label={`Bild ${i + 1}`}
 									a11ytip-top
