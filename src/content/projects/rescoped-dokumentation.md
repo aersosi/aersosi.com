@@ -4,16 +4,24 @@ viewerTitle: "rescoped Dokumentation"
 viewerDescription: "Eigenverantwortliche Konzeption und Entwicklung der rescoped.io Dokumentationsplattform mit Docusaurus (React)"
 pageTitle: "rescoped Dokumentation | Dokumentationsplattform | Arthur Ersosi"
 pageDescription: "Konzeption und Entwicklung der rescoped.io Dokumentationsplattform mit Docusaurus, inklusive Branding, UI-Design und interaktiver Grafiken."
-images: [ {
-  src: "/src/images/projects/1.jpg",
-  alt: "Lorem Ipsum"
-},{
-  src: "/src/images/projects/2.jpg",
-  alt: "Lorem Ipsum"
-},{
-  src: "/src/images/projects/3.jpg",
-  alt: "Lorem Ipsum"
-} ]
+images: [
+  {
+    src: "src/images/projects/rescopedDocumentation/rescopedDocumentation-cover.webp",
+    alt: "rescoped Dokumentation Coverbild"
+  },
+  {
+    src: "src/images/projects/rescopedDocumentation/rescopedDocumentation-01.webp",
+    alt: "rescoped Dokumentation Inhaltsseite"
+  },
+  {
+    src: "src/images/projects/rescopedDocumentation/rescopedDocumentation-02.webp",
+    alt: "rescoped Dokumentation API-Referenz"
+  },
+  {
+    src: "src/images/projects/rescopedDocumentation/rescopedDocumentation-03.webp",
+    alt: "rescoped Dokumentation Codebeispiele"
+  }
+]
 tags: ["Professionelles Projekt", "Dokumentation", "Open Source", "React", "Frontend-Entwicklung"]
 
 repo:

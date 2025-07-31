@@ -9,7 +9,7 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
 
 import { aboutPageData, cvData } from "@/content/pages/about";
 
-import headerImg from '/src/images/portrait.webp';
+import aboutCover from 'src/images/pages/about-cover.webp';
 import MapPin from "@/components/lib/icons/MapPin.astro";
 
 import { stackGrid, stackGridPadding } from "@/shared/classes";
@@ -18,8 +18,7 @@ import { stackGrid, stackGridPadding } from "@/shared/classes";
 <BaseLayout
 	pageTitle={aboutPageData.pageTitle}
 	pageDescription={aboutPageData.pageDescription}
-	image="/images/portrait.webp"
-
+	image="/images/pages/about-cover.webp"
 >
 	<UpdatePublishedDate />
 	<section>
@@ -40,7 +39,7 @@ import { stackGrid, stackGridPadding } from "@/shared/classes";
                            loading="eager"
                            decoding="async"
                            alt={aboutPageData.headerImgAlt}
-                           src={headerImg}
+                           src={aboutCover}
                            class="lg:hidden object-cover object-center w-full aspect-12/6 lg:col-span-2 rounded-xl"
                     />
 
@@ -90,7 +89,7 @@ import { stackGrid, stackGridPadding } from "@/shared/classes";
                                loading="eager"
                                decoding="async"
                                alt={aboutPageData.headerImgAlt}
-                               src={headerImg}
+                               src={aboutCover}
                                class="hidden lg:block object-cover object-center w-full aspect-12/6 lg:col-span-2 rounded-xl"
                         />
                         <Text tag="p">

@@ -24,6 +24,7 @@
 	&[data-a11ytip-text]::after,
 	&[aria-label][data-a11ytip-text]::after {
 		/* Only data-a11ytip-text -> use data-a11ytip-text  */
+
 		/* aria-label & data-a11ytip-text -> use data-a11ytip-text  */
 		content: attr(data-a11ytip-text);
 	}
@@ -114,11 +115,11 @@
 }
 
 [a11ytip-bottom-left]::after {
-	right: 0;
+	left: 0;
 }
 
 [a11ytip-bottom-right]::after {
-	left: 0;
+	right: 0;
 }
 
 [a11ytip-left]::after,

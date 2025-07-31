@@ -1,0 +1,119 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import Wrapper from "@/components/lib/containers/Wrapper.astro";
+import Button from "@/components/lib/elements/Button.astro";
+import { stackGrid, stackGridPadding } from "@/shared/classes";
+---
+
+<BaseLayout
+	pageTitle={"a11ytip"}
+	pageDescription={"a11ytip description"}
+	image="/images/portrait.webp"
+>
+	<Wrapper variant="standard" class={"py-32 border"}>
+		<div class="m-auto h-[504px] w-[1020px] border">
+			<div class="a11ytip-grid h-full w-full px-48 py-32">
+				<Button
+					a11ytip-top-left
+					aria-label="a11ytip text"
+					size="sm"
+					variant="accent"
+					class="a11ytip-active"
+				>
+					a11ytip-top-left
+				</Button>
+
+				<Button
+					a11ytip-top
+					aria-label="a11ytip text"
+					size="sm"
+					variant="accent"
+					class="a11ytip-active"
+				>
+					a11ytip-top
+				</Button>
+
+				<Button
+					a11ytip-top-right
+					aria-label="a11ytip text"
+					size="sm"
+					variant="accent"
+					class="a11ytip-active"
+				>
+					a11ytip-top-right
+				</Button>
+
+				<Button
+					a11ytip-left
+					aria-label="a11ytip text"
+					size="sm"
+					variant="accent"
+					class="a11ytip-active"
+				>
+					a11ytip-left
+				</Button>
+
+				<div class="name text-2xl font-medium">a11ytip</div>
+
+				<Button
+					a11ytip-right
+					aria-label="a11ytip text"
+					size="sm"
+					variant="accent"
+					class="a11ytip-active"
+				>
+					a11ytip-right
+				</Button>
+
+				<Button
+					a11ytip-bottom-left
+					aria-label="a11ytip text"
+					size="sm"
+					variant="accent"
+					class="a11ytip-active"
+				>
+					a11ytip-bottom-left
+				</Button>
+
+				<Button
+					a11ytip-bottom
+					aria-label="a11ytip text"
+					size="sm"
+					variant="accent"
+					class="a11ytip-active"
+				>
+					a11ytip-bottom
+				</Button>
+
+				<Button
+					a11ytip-bottom-right
+					aria-label="a11ytip text"
+					size="sm"
+					variant="accent"
+					class="a11ytip-active"
+				>
+					a11ytip-bottom-right
+				</Button>
+			</div>
+		</div>
+
+		<style>
+			.a11ytip-grid {
+				display: grid;
+				grid-template-columns: 1fr 1fr 1fr;
+				grid-template-rows: 1fr 1fr 1fr;
+				gap: 3rem;
+				place-items: center;
+			}
+
+			button {
+				width: 100%;
+			}
+
+			.name {
+				grid-column: 2;
+				grid-row: 2;
+			}
+		</style>
+	</Wrapper>
+</BaseLayout>

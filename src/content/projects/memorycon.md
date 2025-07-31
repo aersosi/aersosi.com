@@ -4,16 +4,28 @@ viewerTitle: "memorycon"
 viewerDescription: "Moderne Web-Applikation mit Fokus auf User Experience und Performance"
 pageTitle: "memorycon | Memory-Spiel Web-App | Arthur Ersosi"
 pageDescription: "Moderne Memory-Spiel Web-Applikation mit Fokus auf optimale User Experience und Performance, entwickelt mit React und TypeScript."
-images: [ {
-  src: "/src/images/projects/1.jpg",
-  alt: "Lorem Ipsum"
-},{
-  src: "/src/images/projects/2.jpg",
-  alt: "Lorem Ipsum"
-},{
-  src: "/src/images/projects/3.jpg",
-  alt: "Lorem Ipsum"
-} ]
+images: [
+  {
+    src: "src/images/projects/memorycon/memorycon-cover.webp",
+    alt: "memorycon App Coverbild"
+  },
+  {
+    src: "src/images/projects/memorycon/memorycon-01.webp",
+    alt: "memorycon Spielkarten"
+  },
+  {
+    src: "src/images/projects/memorycon/memorycon-02.webp",
+    alt: "memorycon Spielmodus"
+  },
+  {
+    src: "src/images/projects/memorycon/memorycon-03.webp",
+    alt: "memorycon Spielstatistik"
+  },
+  {
+    src: "src/images/projects/memorycon/memorycon-04.webp",
+    alt: "memorycon Einstellungen"
+  }
+]
 tags: ["Privates Projekt", "Spiel", "Next.js", "React", "Frontend-Entwicklung"]
 
 repo:

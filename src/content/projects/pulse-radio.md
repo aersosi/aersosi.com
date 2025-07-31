@@ -4,16 +4,24 @@ viewerTitle: "Pulse Radio"
 viewerDescription: "Moderne Radio-Web-Applikation mit Fokus auf Audio-Streaming und User Experience"
 pageTitle: "Pulse Radio | Audio-Streaming Web-App | Arthur Ersosi"
 pageDescription: "Moderne Radio-Web-Applikation mit Audio-Streaming-Funktionalität und optimaler User Experience, entwickelt mit React und TypeScript."
-images: [ {
-  src: "/src/images/projects/1.jpg",
-  alt: "Lorem Ipsum"
-},{
-  src: "/src/images/projects/2.jpg",
-  alt: "Lorem Ipsum"
-},{
-  src: "/src/images/projects/3.jpg",
-  alt: "Lorem Ipsum"
-} ]
+images: [
+  {
+    src: "src/images/projects/pulseRadio/pulseRadio-cover.webp",
+    alt: "Pulse Radio App Coverbild"
+  },
+  {
+    src: "src/images/projects/pulseRadio/pulseRadio-01.webp",
+    alt: "Pulse Radio Player"
+  },
+  {
+    src: "src/images/projects/pulseRadio/pulseRadio-02.webp",
+    alt: "Pulse Radio Stationsauswahl"
+  },
+  {
+    src: "src/images/projects/pulseRadio/pulseRadio-03.webp",
+    alt: "Pulse Radio Einstellungen"
+  }
+]
 tags: ["Privates Projekt", "Audio Streaming", "Full-Stack", "React", "Frontend-Entwicklung"]
 
 repo:

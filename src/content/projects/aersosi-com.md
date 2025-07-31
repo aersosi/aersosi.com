@@ -4,16 +4,12 @@ viewerTitle: "aersosi.com"
 viewerDescription: "Persönliche Portfolio-Website entwickelt mit modernen Web-Technologien"
 pageTitle: "aersosi.com | Portfolio-Projekt | Arthur Ersosi"
 pageDescription: "Persönliche Portfolio-Website entwickelt mit Next.js, React, TypeScript und Tailwind CSS."
-images: [ {
-  src: "/src/images/projects/1.jpg",
-  alt: "Lorem Ipsum"
-},{
-  src: "/src/images/projects/2.jpg",
-  alt: "Lorem Ipsum"
-},{
-  src: "/src/images/projects/3.jpg",
-  alt: "Lorem Ipsum"
-} ]
+images: [
+  {
+    src: "src/images/projects/aersosiCom/aersosiCom-cover.webp",
+    alt: "aersosi.com Webseite Coverbild"
+  }
+]
 tags: [ "Privates Projekt", "Portfolio", "Next.js", "React", "Frontend-Entwicklung" ]
 
 repo:

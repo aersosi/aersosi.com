@@ -5,7 +5,7 @@ viewerDescription: "Keine Cookies, kein Tracking! Diese Website ist rein informa
 pageTitle: "Datenschutz | Arthur Ersosi"
 pageDescription: "Datenschutzerklärung zum Thema Datenerfassung, -verarbeitung und Ihrer Rechte als Nutzer dieser Website. Inhalt: Verantwortlichkeit und Datenerfassung, Zweck der Datenverarbeitung, Hosting und Drittanbieter, Rechtsgrundlagen, Einsatz von Technologien."
 image:
-  url: "/src/images/pages/1.jpg"
+  url: "src/images/pages/datasecurity-cover.webp"
   alt: "Lorem Ipsum Image Text"
 tags: [ "CSS", "A11y", "Tooltip" ]
 ---

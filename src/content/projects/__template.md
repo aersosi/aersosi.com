@@ -4,9 +4,12 @@ viewerTitle: "Template"
 viewerDescription: "Lorem ipsum dolor sit."
 pageTitle: "Template | Projekt | Arthur Ersosi"
 pageDescription: "Beschreibung des Template-Projekts."
-image:
-  url: "/src/images/projects/1.jpg"
-  alt: "Lorem ipsum dolor sit."
+images: [
+  {
+    src: "src/images/projects/rescopedDatagrid/rescopedDatagrid-cover.webp",
+    alt: "rescoped Datagrid Coverbild"
+  }
+]
 tags: ["Template", "ProjectTag2", "ProjectTag3"]
 
 repo:
