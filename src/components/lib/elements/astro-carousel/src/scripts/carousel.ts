@@ -38,8 +38,6 @@ export class Carousel {
 	touchEndX: number = 0;
 
 	constructor(carouselElem: HTMLElement | null) {
-		console.log("Initializing carousel with element:", carouselElem);
-		
 		if (carouselElem == null) {
 			console.error("Carousel element is null");
 			return;
@@ -47,12 +45,10 @@ export class Carousel {
 		
 		// Initialize dialog first - use the document to find it, not the carousel element
 		const dialogElement = document.getElementById("carousel-dialog");
-		console.log("Dialog element:", dialogElement);
 		
 		if (dialogElement) {
 			try {
 				this.dialog = new A11yDialog(dialogElement);
-				console.log("Dialog initialized successfully");
 			} catch (error) {
 				console.error("Error initializing dialog:", error);
 			}
@@ -65,7 +61,6 @@ export class Carousel {
 		
 		// Get slides
 		const slides = carouselElem.querySelector<HTMLUListElement>("#slides");
-		console.log("Slides element:", slides);
 		
 		if (slides == null) {
 			console.error("Slides element not found");
@@ -78,13 +73,6 @@ export class Carousel {
 		this.nextLink = carouselElem.querySelector<HTMLAnchorElement>("#nextLink");
 		this.closeButton = carouselElem.querySelector<HTMLButtonElement>("#closeButton");
 		this.circleNavigation = carouselElem.querySelector("#circle-navigation");
-		
-		console.log("Navigation elements:", {
-			prevLink: this.prevLink,
-			nextLink: this.nextLink,
-			closeButton: this.closeButton,
-			circleNavigation: this.circleNavigation
-		});
 		
 		// If close button is missing, we can't close the carousel
 		if (this.closeButton == null) {
@@ -118,11 +106,8 @@ export class Carousel {
 	}
 
 	open(index: number | undefined = undefined) {
-		console.log("Opening carousel with index:", index);
-		
 		// Default to 0 if index is undefined or NaN
 		if (index === undefined || Number.isNaN(index)) {
-			console.log("Using default index 0");
 			index = 0;
 		}
 		
@@ -142,8 +127,6 @@ export class Carousel {
 			return;
 		}
 		
-		console.log("Opening carousel dialog with index:", index);
-		
 		document.documentElement.style.overflow = "hidden";
 		if (this.carouselElem) this.carouselElem.classList.add("carousel--active");
 		this.isOpen = true;
@@ -152,7 +135,6 @@ export class Carousel {
 		
 		try {
 			this.dialog.show();
-			console.log("Dialog shown successfully");
 		} catch (error) {
 			console.error("Error showing dialog:", error);
 		}

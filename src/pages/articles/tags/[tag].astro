@@ -56,7 +56,6 @@ const tags = [...new Set(allPosts.map((post) => post.data.tags).flat())];
 									{
 										tags.map((tag) => (
 											<Link
-												title={tag}
 												aria-label={tag}
 												href={`/articles/tags/${tag}`}
 												size="sm"

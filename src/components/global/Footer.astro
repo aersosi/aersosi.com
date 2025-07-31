@@ -45,7 +45,7 @@ import { stackGrid, stackGridPadding } from "@/shared/classes";
 			<nav class:list={[...stackGrid]} class="md:grid-cols-2">
 				{
 					LinkData.map(({ category, links, linkClass }) => (
-						<div class="flex flex-col gap-2">
+						<div class="flex flex-col items-center gap-2 md:items-start">
 							<Text tag="h4" variant="textSM">
 								{category}
 							</Text>

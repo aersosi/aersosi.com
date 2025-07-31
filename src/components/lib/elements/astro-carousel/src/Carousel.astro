@@ -259,15 +259,11 @@ const { images = [], color = "#333" } = Astro.props;
 			// Get the carousel element
 			const carouselElement = this.querySelector("#carousel");
 
-			// Log for debugging
-			console.log("Carousel element:", carouselElement);
-
 			// Initialize the carousel
 			this.carousel = new Carousel(carouselElement as HTMLElement);
 
 			// Get the target list that will trigger the carousel
 			this.carouselTargetList = document.getElementById("carouselTargetList");
-			console.log("Carousel target list:", this.carouselTargetList);
 
 			// Bind and add event handlers
 			this._openHandler = this._handleOpen.bind(this);
