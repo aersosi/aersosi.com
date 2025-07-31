@@ -13,10 +13,10 @@ const { images } = Astro.props;
 				<a
 					href={`?image=0`}
 					data-carousel-index={0}
-					aria-label={`Slideshow`}
+					aria-label={images.length === 1 ? ("Vergrößern") : ("Slideshow")}
 					class="entry__link__overlay bg-accent-500/70 absolute inset-0 grid items-center justify-center rounded-xl opacity-0 transition-opacity duration-300 ease-in-out hover:opacity-100">
 					<div class="text-base-200 font-light text-xl lg:text-2xl border-2 border-accent-100 rounded-xl px-4 py-2">
-						Slideshow
+						{images.length === 1 ? ("Vergrößern") : ("Slideshow")}
 					</div>
 				</a>
 				<Image
@@ -28,19 +28,25 @@ const { images } = Astro.props;
 					src={images[0].src}
 					class="aspect-12/6 w-full rounded-xl object-cover object-center lg:col-span-2"
 				/>
-				<div class="circles absolute bottom-0 flex w-full justify-center gap-3 p-3 md:gap-4">
-					{images.map((item, index) => (
-						<a href={`?image=${index}`}
-							 data-carousel-index={index}
-							 aria-label={`Bild ${index + 1}`}
-							 a11ytip-top
-						>
-							<div
-								class={`entry__link bg-accent-500 h-4 w-4 rounded-full border-2 border-white transition hover:scale-130 hover:bg-white md:h-3.5 md:w-3.5`}
-							/>
-						</a>
-					))}
-				</div>
+				<>
+					{images.length > 1 && (
+						<div class="circles absolute bottom-0 flex w-full justify-center gap-3 p-3 md:gap-4">
+							{images.map((item, index) => (
+								<a href={`?image=${index}`}
+									 data-carousel-index={index}
+									 aria-label={`Bild ${index + 1}`}
+									 a11ytip-top
+								>
+									<div
+										class={`entry__link bg-accent-500 h-4 w-4 rounded-full border-2 border-white transition hover:scale-130 hover:bg-white md:h-3.5 md:w-3.5`}
+									/>
+								</a>
+							))}
+						</div>
+					)}
+				</>
+
+
 			)
 		}
 	</div>

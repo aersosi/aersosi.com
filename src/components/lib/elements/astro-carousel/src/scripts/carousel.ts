@@ -38,21 +38,59 @@ export class Carousel {
 	touchEndX: number = 0;
 
 	constructor(carouselElem: HTMLElement | null) {
-		if (carouselElem == null) return;
-		const slides = carouselElem.querySelector<HTMLUListElement>("#slides");
-		const prevLink = carouselElem.querySelector<HTMLAnchorElement>("#prevLink");
-		const nextLink = carouselElem.querySelector<HTMLAnchorElement>("#nextLink");
-		const closeButton = carouselElem.querySelector<HTMLButtonElement>("#closeButton");
-
-		if (slides == null || prevLink == null || nextLink == null || closeButton == null) return;
-
-		this.dialog = new A11yDialog(document.getElementById("carousel-dialog"));
-		this.circleNavigation = carouselElem.querySelector("#circle-navigation");
+		console.log("Initializing carousel with element:", carouselElem);
+		
+		if (carouselElem == null) {
+			console.error("Carousel element is null");
+			return;
+		}
+		
+		// Initialize dialog first - use the document to find it, not the carousel element
+		const dialogElement = document.getElementById("carousel-dialog");
+		console.log("Dialog element:", dialogElement);
+		
+		if (dialogElement) {
+			try {
+				this.dialog = new A11yDialog(dialogElement);
+				console.log("Dialog initialized successfully");
+			} catch (error) {
+				console.error("Error initializing dialog:", error);
+			}
+		} else {
+			console.error("Dialog element not found");
+		}
+		
+		// Set carousel element
 		this.carouselElem = carouselElem;
+		
+		// Get slides
+		const slides = carouselElem.querySelector<HTMLUListElement>("#slides");
+		console.log("Slides element:", slides);
+		
+		if (slides == null) {
+			console.error("Slides element not found");
+			return;
+		}
 		this.slidesUl = slides;
-		this.prevLink = prevLink;
-		this.nextLink = nextLink;
-		this.closeButton = closeButton;
+		
+		// Get navigation elements - these can be optional if there's only one image
+		this.prevLink = carouselElem.querySelector<HTMLAnchorElement>("#prevLink");
+		this.nextLink = carouselElem.querySelector<HTMLAnchorElement>("#nextLink");
+		this.closeButton = carouselElem.querySelector<HTMLButtonElement>("#closeButton");
+		this.circleNavigation = carouselElem.querySelector("#circle-navigation");
+		
+		console.log("Navigation elements:", {
+			prevLink: this.prevLink,
+			nextLink: this.nextLink,
+			closeButton: this.closeButton,
+			circleNavigation: this.circleNavigation
+		});
+		
+		// If close button is missing, we can't close the carousel
+		if (this.closeButton == null) {
+			console.error("Close button not found");
+			return;
+		}
 
 		const { currentIndex, isOpen } = this._getCarouselState();
 		this.currentIdx = currentIndex;
@@ -80,34 +118,70 @@ export class Carousel {
 	}
 
 	open(index: number | undefined = undefined) {
-		if (index == null || Number.isNaN(index)) return;
+		console.log("Opening carousel with index:", index);
+		
+		// Default to 0 if index is undefined or NaN
+		if (index === undefined || Number.isNaN(index)) {
+			console.log("Using default index 0");
+			index = 0;
+		}
+		
+		if (!this.slidesUl) {
+			console.error("No slides element found");
+			return;
+		}
+		
+		// Check if index is within bounds
+		if (index < 0 || index >= this.slidesUl.childElementCount) {
+			console.error("Index out of bounds:", index, "max:", this.slidesUl.childElementCount - 1);
+			index = 0; // Default to first slide if out of bounds
+		}
+		
+		if (!this.dialog) {
+			console.error("No dialog element found");
+			return;
+		}
+		
+		console.log("Opening carousel dialog with index:", index);
+		
 		document.documentElement.style.overflow = "hidden";
-		this.carouselElem!.classList.add("carousel--active");
+		if (this.carouselElem) this.carouselElem.classList.add("carousel--active");
 		this.isOpen = true;
 		this._addEvents();
 		this._updateCarouselUrl(index);
-		this.dialog.show();
+		
+		try {
+			this.dialog.show();
+			console.log("Dialog shown successfully");
+		} catch (error) {
+			console.error("Error showing dialog:", error);
+		}
 	}
 
 	close() {
 		document.documentElement.style.overflow = "auto";
-		this.carouselElem!.classList.remove("carousel--active");
+		if (this.carouselElem) this.carouselElem.classList.remove("carousel--active");
 		this.isOpen = false;
 		this._updateCarouselUrl();
 		this._removeEvents();
-		this.dialog.hide();
+		if (this.dialog) this.dialog.hide();
 	}
 
 	private _changeCurrentSlide(oldIdx: number, newIdx: number) {
-		if (newIdx > this.slidesUl!.childElementCount) {
+		if (!this.slidesUl) {
 			this.close();
 			return;
 		}
 
-		this.slidesUl!.children[newIdx]?.classList.add("carousel__slide--visible");
+		if (newIdx > this.slidesUl.childElementCount) {
+			this.close();
+			return;
+		}
+
+		this.slidesUl.children[newIdx]?.classList.add("carousel__slide--visible");
 
 		if (newIdx !== oldIdx) {
-			this.slidesUl!.children[oldIdx]?.classList.remove("carousel__slide--visible");
+			this.slidesUl.children[oldIdx]?.classList.remove("carousel__slide--visible");
 		}
 
 		this.currentIdx = newIdx;
@@ -116,8 +190,13 @@ export class Carousel {
 			loadImages(this.currentIdx, this.imagesElements);
 		}
 
-		this.prevLink!.href = getPrevLink(this.currentIdx, this.slidesUl!.childElementCount);
-		this.nextLink!.href = getNextLink(this.currentIdx, this.slidesUl!.childElementCount);
+		if (this.prevLink && this.slidesUl) {
+			this.prevLink.href = getPrevLink(this.currentIdx, this.slidesUl.childElementCount);
+		}
+		
+		if (this.nextLink && this.slidesUl) {
+			this.nextLink.href = getNextLink(this.currentIdx, this.slidesUl.childElementCount);
+		}
 
 		if (this.circleNavigation) {
 			const circles = this.circleNavigation.querySelectorAll(".carousel__circle-button");
@@ -168,40 +247,62 @@ export class Carousel {
 		this._touchMoveHandler = this._handleTouchMove.bind(this);
 		this._touchEndHandler = this._handleTouchEnd.bind(this);
 
-		this.dialog.on("hide", this._closeHandler);
+		if (this.dialog) this.dialog.on("hide", this._closeHandler);
 
-		this.prevLink!.addEventListener("click", this._goToPrevHandler);
-		this.prevLink!.addEventListener("mouserenter", this._hoverPrev);
-		this.nextLink!.addEventListener("click", this._goToNextHandler);
-		this.nextLink!.addEventListener("mouserenter", this._hoverNext);
-		this.closeButton!.addEventListener("click", this._closeHandler);
+		if (this.prevLink) {
+			this.prevLink!.addEventListener("click", this._goToPrevHandler);
+			this.prevLink!.addEventListener("mouserenter", this._hoverPrev);
+		}
+		if (this.nextLink) {
+			this.nextLink!.addEventListener("click", this._goToNextHandler);
+			this.nextLink!.addEventListener("mouserenter", this._hoverNext);
+		}
+		if (this.closeButton) this.closeButton!.addEventListener("click", this._closeHandler);
 
-		this.carouselElem!.addEventListener("touchstart", this._touchStartHandler, { passive: true });
-		this.carouselElem!.addEventListener("touchmove", this._touchMoveHandler, { passive: true });
-		this.carouselElem!.addEventListener("touchend", this._touchEndHandler);
+		if (this.carouselElem) {
+			this.carouselElem!.addEventListener("touchstart", this._touchStartHandler, { passive: true });
+			this.carouselElem!.addEventListener("touchmove", this._touchMoveHandler, { passive: true });
+			this.carouselElem!.addEventListener("touchend", this._touchEndHandler);
+		}
 
 		// Circle Navigation
 		this._circleClickHandler = this._handleCircleClick.bind(this);
-		this.circleNavigation?.addEventListener("click", this._circleClickHandler);
+		if (this.circleNavigation)
+			this.circleNavigation?.addEventListener("click", this._circleClickHandler);
 
 		document.addEventListener("keydown", this._keydownHandler);
 	}
 
 	private _removeEvents() {
-		this.prevLink!.removeEventListener("click", this._goToPrevHandler);
-		this.prevLink!.removeEventListener("mouserenter", this._hoverPrev);
-		this.nextLink!.removeEventListener("click", this._goToNextHandler);
-		this.nextLink!.removeEventListener("mouserenter", this._hoverNext);
-		this.closeButton!.removeEventListener("click", this._closeHandler);
+		if (this.prevLink) {
+			this.prevLink.removeEventListener("click", this._goToPrevHandler);
+			this.prevLink.removeEventListener("mouserenter", this._hoverPrev);
+		}
+		
+		if (this.nextLink) {
+			this.nextLink.removeEventListener("click", this._goToNextHandler);
+			this.nextLink.removeEventListener("mouserenter", this._hoverNext);
+		}
+		
+		if (this.closeButton) {
+			this.closeButton.removeEventListener("click", this._closeHandler);
+		}
 
-		this.circleNavigation?.removeEventListener("click", this._circleClickHandler);
-		this.carouselElem!.removeEventListener("touchstart", this._touchStartHandler);
-		this.carouselElem!.removeEventListener("touchmove", this._touchMoveHandler);
-		this.carouselElem!.removeEventListener("touchend", this._touchEndHandler);
+		if (this.circleNavigation) {
+			this.circleNavigation.removeEventListener("click", this._circleClickHandler);
+		}
+		
+		if (this.carouselElem) {
+			this.carouselElem.removeEventListener("touchstart", this._touchStartHandler);
+			this.carouselElem.removeEventListener("touchmove", this._touchMoveHandler);
+			this.carouselElem.removeEventListener("touchend", this._touchEndHandler);
+		}
 
 		document.removeEventListener("keydown", this._keydownHandler);
 
-		this.dialog.off("hide", this._closeHandler);
+		if (this.dialog) {
+			this.dialog.off("hide", this._closeHandler);
+		}
 	}
 
 	// Handles back/forward events
@@ -212,7 +313,7 @@ export class Carousel {
 				this.close();
 			}
 		} else {
-			if (this.isOpen) {
+			if (this.isOpen && this.currentIdx !== null) {
 				this._changeCurrentSlide(this.currentIdx, e.state?.imageIndex);
 			} else {
 				this.open(e.state.imageIndex);
@@ -233,24 +334,32 @@ export class Carousel {
 	}
 
 	private _hoverPrev(this: Carousel, e: MouseEvent) {
-		const index = getPrevIndex(this.currentIdx, this.slidesUl?.childElementCount ?? 0);
-		loadImage(this.imagesElements[index]);
+		if (this.currentIdx === null || !this.slidesUl || this.imagesElements.length === 0) return;
+		const index = getPrevIndex(this.currentIdx, this.slidesUl.childElementCount);
+		if (index >= 0 && index < this.imagesElements.length) {
+			loadImage(this.imagesElements[index]);
+		}
 	}
 
 	private _hoverNext(this: Carousel, e: MouseEvent) {
-		const index = getNextIndex(this.currentIdx, this.slidesUl?.childElementCount ?? 0);
-		loadImage(this.imagesElements[index]);
+		if (this.currentIdx === null || !this.slidesUl || this.imagesElements.length === 0) return;
+		const index = getNextIndex(this.currentIdx, this.slidesUl.childElementCount);
+		if (index >= 0 && index < this.imagesElements.length) {
+			loadImage(this.imagesElements[index]);
+		}
 	}
 
 	private _handleGoToPrev(this: Carousel, e: MouseEvent | KeyboardEvent) {
 		e.preventDefault();
-		const index = getPrevIndex(this.currentIdx, this.slidesUl?.childElementCount ?? 0);
+		if (this.currentIdx === null || !this.slidesUl) return;
+		const index = getPrevIndex(this.currentIdx, this.slidesUl.childElementCount);
 		this._updateCarouselUrl(index);
 	}
 
 	private _handleGoToNext(this: Carousel, e: MouseEvent | KeyboardEvent) {
 		e.preventDefault();
-		const index = getNextIndex(this.currentIdx, this.slidesUl?.childElementCount ?? 0);
+		if (this.currentIdx === null || !this.slidesUl) return;
+		const index = getNextIndex(this.currentIdx, this.slidesUl.childElementCount);
 		this._updateCarouselUrl(index);
 	}
 
@@ -260,7 +369,7 @@ export class Carousel {
 
 	private _handleUpdateSlide(this: Carousel, e: any) {
 		const { currentIndex, isOpen } = this._getCarouselState();
-		if (isOpen) {
+		if (isOpen && this.currentIdx !== null) {
 			this._changeCurrentSlide(this.currentIdx, currentIndex);
 		}
 	}
@@ -279,18 +388,18 @@ export class Carousel {
 	}
 
 	private _handleSwipe() {
+		if (!this.slidesUl || this.currentIdx === null) return;
+		
 		const swipeThreshold = 50; // Mindestabstand für einen gültigen Swipe
 		const swipeDistance = this.touchEndX - this.touchStartX;
 
-		if (swipeDistance > swipeThreshold && this.currentIdx !== null) {
+		if (swipeDistance > swipeThreshold) {
 			// Nach rechts gewischt - vorheriges Bild
-			const prevIdx = getPrevIndex(this.currentIdx, this.slidesUl!.childElementCount);
-			this._changeCurrentSlide(this.currentIdx, prevIdx);
+			const prevIdx = getPrevIndex(this.currentIdx, this.slidesUl.childElementCount);
 			this._updateCarouselUrl(prevIdx);
-		} else if (swipeDistance < -swipeThreshold && this.currentIdx !== null) {
+		} else if (swipeDistance < -swipeThreshold) {
 			// Nach links gewischt - nächstes Bild
-			const nextIdx = getNextIndex(this.currentIdx, this.slidesUl!.childElementCount);
-			this._changeCurrentSlide(this.currentIdx, nextIdx);
+			const nextIdx = getNextIndex(this.currentIdx, this.slidesUl.childElementCount);
 			this._updateCarouselUrl(nextIdx);
 		}
 	}
@@ -323,7 +432,11 @@ export class Carousel {
 				// Avoids adding each image change to history
 				history.replaceState({ imageIndex: newIndex }, "", url);
 			}
+			
+			// Only change slide if newIndex is valid
+			if (this.currentIdx !== null) {
+				this._changeCurrentSlide(this.currentIdx, newIndex);
+			}
 		}
-		this._changeCurrentSlide(this.currentIdx, newIndex);
 	}
 }
