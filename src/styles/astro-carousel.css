@@ -4,7 +4,7 @@
     --astro-carousel-border-radius: theme(radius.2xl);
     --astro-carousel-backdrop-blur: 1.5rem;
     --astro-carousel-icons-color: theme(colors.base.200);
-    --astro-carousel-icons-hover-color: theme(colors.accent.600);
+    --astro-carousel-icons-hover-color: theme(colors.primary.600);
     --astro-carousel-backdrop-color: rgb(from theme(colors.base.800) r g b / 50%);
     --astro-carousel-shadow-color: rgb(from theme(colors.base.800) r g b / 20%);
     --astro-carousel-shadow-size: 3rem

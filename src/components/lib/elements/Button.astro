@@ -11,26 +11,26 @@ const {
 const defaultClass = [
 	// light
 	"text-white",
-	"bg-base-800",
-	"hover:bg-base-900",
-	"focus:ring-base-800",
+	"bg-base-700",
+	"hover:bg-base-950",
+	"focus:ring-base-700",
 	// dark
 	"dark:text-base-900",
-	"dark:bg-base-100",
-	"dark:hover:bg-base-300",
-	"dark:focus:ring-base-100",
+	"dark:bg-base-300",
+	"dark:hover:bg-base-50",
+	"dark:focus:ring-base-300",
 ];
 
 const primaryClass = [
 	// light
 	"text-white",
-	"bg-primary-400",
-	"hover:bg-primary-500",
-	"focus:ring-primary-400",
+	"bg-primary-600",
+	"hover:bg-primary-700",
+	"focus:ring-primary-600",
 	// dark
 	"dark:text-base-950",
 	"dark:bg-primary-300",
-	"dark:hover:bg-primary-200",
+	"dark:hover:bg-primary-100",
 	"dark:focus:ring-primary-300",
 ];
 
@@ -43,35 +43,8 @@ const secondaryClass = [
 	// dark
 	"dark:text-base-950",
 	"dark:bg-secondary-300",
-	"dark:hover:bg-secondary-200",
+	"dark:hover:bg-secondary-100",
 	"dark:focus:ring-secondary-300",
-];
-
-const accentClass = [
-	// light
-	"text-white",
-	"bg-accent-600",
-	"hover:bg-accent-700",
-	"focus:ring-accent-600",
-	// dark
-	"dark:text-black",
-	"dark:bg-accent-400",
-	"dark:hover:bg-accent-300",
-	"dark:focus:ring-accent-400",
-];
-
-const mutedClass = [
-	// light
-	"text-white",
-	"bg-base-600",
-	"hover:bg-base-700",
-	"focus:ring-base-600",
-
-	//dark
-	"dark:text-base-900",
-	"dark:bg-base-100",
-	"dark:hover:bg-base-300",
-	"dark:focus:ring-base-100",
 ];
 
 // Size
@@ -105,8 +78,6 @@ const variantClass = {
 	default: defaultClass,
 	primary: primaryClass,
 	secondary: secondaryClass,
-	accent: accentClass,
-	muted: mutedClass,
 	none: [],
 };
 const sizeClass = iconOnly ? iconSizes[size] : sizes[size] || [];
@@ -120,7 +91,7 @@ const baseClass = [
 	"transition-all",
 	"rounded-lg",
 	"items-center",
-	"duration-300",
+	"duration-200",
 	"focus:ring-2",
 	"focus:ring-none",
 	"focus:ring-offset-1",

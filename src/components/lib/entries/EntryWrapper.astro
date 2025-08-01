@@ -3,15 +3,15 @@ import Text from "@/components/lib/elements/Text.astro";
 
 const { url, viewerTitle, viewerDescription } = Astro.props;
 
-const textAccent = "group-hover:text-accent-600 group-hover:dark:text-accent-300";
+const textPrimary = "group-hover:text-primary-600 group-hover:dark:text-primary-300";
 const hoverSize = "-inset-x-5 -top-2 -bottom-3";
 ---
 
 <article class="group relative grid gap-x-12 gap-y-8 lg:items-start">
 	<div class="w-full">
-		<Text tag="h3" variant="textLG" class={`transition-colors w-full ${textAccent}`}>
+		<Text tag="h3" variant="textLG" class={`transition-colors w-full ${textPrimary}`}>
 			<div
-				class={`bg-accent-500/10 dark:bg-accent-600/10 ${hoverSize} absolute z-0 scale-95 rounded-2xl opacity-0 transition group-hover:scale-100 group-hover:opacity-100`}
+				class={`bg-primary-500/10 dark:bg-primary-600/10 ${hoverSize} absolute z-0 scale-95 rounded-2xl opacity-0 transition group-hover:scale-100 group-hover:opacity-100`}
 			>
 			</div>
 			<a href={url} aria-label={viewerTitle}>
@@ -23,7 +23,7 @@ const hoverSize = "-inset-x-5 -top-2 -bottom-3";
 				</div>
 			</a>
 		</Text>
-		<Text tag="p" class={`transition-colors text-balance relative z-10 mt-1 ${textAccent}`}>
+		<Text tag="p" class={`transition-colors text-balance relative z-10 mt-1 ${textPrimary}`}>
 			{viewerDescription}
 		</Text>
 	</div>

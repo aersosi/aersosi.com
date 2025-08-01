@@ -19,7 +19,7 @@ export interface Props {
 	href?: string;
 	class?: string;
 	variant?: string;
-	isAccent?: boolean;
+	isPrimary?: boolean;
 }
 
 const textStyles: Record<string, string> = {
@@ -46,7 +46,7 @@ const {
 	tag: Tag = "p",
 	variant = "textBase",
 	class: className = "",
-	isAccent = false,
+	isPrimary = false,
 	...rest
 } = Astro.props;
 
@@ -71,9 +71,9 @@ const headingTextStyles = isHeading && "dark:text-white font-medium";
 const isParagraph = ["p"].includes(Tag);
 const paragraphTextStyles = isParagraph && "text-base-600 dark:text-base-300";
 
-const accentTextColor = isAccent && "text-accent-600 dark:text-accent-300";
-const textColorStyles = isAccent
-	? accentTextColor
+const primaryTextColor = isPrimary && "text-primary-600 dark:text-primary-300";
+const textColorStyles = isPrimary
+	? primaryTextColor
 	: isHeading
 		? headingTextStyles
 		: paragraphTextStyles;

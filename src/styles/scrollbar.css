@@ -2,13 +2,13 @@
 
 /* Light Theme Colors */
 :root {
-	--scrollbar-thumb-color: var(--color-accent-600);
+	--scrollbar-thumb-color: var(--color-primary-600);
 	--scrollbar-track-color: var(--color-base-50);
 }
 
 /* Dark Theme Colors */
 :root.dark {
-	--scrollbar-thumb-color: var(--color-accent-500);
+	--scrollbar-thumb-color: var(--color-primary-500);
 	--scrollbar-track-color: var(--color-base-900);
 }
 

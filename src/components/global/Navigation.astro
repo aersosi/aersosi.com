@@ -45,11 +45,11 @@ const navItems = [
 	<nav id="mainNav">
 		<!--Mobile Nav-->
 		<div class="p-2 md:hidden">
-			<Button id="mobileNavBtn" size="sm" variant="accent" class="flex gap-2">
+			<Button id="mobileNavBtn" size="sm" variant="primary" class="flex gap-2">
 				Menü
 				<Menu slot="left-icon" size="base" />
 			</Button>
-			<Button id="toTopBtn" size="sm" variant="accent" class="flex hidden gap-2">
+			<Button id="toTopBtn" size="sm" variant="primary" class="flex hidden gap-2">
 				Zum Anfang
 				<ArrowUp slot="left-icon" size="base" />
 			</Button>
@@ -64,7 +64,7 @@ const navItems = [
 						isLink={true}
 						iconOnly
 						size="sm"
-						variant="accent"
+						variant="primary"
 						href={href}
 						aria-label={name}
 						a11ytip-bottom
@@ -105,7 +105,7 @@ const navItems = [
 		<div class="border-base-400 dark:border-base-600 grid gap-4 border-t border-b py-8">
 			{
 				navItems.map(({ href, name }) => (
-					<Link href={href} size="lg" variant="accent">
+					<Link href={href} size="lg" variant="primary">
 						{name}
 					</Link>
 				))

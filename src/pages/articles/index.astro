@@ -34,7 +34,7 @@ const tags = [...new Set(allPosts.map((post) => post.data.tags).flat())];
 							>
 								Alle Kategorien
 								<span class="flex gap-0.5">
-									(<Link href="/articles/tags" size="base" variant="accent">Index</Link>)</span
+									(<Link href="/articles/tags" size="base" variant="primary">Index</Link>)</span
 								>
 							</Text>
 
@@ -48,7 +48,7 @@ const tags = [...new Set(allPosts.map((post) => post.data.tags).flat())];
 												aria-label={tag}
 												href={`/articles/tags/${tag}`}
 												size="sm"
-												variant="accent"
+												variant="primary"
 											>
 												{tag}
 											</Link>

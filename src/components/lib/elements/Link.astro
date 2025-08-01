@@ -3,9 +3,9 @@ const { variant, size, class: className, ...rest } = Astro.props;
 
 const defaultClass = [
 	// light
-	"text-base-800",
-	"hover:text-base-600",
-	"focus:ring-base-800",
+	"text-base-900",
+	"hover:text-base-500",
+	"focus:ring-base-900",
 	// dark
 	"dark:text-base-50",
 	"dark:hover:text-base-400",
@@ -14,31 +14,31 @@ const defaultClass = [
 
 const primaryClass = [
 	// light
-	"text-primary-400",
-	"hover:text-primary-200",
-	"focus:ring-primary-400",
+	"text-primary-600",
+	"hover:text-primary-400",
+	"focus:ring-primary-600",
 	// dark
 	"dark:text-primary-300",
 	"dark:hover:text-primary-100",
 	"dark:focus:ring-primary-300",
 ];
 
-const accentClass = [
+const secondaryClass = [
 	// light
-	"text-accent-600",
-	"hover:text-accent-500",
-	"focus:ring-accent-600",
+	"text-secondary-400",
+	"hover:text-secondary-500",
+	"focus:ring-secondary-400",
 	// dark
-	"dark:text-accent-300",
-	"dark:hover:text-accent-100",
-	"dark:focus:ring-accent-300",
+	"dark:text-secondary-400",
+	"dark:hover:text-secondary-200",
+	"dark:focus:ring-secondary-400",
 ];
 
 const mutedClass = [
 	// light
-	"text-base-600",
-	"hover:text-base-400",
-	"focus:ring-base-600",
+	"text-base-500",
+	"hover:text-base-700",
+	"focus:ring-base-500",
 	// dark
 	"dark:text-base-400",
 	"dark:hover:text-base-200",
@@ -57,7 +57,7 @@ const sizes = {
 const variantClass = {
 	default: defaultClass,
 	primary: primaryClass,
-	accent: accentClass,
+	secondary: secondaryClass,
 	muted: mutedClass,
 	none: [],
 };
@@ -72,7 +72,7 @@ const baseClass = [
 	"font-medium",
 	"rounded-sm",
 	"transition-colors",
-	"duration-300",
+	"duration-200",
 	"focus:ring-2",
 	"focus:ring-none",
 	"focus:ring-offset-1",
