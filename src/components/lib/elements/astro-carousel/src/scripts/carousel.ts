@@ -42,10 +42,10 @@ export class Carousel {
 			console.error("Carousel element is null");
 			return;
 		}
-		
+
 		// Initialize dialog first - use the document to find it, not the carousel element
 		const dialogElement = document.getElementById("carousel-dialog");
-		
+
 		if (dialogElement) {
 			try {
 				this.dialog = new A11yDialog(dialogElement);
@@ -55,25 +55,25 @@ export class Carousel {
 		} else {
 			console.error("Dialog element not found");
 		}
-		
+
 		// Set carousel element
 		this.carouselElem = carouselElem;
-		
+
 		// Get slides
 		const slides = carouselElem.querySelector<HTMLUListElement>("#slides");
-		
+
 		if (slides == null) {
 			console.error("Slides element not found");
 			return;
 		}
 		this.slidesUl = slides;
-		
+
 		// Get navigation elements - these can be optional if there's only one image
 		this.prevLink = carouselElem.querySelector<HTMLAnchorElement>("#prevLink");
 		this.nextLink = carouselElem.querySelector<HTMLAnchorElement>("#nextLink");
 		this.closeButton = carouselElem.querySelector<HTMLButtonElement>("#closeButton");
 		this.circleNavigation = carouselElem.querySelector("#circle-navigation");
-		
+
 		// If close button is missing, we can't close the carousel
 		if (this.closeButton == null) {
 			console.error("Close button not found");
@@ -110,29 +110,29 @@ export class Carousel {
 		if (index === undefined || Number.isNaN(index)) {
 			index = 0;
 		}
-		
+
 		if (!this.slidesUl) {
 			console.error("No slides element found");
 			return;
 		}
-		
+
 		// Check if index is within bounds
 		if (index < 0 || index >= this.slidesUl.childElementCount) {
 			console.error("Index out of bounds:", index, "max:", this.slidesUl.childElementCount - 1);
 			index = 0; // Default to first slide if out of bounds
 		}
-		
+
 		if (!this.dialog) {
 			console.error("No dialog element found");
 			return;
 		}
-		
+
 		document.documentElement.style.overflow = "hidden";
 		if (this.carouselElem) this.carouselElem.classList.add("carousel--active");
 		this.isOpen = true;
 		this._addEvents();
 		this._updateCarouselUrl(index);
-		
+
 		try {
 			this.dialog.show();
 		} catch (error) {
@@ -175,7 +175,7 @@ export class Carousel {
 		if (this.prevLink && this.slidesUl) {
 			this.prevLink.href = getPrevLink(this.currentIdx, this.slidesUl.childElementCount);
 		}
-		
+
 		if (this.nextLink && this.slidesUl) {
 			this.nextLink.href = getNextLink(this.currentIdx, this.slidesUl.childElementCount);
 		}
@@ -184,9 +184,9 @@ export class Carousel {
 			const circles = this.circleNavigation.querySelectorAll(".carousel__circle-button");
 			circles.forEach((circle, i) => {
 				if (i === newIdx) {
-					circle.classList.add("bg-white", "scale-130");
+					circle.classList.add("!bg-primary-600", "!w-5", "!h-5");
 				} else {
-					circle.classList.remove("bg-white", "scale-130");
+					circle.classList.remove("!bg-primary-600", "!w-5", "!h-5");
 				}
 			});
 		}
@@ -260,12 +260,12 @@ export class Carousel {
 			this.prevLink.removeEventListener("click", this._goToPrevHandler);
 			this.prevLink.removeEventListener("mouserenter", this._hoverPrev);
 		}
-		
+
 		if (this.nextLink) {
 			this.nextLink.removeEventListener("click", this._goToNextHandler);
 			this.nextLink.removeEventListener("mouserenter", this._hoverNext);
 		}
-		
+
 		if (this.closeButton) {
 			this.closeButton.removeEventListener("click", this._closeHandler);
 		}
@@ -273,7 +273,7 @@ export class Carousel {
 		if (this.circleNavigation) {
 			this.circleNavigation.removeEventListener("click", this._circleClickHandler);
 		}
-		
+
 		if (this.carouselElem) {
 			this.carouselElem.removeEventListener("touchstart", this._touchStartHandler);
 			this.carouselElem.removeEventListener("touchmove", this._touchMoveHandler);
@@ -371,7 +371,7 @@ export class Carousel {
 
 	private _handleSwipe() {
 		if (!this.slidesUl || this.currentIdx === null) return;
-		
+
 		const swipeThreshold = 50; // Mindestabstand für einen gültigen Swipe
 		const swipeDistance = this.touchEndX - this.touchStartX;
 
@@ -414,7 +414,7 @@ export class Carousel {
 				// Avoids adding each image change to history
 				history.replaceState({ imageIndex: newIndex }, "", url);
 			}
-			
+
 			// Only change slide if newIndex is valid
 			if (this.currentIdx !== null) {
 				this._changeCurrentSlide(this.currentIdx, newIndex);

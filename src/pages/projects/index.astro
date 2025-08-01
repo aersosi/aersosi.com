@@ -35,7 +35,13 @@ const otherTags = allTags
 							<Text tag="h2" variant="textBase" class="flex justify-baseline gap-1">
 								Alle Kategorien
 								<span class="flex gap-0.5">
-									(<Link href="/projects/tags" size="base" variant="primary">Index</Link>)</span
+									(<Link
+										href="/projects/tags"
+										size="base"
+										variant="primary"
+										aria-label="Index aller Kategorien"
+										a11ytip-bottom>Index</Link
+									>)</span
 								>
 							</Text>
 
@@ -47,7 +53,6 @@ const otherTags = allTags
 										{
 											projectTypes.map((tag) => (
 												<Link
-													aria-label={tag}
 													href={`/projects/tags/${tag}`}
 													size="sm"
 													variant="primary"
@@ -69,7 +74,6 @@ const otherTags = allTags
 										{
 											otherTags.map((tag) => (
 												<Link
-													aria-label={tag}
 													href={`/projects/tags/${tag}`}
 													size="sm"
 													variant="primary"

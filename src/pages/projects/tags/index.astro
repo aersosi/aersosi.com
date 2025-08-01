@@ -39,7 +39,7 @@ const otherTags = allTags
 				<div class="flex flex-col gap-2 lg:col-span-2">
 					{
 						projectTypes.map((tag) => (
-							<Link aria-label={tag} href={`/projects/tags/${tag}`} size="sm" variant="primary">
+							<Link href={`/projects/tags/${tag}`} size="sm" variant="primary">
 								<span>{tagCounts[tag]} - </span>
 								<span>{tag}</span>
 							</Link>
@@ -50,7 +50,7 @@ const otherTags = allTags
 
 					{
 						otherTags.map((tag) => (
-							<Link aria-label={tag} href={`/projects/tags/${tag}`} size="sm" variant="primary">
+							<Link href={`/projects/tags/${tag}`} size="sm" variant="primary">
 								<span>{tagCounts[tag]} - </span>
 								<span>{tag}</span>
 							</Link>

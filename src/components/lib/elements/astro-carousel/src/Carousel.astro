@@ -146,6 +146,7 @@ const { images = [], color = "#333" } = Astro.props;
 				<svg
 					class="carousel__svg"
 					xmlns="http://www.w3.org/2000/svg"
+					fill="none"
 					viewBox="0 0 24 24"
 					stroke-width="1.5"
 					stroke="currentColor"
@@ -164,7 +165,13 @@ const { images = [], color = "#333" } = Astro.props;
 								id="prevLink"
 								a11ytip-right
 							>
-								<svg class="carousel__svg" id="prev" stroke="currentColor" viewBox="0 0 24 24">
+								<svg
+									class="carousel__svg"
+									id="prev"
+									fill="none"
+									stroke="currentColor"
+									viewBox="0 0 24 24"
+								>
 									<path
 										stroke-linecap="round"
 										stroke-linejoin="round"
@@ -192,7 +199,13 @@ const { images = [], color = "#333" } = Astro.props;
 								id="nextLink"
 								a11ytip-left
 							>
-								<svg class="carousel__svg" id="next" stroke="currentColor" viewBox="0 0 24 24">
+								<svg
+									class="carousel__svg"
+									id="next"
+									fill="none"
+									stroke="currentColor"
+									viewBox="0 0 24 24"
+								>
 									<path
 										stroke-linecap="round"
 										stroke-linejoin="round"
@@ -211,11 +224,11 @@ const { images = [], color = "#333" } = Astro.props;
 						images.length > 1 && (
 							<div
 								id="circle-navigation"
-								class="absolute bottom-14 z-300 flex w-full justify-center gap-4 p-3 md:gap-4"
+								class="absolute bottom-14 z-300 flex w-full items-center justify-center gap-4 p-3 md:gap-4"
 							>
 								{images.map((_, i) => (
 									<a
-										class={`carousel__circle-button carousel__circle bg-primary-500 h-4 w-4 rounded-full border-2 border-white transition hover:scale-130 hover:bg-white md:h-3.5 md:w-3.5`}
+										class={`carousel__circle-button carousel__circle hover:bg-primary-600 h-4 w-4 rounded-full bg-white shadow-md/50 transition md:h-3.5 md:w-3.5`}
 										data-index={i}
 										aria-label={`Bild ${i + 1} öffnen`}
 										a11ytip-top

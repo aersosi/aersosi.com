@@ -159,14 +159,14 @@ import { stackGrid, stackGridPadding } from "@/shared/classes";
                                                     {entry.date}
                                                 </Text>
                                                 <div class="lg:col-span-2">
-                                                    <Text tag="h3">
+                                                    <Text tag="h3" class="mb-4 mt-2 lg:mt-6.5 xl:mt-7">
                                                         {entry.position}
                                                     </Text>
 
-                                                    <div class="grid gap-2">
+                                                    <div class="grid gap-3">
                                                         {entry.company.map((entry) => (
                                                                 <div class="flex gap-2 items-center">
-                                                                    <MapPin size="xs"/>
+                                                                    <MapPin size="xs" class="text-base-600 dark:text-base-200"/>
                                                                     <Text tag="p" class="!-my-1">
                                                                         {entry}
                                                                     </Text>

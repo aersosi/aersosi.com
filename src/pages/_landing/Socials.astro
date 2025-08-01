@@ -37,17 +37,17 @@ const links = [
 			</div>
 			<div class="flex flex-col gap-2 lg:col-span-2">
 				{
-					links.map((social) => (
+					links.map((link) => (
 						<Link
 							data-obfuscation="0"
-							aria-label={social.ariaLabel}
+							aria-label={link.ariaLabel}
 							target="_blank"
-							href={social.url}
+							href={link.url}
 							size="base"
 							variant="primary"
 							class="group"
 						>
-							{social.platform}
+							{link.platform}
 							<ExternalLink
 								size="base"
 								class="-mt-0.5 transition duration-300 group-hover:opacity-100 md:opacity-0"
