@@ -13,10 +13,10 @@ const { images } = Astro.props;
 				<a
 					href={`?image=0`}
 					data-carousel-index={0}
-					aria-label={images.length === 1 ? ("Vergrößern") : ("Slideshow")}
+					aria-label={images.length === 1 ? ("Bild vergrößern") : ("Slideshow öffnen")}
 					class="entry__link__overlay bg-primary-500/70 absolute inset-0 grid items-center justify-center rounded-xl opacity-0 transition-opacity duration-300 ease-in-out hover:opacity-100">
-					<div class="text-base-200 font-light text-xl lg:text-2xl border-2 border-primary-100 rounded-xl px-4 py-2">
-						{images.length === 1 ? ("Vergrößern") : ("Slideshow")}
+					<div class="text-base-200 font-light text-lg lg:text-xl border-2 border-primary-100 rounded-xl px-4 py-2">
+						{images.length === 1 ? ("Bild vergrößern") : ("Slideshow öffnen")}
 					</div>
 				</a>
 				<Image
@@ -34,7 +34,7 @@ const { images } = Astro.props;
 							{images.map((item, index) => (
 								<a href={`?image=${index}`}
 									 data-carousel-index={index}
-									 aria-label={`Bild ${index + 1}`}
+									 aria-label={`Bild ${index + 1} öffnen`}
 									 a11ytip-top
 								>
 									<div

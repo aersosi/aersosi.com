@@ -7,27 +7,27 @@ const LinkData = [
 	{
 		category: "Allgemein",
 		links: [
-			{ text: "Start", href: "/#home", ariaLabel: "Start" },
-			{ text: "Über mich", href: "/about", ariaLabel: "Über mich" },
-			{ text: "Impressum", href: "/imprint", ariaLabel: "Impressum" },
-			{ text: "Datenschutz", href: "/datasecurity", ariaLabel: "Datenschutz" },
-			{ text: "404", href: "/404", ariaLabel: "404" },
+			{ text: "Start", href: "/#home" },
+			{ text: "Über mich", href: "/about" },
+			{ text: "Impressum", href: "/imprint" },
+			{ text: "Datenschutz", href: "/datasecurity" },
+			{ text: "404", href: "/404" },
 		],
 		linkClass: "font-normal",
 	},
 	{
 		category: "Projekte",
 		links: [
-			{ text: "Alle Projekte", href: "/projects", ariaLabel: "Alle Projekte" },
-			{ text: "Projektkategorie Index", href: "/projects/tags", ariaLabel: "Kategorie Index" },
+			{ text: "Alle Projekte", href: "/projects" },
+			{ text: "Projektkategorie Index", href: "/projects/tags" },
 		],
 		linkClass: "font-normal",
 	},
 	{
 		category: "Artikel",
 		links: [
-			{ text: "Alle Artikel", href: "/articles", ariaLabel: "Alle Artikel" },
-			{ text: "Artikelkategorie Index", href: "/articles/tags", ariaLabel: "Kategorie Index" },
+			{ text: "Alle Artikel", href: "/articles" },
+			{ text: "Artikelkategorie Index", href: "/articles/tags" },
 		],
 		linkClass: "font-normal",
 	},
@@ -49,10 +49,9 @@ import { stackGrid, stackGridPadding } from "@/shared/classes";
 							<Text tag="h4" variant="textSM">
 								{category}
 							</Text>
-							{links.map(({ text, href, ariaLabel }) => (
+							{links.map(({ text, href }) => (
 								<Link
 									href={href}
-									aria-label={ariaLabel}
 									size="sm"
 									variant="muted"
 									class={linkClass}
