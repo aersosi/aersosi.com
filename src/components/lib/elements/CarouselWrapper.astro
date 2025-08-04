@@ -1,4 +1,5 @@
 ---
+import aboutCover from "*.webp";
 import { Image } from "astro:assets";
 import { Carousel } from "@/components/lib/elements/astro-carousel";
 
@@ -19,14 +20,23 @@ const { images } = Astro.props;
 						{images.length === 1 ? ("Bild vergrößern") : ("Slideshow öffnen")}
 					</div>
 				</a>
+
 				<Image
-					width={1000}
-					height={800}
-					loading="eager"
-					decoding="async"
 					alt={images[0].alt}
 					src={images[0].src}
-					class="aspect-12/6 w-full rounded-xl object-cover object-center lg:col-span-2"
+					widths={[320, 480, 640, 768, 1024, 1280, 1536]}
+					sizes={`
+								(max-width: 639px) 100vw,
+								(max-width: 767px) 100vw,
+								(max-width: 1023px) 50vw,
+								(max-width: 1279px) 33vw,
+								(max-width: 1535px) 25vw,
+								400px
+							`}
+					layout="constrained"
+					loading="eager"
+					decoding="async"
+					class="bg-secondary-100 aspect-12/6 w-full rounded-xl object-cover object-center lg:col-span-2"
 				/>
 				<>
 					{images.length > 1 && (

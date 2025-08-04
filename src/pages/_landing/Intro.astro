@@ -20,13 +20,21 @@ import { stackGrid, stackGridPadding, stickyElement } from "@/shared/classes";
 					</div>
 					<div>
 						<Image
-							width={800}
-							height={800}
-							loading="eager"
-							decoding="async"
 							alt="Porträt Arthur Ersosi"
 							src={portrait}
-							class="aspect-12/10 rounded-xl object-cover object-center lg:aspect-square"
+							widths={[320, 480, 640, 768, 1024, 1280, 1536]}
+							sizes={`
+								(max-width: 639px) 100vw,
+								(max-width: 767px) 100vw,
+								(max-width: 1023px) 50vw,
+								(max-width: 1279px) 33vw,
+								(max-width: 1535px) 25vw,
+								400px
+							`}
+							layout="constrained"
+							loading="eager"
+							decoding="async"
+							class="bg-secondary-100 aspect-12/10 rounded-xl object-cover object-center lg:aspect-square"
 						/>
 					</div>
 				</div>
