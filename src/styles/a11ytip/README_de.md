@@ -2,58 +2,68 @@
 
 Um ein a11ytip auf ein Element anzuwenden, muss das Element folgende Eigenschaften haben:
 
-1. Ein `a11ytip-*` Attribut zur Definition der Position des a11ytip.
+1. Ein `data-a11ytip-*` Attribut zur Definition der Position des a11ytip.
    Verfügbare Positionen:
-   - `a11ytip-top` (zentriert)
-   - `a11ytip-top-left`
-   - `a11ytip-top-right`
-   - `a11ytip-right` (zentriert)
-   - `a11ytip-right-top`
-   - `a11ytip-right-bottom`
-   - `a11ytip-bottom` (zentriert)
-   - `a11ytip-bottom-left`
-   - `a11ytip-bottom-right`
-   - `a11ytip-left` (zentriert)
-   - `a11ytip-left-top`
-   - `a11ytip-left-bottom`
+   - `data-a11ytip-top` (zentriert)
+   - `data-a11ytip-top-left`
+   - `data-a11ytip-top-right`
+   - `data-a11ytip-right` (zentriert)
+   - `data-a11ytip-right-top`
+   - `data-a11ytip-right-bottom`
+   - `data-a11ytip-bottom` (zentriert)
+   - `data-a11ytip-bottom-left`
+   - `data-a11ytip-bottom-right`
+   - `data-a11ytip-left` (zentriert)
+   - `data-a11ytip-left-top`
+   - `data-a11ytip-left-bottom`
 
 2. Entweder ein `aria-label` Attribut ODER ein `data-a11ytip-text` Attribut zur Definition des Textinhalts des a11ytip.
 
 Beispiel mit `aria-label`:
 
 ```html
-<button a11ytip-top aria-label="Hover mich">Hover mich</button>
+<button data-a11ytip-top aria-label="Hover mich">Hover mich</button>
 ```
 
 Beispiel mit `data-a11ytip-text`:
 
 ```html
-<button a11ytip-top data-a11ytip-text="Hover mich">Hover mich</button>
+<button data-a11ytip-top data-a11ytip-text="Hover mich">Hover mich</button>
 ```
 
 Positionierung:
 
 ```html
-<button a11ytip-top aria-label="Ich erscheine oben!">Hover mich</button>
-<button a11ytip-top-left aria-label="Ich bin oben links ausgerichtet!">Hover mich</button>
-<button a11ytip-top-right aria-label="Ich bin oben rechts ausgerichtet!">Hover mich</button>
+<button data-a11ytip-top aria-label="Ich erscheine oben!">Hover mich</button>
+<button data-a11ytip-top-left aria-label="Ich bin oben links ausgerichtet!">Hover mich</button>
+<button data-a11ytip-top-right aria-label="Ich bin oben rechts ausgerichtet!">Hover mich</button>
 
-<button a11ytip-right aria-label="Ich erscheine rechts!">Hover mich</button>
-<button a11ytip-right-top aria-label="Ich bin rechts oben ausgerichtet!">Hover mich</button>
-<button a11ytip-right-bottom aria-label="Ich bin rechts unten ausgerichtet!">Hover mich</button>
+<button data-a11ytip-right aria-label="Ich erscheine rechts!">Hover mich</button>
+<button data-a11ytip-right-top aria-label="Ich bin rechts oben ausgerichtet!">Hover mich</button>
+<button data-a11ytip-right-bottom aria-label="Ich bin rechts unten ausgerichtet!">Hover mich</button>
 
-<button a11ytip-bottom aria-label="Ich erscheine unten!">Hover mich</button>
-<button a11ytip-bottom-left aria-label="Ich bin unten links ausgerichtet!">Hover mich</button>
-<button a11ytip-bottom-right aria-label="Ich bin unten rechts ausgerichtet!">Hover mich</button>
+<button data-a11ytip-bottom aria-label="Ich erscheine unten!">Hover mich</button>
+<button data-a11ytip-bottom-left aria-label="Ich bin unten links ausgerichtet!">Hover mich</button>
+<button data-a11ytip-bottom-right aria-label="Ich bin unten rechts ausgerichtet!">Hover mich</button>
 
-<button a11ytip-left aria-label="Ich erscheine links!">Hover mich</button>
-<button a11ytip-left-top aria-label="Ich bin links oben ausgerichtet!">Hover mich</button>
-<button a11ytip-left-bottom aria-label="Ich bin links unten ausgerichtet!">Hover mich</button>
+<button data-a11ytip-left aria-label="Ich erscheine links!">Hover mich</button>
+<button data-a11ytip-left-top aria-label="Ich bin links oben ausgerichtet!">Hover mich</button>
+<button data-a11ytip-left-bottom aria-label="Ich bin links unten ausgerichtet!">Hover mich</button>
 ```
+
+Aktiv-Status erzwingen:
+
+Mit der Eigenschaft `data-a11ytip-active` kann der aktive Status eines a11ytip permanent erzwungen werden, ohne dass ein Hover-Ereignis erforderlich ist. Dies ist besonders nützlich, um die Positionierung zu überprüfen oder während der Entwicklung.
+
+Beispiel:
+```html
+<button data-a11ytip-top data-a11ytip-active aria-label="Ich bin immer sichtbar!">Kein Hover nötig</button>
+```
+
 
 Hinweise:
 
-- Das `a11ytip-*` Attribut bestimmt, wo das a11ytip relativ zum Element erscheint.
+- Das `data-a11ytip-*` Attribut bestimmt, wo das a11ytip relativ zum Element erscheint.
 - Bei einfachen Positionen (`top`, `right`, `bottom`, `left`) sind die Tooltips zentriert ausgerichtet.
 - Bei kombinierten Positionen (z.B. `right-top`) wird das Tooltip am entsprechenden Rand des Elements ausgerichtet.
 - Das a11ytip-System erstellt das a11ytip dynamisch unter Verwendung des `aria-label` oder `data-a11ytip-text` Inhalts.
@@ -177,7 +187,7 @@ Hinweise:
 - Jedes `data-*` Attribut ist optional. Wenn ein Attribut nicht definiert ist, wird der CSS-Fallback-Wert
   aus den `:root` benutzerdefinierten Eigenschaften (`var(...)`) verwendet.
 - Um die Anpassung über Data-Attribute zu gewährleisten, stellen Sie sicher, dass der a11ytip-Container
-  mindestens eine der `a11ytip-*` Klassen hat (z.B. `a11ytip-top`, `a11ytip-right-bottom`, `a11ytip-left-top`).
+  mindestens eine der `data-a11ytip-*` Attribute hat (z.B. `data-a11ytip-top`, `data-a11ytip-right-bottom`, `data-a11ytip-left-top`).
 
 ---
 
@@ -200,7 +210,7 @@ Dieses Prioritätssystem ermöglicht es Ihnen:
 
 ```html
 <button
-	a11ytip-top
+	data-a11ytip-top
 	aria-label="Ich bin ein freches Tooltip!"
 	data-a11ytip-text-size="18px"
 	data-a11ytip-text-color="hotpink"
@@ -221,7 +231,7 @@ Beispiel, das zeigt, wie man verschiedene Texte für Bildschirmlesegeräte und v
 
 ```html
 <button
-	a11ytip-top
+	data-a11ytip-top
 	aria-label="Schließe das Dialogfenster für besseres Chackra"
 	data-a11ytip-text="Schließen"
 >

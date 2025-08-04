@@ -2,18 +2,18 @@
 
 /* Base Styles */
 
-[a11ytip-top],
-[a11ytip-top-left],
-[a11ytip-top-right],
-[a11ytip-right],
-[a11ytip-right-top],
-[a11ytip-right-bottom],
-[a11ytip-bottom],
-[a11ytip-bottom-left],
-[a11ytip-bottom-right],
-[a11ytip-left],
-[a11ytip-left-top],
-[a11ytip-left-bottom] {
+[data-a11ytip-top],
+[data-a11ytip-top-left],
+[data-a11ytip-top-right],
+[data-a11ytip-right],
+[data-a11ytip-right-top],
+[data-a11ytip-right-bottom],
+[data-a11ytip-bottom],
+[data-a11ytip-bottom-left],
+[data-a11ytip-bottom-right],
+[data-a11ytip-left],
+[data-a11ytip-left-top],
+[data-a11ytip-left-bottom] {
 	position: relative;
 
 	&[aria-label]::after {
@@ -60,110 +60,112 @@
 	}
 }
 
+[data-a11ytip-active]::after,
 .a11ytip-active::after {
 	opacity: 1;
 }
 
 /* Position Start */
-[a11ytip-top]::after,
-[a11ytip-top-left]::after,
-[a11ytip-top-right]::after {
+[data-a11ytip-top]::after,
+[data-a11ytip-top-left]::after,
+[data-a11ytip-top-right]::after {
 	bottom: attr(data-a11ytip-start-position type(<length>), var(--a11ytip-start-position));
 }
 
-[a11ytip-top]::after {
+[data-a11ytip-top]::after {
 	left: 50%;
 	transform: translateX(-50%);
 }
 
-[a11ytip-top-left]::after {
+[data-a11ytip-top-left]::after {
 	left: 0;
 }
 
-[a11ytip-top-right]::after {
+[data-a11ytip-top-right]::after {
 	right: 0;
 }
 
-[a11ytip-right]::after,
-[a11ytip-right-top]::after,
-[a11ytip-right-bottom]::after {
+[data-a11ytip-right]::after,
+[data-a11ytip-right-top]::after,
+[data-a11ytip-right-bottom]::after {
 	left: attr(data-a11ytip-start-position type(<length>), var(--a11ytip-start-position));
 }
 
-[a11ytip-right]::after {
+[data-a11ytip-right]::after {
 	top: 50%;
 	transform: translateY(-50%);
 }
 
-[a11ytip-right-top]::after {
+[data-a11ytip-right-top]::after {
 	top: 0;
 }
 
-[a11ytip-right-bottom]::after {
+[data-a11ytip-right-bottom]::after {
 	bottom: 0;
 }
 
-[a11ytip-bottom]::after,
-[a11ytip-bottom-left]::after,
-[a11ytip-bottom-right]::after {
+[data-a11ytip-bottom]::after,
+[data-a11ytip-bottom-left]::after,
+[data-a11ytip-bottom-right]::after {
 	top: attr(data-a11ytip-start-position type(<length>), var(--a11ytip-start-position));
 }
 
-[a11ytip-bottom]::after {
+[data-a11ytip-bottom]::after {
 	left: 50%;
 	transform: translateX(-50%);
 }
 
-[a11ytip-bottom-left]::after {
+[data-a11ytip-bottom-left]::after {
 	left: 0;
 }
 
-[a11ytip-bottom-right]::after {
+[data-a11ytip-bottom-right]::after {
 	right: 0;
 }
 
-[a11ytip-left]::after,
-[a11ytip-left-top]::after,
-[a11ytip-left-bottom]::after {
+[data-a11ytip-left]::after,
+[data-a11ytip-left-top]::after,
+[data-a11ytip-left-bottom]::after {
 	right: attr(data-a11ytip-start-position type(<length>), var(--a11ytip-start-position));
 }
 
-[a11ytip-left]::after {
+[data-a11ytip-left]::after {
 	top: 50%;
 	transform: translateY(-50%);
 }
 
-[a11ytip-left-top]::after {
+[data-a11ytip-left-top]::after {
 	top: 0;
 }
 
-[a11ytip-left-bottom]::after {
+[data-a11ytip-left-bottom]::after {
 	bottom: 0;
 }
 
 /* Position End */
+[data-a11ytip-active],
 .a11ytip-active {
-	&[a11ytip-top]::after,
-	&[a11ytip-top-left]::after,
-	&[a11ytip-top-right]::after {
+	&[data-a11ytip-top]::after,
+	&[data-a11ytip-top-left]::after,
+	&[data-a11ytip-top-right]::after {
 		bottom: attr(data-a11ytip-end-position type(<length>), var(--a11ytip-end-position));
 	}
 
-	&[a11ytip-right]::after,
-	&[a11ytip-right-top]::after,
-	&[a11ytip-right-bottom]::after {
+	&[data-a11ytip-right]::after,
+	&[data-a11ytip-right-top]::after,
+	&[data-a11ytip-right-bottom]::after {
 		left: attr(data-a11ytip-end-position type(<length>), var(--a11ytip-end-position));
 	}
 
-	&[a11ytip-bottom]::after,
-	&[a11ytip-bottom-left]::after,
-	&[a11ytip-bottom-right]::after {
+	&[data-a11ytip-bottom]::after,
+	&[data-a11ytip-bottom-left]::after,
+	&[data-a11ytip-bottom-right]::after {
 		top: attr(data-a11ytip-end-position type(<length>), var(--a11ytip-end-position));
 	}
 
-	&[a11ytip-left]::after,
-	&[a11ytip-left-top]::after,
-	&[a11ytip-left-bottom]::after {
+	&[data-a11ytip-left]::after,
+	&[data-a11ytip-left-top]::after,
+	&[data-a11ytip-left-bottom]::after {
 		right: attr(data-a11ytip-end-position type(<length>), var(--a11ytip-end-position));
 	}
 }
