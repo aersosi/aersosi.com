@@ -2,18 +2,18 @@
 	import { throttle } from "../throttle";
 
 	document.addEventListener("DOMContentLoaded", () => {
-		const mainNavWrapper = document.getElementById("mainNavWrapper");
+		const mainNav = document.getElementById("mainNav");
 		const SCROLL_THRESHOLD = 96;
 
-		if (!mainNavWrapper) return;
+		if (!mainNav) return;
 
 		const updateNavWrapperPosition = () => {
 			const isOverThreshold = window.scrollY > SCROLL_THRESHOLD;
-			const addClass = isOverThreshold ? "top-2" : "top-5";
-			const removeClass = isOverThreshold ? "top-5" : "top-2";
+			const addClass = isOverThreshold ? "lg:py-2" : "lg:py-6";
+			const removeClass = isOverThreshold ? "lg:py-6" : "lg:py-2";
 
-			mainNavWrapper.classList.remove(removeClass);
-			mainNavWrapper.classList.add(addClass);
+			mainNav.classList.remove(removeClass);
+			mainNav.classList.add(addClass);
 		};
 
 		updateNavWrapperPosition(); // Initial

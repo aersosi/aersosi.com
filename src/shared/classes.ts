@@ -10,6 +10,6 @@ export const stackGrid = [
 	"dark:border-base-600",
 ];
 
-export const stackGridPadding = ["py-24"];
+export const stackGridPadding = ["py-18", "md:py-22"];
 
 export const stickyElement = ["lg:sticky", "lg:top-16", "lg:z-40", "self-start"];
