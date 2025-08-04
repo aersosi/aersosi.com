@@ -44,7 +44,7 @@ import { stackGrid, stackGridPadding } from "@/shared/classes";
                     />
 
                     <Wrapper variant="proseBase">
-                        <Text tag="h2">Development</Text>
+                        <Text tag="h2" variant="textXL">Development</Text>
                         <Text tag="p">
                             Als Developer gieße ich Design in modernen, modularen und skalierbaren Code.
                             Ich habe umfassende Erfahrung mit Responsive Webdesign, modernen
@@ -64,7 +64,7 @@ import { stackGrid, stackGridPadding } from "@/shared/classes";
                     </Wrapper>
                     <hr class="my-2.5 opacity-30 dark:text-white"></hr>
                     <Wrapper variant="proseBase">
-                        <Text tag="h2">Design</Text>
+                        <Text tag="h2" variant="textXL">Design</Text>
                         <Text tag="p">
                             Als UI/UX Designer entwickle ich nutzerzentrierte Konzepte, Prototypen und Interfaces,
                             um die Nutzer-zufriedenheit und den Entwicklungszyklus zu optimieren. Weiterhin bin ich
@@ -114,7 +114,7 @@ import { stackGrid, stackGridPadding } from "@/shared/classes";
                             Kolleginnen und Kollegen ist mir wichtig.
                         </Text>
 
-                        <Text tag="h2">Weitere Interessen</Text>
+                        <Text tag="h2" variant="textXL">Weitere Interessen</Text>
                         <Text tag="p" class="lg:text-balance">
                             Wissenschaft, KI, Kunst, Weltraum & Forschung, Gesellschaft & Politik,
                             Psychologie & Philosophie, Sport und Musik.
@@ -126,7 +126,7 @@ import { stackGrid, stackGridPadding } from "@/shared/classes";
             <!--CV-->
             <Wrapper variant="proseBase" class:list={[...stackGridPadding]}>
                 <div class:list={[...stackGrid]} class="sm:grid-cols-2 items-start sm:items-center">
-                    <Text tag="h1" class="!my-0 lg:ml-auto">
+                    <Text tag="h2" variant="text2XL" class="!my-0 lg:ml-auto">
                         Curriculum Vitae
                     </Text>
                     <div class="col-span-1">
@@ -147,7 +147,7 @@ import { stackGrid, stackGridPadding } from "@/shared/classes";
                                 <div class:list={[...stackGrid]}>
                                     <span></span>
                                     <div class="lg:col-span-2">
-                                        <Text tag="h2">
+                                        <Text tag="h3" variant="textXL">
                                             {item.headline}
                                         </Text>
                                     </div>
@@ -155,11 +155,11 @@ import { stackGrid, stackGridPadding } from "@/shared/classes";
                                 <>
                                     {item.entries.map((entry) => (
                                             <div class:list={[...stackGrid]} class="!gap-y-0">
-                                                <Text tag="h3" class="lg:ml-auto mb-0">
+                                                <Text tag="h4" variant="textBase" class="lg:ml-auto mb-0">
                                                     {entry.date}
                                                 </Text>
                                                 <div class="lg:col-span-2">
-                                                    <Text tag="h3" class="mb-4 mt-2 lg:mt-6.5 xl:mt-7">
+                                                    <Text tag="h4" variant="textBase" class="mb-4 mt-2 lg:mt-6.5 xl:mt-7">
                                                         {entry.position}
                                                     </Text>
 
