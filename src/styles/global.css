@@ -1,5 +1,5 @@
 @import "tailwindcss";
-@import "./a11ytip/a11ytip.css";
+@import "a11ytip";
 @import "./scrollbar.css";
 @import "./astro-carousel.css";
 
