@@ -34,7 +34,6 @@ import { stackGrid, stackGridPadding } from "@/shared/classes";
 							Aktualisiert am <span id="publishedDate">14.06.1985</span>
 						</Text>
 					</div>
-
 					<Image
 						alt={aboutPageData.headerImgAlt}
 						src={aboutCover}
@@ -50,12 +49,12 @@ import { stackGrid, stackGridPadding } from "@/shared/classes";
 						layout="constrained"
 						loading="eager"
 						decoding="async"
-						class="bg-secondary-100 lg:hidden object-cover object-center w-full aspect-12/6 lg:col-span-2 rounded-xl"
+						class="lg:hidden object-cover object-center w-full aspect-12/6 lg:col-span-2 rounded-xl"
 					/>
 
 
 					<Wrapper variant="proseBase">
-						<Text tag="h2" variant="textXL">Development</Text>
+						<Text tag="h2">Development</Text>
 						<Text tag="p">
 							Als Developer gieße ich Design in modernen, modularen und skalierbaren Code.
 							Ich habe umfassende Erfahrung mit Responsive Webdesign, modernen
@@ -94,11 +93,12 @@ import { stackGrid, stackGridPadding } from "@/shared/classes";
 				<hr class="lg:hidden mt-6 opacity-30 dark:text-white" />
 
 				<div class="lg:col-span-2">
-					<Image
-						alt={aboutPageData.headerImgAlt}
-						src={aboutCover}
-						widths={[320, 480, 640, 768, 1024, 1280, 1536]}
-						sizes={`
+					<Wrapper variant="proseBase">
+						<Image
+							alt={aboutPageData.headerImgAlt}
+							src={aboutCover}
+							widths={[320, 480, 640, 768, 1024, 1280, 1536]}
+							sizes={`
 								(max-width: 639px) 100vw,
 								(max-width: 767px) 100vw,
 								(max-width: 1023px) 50vw,
@@ -106,103 +106,104 @@ import { stackGrid, stackGridPadding } from "@/shared/classes";
 								(max-width: 1535px) 25vw,
 								400px
 							`}
-						layout="constrained"
-						loading="eager"
-						decoding="async"
-						class="bg-secondary-100 hidden lg:block object-cover object-center w-full aspect-12/6 lg:col-span-2 rounded-xl"
-					/>
+							layout="constrained"
+							loading="eager"
+							decoding="async"
+							class="bg-secondary-100 hidden lg:block object-cover object-center w-full aspect-12/6 lg:col-span-2 rounded-xl"
+						/>
 
-					<Text tag="p">
-						Mein Fokus ist die Frontend-Entwicklung skalierbarer und moderner
-						Enterprise-Webapplikationen. Dabei lege ich besonderen Wert auf Performance, Code-Qualität
-						und exzellentes UI/UX. Ich arbeite eigenverantwortlich und besonders erfolgreich in agilen,
-						interdisziplinären Teams. Mein ganzheitliches Verständnis des Entwicklungsprozesses
-						verbindet Business, Konzept, Design und Development.
-					</Text>
-					<Text tag="p">
-						Seit meinem Berufseinstieg habe ich immer positives Feedback für meine Arbeit bekommen. Ich
-						weiß, was ich kann und wo meine Grenzen liegen und konnte mich bisher immer auf mein
-						analytisches Denken und Urteilsvermögen verlassen. Ich bin zielstrebig und löse hartnäckige
-						Probleme gerne und kreativ. Denn das Erstbeste ist nicht immer das Beste.
-					</Text>
-					<Text tag="p">
-						Als anpassungsfähiger Autodidakt liebe ich es zu lernen, wende das Gelernte an und teile es
-						mit anderen. Um mir ein gutes Urteil zu bilden, ist es wichtig, das Für und Wider abzuwägen.
-						Ich bin gerne vorbereitet. Um meine Talente in geordnete Bahnen zu lenken, helfen mir klare
-						Ziele, Termine, Zeitpläne, Absprachen und regelmäßiges Feedback. Als reflektierter und
-						empathischer Mensch zeichne ich mich durch Hilfsbereitschaft aus, denn das Wohl meiner
-						Kolleginnen und Kollegen ist mir wichtig.
-					</Text>
+						<Text tag="p">
+							Mein Fokus ist die Frontend-Entwicklung skalierbarer und moderner
+							Enterprise-Webapplikationen. Dabei lege ich besonderen Wert auf Performance, Code-Qualität
+							und exzellentes UI/UX. Ich arbeite eigenverantwortlich und besonders erfolgreich in agilen,
+							interdisziplinären Teams. Mein ganzheitliches Verständnis des Entwicklungsprozesses
+							verbindet Business, Konzept, Design und Development.
+						</Text>
+						<Text tag="p">
+							Seit meinem Berufseinstieg habe ich immer positives Feedback für meine Arbeit bekommen. Ich
+							weiß, was ich kann und wo meine Grenzen liegen und konnte mich bisher immer auf mein
+							analytisches Denken und Urteilsvermögen verlassen. Ich bin zielstrebig und löse hartnäckige
+							Probleme gerne und kreativ. Denn das Erstbeste ist nicht immer das Beste.
+						</Text>
+						<Text tag="p">
+							Als anpassungsfähiger Autodidakt liebe ich es zu lernen, wende das Gelernte an und teile es
+							mit anderen. Um mir ein gutes Urteil zu bilden, ist es wichtig, das Für und Wider abzuwägen.
+							Ich bin gerne vorbereitet. Um meine Talente in geordnete Bahnen zu lenken, helfen mir klare
+							Ziele, Termine, Zeitpläne, Absprachen und regelmäßiges Feedback. Als reflektierter und
+							empathischer Mensch zeichne ich mich durch Hilfsbereitschaft aus, denn das Wohl meiner
+							Kolleginnen und Kollegen ist mir wichtig.
+						</Text>
 
-					<Text tag="h2" variant="textXL">Weitere Interessen</Text>
-					<Text tag="p" class="lg:text-balance">
-						Wissenschaft, KI, Kunst, Weltraum & Forschung, Gesellschaft & Politik,
-						Psychologie & Philosophie, Sport und Musik.
-					</Text>
+						<Text tag="h2" variant="textXL">Weitere Interessen</Text>
+						<Text tag="p" class="lg:text-balance">
+							Wissenschaft, KI, Kunst, Weltraum & Forschung, Gesellschaft & Politik,
+							Psychologie & Philosophie, Sport und Musik.
+						</Text>
+					</Wrapper>
 				</div>
 			</div>
 
-		<!--CV-->
-		<Wrapper variant="proseBase" class:list={[...stackGridPadding]}>
-			<div class:list={[...stackGrid]} class="sm:grid-cols-2 items-start sm:items-center">
-				<Text tag="h2" variant="text2XL" class="!my-0 lg:ml-auto">
-					Curriculum Vitae
-				</Text>
-				<div class="col-span-1">
-					<Button isLink={true}
-									download="CV_Arthur_Ersosi_2025_DE.pdf"
-									href="/CV_Arthur_Ersosi_2025_DE.pdf"
-									size="sm"
-									variant="primary"
-									class="sm:ml-auto lg:ml-0 w-fit not-proseBase">
-						CV herunterladen
-					</Button>
+			<!--CV-->
+			<Wrapper variant="proseBase" class:list={[...stackGridPadding]}>
+				<div class:list={[...stackGrid]} class="sm:grid-cols-2 items-start sm:items-center">
+					<Text tag="h2" variant="text2XL" class="!my-0 lg:ml-auto">
+						Curriculum Vitae
+					</Text>
+					<div class="col-span-1">
+						<Button isLink={true}
+										download="CV_Arthur_Ersosi_2025_DE.pdf"
+										href="/CV_Arthur_Ersosi_2025_DE.pdf"
+										size="sm"
+										variant="primary"
+										class="sm:ml-auto lg:ml-0 w-fit not-proseBase">
+							CV herunterladen
+						</Button>
+					</div>
 				</div>
-			</div>
 
-			<div class="grid gap-6">
-				{
-					cvData.map((item) => (
-						<div class:list={[...stackGrid]}>
-							<span></span>
-							<div class="lg:col-span-2">
-								<Text tag="h3" variant="textXL">
-									{item.headline}
-								</Text>
-							</div>
-						</div>
-						<>
-							{item.entries.map((entry) => (
-								<div class:list={[...stackGrid]} class="!gap-y-0">
-									<Text tag="h4" variant="textBase" class="lg:ml-auto mb-0">
-										{entry.date}
+				<div class="grid gap-6">
+					{
+						cvData.map((item) => (
+							<div class:list={[...stackGrid]}>
+								<span></span>
+								<div class="lg:col-span-2">
+									<Text tag="h3" variant="textXL">
+										{item.headline}
 									</Text>
-									<div class="lg:col-span-2">
-										<Text tag="h4" variant="textBase" class="mb-4 mt-2 lg:mt-6.5 xl:mt-7">
-											{entry.position}
-										</Text>
-
-										<div class="grid gap-3">
-											{entry.company.map((entry) => (
-												<div class="flex gap-2 items-center">
-													<MapPin size="xs" class="text-base-600 dark:text-base-200" />
-													<Text tag="p" class="!-my-1">
-														{entry}
-													</Text>
-												</div>
-											))}
-										</div>
-
-										<Text tag="p">
-											{entry.description}
-										</Text>
-									</div>
 								</div>
-							))}
-						</>
-					))}
-			</div>
-		</Wrapper>
+							</div>
+							<>
+								{item.entries.map((entry) => (
+									<div class:list={[...stackGrid]} class="!gap-y-0">
+										<Text tag="h4" variant="textBase" class="lg:ml-auto mb-0">
+											{entry.date}
+										</Text>
+										<div class="lg:col-span-2">
+											<Text tag="h4" variant="textBase" class="mb-4 mt-2 lg:mt-6.5 xl:mt-7">
+												{entry.position}
+											</Text>
+
+											<div class="grid gap-3">
+												{entry.company.map((entry) => (
+													<div class="flex gap-2 items-center">
+														<MapPin size="xs" class="text-base-600 dark:text-base-200" />
+														<Text tag="p" class="!-my-1">
+															{entry}
+														</Text>
+													</div>
+												))}
+											</div>
+
+											<Text tag="p">
+												{entry.description}
+											</Text>
+										</div>
+									</div>
+								))}
+							</>
+						))}
+				</div>
+			</Wrapper>
 		</Wrapper>
 	</section>
 </BaseLayout>
