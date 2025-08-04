@@ -33,8 +33,37 @@ Beispiel mit `data-a11ytip-text`:
 <button data-a11ytip-top data-a11ytip-text="Hover mich">Hover mich</button>
 ```
 
-**Hinweis: Wenn sowohl `aria-label` als auch `data-a11ytip-text` vorhanden sind, hat `data-a11ytip-text` Vorrang! So können
-sie das a11ytip unabhängig vom `aria-label` nutzen.**
+### Verwendung von `data-a11ytip-text` vs. `aria-label`
+
+Das a11ytip-System bestimmt den Textinhalt basierend auf der folgenden Priorität:
+
+1. **Höchste Priorität**: `data-a11ytip-text` - Falls vorhanden, wird der Wert dieses Attributs als a11ytip-Text verwendet.
+2. **Fallback**: `aria-label` - Falls `data-a11ytip-text` nicht vorhanden ist, wird der `aria-label` Wert verwendet.
+
+**Wichtig: Wenn sowohl `aria-label` als auch `data-a11ytip-text` vorhanden sind, hat `data-a11ytip-text` Vorrang!**
+
+Diese Prioritätsregel bietet Ihnen folgende Vorteile:
+
+- Sie können `aria-label` für Bildschirmlesegeräte verwenden, während Sie einen anderen Text im visuellen a11ytip anzeigen
+- Sie können den a11ytip-Text überschreiben, ohne die Barrierefreiheitsbeschriftung zu beeinträchtigen
+- Sie behalten Flexibilität in Ihrem Markup
+
+Beispiel für verschiedene Texte für Bildschirmlesegeräte und visuelle a11ytip:
+
+```html
+
+<button
+	data-a11ytip-top
+	aria-label="Schließe das Dialogfenster für besseres Chackra"
+	data-a11ytip-text="Schließen"
+>
+	Schließen
+</button>
+```
+
+In diesem Beispiel:
+- Bildschirmlesegeräte werden "Schließe das Dialogfenster für besseres Chackra" vorlesen (aus `aria-label`)
+- Das visuelle a11ytip wird "Schließen" anzeigen (aus `data-a11ytip-text`)
 
 Positionierung:
 
@@ -75,8 +104,7 @@ Hinweise:
 - Das `data-a11ytip-*` Attribut bestimmt, wo das a11ytip relativ zum Element erscheint.
 - Bei einfachen Positionen (`top`, `right`, `bottom`, `left`) sind die Tooltips zentriert ausgerichtet.
 - Bei kombinierten Positionen (z.B. `right-top`) wird das Tooltip am entsprechenden Rand des Elements ausgerichtet.
-- Das a11ytip-System erstellt das a11ytip dynamisch unter Verwendung des `aria-label` oder `data-a11ytip-text` Inhalts.
-- Wenn sowohl `aria-label` als auch `data-a11ytip-text` vorhanden sind, hat `data-a11ytip-text` Vorrang.
+- Das a11ytip-System erstellt das a11ytip dynamisch unter Verwendung des Textinhalts (siehe Abschnitt "Verwendung von `data-a11ytip-text` vs. `aria-label`").
 - Zusätzliche Anpassungen können durch Hinzufügen weiterer `data-*` Attribute erreicht werden (siehe Beispiele unten).
 
 ---
@@ -223,22 +251,6 @@ Hinweise:
 
 ---
 
-### Inhalts-Priorität
-
-Das a11ytip-System bestimmt den Textinhalt basierend auf der folgenden Priorität:
-
-1. **Höchste Priorität**: `data-a11ytip-text` - Falls vorhanden, wird der Wert dieses Attributs als a11ytip-Text
-   verwendet.
-2. **Fallback**: `aria-label` - Falls `data-a11ytip-text` nicht vorhanden ist, wird der `aria-label` Wert verwendet.
-
-Dieses Prioritätssystem ermöglicht es Ihnen:
-
-- `aria-label` für Bildschirmlesegeräte zu verwenden, während Sie verschiedenen Text im visuellen a11ytip anzeigen
-- Den a11ytip-Text zu überschreiben, ohne die Barrierefreiheitsbeschriftung zu beeinträchtigen
-- Flexibilität in Ihrem Markup zu bewahren
-
----
-
 ### Beispiel mit allen Data-Attributen
 
 ```html
@@ -261,22 +273,3 @@ Dieses Prioritätssystem ermöglicht es Ihnen:
 </button>
 ```
 
-### Verschiedene Texte für Bildschirmlesegeräte vs. Visuelle a11ytip
-
-Beispiel, das zeigt, wie man verschiedene Texte für Bildschirmlesegeräte und visuelle a11ytip bereitstellt:
-
-```html
-
-<button
-	data-a11ytip-top
-	aria-label="Schließe das Dialogfenster für besseres Chackra"
-	data-a11ytip-text="Schließen"
->
-	Schließen
-</button>
-```
-
-In diesem Beispiel:
-
-- Bildschirmlesegeräte werden "Schließe das Dialogfenster für besseres Chackra" vorlesen (aus `aria-label`)
-- Das visuelle a11ytip wird "Schließen" anzeigen (aus `data-a11ytip-text`)
