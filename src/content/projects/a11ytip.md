@@ -112,10 +112,10 @@ aber sollte bald überall implementiert sein.
 4. HTML: Bam, Tooltip!
 
 ```html
-<button a11ytip-top aria-label="Hover mich">Hover mich</button>
+<button data-a11ytip-top aria-label="Hover mich">Hover mich</button>
 ```
 
-<button a11ytip-top aria-label="Hover mich">
+<button data-a11ytip-top aria-label="Hover mich">
     Hover mich
 </button>
 
@@ -124,21 +124,21 @@ aber sollte bald überall implementiert sein.
 Easy peasy positionierung!
 
 ```html
-<button a11ytip-top aria-label="Ich erscheine oben!">Hover mich</button>
-<button a11ytip-top-left aria-label="Ich bin oben links ausgerichtet!">Hover mich</button>
-<button a11ytip-top-right aria-label="Ich bin oben rechts ausgerichtet!">Hover mich</button>
+<button data-a11ytip-top aria-label="Ich erscheine oben!">Hover mich</button>
+<button data-a11ytip-top-left aria-label="Ich bin oben links ausgerichtet!">Hover mich</button>
+<button data-a11ytip-top-right aria-label="Ich bin oben rechts ausgerichtet!">Hover mich</button>
 
-<button a11ytip-right aria-label="Ich erscheine rechts!">Hover mich</button>
-<button a11ytip-right-top aria-label="Ich bin rechts oben ausgerichtet!">Hover mich</button>
-<button a11ytip-right-bottom aria-label="Ich bin rechts unten ausgerichtet!">Hover mich</button>
+<button data-a11ytip-right aria-label="Ich erscheine rechts!">Hover mich</button>
+<button data-a11ytip-right-top aria-label="Ich bin rechts oben ausgerichtet!">Hover mich</button>
+<button data-a11ytip-right-bottom aria-label="Ich bin rechts unten ausgerichtet!">Hover mich</button>
 
-<button a11ytip-bottom aria-label="Ich erscheine unten!">Hover mich</button>
-<button a11ytip-bottom-left aria-label="Ich bin unten links ausgerichtet!">Hover mich</button>
-<button a11ytip-bottom-right aria-label="Ich bin unten rechts ausgerichtet!">Hover mich</button>
+<button data-a11ytip-bottom aria-label="Ich erscheine unten!">Hover mich</button>
+<button data-a11ytip-bottom-left aria-label="Ich bin unten links ausgerichtet!">Hover mich</button>
+<button data-a11ytip-bottom-right aria-label="Ich bin unten rechts ausgerichtet!">Hover mich</button>
 
-<button a11ytip-left aria-label="Ich erscheine links!">Hover mich</button>
-<button a11ytip-left-top aria-label="Ich bin links oben ausgerichtet!">Hover mich</button>
-<button a11ytip-left-bottom aria-label="Ich bin links unten ausgerichtet!">Hover mich</button>
+<button data-a11ytip-left aria-label="Ich erscheine links!">Hover mich</button>
+<button data-a11ytip-left-top aria-label="Ich bin links oben ausgerichtet!">Hover mich</button>
+<button data-a11ytip-left-bottom aria-label="Ich bin links unten ausgerichtet!">Hover mich</button>
 ```
 
 ### Globales Looksmaxing
@@ -264,13 +264,13 @@ Der Text wird erzeugt nach folgenden Priorität:
 Nur aria-label: Screenreader UND Tooltip zeigen "Dokument speichern"
 
 ```html
-<button a11ytip-bottom aria-label="Dokument speichern">Speichern</button>
+<button data-a11ytip-bottom aria-label="Dokument speichern">Speichern</button>
 ```
 
 Nur data-a11ytip-text: Screenreader sagt nichts (kein aria-label), Tooltip zeigt "Dokument speichern"
 
 ```html
-<button a11ytip-bottom data-a11ytip-text="Dokument speichern">Speichern</button>
+<button data-a11ytip-bottom data-a11ytip-text="Dokument speichern">Speichern</button>
 ```
 
 Beide Attribute: Screenreader sagt "Dokument im Projektordner speichern", Tooltip zeigt "Speichern"
@@ -292,13 +292,13 @@ Du hast zwei Möglichkeiten, um a11ytip zu verwenden:
 **Variante 1: Nur `aria-label`**
 
 ```html
-<button a11ytip-top aria-label="Hover mich">Hover mich</button>
+<button data-a11ytip-top aria-label="Hover mich">Hover mich</button>
 ```
 
 **Variante 2: Mit `data-a11ytip-text`**
 
 ```html
-<button a11ytip-top data-a11ytip-text="Hover mich">Hover mich</button>
+<button data-a11ytip-top data-a11ytip-text="Hover mich">Hover mich</button>
 ```
 
 Beide Varianten funktionieren, aber wenn du verschiedene Texte für Screenreader und visuelles Tooltip willst, ist die Kombination aus `aria-label` + `data-a11ytip-text` der Weg zu gehen.
