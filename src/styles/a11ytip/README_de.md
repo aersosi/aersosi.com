@@ -202,44 +202,71 @@ a11ytip individuell in Ihrem Markup zu konfigurieren.
 
 Verfügbare Data-Attribute:
 
-1. `data-a11ytip-text`:
+1. `data-a11ytip-*`:
+    - Bestimmen, wo das a11ytip relativ zum Element erscheint.
+    - Verfügbare Positionen:
+      - `data-a11ytip-top` (zentriert)
+      - `data-a11ytip-top-left`
+      - `data-a11ytip-top-right`
+      - `data-a11ytip-right` (zentriert)
+      - `data-a11ytip-right-top`
+      - `data-a11ytip-right-bottom`
+      - `data-a11ytip-bottom` (zentriert)
+      - `data-a11ytip-bottom-left`
+      - `data-a11ytip-bottom-right`
+      - `data-a11ytip-left` (zentriert)
+      - `data-a11ytip-left-top`
+      - `data-a11ytip-left-bottom`
+    - Werteformat: Keine Werte erforderlich, die bloße Anwesenheit des Attributs aktiviert die entsprechende Position.
+
+2. `data-a11ytip-text`:
     - Definiert den Textinhalt des a11ytip.
     - Dieses Attribut hat Vorrang vor `aria-label`, wenn beide vorhanden sind.
     - Werteformat: Beliebige Textzeichenfolge.
 
-2. `data-a11ytip-text-size`:
+3. `data-a11ytip-text-size`:
     - Passt die Schriftgröße des a11ytip-Texts an.
     - Werteformat: `<Zahl>` gefolgt von einer Einheit (z.B. `16px`, `1rem`).
 
-3. `data-a11ytip-text-color`:
+4. `data-a11ytip-text-color`:
     - Ändert die Farbe des a11ytip-Texts.
     - Werteformat: Ein gültiger CSS `<color>` Wert (z.B. `#ffffff`, `rgb(255, 255, 255)` oder `blue`).
 
-4. `data-a11ytip-bg-color`:
+5. `data-a11ytip-bg-color`:
     - Verändert die Hintergrundfarbe des a11ytip.
     - Werteformat: Ein gültiger CSS `<color>` Wert.
 
-5. `data-a11ytip-padding-x` und `data-a11ytip-padding-y`:
+6. `data-a11ytip-padding-x` und `data-a11ytip-padding-y`:
     - Passt den horizontalen (`x`) und vertikalen (`y`) Innenabstand der a11ytip-Box an.
     - Werteformat: Ein CSS `<length>` Wert (z.B. `0.5rem`, `8px`).
 
-6. `data-a11ytip-border-radius`:
+7. `data-a11ytip-border-radius`:
     - Setzt den Rahmenradius der a11ytip-Box für abgerundete Ecken.
     - Werteformat: Ein CSS `<length>` Wert (z.B. `0.375rem`, `5px`).
 
-7. `data-a11ytip-max-width`:
+8. `data-a11ytip-max-width`:
     - Setzt die maximale Breite der a11ytip-Box.
     - Dies verhindert, dass extrem lange Inhalte das a11ytip überdehnen.
     - Werteformat: Ein CSS `<length>` Wert (z.B. `12ch`, `150px`).
     - Standardwert: `12ch` (etwa 12 Zeichen breit).
 
-8. `data-a11ytip-start-position` und `data-a11ytip-end-position`:
+9. `data-a11ytip-start-position` und `data-a11ytip-end-position`:
     - Positioniert das a11ytip beim Erscheinen (`start`) oder wenn es aktiv wird (`end`).
     - Werteformat: CSS `<length>` Werte (z.B. `4px`, `2rem`).
 
-9. `data-a11ytip-transition-duration`:
+10. `data-a11ytip-transition-duration`:
     - Passt die Übergangsdauer des a11ytip an.
     - Werteformat: Eine gültige Zeitdauer (z.B. `350ms`, `0.5s`).
+
+11. `data-a11ytip-delay`:
+    - Ändert die Verzögerung bis das a11ytip angezeigt wird.
+    - Werteformat: Eine Zahl in Millisekunden (z.B. `250`, `1000`).
+    - Standardwert: `500` (500 Millisekunden).
+
+12. `data-a11ytip-active`:
+    - Erzwingt den aktiven Status eines a11ytip permanent, ohne dass ein Hover-Ereignis erforderlich ist.
+    - Nützlich für die Überprüfung der Positionierung oder während der Entwicklung.
+    - Werteformat: Keine Werte erforderlich, die bloße Anwesenheit des Attributs aktiviert den Effekt.
 
 Hinweise:
 
@@ -258,6 +285,8 @@ Hinweise:
 <button
 	data-a11ytip-top
 	aria-label="Ich bin ein freches Tooltip!"
+    data-a11ytip-text="Dieser text wird angezeigt"
+    
     data-a11ytip-active
     
 	data-a11ytip-text-size="18px"
@@ -267,7 +296,10 @@ Hinweise:
 	data-a11ytip-padding-y="0.8rem"
 	data-a11ytip-border-radius="1rem"
 	data-a11ytip-max-width="20ch"
+	data-a11ytip-start-position="4px"
+	data-a11ytip-end-position="12px"
 	data-a11ytip-transition-duration="200ms"
+    data-a11ytip-delay="1000"
 >
 	Hover mich
 </button>
