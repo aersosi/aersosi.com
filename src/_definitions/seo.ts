@@ -37,32 +37,4 @@ export type SeoProps = {
 		as?: string;
 		crossOrigin?: string;
 	}>;
-}
-
-// Validierungsfunktion für SEO-Props um null/undefined-Werte zu erkennen
-export function validateSeoProps(props: Record<string, unknown>) {
-	// Optionale Props, die keine Warnung auslösen sollen, wenn sie undefined sind
-	const optionalProps = [
-		"pageTitleTemplate",
-		"image",
-		"publishDate",
-		"modifiedDate",
-		"author",
-		"robotsProps",
-		"facebookAppId",
-		"additionalMetaTags",
-		"additionalLinkTags",
-	];
-
-	Object.entries(props).forEach(([key, value]) => {
-		if (value === null || (value === undefined && !optionalProps.includes(key))) {
-			console.warn(`Fehlender SEO-Wert für: ${key}`);
-		}
-	});
-	return props;
-}
-
-// Sichere Array-Initialisierung
-export function ensureArray<T>(value: T[] | undefined | null): T[] {
-	return Array.isArray(value) ? value : [];
-}
+};

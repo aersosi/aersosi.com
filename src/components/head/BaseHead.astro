@@ -23,15 +23,8 @@ export interface Props {
 	author?: string;
 }
 
-const {
-	pageTitle = "",
-	pageDescription = "",
-	image,
-	article,
-	publishDate,
-	modifiedDate,
-	author,
-} = Astro.props;
+const { pageTitle, pageDescription, image, article, publishDate, modifiedDate, author } =
+	Astro.props;
 ---
 
 <Fonts />

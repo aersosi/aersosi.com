@@ -1,6 +1,6 @@
 ---
 import { AstroSeo } from "@astrolib/seo";
-import { SeoProps, validateSeoProps, ensureArray } from "@/_definitions/seo";
+import { SeoProps } from "@/_definitions/seo";
 
 export type Props = SeoProps;
 
@@ -23,10 +23,8 @@ const {
 
 const canonicalURL = new URL(Astro.url?.pathname || "/", Astro.site);
 
-const ogImageURL =
-	image && typeof image === "string" && image.startsWith("http")
-		? new URL(image)
-		: new URL(image || "/img/portrait.webp", Astro.site);
+// Vereinfachte Logik: `image` hat immer einen Wert (entweder von der Seite oder den Standardwert)
+const ogImageURL = image.startsWith("http") ? new URL(image) : new URL(image, Astro.site);
 ---
 
 <AstroSeo
@@ -79,8 +77,8 @@ const ogImageURL =
 			href: "https://aersosi.com/en",
 		},
 	]}
-	additionalMetaTags={ensureArray(additionalMetaTags)}
-	additionalLinkTags={ensureArray(additionalLinkTags)}
+	additionalMetaTags={additionalMetaTags}
+	additionalLinkTags={additionalLinkTags}
 />
 
 {
@@ -93,11 +91,7 @@ const ogImageURL =
 				headline: pageTitle || "",
 				description: pageDescription || "",
 				image: ogImageURL.toString(),
-				// Nur hinzufügen, wenn publishDate definiert ist
-
 				...(publishDate ? { datePublished: publishDate.toISOString() } : {}),
-				// Nur hinzufügen, wenn eines der Daten definiert ist
-
 				...(modifiedDate || publishDate
 					? {
 							dateModified: modifiedDate?.toISOString() || publishDate?.toISOString(),
@@ -113,7 +107,9 @@ const ogImageURL =
 					name: "Arthur Ersosi",
 					logo: {
 						"@type": "ImageObject",
-						url: Astro.site ? new URL("/logo.png", Astro.site).toString() : "/logo.png",
+						url: Astro.site
+							? new URL("/img/ae_logo_2025.svg", Astro.site).toString()
+							: "/img/ae_logo_2025.svg",
 					},
 				},
 				mainEntityOfPage: {
