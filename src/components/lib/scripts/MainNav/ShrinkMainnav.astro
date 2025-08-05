@@ -1,3 +1,7 @@
+---
+
+---
+
 <script>
 	import { throttle } from "../throttle";
 
@@ -8,7 +12,14 @@
 		if (!mainNav) return;
 
 		// Define classes to add/remove based on scroll position
-		const scrolledClasses = ["py-3", "bg-base-100/70", "dark:bg-base-800/70", "backdrop-blur-md"];
+		const scrolledClasses = [
+			"py-3",
+			"bg-base-100/70",
+			"dark:bg-base-800/70",
+			"backdrop-blur-md",
+			"shadow-md",
+		];
+
 		const notScrolledClasses = ["py-4", "md:py-6"];
 
 		const updateNavWrapperPosition = () => {

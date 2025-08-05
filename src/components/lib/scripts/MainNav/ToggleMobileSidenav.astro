@@ -1,5 +1,5 @@
 <script>
-	const toggleMobileNav = () => {
+	const ToggleMobileSidenav = () => {
 		const mobileNav = document.getElementById("mobileNav");
 		const backdrop = document.getElementById("backdrop");
 
@@ -14,7 +14,7 @@
 
 		document.body.classList.toggle("overflow-hidden");
 	};
-	document.getElementById("mobileNavBtn")?.addEventListener("click", toggleMobileNav);
-	document.getElementById("closeMobileNavBtn")?.addEventListener("click", toggleMobileNav);
-	document.getElementById("backdrop")?.addEventListener("click", toggleMobileNav);
+	document.getElementById("mobileNavBtn")?.addEventListener("click", ToggleMobileSidenav);
+	document.getElementById("closeMobileNavBtn")?.addEventListener("click", ToggleMobileSidenav);
+	document.getElementById("backdrop")?.addEventListener("click", ToggleMobileSidenav);
 </script>
