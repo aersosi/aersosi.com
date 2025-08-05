@@ -66,6 +66,13 @@ performance. The project also uses:
 - [MDX](https://mdxjs.com) for content
 - [TypeScript](https://www.typescriptlang.org) for type safety
 
+
+## Features
+
+**Light/Dark theme**
+- Light/Dark theme can also be triggered using the keyboard shortcut Option/Alt + D
+
+
 ## Learn More
 
 For more information about Astro, check out their official [documentation](https://docs.astro.build).

@@ -26,4 +26,14 @@
 			updateTheme(!isDark);
 		});
 	});
+	
+	// Add keyboard shortcut for theme toggle (Option + D on Mac, Alt + D on Windows)
+	document.addEventListener("keydown", (event) => {
+		// Check for Option/Alt + D (key code 68 for 'D')
+		if ((event.altKey) && event.keyCode === 68) {
+			const isDark = document.documentElement.classList.contains("dark");
+			updateTheme(!isDark);
+			event.preventDefault(); // Prevent default browser behavior
+		}
+	});
 </script>
