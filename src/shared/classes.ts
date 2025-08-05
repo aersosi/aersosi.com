@@ -12,4 +12,4 @@ export const stackGrid = [
 
 export const stackGridPadding = ["py-18", "md:py-22"];
 
-export const stickyElement = ["lg:sticky", "lg:top-16", "lg:z-40", "self-start"];
+export const stickyElement = ["lg:sticky", "lg:top-24", "lg:z-40", "self-start"];

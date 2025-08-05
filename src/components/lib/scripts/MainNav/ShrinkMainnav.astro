@@ -3,17 +3,30 @@
 
 	document.addEventListener("DOMContentLoaded", () => {
 		const mainNav = document.getElementById("mainNav");
-		const SCROLL_THRESHOLD = 96;
+		const SCROLL_THRESHOLD = 48;
 
 		if (!mainNav) return;
 
+		// Define classes to add/remove based on scroll position
+		const scrolledClasses = ["py-3", "bg-base-100/70", "dark:bg-base-800/70", "backdrop-blur-md"];
+		const notScrolledClasses = ["py-4", "md:py-6"];
+
 		const updateNavWrapperPosition = () => {
 			const isOverThreshold = window.scrollY > SCROLL_THRESHOLD;
-			const addClass = isOverThreshold ? "lg:py-2" : "lg:py-6";
-			const removeClass = isOverThreshold ? "lg:py-6" : "lg:py-2";
 
-			mainNav.classList.remove(removeClass);
-			mainNav.classList.add(addClass);
+			// Determine which classes to add and remove based on scroll position
+			const classesToAdd = isOverThreshold ? scrolledClasses : notScrolledClasses;
+			const classesToRemove = isOverThreshold ? notScrolledClasses : scrolledClasses;
+
+			// Remove classes
+			classesToRemove.forEach((className) => {
+				mainNav.classList.remove(className);
+			});
+
+			// Add classes
+			classesToAdd.forEach((className) => {
+				mainNav.classList.add(className);
+			});
 		};
 
 		updateNavWrapperPosition(); // Initial
