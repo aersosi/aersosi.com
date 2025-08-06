@@ -15,21 +15,17 @@ tags: ["CSS", "A11y", "Tooltip"]
 
 # a11ytip
 
-Simple, straight-forward tooltips with accessibility at their core.
+Simple, straightforward tooltips.
+Easy to integrate, easy to configure, CSS-first with accessibility built in.
 
-Extremely easy to integrate and configure with a CSS-first approach that puts user experience and accessibility front
-and center.
-
-## Features
-
-- **CSS Variables**: Effortless global theming and customization
-- **Data Attributes**: Granular control over individual tooltips (browser permitting)
+- **CSS Variables**: Effortless custom styling
+- **Data Attributes**: Granular styling of individual tooltips (Chrome only)
 - **Lightweight**: ~7KB CSS (minified) + ~1KB JavaScript (minified)
-- **Accessibility First**: Built with screen readers and keyboard navigation in mind
-- **Beautiful Design**: Clean, modern aesthetics out of the box
-- **Theme Support**: Light and dark themes included, with custom theme support
-- **CSS-First Architecture**: Minimal JavaScript footprint, maximum flexibility
-- **No Over-Engineering**: Just tooltips that work, without unnecessary complexity
+- **Accessibility first**: Built with screen readers and keyboard navigation in mind
+- **Clean design**: Clean, modern aesthetic
+- **Theme support**: Light and dark themes included, or just add your own
+- **CSS-first architecture**: Minimal JavaScript footprint, maximum flexibility
+- **No overengineering**: Simple tooltips that work. No fuss
 
 ---
 
@@ -45,31 +41,19 @@ and center.
 
    ```css
    @import "@aersosi/a11ytip/src/a11ytip.css";
-   ```
-
-   Import CSS (minified):
-
-   ```css
+   /*or import minified*/ 
    @import "@aersosi/a11ytip/dist/a11ytip.min.css";
    ```
 
 3. Import TypeScript:
 
    ```typescript
-   import { toggleA11ytip } from "@aersosi/a11ytip/src/ToggleA11ytip";
+   import {toggleA11ytip} from "@aersosi/a11ytip/src/ToggleA11ytip";
+   // or import minified
+   import {toggleA11ytip} from "@aersosi/a11ytip/dist/ToggleA11ytip.min.js"; 
 
    document.addEventListener("DOMContentLoaded", toggleA11ytip);
    ```
-
-   Import JavaScript (minified):
-
-   ```typescript
-   import { toggleA11ytip } from "@aersosi/a11ytip/dist/ToggleA11ytip.min.js";
-
-   document.addEventListener("DOMContentLoaded", toggleA11ytip);
-   ```
-
----
 
 ## Usage
 
@@ -106,7 +90,7 @@ and center.
 ## a11ytip Text
 
 1. The text of an a11ytip is primarily defined via the `aria-label`.
-2. **Opt-Out:** Alternatively, you can use the `data-a11ytip-text` attribute.
+2. **Opt-Out:** Alternatively, you can just use the `data-a11ytip-text` attribute.
 3. Both attributes, `aria-label` and `data-a11ytip-text`, can be used simultaneously. In this case, the
    text from `data-a11ytip-text` takes precedence and is displayed.
 
@@ -118,15 +102,14 @@ and center.
 </button>
 ```
 
-The `data-a11ytip-text` defines the displayed a11ytip text ("Close dialog"), while the `aria-label` can still
-be used for accessibility.
+The `data-a11ytip-text` determines the displayed a11ytip text (“Close dialog”), while the `aria-label` remains independent.
 
 ---
 
 ## Force Active Status
 
 With the `data-a11ytip-active` attribute or the `a11ytip-active` class, the active status of an a11ytip can be
-permanently forced without requiring a hover event.
+permanently forced.
 
 **Example with data attribute:**
 
@@ -169,8 +152,7 @@ permanently forced without requiring a hover event.
   --a11ytip-padding-top: 4px;
   --a11ytip-padding-bottom: 4px;
   --a11ytip-border-radius: 6px;
-  --a11ytip-box-shadow:
-    0 1px 3px 0 theme(colors.black / 0.25), 0 1px 2px -1px theme(colors.black / 0.1);
+  --a11ytip-box-shadow: 0 1px 3px 0 theme(colors.black / 0.25), 0 1px 2px -1px theme(colors.black / 0.1);
   --a11ytip-max-width: 14ch;
 
   /* Animation */
@@ -179,13 +161,11 @@ permanently forced without requiring a hover event.
   --a11ytip-transition-duration: 250ms;
 }
 
-/* src/a11ytip_config.css */
-
 /* Dark Theme */
 @media (prefers-color-scheme: dark) {
   :root:not(.light, [data-light], [data-theme="light"]) {
-    --a11ytip-text-color: black;
-    --a11ytip-bg-color: theme(color.base.100, white);
+   --a11ytip-text-color: black;
+   --a11ytip-bg-color: theme(color.base.100, white);
   }
 }
 
@@ -203,24 +183,24 @@ permanently forced without requiring a hover event.
 /* src/a11ytip_config.css */
 
 :root {
-    /* Text */
-    --a11ytip-text-size: theme(fontSize.sm, 0.875rem);
-    --a11ytip-text-color: theme(colors.white, #ffffff);
+   /* Text */
+   --a11ytip-text-size: theme(fontSize.sm, 0.875rem);
+   --a11ytip-text-color: theme(colors.white, #ffffff);
 
-    /* Box */
-    --a11ytip-padding-left: theme(spacing.2, 0.5rem);
-    --a11ytip-padding-right: theme(spacing.2, 0.5rem);
-    --a11ytip-padding-top: theme(spacing.1, 0.25rem);
-    --a11ytip-padding-bottom: theme(spacing.1, 0.25rem);
-    --a11ytip-box-shadow: theme(boxShadow.sm, 0 1px 2px 0 rgb(0 0 0 / 0.05));
+   /* Box */
+   --a11ytip-padding-left: theme(spacing.2, 0.5rem);
+   --a11ytip-padding-right: theme(spacing.2, 0.5rem);
+   --a11ytip-padding-top: theme(spacing.1, 0.25rem);
+   --a11ytip-padding-bottom: theme(spacing.1, 0.25rem);
+   --a11ytip-box-shadow: theme(boxShadow.sm, 0 1px 2px 0 rgb(0 0 0 / 0.05));
 
-    ...
+   ...
 }
 ```
 
 ## Dark Theme and Custom Themes
 
-You can use the dark theme with the following predefined selectors:
+**The dark theme is triggered in the following cases:**
 
 - `data-dark` attribute: `<body data-dark>`
 - `data-theme="dark"` attribute: `<body data-theme="dark">`
@@ -239,9 +219,9 @@ You can also create your own custom themes by defining new selectors in the `a11
 }
 ```
 
-## Customizing a11ytip with Data Attributes
+## Customizing single a11ytip with Data Attributes
 
-The CSS a11ytips support optional `data-*` attributes that allow you to override the default styles of an individual
+The CSS a11ytips support optional `data-*` attributes that allow you to override the default configuration of an individual
 a11ytip.
 
 **Note:** Data attribute-based customization is currently only supported in Chrome-based browsers.
@@ -249,24 +229,25 @@ a11ytip.
 **Available data attributes:**
 
 1. `data-a11ytip-*`:
+   - **These attributes are supported by all browsers!**
    - Determine where the a11ytip appears relative to the element.
    - Available positions:
-     - `data-a11ytip-top` (centered)
-     - `data-a11ytip-top-left`
-     - `data-a11ytip-top-right`
-     - `data-a11ytip-right` (centered)
-     - `data-a11ytip-right-top`
-     - `data-a11ytip-right-bottom`
-     - `data-a11ytip-bottom` (centered)
-     - `data-a11ytip-bottom-left`
-     - `data-a11ytip-bottom-right`
-     - `data-a11ytip-left` (centered)
-     - `data-a11ytip-left-top`
-     - `data-a11ytip-left-bottom`
+   - `data-a11ytip-top` (centered)
+   - `data-a11ytip-top-left`
+   - `data-a11ytip-top-right`
+   - `data-a11ytip-right` (centered)
+   - `data-a11ytip-right-top`
+   - `data-a11ytip-right-bottom`
+   - `data-a11ytip-bottom` (centered)
+   - `data-a11ytip-bottom-left`
+   - `data-a11ytip-bottom-right`
+   - `data-a11ytip-left` (centered)
+   - `data-a11ytip-left-top`
+   - `data-a11ytip-left-bottom`
    - Value format: No values required, the mere presence of the attribute activates the corresponding position.
 
 2. `data-a11ytip-text`:
-   - This attribute is supported by all browsers!
+   - **This attribute is supported by all browsers!**
    - Defines the text content of the a11ytip.
    - This attribute takes precedence over `aria-label` when both are present.
    - Value format: Any text string.
@@ -300,25 +281,24 @@ a11ytip.
    - Sets the maximum width of the a11ytip box.
    - This prevents extremely long content from stretching the a11ytip.
    - Value format: A CSS `<length>` value (e.g., `14ch`, `150px`).
-   - Default value: `14ch` (approximately 14 characters wide).
 
 10. `data-a11ytip-start-position` and `data-a11ytip-end-position`:
-    - Positions the a11ytip when appearing (`start`) or when it becomes active (`end`).
-    - Value format: CSS `<length>` values (e.g., `4px`, `2rem`).
+   - Starting point of the a11ytip animation (`start`) and end point (`end`).
+   - Value format: CSS `<length>` values (e.g., `4px`, `2rem`).
 
 11. `data-a11ytip-transition-duration`:
-    - Adjusts the transition duration of the a11ytip.
-    - Value format: A valid time duration (e.g., `350ms`, `0.5s`).
+   - Adjusts the transition duration of the a11ytip.
+   - Value format: A valid time duration (e.g., `350ms`, `0.5s`).
 
 12. `data-a11ytip-delay`:
-    - Changes the delay before the a11ytip is displayed.
-    - Value format: A number in milliseconds (e.g., `250`, `1000`).
-    - Default value: `500` (500 milliseconds).
+   - Changes the delay before the a11ytip is displayed.
+   - Value format: A number in milliseconds (e.g., `250`, `1000`).
+   - Default value: `500` (500 milliseconds).
 
 13. `data-a11ytip-active`:
-    - Forces the active status of an a11ytip permanently, without requiring a hover event.
-    - Useful for checking positioning or during development.
-    - Value format: No values required, the mere presence of the attribute activates the effect.
+   - Forces the active status of an a11ytip permanently, without requiring a hover event.
+   - Useful for checking positioning or during development.
+   - Value format: No values required, the mere presence of the attribute activates the effect.
 
 ---
 
@@ -330,6 +310,8 @@ a11ytip.
   aria-label="I'm a cheeky a11ytip!"
   data-a11ytip-text="This text will be displayed"
   data-a11ytip-active
+  
+  <!-- Styling -->
   data-a11ytip-text-size="2rem"
   data-a11ytip-text-color="hotpink"
   data-a11ytip-bg-color="#1a1a1a"

@@ -51,11 +51,13 @@
 
 @theme {
     --animate-wiggle: wiggle 0.5s ease-in-out infinite;
+
     @keyframes wiggle {
         0%,
         100% {
             transform: rotate(-5deg);
         }
+
         50% {
             transform: rotate(5deg);
         }
@@ -184,8 +186,8 @@ code {
 code .line::before {
 	content: counter(step);
 	counter-increment: step;
-	width: 0.75rem;
-	margin-right: 0.75rem;
+	width: 1rem;
+	margin-right: 1rem;
 	display: inline-block;
 	text-align: right;
 	color: var(--color-base-400);
