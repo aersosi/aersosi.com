@@ -5,94 +5,92 @@ import Wrapper from "@/components/lib/containers/Wrapper.astro";
 import ProjectEntry from "@/components/lib/entries/ProjectEntry.astro";
 import { getCollection } from "astro:content";
 import Link from "@/components/lib/elements/Link.astro";
-import { stackGrid, stackGridPadding, stickyElement } from "@/shared/classes";
+import { stackGrid, stackGridPadding } from "@/shared/classes";
 
 const allProjectsUnsorted = await getCollection("projects");
 const allProjects = allProjectsUnsorted.sort(
-	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
 );
 
 const allTags = [...new Set(allProjects.map((post) => post.data.tags).flat())];
 const priorityTags = ["Professionelles Projekt", "Privates Projekt"];
 const projectTypes = allTags.filter((tag) => priorityTags.includes(tag));
 const otherTags = allTags
-	.filter((tag) => !priorityTags.includes(tag))
-	.sort((a, b) => a.localeCompare(b, "de"));
+  .filter((tag) => !priorityTags.includes(tag))
+  .sort((a, b) => a.localeCompare(b, "de"));
 ---
 
 <BaseLayout
-	pageTitle="Alle Projekte | Arthur Ersosi"
-	pageDescription="Entdecken Sie meine Projekte im Bereich Frontend-Entwicklung, UI/UX-Design und Web-Anwendungen."
+  pageTitle="Alle Projekte | Arthur Ersosi"
+  pageDescription="Entdecken Sie meine Projekte im Bereich Frontend-Entwicklung, UI/UX-Design und Web-Anwendungen."
 >
-	<section>
-		<Wrapper variant="standard">
-			<div class:list={[...stackGrid, ...stackGridPadding]}>
-				<div class:list={[...stickyElement]}>
-					<div class="grid gap-4">
-						<Text tag="h1" variant="text2XL">Projekte</Text>
+  <section>
+    <Wrapper variant="standard">
+      <div class:list={[...stackGrid, ...stackGridPadding]}>
+        <div class="grid gap-4">
+            <Text tag="h1" variant="text2XL">Projekte</Text>
 
-						<div class="grid gap-2">
-							<Text tag="h2" variant="textBase" class="flex justify-baseline gap-1">
-								Alle Kategorien
-								<span class="flex gap-0.5">
-									(<Link
-										href="/projects/tags"
-										size="base"
-										variant="primary"
-										aria-label="Projektkategorie Index"
-										a11ytip-bottom>Index</Link
-									>)</span
-								>
-							</Text>
+            <div class="grid gap-2">
+              <Text tag="h2" variant="textBase" class="flex justify-baseline gap-1">
+                Alle Kategorien
+                <span class="flex gap-0.5">
+                  (<Link
+                    href="/projects/tags"
+                    size="base"
+                    variant="primary"
+                    aria-label="Projektkategorie Index"
+                    a11ytip-bottom>Index</Link
+                  >)
+                </span>
+              </Text>
 
-							<div class="grid gap-2">
-								<div
-									class="scrollable-content scrollbar-hide snap-x snap-proximity overflow-x-scroll"
-								>
-									<div class="flex gap-x-4 gap-y-1 lg:flex-col">
-										{
-											projectTypes.map((tag) => (
-												<Link
-													href={`/projects/tags/${tag}`}
-													size="sm"
-													variant="primary"
-													class="whitespace-nowrap"
-												>
-													{tag}
-												</Link>
-											))
-										}
-									</div>
-								</div>
+              <div class="grid gap-2">
+                <div
+                  class="scrollable-content scrollbar-hide snap-x snap-proximity overflow-x-scroll"
+                >
+                  <div class="flex gap-x-4 gap-y-1 lg:flex-col">
+                    {
+                      projectTypes.map((tag) => (
+                        <Link
+                          href={`/projects/tags/${tag}`}
+                          size="sm"
+                          variant="primary"
+                          class="whitespace-nowrap"
+                        >
+                          {tag}
+                        </Link>
+                      ))
+                    }
+                  </div>
+                </div>
 
-								<span class="hidden lg:block"></span>
+                <span class="hidden lg:block"></span>
 
-								<div
-									class="scrollable-content scrollbar-hide snap-x snap-proximity overflow-x-scroll"
-								>
-									<div class="flex gap-x-4 gap-y-1 lg:flex-col">
-										{
-											otherTags.map((tag) => (
-												<Link
-													href={`/projects/tags/${tag}`}
-													size="sm"
-													variant="primary"
-													class="whitespace-nowrap"
-												>
-													{tag}
-												</Link>
-											))
-										}
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="flex flex-col gap-12 lg:col-span-2">
-					{allProjects.map((project) => <ProjectEntry project={project} />)}
-				</div>
-			</div>
-		</Wrapper>
-	</section>
+                <div
+                  class="scrollable-content scrollbar-hide snap-x snap-proximity overflow-x-scroll"
+                >
+                  <div class="flex gap-x-4 gap-y-1 lg:flex-col">
+                    {
+                      otherTags.map((tag) => (
+                        <Link
+                          href={`/projects/tags/${tag}`}
+                          size="sm"
+                          variant="primary"
+                          class="whitespace-nowrap"
+                        >
+                          {tag}
+                        </Link>
+                      ))
+                    }
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+        <div class="flex flex-col gap-12 lg:col-span-2">
+          {allProjects.map((project) => <ProjectEntry project={project} />)}
+        </div>
+      </div>
+    </Wrapper>
+  </section>
 </BaseLayout>

@@ -3,7 +3,7 @@ import Text from "@/components/lib/elements/Text.astro";
 import Wrapper from "@/components/lib/containers/Wrapper.astro";
 import Link from "@/components/lib/elements/Link.astro";
 import ExternalLink from "@/components/lib/icons/ExternalLink.astro";
-import { stackGrid, stackGridPadding, stickyElement } from "@/shared/classes";
+import { stackGrid, stackGridPadding } from "@/shared/classes";
 
 const links = [
 	{
@@ -32,7 +32,7 @@ const links = [
 <section>
 	<Wrapper variant="standard">
 		<div id="socials" class:list={[...stackGrid, ...stackGridPadding]}>
-			<div class:list={[...stickyElement]}>
+			<div>
 				<Text tag="h2" variant="textLG">Kontakt</Text>
 			</div>
 			<div class="flex flex-col gap-2 lg:col-span-2">

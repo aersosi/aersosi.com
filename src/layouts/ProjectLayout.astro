@@ -7,7 +7,7 @@ import ProjectEntry from "@/components/lib/entries/ProjectEntry.astro";
 const { frontmatter } = Astro.props;
 import { getCollection } from "astro:content";
 import ExternalLink from "@/components/lib/icons/ExternalLink.astro";
-import { stackGrid, stackGridPadding, stickyElement } from "@/shared/classes";
+import { stackGrid, stackGridPadding } from "@/shared/classes";
 import CarouselWrapper from "@/components/lib/elements/CarouselWrapper.astro";
 
 const allProjects = await getCollection("projects");
@@ -26,8 +26,7 @@ const relatedProjects = allProjects.filter((project) =>
   <section>
     <Wrapper variant="standard">
       <div class:list={[...stackGrid, ...stackGridPadding]}>
-        <div class:list={[...stickyElement]}>
-          <div class="flex gap-8 flex-col">
+        <div class="flex gap-8 flex-col">
             <Text tag="h1" variant="text2XL">
               {frontmatter.viewerTitle}
             </Text>
@@ -107,7 +106,6 @@ const relatedProjects = allProjects.filter((project) =>
               )}
             </div>
 
-          </div>
         </div>
         <div class="lg:col-span-2">
           <CarouselWrapper images={frontmatter.images} />

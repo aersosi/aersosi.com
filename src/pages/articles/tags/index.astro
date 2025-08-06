@@ -4,42 +4,40 @@ import Text from "@/components/lib/elements/Text.astro";
 import Wrapper from "@/components/lib/containers/Wrapper.astro";
 import { getCollection } from "astro:content";
 import Link from "@/components/lib/elements/Link.astro";
-import { stackGrid, stackGridPadding, stickyElement } from "@/shared/classes";
+import { stackGrid, stackGridPadding } from "@/shared/classes";
 
 const allPosts = await getCollection("articles");
 const tagCounts = allPosts.reduce((acc, post) => {
-	post.data.tags.forEach((tag) => {
-		acc[tag] = (acc[tag] || 0) + 1;
-	});
-	return acc;
+  post.data.tags.forEach((tag) => {
+    acc[tag] = (acc[tag] || 0) + 1;
+  });
+  return acc;
 }, {});
 const tags = Object.keys(tagCounts);
 ---
 
 <BaseLayout
-	pageTitle="Artikel Kategorien | Arthur Ersosi"
-	pageDescription="Eine Liste aller Artikel-Kategorien von Arthur Ersosi. Finden Sie Inhalte zu Frontend-Entwicklung, UI/UX-Design und Web-Technologien."
+  pageTitle="Artikel Kategorien | Arthur Ersosi"
+  pageDescription="Eine Liste aller Artikel-Kategorien von Arthur Ersosi. Finden Sie Inhalte zu Frontend-Entwicklung, UI/UX-Design und Web-Technologien."
 >
-	<section>
-		<Wrapper variant="standard">
-			<div class:list={[...stackGrid, ...stackGridPadding]}>
-				<div class:list={[...stickyElement]}>
-					<div class="flex flex-col gap-8">
-						<Text tag="h1" variant="text2XL"> Artikelkategorie Index </Text>
-					</div>
-				</div>
+  <section>
+    <Wrapper variant="standard">
+      <div class:list={[...stackGrid, ...stackGridPadding]}>
+        <div class="flex flex-col gap-8">
+          <Text tag="h1" variant="text2XL"> Artikelkategorie Index </Text>
+        </div>
 
-				<div class="flex flex-col gap-2 lg:col-span-2">
-					{
-						tags.map((tag) => (
-							<Link href={`/articles/tags/${tag}`} size="sm" variant="primary">
-								<span>{tagCounts[tag]}</span>
-								<span>{tag}</span>
-							</Link>
-						))
-					}
-				</div>
-			</div>
-		</Wrapper>
-	</section>
+        <div class="flex flex-col gap-2 lg:col-span-2">
+          {
+            tags.map((tag) => (
+              <Link href={`/articles/tags/${tag}`} size="sm" variant="primary">
+                <span>{tagCounts[tag]}</span>
+                <span>{tag}</span>
+              </Link>
+            ))
+          }
+        </div>
+      </div>
+    </Wrapper>
+  </section>
 </BaseLayout>

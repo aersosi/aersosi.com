@@ -4,7 +4,7 @@ import Text from "@/components/lib/elements/Text.astro";
 import Wrapper from "@/components/lib/containers/Wrapper.astro";
 import { getCollection } from "astro:content";
 import Link from "@/components/lib/elements/Link.astro";
-import { stackGrid, stackGridPadding, stickyElement } from "@/shared/classes";
+import { stackGrid, stackGridPadding } from "@/shared/classes";
 
 const allProjects = await getCollection("projects");
 
@@ -30,10 +30,8 @@ const otherTags = allTags
 	<section>
 		<Wrapper variant="standard">
 			<div class:list={[...stackGrid, ...stackGridPadding]}>
-				<div class:list={[...stickyElement]}>
-					<div class="flex flex-col gap-8">
+				<div class="flex flex-col gap-8">
 						<Text tag="h1" variant="text2XL"> Projektkategorie Index </Text>
-					</div>
 				</div>
 
 				<div class="flex flex-col gap-2 lg:col-span-2">

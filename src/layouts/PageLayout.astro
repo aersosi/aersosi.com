@@ -4,7 +4,7 @@ import { Image } from "astro:assets";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import Text from "@/components/lib/elements/Text.astro";
 import Wrapper from "@/components/lib/containers/Wrapper.astro";
-import { stackGrid, stackGridPadding, stickyElement } from "@/shared/classes";
+import { stackGrid, stackGridPadding } from "@/shared/classes";
 const { frontmatter } = Astro.props;
 ---
 
@@ -13,8 +13,7 @@ const { frontmatter } = Astro.props;
 		<Wrapper variant="standard">
 			<!--About Me-->
 			<div class:list={[...stackGrid, ...stackGridPadding]}>
-				<div class:list={[...stickyElement]}>
-					<div class="flex flex-col gap-8">
+				<div class="flex flex-col gap-8">
 						<Text tag="h1" variant="text2XL">
 							{frontmatter.viewerTitle}
 						</Text>
@@ -22,7 +21,6 @@ const { frontmatter } = Astro.props;
 							{frontmatter.viewerDescription}
 						</Text>
 						<slot name="intro" />
-					</div>
 				</div>
 				<div class="lg:col-span-2">
 					<Wrapper variant="prose">
