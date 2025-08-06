@@ -14,128 +14,134 @@ import ThemeToggle from "@/components/lib/elements/ThemeToggle.astro";
 import Text from "@/components/lib/elements/Text.astro";
 
 const baseClass = [
-	"fixed",
-	"w-full",
-	"z-50",
-	"flex",
-	"justify-center",
-	"transition-all",
-	"duration-300",
-	"top-0",
-	"py-4",
-	"md:py-6",
+  "fixed",
+  "w-full",
+  "z-50",
+  "flex",
+  "justify-center",
+  "transition-all",
+  "duration-300",
+  "top-0",
+  "py-4",
+  "md:py-6",
 ];
 
 const navItems = [
-	{ href: "/projects", name: "Projekte", Icon: Tool },
-	{ href: "/articles/", name: "Artikel", Icon: Book },
-	{ href: "/about", name: "Über mich", Icon: User },
-	{ href: "/#socials", name: "Kontakt", Icon: AtSign },
+  { href: "/projects", name: "Projekte", Icon: Tool },
+  { href: "/articles/", name: "Artikel", Icon: Book },
+  { href: "/about", name: "Über mich", Icon: User },
+  { href: "/#socials", name: "Kontakt", Icon: AtSign },
 ];
 ---
 
 <nav id="mainNav" class:list={[...baseClass]}>
-	<div class="w-full max-w-7xl px-4 sm:px-12 lg:px-16">
-		<!--Mobile Nav-->
-		<div class="flex w-full justify-between md:hidden">
-			<Button
-				isLink={true}
-				iconOnly
-				size="sm"
-				variant="default"
-				href={"/#home"}
-				aria-label={"Startseite"}
-				data-a11ytip-bottom
-			>
-				<AeLogo slot="icon" size="xl" />
-			</Button>
+  <div class="w-full max-w-7xl px-4 sm:px-12 lg:px-16">
+    <!--Mobile Nav-->
+    <div class="flex w-full justify-between md:hidden">
+      <Button
+        isLink={true}
+        iconOnly
+        size="sm"
+        variant="default"
+        href={"/#home"}
+        aria-label={"Startseite"}
+        data-a11ytip-bottom
+        class="group"
+      >
+        <div slot="icon" class="transition-transform duration-500 group-hover:scale-115">
+          <AeLogo size="xl" class="group-hover:animate-wiggle" />
+        </div>
+      </Button>
 
-			<Button id="mobileNavBtn" size="sm" variant="primary" class="flex gap-2">
-				Menü
-				<Menu slot="left-icon" size="base" />
-			</Button>
-			<Button id="toTopBtn" size="sm" variant="primary" class="flex hidden gap-2">
-				Nach oben
-				<ArrowUp slot="left-icon" size="base" />
-			</Button>
-		</div>
+      <Button id="mobileNavBtn" size="sm" variant="primary" class="flex gap-2">
+        Menü
+        <Menu slot="left-icon" size="base" />
+      </Button>
+      <Button id="toTopBtn" size="sm" variant="primary" class="flex hidden gap-2">
+        Nach oben
+        <ArrowUp slot="left-icon" size="base" />
+      </Button>
+    </div>
 
-		<div class="hidden items-center gap-2 md:flex">
-			<Button
-				isLink={true}
-				iconOnly
-				size="sm"
-				variant="default"
-				href={"/#home"}
-				aria-label={"Startseite"}
-				data-a11ytip-bottom
-			>
-				<AeLogo slot="icon" size="xl" />
-			</Button>
+    <div class="hidden items-center gap-2 md:flex">
+      <Button
+        isLink={true}
+        iconOnly
+        size="sm"
+        variant="default"
+        href={"/#home"}
+        aria-label={"Startseite"}
+        data-a11ytip-bottom
+        class="group"
+      >
+        <div slot="icon" class="transition-transform duration-500 group-hover:scale-115">
+          <AeLogo size="xl" class="group-hover:animate-wiggle" />
+        </div>
+      </Button>
 
-			<div class="ml-auto flex justify-end gap-2">
-				{
-					navItems.map(({ href, name, Icon }) => (
-						<Button
-							isLink={true}
-							iconOnly
-							size="sm"
-							variant="primary"
-							href={href}
-							aria-label={name}
-							data-a11ytip-bottom
-							key={href}
-						>
-							<Icon slot="icon" size="sm" />
-						</Button>
-					))
-				}
-			</div>
-			<ThemeToggle aria-label="Hell/Dunkel Modus" data-a11ytip-bottom />
-		</div>
-	</div>
+      <div class="ml-auto flex justify-end gap-2">
+        {
+          navItems.map(({ href, name, Icon }) => (
+            <Button
+              isLink={true}
+              iconOnly
+              size="sm"
+              variant="primary"
+              href={href}
+              aria-label={name}
+              data-a11ytip-bottom
+              key={href}
+            >
+              <Icon slot="icon" size="sm" />
+            </Button>
+          ))
+        }
+      </div>
+      <ThemeToggle aria-label="Hell/Dunkel Modus" data-a11ytip-bottom />
+    </div>
+  </div>
 </nav>
 
 <!--Sidenav-->
 <nav
-	id="mobileNav"
-	class="bg-base-100 dark:bg-base-800 fixed top-0 right-0 z-100 h-full min-w-3/4 translate-x-full transform backdrop-blur-sm transition-transform duration-300 sm:min-w-1/2 md:hidden"
+  id="mobileNav"
+  class="bg-base-100 dark:bg-base-800 fixed top-0 right-0 z-100 h-full min-w-3/4 translate-x-full transform backdrop-blur-sm transition-transform duration-300 sm:min-w-1/2 md:hidden"
 >
-	<!--Sidenav Head-->
-	<div class="flex h-full flex-col gap-9 px-8 py-6">
-		<div class="flex items-center justify-between gap-8">
-			<Text tag="h3" class="text-xl font-medium">Menü</Text>
-			<Button
-				iconOnly
-				id="closeMobileNavBtn"
-				size="xs"
-				variant="default"
-				class="flex gap-2"
-				data-a11ytip-left
-				aria-label="Menü schließen"
-			>
-				<X slot="icon" size="base" />
-			</Button>
-		</div>
+  <!--Sidenav Head-->
+  <div class="flex h-full flex-col gap-9 px-8 py-6">
+    <div class="flex items-center justify-between gap-8">
+      <Text tag="h3" class="text-xl font-medium">Menü</Text>
+      <Button
+        iconOnly
+        id="closeMobileNavBtn"
+        size="xs"
+        variant="default"
+        class="flex gap-2"
+        data-a11ytip-left
+        aria-label="Menü schließen"
+      >
+        <X slot="icon" size="base" />
+      </Button>
+    </div>
 
-		<!--Sidenav Links-->
-		<div class="border-base-400 dark:border-base-600 grid gap-4 border-t border-b py-8">
-			{
-				navItems.map(({ href, name }) => (
-					<Link href={href} size="lg" variant="primary">
-						{name}
-					</Link>
-				))
-			}
-		</div>
+    <!--Sidenav Links-->
+    <div class="border-base-400 dark:border-base-600 grid gap-4 border-t border-b py-8">
+      {
+        navItems.map(({ href, name }) => (
+          <Link href={href} size="lg" variant="primary">
+            {name}
+          </Link>
+        ))
+      }
+    </div>
 
-		<!--Dark/Light mode-->
-		<ThemeToggle />
-	</div>
+    <!--Dark/Light mode-->
+    <ThemeToggle />
+  </div>
 </nav>
 
 <div
-	id="backdrop"
-	class="bg-base-800/30 dark:bg-base-100/30 fixed inset-0 z-90 hidden border backdrop-blur-xs md:hidden"
+  id="backdrop"
+  class="bg-base-800/30 dark:bg-base-100/30 fixed inset-0 z-90 hidden border backdrop-blur-xs md:hidden"
 >
 </div>

@@ -49,6 +49,20 @@
 	--color-base-950: oklch(14.7% 0.004 49.25deg);
 }
 
+@theme {
+    --animate-wiggle: wiggle 0.5s ease-in-out infinite;
+    @keyframes wiggle {
+        0%,
+        100% {
+            transform: rotate(-5deg);
+        }
+        50% {
+            transform: rotate(5deg);
+        }
+    }
+}
+
+
 :root {
 	/* Stylistic settings for Inter font */
 
