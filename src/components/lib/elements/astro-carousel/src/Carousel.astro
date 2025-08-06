@@ -3,306 +3,306 @@ import type { ComponentProps } from "astro/types";
 import CarouselSlide from "./CarouselSlide.astro";
 
 interface Props {
-	images: Array<ComponentProps<typeof CarouselSlide>>;
-	color?: string;
+  images: Array<ComponentProps<typeof CarouselSlide>>;
+  color?: string;
 }
 const { images = [], color = "#333" } = Astro.props;
 ---
 
 <style lang="scss">
-	* {
-		box-sizing: border-box;
-	}
+  * {
+    box-sizing: border-box;
+  }
 
-	.carousel {
-		display: unset;
-		background-color: var(--astro-carousel-backdrop-color, black);
-		-webkit-backdrop-filter: blur(var(--astro-carousel-backdrop-blur, 1rem));
-		backdrop-filter: blur(var(--astro-carousel-backdrop-blur, 1rem));
+  .carousel {
+    display: unset;
+    background-color: var(--astro-carousel-backdrop-color, black);
+    -webkit-backdrop-filter: blur(var(--astro-carousel-backdrop-blur, 1rem));
+    backdrop-filter: blur(var(--astro-carousel-backdrop-blur, 1rem));
 
-		&[aria-hidden="true"] {
-			display: none;
-		}
+    &[aria-hidden="true"] {
+      display: none;
+    }
 
-		&,
-		&__overlay {
-			position: fixed;
-			inset: 0;
-			user-select: none;
-			z-index: 150;
-		}
+    &,
+    &__overlay {
+      position: fixed;
+      inset: 0;
+      user-select: none;
+      z-index: 150;
+    }
 
-		&--active {
-			display: unset;
-		}
+    &--active {
+      display: unset;
+    }
 
-		&__close {
-			position: absolute;
-			right: 0;
-		}
+    &__close {
+      position: absolute;
+      right: 0;
+    }
 
-		&__wrapper {
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			justify-content: center;
-			height: 100%;
-		}
+    &__wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+    }
 
-		&__main {
-			display: grid;
-			grid-template-columns: 0.1fr minmax(0, 100%) 0.1fr;
-			align-items: center;
-			justify-content: center;
-			width: 100%;
-			height: 100%;
-			@media screen and (min-width: 768px) {
-				justify-content: space-between;
-				grid-template-columns: 0.2fr minmax(0, 80%) 0.2fr;
-			}
-		}
+    &__main {
+      display: grid;
+      grid-template-columns: 0.1fr minmax(0, 100%) 0.1fr;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 100%;
+      @media screen and (min-width: 768px) {
+        justify-content: space-between;
+        grid-template-columns: 0.2fr minmax(0, 80%) 0.2fr;
+      }
+    }
 
-		&__slides {
-			padding: 0;
-			position: relative;
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			height: calc(100% - 48px * 2);
+    &__slides {
+      padding: 0;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: calc(100% - 48px * 2);
 
-			@media screen and (max-width: 768px) {
-				width: calc(100vw - 2rem);
-				margin-left: 1rem;
-				margin-right: 1rem;
-			}
-		}
+      @media screen and (max-width: 768px) {
+        width: calc(100vw - 2rem);
+        margin-left: 1rem;
+        margin-right: 1rem;
+      }
+    }
 
-		&__button {
-			border: none;
-			background: none;
-			padding: 0.5rem;
+    &__button {
+      border: none;
+      background: none;
+      padding: 0.5rem;
 
-			color: var(--astro-carousel-icons-color, white);
-			z-index: 200;
-			transition: 0.15s color ease;
+      color: var(--astro-carousel-icons-color, white);
+      z-index: 200;
+      transition: 0.15s color ease;
 
-			@media screen and (min-width: 768px) {
-				padding: 1rem;
-			}
+      @media screen and (min-width: 768px) {
+        padding: 1rem;
+      }
 
-			&:hover {
-				cursor: pointer;
-				color: var(--astro-carousel-icons-hover-color, white);
-			}
+      &:hover {
+        cursor: pointer;
+        color: var(--astro-carousel-icons-hover-color, white);
+      }
 
-			&--arrow {
-				width: 100%;
-				display: flex;
-				align-items: center;
-				justify-content: center;
-				height: 50vh;
-			}
+      &--arrow {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 50vh;
+      }
 
-			&--left {
-				display: none;
-				@media screen and (min-width: 768px) {
-					display: flex;
-				}
-			}
+      &--left {
+        display: none;
+        @media screen and (min-width: 768px) {
+          display: flex;
+        }
+      }
 
-			&--right {
-				justify-self: end;
-				justify-content: flex-end;
-				display: none;
-				@media screen and (min-width: 768px) {
-					display: flex;
-				}
-			}
-		}
+      &--right {
+        justify-self: end;
+        justify-content: flex-end;
+        display: none;
+        @media screen and (min-width: 768px) {
+          display: flex;
+        }
+      }
+    }
 
-		&__svg {
-			width: 40px;
-			height: 40px;
-			@media screen and (min-width: 768px) {
-				width: 48px;
-				height: 48px;
-			}
-		}
-	}
+    &__svg {
+      width: 40px;
+      height: 40px;
+      @media screen and (min-width: 768px) {
+        width: 48px;
+        height: 48px;
+      }
+    }
+  }
 </style>
 
 <carousel-wrapper>
-	<div id="carousel-dialog" aria-hidden="true" class="carousel" aria-label="Carousel">
-		<div class="carousel__overlay" data-a11y-dialog-hide></div>
-		<div id="carousel" role="document">
-			<!-- Close button -->
-			<button
-				type="button"
-				id="closeButton"
-				class="carousel__button carousel__close"
-				aria-label="Schließen"
-				data-a11ytip-left
-			>
-				<svg
-					class="carousel__svg"
-					xmlns="http://www.w3.org/2000/svg"
-					fill="none"
-					viewBox="0 0 24 24"
-					stroke-width="1.5"
-					stroke="currentColor"
-				>
-					<path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
-				</svg>
-			</button>
-			<div id="carousel__wrapper" class="carousel__wrapper">
-				<div class="carousel__main relative">
-					<!-- Prev Link -->
-					{
-						images.length > 1 ? (
-							<a
-								class="carousel__button carousel__button--arrow carousel__button--left"
-								aria-label="Vorheriges Bild"
-								id="prevLink"
-								a11ytip-right
-							>
-								<svg
-									class="carousel__svg"
-									id="prev"
-									fill="none"
-									stroke="currentColor"
-									viewBox="0 0 24 24"
-								>
-									<path
-										stroke-linecap="round"
-										stroke-linejoin="round"
-										stroke-width="2"
-										d="M15 19l-7-7 7-7"
-									/>
-								</svg>
-							</a>
-						) : (
-							<div />
-						)
-					}
+  <div id="carousel-dialog" aria-hidden="true" class="carousel" aria-label="Carousel">
+    <div class="carousel__overlay" data-a11y-dialog-hide></div>
+    <div id="carousel" role="document">
+      <!-- Close button -->
+      <button
+        type="button"
+        id="closeButton"
+        class="carousel__button carousel__close"
+        aria-label="Schließen"
+        data-a11ytip-left
+      >
+        <svg
+          class="carousel__svg"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+        >
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </button>
+      <div id="carousel__wrapper" class="carousel__wrapper">
+        <div class="carousel__main relative">
+          <!-- Prev Link -->
+          {
+            images.length > 1 ? (
+              <a
+                class="carousel__button carousel__button--arrow carousel__button--left"
+                aria-label="Vorheriges Bild"
+                id="prevLink"
+                data-a11ytip-right
+              >
+                <svg
+                  class="carousel__svg"
+                  id="prev"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M15 19l-7-7 7-7"
+                  />
+                </svg>
+              </a>
+            ) : (
+              <div />
+            )
+          }
 
-					<!-- Slides -->
-					<ul class="carousel__slides" id="slides">
-						{images.map((image) => <CarouselSlide {...image} />)}
-					</ul>
+          <!-- Slides -->
+          <ul class="carousel__slides" id="slides">
+            {images.map((image) => <CarouselSlide {...image} />)}
+          </ul>
 
-					<!-- Next Link -->
-					{
-						images.length > 1 ? (
-							<a
-								class="carousel__button carousel__button--arrow carousel__button--right"
-								aria-label="Nähstes Bild"
-								id="nextLink"
-								a11ytip-left
-							>
-								<svg
-									class="carousel__svg"
-									id="next"
-									fill="none"
-									stroke="currentColor"
-									viewBox="0 0 24 24"
-								>
-									<path
-										stroke-linecap="round"
-										stroke-linejoin="round"
-										stroke-width="2"
-										d="M9 5l7 7-7 7"
-									/>
-								</svg>
-							</a>
-						) : (
-							<div />
-						)
-					}
+          <!-- Next Link -->
+          {
+            images.length > 1 ? (
+              <a
+                class="carousel__button carousel__button--arrow carousel__button--right"
+                aria-label="Nähstes Bild"
+                id="nextLink"
+                data-a11ytip-left
+              >
+                <svg
+                  class="carousel__svg"
+                  id="next"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M9 5l7 7-7 7"
+                  />
+                </svg>
+              </a>
+            ) : (
+              <div />
+            )
+          }
 
-					<!-- Navigation Circles -->
-					{
-						images.length > 1 && (
-							<div
-								id="circle-navigation"
-								class="absolute bottom-14 z-300 flex w-full items-center justify-center gap-4 p-3 md:gap-4"
-							>
-								{images.map((_, i) => (
-									<a
-										class={`carousel__circle-button carousel__circle hover:bg-primary-600 h-4 w-4 rounded-full bg-white shadow-md/50 transition md:h-3.5 md:w-3.5`}
-										data-index={i}
-										aria-label={`Bild ${i + 1} öffnen`}
-										a11ytip-top
-									/>
-								))}
-							</div>
-						)
-					}
-				</div>
-			</div>
-		</div>
-	</div>
+          <!-- Navigation Circles -->
+          {
+            images.length > 1 && (
+              <div
+                id="circle-navigation"
+                class="absolute bottom-14 z-300 flex w-full items-center justify-center gap-4 p-3 md:gap-4"
+              >
+                {images.map((_, i) => (
+                  <a
+                    class={`carousel__circle-button carousel__circle hover:bg-primary-600 h-4 w-4 rounded-full bg-white shadow-md/50 transition md:h-3.5 md:w-3.5`}
+                    data-index={i}
+                    aria-label={`Bild ${i + 1} öffnen`}
+                    data-a11ytip-top
+                  />
+                ))}
+              </div>
+            )
+          }
+        </div>
+      </div>
+    </div>
+  </div>
 </carousel-wrapper>
 
 <script>
-	import { Carousel } from "./scripts/carousel";
+  import { Carousel } from "./scripts/carousel";
 
-	class CarouselWrapper extends HTMLElement {
-		private carouselTargetList: HTMLElement | null = null;
-		private carousel: Carousel;
-		private _openHandler: (e: MouseEvent | KeyboardEvent) => void;
+  class CarouselWrapper extends HTMLElement {
+    private carouselTargetList: HTMLElement | null = null;
+    private carousel: Carousel;
+    private _openHandler: (e: MouseEvent | KeyboardEvent) => void;
 
-		constructor() {
-			super();
-		}
+    constructor() {
+      super();
+    }
 
-		connectedCallback() {
-			// Get the carousel element
-			const carouselElement = this.querySelector("#carousel");
+    connectedCallback() {
+      // Get the carousel element
+      const carouselElement = this.querySelector("#carousel");
 
-			// Initialize the carousel
-			this.carousel = new Carousel(carouselElement as HTMLElement);
+      // Initialize the carousel
+      this.carousel = new Carousel(carouselElement as HTMLElement);
 
-			// Get the target list that will trigger the carousel
-			this.carouselTargetList = document.getElementById("carouselTargetList");
+      // Get the target list that will trigger the carousel
+      this.carouselTargetList = document.getElementById("carouselTargetList");
 
-			// Bind and add event handlers
-			this._openHandler = this._handleOpen.bind(this);
-			this.carouselTargetList?.addEventListener("click", this._openHandler);
-			this.carouselTargetList?.addEventListener("keydown", this._openHandler);
-		}
+      // Bind and add event handlers
+      this._openHandler = this._handleOpen.bind(this);
+      this.carouselTargetList?.addEventListener("click", this._openHandler);
+      this.carouselTargetList?.addEventListener("keydown", this._openHandler);
+    }
 
-		disconnectedCallback() {
-			this.carouselTargetList?.removeEventListener("click", this._openHandler);
-			this.carouselTargetList?.removeEventListener("keydown", this._openHandler);
-			this.carousel.close();
-		}
+    disconnectedCallback() {
+      this.carouselTargetList?.removeEventListener("click", this._openHandler);
+      this.carouselTargetList?.removeEventListener("keydown", this._openHandler);
+      this.carousel.close();
+    }
 
-		private _handleOpen(this: CarouselWrapper, e: MouseEvent | KeyboardEvent) {
-			if (e.target instanceof HTMLElement) {
-				const carouselTarget = e.target.closest<HTMLElement>("[data-carousel-index]");
-				const carouselIndex = carouselTarget?.dataset.carouselIndex;
+    private _handleOpen(this: CarouselWrapper, e: MouseEvent | KeyboardEvent) {
+      if (e.target instanceof HTMLElement) {
+        const carouselTarget = e.target.closest<HTMLElement>("[data-carousel-index]");
+        const carouselIndex = carouselTarget?.dataset.carouselIndex;
 
-				if (e instanceof KeyboardEvent && e.key !== "Enter") {
-					return;
-				}
+        if (e instanceof KeyboardEvent && e.key !== "Enter") {
+          return;
+        }
 
-				if (!carouselIndex) {
-					console.error("No carousel index found");
-					return;
-				}
+        if (!carouselIndex) {
+          console.error("No carousel index found");
+          return;
+        }
 
-				e.preventDefault();
+        e.preventDefault();
 
-				const imgIndex = Number(carouselIndex);
-				if (isNaN(imgIndex)) {
-					console.error("Invalid carousel index:", carouselIndex);
-					return;
-				}
+        const imgIndex = Number(carouselIndex);
+        if (isNaN(imgIndex)) {
+          console.error("Invalid carousel index:", carouselIndex);
+          return;
+        }
 
-				this.carousel.open(imgIndex);
-			}
-		}
-	}
+        this.carousel.open(imgIndex);
+      }
+    }
+  }
 
-	customElements.define("carousel-wrapper", CarouselWrapper);
+  customElements.define("carousel-wrapper", CarouselWrapper);
 </script>
