@@ -4,12 +4,13 @@ viewerTitle: "Device List"
 viewerDescription: "Interne Anwendung für das Datenmanagement von Kunden-Hardware und -Software"
 pageTitle: "Device List | Datenmanagement-Anwendung | Arthur Ersosi"
 pageDescription: "Interne Webanwendung zur automatisierten Verwaltung von Hardware-, Lizenz- und Servicedaten für Kundeninfrastrukturen."
-images: [
-  {
-    src: "src/images/projects/rescopedDatagrid/rescopedDatagrid-cover.webp",
-    alt: "rescoped Datagrid Coverbild"
-  }
-]
+images:
+  [
+    {
+      src: "src/images/projects/rescopedDatagrid/rescopedDatagrid-cover.webp",
+      alt: "rescoped Datagrid Coverbild",
+    },
+  ]
 tags:
   ["Professionelles Projekt", "UX (User Experience)", "UI (User Interface)", "Frontend-Entwicklung"]
 

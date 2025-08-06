@@ -18,6 +18,5 @@ package-lock.json
 .vscode/
 
 #locals
-TODO.md
 hidden/
 font-inter-full/

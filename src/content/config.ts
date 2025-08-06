@@ -9,6 +9,17 @@ const articlesCollection = defineCollection({
 			viewerDescription: z.string(),
 			pageTitle: z.string().optional(),
 			pageDescription: z.string().optional(),
+
+			online: z
+				.object({
+					name: z.string(),
+					href: z.string().refine((val) => val.includes("http"), {
+						message: "Repo href muss eine valide url sein",
+					}),
+					ariaLabel: z.string(),
+				})
+				.optional(),
+
 			images: z.array(
 				z.object({
 					src: image(),

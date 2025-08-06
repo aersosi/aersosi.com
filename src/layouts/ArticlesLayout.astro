@@ -1,8 +1,10 @@
 ---
-import { Image } from "astro:assets";
 import { getCollection } from "astro:content";
 import BaseLayout from "@/layouts/BaseLayout.astro";
+import ExternalLink from "@/components/lib/icons/ExternalLink.astro";
 import Text from "@/components/lib/elements/Text.astro";
+import Link from "@/components/lib/elements/Link.astro";
+
 import Wrapper from "@/components/lib/containers/Wrapper.astro";
 import ArticlesEntry from "@/components/lib/entries/ArticlesEntry.astro";
 import { stackGrid, stackGridPadding, stickyElement } from "@/shared/classes";
@@ -34,6 +36,45 @@ const relatedPosts = allPosts.filter(
 						<Text tag="p" variant="textBase">
 							{frontmatter.viewerDescription}
 						</Text>
+
+						<div class="grid gap-8">
+							<div class="grid gap-2">
+								<Text tag="h2" variant="textBase"> Online</Text>
+								{
+									frontmatter.online && (
+										<div class="flex gap-6">
+											{frontmatter.online && (
+												<Link
+													target="_blank"
+													href={frontmatter.online.href}
+													aria-label={frontmatter.online.ariaLabel}
+													size="base"
+													variant="primary"
+													data-a11ytip-bottom
+												>
+													{frontmatter.online.name}
+													<ExternalLink size="base" class="-mt-0.5" />
+												</Link>
+											)}
+											{frontmatter.demo && (
+												<Link
+													target="_blank"
+													href={frontmatter.demo.href}
+													aria-label={frontmatter.demo.ariaLabel}
+													size="base"
+													variant="primary"
+													data-a11ytip-bottom
+												>
+													{frontmatter.demo.name}
+													<ExternalLink size="base" class="-mt-0.5" />
+												</Link>
+											)}
+										</div>
+									)
+								}
+							</div>
+						</div>
+
 						<slot name="extra" />
 					</div>
 				</div>

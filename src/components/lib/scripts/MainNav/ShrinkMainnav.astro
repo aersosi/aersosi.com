@@ -1,10 +1,4 @@
----
-
----
-
 <script>
-	import { throttle } from "../throttle";
-
 	document.addEventListener("DOMContentLoaded", () => {
 		const mainNav = document.getElementById("mainNav");
 		const SCROLL_THRESHOLD = 48;
@@ -42,7 +36,6 @@
 
 		updateNavWrapperPosition(); // Initial
 
-		const throttledUpdateNav = throttle(updateNavWrapperPosition, 20);
-		window.addEventListener("scroll", throttledUpdateNav);
+		window.addEventListener("scroll", updateNavWrapperPosition);
 	});
 </script>

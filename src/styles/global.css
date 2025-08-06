@@ -1,5 +1,7 @@
 @import "tailwindcss";
-@import "a11ytip";
+
+/* @import "@aersosi/a11ytip/src/a11ytip.css"; */
+@import "a11ytip/src/a11ytip.css";
 @import "./scrollbar.css";
 @import "./astro-carousel.css";
 
@@ -71,7 +73,7 @@
 	/* Shiki  code styles */
 
 	--astro-code-color-text: theme(colors.base.900);
-	--astro-code-background: theme(colors.base.100);
+	--astro-code-background: theme(colors.white);
 	--astro-code-token-punctuation: theme(colors.base.800);
 	--astro-code-token-parameter: theme(colors.base.900);
 	--astro-code-token-line-number: theme(colors.base.500);
@@ -116,7 +118,7 @@
 
 :root.dark {
 	--astro-code-color-text: theme(colors.base.300);
-	--astro-code-background: #ffffff05;
+	--astro-code-background: theme(colors.base.900);
 	--astro-code-token-punctuation: theme(colors.base.400);
 	--astro-code-token-parameter: theme(colors.base.300);
 	--astro-code-token-line-number: theme(colors.base.500);
@@ -168,10 +170,10 @@ code {
 code .line::before {
 	content: counter(step);
 	counter-increment: step;
-	width: 1rem;
-	margin-right: 1.5rem;
+	width: 0.75rem;
+	margin-right: 0.75rem;
 	display: inline-block;
 	text-align: right;
-	color: #999;
+	color: var(--color-base-400);
 }
 
