@@ -13,8 +13,7 @@ import CarouselWrapper from "@/components/lib/elements/CarouselWrapper.astro";
 const allProjects = await getCollection("projects");
 const relatedProjects = allProjects.filter((project) =>
   project.data.tags.some((tag) => frontmatter.tags.includes(tag)) &&
-  project.data.viewerTitle !== frontmatter.viewerTitle &&
-  project.data.viewerTitle === "Template"
+  project.data.viewerTitle !== frontmatter.viewerTitle
 );
 ---
 
