@@ -5,31 +5,31 @@ const { class: className = "", ...rest } = Astro.props;
 ---
 
 <div id="theme-toggle">
-	<Button
-		iconOnly
-		size="sm"
-		variant="default"
-		role="switch"
-		aria-checked="false"
-		aria-label="Hell/Dunkel Modus"
-		data-theme-toggle
-		class={`${className} hidden md:flex`}
-		{...rest}
-	>
-		<Contrast slot="icon" size="base" />
-	</Button>
+  <Button
+    iconOnly
+    size="sm"
+    variant="default"
+    role="switch"
+    aria-checked="false"
+    aria-label="Hell/Dunkel Modus"
+    data-theme-toggle
+    class={`${className} hidden md:flex`}
+    {...rest}
+  >
+    <Contrast slot="icon" size="base" />
+  </Button>
 
-	<Button
-		size="sm"
-		variant="default"
-		role="switch"
-		aria-checked="false"
-		aria-label="Hell/Dunkel Modus"
-		data-theme-toggle
-		class={`${className} md:hidden`}
-		{...rest}
-	>
-		<Contrast slot="left-icon" size="base" />
-		<div class="ml-2 md:hidden">Hell/Dunkel</div>
-	</Button>
+  <Button
+    size="sm"
+    variant="outline"
+    role="switch"
+    aria-checked="false"
+    aria-label="Hell/Dunkel Modus"
+    data-theme-toggle
+    class={`${className} md:hidden`}
+    {...rest}
+  >
+    <Contrast slot="left-icon" size="base" />
+    <div class="ml-2 md:hidden">Hell/Dunkel</div>
+  </Button>
 </div>

@@ -1,149 +1,186 @@
 ---
 const {
-	variant,
-	size,
-	iconOnly = false,
-	gap,
-	isLink = false,
-	class: className,
-	...rest
+  variant,
+  size,
+  iconOnly = false,
+  gap,
+  isLink = false,
+  class: className,
+  ...rest
 } = Astro.props;
 const defaultClass = [
-	// light
-	"text-white",
-	"bg-base-700",
-	"hover:bg-black",
-	"focus:ring-base-700",
-	// dark
-	"dark:text-base-900",
-	"dark:bg-base-200",
-	"dark:hover:bg-white",
-	"dark:focus:ring-base-200",
+  // light
+  "text-white",
+  "bg-base-700",
+  "hover:bg-black",
+  "focus:ring-base-700",
+  // dark
+  "dark:text-black",
+  "dark:bg-base-200",
+  "dark:hover:bg-white",
+  "dark:focus:ring-base-200",
 ];
 
 const primaryClass = [
-	// light
-	"text-white",
-	"bg-primary-600",
-	"hover:bg-primary-700",
-	"focus:ring-primary-600",
-	// dark
-	"dark:text-base-950",
-	"dark:bg-primary-300",
-	"dark:hover:bg-primary-100",
-	"dark:focus:ring-primary-300",
+  // light
+  "text-white",
+  "bg-primary-600",
+  "hover:bg-primary-700",
+  "focus:ring-primary-600",
+  // dark
+  "dark:text-black",
+  "dark:bg-primary-300",
+  "dark:hover:bg-primary-100",
+  "dark:focus:ring-primary-300",
 ];
 
 const secondaryClass = [
-	// light
-	"text-base-950",
-	"bg-secondary-400",
-	"hover:bg-secondary-500",
-	"focus:ring-secondary-400",
-	// dark
-	"dark:text-base-950",
-	"dark:bg-secondary-300",
-	"dark:hover:bg-secondary-100",
-	"dark:focus:ring-secondary-300",
+  // light
+  "text-black",
+  "bg-secondary-400",
+  "hover:bg-secondary-500",
+  "focus:ring-secondary-400",
+  // dark
+  "dark:text-black",
+  "dark:bg-secondary-300",
+  "dark:hover:bg-secondary-100",
+  "dark:focus:ring-secondary-300",
+];
+
+const outLineClass = [
+  // light
+  "border",
+  "border-black/90",
+  "hover:border-transparent",
+
+  "text-black",
+  "hover:text-white",
+  "hover:bg-black",
+  "focus:ring-black",
+  // dark
+  "dark:text-white",
+  "dark:border-white/90",
+  "dark:hover:text-black",
+  "dark:hover:bg-white",
+  "dark:focus:ring-white",
+];
+
+const outlinePrimaryClass = [
+  // light
+  "border",
+  "border-primary-600/90",
+  "hover:border-transparent",
+
+  "text-primary-600",
+  "hover:text-white",
+  "hover:bg-primary-600",
+  "focus:ring-primary-600",
+
+  // dark
+  "dark:text-primary-400",
+  "dark:border-primary-400/90",
+  "dark:focus:ring-primary-400",
 ];
 
 // Size
 const sizes = {
-	xxs: ["h-8", "px-3", "py-2", "text-xs"],
-	xs: ["h-9", "px-3", "py-2", "text-xs"],
-	sm: ["h-10", "px-4", "py-3", "text-sm"],
-	base: ["h-11", "px-4", "py-3", "text-base"],
-	lg: ["h-12", "px-5", "py-4", "text-lg"],
-	xl: ["h-13", "px-5", "py-4", "text-xl"],
+  xxs: ["h-8", "px-3", "py-2", "text-xs"],
+  xs: ["h-9", "px-3", "py-2", "text-xs"],
+  sm: ["h-10", "px-4", "py-3", "text-sm"],
+  base: ["h-11", "px-4", "py-3", "text-base"],
+  lg: ["h-12", "px-5", "py-4", "text-lg"],
+  xl: ["h-13", "px-5", "py-4", "text-xl"],
 };
 // Icon size
 const iconSizes = {
-	xxs: ["size-8", "py-2", "text-xs"],
-	xs: ["size-9", "text-xs"],
-	sm: ["size-10", "text-sm"],
-	base: ["size-11", "text-base"],
-	lg: ["size-12", "text-lg"],
-	xl: ["size-13", "text-xl"],
+  xxs: ["size-8", "py-2", "text-xs"],
+  xs: ["size-9", "text-xs"],
+  sm: ["size-10", "text-sm"],
+  base: ["size-11", "text-base"],
+  lg: ["size-12", "text-lg"],
+  xl: ["size-13", "text-xl"],
 };
 // Gaps
 const gapMap = {
-	xxs: ["gap-1.5"],
-	xs: ["gap-2"],
-	sm: ["gap-4"],
-	base: ["gap-8"],
-	lg: ["gap-10"],
-	xl: ["gap-12"],
+  xxs: ["gap-1.5"],
+  xs: ["gap-2"],
+  sm: ["gap-4"],
+  base: ["gap-8"],
+  lg: ["gap-10"],
+  xl: ["gap-12"],
 };
 const variantClass = {
-	default: defaultClass,
-	primary: primaryClass,
-	secondary: secondaryClass,
-	none: [],
+  default: defaultClass,
+  primary: primaryClass,
+  secondary: secondaryClass,
+  outline: outLineClass,
+  outlinePrimary: outlinePrimaryClass,
+  none: [],
 };
 const sizeClass = iconOnly ? iconSizes[size] : sizes[size] || [];
 const gapClass = !iconOnly && gap ? gapMap[gap] : [];
 const additionalClasses = className ? className.split(" ") : [];
 const baseClass = [
-	"flex",
-	"items-center",
-	"font-medium",
-	"justify-center",
-	"transition-all",
-	"rounded-lg",
-	"items-center",
-	"duration-200",
-	"focus:ring-2",
-	"focus:ring-none",
-	"focus:ring-offset-1",
-	"focus:ring-offset-white",
-	// Dark
-	"dark:focus:ring-offset-base-900",
+  "flex",
+  "items-center",
+  "font-medium",
+  "justify-center",
+  "transition-all",
+  "rounded-lg",
+  "items-center",
+  "duration-200",
+  "focus:ring-2",
+  "focus:ring-none",
+  "focus:ring-offset-1",
+  "focus:ring-offset-white",
+  // Dark
+  "dark:focus:ring-offset-black",
 ];
 ---
 
 {
-	isLink ? (
-		<a
-			href={rest.href}
-			class:list={[
-				...baseClass,
-				...(variantClass[variant] || []),
-				...sizeClass,
-				...gapClass,
-				...additionalClasses,
-			]}
-			{...rest}
-		>
-			{iconOnly ? (
-				<slot name="icon" />
-			) : (
-				<>
-					<slot name="left-icon" />
-					<slot />
-					<slot name="right-icon" />
-				</>
-			)}
-		</a>
-	) : (
-		<button
-			class:list={[
-				...baseClass,
-				...(variantClass[variant] || []),
-				...sizeClass,
-				...gapClass,
-				...additionalClasses,
-			]}
-			{...rest}
-		>
-			{iconOnly ? (
-				<slot name="icon" />
-			) : (
-				<>
-					<slot name="left-icon" />
-					<slot />
-					<slot name="right-icon" />
-				</>
-			)}
-		</button>
-	)
+  isLink ? (
+    <a
+      href={rest.href}
+      class:list={[
+        ...baseClass,
+        ...(variantClass[variant] || []),
+        ...sizeClass,
+        ...gapClass,
+        ...additionalClasses,
+      ]}
+      {...rest}
+    >
+      {iconOnly ? (
+        <slot name="icon" />
+      ) : (
+        <>
+          <slot name="left-icon" />
+          <slot />
+          <slot name="right-icon" />
+        </>
+      )}
+    </a>
+  ) : (
+    <button
+      class:list={[
+        ...baseClass,
+        ...(variantClass[variant] || []),
+        ...sizeClass,
+        ...gapClass,
+        ...additionalClasses,
+      ]}
+      {...rest}
+    >
+      {iconOnly ? (
+        <slot name="icon" />
+      ) : (
+        <>
+          <slot name="left-icon" />
+          <slot />
+          <slot name="right-icon" />
+        </>
+      )}
+    </button>
+  )
 }

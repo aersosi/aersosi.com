@@ -1,30 +1,53 @@
 <script is:inline>
-	window.addEventListener("DOMContentLoaded", () => {
-		function toggleNavActive() {
-			const hash = window.location.hash;
-			const currentUrl = window.location.pathname + hash;
+  window.addEventListener("DOMContentLoaded", () => {
+    function toggleNavActive() {
+      const hash = window.location.hash;
+      const currentUrl = window.location.pathname + hash;
 
-			const allLinks = document.querySelectorAll("nav#mainNav a[href]");
-			const activeClasses = [
-				"bg-secondary-400",
-				"hover:bg-secondary-300",
-				"dark:bg-secondary-400",
-				"dark:hover:bg-secondary-300",
-				"!text-base-800",
-			];
+      const allLinks = document.querySelectorAll("nav#mainNav a[href]");
+      const outLineClass = [
+        // light
+        "border-black/90",
 
-			allLinks.forEach((el) => {
-				const linkHref = el.getAttribute("href");
+        "text-black",
+        "hover:bg-black",
+        "focus:ring-black",
+        // dark
+        "dark:text-white",
+        "dark:border-white/90",
+        "dark:hover:text-black",
+        "dark:hover:bg-white",
+        "dark:focus:ring-white",
+      ];
 
-				if (linkHref === currentUrl || linkHref === hash) {
-					activeClasses.forEach((c) => el.classList.add(c));
-				} else {
-					activeClasses.forEach((c) => el.classList.remove(c));
-				}
-			});
-		}
+      const outlinePrimaryClass = [
+        // light
+        "border-primary-600/90",
 
-		toggleNavActive();
-		window.addEventListener("hashchange", toggleNavActive);
-	});
+        "text-primary-600",
+        "hover:bg-primary-600",
+        "focus:ring-primary-600",
+
+        // dark
+        "dark:text-primary-400",
+        "dark:border-primary-400/90",
+        "dark:focus:ring-primary-400",
+      ];
+
+      allLinks.forEach((el) => {
+        const linkHref = el.getAttribute("href");
+
+        if (linkHref === currentUrl || linkHref === hash) {
+          outLineClass.forEach((c) => el.classList.remove(c));
+          outlinePrimaryClass.forEach((c) => el.classList.add(c));
+        } else {
+          outlinePrimaryClass.forEach((c) => el.classList.remove(c));
+          outLineClass.forEach((c) => el.classList.add(c));
+        }
+      });
+    }
+
+    toggleNavActive();
+    window.addEventListener("hashchange", toggleNavActive);
+  });
 </script>

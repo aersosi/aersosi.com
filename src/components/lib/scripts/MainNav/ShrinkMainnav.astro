@@ -1,41 +1,41 @@
 <script>
-	document.addEventListener("DOMContentLoaded", () => {
-		const mainNav = document.getElementById("mainNav");
-		const SCROLL_THRESHOLD = 48;
+  document.addEventListener("DOMContentLoaded", () => {
+    const mainNav = document.getElementById("mainNav");
+    const SCROLL_THRESHOLD = 16;
 
-		if (!mainNav) return;
+    if (!mainNav) return;
 
-		// Define classes to add/remove based on scroll position
-		const scrolledClasses = [
-			"py-3",
-			"bg-base-100/70",
-			"dark:bg-base-800/70",
-			"backdrop-blur-md",
-			"shadow-md",
-		];
+    // Define classes to add/remove based on scroll position
+    const scrolledClasses = [
+      "py-3",
+      "bg-base-100/70",
+      "dark:bg-base-800/70",
+      "backdrop-blur-md",
+      "shadow-md",
+    ];
 
-		const notScrolledClasses = ["py-4", "md:py-6"];
+    const notScrolledClasses = ["py-4", "md:py-6"];
 
-		const updateNavWrapperPosition = () => {
-			const isOverThreshold = window.scrollY > SCROLL_THRESHOLD;
+    const updateNavWrapperPosition = () => {
+      const isOverThreshold = window.scrollY > SCROLL_THRESHOLD;
 
-			// Determine which classes to add and remove based on scroll position
-			const classesToAdd = isOverThreshold ? scrolledClasses : notScrolledClasses;
-			const classesToRemove = isOverThreshold ? notScrolledClasses : scrolledClasses;
+      // Determine which classes to add and remove based on scroll position
+      const classesToAdd = isOverThreshold ? scrolledClasses : notScrolledClasses;
+      const classesToRemove = isOverThreshold ? notScrolledClasses : scrolledClasses;
 
-			// Remove classes
-			classesToRemove.forEach((className) => {
-				mainNav.classList.remove(className);
-			});
+      // Remove classes
+      classesToRemove.forEach((className) => {
+        mainNav.classList.remove(className);
+      });
 
-			// Add classes
-			classesToAdd.forEach((className) => {
-				mainNav.classList.add(className);
-			});
-		};
+      // Add classes
+      classesToAdd.forEach((className) => {
+        mainNav.classList.add(className);
+      });
+    };
 
-		updateNavWrapperPosition(); // Initial
+    updateNavWrapperPosition(); // Initial
 
-		window.addEventListener("scroll", updateNavWrapperPosition);
-	});
+    window.addEventListener("scroll", updateNavWrapperPosition);
+  });
 </script>

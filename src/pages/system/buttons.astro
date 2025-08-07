@@ -1,0 +1,290 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import Text from "@/components/lib/elements/Text.astro";
+import Button from "@/components/lib/elements/Button.astro";
+import Wrapper from "@/components/lib/containers/Wrapper.astro";
+import User from "@/components/lib/icons/User.astro";
+---
+
+<BaseLayout>
+  <section>
+    <Wrapper variant="standard" class="pt-24 pb-8">
+      <Text tag="h1" variant="textSM"> Buttons </Text>
+      <div class="border-base-300 dark:border-base-600 mt-8 flex flex-col gap-12 border-t py-8">
+        <!-- Default -->
+        <div class="grid grid-cols-2 gap-8 md:grid-cols-2">
+          <div class="w-full">
+            <Text
+              tag="p"
+              variant="textSM"
+              class="text-base-900 font-medium uppercase dark:text-white"
+            >
+              Default text
+            </Text>
+            <div class="mt-4 flex flex-col gap-4">
+              <Button size="xxs" variant="default">Default XXS</Button>
+              <Button size="xs" variant="default">Default XS</Button>
+              <Button size="sm" variant="default">Default SM</Button>
+              <Button size="base" variant="default">Default Base</Button>
+              <Button size="lg" variant="default">Default LG</Button>
+              <Button size="xl" variant="default">Default XL</Button>
+            </div>
+          </div>
+          <div>
+            <Text
+              tag="p"
+              variant="textSM"
+              class="text-base-900 font-medium uppercase dark:text-white"
+            >
+              Icon
+            </Text>
+            <div class="mt-4 flex flex-col gap-4">
+              <Button isLink={true} href="#" size="xxs" variant="default" iconOnly>
+                <User slot="icon" size="xs" />
+              </Button>
+
+              <Button isLink={true} href="#" size="xs" variant="default" iconOnly>
+                <User slot="icon" size="xs" />
+              </Button>
+
+              <Button isLink={true} href="#" size="sm" variant="default" iconOnly>
+                <User slot="icon" size="sm" />
+              </Button>
+
+              <Button isLink={true} href="#" size="base" variant="default" iconOnly>
+                <User slot="icon" size="base" />
+              </Button>
+
+              <Button isLink={true} href="#" size="lg" variant="default" iconOnly>
+                <User slot="icon" size="lg" />
+              </Button>
+
+              <Button isLink={true} href="#" size="xl" variant="default" iconOnly>
+                <User slot="icon" size="xl" />
+              </Button>
+            </div>
+          </div>
+        </div>
+        <!-- Primary -->
+        <div class="grid grid-cols-2 gap-8 md:grid-cols-2">
+          <div class="w-full">
+            <Text
+              tag="p"
+              variant="textSM"
+              class="text-base-900 font-medium uppercase dark:text-white"
+            >
+              Primary text
+            </Text>
+            <div class="mt-4 flex flex-col gap-4">
+              <Button size="xxs" variant="primary">Primary XXS</Button>
+              <Button size="xs" variant="primary">Primary XS</Button>
+              <Button size="sm" variant="primary">Primary SM</Button>
+              <Button size="base" variant="primary">Primary Base</Button>
+              <Button size="lg" variant="primary">Primary LG</Button>
+              <Button size="xl" variant="primary">Primary XL</Button>
+            </div>
+          </div>
+          <div>
+            <Text
+              tag="p"
+              variant="textSM"
+              class="text-base-900 font-medium uppercase dark:text-white"
+            >
+              Icon
+            </Text>
+            <div class="mt-4 flex flex-col gap-4">
+              <Button isLink={true} href="#" size="xxs" variant="primary" iconOnly>
+                <User slot="icon" size="xs" />
+              </Button>
+
+              <Button isLink={true} href="#" size="xs" variant="primary" iconOnly>
+                <User slot="icon" size="xs" />
+              </Button>
+
+              <Button isLink={true} href="#" size="sm" variant="primary" iconOnly>
+                <User slot="icon" size="sm" />
+              </Button>
+
+              <Button isLink={true} href="#" size="base" variant="primary" iconOnly>
+                <User slot="icon" size="base" />
+              </Button>
+
+              <Button isLink={true} href="#" size="lg" variant="primary" iconOnly>
+                <User slot="icon" size="lg" />
+              </Button>
+
+              <Button isLink={true} href="#" size="xl" variant="primary" iconOnly>
+                <User slot="icon" size="xl" />
+              </Button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Secondary -->
+        <div class="grid grid-cols-2 gap-8 md:grid-cols-2">
+          <div class="w-full">
+            <Text
+              tag="p"
+              variant="textSM"
+              class="text-base-900 font-medium uppercase dark:text-white"
+            >
+              Secondary text
+            </Text>
+            <div class="mt-4 flex flex-col gap-4">
+              <Button size="xxs" variant="secondary">Secondary XXS</Button>
+              <Button size="xs" variant="secondary">Secondary XS</Button>
+              <Button size="sm" variant="secondary">Secondary SM</Button>
+              <Button size="base" variant="secondary">Secondary Base</Button>
+              <Button size="lg" variant="secondary">Secondary LG</Button>
+              <Button size="xl" variant="secondary">Secondary XL</Button>
+            </div>
+          </div>
+          <div>
+            <Text
+              tag="p"
+              variant="textSM"
+              class="text-base-900 font-medium uppercase dark:text-white"
+            >
+              Icon
+            </Text>
+            <div class="mt-4 flex flex-col gap-4">
+              <Button isLink={true} href="#" size="xxs" variant="secondary" iconOnly>
+                <User slot="icon" size="xs" />
+              </Button>
+
+              <Button isLink={true} href="#" size="xs" variant="secondary" iconOnly>
+                <User slot="icon" size="xs" />
+              </Button>
+
+              <Button isLink={true} href="#" size="sm" variant="secondary" iconOnly>
+                <User slot="icon" size="sm" />
+              </Button>
+
+              <Button isLink={true} href="#" size="base" variant="secondary" iconOnly>
+                <User slot="icon" size="base" />
+              </Button>
+
+              <Button isLink={true} href="#" size="lg" variant="secondary" iconOnly>
+                <User slot="icon" size="lg" />
+              </Button>
+
+              <Button isLink={true} href="#" size="xl" variant="secondary" iconOnly>
+                <User slot="icon" size="xl" />
+              </Button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Outline -->
+        <div class="grid grid-cols-2 gap-8 md:grid-cols-2">
+          <div class="w-full">
+            <Text
+              tag="p"
+              variant="textSM"
+              class="text-base-900 font-medium uppercase dark:text-white"
+            >
+              Outline text
+            </Text>
+            <div class="mt-4 flex flex-col gap-4">
+              <Button size="xxs" variant="outline">Outline XXS</Button>
+              <Button size="xs" variant="outline">Outline XS</Button>
+              <Button size="sm" variant="outline">Outline SM</Button>
+              <Button size="base" variant="outline">Outline Base</Button>
+              <Button size="lg" variant="outline">Outline LG</Button>
+              <Button size="xl" variant="outline">Outline XL</Button>
+            </div>
+          </div>
+          <div>
+            <Text
+              tag="p"
+              variant="textSM"
+              class="text-base-900 font-medium uppercase dark:text-white"
+            >
+              Icon
+            </Text>
+            <div class="mt-4 flex flex-col gap-4">
+              <Button isLink={true} href="#" size="xxs" variant="outline" iconOnly>
+                <User slot="icon" size="xs" />
+              </Button>
+
+              <Button isLink={true} href="#" size="xs" variant="outline" iconOnly>
+                <User slot="icon" size="xs" />
+              </Button>
+
+              <Button isLink={true} href="#" size="sm" variant="outline" iconOnly>
+                <User slot="icon" size="sm" />
+              </Button>
+
+              <Button isLink={true} href="#" size="base" variant="outline" iconOnly>
+                <User slot="icon" size="base" />
+              </Button>
+
+              <Button isLink={true} href="#" size="lg" variant="outline" iconOnly>
+                <User slot="icon" size="lg" />
+              </Button>
+
+              <Button isLink={true} href="#" size="xl" variant="outline" iconOnly>
+                <User slot="icon" size="xl" />
+              </Button>
+            </div>
+          </div>
+        </div>
+
+        <!-- OutlinePrimary -->
+        <div class="grid grid-cols-2 gap-8 md:grid-cols-2">
+          <div class="w-full">
+            <Text
+              tag="p"
+              variant="textSM"
+              class="text-base-900 font-medium uppercase dark:text-white"
+            >
+              OutlinePrimary text
+            </Text>
+            <div class="mt-4 flex flex-col gap-4">
+              <Button size="xxs" variant="outlinePrimary">OutlinePrimary XXS</Button>
+              <Button size="xs" variant="outlinePrimary">OutlinePrimary XS</Button>
+              <Button size="sm" variant="outlinePrimary">OutlinePrimary SM</Button>
+              <Button size="base" variant="outlinePrimary">OutlinePrimary Base</Button>
+              <Button size="lg" variant="outlinePrimary">OutlinePrimary LG</Button>
+              <Button size="xl" variant="outlinePrimary">OutlinePrimary XL</Button>
+            </div>
+          </div>
+          <div>
+            <Text
+              tag="p"
+              variant="textSM"
+              class="text-base-900 font-medium uppercase dark:text-white"
+            >
+              Icon
+            </Text>
+            <div class="mt-4 flex flex-col gap-4">
+              <Button isLink={true} href="#" size="xxs" variant="outlinePrimary" iconOnly>
+                <User slot="icon" size="xs" />
+              </Button>
+
+              <Button isLink={true} href="#" size="xs" variant="outlinePrimary" iconOnly>
+                <User slot="icon" size="xs" />
+              </Button>
+
+              <Button isLink={true} href="#" size="sm" variant="outlinePrimary" iconOnly>
+                <User slot="icon" size="sm" />
+              </Button>
+
+              <Button isLink={true} href="#" size="base" variant="outlinePrimary" iconOnly>
+                <User slot="icon" size="base" />
+              </Button>
+
+              <Button isLink={true} href="#" size="lg" variant="outlinePrimary" iconOnly>
+                <User slot="icon" size="lg" />
+              </Button>
+
+              <Button isLink={true} href="#" size="xl" variant="outlinePrimary" iconOnly>
+                <User slot="icon" size="xl" />
+              </Button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </Wrapper>
+  </section>
+</BaseLayout>
