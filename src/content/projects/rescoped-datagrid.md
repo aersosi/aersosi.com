@@ -4,18 +4,18 @@ viewerTitle: "rescoped Datagrid"
 viewerDescription: "Entwicklung eines Open-Source-Datagrids mit besonderem Fokus auf Developer Experience und Skalierbarkeit"
 pageTitle: "rescoped Datagrid | Open-Source-Projekt | Arthur Ersosi"
 pageDescription: "Entwicklung eines skalierbaren Open-Source-Datagrids mit Fokus auf optimale Developer Experience und robustem State-Management."
-images: [
-  {
-    src: "src/images/projects/rescopedDatagrid/rescopedDatagrid-cover.webp",
-    alt: "rescoped Datagrid Coverbild"
-  },
-  {
-    src: "src/images/projects/rescopedDatagrid/rescopedDatagrid-01.webp",
-    alt: "rescoped Datagrid Funktionalität"
-  }
-]
-tags:
-  ["Professionelles Projekt", "Open Source", "DX (Developer Experience)", "Frontend-Entwicklung"]
+images:
+  [
+    {
+      src: "src/images/projects/rescopedDatagrid/rescopedDatagrid-cover.webp",
+      alt: "rescoped Datagrid Coverbild",
+    },
+    {
+      src: "src/images/projects/rescopedDatagrid/rescopedDatagrid-01.webp",
+      alt: "rescoped Datagrid Funktionalität",
+    },
+  ]
+tags: ["Professionelles Projekt", "Open Source", "Developer Experience", "Frontend-Entwicklung"]
 
 demo:
   name: "Live Demo"

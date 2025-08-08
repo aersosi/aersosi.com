@@ -16,7 +16,7 @@ tags: ["CSS", "A11y", "Tooltip"]
 # a11ytip
 
 Einfach unkomplizierte Tooltips.
-Kinderleicht zu integrieren, Kinderleicht zu konfigurieren, CSS-first und accessibility mitgedacht.
+Kinderleicht zu integrieren und zu konfigurieren. CSS-first und accessibility mitgedacht.
 
 ## Funktionen
 
@@ -35,27 +35,23 @@ Kinderleicht zu integrieren, Kinderleicht zu konfigurieren, CSS-first und access
 
 1. a11ytip installieren:
 
-   ```bash
-   npm i @aersosi/a11ytip
-   ```
+ ```bash
+ npm i @aersosi/a11ytip
+ ```
 
-2. CSS importieren:
+2. CSS (minified) importieren:
 
-   ```css
-   @import "@aersosi/a11ytip/src/a11ytip.css";
-   /*oder minified importieren*/ 
-   @import "@aersosi/a11ytip/dist/a11ytip.min.css";
-   ```
+ ```css
+ @import "@aersosi/a11ytip/css";
+ ```
 
-3. TypeScript importieren:
+3. TypeScript (minified) importieren:
 
-   ```typescript
-   import {toggleA11ytip} from "@aersosi/a11ytip/src/ToggleA11ytip";
-   // oder minified importieren
-   import {toggleA11ytip} from "@aersosi/a11ytip/dist/ToggleA11ytip.min.js"; 
-
-   document.addEventListener("DOMContentLoaded", toggleA11ytip);
-   ```
+ ```typescript
+ import {toggleA11ytip} from "@aersosi/a11ytip/js";
+ 
+ document.addEventListener("DOMContentLoaded", toggleA11ytip);
+ ```
 
 ## Verwendung
 

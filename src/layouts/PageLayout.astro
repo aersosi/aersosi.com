@@ -27,13 +27,13 @@ const { frontmatter } = Astro.props;
             <Image
               alt={frontmatter.image.alt}
               src={frontmatter.image.url}
-              widths={[320, 480, 640, 768, 1024, 1280, 1536]}
+              widths={[320, 480, 640, 768, 1024, 1280, 1440]}
               sizes={`
 								(max-width: 639px) 100vw,
 								(max-width: 767px) 100vw,
 								(max-width: 1023px) 50vw,
 								(max-width: 1279px) 33vw,
-								(max-width: 1535px) 25vw,
+								(max-width: 1439px) 25vw,
 								400px
 							`}
               layout="constrained"

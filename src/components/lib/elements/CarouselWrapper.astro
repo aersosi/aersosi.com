@@ -1,5 +1,5 @@
 ---
-import aboutCover from "*.webp";
+import Text from "@/components/lib/elements/Text.astro";
 import { Image } from "astro:assets";
 import { Carousel } from "@/components/lib/elements/astro-carousel";
 
@@ -14,23 +14,23 @@ const { images } = Astro.props;
 				<a
 					href={`?image=0`}
 					data-carousel-index={0}
-					aria-label={images.length === 1 ? ("Bild vergrößern") : ("Slideshow öffnen")}
+					aria-label={images.length === 1 ? "Bild vergrößern" : "Slideshow öffnen"}
 					class="entry__link__overlay bg-primary-500/60 absolute inset-0 grid items-center justify-center rounded-xl opacity-0 transition-opacity duration-300 ease-in-out hover:opacity-100">
 					<div class="text-base-200 font-light text-lg lg:text-xl border-2 border-primary-100 rounded-xl px-4 py-2">
-						{images.length === 1 ? ("Bild vergrößern") : ("Slideshow öffnen")}
+						{images.length === 1 ? "Bild vergrößern" : "Slideshow öffnen"}
 					</div>
 				</a>
 
 				<Image
 					alt={images[0].alt}
 					src={images[0].src}
-					widths={[320, 480, 640, 768, 1024, 1280, 1536]}
+					widths={[320, 480, 640, 768, 1024, 1280, 1440]}
 					sizes={`
 								(max-width: 639px) 100vw,
 								(max-width: 767px) 100vw,
 								(max-width: 1023px) 50vw,
 								(max-width: 1279px) 33vw,
-								(max-width: 1535px) 25vw,
+								(max-width: 1439px) 25vw,
 								400px
 							`}
 					layout="constrained"
@@ -38,6 +38,15 @@ const { images } = Astro.props;
 					decoding="async"
 					class="bg-secondary-100 aspect-12/6 w-full rounded-xl object-cover object-center lg:col-span-2"
 				/>
+
+        <Text
+          tag="p"
+          variant="textSM"
+          class={`sm:hidden absolute -bottom-10 left-1/2 -translate-1/2 `}
+        >
+          Zum vergrößern klicken
+        </Text>
+
 				<>
 					{images.length > 1 && (
 						<div class="circles absolute bottom-0 flex w-full justify-center gap-3 p-3 md:gap-4">
