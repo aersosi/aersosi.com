@@ -8,7 +8,7 @@
 
 /* Dark Theme Colors */
 :root.dark {
-	--scrollbar-thumb-color: var(--color-primary-500);
+	--scrollbar-thumb-color: var(--color-primary-300);
 	--scrollbar-track-color: var(--color-base-900);
 }
 

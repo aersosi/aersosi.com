@@ -5,41 +5,41 @@ import Navigation from "@/components/global/Navigation.astro";
 import Footer from "@/components/global/Footer.astro";
 
 export interface Props {
-	pageTitle?: string;
-	pageDescription?: string;
-	image?: string;
-	article?: boolean;
-	publishDate?: Date;
-	modifiedDate?: Date;
-	author?: string;
+  pageTitle?: string;
+  pageDescription?: string;
+  image?: string;
+  article?: boolean;
+  publishDate?: Date;
+  modifiedDate?: Date;
+  author?: string;
 }
 
 const {
-	pageTitle = "Arthur Ersosi | Design Engineer",
-	pageDescription = "Frontend-Developer und UI/UX-Designer mit 9+ Jahren Design Expertise und 7+ Jahren Web-Development Erfahrung aus Hamburg.",
-	image,
-	article,
-	publishDate,
-	modifiedDate,
-	author,
+  pageTitle = "Arthur Ersosi | Design Engineer",
+  pageDescription = "Frontend-Developer und UI/UX-Designer mit 9+ Jahren Design Expertise und 7+ Jahren Web-Development Erfahrung aus Hamburg.",
+  image,
+  article,
+  publishDate,
+  modifiedDate,
+  author,
 } = Astro.props;
 ---
 
 <html lang="de" class="selection:bg-secondary-300 selection:text-primary-600">
-	<head>
-		<BaseHead
-			pageTitle={pageTitle}
-			pageDescription={pageDescription}
-			image={image}
-			article={article}
-			publishDate={publishDate}
-			modifiedDate={modifiedDate}
-			author={author}
-		/>
-	</head>
-	<body class="bg-base-100 dark:bg-base-800 flex h-svh flex-col">
-		<Navigation />
-		<main class="grow"><slot /></main>
-		<Footer />
-	</body>
+  <head>
+    <BaseHead
+      pageTitle={pageTitle}
+      pageDescription={pageDescription}
+      image={image}
+      article={article}
+      publishDate={publishDate}
+      modifiedDate={modifiedDate}
+      author={author}
+    />
+  </head>
+  <body class="bg-base-100 dark:bg-base-800 flex h-svh flex-col">
+    <Navigation />
+    <main class="grow pt-10 md:pt-2"><slot /></main>
+    <Footer />
+  </body>
 </html>
