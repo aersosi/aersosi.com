@@ -9,23 +9,23 @@ import { stackGrid, stackGridPadding } from "@/shared/classes";
 
 const allProjectsUnsorted = await getCollection("projects");
 const allProjects = allProjectsUnsorted.sort(
-	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
 );
 ---
 
 <section>
-	<Wrapper variant="standard">
-		<div class:list={[...stackGrid, ...stackGridPadding]} class="border-b">
-			<div>
-				<Text tag="h2" variant="textLG" class="pb-2"> Neuste Projekte </Text>
-				<Link href="/projects" size="base" variant="primary">
-					Alle Projekte
-					<ArrowRight size="base" />
-				</Link>
-			</div>
-			<div class="flex flex-col gap-8 lg:col-span-2">
-				{allProjects.slice(0, 3).map((project) => <ProjectEntry project={project} />)}
-			</div>
-		</div>
-	</Wrapper>
+  <Wrapper variant="standard">
+    <div class:list={[...stackGrid, ...stackGridPadding]} class="border-b">
+      <div>
+        <Text tag="h2" class="pb-2"> Neuste Projekte </Text>
+        <Link href="/projects" size="base" variant="primary">
+          Alle Projekte
+          <ArrowRight size="base" />
+        </Link>
+      </div>
+      <div class="flex flex-col gap-12 lg:col-span-2">
+        {allProjects.slice(0, 3).map((project) => <ProjectEntry project={project} />)}
+      </div>
+    </div>
+  </Wrapper>
 </section>

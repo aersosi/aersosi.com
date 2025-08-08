@@ -9,21 +9,21 @@ import { stackGrid, stackGridPadding } from "@/shared/classes";
 ---
 
 <section>
-	<Wrapper variant="standard">
-		<div id="home" class:list={[...stackGrid, ...stackGridPadding]} class="border-b">
-			<div>
-				<div class="flex flex-col-reverse gap-x-12 gap-y-6 sm:flex-row sm:items-end">
-					<div class="grid shrink-0 whitespace-nowrap lg:hidden">
-						<!-- Mobile -->
-						<Text tag="h1" variant="text2XL" isPrimary> Arthur Ersosi </Text>
-						<Text tag="p" variant="textLG" isPrimary> Design Engineer </Text>
-					</div>
-					<div>
-						<Image
-							alt="Porträt Arthur Ersosi"
-							src={portrait}
-							widths={[320, 480, 640, 768, 1024, 1280, 1536]}
-							sizes={`
+  <Wrapper variant="standard">
+    <div id="home" class:list={[...stackGrid, ...stackGridPadding]} class="border-b">
+      <div>
+        <div class="flex flex-col-reverse gap-x-12 gap-y-10 sm:flex-row sm:items-end">
+          <div class="grid shrink-0 whitespace-nowrap lg:hidden">
+            <!-- Mobile -->
+            <Text tag="h1" variant="text2XL" isPrimary> Arthur Ersosi </Text>
+            <Text tag="p" variant="textLG" isPrimary> Design Engineer </Text>
+          </div>
+          <div>
+            <Image
+              alt="Porträt Arthur Ersosi"
+              src={portrait}
+              widths={[320, 480, 640, 768, 1024, 1280, 1536]}
+              sizes={`
 								(max-width: 639px) 100vw,
 								(max-width: 767px) 100vw,
 								(max-width: 1023px) 50vw,
@@ -31,45 +31,45 @@ import { stackGrid, stackGridPadding } from "@/shared/classes";
 								(max-width: 1535px) 25vw,
 								400px
 							`}
-							layout="constrained"
-							loading="eager"
-							decoding="async"
-							class="bg-secondary-100 aspect-12/10 rounded-xl object-cover object-center lg:aspect-square"
-						/>
-					</div>
-				</div>
-			</div>
-			<div class="grid justify-between gap-8 lg:col-span-2">
-				<div class="hidden whitespace-nowrap lg:grid">
-					<!-- Desktop -->
-					<Text tag="h1" variant="text2XL" isPrimary> Arthur Ersosi </Text>
-					<Text tag="p" variant="textLG" isPrimary> Design Engineer </Text>
-				</div>
+              layout="constrained"
+              loading="eager"
+              decoding="async"
+              class="bg-secondary-100 aspect-12/10 rounded-xl object-cover object-center lg:aspect-square"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="grid justify-between gap-8 lg:col-span-2">
+        <div class="hidden whitespace-nowrap lg:grid">
+          <!-- Desktop -->
+          <Text tag="h1" variant="text2XL" isPrimary> Arthur Ersosi </Text>
+          <Text tag="p" variant="textLG" isPrimary> Design Engineer </Text>
+        </div>
 
-				<Wrapper variant="proseBase" class="text-balance">
-					<Text tag="h2">
-						<span id="designYear">9</span>+ Jahre Design Expertise trifft auf<br />
-						<span id="devYear">7</span>+ Jahre modernes Web-Development
-					</Text>
+        <Wrapper variant="proseBase" class="text-balance">
+          <Text tag="h2">
+            <span id="designYear">9</span>+ Jahre Design Expertise trifft auf<br />
+            <span id="devYear">7</span>+ Jahre modernes Web-Development
+          </Text>
 
-					<Text tag="p"> Moin, ich heiße Arthur (er/ihm) und ich lebe in Hamburg. </Text>
-					<Text tag="p">
-						Als Frontend-Developer und UI/UX-Designer Hybrid habe ich eine unbedingte Leidenschaft
-						für moderne Webanwendungen. Ich liebe es, Probleme zu durchdringen und durch durchdachte
-						Software elegante Lösungen zu finden.
-					</Text>
-					<Text tag="p">
-						Das gelingt durch eine klare Vision und Liebe zum Detail, mit dem Anspruch, exzellente
-						Interfaces, eine harmonische Journey und skalierbare Systeme zu schaffen. Software muss
-						für alle, die sie nutzen, ebenso wertvoll sein wie für jene, die sie entwickeln.
-					</Text>
-				</Wrapper>
+          <Text tag="p"> Moin, ich heiße Arthur (er/ihm) und ich lebe in Hamburg. </Text>
+          <Text tag="p">
+            Als Frontend-Developer und UI/UX-Designer Hybrid habe ich eine unbedingte Leidenschaft
+            für moderne Webanwendungen. Ich liebe es, Probleme zu durchdringen und durch durchdachte
+            Software elegante Lösungen zu finden.
+          </Text>
+          <Text tag="p">
+            Das gelingt durch eine klare Vision und Liebe zum Detail, mit dem Anspruch, exzellente
+            Interfaces, eine harmonische Journey und skalierbare Systeme zu schaffen. Software muss
+            für alle, die sie nutzen, ebenso wertvoll sein wie für jene, die sie entwickeln.
+          </Text>
+        </Wrapper>
 
-				<Link href="/about" size="base" variant="primary">
-					Über mich & CV
-					<ArrowRight size="base" />
-				</Link>
-			</div>
-		</div>
-	</Wrapper>
+        <Link href="/about" size="base" variant="primary">
+          Über mich & CV
+          <ArrowRight size="base" />
+        </Link>
+      </div>
+    </div>
+  </Wrapper>
 </section>

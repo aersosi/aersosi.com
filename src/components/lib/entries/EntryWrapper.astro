@@ -3,28 +3,50 @@ import Text from "@/components/lib/elements/Text.astro";
 
 const { url, viewerTitle, viewerDescription } = Astro.props;
 
-const textPrimary = "group-hover:text-primary-600 group-hover:dark:text-primary-300";
+const textPrimaryHover = "group-hover:text-primary-600 group-hover:dark:text-primary-300";
 const hoverSize = "-inset-x-5 -top-2 -bottom-3";
 ---
 
 <article class="group relative grid gap-x-12 gap-y-8 lg:items-start">
-	<div class="w-full">
-		<Text tag="h3" variant="textLG" class={`transition-colors w-full ${textPrimary}`}>
-			<div
-				class={`bg-primary-500/10 dark:bg-primary-600/10 ${hoverSize} absolute z-0 scale-95 rounded-2xl opacity-0 transition group-hover:scale-100 group-hover:opacity-100`}
-			>
-			</div>
-			<a href={url} aria-label={viewerTitle}>
-				<div class={`absolute ${hoverSize} z-20 rounded-2xl`}></div>
-				<div class="relative z-10 flex w-full flex-col gap-x-4 md:flex-row md:items-center">
-					<span class="whitespace-nowrap">{viewerTitle}</span>
-					<span class="hidden font-light md:block"> — </span>
-					<span class="py-1"><slot /></span>
-				</div>
-			</a>
-		</Text>
-		<Text tag="p" class={`transition-colors text-balance relative z-10 mt-1 ${textPrimary}`}>
-			{viewerDescription}
-		</Text>
-	</div>
+  <div class="w-full">
+    <div
+      class={`bg-primary-500/10 dark:bg-primary-600/10 ${hoverSize} absolute z-0 scale-95 rounded-2xl opacity-0 transition group-hover:scale-100 group-hover:opacity-100`}
+    >
+    </div>
+    <a href={url} aria-label={viewerTitle}>
+      <div class={`absolute ${hoverSize} z-20 rounded-2xl`}></div>
+      <div class="relative z-10 flex w-full flex-col gap-x-4 md:flex-row md:items-center">
+        <div class="hidden sm:block">
+          <Text
+            tag="h3"
+            variant="textLG"
+            class={`transition-colors whitespace-nowrap ${textPrimaryHover}`}
+          >
+            {viewerTitle}
+            <span class="px-3">—</span><slot />
+          </Text>
+        </div>
+        <div class="grid gap-1 pb-1 sm:hidden">
+          <Text
+            tag="p"
+            variant="textSM"
+            class={`transition-colors whitespace-nowrap ${textPrimaryHover}`}
+          >
+            <slot />
+          </Text>
+
+          <Text
+            tag="h3"
+            variant="textLG"
+            class={`transition-colors whitespace-nowrap ${textPrimaryHover}`}
+          >
+            {viewerTitle}
+          </Text>
+        </div>
+      </div>
+    </a>
+    <Text tag="p" class={`transition-colors text-pretty relative z-10 mt-1 ${textPrimaryHover}`}>
+      {viewerDescription}
+    </Text>
+  </div>
 </article>
