@@ -33,23 +33,23 @@ Easy to implement and to configure. CSS-first with accessibility built in.
 
 1. Install a11ytip:
 
- ```bash
- npm i @aersosi/a11ytip
- ```
+```bash
+npm i @aersosi/a11ytip
+```
 
 2. Import minified CSS:
 
- ```css
- @import "@aersosi/a11ytip/css";
- ```
+```css
+@import "@aersosi/a11ytip/css";
+```
 
 3. Import minified JavaScript:
 
- ```typescript
- import {toggleA11ytip} from "@aersosi/a11ytip/js";
- 
- document.addEventListener("DOMContentLoaded", toggleA11ytip);
- ```
+```typescript
+import { toggleA11ytip } from "@aersosi/a11ytip/js";
+
+document.addEventListener("DOMContentLoaded", toggleA11ytip);
+```
 
 ## Usage
 
@@ -148,7 +148,8 @@ permanently forced.
   --a11ytip-padding-top: 4px;
   --a11ytip-padding-bottom: 4px;
   --a11ytip-border-radius: 6px;
-  --a11ytip-box-shadow: 0 1px 3px 0 theme(colors.black / 0.25), 0 1px 2px -1px theme(colors.black / 0.1);
+  --a11ytip-box-shadow:
+    0 1px 3px 0 theme(colors.black / 0.25), 0 1px 2px -1px theme(colors.black / 0.1);
   --a11ytip-max-width: 14ch;
 
   /* Animation */
@@ -160,8 +161,8 @@ permanently forced.
 /* Dark Theme */
 @media (prefers-color-scheme: dark) {
   :root:not(.light, [data-light], [data-theme="light"]) {
-   --a11ytip-text-color: black;
-   --a11ytip-bg-color: theme(color.base.100, white);
+    --a11ytip-text-color: black;
+    --a11ytip-bg-color: theme(color.base.100, white);
   }
 }
 
@@ -279,22 +280,26 @@ a11ytip.
    - Value format: A CSS `<length>` value (e.g., `14ch`, `150px`).
 
 10. `data-a11ytip-start-position` and `data-a11ytip-end-position`:
-   - Starting point of the a11ytip animation (`start`) and end point (`end`).
-   - Value format: CSS `<length>` values (e.g., `4px`, `2rem`).
+
+- Starting point of the a11ytip animation (`start`) and end point (`end`).
+- Value format: CSS `<length>` values (e.g., `4px`, `2rem`).
 
 11. `data-a11ytip-transition-duration`:
-   - Adjusts the transition duration of the a11ytip.
-   - Value format: A valid time duration (e.g., `350ms`, `0.5s`).
+
+- Adjusts the transition duration of the a11ytip.
+- Value format: A valid time duration (e.g., `350ms`, `0.5s`).
 
 12. `data-a11ytip-delay`:
-   - Changes the delay before the a11ytip is displayed.
-   - Value format: A number in milliseconds (e.g., `250`, `1000`).
-   - Default value: `500` (500 milliseconds).
+
+- Changes the delay before the a11ytip is displayed.
+- Value format: A number in milliseconds (e.g., `250`, `1000`).
+- Default value: `500` (500 milliseconds).
 
 13. `data-a11ytip-active`:
-   - Forces the active status of an a11ytip permanently, without requiring a hover event.
-   - Useful for checking positioning or during development.
-   - Value format: No values required, the mere presence of the attribute activates the effect.
+
+- Forces the active status of an a11ytip permanently, without requiring a hover event.
+- Useful for checking positioning or during development.
+- Value format: No values required, the mere presence of the attribute activates the effect.
 
 ---
 
@@ -306,7 +311,7 @@ a11ytip.
   aria-label="I'm a cheeky a11ytip!"
   data-a11ytip-text="This text will be displayed"
   data-a11ytip-active
-  
+
   <!-- Styling -->
   data-a11ytip-text-size="2rem"
   data-a11ytip-text-color="hotpink"

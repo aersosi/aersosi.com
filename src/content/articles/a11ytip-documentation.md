@@ -25,7 +25,7 @@ Kinderleicht zu integrieren und zu konfigurieren. CSS-first und accessibility mi
 - **Leichtgewicht**: ~7KB CSS (minified) + ~1KB JavaScript (minified)
 - **Barrierefreiheit first**: Entwickelt mit Screenreadern und Tastaturnavigation im Blick
 - **Ansprechende Optik**: Sauberes, modernes Design
-- **Theme-Unterstützung**: Light- und Dark Theme inklusive, oder einfach eigenes Theme hinzufügen 
+- **Theme-Unterstützung**: Light- und Dark Theme inklusive, oder einfach eigenes Theme hinzufügen
 - **CSS-first Architektur**: Minimaler JavaScript-Fußabdruck, maximale Flexibilität
 - **Keine Überentwicklung**: Einfach Tooltips, die funktionieren. Ohne Heckmeck
 
@@ -35,23 +35,23 @@ Kinderleicht zu integrieren und zu konfigurieren. CSS-first und accessibility mi
 
 1. a11ytip installieren:
 
- ```bash
- npm i @aersosi/a11ytip
- ```
+```bash
+npm i @aersosi/a11ytip
+```
 
 2. CSS (minified) importieren:
 
- ```css
- @import "@aersosi/a11ytip/css";
- ```
+```css
+@import "@aersosi/a11ytip/css";
+```
 
 3. TypeScript (minified) importieren:
 
- ```typescript
- import {toggleA11ytip} from "@aersosi/a11ytip/js";
- 
- document.addEventListener("DOMContentLoaded", toggleA11ytip);
- ```
+```typescript
+import { toggleA11ytip } from "@aersosi/a11ytip/js";
+
+document.addEventListener("DOMContentLoaded", toggleA11ytip);
+```
 
 ## Verwendung
 
@@ -93,7 +93,7 @@ Kinderleicht zu integrieren und zu konfigurieren. CSS-first und accessibility mi
 
 1. Der a11ytip Text wird primär über das `aria-label` definiert.
 2. **Opt-Out:** Alternativ können Sie auch nur das `data-a11ytip-text` Attribut verwenden.
-3. Beide Attribute, `aria-label` und `data-a11ytip-text`, können gleichzeitig genutzt werden. In diesem Fall hat der 
+3. Beide Attribute, `aria-label` und `data-a11ytip-text`, können gleichzeitig genutzt werden. In diesem Fall hat der
    Text aus `data-a11ytip-text` Vorrang und wird angezeigt.
 
 **Beispiel mit beiden Attributen:**
@@ -153,7 +153,8 @@ Mit dem `data-a11ytip-active` Attribut oder der `a11ytip-active` Klasse kann der
   --a11ytip-padding-top: 4px;
   --a11ytip-padding-bottom: 4px;
   --a11ytip-border-radius: 6px;
-  --a11ytip-box-shadow: 0 1px 3px 0 theme(colors.black / 0.25), 0 1px 2px -1px theme(colors.black / 0.1);
+  --a11ytip-box-shadow:
+    0 1px 3px 0 theme(colors.black / 0.25), 0 1px 2px -1px theme(colors.black / 0.1);
   --a11ytip-max-width: 14ch;
 
   /* Animation */
@@ -165,8 +166,8 @@ Mit dem `data-a11ytip-active` Attribut oder der `a11ytip-active` Klasse kann der
 /* Dark Theme */
 @media (prefers-color-scheme: dark) {
   :root:not(.light, [data-light], [data-theme="light"]) {
-   --a11ytip-text-color: black;
-   --a11ytip-bg-color: theme(color.base.100, white);
+    --a11ytip-text-color: black;
+    --a11ytip-bg-color: theme(color.base.100, white);
   }
 }
 
@@ -283,22 +284,26 @@ Die CSS-a11ytips unterstützen optionale `data-*` Attribute, mit denen Sie die S
    - Werteformat: Ein CSS `<length>` Wert (z.B. `14ch`, `150px`).
 
 10. `data-a11ytip-start-position` und `data-a11ytip-end-position`:
-   - Startpunkt der a11ytip Animation (`start`) und endpunkt (`end`).
-   - Werteformat: CSS `<length>` Werte (z.B. `4px`, `2rem`).
+
+- Startpunkt der a11ytip Animation (`start`) und endpunkt (`end`).
+- Werteformat: CSS `<length>` Werte (z.B. `4px`, `2rem`).
 
 11. `data-a11ytip-transition-duration`:
-   - Passt die Übergangsdauer des a11ytips an.
-   - Werteformat: Eine gültige Zeitdauer (z.B. `350ms`, `0.5s`).
+
+- Passt die Übergangsdauer des a11ytips an.
+- Werteformat: Eine gültige Zeitdauer (z.B. `350ms`, `0.5s`).
 
 12. `data-a11ytip-delay`:
-   - Ändert die Verzögerung, bevor der a11ytip angezeigt wird.
-   - Werteformat: Eine Zahl in Millisekunden (z.B. `250`, `1000`).
-   - Standardwert: `500` (500 Millisekunden).
+
+- Ändert die Verzögerung, bevor der a11ytip angezeigt wird.
+- Werteformat: Eine Zahl in Millisekunden (z.B. `250`, `1000`).
+- Standardwert: `500` (500 Millisekunden).
 
 13. `data-a11ytip-active`:
-   - Erzwingt den aktiven Status eines a11ytips dauerhaft, ohne dass ein Hover-Event erforderlich ist.
-   - Nützlich zum Überprüfen der Positionierung oder während der Entwicklung.
-   - Werteformat: Keine Werte erforderlich, allein das Vorhandensein des Attributs aktiviert den Effekt.
+
+- Erzwingt den aktiven Status eines a11ytips dauerhaft, ohne dass ein Hover-Event erforderlich ist.
+- Nützlich zum Überprüfen der Positionierung oder während der Entwicklung.
+- Werteformat: Keine Werte erforderlich, allein das Vorhandensein des Attributs aktiviert den Effekt.
 
 ---
 
@@ -310,7 +315,7 @@ Die CSS-a11ytips unterstützen optionale `data-*` Attribute, mit denen Sie die S
   aria-label="Ich bin ein freches a11ytip!"
   data-a11ytip-text="Dieser Text wird angezeigt"
   data-a11ytip-active
-  
+
   <!-- Styling -->
   data-a11ytip-text-size="2rem"
   data-a11ytip-text-color="hotpink"

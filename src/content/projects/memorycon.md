@@ -1,31 +1,17 @@
 ---
 pubDate: 2024-01-01
 viewerTitle: "memorycon"
-viewerDescription: "Moderne Web-Applikation mit Fokus auf User Experience und Performance"
+viewerDescription: "Der Klassiker Memory als moderne Web-Applikation"
 pageTitle: "memorycon | Memory-Spiel Web-App | Arthur Ersosi"
-pageDescription: "Moderne Memory-Spiel Web-Applikation mit Fokus auf optimale User Experience und Performance, entwickelt mit React und TypeScript."
-images: [
-  {
-    src: "src/images/projects/memorycon/memorycon-cover.webp",
-    alt: "memorycon App Coverbild"
-  },
-  {
-    src: "src/images/projects/memorycon/memorycon-01.webp",
-    alt: "memorycon Spielkarten"
-  },
-  {
-    src: "src/images/projects/memorycon/memorycon-02.webp",
-    alt: "memorycon Spielmodus"
-  },
-  {
-    src: "src/images/projects/memorycon/memorycon-03.webp",
-    alt: "memorycon Spielstatistik"
-  },
-  {
-    src: "src/images/projects/memorycon/memorycon-04.webp",
-    alt: "memorycon Einstellungen"
-  }
-]
+pageDescription: "Der Klassiker Memory als moderne Web-Applikation, entwickelt mit Next.js/React und TypeScript."
+images:
+  [
+    { src: "src/images/projects/memorycon/memorycon-cover.webp", alt: "Coverbild" },
+    { src: "src/images/projects/memorycon/memorycon-01.webp", alt: "Willkommen" },
+    { src: "src/images/projects/memorycon/memorycon-02.webp", alt: "Spielstart" },
+    { src: "src/images/projects/memorycon/memorycon-03.webp", alt: "Spielverlauf" },
+    { src: "src/images/projects/memorycon/memorycon-04.webp", alt: "Spielende" },
+  ]
 tags: ["Privates Projekt", "Spiel", "Next.js", "React", "Frontend-Entwicklung"]
 
 repo:
@@ -41,7 +27,7 @@ company:
   companyName: ""
   companySize: ""
   teamSize: ""
-  myRole: "Full-Stack Design Engineer"
+  myRole: "Design Engineer (Full-Stack)"
 ---
 
 ## Projektbeschreibung
@@ -58,4 +44,4 @@ Umsetzung von der Konzeption bis zum Deployment.
 
 ## Technologien
 
-- React, TypeScript, Tailwind CSS, Vercel
+- Next.js, React, TypeScript, Tailwind CSS, jest

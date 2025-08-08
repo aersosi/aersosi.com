@@ -1,21 +1,15 @@
 ---
 pubDate: 2024-01-01
 viewerTitle: "reflectAI"
-viewerDescription: "KI-basierte Web-Applikation mit modernem Frontend-Design"
+viewerDescription: "Modernes Claude AI Chatinterface als Web-Applikation"
 pageTitle: "reflectAI | KI-basierte Web-Applikation | Arthur Ersosi"
-pageDescription: "Moderne KI-basierte Web-Applikation mit Fokus auf User Experience und innovative Technologien, entwickelt mit React und TypeScript."
+pageDescription: "Modernes Claude AI Chatinterface als Web-Applikation, entwickelt mit Next.js/React und TypeScript."
 images:
   [
     { src: "src/images/projects/reflectAI/reflectAI-cover.webp", alt: "reflectAI App Coverbild" },
-    { src: "src/images/projects/reflectAI/reflectAI-01.webp", alt: "Oberfläche von reflectAI" },
-    {
-      src: "src/images/projects/reflectAI/reflectAI-02.webp",
-      alt: "Oberfläche von reflectAI - Sessions",
-    },
-    {
-      src: "src/images/projects/reflectAI/reflectAI-03.webp",
-      alt: "Oberfläche von reflectAI - Session Settings",
-    },
+    { src: "src/images/projects/reflectAI/reflectAI-01.webp", alt: "Chat Interaktion" },
+    { src: "src/images/projects/reflectAI/reflectAI-02.webp", alt: "Session Übersicht" },
+    { src: "src/images/projects/reflectAI/reflectAI-03.webp", alt: "Session Settings" },
   ]
 tags: ["Privates Projekt", "Künstliche Intelligenz", "Next.js", "React", "Frontend-Entwicklung"]
 
@@ -32,7 +26,7 @@ company:
   companyName: ""
   companySize: ""
   teamSize: ""
-  myRole: "Full-Stack Design Engineer"
+  myRole: "Design Engineer (Full-Stack)"
 ---
 
 ## Projektbeschreibung

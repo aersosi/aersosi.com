@@ -1,9 +1,9 @@
 ---
 pubDate: 2024-01-01
 viewerTitle: "rescoped Datagrid"
-viewerDescription: "Entwicklung eines Open-Source-Datagrids mit besonderem Fokus auf Developer Experience und Skalierbarkeit"
+viewerDescription: "Entwicklung eines Open-Source-Datagrids mit Fokus auf Developer Experience"
 pageTitle: "rescoped Datagrid | Open-Source-Projekt | Arthur Ersosi"
-pageDescription: "Entwicklung eines skalierbaren Open-Source-Datagrids mit Fokus auf optimale Developer Experience und robustem State-Management."
+pageDescription: "Entwicklung eines Open-Source-Datagrids mit Fokus auf Developer Experience und robustem State-Management."
 images:
   [
     {
@@ -12,7 +12,7 @@ images:
     },
     {
       src: "src/images/projects/rescopedDatagrid/rescopedDatagrid-01.webp",
-      alt: "rescoped Datagrid Funktionalität",
+      alt: "rescoped Datagrid",
     },
   ]
 tags: ["Professionelles Projekt", "Open Source", "Developer Experience", "Frontend-Entwicklung"]
@@ -40,7 +40,7 @@ State-Management.
 - Entwicklung des UI/UX-Designs mit Fokus auf Developer Experience
 - Optimierung der Developer-Workflows
 - Implementierung eines robusten State-Management
-- Enge Zusammenarbeit mit Senior-Frontend-Developer
+- Enge Zusammenarbeit mit Senior-Frontend-Developer und Stakeholdern
 
 ## Technologien
 
