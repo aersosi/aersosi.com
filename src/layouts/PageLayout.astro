@@ -9,26 +9,26 @@ const { frontmatter } = Astro.props;
 ---
 
 <BaseLayout pageTitle={frontmatter.pageTitle} pageDescription={frontmatter.pageDescription}>
-	<section>
-		<Wrapper variant="standard">
-			<!--About Me-->
-			<div class:list={[...stackGrid, ...stackGridPadding]}>
-				<div class="flex flex-col gap-8">
-						<Text tag="h1" variant="text2XL">
-							{frontmatter.viewerTitle}
-						</Text>
-						<Text tag="p" variant="textBase">
-							{frontmatter.viewerDescription}
-						</Text>
-						<slot name="intro" />
-				</div>
-				<div class="lg:col-span-2">
-					<Wrapper variant="prose">
-						<Image
-							alt={frontmatter.image.alt}
-							src={frontmatter.image.url}
-							widths={[320, 480, 640, 768, 1024, 1280, 1536]}
-							sizes={`
+  <section>
+    <Wrapper variant="standard">
+      <!--About Me-->
+      <div class:list={[...stackGrid, ...stackGridPadding]}>
+        <div class="flex flex-col gap-8">
+          <Text tag="h1" variant="text2XL" isPrimary>
+            {frontmatter.viewerTitle}
+          </Text>
+          <Text tag="p" variant="textBase">
+            {frontmatter.viewerDescription}
+          </Text>
+          <slot name="intro" />
+        </div>
+        <div class="lg:col-span-2">
+          <Wrapper variant="prose">
+            <Image
+              alt={frontmatter.image.alt}
+              src={frontmatter.image.url}
+              widths={[320, 480, 640, 768, 1024, 1280, 1536]}
+              sizes={`
 								(max-width: 639px) 100vw,
 								(max-width: 767px) 100vw,
 								(max-width: 1023px) 50vw,
@@ -36,16 +36,16 @@ const { frontmatter } = Astro.props;
 								(max-width: 1535px) 25vw,
 								400px
 							`}
-							layout="constrained"
-							loading="eager"
-							decoding="async"
-							class="bg-secondary-100 aspect-12/6 w-full rounded-xl object-cover object-center lg:col-span-2"
-						/>
+              layout="constrained"
+              loading="eager"
+              decoding="async"
+              class="bg-secondary-100 aspect-12/6 w-full rounded-xl object-cover object-center lg:col-span-2"
+            />
 
-						<slot />
-					</Wrapper>
-				</div>
-			</div>
-		</Wrapper>
-	</section>
+            <slot />
+          </Wrapper>
+        </div>
+      </div>
+    </Wrapper>
+  </section>
 </BaseLayout>

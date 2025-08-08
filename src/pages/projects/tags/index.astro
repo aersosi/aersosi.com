@@ -10,52 +10,54 @@ const allProjects = await getCollection("projects");
 
 const allTags = [...new Set(allProjects.map((post) => post.data.tags).flat())];
 const tagCounts = allProjects.reduce((acc, post) => {
-	post.data.tags.forEach((tag) => {
-		acc[tag] = (acc[tag] || 0) + 1; // Count each tag per post
-	});
-	return acc;
+  post.data.tags.forEach((tag) => {
+    acc[tag] = (acc[tag] || 0) + 1; // Count each tag per post
+  });
+  return acc;
 }, {});
 
 const priorityTags = ["Professionelles Projekt", "Privates Projekt"];
 const projectTypes = allTags.filter((tag) => priorityTags.includes(tag));
 const otherTags = allTags
-	.filter((tag) => !priorityTags.includes(tag))
-	.sort((a, b) => a.localeCompare(b, "de"));
+  .filter((tag) => !priorityTags.includes(tag))
+  .sort((a, b) => a.localeCompare(b, "de"));
 ---
 
 <BaseLayout
-	pageTitle="Projekt Kategorien | Arthur Ersosi"
-	pageDescription="Eine Liste aller Projekt-Kategorien von Arthur Ersosi. Finden Sie Projekte zu Frontend-Entwicklung, UI/UX-Design und Web-Anwendungen."
+  pageTitle="Projekt Kategorien | Arthur Ersosi"
+  pageDescription="Eine Liste aller Projekt-Kategorien von Arthur Ersosi. Finden Sie Projekte zu Frontend-Entwicklung, UI/UX-Design und Web-Anwendungen."
 >
-	<section>
-		<Wrapper variant="standard">
-			<div class:list={[...stackGrid, ...stackGridPadding]}>
-				<div class="flex flex-col gap-8">
-						<Text tag="h1" variant="text2XL"> Projektkategorie Index </Text>
-				</div>
+  <section>
+    <Wrapper variant="standard">
+      <div class:list={[...stackGrid, ...stackGridPadding]}>
+        <div class="flex flex-col gap-8">
+          <Text tag="h1" variant="text2XL" isPrimary>
+            Projektkategorie <br class="hidden lg:block" /> Index
+          </Text>
+        </div>
 
-				<div class="flex flex-col gap-2 lg:col-span-2">
-					{
-						projectTypes.map((tag) => (
-							<Link href={`/projects/tags/${tag}`} size="sm" variant="primary">
-								<span>{tagCounts[tag]} - </span>
-								<span>{tag}</span>
-							</Link>
-						))
-					}
+        <div class="flex flex-col gap-2 lg:col-span-2">
+          {
+            projectTypes.map((tag) => (
+              <Link href={`/projects/tags/${tag}`} size="sm" variant="default">
+                <span>{tagCounts[tag]} - </span>
+                <span>{tag}</span>
+              </Link>
+            ))
+          }
 
-					<hr class="text-base-400 dark:text-base-60 my-4" />
+          <hr class="text-base-400 dark:text-base-60 my-4" />
 
-					{
-						otherTags.map((tag) => (
-							<Link href={`/projects/tags/${tag}`} size="sm" variant="primary">
-								<span>{tagCounts[tag]} - </span>
-								<span>{tag}</span>
-							</Link>
-						))
-					}
-				</div>
-			</div>
-		</Wrapper>
-	</section>
+          {
+            otherTags.map((tag) => (
+              <Link href={`/projects/tags/${tag}`} size="sm" variant="default">
+                <span>{tagCounts[tag]} - </span>
+                <span>{tag}</span>
+              </Link>
+            ))
+          }
+        </div>
+      </div>
+    </Wrapper>
+  </section>
 </BaseLayout>

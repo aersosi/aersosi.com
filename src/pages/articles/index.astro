@@ -23,7 +23,7 @@ const tags = [...new Set(allPosts.map((post) => post.data.tags).flat())];
     <Wrapper variant="standard">
       <div class:list={[...stackGrid, ...stackGridPadding]}>
         <div class="flex flex-col gap-8">
-          <Text tag="h1" variant="text2XL"> Artikel </Text>
+          <Text tag="h1" variant="text2XL" isPrimary> Artikel </Text>
 
           <div class="grid gap-2">
             <Text tag="h2" variant="textBase" class="flex justify-baseline gap-1">
@@ -45,7 +45,7 @@ const tags = [...new Set(allPosts.map((post) => post.data.tags).flat())];
               <div class="flex gap-x-4 gap-y-1 lg:flex-col">
                 {
                   tags.map((tag) => (
-                    <Link href={`/articles/tags/${tag}`} size="sm" variant="primary">
+                    <Link href={`/articles/tags/${tag}`} size="sm" variant="default">
                       {tag}
                     </Link>
                   ))

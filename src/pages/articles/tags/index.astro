@@ -24,13 +24,15 @@ const tags = Object.keys(tagCounts);
     <Wrapper variant="standard">
       <div class:list={[...stackGrid, ...stackGridPadding]}>
         <div class="flex flex-col gap-8">
-          <Text tag="h1" variant="text2XL"> Artikelkategorie Index </Text>
+          <Text tag="h1" variant="text2XL" isPrimary>
+            Artikelkategorie <br class="hidden lg:block" /> Index
+          </Text>
         </div>
 
         <div class="flex flex-col gap-2 lg:col-span-2">
           {
             tags.map((tag) => (
-              <Link href={`/articles/tags/${tag}`} size="sm" variant="primary">
+              <Link href={`/articles/tags/${tag}`} size="sm" variant="default">
                 <span>{tagCounts[tag]}</span>
                 <span>{tag}</span>
               </Link>

@@ -10,4 +10,4 @@ export const stackGrid = [
   "dark:border-base-600",
 ];
 
-export const stackGridPadding = ["py-18", "md:py-22"];
+export const stackGridPadding = ["py-28", "lg:py-32"];

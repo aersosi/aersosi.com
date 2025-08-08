@@ -8,28 +8,28 @@ import { stackGrid, stackGridPadding } from "@/shared/classes";
 ---
 
 <BaseLayout
-	pageTitle="404 | Seite nicht gefunden"
-	pageDescription="Diese Seite existiert nicht oder wurde entfernt. Kehren Sie zur Startseite zurück, um die verfügbaren Inhalte zu entdecken."
+  pageTitle="404 | Seite nicht gefunden"
+  pageDescription="Diese Seite existiert nicht oder wurde entfernt. Kehren Sie zur Startseite zurück, um die verfügbaren Inhalte zu entdecken."
 >
-	<section>
-		<Wrapper variant="standard">
-			<div class:list={[...stackGrid, ...stackGridPadding]}>
-				<div class="flex flex-col gap-8">
-					<Text tag="h1" variant="text2XL"> 404 — Nichts gefunden </Text>
-					<Text tag="p" variant="textBase"> Sie fühlen sich verloren? Sie sind nicht allein.</Text>
-				</div>
-				<div class="flex flex-col gap-8 lg:col-span-2">
-					<Text tag="p" variant="textBase">
-						Diese Seite existiert nicht, hat nie existiert oder wurde versehentlich oder absichtlich
-						entfernt ¯\_(ツ)_/¯. Überprüfen Sie, ob Sie sich vertippt haben, oder gehen Sie zur
-						Startseite zurück.
-					</Text>
-					<Link href="/" size="base" variant="primary">
-						<ArrowLeft size="base" />
-						Zum Start
-					</Link>
-				</div>
-			</div>
-		</Wrapper>
-	</section>
+  <section>
+    <Wrapper variant="standard">
+      <div class:list={[...stackGrid, ...stackGridPadding]}>
+        <div class="flex flex-col gap-8">
+          <Text tag="h1" variant="text2XL" isPrimary> 404 — Nichts gefunden </Text>
+          <Text tag="p" variant="textBase"> Sie fühlen sich verloren? Sie sind nicht allein.</Text>
+        </div>
+        <div class="flex flex-col gap-8 lg:col-span-2">
+          <Text tag="p" variant="textBase">
+            Diese Seite existiert nicht, hat nie existiert oder wurde versehentlich oder absichtlich
+            entfernt ¯\_(ツ)_/¯. Überprüfen Sie, ob Sie sich vertippt haben, oder gehen Sie zur
+            Startseite zurück.
+          </Text>
+          <Link href="/" size="base" variant="primary">
+            <ArrowLeft size="base" />
+            Zum Start
+          </Link>
+        </div>
+      </div>
+    </Wrapper>
+  </section>
 </BaseLayout>
