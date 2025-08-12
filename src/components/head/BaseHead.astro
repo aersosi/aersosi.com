@@ -9,33 +9,34 @@ import UpdateYear from "@/components/lib/scripts/UpdateYear.astro";
 import UpdateClock from "@/components/lib/scripts/UpdateClock.astro";
 import ToggleNavActive from "@/components/lib/scripts/MainNav/ToggleNavActive.astro";
 import UpdateTheme from "@/components/lib/scripts/UpdateTheme.astro";
+import UpdateZoom from "@/components/lib/scripts/UpdateZoom.astro";
 import ShrinkMainnav from "@/components/lib/scripts/MainNav/ShrinkMainnav.astro";
 import ToggleMobileSidenav from "@/components/lib/scripts/MainNav/ToggleMobileSidenav.astro";
 import ToTopMobileNav from "@/components/lib/scripts/MainNav/ToTopMobileNav.astro";
 
 export interface Props {
-	pageTitle?: string;
-	pageDescription?: string;
-	image?: string;
-	article?: boolean;
-	publishDate?: Date;
-	modifiedDate?: Date;
-	author?: string;
+  pageTitle?: string;
+  pageDescription?: string;
+  image?: string;
+  article?: boolean;
+  publishDate?: Date;
+  modifiedDate?: Date;
+  author?: string;
 }
 
 const { pageTitle, pageDescription, image, article, publishDate, modifiedDate, author } =
-	Astro.props;
+  Astro.props;
 ---
 
 <Fonts />
 <Seo
-	pageTitle={pageTitle}
-	pageDescription={pageDescription}
-	image={image}
-	article={article}
-	publishDate={publishDate}
-	modifiedDate={modifiedDate}
-	author={author}
+  pageTitle={pageTitle}
+  pageDescription={pageDescription}
+  image={image}
+  article={article}
+  publishDate={publishDate}
+  modifiedDate={modifiedDate}
+  author={author}
 />
 <Meta />
 <Favicons />
@@ -48,5 +49,6 @@ const { pageTitle, pageDescription, image, article, publishDate, modifiedDate, a
 <ToggleNavActive />
 <ShrinkMainnav />
 <UpdateTheme />
+<UpdateZoom />
 <ToggleMobileSidenav />
 <ToTopMobileNav />

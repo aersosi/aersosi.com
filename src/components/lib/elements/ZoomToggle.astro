@@ -1,0 +1,40 @@
+---
+import Button from "./Button.astro";
+import ZoomIn from "@/components/lib/icons/ZoomIn.astro";
+import ZoomOut from "@/components/lib/icons/ZoomOut.astro";
+const { class: className = "", ...rest } = Astro.props;
+---
+
+<div id="zoom-toggle" class="w-full md:w-fit">
+  <Button
+    iconOnly
+    size="sm"
+    variant="default"
+    role="switch"
+    aria-checked="false"
+    data-zoom-toggle
+    aria-label="Zoom 125%"
+    data-a11ytip-bottom
+    class={`${className} hidden md:flex`}
+    {...rest}
+  >
+    <ZoomIn class="zoomIn" slot="icon" size="base" />
+    <ZoomOut class="zoomOut hidden" slot="icon" size="base" />
+  </Button>
+
+  <Button
+    size="sm"
+    variant="outline"
+    role="switch"
+    aria-checked="false"
+    data-zoom-toggle
+    aria-label="Zoom 125%"
+    class={`${className} md:hidden w-full`}
+    {...rest}
+  >
+    <ZoomIn class="zoomIn" slot="left-icon" size="base" />
+    <ZoomOut class="zoomOut hidden" slot="left-icon" size="base" />
+
+    <div class="zoomText ml-2">100%</div>
+  </Button>
+</div>

@@ -11,6 +11,7 @@ import ArrowUp from "@/components/lib/icons/ArrowUp.astro";
 import AeLogo from "@/components/lib/icons/AeLogo.astro";
 
 import ThemeToggle from "@/components/lib/elements/ThemeToggle.astro";
+import ZoomToggle from "@/components/lib/elements/ZoomToggle.astro";
 import Text from "@/components/lib/elements/Text.astro";
 
 const baseClass = [
@@ -97,7 +98,8 @@ const navItems = [
           ))
         }
       </div>
-      <ThemeToggle aria-label="Hell/Dunkel Modus" data-a11ytip-bottom />
+      <ZoomToggle />
+      <ThemeToggle />
     </div>
   </div>
 </nav>
@@ -136,7 +138,10 @@ const navItems = [
     </div>
 
     <!--Dark/Light mode-->
-    <ThemeToggle />
+    <div class="flex gap-4">
+      <ZoomToggle />
+      <ThemeToggle />
+    </div>
   </div>
 </nav>
 

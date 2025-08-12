@@ -4,15 +4,16 @@ import Contrast from "@/components/lib/icons/Contrast.astro";
 const { class: className = "", ...rest } = Astro.props;
 ---
 
-<div id="theme-toggle">
+<div id="theme-toggle" class="w-full md:w-fit">
   <Button
     iconOnly
     size="sm"
     variant="default"
     role="switch"
     aria-checked="false"
-    aria-label="Hell/Dunkel Modus"
     data-theme-toggle
+    aria-label="Dunkler Modus"
+    data-a11ytip-bottom
     class={`${className} hidden md:flex`}
     {...rest}
   >
@@ -24,12 +25,12 @@ const { class: className = "", ...rest } = Astro.props;
     variant="outline"
     role="switch"
     aria-checked="false"
-    aria-label="Hell/Dunkel Modus"
     data-theme-toggle
-    class={`${className} md:hidden`}
+    aria-label="Dunkler Modus"
+    class={`${className} md:hidden w-full`}
     {...rest}
   >
     <Contrast slot="left-icon" size="base" />
-    <div class="ml-2 md:hidden">Hell/Dunkel</div>
+    <div class="themeText ml-2">Dunkler Modus</div>
   </Button>
 </div>
