@@ -247,3 +247,6 @@ code .line::before {
     --text-9xl: calc(8rem * var(--zoom-factor));
     --text-9xl--line-height: calc(1 * var(--zoom-factor));
 }
+
+
+@custom-variant scrolled (&:where(.scrolled, .scrolled *));

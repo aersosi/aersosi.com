@@ -10,9 +10,10 @@ import UpdateClock from "@/components/lib/scripts/UpdateClock.astro";
 import ToggleNavActive from "@/components/lib/scripts/MainNav/ToggleNavActive.astro";
 import UpdateTheme from "@/components/lib/scripts/UpdateTheme.astro";
 import UpdateZoom from "@/components/lib/scripts/UpdateZoom.astro";
-import ShrinkMainnav from "@/components/lib/scripts/MainNav/ShrinkMainnav.astro";
 import ToggleMobileSidenav from "@/components/lib/scripts/MainNav/ToggleMobileSidenav.astro";
 import ToTopMobileNav from "@/components/lib/scripts/MainNav/ToTopMobileNav.astro";
+
+import ShrinkMainnav from "@/components/lib/scripts/MainNav/ShrinkMainnav.astro";
 
 export interface Props {
   pageTitle?: string;
@@ -42,12 +43,12 @@ const { pageTitle, pageDescription, image, article, publishDate, modifiedDate, a
 <Favicons />
 
 <!-- scripts -->
+<ShrinkMainnav />
 <ToggleLocalStorage />
 <ToggleA11ytip />
 <UpdateYear />
 <UpdateClock />
 <ToggleNavActive />
-<ShrinkMainnav />
 <UpdateTheme />
 <UpdateZoom />
 <ToggleMobileSidenav />
