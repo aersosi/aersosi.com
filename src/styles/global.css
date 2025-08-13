@@ -198,11 +198,17 @@ code .line::before {
 
 :root.zoom {
     --zoom-factor: 1.125;
-    --spacing: 0.275rem;
+    /*--spacing: 4.2px;*/
+
+    --a11ytip-text-size: calc(1rem * var(--zoom-factor));
 
     .prose-base {
         font-size: calc(1rem * var(--zoom-factor));
         line-height: calc((1.75 / 1.25) * var(--zoom-factor));
+    }
+
+    svg {
+        transform: scale(var(--zoom-factor));
     }
 }
 
