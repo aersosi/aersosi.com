@@ -1,12 +1,12 @@
 <script>
   function updateZoom(isZoomed) {
-    document.documentElement.classList.toggle("text-xl", isZoomed);
+    document.documentElement.classList.toggle("zoom", isZoomed);
     localStorage.setItem("zoom", isZoomed ? "true" : "false");
 
-    const zoomInText = "100%";
-    const zoomOutText = "125%";
-    const zoomInAria = "Zoom 100%";
-    const zoomOutAria = "Zoom 125%";
+    const zoomInText = "Verkleinern";
+    const zoomOutText = "Vergrößern";
+    const zoomInAria = "Verkleinern";
+    const zoomOutAria = "Vergrößern";
 
     // Update all zoom toggle buttons
     document.querySelectorAll("[data-zoom-toggle]").forEach((button) => {
@@ -37,7 +37,7 @@
   // Attach event listener to all zoom toggles
   document.querySelectorAll("[data-zoom-toggle]").forEach((button) => {
     button.addEventListener("click", () => {
-      const isZoomed = document.documentElement.classList.contains("text-xl");
+      const isZoomed = document.documentElement.classList.contains("zoom");
       updateZoom(!isZoomed);
     });
   });
@@ -45,7 +45,7 @@
   // Keyboard shortcut: Alt + Z for zoom toggle
   document.addEventListener("keydown", (event) => {
     if (event.altKey && event.key === "z") {
-      const isZoomed = document.documentElement.classList.contains("text-xl");
+      const isZoomed = document.documentElement.classList.contains("zoom");
       updateZoom(!isZoomed);
       event.preventDefault();
     }

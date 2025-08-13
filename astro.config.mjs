@@ -7,20 +7,20 @@ import mailObfuscation from "astro-mail-obfuscation";
 
 // https://astro.build/config
 export default defineConfig({
-	vite: {
-		plugins: [tailwindcss()],
-	},
-	markdown: {
-		drafts: true,
-		shikiConfig: {
-			theme: "css-variables",
-		},
-	},
-	shikiConfig: {
-		wrap: true,
-		skipInline: false,
-		drafts: true,
-	},
-	site: "https://aersosi.com",
-	integrations: [sitemap(), mdx(), mailObfuscation()],
+  vite: {
+    plugins: [tailwindcss()],
+  },
+  markdown: {
+    drafts: true,
+    shikiConfig: {
+      theme: "css-variables",
+    },
+  },
+  shikiConfig: {
+    wrap: true,
+    skipInline: false,
+    drafts: true,
+  },
+  site: "https://aersosi.com",
+  integrations: [sitemap(), mdx(), mailObfuscation()],
 });
