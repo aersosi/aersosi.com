@@ -1,0 +1,15 @@
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <style>
+        .ae_favColor { fill: #5361f5; }
+        .dark .ae_favColor { fill: #a3c2ff; }
+        @media (prefers-color-scheme: dark) {
+        .ae_favColor { fill: #a3c2ff; }
+        }
+    </style>
+    <path class="ae_favColor" d="M24 9.59999L24 6.59999C24 2.95491 21.0451 -1.17259e-05 17.4 -1.20735e-05L14.2 -1.23787e-05L13 16.8L24 9.59999Z"
+    />
+    <path class="ae_favColor" d="M24 24L19 24C15.6863 24 13 21.3137 13 18L13 16.8L24 16.8L24 24Z"/>
+    <path class="ae_favColor" d="M-1.20643e-06 14.4L-1.70912e-06 17.4C-2.31989e-06 21.0451 2.95492 24 6.6 24L9.8 24L11 7.20001L-1.20643e-06 14.4Z"
+    />
+    <path class="ae_favColor" d="M0 0L5 9.13965e-07C8.31371 1.51969e-06 11 2.68629 11 6L11 7.2L-1.20643e-06 7.2L0 0Z"/>
+</svg>

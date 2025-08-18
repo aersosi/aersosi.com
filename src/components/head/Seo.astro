@@ -5,20 +5,20 @@ import { SeoProps } from "@/_definitions/seo";
 export type Props = SeoProps;
 
 const {
-	pageTitle = "Arthur Ersosi | Design Engineer",
-	pageTitleTemplate = "%s | Arthur Ersosi",
-	pageDescription = "Frontend-Developer und UI/UX-Designer mit 9+ Jahren Design Expertise und 7+ Jahren Web-Development Erfahrung aus Hamburg.",
-	image = "/img/portrait.webp",
-	article = false,
-	publishDate,
-	modifiedDate,
-	author = "Arthur Ersosi",
-	noindex = false,
-	nofollow = false,
-	robotsProps,
-	facebookAppId,
-	additionalMetaTags = [],
-	additionalLinkTags = [],
+  pageTitle = "Arthur Ersosi | Design Engineer",
+  pageTitleTemplate = "%s | Arthur Ersosi",
+  pageDescription = "Frontend-Developer und UI/UX-Designer mit 9+ Jahren Design Expertise und 7+ Jahren Web-Development Erfahrung aus Hamburg.",
+  image = "/img/portrait.webp",
+  article = false,
+  publishDate,
+  modifiedDate,
+  author = "Arthur Ersosi",
+  noindex = false,
+  nofollow = false,
+  robotsProps,
+  facebookAppId,
+  additionalMetaTags = [],
+  additionalLinkTags = [],
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url?.pathname || "/", Astro.site);
@@ -28,131 +28,131 @@ const ogImageURL = image.startsWith("http") ? new URL(image) : new URL(image, As
 ---
 
 <AstroSeo
-	title={pageTitle}
-	pageTitleTemplate={pageTitleTemplate}
-	description={pageDescription}
-	canonical={canonicalURL.toString()}
-	noindex={noindex}
-	nofollow={nofollow}
-	robotsProps={robotsProps}
-	openGraph={{
-		title: pageTitle,
-		description: pageDescription,
-		images: [
-			{
-				url: ogImageURL.toString(),
-				width: 1200,
-				height: 630,
-				alt: `${pageTitle} - Vorschaubild`,
-				type: "image/jpeg",
-			},
-		],
-		url: canonicalURL.toString(),
-		site_name: "Arthur Ersosi",
-		type: article ? "article" : "website",
-		locale: "de_DE",
-		...(article && publishDate
-			? {
-					article: {
-						publishedTime: publishDate.toISOString(),
-						modifiedTime: modifiedDate ? modifiedDate.toISOString() : undefined,
-						authors: [author],
-					},
-				}
-			: {}),
-	}}
-	facebook={facebookAppId ? { appId: facebookAppId } : undefined}
-	twitter={{
-		handle: "@aersosi",
-		site: "@aersosi",
-		cardType: "summary_large_image",
-	}}
-	languageAlternates={[
-		{
-			hreflang: "de",
-			href: "https://aersosi.com/",
-		},
-		{
-			hreflang: "en",
-			href: "https://aersosi.com/en",
-		},
-	]}
-	additionalMetaTags={additionalMetaTags}
-	additionalLinkTags={additionalLinkTags}
+  title={pageTitle}
+  pageTitleTemplate={pageTitleTemplate}
+  description={pageDescription}
+  canonical={canonicalURL.toString()}
+  noindex={noindex}
+  nofollow={nofollow}
+  robotsProps={robotsProps}
+  openGraph={{
+    title: pageTitle,
+    description: pageDescription,
+    images: [
+      {
+        url: ogImageURL.toString(),
+        width: 1200,
+        height: 630,
+        alt: `${pageTitle} - Vorschaubild`,
+        type: "image/jpeg",
+      },
+    ],
+    url: canonicalURL.toString(),
+    site_name: "Arthur Ersosi",
+    type: article ? "article" : "website",
+    locale: "de_DE",
+    ...(article && publishDate
+      ? {
+          article: {
+            publishedTime: publishDate.toISOString(),
+            modifiedTime: modifiedDate ? modifiedDate.toISOString() : undefined,
+            authors: [author],
+          },
+        }
+      : {}),
+  }}
+  facebook={facebookAppId ? { appId: facebookAppId } : undefined}
+  twitter={{
+    handle: "@aersosi",
+    site: "@aersosi",
+    cardType: "summary_large_image",
+  }}
+  languageAlternates={[
+    {
+      hreflang: "de",
+      href: "https://aersosi.com/",
+    },
+    {
+      hreflang: "en",
+      href: "https://aersosi.com/en",
+    },
+  ]}
+  additionalMetaTags={additionalMetaTags}
+  additionalLinkTags={additionalLinkTags}
 />
 
 {
-	article ? (
-		<script
-			type="application/ld+json"
-			set:html={JSON.stringify({
-				"@context": "https://schema.org",
-				"@type": "Article",
-				headline: pageTitle || "",
-				description: pageDescription || "",
-				image: ogImageURL.toString(),
-				...(publishDate ? { datePublished: publishDate.toISOString() } : {}),
-				...(modifiedDate || publishDate
-					? {
-							dateModified: modifiedDate?.toISOString() || publishDate?.toISOString(),
-						}
-					: {}),
-				author: {
-					"@type": "Person",
-					name: author || "Arthur Ersosi",
-					url: "https://aersosi.com/about",
-				},
-				publisher: {
-					"@type": "Person",
-					name: "Arthur Ersosi",
-					logo: {
-						"@type": "ImageObject",
-						url: Astro.site
-							? new URL("/img/ae_logo_2025_24x16.svg", Astro.site).toString()
-							: "/img/ae_logo_2025.svg",
-					},
-				},
-				mainEntityOfPage: {
-					"@type": "WebPage",
-					"@id": canonicalURL.toString(),
-				},
-			})}
-		/>
-	) : (
-		<script
-			type="application/ld+json"
-			set:html={JSON.stringify({
-				"@context": "https://schema.org",
-				"@type": "WebSite",
-				name: "Arthur Ersosi",
-				url: "https://aersosi.com",
-				description: pageDescription || "",
-				author: {
-					"@type": "Person",
-					name: "Arthur Ersosi",
-					url: "https://aersosi.com/about",
-				},
-			})}
-		/>
-	)
+  article ? (
+    <script
+      type="application/ld+json"
+      set:html={JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "Article",
+        headline: pageTitle || "",
+        description: pageDescription || "",
+        image: ogImageURL.toString(),
+        ...(publishDate ? { datePublished: publishDate.toISOString() } : {}),
+        ...(modifiedDate || publishDate
+          ? {
+              dateModified: modifiedDate?.toISOString() || publishDate?.toISOString(),
+            }
+          : {}),
+        author: {
+          "@type": "Person",
+          name: author || "Arthur Ersosi",
+          url: "https://aersosi.com/about",
+        },
+        publisher: {
+          "@type": "Person",
+          name: "Arthur Ersosi",
+          logo: {
+            "@type": "ImageObject",
+            url: Astro.site
+              ? new URL("/img/ae_logo_24x24.svg", Astro.site).toString()
+              : "/img/ae_logo_24x24.svg",
+          },
+        },
+        mainEntityOfPage: {
+          "@type": "WebPage",
+          "@id": canonicalURL.toString(),
+        },
+      })}
+    />
+  ) : (
+    <script
+      type="application/ld+json"
+      set:html={JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        name: "Arthur Ersosi",
+        url: "https://aersosi.com",
+        description: pageDescription || "",
+        author: {
+          "@type": "Person",
+          name: "Arthur Ersosi",
+          url: "https://aersosi.com/about",
+        },
+      })}
+    />
+  )
 }
 
 {
-	Astro.url?.pathname === "/about" && (
-		<script
-			type="application/ld+json"
-			set:html={JSON.stringify({
-				"@context": "https://schema.org",
-				"@type": "Person",
-				name: "Arthur Ersosi",
-				jobTitle: "Design Engineer & Frontend-Developer",
-				url: "https://aersosi.com",
-				sameAs: [
-					"https://x.com/aersosi",
-					"https://github.com/aersosi",
-					"https://www.linkedin.com/in/aersosi",
-				],
-			})}
-		/>
-	)
+  Astro.url?.pathname === "/about" && (
+    <script
+      type="application/ld+json"
+      set:html={JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "Person",
+        name: "Arthur Ersosi",
+        jobTitle: "Design Engineer & Frontend-Developer",
+        url: "https://aersosi.com",
+        sameAs: [
+          "https://x.com/aersosi",
+          "https://github.com/aersosi",
+          "https://www.linkedin.com/in/aersosi",
+        ],
+      })}
+    />
+  )
 }
