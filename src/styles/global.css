@@ -198,7 +198,6 @@ code .line::before {
 
 :root.zoom {
     --zoom-factor: 1.125;
-    /*--spacing: 4.2px;*/
 
     --a11ytip-text-size: calc(1rem * var(--zoom-factor));
 
@@ -213,7 +212,6 @@ code .line::before {
 }
 
 @theme {
-
     --text-xs: calc(0.75rem * var(--zoom-factor));
     --text-xs--line-height: calc((1 / 0.75) * var(--zoom-factor));
 
@@ -253,6 +251,5 @@ code .line::before {
     --text-9xl: calc(8rem * var(--zoom-factor));
     --text-9xl--line-height: calc(1 * var(--zoom-factor));
 }
-
 
 @custom-variant scrolled (&:where(.scrolled, .scrolled *));
