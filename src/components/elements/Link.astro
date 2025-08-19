@@ -5,44 +5,44 @@ const defaultClass = [
   // light
   "text-base-900",
   "hover:text-base-500",
-  "focus:ring-base-900",
+  "focus-visible:ring-base-900",
   // dark
   "dark:text-base-50",
   "dark:hover:text-base-400",
-  "dark:focus:ring-base-50",
+  "dark:focus-visible:ring-base-50",
 ];
 
 const primaryClass = [
   // light
   "text-primary-600",
   "hover:text-primary-400",
-  "focus:ring-primary-600",
+  "focus-visible:ring-primary-600",
   // dark
   "dark:text-primary-300",
   "dark:hover:text-primary-100",
-  "dark:focus:ring-primary-300",
+  "dark:focus-visible:ring-primary-300",
 ];
 
 const secondaryClass = [
   // light
   "text-secondary-400",
   "hover:text-secondary-500",
-  "focus:ring-secondary-400",
+  "focus-visible:ring-secondary-400",
   // dark
   "dark:text-secondary-300",
   "dark:hover:text-secondary-100",
-  "dark:focus:ring-secondary-300",
+  "dark:focus-visible:ring-secondary-300",
 ];
 
 const mutedClass = [
   // light
   "text-base-500",
   "hover:text-base-700",
-  "focus:ring-base-500",
+  "focus-visible:ring-base-500",
   // dark
   "dark:text-base-400",
   "dark:hover:text-base-200",
-  "dark:focus:ring-base-400",
+  "dark:focus-visible:ring-base-400",
 ];
 
 // Size
@@ -68,19 +68,20 @@ const additionalClasses = className ? className.split(" ") : [];
 const baseClass = [
   "flex",
   "w-fit",
-  "focus:m-0.75",
-  "focus:px-0.5",
   "items-center",
   "font-medium",
   "rounded-sm",
   "transition-colors",
   "duration-200",
-  "focus:ring-2",
-  "focus:ring-none",
-  "focus:ring-offset-0.5",
-  "focus:ring-offset-white",
+
+  "focus-visible:m-0.75",
+  "focus-visible:px-0.5",
+  "focus-visible:ring-2",
+  "focus-visible:ring-none",
+  "focus-visible:ring-offset-0.5",
+  "focus-visible:ring-offset-white",
   // Dark
-  "dark:focus:ring-offset-base-900",
+  "dark:focus-visible:ring-offset-base-900",
 ];
 ---
 
