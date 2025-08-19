@@ -1,220 +1,220 @@
 ---
-import BaseLayout from "@/layouts/BaseLayout.astro";
-import Text from "@/components/lib/elements/Text.astro";
-import Link from "@/components/lib/elements/Link.astro";
-import Wrapper from "@/components/lib/containers/Wrapper.astro";
-import ArrowRight from "@/components/lib/icons/ArrowRight.astro";
+import BaseLayout from "@/components/layouts/BaseLayout.astro";
+import Text from "@/components/elements/Text.astro";
+import Link from "@/components/elements/Link.astro";
+import Wrapper from "@/components/containers/Wrapper.astro";
+import ArrowRight from "@/lib/icons/ArrowRight.astro";
 ---
 
 <BaseLayout>
-	<section>
-		<Wrapper variant="standard" class="pt-24 pb-8">
-			<Text tag="h1" variant="textSM"> Links </Text>
-			<div class="border-base-300 dark:border-base-600 mt-8 flex flex-col gap-12 border-t pt-8">
-				<!-- Default -->
-				<div class="grid grid-cols-2 gap-8 md:grid-cols-2">
-					<div class="w-full">
-						<Text
-							tag="p"
-							variant="textSM"
-							class="text-base-900 font-medium uppercase dark:text-white"
-						>
-							Only text
-						</Text>
-						<div class="mt-4 flex flex-col gap-4">
-							<Link href="#" size="xs" variant="default"> Default XS </Link>
-							<Link href="#" size="sm" variant="default"> Default SM </Link>
-							<Link href="#" size="base" variant="default"> Default Base </Link>
-							<Link href="#" size="lg" variant="default"> Default LG </Link>
-							<Link href="#" size="xl" variant="default"> Default XL </Link>
-						</div>
-					</div>
-					<div>
-						<Text
-							tag="p"
-							variant="textSM"
-							class="text-base-900 font-medium uppercase dark:text-white"
-						>
-							With icon
-						</Text>
-						<div class="mt-4 flex flex-col gap-4">
-							<Link href="#" size="xs" variant="default">
-								Default XS
-								<ArrowRight size="xs" />
-							</Link>
-							<Link href="#" size="sm" variant="default">
-								Default SM
-								<ArrowRight size="sm" />
-							</Link>
-							<Link href="#" size="base" variant="default">
-								Default Base
-								<ArrowRight size="base" />
-							</Link>
-							<Link href="#" size="lg" variant="default">
-								Default LG
-								<ArrowRight size="lg" />
-							</Link>
-							<Link href="#" size="xl" variant="default">
-								Default XL
-								<ArrowRight size="xl" />
-							</Link>
-						</div>
-					</div>
-				</div>
+  <section>
+    <Wrapper variant="standard" class="pt-24 pb-8">
+      <Text tag="h1" variant="textSM"> Links </Text>
+      <div class="border-base-300 dark:border-base-600 mt-8 flex flex-col gap-12 border-t pt-8">
+        <!-- Default -->
+        <div class="grid grid-cols-2 gap-8 md:grid-cols-2">
+          <div class="w-full">
+            <Text
+              tag="p"
+              variant="textSM"
+              class="text-base-900 font-medium uppercase dark:text-white"
+            >
+              Only text
+            </Text>
+            <div class="mt-4 flex flex-col gap-4">
+              <Link href="#" size="xs" variant="default"> Default XS </Link>
+              <Link href="#" size="sm" variant="default"> Default SM </Link>
+              <Link href="#" size="base" variant="default"> Default Base </Link>
+              <Link href="#" size="lg" variant="default"> Default LG </Link>
+              <Link href="#" size="xl" variant="default"> Default XL </Link>
+            </div>
+          </div>
+          <div>
+            <Text
+              tag="p"
+              variant="textSM"
+              class="text-base-900 font-medium uppercase dark:text-white"
+            >
+              With icon
+            </Text>
+            <div class="mt-4 flex flex-col gap-4">
+              <Link href="#" size="xs" variant="default">
+                Default XS
+                <ArrowRight size="xs" />
+              </Link>
+              <Link href="#" size="sm" variant="default">
+                Default SM
+                <ArrowRight size="sm" />
+              </Link>
+              <Link href="#" size="base" variant="default">
+                Default Base
+                <ArrowRight size="base" />
+              </Link>
+              <Link href="#" size="lg" variant="default">
+                Default LG
+                <ArrowRight size="lg" />
+              </Link>
+              <Link href="#" size="xl" variant="default">
+                Default XL
+                <ArrowRight size="xl" />
+              </Link>
+            </div>
+          </div>
+        </div>
 
-				<!-- Primary -->
-				<div class="grid grid-cols-2 gap-8 md:grid-cols-2">
-					<div class="w-full">
-						<Text
-							tag="p"
-							variant="textSM"
-							class="text-base-900 font-medium uppercase dark:text-white"
-						>
-							Only text
-						</Text>
-						<div class="mt-4 flex flex-col gap-4">
-							<Link href="#" size="xs" variant="primary"> Primary XS </Link>
-							<Link href="#" size="sm" variant="primary"> Primary SM </Link>
-							<Link href="#" size="base" variant="primary"> Primary Base </Link>
-							<Link href="#" size="lg" variant="primary"> Primary LG </Link>
-							<Link href="#" size="xl" variant="primary"> Primary XL </Link>
-						</div>
-					</div>
-					<div>
-						<Text
-							tag="p"
-							variant="textSM"
-							class="text-base-900 font-medium uppercase dark:text-white"
-						>
-							With icon
-						</Text>
-						<div class="mt-4 flex flex-col gap-4">
-							<Link href="#" size="xs" variant="primary">
-								Primary XS
-								<ArrowRight size="xs" />
-							</Link>
-							<Link href="#" size="sm" variant="primary">
-								Primary SM
-								<ArrowRight size="sm" />
-							</Link>
-							<Link href="#" size="base" variant="primary">
-								Primary Base
-								<ArrowRight size="base" />
-							</Link>
-							<Link href="#" size="lg" variant="primary">
-								Primary LG
-								<ArrowRight size="lg" />
-							</Link>
-							<Link href="#" size="xl" variant="primary">
-								Primary XL
-								<ArrowRight size="xl" />
-							</Link>
-						</div>
-					</div>
-				</div>
+        <!-- Primary -->
+        <div class="grid grid-cols-2 gap-8 md:grid-cols-2">
+          <div class="w-full">
+            <Text
+              tag="p"
+              variant="textSM"
+              class="text-base-900 font-medium uppercase dark:text-white"
+            >
+              Only text
+            </Text>
+            <div class="mt-4 flex flex-col gap-4">
+              <Link href="#" size="xs" variant="primary"> Primary XS </Link>
+              <Link href="#" size="sm" variant="primary"> Primary SM </Link>
+              <Link href="#" size="base" variant="primary"> Primary Base </Link>
+              <Link href="#" size="lg" variant="primary"> Primary LG </Link>
+              <Link href="#" size="xl" variant="primary"> Primary XL </Link>
+            </div>
+          </div>
+          <div>
+            <Text
+              tag="p"
+              variant="textSM"
+              class="text-base-900 font-medium uppercase dark:text-white"
+            >
+              With icon
+            </Text>
+            <div class="mt-4 flex flex-col gap-4">
+              <Link href="#" size="xs" variant="primary">
+                Primary XS
+                <ArrowRight size="xs" />
+              </Link>
+              <Link href="#" size="sm" variant="primary">
+                Primary SM
+                <ArrowRight size="sm" />
+              </Link>
+              <Link href="#" size="base" variant="primary">
+                Primary Base
+                <ArrowRight size="base" />
+              </Link>
+              <Link href="#" size="lg" variant="primary">
+                Primary LG
+                <ArrowRight size="lg" />
+              </Link>
+              <Link href="#" size="xl" variant="primary">
+                Primary XL
+                <ArrowRight size="xl" />
+              </Link>
+            </div>
+          </div>
+        </div>
 
-				<!-- Secondary -->
-				<div class="grid grid-cols-2 gap-8 md:grid-cols-2">
-					<div class="w-full">
-						<Text
-							tag="p"
-							variant="textSM"
-							class="text-base-900 font-medium uppercase dark:text-white"
-						>
-							Only text
-						</Text>
-						<div class="mt-4 flex flex-col gap-4">
-							<Link href="#" size="xs" variant="secondary"> Secondary XS </Link>
-							<Link href="#" size="sm" variant="secondary"> Secondary SM </Link>
-							<Link href="#" size="base" variant="secondary"> Secondary Base </Link>
-							<Link href="#" size="lg" variant="secondary"> Secondary LG </Link>
-							<Link href="#" size="xl" variant="secondary"> Secondary XL </Link>
-						</div>
-					</div>
-					<div>
-						<Text
-							tag="p"
-							variant="textSM"
-							class="text-base-900 font-medium uppercase dark:text-white"
-						>
-							With icon
-						</Text>
-						<div class="mt-4 flex flex-col gap-4">
-							<Link href="#" size="xs" variant="secondary">
-								Secondary XS
-								<ArrowRight size="xs" />
-							</Link>
-							<Link href="#" size="sm" variant="secondary">
-								Secondary SM
-								<ArrowRight size="sm" />
-							</Link>
-							<Link href="#" size="base" variant="secondary">
-								Secondary Base
-								<ArrowRight size="base" />
-							</Link>
-							<Link href="#" size="lg" variant="secondary">
-								Secondary LG
-								<ArrowRight size="lg" />
-							</Link>
-							<Link href="#" size="xl" variant="secondary">
-								Secondary XL
-								<ArrowRight size="xl" />
-							</Link>
-						</div>
-					</div>
-				</div>
+        <!-- Secondary -->
+        <div class="grid grid-cols-2 gap-8 md:grid-cols-2">
+          <div class="w-full">
+            <Text
+              tag="p"
+              variant="textSM"
+              class="text-base-900 font-medium uppercase dark:text-white"
+            >
+              Only text
+            </Text>
+            <div class="mt-4 flex flex-col gap-4">
+              <Link href="#" size="xs" variant="secondary"> Secondary XS </Link>
+              <Link href="#" size="sm" variant="secondary"> Secondary SM </Link>
+              <Link href="#" size="base" variant="secondary"> Secondary Base </Link>
+              <Link href="#" size="lg" variant="secondary"> Secondary LG </Link>
+              <Link href="#" size="xl" variant="secondary"> Secondary XL </Link>
+            </div>
+          </div>
+          <div>
+            <Text
+              tag="p"
+              variant="textSM"
+              class="text-base-900 font-medium uppercase dark:text-white"
+            >
+              With icon
+            </Text>
+            <div class="mt-4 flex flex-col gap-4">
+              <Link href="#" size="xs" variant="secondary">
+                Secondary XS
+                <ArrowRight size="xs" />
+              </Link>
+              <Link href="#" size="sm" variant="secondary">
+                Secondary SM
+                <ArrowRight size="sm" />
+              </Link>
+              <Link href="#" size="base" variant="secondary">
+                Secondary Base
+                <ArrowRight size="base" />
+              </Link>
+              <Link href="#" size="lg" variant="secondary">
+                Secondary LG
+                <ArrowRight size="lg" />
+              </Link>
+              <Link href="#" size="xl" variant="secondary">
+                Secondary XL
+                <ArrowRight size="xl" />
+              </Link>
+            </div>
+          </div>
+        </div>
 
-				<!-- Muted -->
-				<div class="grid grid-cols-2 gap-8 md:grid-cols-2">
-					<div class="w-full">
-						<Text
-							tag="p"
-							variant="textSM"
-							class="text-base-900 font-medium uppercase dark:text-white"
-						>
-							Only text
-						</Text>
-						<div class="mt-4 flex flex-col gap-4">
-							<Link href="#" size="xs" variant="muted"> Muted XS </Link>
-							<Link href="#" size="sm" variant="muted"> Muted SM </Link>
-							<Link href="#" size="base" variant="muted"> Muted Base </Link>
-							<Link href="#" size="lg" variant="muted"> Muted LG </Link>
-							<Link href="#" size="xl" variant="muted"> Muted XL </Link>
-						</div>
-					</div>
-					<div>
-						<Text
-							tag="p"
-							variant="textSM"
-							class="text-base-900 font-medium uppercase dark:text-white"
-						>
-							With icon
-						</Text>
-						<div class="mt-4 flex flex-col gap-4">
-							<Link href="#" size="xs" variant="muted">
-								Muted XS
-								<ArrowRight size="xs" />
-							</Link>
-							<Link href="#" size="sm" variant="muted">
-								Muted SM
-								<ArrowRight size="sm" />
-							</Link>
-							<Link href="#" size="base" variant="muted">
-								Muted Base
-								<ArrowRight size="base" />
-							</Link>
-							<Link href="#" size="lg" variant="muted">
-								Muted LG
-								<ArrowRight size="lg" />
-							</Link>
-							<Link href="#" size="xl" variant="muted">
-								Muted XL
-								<ArrowRight size="xl" />
-							</Link>
-						</div>
-					</div>
-				</div>
-			</div>
-		</Wrapper>
-	</section>
+        <!-- Muted -->
+        <div class="grid grid-cols-2 gap-8 md:grid-cols-2">
+          <div class="w-full">
+            <Text
+              tag="p"
+              variant="textSM"
+              class="text-base-900 font-medium uppercase dark:text-white"
+            >
+              Only text
+            </Text>
+            <div class="mt-4 flex flex-col gap-4">
+              <Link href="#" size="xs" variant="muted"> Muted XS </Link>
+              <Link href="#" size="sm" variant="muted"> Muted SM </Link>
+              <Link href="#" size="base" variant="muted"> Muted Base </Link>
+              <Link href="#" size="lg" variant="muted"> Muted LG </Link>
+              <Link href="#" size="xl" variant="muted"> Muted XL </Link>
+            </div>
+          </div>
+          <div>
+            <Text
+              tag="p"
+              variant="textSM"
+              class="text-base-900 font-medium uppercase dark:text-white"
+            >
+              With icon
+            </Text>
+            <div class="mt-4 flex flex-col gap-4">
+              <Link href="#" size="xs" variant="muted">
+                Muted XS
+                <ArrowRight size="xs" />
+              </Link>
+              <Link href="#" size="sm" variant="muted">
+                Muted SM
+                <ArrowRight size="sm" />
+              </Link>
+              <Link href="#" size="base" variant="muted">
+                Muted Base
+                <ArrowRight size="base" />
+              </Link>
+              <Link href="#" size="lg" variant="muted">
+                Muted LG
+                <ArrowRight size="lg" />
+              </Link>
+              <Link href="#" size="xl" variant="muted">
+                Muted XL
+                <ArrowRight size="xl" />
+              </Link>
+            </div>
+          </div>
+        </div>
+      </div>
+    </Wrapper>
+  </section>
 </BaseLayout>

@@ -1,14 +1,14 @@
 ---
 import { getCollection } from "astro:content";
-import BaseLayout from "@/layouts/BaseLayout.astro";
-import ExternalLink from "@/components/lib/icons/ExternalLink.astro";
-import Text from "@/components/lib/elements/Text.astro";
-import Link from "@/components/lib/elements/Link.astro";
+import BaseLayout from "@/components/layouts/BaseLayout.astro";
+import ExternalLink from "@/lib/icons/ExternalLink.astro";
+import Text from "@/components/elements/Text.astro";
+import Link from "@/components/elements/Link.astro";
 
-import Wrapper from "@/components/lib/containers/Wrapper.astro";
-import ArticlesEntry from "@/components/lib/entries/ArticlesEntry.astro";
-import { stackGrid, stackGridPadding } from "@/shared/classes";
-import CarouselWrapper from "@/components/lib/elements/CarouselWrapper.astro";
+import Wrapper from "@/components/containers/Wrapper.astro";
+import ArticlesEntry from "@/components/entries/ArticlesEntry.astro";
+import { stackGrid, stackGridPadding } from "@/lib/shared/classes";
+import CarouselWrapper from "@/components/elements/CarouselWrapper.astro";
 
 const { frontmatter } = Astro.props;
 const allPosts = await getCollection("articles");

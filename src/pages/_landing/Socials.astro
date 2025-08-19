@@ -1,61 +1,61 @@
 ---
-import Text from "@/components/lib/elements/Text.astro";
-import Wrapper from "@/components/lib/containers/Wrapper.astro";
-import Link from "@/components/lib/elements/Link.astro";
-import ExternalLink from "@/components/lib/icons/ExternalLink.astro";
-import { stackGrid, stackGridPadding } from "@/shared/classes";
+import Text from "@/components/elements/Text.astro";
+import Wrapper from "@/components/containers/Wrapper.astro";
+import Link from "@/components/elements/Link.astro";
+import ExternalLink from "@/lib/icons/ExternalLink.astro";
+import { stackGrid, stackGridPadding } from "@/lib/shared/classes";
 
 const links = [
-	{
-		platform: "Twitter",
-		ariaLabel: "Twitter aersosi",
-		url: "https://x.com/aersosi",
-	},
-	{
-		platform: "GitHub",
-		ariaLabel: "GitHub aersosi",
-		url: "https://github.com/aersosi",
-	},
-	{
-		platform: "Linkedin",
-		ariaLabel: "linkedin aersosi",
-		url: "https://www.linkedin.com/in/aersosi",
-	},
-	{
-		platform: "Email",
-		ariaLabel: "Email hello@aersosi.com",
-		url: "mailto:hello@aersosi.com",
-	},
+  {
+    platform: "Twitter",
+    ariaLabel: "Twitter aersosi",
+    url: "https://x.com/aersosi",
+  },
+  {
+    platform: "GitHub",
+    ariaLabel: "GitHub aersosi",
+    url: "https://github.com/aersosi",
+  },
+  {
+    platform: "Linkedin",
+    ariaLabel: "linkedin aersosi",
+    url: "https://www.linkedin.com/in/aersosi",
+  },
+  {
+    platform: "Email",
+    ariaLabel: "Email hello@aersosi.com",
+    url: "mailto:hello@aersosi.com",
+  },
 ];
 ---
 
 <section>
-	<Wrapper variant="standard">
-		<div id="socials" class:list={[...stackGrid, ...stackGridPadding]}>
-			<div>
-				<Text tag="h2" variant="textLG">Kontakt</Text>
-			</div>
-			<div class="flex flex-col gap-2 lg:col-span-2">
-				{
-					links.map((link) => (
-						<Link
-							data-obfuscation="0"
-							aria-label={link.ariaLabel}
-							target="_blank"
-							href={link.url}
-							size="base"
-							variant="primary"
-							class="group"
-						>
-							{link.platform}
-							<ExternalLink
-								size="base"
-								class="-mt-0.5 transition duration-300 group-hover:opacity-100 md:opacity-0"
-							/>
-						</Link>
-					))
-				}
-			</div>
-		</div>
-	</Wrapper>
+  <Wrapper variant="standard">
+    <div id="socials" class:list={[...stackGrid, ...stackGridPadding]}>
+      <div>
+        <Text tag="h2" variant="textLG">Kontakt</Text>
+      </div>
+      <div class="flex flex-col gap-2 lg:col-span-2">
+        {
+          links.map((link) => (
+            <Link
+              data-obfuscation="0"
+              aria-label={link.ariaLabel}
+              target="_blank"
+              href={link.url}
+              size="base"
+              variant="primary"
+              class="group"
+            >
+              {link.platform}
+              <ExternalLink
+                size="base"
+                class="-mt-0.5 transition duration-300 group-hover:opacity-100 md:opacity-0"
+              />
+            </Link>
+          ))
+        }
+      </div>
+    </div>
+  </Wrapper>
 </section>

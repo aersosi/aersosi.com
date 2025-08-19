@@ -1,11 +1,11 @@
 ---
-import BaseLayout from "@/layouts/BaseLayout.astro";
-import Text from "@/components/lib/elements/Text.astro";
-import Wrapper from "@/components/lib/containers/Wrapper.astro";
-import ArticlesEntry from "@/components/lib/entries/ArticlesEntry.astro";
+import BaseLayout from "@/components/layouts/BaseLayout.astro";
+import Text from "@/components/elements/Text.astro";
+import Wrapper from "@/components/containers/Wrapper.astro";
+import ArticlesEntry from "@/components/entries/ArticlesEntry.astro";
 import { getCollection } from "astro:content";
-import Link from "@/components/lib/elements/Link.astro";
-import { stackGrid, stackGridPadding } from "@/shared/classes";
+import Link from "@/components/elements/Link.astro";
+import { stackGrid, stackGridPadding } from "@/lib/shared/classes";
 
 export async function getStaticPaths() {
   const allPosts = await getCollection("articles");

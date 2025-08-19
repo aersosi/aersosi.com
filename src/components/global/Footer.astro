@@ -1,80 +1,74 @@
 ---
-import Text from "@/components/lib/elements/Text.astro";
-import Wrapper from "@/components/lib/containers/Wrapper.astro";
-import Link from "@/components/lib/elements/Link.astro";
+import Text from "@/components/elements/Text.astro";
+import Wrapper from "@/components/containers/Wrapper.astro";
+import Link from "@/components/elements/Link.astro";
 
 const LinkData = [
-	{
-		category: "Allgemein",
-		links: [
-			{ text: "Start", href: "/#home" },
-			{ text: "Über mich", href: "/about" },
-			{ text: "Impressum", href: "/imprint" },
-			{ text: "Datenschutz", href: "/datasecurity" },
-			{ text: "404", href: "/404" },
-		],
-		linkClass: "font-normal",
-	},
-	{
-		category: "Projekte",
-		links: [
-			{ text: "Alle Projekte", href: "/projects" },
-			{ text: "Projektkategorie Index", href: "/projects/tags" },
-		],
-		linkClass: "font-normal",
-	},
-	{
-		category: "Artikel",
-		links: [
-			{ text: "Alle Artikel", href: "/articles" },
-			{ text: "Artikelkategorie Index", href: "/articles/tags" },
-		],
-		linkClass: "font-normal",
-	},
+  {
+    category: "Allgemein",
+    links: [
+      { text: "Start", href: "/#home" },
+      { text: "Über mich", href: "/about" },
+      { text: "Impressum", href: "/imprint" },
+      { text: "Datenschutz", href: "/datasecurity" },
+      { text: "404", href: "/404" },
+    ],
+    linkClass: "font-normal",
+  },
+  {
+    category: "Projekte",
+    links: [
+      { text: "Alle Projekte", href: "/projects" },
+      { text: "Projektkategorie Index", href: "/projects/tags" },
+    ],
+    linkClass: "font-normal",
+  },
+  {
+    category: "Artikel",
+    links: [
+      { text: "Alle Artikel", href: "/articles" },
+      { text: "Artikelkategorie Index", href: "/articles/tags" },
+    ],
+    linkClass: "font-normal",
+  },
 ];
 
-import { stackGrid, stackGridPadding } from "@/shared/classes";
+import { stackGrid, stackGridPadding } from "@/lib/shared/classes";
 ---
 
 <footer>
-	<Wrapper variant="standard">
-		<div
-			class:list={[...stackGridPadding]}
-			class="border-base-400 dark:border-base-600 grid gap-16 border-t"
-		>
-			<nav class:list={[...stackGrid]} class="md:grid-cols-2">
-				{
-					LinkData.map(({ category, links, linkClass }) => (
-						<div class="flex flex-col items-start gap-2">
-							<Text tag="h4" variant="textSM">
-								{category}
-							</Text>
-							{links.map(({ text, href }) => (
-								<Link
-									href={href}
-									size="sm"
-									variant="muted"
-									class={linkClass}
-									key={href}
-								>
-									{text}
-								</Link>
-							))}
-						</div>
-					))
-				}
-			</nav>
+  <Wrapper variant="standard">
+    <div
+      class:list={[...stackGridPadding]}
+      class="border-base-400 dark:border-base-600 grid gap-16 border-t"
+    >
+      <nav class:list={[...stackGrid]} class="md:grid-cols-2">
+        {
+          LinkData.map(({ category, links, linkClass }) => (
+            <div class="flex flex-col items-start gap-2">
+              <Text tag="h4" variant="textSM">
+                {category}
+              </Text>
+              {links.map(({ text, href }) => (
+                <Link href={href} size="sm" variant="muted" class={linkClass} key={href}>
+                  {text}
+                </Link>
+              ))}
+            </div>
+          ))
+        }
+      </nav>
 
-			<div class:list={[...stackGrid]} class="md:grid-cols-2">
-				<div>
-					<Text tag="p" variant="textBase"> Hamburg, Germany </Text>
-					<Text id="clock" tag="p" variant="textSM" />
-				</div>
-				<Text tag="p" variant="textBase">
-					© Copyright <span id="copyrightYear">2025</span>, Arthur Ersosi. <br />Alle Rechte
-					vorbehalten.
-				</Text>
-			</div>
-		</div>
-	</Wrapper>
+      <div class:list={[...stackGrid]} class="md:grid-cols-2">
+        <div>
+          <Text tag="p" variant="textBase"> Hamburg, Germany </Text>
+          <Text id="clock" tag="p" variant="textSM" />
+        </div>
+        <Text tag="p" variant="textBase">
+          © Copyright <span id="copyrightYear">2025</span>, Arthur Ersosi. <br />Alle Rechte
+          vorbehalten.
+        </Text>
+      </div>
+    </div>
+  </Wrapper>
 </footer>

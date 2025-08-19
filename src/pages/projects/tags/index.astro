@@ -1,10 +1,10 @@
 ---
-import BaseLayout from "@/layouts/BaseLayout.astro";
-import Text from "@/components/lib/elements/Text.astro";
-import Wrapper from "@/components/lib/containers/Wrapper.astro";
+import BaseLayout from "@/components/layouts/BaseLayout.astro";
+import Text from "@/components/elements/Text.astro";
+import Wrapper from "@/components/containers/Wrapper.astro";
 import { getCollection } from "astro:content";
-import Link from "@/components/lib/elements/Link.astro";
-import { stackGrid, stackGridPadding } from "@/shared/classes";
+import Link from "@/components/elements/Link.astro";
+import { stackGrid, stackGridPadding } from "@/lib/shared/classes";
 
 const allProjects = await getCollection("projects");
 

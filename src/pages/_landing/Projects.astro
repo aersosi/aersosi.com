@@ -1,11 +1,11 @@
 ---
-import Text from "@/components/lib/elements/Text.astro";
-import Wrapper from "@/components/lib/containers/Wrapper.astro";
+import Text from "@/components/elements/Text.astro";
+import Wrapper from "@/components/containers/Wrapper.astro";
 import { getCollection } from "astro:content";
-import ProjectEntry from "@/components/lib/entries/ProjectEntry.astro";
-import Link from "@/components/lib/elements/Link.astro";
-import ArrowRight from "@/components/lib/icons/ArrowRight.astro";
-import { stackGrid, stackGridPadding } from "@/shared/classes";
+import ProjectEntry from "@/components/entries/ProjectEntry.astro";
+import Link from "@/components/elements/Link.astro";
+import ArrowRight from "@/lib/icons/ArrowRight.astro";
+import { stackGrid, stackGridPadding } from "@/lib/shared/classes";
 
 const allProjectsUnsorted = await getCollection("projects");
 const allProjects = allProjectsUnsorted.sort(

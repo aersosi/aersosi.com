@@ -1,107 +1,107 @@
 ---
-import BaseLayout from "@/layouts/BaseLayout.astro";
-import Text from "@/components/lib/elements/Text.astro";
-import Wrapper from "@/components/lib/containers/Wrapper.astro";
-import { stackGrid, stackGridPadding } from "@/shared/classes";
+import BaseLayout from "@/components/layouts/BaseLayout.astro";
+import Text from "@/components/elements/Text.astro";
+import Wrapper from "@/components/containers/Wrapper.astro";
+import { stackGrid, stackGridPadding } from "@/lib/shared/classes";
 
 const pageData = [
-	{
-		categoryTitle: "Static",
-		links: [
-			{
-				sectionTitle: "Landing Pages",
-				links: [
-					{
-						title: "Home",
-						url: "/",
-					},
-					{ title: "404", url: "/404" },
-				],
-			},
-			{
-				sectionTitle: "System Pages",
-				links: [
-					{ title: "Links", url: "/system/links" },
-					{ title: "Buttons", url: "/system/buttons" },
-					{ title: "Colors", url: "/system/colors" },
-					{ title: "Typography", url: "/system/typography" },
-					{
-						title: "License",
-						url: "https://lexingtonthemes.com/legal/license",
-					},
-					{
-						title: "Docs",
-						url: "https://lexingtonthemes.com/documentation",
-					},
-				],
-			},
-		],
-	},
-	{
-		categoryTitle: "Content Collection",
-		links: [
-			{
-				sectionTitle: "Articles",
-				links: [
-					{
-						title: "Home",
-						url: "/articles/",
-					},
-					{
-						title: "Post",
-						url: "/articles/1",
-					},
-					{ title: "Tag index", url: "/articles/tags" },
-					{
-						title: "Tag Category",
-						url: "/articles/tags/learning",
-					},
-				],
-			},
-		],
-	},
+  {
+    categoryTitle: "Static",
+    links: [
+      {
+        sectionTitle: "Landing Pages",
+        links: [
+          {
+            title: "Home",
+            url: "/",
+          },
+          { title: "404", url: "/404" },
+        ],
+      },
+      {
+        sectionTitle: "System Pages",
+        links: [
+          { title: "Links", url: "/system/links" },
+          { title: "Buttons", url: "/system/buttons" },
+          { title: "Colors", url: "/system/colors" },
+          { title: "Typography", url: "/system/typography" },
+          {
+            title: "License",
+            url: "https://lexingtonthemes.com/legal/license",
+          },
+          {
+            title: "Docs",
+            url: "https://lexingtonthemes.com/documentation",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    categoryTitle: "Content Collection",
+    links: [
+      {
+        sectionTitle: "Articles",
+        links: [
+          {
+            title: "Home",
+            url: "/articles/",
+          },
+          {
+            title: "Post",
+            url: "/articles/1",
+          },
+          { title: "Tag index", url: "/articles/tags" },
+          {
+            title: "Tag Category",
+            url: "/articles/tags/learning",
+          },
+        ],
+      },
+    ],
+  },
 ];
 ---
 
 <BaseLayout>
-	<section>
-		<Wrapper variant="standard">
-			<div class:list={[...stackGrid, ...stackGridPadding]} class="border-b lg:pt-40">
-				<Text tag="h1" variant="textSM">Overview</Text>
-				<Text tag="p" variant="textSM" class="lg:col-span-2"> All pages </Text>
-			</div>
-			<div class="">
-				{
-					pageData.map((category) => (
-						<>
-							<div class:list={[...stackGrid, ...stackGridPadding]}>
-								<Text tag="h3" variant="textBase">
-									{category.categoryTitle}
-								</Text>
-								<div class="grid grid-cols-2 gap-x-4 gap-y-8 lg:col-span-2 lg:grid-cols-3">
-									{category.links.map((section) => (
-										<div>
-											<Text tag="h4" variant="textSM">
-												{section.sectionTitle}
-											</Text>
-											<div class="mt-1 flex flex-col gap-1 text-xs">
-												{section.links.map((link) => (
-													<a
-														class="text-base-600 dark:text-base-300 hover:text-base-900 text-xs dark:hover:text-white"
-														href={link.url}
-													>
-														{link.title}
-													</a>
-												))}
-											</div>
-										</div>
-									))}
-								</div>
-							</div>
-						</>
-					))
-				}
-			</div>
-		</Wrapper>
-	</section>
+  <section>
+    <Wrapper variant="standard">
+      <div class:list={[...stackGrid, ...stackGridPadding]} class="border-b lg:pt-40">
+        <Text tag="h1" variant="textSM">Overview</Text>
+        <Text tag="p" variant="textSM" class="lg:col-span-2"> All pages </Text>
+      </div>
+      <div class="">
+        {
+          pageData.map((category) => (
+            <>
+              <div class:list={[...stackGrid, ...stackGridPadding]}>
+                <Text tag="h3" variant="textBase">
+                  {category.categoryTitle}
+                </Text>
+                <div class="grid grid-cols-2 gap-x-4 gap-y-8 lg:col-span-2 lg:grid-cols-3">
+                  {category.links.map((section) => (
+                    <div>
+                      <Text tag="h4" variant="textSM">
+                        {section.sectionTitle}
+                      </Text>
+                      <div class="mt-1 flex flex-col gap-1 text-xs">
+                        {section.links.map((link) => (
+                          <a
+                            class="text-base-600 dark:text-base-300 hover:text-base-900 text-xs dark:hover:text-white"
+                            href={link.url}
+                          >
+                            {link.title}
+                          </a>
+                        ))}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </>
+          ))
+        }
+      </div>
+    </Wrapper>
+  </section>
 </BaseLayout>
