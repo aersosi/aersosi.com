@@ -28,6 +28,8 @@ pnpm-debug.log*
 hidden/
 docs/
 font-inter-full/
+src/content/projects/_draft/
+
 
 #AI
 .junie

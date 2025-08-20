@@ -1,9 +1,9 @@
 /** @type {import("prettier").Config} */
 export default {
-  printWidth: 100,
+  printWidth: 120,
   tabWidth: 2,
   useTabs: false,
-  proseWrap: "preserve",
+  proseWrap: "always",
   embeddedLanguageFormatting: "auto",
   htmlWhitespaceSensitivity: "ignore",
   plugins: ["prettier-plugin-astro", "prettier-plugin-tailwindcss"],
