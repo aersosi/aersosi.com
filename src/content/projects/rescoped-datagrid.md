@@ -3,17 +3,12 @@ pubDate: 2024-01-01
 viewerTitle: "rescoped Datagrid"
 viewerDescription: "Entwicklung eines Open-Source-Datagrids mit Fokus auf Developer Experience"
 pageTitle: "rescoped Datagrid | Open-Source-Projekt | Arthur Ersosi"
-pageDescription: "Entwicklung eines Open-Source-Datagrids mit Fokus auf Developer Experience und robustem State-Management."
+pageDescription:
+  "Entwicklung eines Open-Source-Datagrids mit Fokus auf Developer Experience und robustem State-Management."
 images:
   [
-    {
-      src: "src/images/projects/rescopedDatagrid/rescopedDatagrid-cover.webp",
-      alt: "rescoped Datagrid Coverbild",
-    },
-    {
-      src: "src/images/projects/rescopedDatagrid/rescopedDatagrid-01.webp",
-      alt: "rescoped Datagrid",
-    },
+    { src: "src/images/projects/rescopedDatagrid/rescopedDatagrid-cover.webp", alt: "rescoped Datagrid Coverbild" },
+    { src: "src/images/projects/rescopedDatagrid/rescopedDatagrid-01.webp", alt: "rescoped Datagrid" },
   ]
 tags: ["Professionelles Projekt", "Open Source", "Developer Experience", "Frontend-Entwicklung"]
 
@@ -24,7 +19,6 @@ demo:
 
 company:
   companyName: "avodaq AG, Hamburg"
-  companySize: "240"
   teamSize: "2-3"
   myRole: "Design Engineer (UX-Researcher, UI-Designer, Frontend-Developer)"
 ---

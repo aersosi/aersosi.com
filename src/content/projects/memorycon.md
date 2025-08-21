@@ -25,7 +25,6 @@ demo:
 
 company:
   companyName: ""
-  companySize: ""
   teamSize: ""
   myRole: "Design Engineer (Full-Stack)"
 ---

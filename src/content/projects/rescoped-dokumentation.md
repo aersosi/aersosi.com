@@ -3,35 +3,20 @@ pubDate: 2024-01-01
 viewerTitle: "rescoped Dokumentation"
 viewerDescription: "Konzeption, Design und Entwicklung der rescoped.io Dokumentation für das rescoped Datagrid"
 pageTitle: "rescoped Dokumentation | Dokumentationsplattform | Arthur Ersosi"
-pageDescription: "Konzeption, Design und Entwicklung der rescoped.io Dokumentation für das rescoped Datagrid mit Docusaurus/react, inklusive Branding, UI-Design und interaktiver Grafiken."
+pageDescription:
+  "Konzeption, Design und Entwicklung der rescoped.io Dokumentation für das rescoped Datagrid mit Docusaurus/react,
+  inklusive Branding, UI-Design und interaktiver Grafiken."
 images:
   [
     {
       src: "src/images/projects/rescopedDocumentation/rescopedDocumentation-cover.webp",
       alt: "rescoped Dokumentation Coverbild",
     },
-    {
-      src: "src/images/projects/rescopedDocumentation/rescopedDocumentation-01.webp",
-      alt: "Hero-Bereich",
-    },
-    {
-      src: "src/images/projects/rescopedDocumentation/rescopedDocumentation-02.webp",
-      alt: "Dokumentation",
-    },
-    {
-      src: "src/images/projects/rescopedDocumentation/rescopedDocumentation-03.webp",
-      alt: "Nachrichten-Seite",
-    },
+    { src: "src/images/projects/rescopedDocumentation/rescopedDocumentation-01.webp", alt: "Hero-Bereich" },
+    { src: "src/images/projects/rescopedDocumentation/rescopedDocumentation-02.webp", alt: "Dokumentation" },
+    { src: "src/images/projects/rescopedDocumentation/rescopedDocumentation-03.webp", alt: "Nachrichten-Seite" },
   ]
-tags:
-  [
-    "Professionelles Projekt",
-    "Dokumentation",
-    "Open Source",
-    "Docusaurus",
-    "React",
-    "Frontend-Entwicklung",
-  ]
+tags: ["Professionelles Projekt", "Dokumentation", "Open Source", "Docusaurus", "React", "Frontend-Entwicklung"]
 
 repo:
   name: "GitHub"
@@ -44,7 +29,6 @@ demo:
 
 company:
   companyName: "avodaq AG, Hamburg"
-  companySize: "240"
   teamSize: "1-2"
   myRole: "Design Engineer (UX-Researcher, UI-Designer, Frontend-Developer)"
 ---

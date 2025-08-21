@@ -27,7 +27,6 @@ demo:
 
 company:
   companyName: "avodaq AG, Hamburg"
-  companySize: "240"
   teamSize: "4-6"
   myRole: "Design Engineer (UX-Researcher, UI-Designer, Frontend-Developer)"
 ---
@@ -151,4 +150,4 @@ Jest, Cypress, Testing Library
 
 ### Tools & Libraries
 
-## RxJS, Zod, TypeScript
+RxJS, Zod, TypeScript
