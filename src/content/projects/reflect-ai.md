@@ -1,9 +1,9 @@
 ---
 pubDate: 2024-01-01
 viewerTitle: "reflectAI"
-viewerDescription: "Modernes Claude AI Chatinterface als Web-Applikation"
-pageTitle: "reflectAI | KI-basierte Web-Applikation | Arthur Ersosi"
-pageDescription: "Modernes Claude AI Chatinterface als Web-Applikation, entwickelt mit Next.js/React und TypeScript."
+viewerDescription: "Modernes Claude AI Chatinterface als React Webanwendung"
+pageTitle: "reflectAI | KI-basierte Webanwendung | Arthur Ersosi"
+pageDescription: "Modernes Claude AI Chatinterface als React Webanwendung"
 images:
   [
     { src: "src/images/projects/reflectAI/reflectAI-cover.webp", alt: "reflectAI App Coverbild" },
@@ -11,7 +11,7 @@ images:
     { src: "src/images/projects/reflectAI/reflectAI-02.webp", alt: "Session Übersicht" },
     { src: "src/images/projects/reflectAI/reflectAI-03.webp", alt: "Session Settings" },
   ]
-tags: ["Privates Projekt", "Künstliche Intelligenz", "Next.js", "React", "Frontend-Entwicklung"]
+tags: ["Privates Projekt", "Künstliche Intelligenz", "React", "Frontend-Entwicklung"]
 
 repo:
   name: "GitHub"
@@ -30,7 +30,7 @@ company:
 
 ## Projektbeschreibung
 
-Entwicklung einer KI-basierten Web-Applikation mit modernem Frontend-Design. Fokus auf User Experience und moderne
+Entwicklung einer KI-basierten Webanwendung mit modernem Frontend-Design. Fokus auf User Experience und moderne
 Entwicklungstools.
 
 ## Meine Aufgaben

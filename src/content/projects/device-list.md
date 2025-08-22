@@ -1,14 +1,12 @@
 ---
 pubDate: 2025-06-08
 viewerTitle: "Device List"
-viewerDescription: "Interne Anwendung für das Datenmanagement von Kunden-Hardware und -Software"
+viewerDescription: "Angular Webanwendung zur Verwaltung von Hard- und Software, Servicedaten und Lizenzen von Kunden"
 pageTitle: "Device List | Datenmanagement-Anwendung | Arthur Ersosi"
-pageDescription:
-  "Interne Webanwendung zur automatisierten Verwaltung von Hardware-, Lizenz- und Servicedaten für
-  Kundeninfrastrukturen."
+pageDescription: "Angular Webanwendung zur Verwaltung von Hard- und Software, Servicedaten und Lizenzen von Kunden"
 images:
   [{ src: "src/images/projects/rescopedDatagrid/rescopedDatagrid-cover.webp", alt: "rescoped Datagrid Coverbild" }]
-tags: ["Professionelles Projekt", "UX (User Experience)", "UI (User Interface)", "Frontend-Entwicklung"]
+tags: ["Professionelles Projekt", "Angular", "UX (User Experience)", "UI (User Interface)", "Frontend-Entwicklung"]
 
 noLinksText: "Firmeninternes Projekt"
 
@@ -20,7 +18,7 @@ company:
 
 ## Projektbeschreibung
 
-Die Device List ist eine interne Web-Applikation zur automatisierten Verwaltung von Hardware-, Software-, Lizenz- und
+Die Device List ist eine interne Webanwendung zur automatisierten Verwaltung von Hardware-, Software-, Lizenz- und
 Servicedaten für Kundeninfrastrukturen. Das System ersetzt einen zeitaufwändigen Excel-basierten Workflow durch eine
 moderne, API-gestützte Lösung mit Fokus auf intuitive Bedienung und effiziente Datenverarbeitung.
 
@@ -93,8 +91,8 @@ Research bei avodaq etablierte:
 
 ### Besondere Herausforderungen
 
-- **Komplexe Datenvisualisierung:** Übertragung Excel-ähnlicher Funktionalität in eine moderne Web-App mit editierbaren
-  Tabellenzellen
+- **Komplexe Datenvisualisierung:** Übertragung Excel-ähnlicher Funktionalität in eine moderne Webanwendung mit
+  editierbaren Tabellenzellen
 - **Spezialisierte Tabellen-Komponente:** Vollständige Gestaltung und Mitentwicklung einer maßgeschneiderten
   Datagrid-Lösung durch Konfigurationsoptimierung und UX-Feedback
 - **User Research Etablierung:** Erste systematische Nutzerforschung im Unternehmen trotz zusätzlicher Arbeitsbelastung

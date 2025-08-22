@@ -1,9 +1,9 @@
 ---
 pubDate: 2024-01-01
 viewerTitle: "memorycon"
-viewerDescription: "Der Klassiker Memory als moderne Web-Applikation"
-pageTitle: "memorycon | Memory-Spiel Web-App | Arthur Ersosi"
-pageDescription: "Der Klassiker Memory als moderne Web-Applikation, entwickelt mit Next.js/React und TypeScript."
+viewerDescription: "Der Klassiker Memory als moderne Next.js Webanwendung"
+pageTitle: "memorycon | Memory-Spiel Webanwendung | Arthur Ersosi"
+pageDescription: "Der Klassiker Memory als moderne Next.js Webanwendung"
 images:
   [
     { src: "src/images/projects/memorycon/memorycon-cover.webp", alt: "Coverbild" },
@@ -31,7 +31,7 @@ company:
 
 ## Projektbeschreibung
 
-Entwicklung einer modernen Web-Applikation mit Fokus auf optimale User Experience und Performance. Eigenverantwortliche
+Entwicklung einer modernen Webanwendung mit Fokus auf optimale User Experience und Performance. Eigenverantwortliche
 Umsetzung von der Konzeption bis zum Deployment.
 
 ## Meine Aufgaben

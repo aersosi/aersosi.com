@@ -1,10 +1,9 @@
 ---
 pubDate: 2024-01-01
 viewerTitle: "rescoped Datagrid"
-viewerDescription: "Entwicklung eines Open-Source-Datagrids mit Fokus auf Developer Experience"
+viewerDescription: "Angular CDK basiertes Open-Source-Datagrid mit intuitivem Setup"
 pageTitle: "rescoped Datagrid | Open-Source-Projekt | Arthur Ersosi"
-pageDescription:
-  "Entwicklung eines Open-Source-Datagrids mit Fokus auf Developer Experience und robustem State-Management."
+pageDescription: "Angular CDK basiertes Open-Source-Datagrid mit intuitivem Setup"
 images:
   [
     { src: "src/images/projects/rescopedDatagrid/rescopedDatagrid-cover.webp", alt: "rescoped Datagrid Coverbild" },

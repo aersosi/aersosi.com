@@ -1,10 +1,9 @@
 ---
 pubDate: 2024-01-01
 viewerTitle: "CARY Medical"
-viewerDescription: "Medizinische Terminplanungs-App"
-pageTitle: "CARY Medical | Medizinische Terminplanungs-App | Arthur Ersosi"
-pageDescription:
-  "UI/UX Design und Frontend-Entwicklung einer medizinischen Terminplanungs-App für Krankenhäuser mit Angular."
+viewerDescription: "Medizinische Terminplanungs-Webanwendung (Angular) mit Nutzerverwaltung"
+pageTitle: "CARY Medical | Medizinische Terminplanungs-Webanwendung | Arthur Ersosi"
+pageDescription: "Medizinische Terminplanungs-Webanwendung (Angular) mit Nutzerverwaltung"
 images:
   [
     { src: "src/images/projects/caryMedical/caryMedical-cover.webp", alt: "CARY Medical App Coverbild" },
@@ -14,7 +13,7 @@ images:
     { src: "src/images/projects/caryMedical/caryMedical-04.webp", alt: "Kunde bearbeiten" },
     { src: "src/images/projects/caryMedical/caryMedical-05.webp", alt: "Benutzer bearbeiten" },
   ]
-tags: ["Professionelles Projekt", "User Experience", "User Interface", "Frontend-Entwicklung"]
+tags: ["Professionelles Projekt", "Angular", "UX (User Experience)", "UI (User Interface)", "Frontend-Entwicklung"]
 
 repo:
   name: "GitHub"

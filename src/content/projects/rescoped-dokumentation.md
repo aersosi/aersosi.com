@@ -1,11 +1,9 @@
 ---
 pubDate: 2024-01-01
-viewerTitle: "rescoped Dokumentation"
-viewerDescription: "Konzeption, Design und Entwicklung der rescoped.io Dokumentation für das rescoped Datagrid"
+viewerTitle: "rescoped.io"
+viewerDescription: "Dokumentations-Plattform für alle avodaq Open-Source-Projekte"
 pageTitle: "rescoped Dokumentation | Dokumentationsplattform | Arthur Ersosi"
-pageDescription:
-  "Konzeption, Design und Entwicklung der rescoped.io Dokumentation für das rescoped Datagrid mit Docusaurus/react,
-  inklusive Branding, UI-Design und interaktiver Grafiken."
+pageDescription: "Dokumentations-Plattform für alle avodaq Open-Source-Projekte"
 images:
   [
     {
@@ -35,7 +33,7 @@ company:
 
 ## Projektbeschreibung
 
-Eigenverantwortliche Konzeption und Entwicklung der rescoped.io Dokumentationsplattform mit Docusaurus (React).
+Eigenverantwortliche Konzeption, Design und Entwicklung der rescoped.io Dokumentationsplattform mit Docusaurus (React).
 Komplette Verantwortung für Branding, UI-Design, technische Umsetzung und interaktive Grafiken mit Pixi.js und GSAP.
 
 ## Meine Aufgaben
@@ -44,7 +42,7 @@ Komplette Verantwortung für Branding, UI-Design, technische Umsetzung und inter
 - Komplette Verantwortung für Branding und UI-Design
 - Technische Umsetzung mit Docusaurus (React)
 - Entwicklung interaktiver Grafiken mit Pixi.js und GSAP
-- Frontend-Entwicklung als responsive Web-Applikation
+- Frontend-Entwicklung als responsive Webanwendung
 
 ## Technologien
 
