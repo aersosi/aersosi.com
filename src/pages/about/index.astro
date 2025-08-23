@@ -1,199 +1,148 @@
 ---
-import { Image } from "astro:assets";
-
+import { pageContent } from "@/content/pages/about/pageContent";
+import { cvData } from "@/content/pages/about/cvData";
 import Wrapper from "@/components/containers/Wrapper.astro";
 import Text from "@/components/elements/Text.astro";
-import UpdatePublishedDate from "@/lib/scripts/UpdatePublishedDate.astro";
+import { Image } from "astro:assets";
+import MapPin from "@/lib/icons/MapPin.astro";
 import BaseLayout from "@/components/layouts/BaseLayout.astro";
-
-import { aboutPageData, cvData } from "@/content/pages/about";
+import UpdatePublishedDate from "@/lib/scripts/UpdatePublishedDate.astro";
 
 import aboutCover from "src/images/pages/about-cover.webp";
-import MapPin from "@/lib/icons/MapPin.astro";
-
 import { stackGrid, stackGridPadding } from "@/lib/shared/classes";
 ---
 
 <BaseLayout
-	pageTitle={aboutPageData.pageTitle}
-	pageDescription={aboutPageData.pageDescription}
-	image="/images/pages/about-cover.webp"
+  pageTitle="Über mich | Arthur Ersosi"
+  pageDescription="Frontend-Developer und UI/UX-Designer mit 9+ Jahren Design Expertise und 7+ Jahren Web-Development Erfahrung aus Hamburg."
+  image="/images/pages/about-cover.webp"
 >
-	<UpdatePublishedDate />
-	<section>
-		<Wrapper variant="standard">
-			<!--About Me-->
-			<div class:list={[...stackGrid, ...stackGridPadding]} class="border-b">
-				<div class="grid gap-8">
-					<div class="grid gap-2">
-						<Text tag="h1" variant="text2XL" isPrimary>
-							{aboutPageData.viewerTitle}
-						</Text>
-						<Text tag="p">
-							Aktualisiert am <span id="publishedDate">14.06.1985</span>
-						</Text>
-					</div>
-					<Image
-						alt={aboutPageData.headerImgAlt}
-						src={aboutCover}
-						widths={[320, 480, 640, 768, 1024, 1280, 1440]}
-						sizes={`
-								(max-width: 639px) 100vw,
-								(max-width: 767px) 100vw,
-								(max-width: 1023px) 50vw,
-								(max-width: 1279px) 33vw,
-								(max-width: 1439px) 25vw,
-								400px
-							`}
-						layout="constrained"
-						loading="eager"
-						decoding="async"
-						class="lg:hidden object-cover object-center w-full aspect-12/6 lg:col-span-2 rounded-xl"
-					/>
+  <UpdatePublishedDate />
 
+  <section>
+    <Wrapper variant="standard">
+      <div class:list={[...stackGrid, ...stackGridPadding]} class="border-b">
+        <div class="grid gap-8">
+          <!-- About Me Header -->
+          <div class="grid gap-2">
+            <Text tag="h1" variant="text2XL" isPrimary>
+              {pageContent.viewerTitle}
+            </Text>
+            <Text tag="p">
+              {pageContent.publishedDateLabel}
+              <span id="publishedDate">14.06.1985</span>
+            </Text>
+          </div>
 
-					<Wrapper variant="proseBase">
-						<Text tag="h2">Development</Text>
-						<Text tag="p">
-							Als Developer gieße ich Design in modernen, modularen und skalierbaren Code.
-							Ich habe umfassende Erfahrung mit Responsive Webdesign, modernen
-							Webtechnologien, Frameworks, Best Practices, Web-Fundamentals und Deployment.
-						</Text>
+          <!-- Cover Image -->
+          <Image
+            alt={pageContent.headerImgAlt}
+            src={aboutCover}
+            widths={[320, 480, 640, 768, 1024, 1280, 1440]}
+            sizes="(max-width: 639px) 100vw, (max-width: 767px) 100vw, (max-width: 1023px) 50vw, (max-width: 1279px) 33vw, (max-width: 1439px) 25vw, 400px"
+            layout="constrained"
+            loading="eager"
+            decoding="async"
+            class="aspect-12/6 w-full rounded-xl object-cover object-center lg:col-span-2 lg:hidden"
+          />
 
-						<Text tag="h3">Frameworks & Tools</Text>
-						<Text tag="p">
-							Next.js & React, Node.js, Angular + Material Design, Astro, NX, Django, NPM, Git,
-							Tailwind, shadcn, GSAP
-						</Text>
+          <!-- Development -->
+          <Wrapper variant="proseBase">
+            <Text tag="h2">{pageContent.development.title}</Text>
+            <Text tag="p">{pageContent.development.description}</Text>
 
-						<Text tag="h3">Sprachen</Text>
-						<Text tag="p">
-							TypeScript/JavaScript, Python, HTML, MD, MJML, Sass/CSS, JSON und SVG
-						</Text>
-					</Wrapper>
-					<hr class="my-2.5 opacity-30 dark:text-white"></hr>
-					<Wrapper variant="proseBase">
-						<Text tag="h2" variant="textXL">Design</Text>
-						<Text tag="p">
-							Als UI/UX Designer entwickle ich nutzerzentrierte Konzepte, Prototypen und Interfaces,
-							um die Nutzer-zufriedenheit und den Entwicklungszyklus zu optimieren. Weiterhin bin ich
-							kompetent in Usability, User Experience, User Interface, Design Systems, Design
-							Thinking, Grafikdesign, Layout & Typografie, Branding und Animation.
-						</Text>
+            <Text tag="h3">{pageContent.development.frameworksTitle}</Text>
+            <Text tag="p">{pageContent.development.frameworks}</Text>
 
-						<Text tag="h3"> Tools</Text>
-						<Text tag="p">
-							Figma, Figjam, Adobe CS (Photoshop, Illustrator, InDesign, After Effects, Premiere),
-							Affinity Suite für Print & Digital
-						</Text>
-					</Wrapper>
-				</div>
+            <Text tag="h3">{pageContent.development.languagesTitle}</Text>
+            <Text tag="p">{pageContent.development.languages}</Text>
+          </Wrapper>
 
-				<hr class="lg:hidden mt-6 opacity-30 dark:text-white" />
+          <hr class="my-2.5 opacity-30 dark:text-white" />
 
-				<div class="lg:col-span-2">
-					<Wrapper variant="proseBase">
-						<Image
-							alt={aboutPageData.headerImgAlt}
-							src={aboutCover}
-							widths={[320, 480, 640, 768, 1024, 1280, 1440]}
-							sizes={`
-								(max-width: 639px) 100vw,
-								(max-width: 767px) 100vw,
-								(max-width: 1023px) 50vw,
-								(max-width: 1279px) 33vw,
-								(max-width: 1439px) 25vw,
-								400px
-							`}
-							layout="constrained"
-							loading="eager"
-							decoding="async"
-							class="bg-secondary-100 hidden lg:block object-cover object-center w-full aspect-12/6 lg:col-span-2 rounded-xl"
-						/>
+          <!-- Design -->
+          <Wrapper variant="proseBase">
+            <Text tag="h2" variant="textXL">{pageContent.design.title}</Text>
+            <Text tag="p">{pageContent.design.description}</Text>
 
-						<Text tag="p">
-							Mein Fokus ist die Frontend-Entwicklung skalierbarer und moderner
-							Enterprise-Webapplikationen. Dabei lege ich besonderen Wert auf Performance, Code-Qualität
-							und exzellentes UI/UX. Ich arbeite eigenverantwortlich und besonders erfolgreich in agilen,
-							interdisziplinären Teams. Mein ganzheitliches Verständnis des Entwicklungsprozesses
-							verbindet Business, Konzept, Design und Development.
-						</Text>
-						<Text tag="p">
-							Seit meinem Berufseinstieg habe ich immer positives Feedback für meine Arbeit bekommen. Ich
-							weiß, was ich kann und wo meine Grenzen liegen und konnte mich bisher immer auf mein
-							analytisches Denken und Urteilsvermögen verlassen. Ich bin zielstrebig und löse hartnäckige
-							Probleme gerne und kreativ. Denn das Erstbeste ist nicht immer das Beste.
-						</Text>
-						<Text tag="p">
-							Als anpassungsfähiger Autodidakt liebe ich es zu lernen, wende das Gelernte an und teile es
-							mit anderen. Um mir ein gutes Urteil zu bilden, ist es wichtig, das Für und Wider abzuwägen.
-							Ich bin gerne vorbereitet. Um meine Talente in geordnete Bahnen zu lenken, helfen mir klare
-							Ziele, Termine, Zeitpläne, Absprachen und regelmäßiges Feedback. Als reflektierter und
-							empathischer Mensch zeichne ich mich durch Hilfsbereitschaft aus, denn das Wohl meiner
-							Kolleginnen und Kollegen ist mir wichtig.
-						</Text>
+            <Text tag="h3">Tools</Text>
+            <Text tag="p">{pageContent.design.tools}</Text>
+          </Wrapper>
+        </div>
 
-						<Text tag="h2" variant="textXL">Weitere Interessen</Text>
-						<Text tag="p" class="lg:text-balance">
-							Wissenschaft, KI, Kunst, Weltraum & Forschung, Gesellschaft & Politik,
-							Psychologie & Philosophie, Sport und Musik.
-						</Text>
-					</Wrapper>
-				</div>
-			</div>
+        <hr class="mt-6 opacity-30 lg:hidden dark:text-white" />
 
-			<!--CV-->
-			<Wrapper variant="proseBase" class:list={[...stackGridPadding]}>
-				<div class:list={[...stackGrid]}>
+        <!-- Personal -->
+        <div class="lg:col-span-2">
+          <Wrapper variant="proseBase">
+            <Image
+              alt={pageContent.headerImgAlt}
+              src={aboutCover}
+              widths={[320, 480, 640, 768, 1024, 1280, 1440]}
+              sizes="(max-width: 639px) 100vw, (max-width: 767px) 100vw, (max-width: 1023px) 50vw, (max-width: 1279px) 33vw, (max-width: 1439px) 25vw, 400px"
+              layout="constrained"
+              loading="eager"
+              decoding="async"
+              class="bg-secondary-100 hidden aspect-12/6 w-full rounded-xl object-cover object-center lg:col-span-2 lg:block"
+            />
+
+            {pageContent.personal.paragraphs.map((p) => <Text tag="p">{p}</Text>)}
+
+            <Text tag="h2" variant="textXL">{pageContent.personal.interestsTitle}</Text>
+            <Text tag="p" class="lg:text-balance">{pageContent.personal.interests}</Text>
+          </Wrapper>
+        </div>
+      </div>
+
+      <!-- CV -->
+      <Wrapper variant="proseBase" class:list={[...stackGridPadding]}>
+        <div class:list={[...stackGrid]}>
           <span></span>
           <Text tag="h2" variant="text2XL" class="!my-0" isPrimary>
-            Curriculum Vitae
+            {pageContent.cvTitle}
           </Text>
-				</div>
+        </div>
 
-				<div class="grid gap-6">
-					{
-						cvData.map((item) => (
-							<div class:list={[...stackGrid]}>
-								<span></span>
-                <Text tag="h3" variant="textXL">
-                  {item.headline}
-                </Text>
-							</div>
-							<>
-								{item.entries.map((entry) => (
-									<div class:list={[...stackGrid]} class="!gap-y-0">
-										<Text tag="h4" variant="textBase" class="lg:ml-auto mb-0">
-											{entry.date}
-										</Text>
-										<div class="lg:col-span-2">
-											<Text tag="h4" variant="textBase" class="mb-4 mt-2 lg:mt-6.5 xl:mt-7">
-												{entry.position}
-											</Text>
+        <div class="grid gap-6">
+          {
+            cvData.map((item) => (
+              <>
+                <div class:list={[...stackGrid]}>
+                  <span />
+                  <Text tag="h3" variant="textXL">
+                    {item.headline}
+                  </Text>
+                </div>
+                {item.entries.map((entry) => (
+                  <div class:list={[...stackGrid]} class="!gap-y-0">
+                    <Text tag="h4" variant="textBase" class="mb-0 lg:ml-auto">
+                      {entry.date}
+                    </Text>
+                    <div class="lg:col-span-2">
+                      <Text tag="h4" variant="textBase" class="mt-2 mb-4 lg:mt-6.5 xl:mt-7">
+                        {entry.position}
+                      </Text>
 
-											<div class="grid gap-3">
-												{entry.company.map((entry) => (
-													<div class="flex gap-2 items-center">
-														<MapPin size="xs" class="text-base-600 dark:text-base-200" />
-														<Text tag="p" class="!-my-1">
-															{entry}
-														</Text>
-													</div>
-												))}
-											</div>
+                      <div class="grid gap-3">
+                        {(Array.isArray(entry.company) ? entry.company : [entry.company]).map((company) => (
+                          <div class="flex items-center gap-2">
+                            <MapPin size="xs" class="text-base-600 dark:text-base-200" />
+                            <Text tag="p" class="!-my-1">
+                              {company}
+                            </Text>
+                          </div>
+                        ))}
+                      </div>
 
-											<Text tag="p">
-												{entry.description}
-											</Text>
-										</div>
-									</div>
-								))}
-							</>
-						))}
-				</div>
-			</Wrapper>
-		</Wrapper>
-	</section>
+                      <Text tag="p">{entry.description}</Text>
+                    </div>
+                  </div>
+                ))}
+              </>
+            ))
+          }
+        </div>
+      </Wrapper>
+    </Wrapper>
+  </section>
 </BaseLayout>
-
-
