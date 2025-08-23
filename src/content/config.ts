@@ -68,11 +68,14 @@ const projectsCollection = defineCollection({
 
       noLinksText: z.string().optional(),
 
-      company: z.object({
-        companyName: z.string(),
-        teamSize: z.string(),
-        myRole: z.string(),
-      }),
+      company: z
+        .object({
+          companyName: z.string(),
+          teamSize: z.string(),
+        })
+        .optional(),
+
+      myRole: z.string(),
     }),
 });
 

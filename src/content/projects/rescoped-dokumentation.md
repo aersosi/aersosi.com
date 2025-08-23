@@ -28,7 +28,8 @@ demo:
 company:
   companyName: "avodaq AG, Hamburg"
   teamSize: "1-2"
-  myRole: "Design Engineer (UX-Researcher, UI-Designer, Frontend-Developer)"
+
+myRole: "Design Engineer (UX-Researcher, UI-Designer, Frontend-Developer)"
 ---
 
 ## Projektbeschreibung

@@ -8,16 +8,12 @@ import Link from "@/components/elements/Link.astro";
 import { stackGrid, stackGridPadding } from "@/lib/shared/classes";
 
 const allProjectsUnsorted = await getCollection("projects");
-const allProjects = allProjectsUnsorted.sort(
-  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
-);
+const allProjects = allProjectsUnsorted.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 
 const allTags = [...new Set(allProjects.map((post) => post.data.tags).flat())];
 const priorityTags = ["Professionelles Projekt", "Privates Projekt"];
 const projectTypes = allTags.filter((tag) => priorityTags.includes(tag));
-const otherTags = allTags
-  .filter((tag) => !priorityTags.includes(tag))
-  .sort((a, b) => a.localeCompare(b, "de"));
+const otherTags = allTags.filter((tag) => !priorityTags.includes(tag)).sort((a, b) => a.localeCompare(b, "de"));
 ---
 
 <BaseLayout
@@ -47,14 +43,12 @@ const otherTags = allTags
             </Text>
 
             <div class="grid gap-2">
-              <div
-                class="scrollable-content scrollbar-hide snap-x snap-proximity overflow-x-scroll"
-              >
+              <div class="scrollable-content scrollbar-hide snap-x snap-proximity overflow-x-scroll">
                 <div class="flex gap-x-2 lg:flex-col">
                   {
                     projectTypes.map((tag) => (
                       <Link
-                        href={`/projects/tags/${tag}`}
+                        href={`/src/pages/projects/tags/${tag}`}
                         size="sm"
                         variant="default"
                         class="whitespace-nowrap"
@@ -68,14 +62,12 @@ const otherTags = allTags
 
               <span class="hidden lg:block"></span>
 
-              <div
-                class="scrollable-content scrollbar-hide snap-x snap-proximity overflow-x-scroll"
-              >
+              <div class="scrollable-content scrollbar-hide snap-x snap-proximity overflow-x-scroll">
                 <div class="flex gap-x-2 lg:flex-col">
                   {
                     otherTags.map((tag) => (
                       <Link
-                        href={`/projects/tags/${tag}`}
+                        href={`/src/pages/projects/tags/${tag}`}
                         size="sm"
                         variant="default"
                         class="whitespace-nowrap"

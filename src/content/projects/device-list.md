@@ -13,7 +13,8 @@ noLinksText: "Firmeninternes Projekt"
 company:
   companyName: "avodaq AG, Hamburg"
   teamSize: "3–5"
-  myRole: "UX/UI-Design & Frontend-Entwicklung (Angular v.18)"
+
+myRole: "UX/UI-Design & Frontend-Entwicklung (Angular v.18)"
 ---
 
 ## Projektbeschreibung

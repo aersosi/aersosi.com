@@ -8,9 +8,7 @@ import ArrowRight from "@/lib/icons/ArrowRight.astro";
 import { stackGrid, stackGridPadding } from "@/lib/shared/classes";
 
 const allProjectsUnsorted = await getCollection("projects");
-const allProjects = allProjectsUnsorted.sort(
-  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
-);
+const allProjects = allProjectsUnsorted.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 ---
 
 <section>
@@ -18,7 +16,7 @@ const allProjects = allProjectsUnsorted.sort(
     <div class:list={[...stackGrid, ...stackGridPadding]} class="border-b">
       <div>
         <Text tag="h2" class="pb-2"> Neuste Projekte </Text>
-        <Link href="/projects" size="base" variant="primary">
+        <Link href="/src/pages/projects" size="base" variant="primary">
           Alle Projekte
           <ArrowRight size="base" />
         </Link>

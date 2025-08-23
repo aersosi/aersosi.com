@@ -76,7 +76,7 @@ const relatedProjects = allProjects.filter((project) =>
                 )}
               </div>
 
-              {frontmatter.company.companyName !== "" ? (
+              {frontmatter.company ? (
                 <div class="grid gap-2">
                   <Text tag="h2">
                     Kunde
@@ -89,11 +89,11 @@ const relatedProjects = allProjects.filter((project) =>
 
                 <div class="grid gap-2">
                   <Text tag="h2">
-                    Rolle (Team {frontmatter.company.teamSize} Pers.)
+                    Aufgabe im Team ({frontmatter.company.teamSize} Pers.)
                   </Text>
 
                   <Text tag="p" variant="textBase" class="text-balance">
-                    {frontmatter.company.myRole}
+                    {frontmatter.myRole}
                   </Text>
                 </div>
               ) : (
@@ -103,7 +103,7 @@ const relatedProjects = allProjects.filter((project) =>
                   </Text>
 
                   <Text tag="p" variant="textBase" class="text-balance">
-                    {frontmatter.company.myRole}
+                    {frontmatter.myRole}
                   </Text>
                 </div>
               )}

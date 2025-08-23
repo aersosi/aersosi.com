@@ -23,10 +23,7 @@ demo:
   href: "https://memorycon-arthur-ersosis-projects.vercel.app/"
   ariaLabel: "memorycon Live Demo"
 
-company:
-  companyName: ""
-  teamSize: ""
-  myRole: "Design Engineer (Full-Stack)"
+myRole: "Design Engineer (Full-Stack)"
 ---
 
 ## Projektbeschreibung

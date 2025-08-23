@@ -32,7 +32,7 @@ const tags = Object.keys(tagCounts);
         <div class="flex flex-col gap-2 lg:col-span-2">
           {
             tags.map((tag) => (
-              <Link href={`/articles/tags/${tag}`} size="sm" variant="default">
+              <Link href={`/src/pages/articles/tags/${tag}`} size="sm" variant="default">
                 <span>{tagCounts[tag]}</span>
                 <span>{tag}</span>
               </Link>

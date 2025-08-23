@@ -25,7 +25,8 @@ demo:
 company:
   companyName: ""
   teamSize: ""
-  myRole: "Full-Stack Design Engineer"
+
+myRole: "Full-Stack Design Engineer"
 ---
 
 ## Projektbeschreibung
