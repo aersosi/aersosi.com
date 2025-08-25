@@ -29,147 +29,85 @@ company:
   companyName: "avodaq AG, Hamburg"
   teamSize: "1-2"
 
-myRole: "Design Engineer (UX-Researcher, UI-Designer, Frontend-Developer)"
+myRole: "Design Engineer (UI/UX-Designer, Frontend-Developer)"
 ---
 
 ## Projektbeschreibung
 
-Die rescoped.io Dokumentationsplattform ist die zentrale Website für alle avodaq Open-Source-Projekte unter dem
-Rescoped-Label. Als eigenverantwortliches Projekt übernahm ich die komplette Konzeption, das Branding-Design und die
-technische Umsetzung der React-basierten Dokumentationsseite.
-
-Die Plattform vereint technische Dokumentation mit ansprechender Präsentation für das Rescoped Datagrid und zukünftige
-Open-Source-Komponenten, um sowohl Entwickler als auch Entscheidungsträger in der Community zu erreichen.
-
----
+Die rescoped.io Dokumentationsplattform ist die zentrale Website für alle avodaq Projekte unter dem rescoped-Label. Die
+React-basierte Dokumentationsseite vereint technische Dokumentation mit ansprechender Präsentation für das rescoped
+Datagrid und zukünftige Komponenten, mit Fokus auf intuitive Bedienung und professionelle Optik zur Ansprache von
+Entwicklern und Entscheidungsträgern in der Community.
 
 ## Kontext
 
-Mit der Entwicklung des Rescoped Datagrid entstand die Notwendigkeit einer professionellen Online-Dokumentation für die
-Open-Source-Veröffentlichung. Gleichzeitig sollte eine einheitliche Markenidentität für alle zukünftigen avodaq
-Open-Source-Projekte geschaffen werden.
-
-Die Plattform sollte sowohl technische Dokumentation als auch Marketing-Aspekte vereinen, um das Projekt erfolgreich in
-der Entwickler-Community zu positionieren und eine solide Grundlage für weitere Open-Source-Initiativen zu schaffen.
-
----
+Mit der Entwicklung des rescoped Datagrid entstand die Notwendigkeit einer professionellen Online-Dokumentation für die
+Veröffentlichung. Gleichzeitig sollte eine einheitliche Markenidentität für alle zukünftigen avodaq Projekte geschaffen
+werden. Die Plattform sollte sowohl technische Dokumentation als auch Marketing-Aspekte vereinen, um das Projekt
+erfolgreich in der Entwickler-Community zu positionieren und eine solide Grundlage für weitere Initiativen zu schaffen.
 
 ## Meine Aufgaben
 
 Als **Design Engineer** entwickelte ich das komplette Projekt eigenverantwortlich von der strategischen Konzeption bis
-zur finalen Veröffentlichung, immer in enger Zusammenarbeit und Abstimmung mit allen beteiligten Stakeholdern:
+zur finalen Veröffentlichung. In enger Zusammenarbeit und Abstimmung mit allen beteiligten Stakeholdern übernahm ich:
 
-**Strategische Konzeption & Research:**
+- **Strategische Konzeption:** Stakeholder-Interviews, Marktforschung und Technologie-Evaluation für optimale
+  Framework-Auswahl
+- **Label-Entwicklung:** Naming-Konzeption des "rescoped"-Markennamens, Domain-Research und Corporate Design mit Logo,
+  Farbschema und Typografie
+- **Content Strategy:** Entwicklung zielgruppenorientierter Sprache und Content-Optimierung für bessere Lesbarkeit
+- **Frontend-Entwicklung:** Docusaurus-Implementierung, Custom Styling und Interactive Graphics mit Pixi.js
+- **DevOps Integration:** Zusammenarbeit mit dem Infrastruktur-Team für automatisierte Deployment-Pipelines
 
-- **Stakeholder-Interviews:** Entwicklung und Durchführung strukturierter Interviews zur Anforderungsanalyse
-- **Marktforschung:** Analyse etablierter Open-Source-Dokumentationsseiten für Best Practices und Inspiration
-- **Technologie-Evaluation:** Bewertung verschiedener Dokumentations-Frameworks (Docusaurus, VuePress, GitBook)
+Von der Markenentwicklung über das komplette Design, entwicklung des Content bis zur technischen Implementierung wurde
+jeder Aspekt des Projekts von mir konzipiert und umgesetzt.
 
-**Branding & Naming:**
+## Arbeitsprozess
 
-- **Label-Entwicklung:** Konzeption des "Rescoped"-Markennamens für alle avodaq Open-Source-Projekte
-- **Domain-Research:** Verfügbarkeitsprüfung und Sicherung der rescoped.io Domain
-- **Corporate Design:** Komplette visuelle Identität mit Logo, Farbschema, Typografie, Layout und Design-System
+Das Projekt wurde eigenverantwortlich entwickelt, wobei strukturierte Stakeholder-Interviews die Grundlage bildeten. Der
+Workflow umfasste Research und Marktanalyse für Framework-Evaluation, iterative Design-Entwicklung mit kontinuierlicher
+Stakeholder-Abstimmung, sowie die komplette technische Umsetzung von der Docusaurus-Integration bis zur finalen
+Veröffentlichung mit CI/CD-Pipeline.
 
-**Content Strategy & UX Writing:**
-
-- **Zielgruppen-orientierte Sprache:** Entwicklung einer inklusiven, verständlichen Kommunikation ohne übermäßige
-  technische Komplexität
-- **Marketing-Integration:** Balance zwischen technischer Präzision und enthusiastischer, positiver Ansprache
-- **Content-Optimierung:** Überarbeitung überkomplexer technischer Texte für bessere Lesbarkeit und Verständlichkeit
-
-**Frontend-Entwicklung:**
-
-- **Docusaurus-Implementierung:** Setup und Anpassung des React-basierten Dokumentations-Frameworks
-- **Custom Styling:** Integration von Tailwind CSS für verbesserte Developer Experience
-- **Interactive Graphics:** Entwicklung einer interaktiven Grafik im Hero-Bereich mit Pixi.js für ansprechende
-  Nutzerinteraktion
-- **Responsive Design:** Optimierung für alle Gerätegrößen und Barrierefreiheit
-
-**DevOps & Deployment:**
-
-- **CI/CD-Integration:** Zusammenarbeit mit dem Infrastruktur-Team für automatisierte Deployment-Pipelines
-- **Performance-Optimierung:** Sicherstellung schneller Ladezeiten und optimaler Core Web Vitals
-
----
-
-## Herausforderungen & Impact
-
-### Besondere Herausforderungen
+## Herausforderungen
 
 - **Marken-Entwicklung von Grund auf:** Schaffung einer konsistenten Identität ohne bestehende Brand Guidelines
-- **Technische Integration:** Verbindung von Marketing-Aspekten mit technischer Dokumentation in einem kohärenten Design
 - **Framework-Anpassung:** Verbesserung der Standard-Docusaurus-Styling-Optionen durch maßgeschneiderte
   Tailwind-Integration
 - **Zielgruppen-Balance:** Ansprache sowohl von Technical Decision Makern als auch Entwicklern
 
-### Strategischer Impact
+## Mein Impact
 
-- **Marken-Etablierung:** Erfolgreiche Positionierung des Rescoped-Labels als Qualitätsmarke für avodaq
-  Open-Source-Projekte
-- **Community Building:** Grundlage für langfristige Community-Entwicklung im Angular-Ökosystem
-- **Unternehmens-Reputation:** Stärkung der avodaq-Außenwahrnehmung als innovatives, community-orientiertes Unternehmen
-
-**Konkret:**
-
-- **Naming-Strategie:** "Rescoped" als einprägsamer, domainverfügbarer Name mit klarem Bezug zum Entwicklungskontext
-- **Domain-Sicherung:** rescoped.io als kurze, merkbare Adresse für optimale Auffindbarkeit
-- **Brand Identity:** Kohärentes Design-System mit wiedererkennbaren visuellen Elementen
-
-### Design Impact
+**Design:**
 
 - **Nutzerfreundliche Dokumentation:** Intuitive Navigation und strukturierte Informationsarchitektur
-- **Visuell ansprechende Präsentation:** Professionelles Erscheinungsbild auf Augenhöhe mit etablierten
-  Open-Source-Projekten
-- **Interaktive Elemente:** WebGL-Animation als Differenzierungsmerkmal und Aufmerksamkeits-Generator
+- **Visuell ansprechende Präsentation:** Professionelles Erscheinungsbild auf Augenhöhe mit etablierten Projekten
 
-**Konkret:**
-
-- **Hero-Animation:** Pixi.js-basierte interaktive Grafik mit Mouse-Tracking für moderne, ansprechende Nutzerinteraktion
-- **Responsive Design:** Optimierte Darstellung auf allen Endgeräten ohne Funktionalitätsverlust
-- **Content-Hierarchie:** Klare Strukturierung für schnelle Orientierung und effiziente Informationsaufnahme
-
-### Technischer Impact
+**Technisch:**
 
 - **Framework-Optimierung:** Erfolgreiche Integration von Tailwind CSS für verbesserte Styling-Workflows
 - **Performance-Excellence:** Schnelle Ladezeiten durch optimierte Asset-Verwaltung und Code-Splitting
-- **Wartbare Architektur:** Saubere Code-Organisation für zukünftige Erweiterungen und Updates
 
 **Konkret:**
 
-- **Docusaurus + Tailwind:** Maßgeschneiderte Styling-Lösung für optimierte Developer Experience
-- **WebGL-Integration:** Stabile Pixi.js-Implementation ohne Performance-Einbußen
-- **CI/CD-Ready:** Nahtlose Integration in bestehende Deployment-Workflows
+- **Hero-Animation:** Pixi.js-basierte interaktive Grafik mit Mouse-Tracking für moderne, ansprechende
+  Nutzerinteraktion, die als Differenzierungsmerkmal und Aufmerksamkeits-Generator dient
+- **Naming-Strategie:** "rescoped" als einprägsamer, domainverfügbarer Name mit klarem Bezug zum Entwicklungskontext,
+  inklusive Sicherung der rescoped.io Domain als kurze, merkbare Adresse
 
----
+## Techstack
 
-## Technische Umsetzung
+**Konzept:** Stakeholder-Interviews, Marktanalyse, Docusaurus-Evaluation
 
-### Research & Konzept
+**Projektstruktur:** Docusaurus 2 (React), TypeScript
 
-Stakeholder-Interviews, Marktanalyse, Docusaurus-Evaluation
+**State Management:** React Context, Hooks
 
-### Framework
+**Styling:** Tailwind CSS (Custom Integration), SCSS
 
-Docusaurus 2 (React), TypeScript
+**Testing:** CI/CD Pipeline
 
-### Styling
-
-Tailwind CSS (Custom Integration), SCSS
-
-### Interactive Graphics
-
-Pixi.js, WebGL, GSAP, CSS Animations
-
-### Content Management
-
-MDX, Markdown
-
-### Deployment
-
-CI/CD Pipeline
-
----
+**Tools & Libraries:** Pixi.js, WebGL, GSAP, MDX, Markdown
 
 ## Projektergebnis
 
@@ -177,10 +115,7 @@ Das Projekt wurde erfolgreich und reibungslos umgesetzt, von der initialen Stake
 Eigenentwicklung bis zur finalen Veröffentlichung. Durch die strukturierte Herangehensweise mit Interviews, Research und
 iterativer Abstimmung konnten alle Beteiligten erfolgreich in den Designprozess mitgenommen werden.
 
-Die **rescoped.io** Dokumentationsplattform ging problemlos live und etablierte sich als zentrale Anlaufstelle für alle
-avodaq Open-Source-Projekte. Das eigenständig entwickelte **Rescoped-Branding** positionierte sich als wiedererkennbare
-Marke für qualitativ hochwertige Angular-Komponenten.
-
-Das Projekt demonstriert die erfolgreiche Kombination aus strategischer Planung, eigenverantwortlicher Umsetzung und
-stakeholder-orientierter Kommunikation: von der Namensfindung über die technische Implementierung bis zur finalen
-Veröffentlichung einer vollständig funktionsfähigen Dokumentationsplattform.
+Die **rescoped.io** Dokumentationsplattform ging reibungslos live und etablierte sich als zentrale Anlaufstelle für alle
+avodaq Open-Source-Projekte. Das eigenständig entwickelte rescoped-Label positionierte sich als wiedererkennbare Marke
+für qualitativ hochwertige Angular-Komponenten und legte den Grundstein für zukünftige Community-Projekte im
+Angular-Ökosystem.
