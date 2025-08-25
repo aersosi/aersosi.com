@@ -35,7 +35,7 @@ const baseClass = [
 
 const navItems = [
   { href: "/projects", name: "Projekte", Icon: Tool },
-  { href: "/articles/", name: "Artikel", Icon: Book },
+  { href: "/articles", name: "Artikel", Icon: Book },
   { href: "/about", name: "Über mich", Icon: User },
   { href: "/#socials", name: "Kontakt", Icon: AtSign },
 ];
@@ -106,6 +106,14 @@ const navItems = [
       </div>
       <ZoomToggle />
       <ThemeToggle />
+    </div>
+
+    <div class="progress-bar scrolled:block absolute right-0 -bottom-0.5 left-0 hidden h-1 px-1">
+      <div
+        id="readingProgress"
+        class="from-primary-600/30 to-primary-600 h-full w-0 rounded-full bg-gradient-to-r transition-[width] duration-50"
+      >
+      </div>
     </div>
   </div>
 </nav>

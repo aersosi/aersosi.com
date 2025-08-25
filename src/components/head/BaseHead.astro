@@ -13,6 +13,7 @@ import UpdateZoom from "@/lib/scripts/UpdateZoom.astro";
 import ToggleMobileSidenav from "@/lib/scripts/MainNav/ToggleMobileSidenav.astro";
 import ToTopMobileNav from "@/lib/scripts/MainNav/ToTopMobileNav.astro";
 
+import ReadingProgressBar from "@/lib/scripts/MainNav/ReadingProgressBar.astro";
 import ShrinkMainnav from "@/lib/scripts/MainNav/ShrinkMainnav.astro";
 
 export interface Props {
@@ -25,8 +26,7 @@ export interface Props {
   author?: string;
 }
 
-const { pageTitle, pageDescription, image, article, publishDate, modifiedDate, author } =
-  Astro.props;
+const { pageTitle, pageDescription, image, article, publishDate, modifiedDate, author } = Astro.props;
 ---
 
 <Fonts />
@@ -43,6 +43,7 @@ const { pageTitle, pageDescription, image, article, publishDate, modifiedDate, a
 <Favicons />
 
 <!-- scripts -->
+<ReadingProgressBar />
 <ShrinkMainnav />
 <ToggleLocalStorage />
 <ToggleA11ytip />

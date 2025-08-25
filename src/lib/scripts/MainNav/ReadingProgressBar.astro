@@ -1,0 +1,35 @@
+<script>
+  function debounce(fn, delay = 50) {
+    let timeout;
+    return (...args) => {
+      clearTimeout(timeout);
+      timeout = setTimeout(() => fn(...args), delay);
+    };
+  }
+
+  function updateReadingProgress() {
+    const progressBar = document.getElementById("readingProgress");
+    if (!progressBar) return;
+
+    const scrollTop = window.scrollY;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const progress = Math.min(Math.max((scrollTop / docHeight) * 100, 0), 100);
+
+    progressBar.style.width = `${progress}%`;
+  }
+
+  const excludedExactPaths = ["/", "/404", "/articles", "/projects", "/articles/", "/projects/"];
+  const excludedSubPaths = ["/articles/tags", "/projects/tags"];
+  const currentPath = window.location.pathname;
+
+  const isExcluded =
+    excludedExactPaths.includes(currentPath) || excludedSubPaths.some((path) => currentPath.startsWith(path));
+
+  const debouncedUpdateProgress = debounce(updateReadingProgress, 10);
+
+  if (!isExcluded) {
+    updateReadingProgress();
+    window.addEventListener("scroll", debouncedUpdateProgress);
+    window.addEventListener("resize", debouncedUpdateProgress);
+  }
+</script>
