@@ -1,9 +1,8 @@
 ---
 pubDate: 2024-01-01
 viewerTitle: "reflectAI"
-viewerDescription: "Modernes Claude AI Chatinterface als React Webanwendung"
-pageTitle: "reflectAI | KI-basierte Webanwendung | Arthur Ersosi"
 pageDescription: "Modernes Claude AI Chatinterface als React Webanwendung"
+pageTitle: "reflectAI | KI-basierte Webanwendung | Arthur Ersosi"
 images:
   [
     { src: "src/images/projects/reflectAI/reflectAI-cover.webp", alt: "reflectAI App Coverbild" },

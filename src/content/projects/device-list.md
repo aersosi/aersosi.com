@@ -1,9 +1,8 @@
 ---
 pubDate: 2025-06-08
 viewerTitle: "Device List"
-viewerDescription: "Angular Webanwendung zur Verwaltung von Hard- und Software, Servicedaten und Lizenzen von Kunden"
-pageTitle: "Device List | Datenmanagement-Anwendung | Arthur Ersosi"
 pageDescription: "Angular Webanwendung zur Verwaltung von Hard- und Software, Servicedaten und Lizenzen von Kunden"
+pageTitle: "Device List | Datenmanagement-Anwendung | Arthur Ersosi"
 images:
   [{ src: "src/images/projects/rescopedDatagrid/rescopedDatagrid-cover.webp", alt: "rescoped Datagrid Coverbild" }]
 tags: ["Professionelles Projekt", "Angular", "UX (User Experience)", "UI (User Interface)", "Frontend-Entwicklung"]

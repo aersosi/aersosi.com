@@ -1,9 +1,8 @@
 ---
 pubDate: 2025-06-08
 viewerTitle: "a11ytip Dokumentation"
-viewerDescription: "Offizielle a11ytip Dokumentation"
-pageTitle: "a11ytip | Dokumentation | Arthur Ersosi"
 pageDescription: "Offizielle a11ytip Dokumentation"
+pageTitle: "a11ytip | Dokumentation | Arthur Ersosi"
 online:
   name: "GitHub"
   href: "https://github.com/aersosi/a11ytip"

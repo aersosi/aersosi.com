@@ -1,9 +1,8 @@
 ---
 pubDate: 2024-01-01
 viewerTitle: "rescoped.io"
-viewerDescription: "Dokumentations-Plattform für alle avodaq Open-Source-Projekte"
-pageTitle: "rescoped Dokumentation | Dokumentationsplattform | Arthur Ersosi"
 pageDescription: "Dokumentations-Plattform für alle avodaq Open-Source-Projekte"
+pageTitle: "rescoped Dokumentation | Dokumentationsplattform | Arthur Ersosi"
 images:
   [
     {

@@ -1,9 +1,8 @@
 ---
 pubDate: 2024-01-01
 viewerTitle: "memorycon"
-viewerDescription: "Der Klassiker Memory als moderne Next.js Webanwendung"
-pageTitle: "memorycon | Memory-Spiel Webanwendung | Arthur Ersosi"
 pageDescription: "Der Klassiker Memory als moderne Next.js Webanwendung"
+pageTitle: "memorycon | Memory-Spiel Webanwendung | Arthur Ersosi"
 images:
   [
     { src: "src/images/projects/memorycon/memorycon-cover.webp", alt: "Coverbild" },

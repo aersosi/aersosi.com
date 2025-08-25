@@ -6,9 +6,8 @@ const articlesCollection = defineCollection({
     z.object({
       pubDate: z.date(),
       viewerTitle: z.string(),
-      viewerDescription: z.string(),
+      pageDescription: z.string(),
       pageTitle: z.string().optional(),
-      pageDescription: z.string().optional(),
 
       online: z
         .object({
@@ -36,9 +35,8 @@ const projectsCollection = defineCollection({
     z.object({
       pubDate: z.date(),
       viewerTitle: z.string(),
-      viewerDescription: z.string(),
+      pageDescription: z.string(),
       pageTitle: z.string().optional(),
-      pageDescription: z.string().optional(),
       images: z.array(
         z.object({
           src: image(),
@@ -84,9 +82,8 @@ const pagesCollection = defineCollection({
   schema: ({ image }) =>
     z.object({
       viewerTitle: z.string(),
-      viewerDescription: z.string(),
+      pageDescription: z.string(),
       pageTitle: z.string().optional(),
-      pageDescription: z.string().optional(),
       image: z.object({
         url: image(),
         alt: z.string(),

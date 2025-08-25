@@ -1,7 +1,7 @@
 ---
 import Text from "@/components/elements/Text.astro";
 
-const { url, viewerTitle, viewerDescription } = Astro.props;
+const { url, viewerTitle, pageDescription } = Astro.props;
 
 const textPrimaryHover = "group-hover:text-primary-600 group-hover:dark:text-primary-300";
 const hoverSize = "-inset-x-5 -top-2 -bottom-3";
@@ -46,7 +46,7 @@ const hoverSize = "-inset-x-5 -top-2 -bottom-3";
       </div>
     </a>
     <Text tag="p" class={`transition-colors text-pretty relative z-10 mt-1 ${textPrimaryHover}`}>
-      {viewerDescription}
+      {pageDescription}
     </Text>
   </div>
 </article>

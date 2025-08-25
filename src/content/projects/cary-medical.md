@@ -1,9 +1,8 @@
 ---
 pubDate: 2024-01-01
 viewerTitle: "CARY Medical"
-viewerDescription: "Medizinische Terminplanungs-Webanwendung (Angular) mit Nutzerverwaltung"
-pageTitle: "CARY Medical | Medizinische Terminplanungs-Webanwendung | Arthur Ersosi"
 pageDescription: "Medizinische Terminplanungs-Webanwendung (Angular) mit Nutzerverwaltung"
+pageTitle: "CARY Medical | Medizinische Terminplanungs-Webanwendung | Arthur Ersosi"
 images:
   [
     { src: "src/images/projects/caryMedical/caryMedical-cover.webp", alt: "CARY Medical App Coverbild" },

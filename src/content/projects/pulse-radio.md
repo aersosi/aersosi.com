@@ -1,9 +1,8 @@
 ---
 pubDate: 2024-01-01
 viewerTitle: "Pulse Radio"
-viewerDescription: "Moderne Next.js Radio-Webanwendung"
-pageTitle: "Pulse Radio | Audio-Streaming Webanwendung | Arthur Ersosi"
 pageDescription: "Moderne Next.js Radio-Webanwendung"
+pageTitle: "Pulse Radio | Audio-Streaming Webanwendung | Arthur Ersosi"
 images:
   [
     { src: "src/images/projects/pulseRadio/pulseRadio-cover.webp", alt: "Pulse Radio App Coverbild" },

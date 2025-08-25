@@ -1,9 +1,8 @@
 ---
 pubDate: 2024-01-01
 viewerTitle: "rescoped Datagrid"
-viewerDescription: "Angular CDK basiertes und performantes Open-Source-Datagrid mit intuitivem Setup"
-pageTitle: "rescoped Datagrid | Open-Source-Projekt | Arthur Ersosi"
 pageDescription: "Angular CDK basiertes und performantes Open-Source-Datagrid mit intuitivem Setup"
+pageTitle: "rescoped Datagrid | Open-Source-Projekt | Arthur Ersosi"
 images:
   [
     { src: "src/images/projects/rescopedDatagrid/rescopedDatagrid-cover.webp", alt: "rescoped Datagrid Coverbild" },

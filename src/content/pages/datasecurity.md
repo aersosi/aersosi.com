@@ -1,13 +1,15 @@
 ---
 pubDate: 2025-06-08
 viewerTitle: "Datenschutz"
-viewerDescription: "Keine Cookies, kein Tracking! Diese Website ist rein informativ und verzichtet bewusst auf Analyse- oder Marketingtechnologien."
+pageDescription:
+  "Diese Website nutzt weder Analyse- noch Marketingtechnologien. Die Datenschutzerklärung informiert über
+  Verantwortliche, Art und Zweck der Datenerfassung, Hosting, Drittanbieter, Rechtsgrundlagen und verwendete
+  Technologien."
 pageTitle: "Datenschutz | Arthur Ersosi"
-pageDescription: "Datenschutzerklärung zum Thema Datenerfassung, -verarbeitung und Ihrer Rechte als Nutzer dieser Website. Inhalt: Verantwortlichkeit und Datenerfassung, Zweck der Datenverarbeitung, Hosting und Drittanbieter, Rechtsgrundlagen, Einsatz von Technologien."
 image:
   url: "src/images/pages/datasecurity-cover.webp"
   alt: "Lorem Ipsum Image Text"
-tags: [ "CSS", "A11y", "Tooltip" ]
+tags: ["CSS", "A11y", "Tooltip"]
 ---
 
 ## 1. Datenschutz auf einen Blick
@@ -76,14 +78,9 @@ erforderlich ist und unsere Weisungen in Bezug auf diese Daten befolgen.
 
 Wir setzen folgende(n) Hoster ein:
 
-Cloudflare Germany GmbH <br/>
-Rosental 7, c/o Mindspace <br/>
-80331 München <br/>
-Deutschland
+Cloudflare Germany GmbH <br/> Rosental 7, c/o Mindspace <br/> 80331 München <br/> Deutschland
 
-Telefon: +49 (89) 26207202 <br/>
-E-Mail: support@cloudflare.com <br/>
-developers.cloudflare.com
+Telefon: +49 (89) 26207202 <br/> E-Mail: support@cloudflare.com <br/> developers.cloudflare.com
 
 ## 3. Allgemeine Hinweise und Pflichtinformationen
 
@@ -103,12 +100,10 @@ aufweisen kann. Ein lückenloser Schutz der Daten vor dem Zugriff durch Dritte i
 
 Die verantwortliche Stelle für die Datenverarbeitung auf dieser Website ist:
 
-Arthur Ersosi <br/>
-Wandsedamm 2B <br/>
-22047 Hamburg
+Arthur Ersosi <br/> Wandsedamm 2B <br/> 22047 Hamburg
 
-Telefon: <span data-obfuscation="0">+49 163 / 868 1291</span> <br/>
-E-Mail: <span data-obfuscation="0">hello@aersosi.com</span>
+Telefon: <span data-obfuscation="0">+49 163 / 868 1291</span> <br/> E-Mail:
+<span data-obfuscation="0">hello@aersosi.com</span>
 
 Verantwortliche Stelle ist die natürliche oder juristische Person, die allein oder gemeinsam mit anderen über die Zwecke
 und Mittel der Verarbeitung von personenbezogenen Daten (z. B. Namen, E-Mail-Adressen o. Ä.) entscheidet.
@@ -231,8 +226,8 @@ Permanente Cookies bleiben auf Ihrem Endgerät gespeichert, bis Sie diese selbst
 durch Ihren Webbrowser erfolgt.
 
 Cookies können von uns (First-Party-Cookies) oder von Drittunternehmen stammen (sog. Third-Party-Cookies).
-Third-Party-Cookies ermöglichen die Einbindung bestimmter Dienstleistungen von Drittunternehmen innerhalb von
-Webseiten (z. B. Cookies zur Abwicklung von Zahlungsdienstleistungen).
+Third-Party-Cookies ermöglichen die Einbindung bestimmter Dienstleistungen von Drittunternehmen innerhalb von Webseiten
+(z. B. Cookies zur Abwicklung von Zahlungsdienstleistungen).
 
 Cookies haben verschiedene Funktionen. Zahlreiche Cookies sind technisch notwendig, da bestimmte Webseitenfunktionen
 ohne diese nicht funktionieren würden (z. B. die Warenkorbfunktion oder die Anzeige von Videos). Andere Cookies können
