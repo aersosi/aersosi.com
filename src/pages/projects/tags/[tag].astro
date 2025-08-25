@@ -37,7 +37,7 @@ const otherTags = allTags.filter((tag) => !priorityTags.includes(tag)).sort((a, 
   <section>
     <Wrapper variant="standard">
       <div class:list={[...stackGrid, ...stackGridPadding]}>
-        <div class="grid gap-4">
+        <div class="grid gap-8">
           <Text tag="h1" variant="text2XL" isPrimary>
             {tag}
           </Text>
@@ -61,12 +61,7 @@ const otherTags = allTags.filter((tag) => !priorityTags.includes(tag)).sort((a, 
                 <div class="flex gap-x-2 lg:flex-col">
                   {
                     projectTypes.map((tag) => (
-                      <Link
-                        href={`/src/pages/projects/tags/${tag}`}
-                        size="sm"
-                        variant="default"
-                        class="whitespace-nowrap"
-                      >
+                      <Link href={`/projects/tags/${tag}`} size="sm" variant="default" class="whitespace-nowrap">
                         {tag}
                       </Link>
                     ))
@@ -80,12 +75,7 @@ const otherTags = allTags.filter((tag) => !priorityTags.includes(tag)).sort((a, 
                 <div class="flex gap-x-2 lg:flex-col">
                   {
                     otherTags.map((tag) => (
-                      <Link
-                        href={`/src/pages/projects/tags/${tag}`}
-                        size="sm"
-                        variant="default"
-                        class="whitespace-nowrap"
-                      >
+                      <Link href={`/projects/tags/${tag}`} size="sm" variant="default" class="whitespace-nowrap">
                         {tag}
                       </Link>
                     ))

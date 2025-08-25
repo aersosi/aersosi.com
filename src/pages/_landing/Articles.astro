@@ -16,7 +16,7 @@ const allPosts = allPostsUnsorted.sort((a, b) => b.data.pubDate.valueOf() - a.da
     <div class:list={[...stackGrid, ...stackGridPadding]} class="border-b">
       <div>
         <Text tag="h2" class="pb-2"> Neueste Artikel </Text>
-        <Link href="/src/pages/articles" size="base" variant="primary">
+        <Link href="/articles" size="base" variant="primary">
           Alle Artikel
           <ArrowRight size="base" />
         </Link>

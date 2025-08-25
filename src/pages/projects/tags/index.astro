@@ -37,7 +37,7 @@ const otherTags = allTags.filter((tag) => !priorityTags.includes(tag)).sort((a, 
         <div class="flex flex-col gap-2 lg:col-span-2">
           {
             projectTypes.map((tag) => (
-              <Link href={`/src/pages/projects/tags/${tag}`} size="sm" variant="default">
+              <Link href={`/projects/tags/${tag}`} size="sm" variant="default">
                 <span>{tagCounts[tag]} - </span>
                 <span>{tag}</span>
               </Link>
@@ -48,7 +48,7 @@ const otherTags = allTags.filter((tag) => !priorityTags.includes(tag)).sort((a, 
 
           {
             otherTags.map((tag) => (
-              <Link href={`/src/pages/projects/tags/${tag}`} size="sm" variant="default">
+              <Link href={`/projects/tags/${tag}`} size="sm" variant="default">
                 <span>{tagCounts[tag]} - </span>
                 <span>{tag}</span>
               </Link>
