@@ -48,25 +48,31 @@ erfolgreich in der Entwickler-Community zu positionieren und eine solide Grundla
 ## Meine Aufgaben
 
 Als **Design Engineer** entwickelte ich das komplette Projekt eigenverantwortlich von der strategischen Konzeption bis
-zur finalen Veröffentlichung. In enger Zusammenarbeit und Abstimmung mit allen beteiligten Stakeholdern übernahm ich:
+zur finalen Veröffentlichung. Sämtliche Aspekte des Projekts, von der Markenentwicklung über das komplette Design bis
+zur technischen Implementierung, wurden von mir konzipiert und umgesetzt. In enger Zusammenarbeit und Abstimmung mit
+allen beteiligten Stakeholdern übernahm ich:
 
-- **Strategische Konzeption:** Stakeholder-Interviews, Marktforschung und Technologie-Evaluation für optimale
-  Framework-Auswahl
-- **Label-Entwicklung:** Naming-Konzeption des "rescoped"-Markennamens, Domain-Research und Corporate Design mit Logo,
-  Farbschema und Typografie
-- **Content Strategy:** Entwicklung zielgruppenorientierter Sprache und Content-Optimierung für bessere Lesbarkeit
-- **Frontend-Entwicklung:** Docusaurus-Implementierung, Custom Styling und Interactive Graphics mit Pixi.js
-- **DevOps Integration:** Zusammenarbeit mit dem Infrastruktur-Team für automatisierte Deployment-Pipelines
+- **Strategische Konzeption:** Entwicklung eines strukturierten Fragenkatalogs mit anschließenden
+  Stakeholder-Interviews, Marktforschung und Technologie-Evaluation
+- **Framework-Evaluation:** Umfassende Recherche und Bewertung verschiedener Tools und Libraries für
+  Online-Dokumentation
+- **Label-Entwicklung:** Naming-Konzeption des "rescoped"-Markennamens, mit Domain-Verfügbarkeitsprüfung und Corporate
+  Design mit Logo, Farbschema und Typografie
+- **Content Strategy:** Entwicklungund optimierung zielgruppenorientierter Sprache und Content-Optimierung für bessere
+  Inklusivität und Lesbarkeit
+- **Frontend-Entwicklung:** Docusaurus-Implementierung, Custom Styling (vollständigem Austausch der
+  Standard-Styling-Bibliothek) und Interactive Graphics mit Pixi.js
+- **DevOps Integration:** Zusammenarbeit mit dem CI/CD-Team für automatisierte Deployment-Pipelines
 
 Von der Markenentwicklung über das komplette Design, entwicklung des Content bis zur technischen Implementierung wurde
 jeder Aspekt des Projekts von mir konzipiert und umgesetzt.
 
 ## Arbeitsprozess
 
-Das Projekt wurde eigenverantwortlich entwickelt, wobei strukturierte Stakeholder-Interviews die Grundlage bildeten. Der
-Workflow umfasste Research und Marktanalyse für Framework-Evaluation, iterative Design-Entwicklung mit kontinuierlicher
-Stakeholder-Abstimmung, sowie die komplette technische Umsetzung von der Docusaurus-Integration bis zur finalen
-Veröffentlichung mit CI/CD-Pipeline.
+Das Projekt wurde vollständig eigenverantwortlich entwickelt, wobei strukturierte Stakeholder-Interviews die Grundlage
+bildeten. Der Workflow umfasste Research und Marktanalyse als Framework-Evaluation, iterative Design-Entwicklung mit
+kontinuierlicher Stakeholder-Abstimmung, sowie die komplette technische Umsetzung von der Docusaurus-Integration bis zur
+finalen Veröffentlichung.
 
 ## Herausforderungen
 
@@ -74,6 +80,7 @@ Veröffentlichung mit CI/CD-Pipeline.
 - **Framework-Anpassung:** Verbesserung der Standard-Docusaurus-Styling-Optionen durch maßgeschneiderte
   Tailwind-Integration
 - **Zielgruppen-Balance:** Ansprache sowohl von Technical Decision Makern als auch Entwicklern
+- **Content-Optimierung:** Transformation technischer Fachsprache in verständliche, inklusive Dokumentation
 
 ## Mein Impact
 
@@ -84,8 +91,9 @@ Veröffentlichung mit CI/CD-Pipeline.
 
 **Technisch:**
 
-- **Framework-Optimierung:** Erfolgreiche Integration von Tailwind CSS für verbesserte Styling-Workflows
-- **Performance-Excellence:** Schnelle Ladezeiten durch optimierte Asset-Verwaltung und Code-Splitting
+- **Framework-Optimierung:** Erfolgreiche Integration von Tailwind CSS (Styling-System-Austausch) für verbesserte
+  Styling-Workflows
+- **Content-Transformation:** Überarbeitung technischer Dokumentation in verständliche, zielgruppengerechte Sprache
 
 **Konkret:**
 
