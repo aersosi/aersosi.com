@@ -1,11 +1,6 @@
 <script>
-  function debounce(fn, delay = 50) {
-    let timeout;
-    return (...args) => {
-      clearTimeout(timeout);
-      timeout = setTimeout(() => fn(...args), delay);
-    };
-  }
+  import { debounce } from "../debounce";
+  import { throttle } from "../throttle";
 
   function updateReadingProgress() {
     const progressBar = document.getElementById("readingProgress");
@@ -25,11 +20,11 @@
   const isExcluded =
     excludedExactPaths.includes(currentPath) || excludedSubPaths.some((path) => currentPath.startsWith(path));
 
-  const debouncedUpdateProgress = debounce(updateReadingProgress, 10);
+  const throttledUpdateProgress = throttle(updateReadingProgress, 50);
 
   if (!isExcluded) {
     updateReadingProgress();
-    window.addEventListener("scroll", debouncedUpdateProgress);
-    window.addEventListener("resize", debouncedUpdateProgress);
+    window.addEventListener("scroll", throttledUpdateProgress);
+    window.addEventListener("resize", throttledUpdateProgress);
   }
 </script>
