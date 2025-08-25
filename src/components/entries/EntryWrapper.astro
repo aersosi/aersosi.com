@@ -4,7 +4,7 @@ import Text from "@/components/elements/Text.astro";
 const { url, viewerTitle, pageDescription } = Astro.props;
 
 const textPrimaryHover = "group-hover:text-primary-600 group-hover:dark:text-primary-300";
-const hoverSize = "-inset-x-5 -top-2 -bottom-3";
+const hoverSize = "sm:-inset-x-5 sm:-top-2 sm:-bottom-3";
 ---
 
 <article class="group relative grid gap-x-12 gap-y-8 lg:items-start">
@@ -17,29 +17,17 @@ const hoverSize = "-inset-x-5 -top-2 -bottom-3";
       <div class={`absolute ${hoverSize} z-20 rounded-2xl`}></div>
       <div class="relative z-10 flex w-full flex-col gap-x-4 md:flex-row md:items-center">
         <div class="hidden sm:block">
-          <Text
-            tag="h3"
-            variant="textLG"
-            class={`transition-colors whitespace-nowrap ${textPrimaryHover}`}
-          >
+          <Text tag="h3" variant="textLG" class={`transition-colors whitespace-nowrap ${textPrimaryHover}`}>
             {viewerTitle}
             <span class="px-3">—</span><slot />
           </Text>
         </div>
         <div class="grid gap-1 pb-1 sm:hidden">
-          <Text
-            tag="p"
-            variant="textSM"
-            class={`transition-colors whitespace-nowrap ${textPrimaryHover}`}
-          >
+          <Text tag="p" variant="textSM" class={`transition-colors whitespace-nowrap ${textPrimaryHover}`}>
             <slot />
           </Text>
 
-          <Text
-            tag="h3"
-            variant="textLG"
-            class={`transition-colors whitespace-nowrap ${textPrimaryHover}`}
-          >
+          <Text tag="h3" variant="textLG" class={`transition-colors whitespace-nowrap ${textPrimaryHover}`}>
             {viewerTitle}
           </Text>
         </div>

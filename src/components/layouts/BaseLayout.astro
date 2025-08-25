@@ -25,7 +25,7 @@ const {
 } = Astro.props;
 ---
 
-<html lang="de" class="selection:bg-secondary-300 selection:text-primary-600">
+<html lang="de" class="selection:bg-secondary-300 selection:text-primary-600 h-svh">
   <head>
     <BaseHead
       pageTitle={pageTitle}
@@ -37,7 +37,7 @@ const {
       author={author}
     />
   </head>
-  <body class="bg-base-100 dark:bg-base-800 flex h-[calc(var(--vh)*100)] flex-col">
+  <body class="bg-base-100 dark:bg-base-800 flex h-svh flex-col">
     <Navigation />
     <main class="grow pt-10 md:pt-2"><slot /></main>
     <Footer />
