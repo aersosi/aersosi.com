@@ -7,15 +7,14 @@ online:
   name: "GitHub"
   href: "https://github.com/aersosi/a11ytip"
   ariaLabel: "a11ytip GitHub Repository"
-images:
-  [{ src: "src/images/projects/a11ytip/a11ytip-cover.webp", alt: "a11ytip npm Paket Coverbild" }]
+images: [{ src: "src/images/projects/a11ytip/a11ytip-cover.webp", alt: "a11ytip npm Paket Coverbild" }]
 tags: ["CSS", "A11y", "Tooltip"]
 ---
 
 # a11ytip
 
-Einfach unkomplizierte Tooltips.
-Kinderleicht zu integrieren und zu konfigurieren. CSS-first und accessibility mitgedacht.
+Einfach unkomplizierte Tooltips. Kinderleicht zu integrieren und zu konfigurieren. CSS-first und accessibility
+mitgedacht.
 
 ## Funktionen
 
@@ -71,15 +70,11 @@ document.addEventListener("DOMContentLoaded", toggleA11ytip);
 
 <button data-a11ytip-right aria-label="Ich erscheine rechts!">Hover mich</button>
 <button data-a11ytip-right-top aria-label="Ich bin rechts oben ausgerichtet!">Hover mich</button>
-<button data-a11ytip-right-bottom aria-label="Ich bin rechts unten ausgerichtet!">
-  Hover mich
-</button>
+<button data-a11ytip-right-bottom aria-label="Ich bin rechts unten ausgerichtet!">Hover mich</button>
 
 <button data-a11ytip-bottom aria-label="Ich erscheine unten!">Hover mich</button>
 <button data-a11ytip-bottom-left aria-label="Ich bin unten links ausgerichtet!">Hover mich</button>
-<button data-a11ytip-bottom-right aria-label="Ich bin unten rechts ausgerichtet!">
-  Hover mich
-</button>
+<button data-a11ytip-bottom-right aria-label="Ich bin unten rechts ausgerichtet!">Hover mich</button>
 
 <button data-a11ytip-left aria-label="Ich erscheine links!">Hover mich</button>
 <button data-a11ytip-left-top aria-label="Ich bin links oben ausgerichtet!">Hover mich</button>
@@ -98,33 +93,29 @@ document.addEventListener("DOMContentLoaded", toggleA11ytip);
 **Beispiel mit beiden Attributen:**
 
 ```html
-<button data-a11ytip-top aria-label="Dialog-Fenster schließen" data-a11ytip-text="Dialog schließen">
-  Schließen
-</button>
+<button data-a11ytip-top aria-label="Dialog-Fenster schließen" data-a11ytip-text="Dialog schließen">Schließen</button>
 ```
 
-Das `data-a11ytip-text` bestimmt den angezeigten a11ytip-Text ("Dialog schließen"), während das `aria-label` unabhängig bleibt.
+Das `data-a11ytip-text` bestimmt den angezeigten a11ytip-Text ("Dialog schließen"), während das `aria-label` unabhängig
+bleibt.
 
 ---
 
 ## a11ytip dauerhaft aktivieren
 
-Mit dem `data-a11ytip-active` Attribut oder der `a11ytip-active` Klasse kann der aktive Status eines a11ytips dauerhaft erzwungen werden.
+Mit dem `data-a11ytip-active` Attribut oder der `a11ytip-active` Klasse kann der aktive Status eines a11ytips dauerhaft
+erzwungen werden.
 
 **Beispiel mit Data-Attribut:**
 
 ```html
-<button data-a11ytip-top data-a11ytip-active aria-label="Ich bin immer sichtbar!">
-  Kein Hover nötig
-</button>
+<button data-a11ytip-top data-a11ytip-active aria-label="Ich bin immer sichtbar!">Kein Hover nötig</button>
 ```
 
 **Beispiel mit `a11ytip-active` Klasse:**
 
 ```html
-<button data-a11ytip-top class="a11ytip-active" aria-label="Ich bin immer sichtbar!">
-  Kein Hover nötig
-</button>
+<button data-a11ytip-top class="a11ytip-active" aria-label="Ich bin immer sichtbar!">Kein Hover nötig</button>
 ```
 
 ---
@@ -152,14 +143,15 @@ Mit dem `data-a11ytip-active` Attribut oder der `a11ytip-active` Klasse kann der
   --a11ytip-padding-top: 4px;
   --a11ytip-padding-bottom: 4px;
   --a11ytip-border-radius: 6px;
-  --a11ytip-box-shadow:
-    0 1px 3px 0 theme(colors.black / 0.25), 0 1px 2px -1px theme(colors.black / 0.1);
+  --a11ytip-box-shadow: 0 1px 3px 0 theme(colors.black / 0.25), 0 1px 2px -1px theme(colors.black / 0.1);
   --a11ytip-max-width: 14ch;
 
   /* Animation */
   --a11ytip-start-position: calc(100% + 2px);
   --a11ytip-end-position: calc(100% + 8px);
   --a11ytip-transition-duration: 250ms;
+
+  --a11ytip-z-index: 100;
 }
 
 /* Dark Theme */
@@ -222,7 +214,8 @@ Sie können auch eigene Themes erstellen, indem Sie neue Selektoren in der `a11y
 
 ## Einzelnes a11ytip mit Data-Attributen anpassen
 
-Die CSS-a11ytips unterstützen optionale `data-*` Attribute, mit denen Sie die Standardkonfiguration für ein einzelnes a11ytips überschreiben können.
+Die CSS-a11ytips unterstützen optionale `data-*` Attribute, mit denen Sie die Standardkonfiguration für ein einzelnes
+a11ytips überschreiben können.
 
 **Hinweis:** Die Anpassung über Data-Attribute wird derzeit nur in Chrome-basierten Browsern unterstützt.
 
@@ -283,26 +276,27 @@ Die CSS-a11ytips unterstützen optionale `data-*` Attribute, mit denen Sie die S
    - Werteformat: Ein CSS `<length>` Wert (z.B. `14ch`, `150px`).
 
 10. `data-a11ytip-start-position` und `data-a11ytip-end-position`:
-
-- Startpunkt der a11ytip Animation (`start`) und endpunkt (`end`).
-- Werteformat: CSS `<length>` Werte (z.B. `4px`, `2rem`).
+    - Startpunkt der a11ytip Animation (`start`) und endpunkt (`end`).
+    - Werteformat: CSS `<length>` Werte (z.B. `4px`, `2rem`).
 
 11. `data-a11ytip-transition-duration`:
-
-- Passt die Übergangsdauer des a11ytips an.
-- Werteformat: Eine gültige Zeitdauer (z.B. `350ms`, `0.5s`).
+    - Passt die Übergangsdauer des a11ytips an.
+    - Werteformat: Eine gültige Zeitdauer (z.B. `350ms`, `0.5s`).
 
 12. `data-a11ytip-delay`:
-
-- Ändert die Verzögerung, bevor der a11ytip angezeigt wird.
-- Werteformat: Eine Zahl in Millisekunden (z.B. `250`, `1000`).
-- Standardwert: `500` (500 Millisekunden).
+    - Ändert die Verzögerung, bevor der a11ytip angezeigt wird.
+    - Werteformat: Eine Zahl in Millisekunden (z.B. `250`, `1000`).
+    - Standardwert: `500` (500 Millisekunden).
 
 13. `data-a11ytip-active`:
+    - Erzwingt den aktiven Status eines a11ytips dauerhaft, ohne dass ein Hover-Event erforderlich ist.
+    - Nützlich zum Überprüfen der Positionierung oder während der Entwicklung.
+    - Werteformat: Keine Werte erforderlich, allein das Vorhandensein des Attributs aktiviert den Effekt.
 
-- Erzwingt den aktiven Status eines a11ytips dauerhaft, ohne dass ein Hover-Event erforderlich ist.
-- Nützlich zum Überprüfen der Positionierung oder während der Entwicklung.
-- Werteformat: Keine Werte erforderlich, allein das Vorhandensein des Attributs aktiviert den Effekt.
+14. `data-a11ytip-z-index`:
+    - Steuert die Stapelreihenfolge des a11ytips und bestimmt, ob er über oder unter anderen Elementen erscheint.
+    - Werteformat: Eine positive Ganzzahl (z.B. `100`, `999`, `1000`).
+    - Standardwert: `100`.
 
 ---
 
@@ -330,6 +324,7 @@ Die CSS-a11ytips unterstützen optionale `data-*` Attribute, mit denen Sie die S
   data-a11ytip-end-position="12px"
   data-a11ytip-transition-duration="200ms"
   data-a11ytip-delay="1000"
+  data-a11ytip-z-index="999"
 >
   Hover mich
 </button>

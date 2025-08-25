@@ -3,7 +3,7 @@
 /* Light Theme Colors */
 :root {
 	--scrollbar-thumb-color: var(--color-primary-600);
-	--scrollbar-track-color: var(--color-base-50);
+	--scrollbar-track-color: var(--color-white);
 }
 
 /* Dark Theme Colors */
