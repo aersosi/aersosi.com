@@ -15,6 +15,7 @@ import ToTopMobileNav from "@/lib/scripts/MainNav/ToTopMobileNav.astro";
 
 import ReadingProgressBar from "@/lib/scripts/MainNav/ReadingProgressBar.astro";
 import ShrinkMainnav from "@/lib/scripts/MainNav/ShrinkMainnav.astro";
+import PreventBodyHeightJump from "@/lib/scripts/MainNav/PreventBodyHeightJump.astro";
 
 export interface Props {
   pageTitle?: string;
@@ -43,6 +44,7 @@ const { pageTitle, pageDescription, image, article, publishDate, modifiedDate, a
 <Favicons />
 
 <!-- scripts -->
+<PreventBodyHeightJump />
 <ReadingProgressBar />
 <ShrinkMainnav />
 <ToggleLocalStorage />
