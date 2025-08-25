@@ -8,12 +8,12 @@ const hoverSize = "sm:-inset-x-5 sm:-top-2 sm:-bottom-3";
 ---
 
 <article class="group relative grid gap-x-12 gap-y-8 lg:items-start">
-  <div class="w-full">
+  <a href={url} aria-label={viewerTitle} class="w-full">
     <div
       class={`sm:border border-primary-600 dark:border-primary-300 ${hoverSize} absolute z-0 scale-95 rounded-xl opacity-0 transition group-hover:scale-100 group-hover:opacity-100`}
     >
     </div>
-    <a href={url} aria-label={viewerTitle}>
+    <div>
       <div class={`absolute ${hoverSize} z-20 rounded-2xl`}></div>
       <div class="relative z-10 flex w-full flex-col gap-x-4 md:flex-row md:items-center">
         <div class="hidden sm:block">
@@ -32,9 +32,9 @@ const hoverSize = "sm:-inset-x-5 sm:-top-2 sm:-bottom-3";
           </Text>
         </div>
       </div>
-    </a>
-    <Text tag="p" class={`transition-colors text-pretty relative z-10 mt-1 ${textPrimaryHover}`}>
+    </div>
+    <Text tag="p" class={`transition-colors text-pretty relative z-10 ${textPrimaryHover}`}>
       {pageDescription}
     </Text>
-  </div>
+  </a>
 </article>

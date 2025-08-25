@@ -34,6 +34,9 @@ const baseClass = [
   "lg:py-11",
   "scrolled:py-3",
   "scrolled:shadow-md",
+  "scrolled:border-b",
+  "scrolled:border-base-600/10",
+  "scrolled:dark:border-base-600/10",
 ];
 
 const navItems = [
@@ -111,10 +114,10 @@ const navItems = [
       <ThemeToggle />
     </div>
 
-    <div class="progress-bar scrolled:block absolute right-0 -bottom-0.5 left-0 hidden h-1 px-4 sm:px-12 md:px-1">
+    <div class="progress-bar scrolled:block absolute right-0 -bottom-0.5 -left-0 hidden h-1 px-4 sm:px-12 md:px-1">
       <div
         id="readingProgress"
-        class="from-primary-600/30 to-primary-600 h-full w-0 rounded-full bg-gradient-to-r transition-[width] duration-50"
+        class="from-primary-300 to-primary-600 h-full w-0 rounded-full bg-gradient-to-r transition-[width] duration-50"
       >
       </div>
     </div>
