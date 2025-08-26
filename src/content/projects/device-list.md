@@ -4,7 +4,12 @@ viewerTitle: "Device List"
 pageDescription: "Angular Webanwendung zur Verwaltung von Hard- und Software, Servicedaten und Lizenzen von Kunden"
 pageTitle: "Device List | Datenmanagement-Anwendung | Arthur Ersosi"
 images:
-  [{ src: "src/images/projects/rescopedDatagrid/rescopedDatagrid-cover.webp", alt: "rescoped Datagrid Coverbild" }]
+  [
+    { src: "src/images/projects/deviceList/deviceList-cover.webp", alt: "device List Coverbild" },
+    { src: "src/images/projects/deviceList/0-search.webp", alt: "Order Nummer Suchen" },
+    { src: "src/images/projects/deviceList/1-select.webp", alt: "Sales order Lines auswählen" },
+    { src: "src/images/projects/deviceList/2-edit.webp", alt: "Daten editieren" },
+  ]
 tags: ["Professionelles Projekt", "Angular", "UX (User Experience)", "UI (User Interface)", "Frontend-Entwicklung"]
 
 noLinksText: "Firmeninternes Projekt"

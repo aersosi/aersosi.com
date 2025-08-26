@@ -9,8 +9,8 @@ Hamburg, Germany. This repository contains the source code for my personal websi
 
 ### Project Structure
 
-This project follows an extended Astro structure with additional directories for organization.
-Here's the current project structure:
+This project follows an extended Astro structure with additional directories for organization. Here's the current
+project structure:
 
 ```
 /
@@ -21,21 +21,33 @@ Here's the current project structure:
 ├── src/                 # Source code
 │   ├── _definitions/    # Type definitions
 │   ├── components/      # UI components
+│   │   ├── containers/  # Container components
+│   │   ├── elements/    # Basic UI elements (buttons, links, etc.)
+│   │   ├── entries/     # Entry components for articles/projects
+│   │   ├── global/      # Global components (navigation, footer)
+│   │   ├── head/        # Head elements (meta, seo, etc.)
+│   │   └── layouts/     # Layout components
 │   ├── content/         # Content collections
+│   │   ├── articles/    # Blog articles
+│   │   ├── pages/       # Static pages content
+│   │   └── projects/    # Project portfolio entries
 │   ├── images/          # Images processed by Astro
-│   ├── layouts/         # Page layouts
+│   ├── lib/             # Utilities and shared code
+│   │   ├── icons/       # SVG icon components
+│   │   ├── scripts/     # JavaScript/TypeScript utilities
+│   │   └── shared/      # Shared constants and classes
 │   ├── pages/           # Page routes
-│   ├── shared/          # Shared utilities
 │   └── styles/          # CSS/SCSS styles
 ├── docs/                # Documentation
 └── package.json         # Project dependencies and scripts
 ```
 
 - `src/pages/`: Contains `.astro` and `.md` files that become routes based on their file names
-- `src/components/`: Reusable UI components for the website
-- `src/layouts/`: Page layout templates used across multiple pages
-- `src/content/`: Content collections for blog posts and other structured content
-- `src/styles/`: Global styles and Tailwind configuration
+- `src/components/`: Reusable UI components organized in subdirectories by purpose
+- `src/content/`: Content collections for blog posts, projects, and static pages
+- `src/lib/`: Shared utilities, icons, and JavaScript/TypeScript code
+- `src/images/`: Images processed by Astro's optimization pipeline
+- `src/styles/`: Global CSS styles and component-specific stylesheets
 - `public/`: Static assets that are served directly without processing
 
 ### Commands
@@ -43,7 +55,7 @@ Here's the current project structure:
 All commands are run from the root of the project, from a terminal:
 
 | Command                | Action                                           |
-|:-----------------------|:-------------------------------------------------|
+| :--------------------- | :----------------------------------------------- |
 | `npm install`          | Installs dependencies                            |
 | `npm run dev`          | Starts local dev server at `localhost:3000`      |
 | `npm run start`        | Alias for `npm run dev`                          |
@@ -66,14 +78,31 @@ performance. The project also uses:
 - [MDX](https://mdxjs.com) for content
 - [TypeScript](https://www.typescriptlang.org) for type safety
 
-
 ## Features
 
-**Light/Dark theme**
+**Light/Dark Theme**
+
+- Light/Dark theme can be triggered via navigation button or the sidenav button on mobile
 - Light/Dark theme can also be triggered using the keyboard shortcut Option/Alt + D
 
+**Content Zoom**
+
+- Global content zoom functionality accessible via navigation button
+- Allows users to increase/decrease text and content size for better readability
+
+**Image Slideshow & Zoom**
+
+- Interactive carousel component for displaying multiple images
+- Full-screen zoom functionality with zoom in/out controls
+- Smooth navigation between images with arrow keys and buttons
+- Keyboard shortcuts for enhanced accessibility
+
+**Responsive Navigation**
+
+- Desktop: Traditional horizontal navigation in header
+- Mobile: Slide-out side navigation (sidenav) for better mobile experience
+- Touch-friendly navigation controls optimized for mobile devices
 
 ## Learn More
 
 For more information about Astro, check out their official [documentation](https://docs.astro.build).
-
