@@ -1,53 +1,44 @@
 <script>
-  function updateZoom(isZoomed) {
-    document.documentElement.classList.toggle("zoom", isZoomed);
-    localStorage.setItem("zoom", isZoomed ? "true" : "false");
+  const ZOOM_TEXTS = {
+    zoomIn: "Verkleinern",
+    zoomOut: "Vergrößern",
+  };
 
-    const zoomInText = "Verkleinern";
-    const zoomOutText = "Vergrößern";
-    const zoomInAria = "Verkleinern";
-    const zoomOutAria = "Vergrößern";
+  const isZoomed = () => document.documentElement.classList.contains("zoom");
 
-    // Update all zoom toggle buttons
+  const updateButtons = (zoomed) => {
+    const text = zoomed ? ZOOM_TEXTS.zoomIn : ZOOM_TEXTS.zoomOut;
+
     document.querySelectorAll("[data-zoom-toggle]").forEach((button) => {
-      button.setAttribute("aria-checked", isZoomed ? "true" : "false");
-      button.setAttribute("aria-label", isZoomed ? zoomInAria : zoomOutAria);
+      button.setAttribute("aria-checked", zoomed.toString());
+      button.setAttribute("aria-label", text);
 
-      // Toggle icons and text
-      const zoomInIcon = button.querySelector(".zoomIn");
-      const zoomOutIcon = button.querySelector(".zoomOut");
+      button.querySelector(".zoomIn")?.classList.toggle("hidden", !zoomed);
+      button.querySelector(".zoomOut")?.classList.toggle("hidden", zoomed);
 
-      if (zoomInIcon) zoomInIcon.classList.toggle("hidden", isZoomed);
-      if (zoomOutIcon) zoomOutIcon.classList.toggle("hidden", !isZoomed);
-
-      // Update text content
-      const zoomText = button.querySelector(".zoomText");
-      if (zoomText) zoomText.textContent = isZoomed ? zoomInText : zoomOutText;
+      const textEl = button.querySelector(".zoomText");
+      if (textEl) textEl.textContent = text;
     });
-  }
+  };
 
-  function initializeZoom() {
-    const savedZoom = localStorage.getItem("zoom");
-    const isZoomed = savedZoom === "true";
-    updateZoom(isZoomed);
-  }
+  const setZoom = (shouldZoom) => {
+    document.documentElement.classList.toggle("zoom", shouldZoom);
+    localStorage.setItem("zoom", shouldZoom.toString());
+    updateButtons(shouldZoom);
+  };
 
-  initializeZoom();
+  const toggleZoom = () => setZoom(!isZoomed());
 
-  // Attach event listener to all zoom toggles
+  setZoom(localStorage.getItem("zoom") === "true");
+
   document.querySelectorAll("[data-zoom-toggle]").forEach((button) => {
-    button.addEventListener("click", () => {
-      const isZoomed = document.documentElement.classList.contains("zoom");
-      updateZoom(!isZoomed);
-    });
+    button.addEventListener("click", () => toggleZoom);
   });
 
-  // Keyboard shortcut: Alt + Z for zoom toggle
-  document.addEventListener("keydown", (event) => {
-    if (event.altKey && event.key === "z") {
-      const isZoomed = document.documentElement.classList.contains("zoom");
-      updateZoom(!isZoomed);
-      event.preventDefault();
+  document.addEventListener("keydown", (e) => {
+    if (e.altKey && e.key === "z") {
+      toggleZoom();
+      e.preventDefault();
     }
   });
 </script>

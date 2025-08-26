@@ -199,57 +199,57 @@ code .line::before {
 :root.zoom {
     --zoom-factor: 1.125;
 
-    --a11ytip-text-size: calc(1rem * var(--zoom-factor));
+    --a11ytip-text-size: calc(1rem * var(--zoom-factor, 1));
 
     .prose-base {
-        font-size: calc(1rem * var(--zoom-factor));
-        line-height: calc((1.75 / 1.25) * var(--zoom-factor));
+        font-size: calc(1rem * var(--zoom-factor, 1));
+        line-height: calc((1.75 / 1.25) * var(--zoom-factor, 1));
     }
 
     svg {
-        transform: scale(var(--zoom-factor));
+        transform: scale(var(--zoom-factor, 1));
     }
 }
 
 @theme {
-    --text-xs: calc(0.75rem * var(--zoom-factor));
-    --text-xs--line-height: calc((1 / 0.75) * var(--zoom-factor));
+    --text-xs: calc(0.75rem * var(--zoom-factor, 1));
+    --text-xs--line-height: calc((1 / 0.75) * var(--zoom-factor, 1));
 
-    --text-sm: calc(0.875rem * var(--zoom-factor));
-    --text-sm--line-height: calc((1.25 / 0.875) * var(--zoom-factor));
+    --text-sm: calc(0.875rem * var(--zoom-factor, 1));
+    --text-sm--line-height: calc((1.25 / 0.875) * var(--zoom-factor, 1));
 
-    --text-base: calc(1rem * var(--zoom-factor));
-    --text-base--line-height: calc((1.5 / 1) * var(--zoom-factor));
+    --text-base: calc(1rem * var(--zoom-factor, 1));
+    --text-base--line-height: calc((1.5 / 1) * var(--zoom-factor, 1));
 
-    --text-lg: calc(1.125rem * var(--zoom-factor));
-    --text-lg--line-height: calc((1.75 / 1.125) * var(--zoom-factor));
+    --text-lg: calc(1.125rem * var(--zoom-factor, 1));
+    --text-lg--line-height: calc((1.75 / 1.125) * var(--zoom-factor, 1));
 
-    --text-xl: calc(1.25rem * var(--zoom-factor));
-    --text-xl--line-height: calc((1.75 / 1.25) * var(--zoom-factor));
+    --text-xl: calc(1.25rem * var(--zoom-factor, 1));
+    --text-xl--line-height: calc((1.75 / 1.25) * var(--zoom-factor, 1));
 
-    --text-2xl: calc(1.5rem * var(--zoom-factor));
-    --text-2xl--line-height: calc((2 / 1.5) * var(--zoom-factor));
+    --text-2xl: calc(1.5rem * var(--zoom-factor, 1));
+    --text-2xl--line-height: calc((2 / 1.5) * var(--zoom-factor, 1));
 
-    --text-3xl: calc(1.875rem * var(--zoom-factor));
-    --text-3xl--line-height: calc((2.25 / 1.875) * var(--zoom-factor));
+    --text-3xl: calc(1.875rem * var(--zoom-factor, 1));
+    --text-3xl--line-height: calc((2.25 / 1.875) * var(--zoom-factor, 1));
 
-    --text-4xl: calc(2.25rem * var(--zoom-factor));
-    --text-4xl--line-height: calc((2.5 / 2.25) * var(--zoom-factor));
+    --text-4xl: calc(2.25rem * var(--zoom-factor, 1));
+    --text-4xl--line-height: calc((2.5 / 2.25) * var(--zoom-factor, 1));
 
-    --text-5xl: calc(3rem * var(--zoom-factor));
-    --text-5xl--line-height: calc(1 * var(--zoom-factor));
+    --text-5xl: calc(3rem * var(--zoom-factor, 1));
+    --text-5xl--line-height: calc(1 * var(--zoom-factor, 1));
 
-    --text-6xl: calc(3.75rem * var(--zoom-factor));
-    --text-6xl--line-height: calc(1 * var(--zoom-factor));
+    --text-6xl: calc(3.75rem * var(--zoom-factor, 1));
+    --text-6xl--line-height: calc(1 * var(--zoom-factor, 1));
 
-    --text-7xl: calc(4.5rem * var(--zoom-factor));
-    --text-7xl--line-height: calc(1 * var(--zoom-factor));
+    --text-7xl: calc(4.5rem * var(--zoom-factor, 1));
+    --text-7xl--line-height: calc(1 * var(--zoom-factor, 1));
 
-    --text-8xl: calc(6rem * var(--zoom-factor));
-    --text-8xl--line-height: calc(1 * var(--zoom-factor));
+    --text-8xl: calc(6rem * var(--zoom-factor, 1));
+    --text-8xl--line-height: calc(1 * var(--zoom-factor, 1));
 
-    --text-9xl: calc(8rem * var(--zoom-factor));
-    --text-9xl--line-height: calc(1 * var(--zoom-factor));
+    --text-9xl: calc(8rem * var(--zoom-factor, 1));
+    --text-9xl--line-height: calc(1 * var(--zoom-factor, 1));
 }
 
 @custom-variant scrolled (&:where(.scrolled, .scrolled *));
