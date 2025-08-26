@@ -6,11 +6,23 @@ pageTitle: "CARY Medical | Medizinische Terminplanungs-Webanwendung | Arthur Ers
 images:
   [
     { src: "src/images/projects/caryMedical/caryMedical-cover.webp", alt: "CARY Medical App Coverbild" },
-    { src: "src/images/projects/caryMedical/caryMedical-01.webp", alt: "Sprechstunden-Übersicht" },
-    { src: "src/images/projects/caryMedical/caryMedical-02.webp", alt: "Sprechstunde bearbeiten" },
-    { src: "src/images/projects/caryMedical/caryMedical-03.webp", alt: "Arzt/Therapeut bearbeiten" },
-    { src: "src/images/projects/caryMedical/caryMedical-04.webp", alt: "Kunde bearbeiten" },
-    { src: "src/images/projects/caryMedical/caryMedical-05.webp", alt: "Benutzer bearbeiten" },
+    { src: "src/images/projects/caryMedical/0-login.webp", alt: "Lorem" },
+    { src: "src/images/projects/caryMedical/1-consultations-sideClose.webp", alt: "consultations sidepannels closed" },
+    { src: "src/images/projects/caryMedical/2-consultations-sideOpen.webp", alt: "consultations sidespannels open" },
+    { src: "src/images/projects/caryMedical/3-consultations-infoBarOpen.webp", alt: "consultations info bar open" },
+    {
+      src: "src/images/projects/caryMedical/4-consultations-weekfilterOpen.webp",
+      alt: "consultations week filer open",
+    },
+    {
+      src: "src/images/projects/caryMedical/5-consultations-editConsultation.webp",
+      alt: "consultations sidespannels open",
+    },
+    { src: "src/images/projects/caryMedical/6-consultations-filterOpen.webp", alt: "consultations filer open" },
+    { src: "src/images/projects/caryMedical/7-consultations-filteractive.webp", alt: "consultations filer active" },
+    { src: "src/images/projects/caryMedical/8-doctors.webp", alt: "doctors edit" },
+    { src: "src/images/projects/caryMedical/9-clients.webp", alt: "clients edit" },
+    { src: "src/images/projects/caryMedical/10-users.webp", alt: "users edit" },
   ]
 tags: ["Professionelles Projekt", "Angular", "UX (User Experience)", "UI (User Interface)", "Frontend-Entwicklung"]
 

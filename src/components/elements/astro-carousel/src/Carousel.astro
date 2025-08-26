@@ -68,7 +68,7 @@ const { images = [], color = "#333" } = Astro.props;
       display: flex;
       align-items: center;
       justify-content: center;
-      height: calc(100% - 48px * 2);
+      height: calc(100% - 2rem);
 
       @media screen and (max-width: 768px) {
         width: calc(100vw - 2rem);
@@ -165,19 +165,8 @@ const { images = [], color = "#333" } = Astro.props;
                 id="prevLink"
                 data-a11ytip-right
               >
-                <svg
-                  class="carousel__svg"
-                  id="prev"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M15 19l-7-7 7-7"
-                  />
+                <svg class="carousel__svg" id="prev" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
                 </svg>
               </a>
             ) : (
@@ -199,19 +188,8 @@ const { images = [], color = "#333" } = Astro.props;
                 id="nextLink"
                 data-a11ytip-left
               >
-                <svg
-                  class="carousel__svg"
-                  id="next"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M9 5l7 7-7 7"
-                  />
+                <svg class="carousel__svg" id="next" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
                 </svg>
               </a>
             ) : (
@@ -224,7 +202,7 @@ const { images = [], color = "#333" } = Astro.props;
             images.length > 1 && (
               <div
                 id="circle-navigation"
-                class="absolute bottom-14 z-300 flex w-full items-center justify-center gap-4 p-3 md:gap-4"
+                class="absolute bottom-6 z-300 flex w-full items-center justify-center gap-4 p-3 md:gap-4"
               >
                 {images.map((_, i) => (
                   <a
