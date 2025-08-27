@@ -31,7 +31,6 @@ const onClass = `${toggleSelector}:flex`;
 <div {id} class:list={["w-full", { "md:w-fit": !isSidenav }]}>
   {isSidenav ? (
     <!-- Sidenav-Buttons -->
-    <div class="flex flex-col w-full space-y-2">
       <Button
         {...dataAttr}
         size="sm"
@@ -60,10 +59,8 @@ const onClass = `${toggleSelector}:flex`;
         <IconOn slot="left-icon" size="base" />
         <span class="ml-2">{textOn}</span>
       </Button>
-    </div>
   ) : (
     <!-- MainNav-Buttons -->
-    <div>
       <Button
         {...dataAttr}
         iconOnly
@@ -92,6 +89,5 @@ const onClass = `${toggleSelector}:flex`;
       >
         <IconOn slot="icon" size="base" />
       </Button>
-    </div>
   )}
 </div>

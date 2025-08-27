@@ -42,13 +42,7 @@ const textStyles: Record<string, string> = {
   textXS: "text-xs xl:text-sm 2xl:text-base",
 };
 
-const {
-  tag: Tag = "p",
-  variant = "textBase",
-  class: className = "",
-  isPrimary = false,
-  ...rest
-} = Astro.props;
+const { tag: Tag = "p", variant = "textBase", class: className = "", isPrimary = false, ...rest } = Astro.props;
 
 const baseClasses = textStyles[variant] || textStyles.textBase;
 
@@ -64,8 +58,7 @@ const h6Styles = Tag === "h6" && "text-sm xl:text-base 2xl:text-lg";
 
 // Combine all heading styles
 const headingStyles =
-  variant === "textBase" &&
-  `${h1Styles} ${h2Styles} ${h3Styles} ${h4Styles} ${h5Styles} ${h6Styles}`.trim();
+  variant === "textBase" && `${h1Styles} ${h2Styles} ${h3Styles} ${h4Styles} ${h5Styles} ${h6Styles}`.trim();
 
 // Base text colors für light mode
 const headingLightColor = !isPrimary && isHeading ? "text-black" : "";
@@ -92,7 +85,7 @@ const textColorStyles = [
 const headingTextStyles = isHeading ? "font-medium" : "";
 
 const combinedClasses =
-  `${textColorStyles} ${baseClasses} ${headingStyles} ${headingTextStyles} ${className}`.trim();
+  `${textColorStyles} ${baseClasses} ${headingStyles} ${headingTextStyles} ${className} transition-colors duration-300`.trim();
 ---
 
 <Tag class={combinedClasses} {...rest}>

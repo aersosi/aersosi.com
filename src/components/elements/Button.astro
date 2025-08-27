@@ -1,13 +1,5 @@
 ---
-const {
-  variant,
-  size,
-  iconOnly = false,
-  gap,
-  isLink = false,
-  class: className,
-  ...rest
-} = Astro.props;
+const { variant, size, iconOnly = false, gap, isLink = false, class: className, ...rest } = Astro.props;
 const defaultClass = [
   // light
   "text-white",
@@ -141,7 +133,7 @@ const baseClass = [
   "transition-all",
   "rounded-md",
   "items-center",
-  "duration-200",
+  "duration-300",
 
   "focus-visible:ring-2",
   "focus-visible:ring-offset-2",
@@ -152,13 +144,7 @@ const baseClass = [
   isLink ? (
     <a
       href={rest.href}
-      class:list={[
-        ...baseClass,
-        ...(variantClass[variant] || []),
-        ...sizeClass,
-        ...gapClass,
-        ...additionalClasses,
-      ]}
+      class:list={[...baseClass, ...(variantClass[variant] || []), ...sizeClass, ...gapClass, ...additionalClasses]}
       {...rest}
     >
       {iconOnly ? (
@@ -173,13 +159,7 @@ const baseClass = [
     </a>
   ) : (
     <button
-      class:list={[
-        ...baseClass,
-        ...(variantClass[variant] || []),
-        ...sizeClass,
-        ...gapClass,
-        ...additionalClasses,
-      ]}
+      class:list={[...baseClass, ...(variantClass[variant] || []), ...sizeClass, ...gapClass, ...additionalClasses]}
       {...rest}
     >
       {iconOnly ? (
