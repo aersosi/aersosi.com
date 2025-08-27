@@ -1,0 +1,93 @@
+---
+import Button from "./Button.astro";
+
+const {
+  id,
+  toggleSelector,
+  ariaLabelOn,
+  ariaLabelOff,
+  textOn,
+  textOff,
+  IconOn,
+  IconOff,
+  isSidenav = false,
+  class: className,
+  ...rest
+} = Astro.props;
+
+// Erstellt dynamisch den Namen des data-Attributs, z.B. "data-theme-toggle"
+const dataAttributeName = `data-${id.replace('-toggle', '')}-toggle`;
+const dataAttr = { [dataAttributeName]: true };
+
+// Erstellt dynamisch die Klassen für das Umschalten der Sichtbarkeit
+const offClass = `${toggleSelector}:hidden`;
+const onClass = `${toggleSelector}:flex`;
+---
+
+<div {id} class:list={["w-full", { "md:w-fit": !isSidenav }]}>
+  {isSidenav ? (
+    <!-- Sidenav-Buttons -->
+    <div class="flex flex-col w-full space-y-2">
+      <Button
+        {...dataAttr}
+        size="sm"
+        variant="outline"
+        role="switch"
+        aria-checked="false"
+        aria-label={ariaLabelOff}
+        data-a11ytip-bottom
+        class:list={[className, "w-full", offClass]}
+        {...rest}
+      >
+        <IconOff slot="left-icon" size="base" />
+        <span class="ml-2">{textOff}</span>
+      </Button>
+      <Button
+        {...dataAttr}
+        size="sm"
+        variant="outline"
+        role="switch"
+        aria-checked="true"
+        aria-label={ariaLabelOn}
+        data-a11ytip-bottom
+        class:list={[className, "w-full hidden", onClass]}
+        {...rest}
+      >
+        <IconOn slot="left-icon" size="base" />
+        <span class="ml-2">{textOn}</span>
+      </Button>
+    </div>
+  ) : (
+    <!-- MainNav-Buttons -->
+    <div>
+      <Button
+        {...dataAttr}
+        iconOnly
+        size="sm"
+        variant="default"
+        role="switch"
+        aria-checked="false"
+        aria-label={ariaLabelOff}
+        data-a11ytip-bottom
+        class:list={[className, offClass]}
+        {...rest}
+      >
+        <IconOff slot="icon" size="base" />
+      </Button>
+      <Button
+        {...dataAttr}
+        iconOnly
+        size="sm"
+        variant="default"
+        role="switch"
+        aria-checked="true"
+        aria-label={ariaLabelOn}
+        data-a11ytip-bottom
+        class:list={[className, "hidden", onClass]}
+        {...rest}
+      >
+        <IconOn slot="icon" size="base" />
+      </Button>
+    </div>
+  )}
+</div>

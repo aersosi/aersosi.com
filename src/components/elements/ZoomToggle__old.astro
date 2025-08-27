@@ -1,0 +1,75 @@
+---
+import Button from "./Button.astro";
+import ZoomIn from "@/lib/icons/ZoomIn.astro";
+import ZoomOut from "@/lib/icons/ZoomOut.astro";
+
+const { class: className, isSidenav = false, ...rest } = Astro.props;
+---
+
+<div id="zoom-toggle" class:list={["w-full", { "md:w-fit": !isSidenav }]}>
+  {isSidenav ? (
+    <!-- Sidenav Buttons -->
+    <div class="flex flex-col w-full space-y-2">
+      <Button
+        data-zoom-toggle
+        size="sm"
+        variant="outline"
+        role="switch"
+        aria-checked="false"
+        aria-label="Vergrößern"
+        data-a11ytip-bottom
+        class:list={[className, "w-full zoom:hidden"]}
+        {...rest}
+      >
+        <ZoomIn slot="left-icon" size="base" />
+        <span class="ml-2">Vergrößern</span>
+      </Button>
+      <Button
+        data-zoom-toggle
+        size="sm"
+        variant="outline"
+        role="switch"
+        aria-checked="true"
+        aria-label="Verkleinern"
+        data-a11ytip-bottom
+        class:list={[className, "w-full zoom:flex hidden"]}
+        {...rest}
+      >
+        <ZoomOut slot="left-icon" size="base" />
+        <span class="ml-2">Verkleinern</span>
+      </Button>
+    </div>
+  ) : (
+    <!-- MainNav Buttons -->
+    <div>
+      <Button
+        data-zoom-toggle
+        iconOnly
+        size="sm"
+        variant="default"
+        role="switch"
+        aria-checked="false"
+        aria-label="Vergrößern"
+        data-a11ytip-bottom
+        class:list={[className, "zoom:hidden"]}
+        {...rest}
+      >
+        <ZoomIn slot="icon" size="base" />
+      </Button>
+      <Button
+        data-zoom-toggle
+        iconOnly
+        size="sm"
+        variant="default"
+        role="switch"
+        aria-checked="true"
+        aria-label="Verkleinern"
+        data-a11ytip-bottom
+        class:list={[className, "zoom:flex hidden"]}
+        {...rest}
+      >
+        <ZoomOut slot="icon" size="base" />
+      </Button>
+    </div>
+  )}
+</div>
