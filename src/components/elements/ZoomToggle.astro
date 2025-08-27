@@ -1,72 +1,18 @@
 ---
-import Button from "./Button.astro";
+import ToggleButton from "./ToggleButton.astro";
 import ZoomIn from "@/lib/icons/ZoomIn.astro";
 import ZoomOut from "@/lib/icons/ZoomOut.astro";
-const { class: className = "", ...rest } = Astro.props;
+const { isSidenav } = Astro.props;
 ---
 
-<div id="zoom-toggle" class="w-full md:w-fit">
-  <!--Button MainNav-->
-  <div class="hidden md:flex">
-    <Button
-      data-zoom-toggle
-      iconOnly
-      size="sm"
-      variant="default"
-      role="switch"
-      aria-checked="false"
-      aria-label="Vergrößern"
-      data-a11ytip-bottom
-      class={`${className} zoom:hidden`}
-      {...rest}
-    >
-      <ZoomIn slot="icon" size="base" />
-    </Button>
-    <Button
-      data-zoom-toggle
-      iconOnly
-      size="sm"
-      variant="default"
-      role="switch"
-      aria-checked="true"
-      aria-label="Verkleinern"
-      data-a11ytip-bottom
-      class={`${className} zoom:flex hidden`}
-      {...rest}
-    >
-      <ZoomOut slot="icon" size="base" />
-    </Button>
-  </div>
-
-  <!--Button Sidenav-->
-  <div class="md:hidden">
-    <Button
-      data-zoom-toggle
-      size="sm"
-      variant="outline"
-      role="switch"
-      aria-checked="false"
-      aria-label="Vergrößern"
-      data-a11ytip-bottom
-      class={`${className} w-full zoom:hidden`}
-      {...rest}
-    >
-      <ZoomIn slot="left-icon" size="base" />
-      <span class="ml-2">Vergrößern</span>
-    </Button>
-    <Button
-      data-zoom-toggle
-      size="sm"
-      variant="outline"
-      role="switch"
-      aria-checked="true"
-      aria-label="Verkleinern"
-      data-a11ytip-bottom
-      class={`${className} w-full zoom:flex hidden`}
-      {...rest}
-    >
-      <ZoomOut slot="left-icon" size="base" />
-      <span class="ml-2">Verkleinern</span>
-    </Button>
-  </div>
-</div>
+<ToggleButton
+  id="zoom-toggle"
+  toggleSelector="zoom"
+  ariaLabelOn="Verkleinern"
+  ariaLabelOff="Vergrößern"
+  textOn="Verkleinern"
+  textOff="Vergrößern"
+  IconOn={ZoomOut}
+  IconOff={ZoomIn}
+  isSidenav={isSidenav}
+/>
