@@ -1,0 +1,75 @@
+---
+import Button from "../Button.astro";
+import Contrast from "@/lib/icons/Contrast.astro";
+
+// Destructure props and set a default for isSidenav
+const { class: className, isSidenav = false, ...rest } = Astro.props;
+---
+
+<div id="theme-toggle" class:list={["w-full", { "md:w-fit": !isSidenav }]}>
+  {isSidenav ? (
+    <!-- Sidenav Buttons -->
+    <div class="flex flex-col w-full space-y-2">
+      <Button
+        data-theme-toggle
+        size="sm"
+        variant="outline"
+        role="switch"
+        aria-checked="false"
+        aria-label="Dunkler Modus"
+        data-a11ytip-bottom
+        class:list={[className, "w-full dark:hidden"]}
+        {...rest}
+      >
+        <Contrast slot="left-icon" size="base" />
+        <span class="ml-2">Dunkel</span>
+      </Button>
+      <Button
+        data-theme-toggle
+        size="sm"
+        variant="outlinePrimary"
+        role="switch"
+        aria-checked="true"
+        aria-label="Heller Modus"
+        data-a11ytip-bottom
+        class:list={[className, "w-full dark:flex hidden"]}
+        {...rest}
+      >
+        <Contrast slot="left-icon" size="base" />
+        <span class="ml-2">Hell</span>
+      </Button>
+    </div>
+  ) : (
+    <!-- MainNav Buttons -->
+    <div>
+      <Button
+        data-theme-toggle
+        iconOnly
+        size="sm"
+        variant="outline"
+        role="switch"
+        aria-checked="false"
+        aria-label="Dunkler Modus"
+        data-a11ytip-bottom
+        class:list={[className, "dark:hidden"]}
+        {...rest}
+      >
+        <Contrast slot="icon" size="base" />
+      </Button>
+      <Button
+        data-theme-toggle
+        iconOnly
+        size="sm"
+        variant="outlinePrimary"
+        role="switch"
+        aria-checked="true"
+        aria-label="Heller Modus"
+        data-a11ytip-bottom
+        class:list={[className, "dark:flex hidden"]}
+        {...rest}
+      >
+        <Contrast slot="icon" size="base" />
+      </Button>
+    </div>
+  )}
+</div>
