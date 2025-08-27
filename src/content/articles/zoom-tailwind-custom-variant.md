@@ -3,10 +3,6 @@ pubDate: 2025-08-26
 viewerTitle: "Website-Zoom mit Tailwind"
 pageDescription: "Eine einfache Zoom-Funktion für bessere Accessibility durch Tailwind @custom-variant"
 pageTitle: "Website-Zoom mit Tailwind | Arthur Ersosi"
-online:
-  name: "GitHub"
-  href: "https://github.com/aersosi/a11ytip"
-  ariaLabel: "a11ytip GitHub Repository"
 images:
   [{ src: "src/images/articles/zoom-tailwind-cover.webp", alt: "Website Zoom Feature mit Tailwind Custom Variants" }]
 tags: ["Tailwind CSS", "A11y", "CSS", "JavaScript", "Zoom"]
@@ -19,7 +15,7 @@ Menschen das Internet, für die eine größere Schrift hilfreich ist. Die Browse
 Browsern nicht vorhanden. Außerdem haben Entwickler keine Kontrolle darüber, was und wie vergrößert wird. Eine
 integrierte Website-Zoom-Funktion ermöglicht die volle Kontrolle über das Nutzererlebnis.
 
-## Die Lösung: Tailwind Custom Variants
+## Die Lösung: Tailwind @custom-variant
 
 Mehr Accessibility durch Zoom-Funktion. Elegant und skalierbar realisiert mit Tailwind CSS Custom Variants.
 

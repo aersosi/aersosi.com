@@ -38,9 +38,9 @@ const relatedPosts = allPosts.filter(
 
           <div class="grid gap-8">
             <div class="grid gap-2">
-              <Text tag="h2" variant="textBase"> Online</Text>
               {
                 frontmatter.online && (
+                  <Text tag="h2" variant="textBase"> Online</Text>
                   <div class="flex gap-6">
                     {frontmatter.online && (
                       <Link

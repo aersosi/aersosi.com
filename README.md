@@ -80,15 +80,17 @@ performance. The project also uses:
 
 ## Features
 
-**Light/Dark Theme**
+**Light/Dark Mode**
 
-- Light/Dark theme can be triggered via navigation button or the sidenav button on mobile
-- Light/Dark theme can also be triggered using the keyboard shortcut Option/Alt + D
+- Allows users to switch between light and dark mode
+- Light/Dark Mode can be triggered via navigation button or sidenav button on mobile
+- Light/Dark Mode can also be triggered using the keyboard shortcut Shift + Control + D
 
 **Content Zoom**
 
-- Global content zoom functionality accessible via navigation button
-- Allows users to increase/decrease text and content size for better readability
+- Allows users to increase/decrease text and content size
+- Content zoom can be triggered via navigation button or sidenav button on mobile
+- Content zoom can also be triggered using the keyboard shortcut Shift + Control + Z
 
 **Image Slideshow & Zoom**
 
