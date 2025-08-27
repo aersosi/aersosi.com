@@ -5,32 +5,67 @@ const { class: className = "", ...rest } = Astro.props;
 ---
 
 <div id="theme-toggle" class="w-full md:w-fit">
-  <Button
-    iconOnly
-    size="sm"
-    variant="default"
-    role="switch"
-    aria-checked="false"
-    data-theme-toggle
-    aria-label="Dunkler Modus"
-    data-a11ytip-bottom
-    class={`${className} hidden md:flex`}
-    {...rest}
-  >
-    <Contrast slot="icon" size="base" />
-  </Button>
+  <!--Button MainNav-->
+  <div class="hidden md:flex">
+    <Button
+      data-theme-toggle
+      iconOnly
+      size="sm"
+      variant="default"
+      role="switch"
+      aria-checked="false"
+      aria-label="Dunkler Modus"
+      data-a11ytip-bottom
+      class={`${className} dark:hidden`}
+      {...rest}
+    >
+      <Contrast slot="icon" size="base" />
+    </Button>
+    <Button
+      data-theme-toggle
+      iconOnly
+      size="sm"
+      variant="default"
+      role="switch"
+      aria-checked="true"
+      aria-label="Heller Modus"
+      data-a11ytip-bottom
+      class={`${className} dark:flex hidden`}
+      {...rest}
+    >
+      <Contrast slot="icon" size="base" />
+    </Button>
+  </div>
 
-  <Button
-    size="sm"
-    variant="outline"
-    role="switch"
-    aria-checked="false"
-    data-theme-toggle
-    aria-label="Dunkler Modus"
-    class={`${className} md:hidden w-full`}
-    {...rest}
-  >
-    <Contrast slot="left-icon" size="base" />
-    <div class="themeText ml-2">Dunkler Modus</div>
-  </Button>
+  <!--Button Sidenav-->
+  <div class="md:hidden">
+    <Button
+      data-theme-toggle
+      size="sm"
+      variant="outline"
+      role="switch"
+      aria-checked="false"
+      aria-label="Dunkler Modus"
+      data-a11ytip-bottom
+      class={`${className} w-full dark:hidden`}
+      {...rest}
+    >
+      <Contrast slot="left-icon" size="base" />
+      <span class="ml-2">Dunkel</span>
+    </Button>
+    <Button
+      data-theme-toggle
+      size="sm"
+      variant="outline"
+      role="switch"
+      aria-checked="true"
+      aria-label="Heller Modus"
+      data-a11ytip-bottom
+      class={`${className} w-full dark:flex hidden`}
+      {...rest}
+    >
+      <Contrast slot="left-icon" size="base" />
+      <span class="ml-2">Hell</span>
+    </Button>
+  </div>
 </div>

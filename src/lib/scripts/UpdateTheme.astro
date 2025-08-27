@@ -1,29 +1,14 @@
 <script>
   function updateTheme(isDark) {
     document.documentElement.classList.toggle("dark", isDark);
-    document.documentElement.classList.toggle("light", !isDark);
     localStorage.setItem("theme", isDark ? "dark" : "light");
-
-    const darkText = "Dunkel";
-    const lightText = "Hell";
-    const darkAria = "Dunkler Modus";
-    const lightAria = "Heller Modus";
-
-    // Update all theme toggles
-    document.querySelectorAll("[data-theme-toggle]").forEach((button) => {
-      button.setAttribute("aria-checked", isDark ? "true" : "false");
-      button.setAttribute("aria-label", isDark ? darkAria : lightAria);
-
-      // Toggle text
-      const themeText = button.querySelector(".themeText");
-      if (themeText) themeText.textContent = isDark ? darkText : lightText;
-    });
   }
 
   function initializeTheme() {
     const savedTheme = localStorage.getItem("theme");
     const systemPrefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-    const isDark = savedTheme ? savedTheme === "dark" : systemPrefersDark;
+
+    const isDark = savedTheme !== null ? savedTheme === "dark" : systemPrefersDark;
     updateTheme(isDark);
   }
 
@@ -37,12 +22,12 @@
     });
   });
 
-  // Keyboard shortcut: Option/Alt + D for zoom toggle
+  // Keyboard shortcut: Shift + Control + D for zoom toggle
   document.addEventListener("keydown", (event) => {
-    if (event.altKey && event.keyCode === 68) {
+    if (event.shiftKey && event.ctrlKey && event.key === "D") {
       const isDark = document.documentElement.classList.contains("dark");
       updateTheme(!isDark);
-      event.preventDefault(); // Prevent default browser behavior
+      event.preventDefault();
     }
   });
 </script>

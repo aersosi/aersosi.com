@@ -39,7 +39,7 @@ const { class: className = "", ...rest } = Astro.props;
   </div>
 
   <!--Button Sidenav-->
-  <div class="w-full md:hidden">
+  <div class="md:hidden">
     <Button
       data-zoom-toggle
       size="sm"
@@ -48,7 +48,7 @@ const { class: className = "", ...rest } = Astro.props;
       aria-checked="false"
       aria-label="Vergrößern"
       data-a11ytip-bottom
-      class={`${className} zoom:hidden`}
+      class={`${className} w-full zoom:hidden`}
       {...rest}
     >
       <ZoomIn slot="left-icon" size="base" />
@@ -62,7 +62,7 @@ const { class: className = "", ...rest } = Astro.props;
       aria-checked="true"
       aria-label="Verkleinern"
       data-a11ytip-bottom
-      class={`${className} zoom:flex hidden`}
+      class={`${className} w-full zoom:flex hidden`}
       {...rest}
     >
       <ZoomOut slot="left-icon" size="base" />
