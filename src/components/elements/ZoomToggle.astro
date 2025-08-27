@@ -6,35 +6,67 @@ const { class: className = "", ...rest } = Astro.props;
 ---
 
 <div id="zoom-toggle" class="w-full md:w-fit">
-  <Button
-    iconOnly
-    size="sm"
-    variant="default"
-    role="switch"
-    aria-checked="false"
-    data-zoom-toggle
-    aria-label="Zoom 125%"
-    data-a11ytip-bottom
-    class={`${className} hidden md:flex`}
-    {...rest}
-  >
-    <ZoomIn class="zoomIn" slot="icon" size="base" />
-    <ZoomOut class="zoomOut hidden" slot="icon" size="base" />
-  </Button>
+  <!--Button MainNav-->
+  <div class="hidden md:flex">
+    <Button
+      data-zoom-toggle
+      iconOnly
+      size="sm"
+      variant="default"
+      role="switch"
+      aria-checked="false"
+      aria-label="Vergrößern"
+      data-a11ytip-bottom
+      class={`${className} zoom:hidden`}
+      {...rest}
+    >
+      <ZoomIn slot="icon" size="base" />
+    </Button>
+    <Button
+      data-zoom-toggle
+      iconOnly
+      size="sm"
+      variant="default"
+      role="switch"
+      aria-checked="true"
+      aria-label="Verkleinern"
+      data-a11ytip-bottom
+      class={`${className} zoom:flex hidden`}
+      {...rest}
+    >
+      <ZoomOut slot="icon" size="base" />
+    </Button>
+  </div>
 
-  <Button
-    size="sm"
-    variant="outline"
-    role="switch"
-    aria-checked="false"
-    data-zoom-toggle
-    aria-label="Zoom 125%"
-    class={`${className} md:hidden w-full`}
-    {...rest}
-  >
-    <ZoomIn class="zoomIn" slot="left-icon" size="base" />
-    <ZoomOut class="zoomOut hidden" slot="left-icon" size="base" />
-
-    <div class="zoomText ml-2">100%</div>
-  </Button>
+  <!--Button Sidenav-->
+  <div class="w-full md:hidden">
+    <Button
+      data-zoom-toggle
+      size="sm"
+      variant="outline"
+      role="switch"
+      aria-checked="false"
+      aria-label="Vergrößern"
+      data-a11ytip-bottom
+      class={`${className} zoom:hidden`}
+      {...rest}
+    >
+      <ZoomIn slot="left-icon" size="base" />
+      <span class="ml-2">Vergrößern</span>
+    </Button>
+    <Button
+      data-zoom-toggle
+      size="sm"
+      variant="outline"
+      role="switch"
+      aria-checked="true"
+      aria-label="Verkleinern"
+      data-a11ytip-bottom
+      class={`${className} zoom:flex hidden`}
+      {...rest}
+    >
+      <ZoomOut slot="left-icon" size="base" />
+      <span class="ml-2">Verkleinern</span>
+    </Button>
+  </div>
 </div>

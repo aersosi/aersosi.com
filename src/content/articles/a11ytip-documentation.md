@@ -7,7 +7,7 @@ online:
   name: "GitHub"
   href: "https://github.com/aersosi/a11ytip"
   ariaLabel: "a11ytip GitHub Repository"
-images: [{ src: "src/images/projects/a11ytip/a11ytip-cover.webp", alt: "a11ytip npm Paket Coverbild" }]
+images: [{ src: "src/images/articles/a11ytip-cover.webp", alt: "a11ytip npm Paket Coverbild" }]
 tags: ["CSS", "A11y", "Tooltip"]
 ---
 

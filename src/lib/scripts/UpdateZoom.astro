@@ -1,44 +1,31 @@
 <script>
-  const ZOOM_TEXTS = {
-    zoomIn: "Verkleinern",
-    zoomOut: "Vergrößern",
-  };
+  function updateZoom(isZoomed) {
+    document.documentElement.classList.toggle("zoom", isZoomed);
+    localStorage.setItem("zoom", isZoomed ? "true" : "false");
+  }
 
-  const isZoomed = () => document.documentElement.classList.contains("zoom");
+  function initializeZoom() {
+    const savedZoom = localStorage.getItem("zoom");
+    const isZoomed = savedZoom === "true";
+    updateZoom(isZoomed);
+  }
 
-  const updateButtons = (zoomed) => {
-    const text = zoomed ? ZOOM_TEXTS.zoomIn : ZOOM_TEXTS.zoomOut;
+  initializeZoom();
 
-    document.querySelectorAll("[data-zoom-toggle]").forEach((button) => {
-      button.setAttribute("aria-checked", zoomed.toString());
-      button.setAttribute("aria-label", text);
-
-      button.querySelector(".zoomIn")?.classList.toggle("hidden", !zoomed);
-      button.querySelector(".zoomOut")?.classList.toggle("hidden", zoomed);
-
-      const textEl = button.querySelector(".zoomText");
-      if (textEl) textEl.textContent = text;
-    });
-  };
-
-  const setZoom = (shouldZoom) => {
-    document.documentElement.classList.toggle("zoom", shouldZoom);
-    localStorage.setItem("zoom", shouldZoom.toString());
-    updateButtons(shouldZoom);
-  };
-
-  const toggleZoom = () => setZoom(!isZoomed());
-
-  setZoom(localStorage.getItem("zoom") === "true");
-
+  // Attach event listener to all zoom toggles
   document.querySelectorAll("[data-zoom-toggle]").forEach((button) => {
-    button.addEventListener("click", () => toggleZoom);
+    button.addEventListener("click", () => {
+      const isZoomed = document.documentElement.classList.contains("zoom");
+      updateZoom(!isZoomed);
+    });
   });
 
-  document.addEventListener("keydown", (e) => {
-    if (e.altKey && e.key === "z") {
-      toggleZoom();
-      e.preventDefault();
+  // Keyboard shortcut: Shift + Control + Z for zoom toggle
+  document.addEventListener("keydown", (event) => {
+    if (event.shiftKey && event.ctrlKey && event.key === "Z") {
+      const isZoomed = document.documentElement.classList.contains("zoom");
+      updateZoom(!isZoomed);
+      event.preventDefault();
     }
   });
 </script>
