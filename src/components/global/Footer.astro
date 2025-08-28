@@ -33,15 +33,12 @@ const LinkData = [
   },
 ];
 
-import { stackGrid, stackGridPadding } from "@/lib/shared/classes";
+import { stackGrid, stackGridPadding } from "@/lib/shared/abstracts";
 ---
 
 <footer>
   <Wrapper variant="standard">
-    <div
-      class:list={[...stackGridPadding]}
-      class="border-base-400 dark:border-base-600 grid gap-16 border-t"
-    >
+    <div class:list={[...stackGridPadding]} class="border-base-400 dark:border-base-600 grid gap-16 border-t">
       <nav class:list={[...stackGrid]} class="md:grid-cols-2">
         {
           LinkData.map(({ category, links, linkClass }) => (
@@ -65,8 +62,7 @@ import { stackGrid, stackGridPadding } from "@/lib/shared/classes";
           <Text id="clock" tag="p" variant="textSM" />
         </div>
         <Text tag="p" variant="textBase">
-          © Copyright <span id="copyrightYear">2025</span>, Arthur Ersosi. <br />Alle Rechte
-          vorbehalten.
+          © Copyright <span id="copyrightYear">2025</span>, Arthur Ersosi. <br />Alle Rechte vorbehalten.
         </Text>
       </div>
     </div>

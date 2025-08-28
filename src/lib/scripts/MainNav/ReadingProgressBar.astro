@@ -20,7 +20,7 @@
   const isExcluded =
     excludedExactPaths.includes(currentPath) || excludedSubPaths.some((path) => currentPath.startsWith(path));
 
-  const throttledUpdateProgress = throttle(updateReadingProgress, 50);
+  const throttledUpdateProgress = throttle(updateReadingProgress, 25);
 
   if (!isExcluded) {
     updateReadingProgress();

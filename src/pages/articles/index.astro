@@ -5,7 +5,7 @@ import Wrapper from "@/components/containers/Wrapper.astro";
 import ArticlesEntry from "@/components/entries/ArticlesEntry.astro";
 import { getCollection } from "astro:content";
 import Link from "@/components/elements/Link.astro";
-import { stackGrid, stackGridPadding } from "@/lib/shared/classes";
+import { stackGrid, stackGridPadding } from "@/lib/shared/abstracts";
 
 const allPostsUnsorted = await getCollection("articles");
 const allPosts = allPostsUnsorted.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());

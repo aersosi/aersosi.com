@@ -3,7 +3,7 @@ import Text from "@/components/elements/Text.astro";
 import Wrapper from "@/components/containers/Wrapper.astro";
 import Link from "@/components/elements/Link.astro";
 import ExternalLink from "@/lib/icons/ExternalLink.astro";
-import { stackGrid, stackGridPadding } from "@/lib/shared/classes";
+import { stackGrid, stackGridPadding } from "@/lib/shared/abstracts";
 
 const links = [
   {
@@ -48,10 +48,7 @@ const links = [
               class="group"
             >
               {link.platform}
-              <ExternalLink
-                size="base"
-                class="-mt-0.5 transition duration-300 group-hover:opacity-100 md:opacity-0"
-              />
+              <ExternalLink size="base" class="-mt-0.5 transition duration-300 group-hover:opacity-100 md:opacity-0" />
             </Link>
           ))
         }

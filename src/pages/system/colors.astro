@@ -2,7 +2,7 @@
 import BaseLayout from "@/components/layouts/BaseLayout.astro";
 import Text from "@/components/elements/Text.astro";
 import Wrapper from "@/components/containers/Wrapper.astro";
-import { stackGrid, stackGridPadding } from "@/lib/shared/classes";
+import { stackGrid, stackGridPadding } from "@/lib/shared/abstracts";
 const colors = [
   {
     name: "Primary",
@@ -66,11 +66,7 @@ const colors = [
         {
           colors.map((color) => (
             <div class:list={[...stackGrid, ...stackGridPadding]} class="border-b">
-              <Text
-                tag="p"
-                variant="textSM"
-                class="text-base-900 font-medium uppercase dark:text-white"
-              >
+              <Text tag="p" variant="textSM" class="text-base-900 font-medium uppercase dark:text-white">
                 {color.name}
               </Text>
               <div class="grid grid-cols-3 gap-2 lg:col-span-2 lg:grid-cols-4">

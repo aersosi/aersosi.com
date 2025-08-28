@@ -1,20 +1,15 @@
-<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <style>
-        .ae_bg { fill: #5361f5; }
-        .dark .ae_bg { fill: #a3c2ff; }
-        @media (prefers-color-scheme: dark) {
-        .ae_bg { fill: #a3c2ff; }
-        }
-
-        .ae_fill { fill: white; }
-        .dark .ae_fill { fill: black; }
-        @media (prefers-color-scheme: dark) {
-        .ae_fill { fill: black; }
-        }
-    </style>
-    <rect class="ae_bg" width="24" height="24" rx="2"/>
-<path class="ae_fill" d="M21.9995 10L21.9995 8.05001C21.9995 4.70869 19.2908 2.00001 15.9495 2.00001L13.833 2.00001L12.833 16L21.9995 10Z"/>
-<path class="ae_fill" d="M21.9995 22L18.333 22C15.2955 22 12.833 19.5375 12.833 16.5L12.833 16L21.9995 16L21.9995 22Z"/>
-<path class="ae_fill" d="M2 14L2 15.95C2 19.2913 4.70867 22 8.05 22L10.1665 22L11.1665 8L2 14Z"/>
-<path class="ae_fill" d="M2 2L5.66646 2C8.70403 2 11.1665 4.46243 11.1665 7.5L11.1665 8L2 7.99999L2 2Z"/>
+<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_19_228)">
+<rect width="16" height="16" rx="1.33333" fill="#5361F5"/>
+<rect width="16" height="16" rx="1.33333" fill="#5361F5"/>
+<path d="M13.333 6.93335L13.333 5.89333C13.333 4.11125 11.8883 2.66659 10.1063 2.66659L8.97745 2.66659L8.44411 10.1334L13.333 6.93335Z" fill="white"/>
+<path d="M13.333 13.3335L11.3775 13.3335C9.75744 13.3335 8.44411 12.0202 8.44411 10.4001L8.44411 10.1334L13.333 10.1334L13.333 13.3335Z" fill="white"/>
+<path d="M2.6665 9.06665L2.6665 10.1067C2.6665 11.8887 4.11117 13.3334 5.89325 13.3334L7.02206 13.3334L7.5554 5.86658L2.6665 9.06665Z" fill="white"/>
+<path d="M2.6665 2.6665L4.622 2.6665C6.24207 2.6665 7.5554 3.97983 7.5554 5.59991L7.5554 5.86658L2.6665 5.86658L2.6665 2.6665Z" fill="white"/>
+</g>
+<defs>
+<clipPath id="clip0_19_228">
+<rect width="16" height="16" rx="1.33333" fill="white"/>
+</clipPath>
+</defs>
 </svg>

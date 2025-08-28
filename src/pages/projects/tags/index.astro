@@ -4,7 +4,7 @@ import Text from "@/components/elements/Text.astro";
 import Wrapper from "@/components/containers/Wrapper.astro";
 import { getCollection } from "astro:content";
 import Link from "@/components/elements/Link.astro";
-import { stackGrid, stackGridPadding } from "@/lib/shared/classes";
+import { stackGrid, stackGridPadding } from "@/lib/shared/abstracts";
 
 const allProjects = await getCollection("projects");
 
