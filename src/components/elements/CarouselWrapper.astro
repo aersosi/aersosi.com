@@ -4,7 +4,6 @@ import { Image } from "astro:assets";
 import { Carousel } from "@/components/elements/astro-carousel";
 import Maximize2 from "@/lib/icons/Maximize2.astro";
 
-
 const { images } = Astro.props;
 const ImgSlideshowLabel = images.length === 1 ? "Bild vergrößern" : "Slideshow öffnen";
 ---
@@ -19,8 +18,8 @@ const ImgSlideshowLabel = images.length === 1 ? "Bild vergrößern" : "Slideshow
 					data-carousel-index={0}
 					aria-label={ImgSlideshowLabel}
           data-a11ytip-bottom
-					class="entry__link__overlay group !absolute inset-0 grid items-end justify-end p-4 rounded-xl">
-					<div class="flex items-center justify-center transition group-hover:scale-115 text-base-500 group-hover:text-primary-600 font-light text-lg lg:text-xl border-2  rounded-full w-10 h-10">
+					class="entry__link__overlay group !absolute inset-0 grid items-end justify-end p-4 rounded-lg md:rounded-xl">
+					<div class="flex items-center justify-center transition group-hover:scale-115 text-base-500 group-hover:text-primary-600 font-light text-lg lg:text-xl border-2 rounded-full w-10 h-10">
             <Maximize2 size="base" />
 					</div>
 				</a>
@@ -40,7 +39,7 @@ const ImgSlideshowLabel = images.length === 1 ? "Bild vergrößern" : "Slideshow
 					layout="constrained"
 					loading="eager"
 					decoding="async"
-					class="bg-secondary-100 aspect-12/6 w-full rounded-xl object-cover object-center lg:col-span-2"
+					class="bg-secondary-100 aspect-12/6 w-full rounded-lg md:rounded-xl object-cover object-center lg:col-span-2 shadow-lg"
 				/>
 
         <Text

@@ -25,7 +25,7 @@ mitgedacht.
 - **Ansprechende Optik**: Sauberes, modernes Design
 - **Theme-Unterstützung**: Light- und Dark Theme inklusive, oder einfach eigenes Theme hinzufügen
 - **CSS-first Architektur**: Minimaler JavaScript-Fußabdruck, maximale Flexibilität
-- **Keine Überentwicklung**: Einfach Tooltips, die funktionieren. Ohne Heckmeck
+- **Keine Overengineering**: Einfach Tooltips, die funktionieren. Ohne Heckmeck
 
 ---
 
@@ -43,7 +43,7 @@ npm i @aersosi/a11ytip
 @import "@aersosi/a11ytip/css";
 ```
 
-3. TypeScript (minified) importieren:
+3. JavaScript (minified) importieren:
 
 ```typescript
 import { toggleA11ytip } from "@aersosi/a11ytip/js";
@@ -155,13 +155,6 @@ erzwungen werden.
 }
 
 /* Dark Theme */
-@media (prefers-color-scheme: dark) {
-  :root:not(.light, [data-light], [data-theme="light"]) {
-    --a11ytip-text-color: black;
-    --a11ytip-bg-color: theme(color.base.100, white);
-  }
-}
-
 [data-dark],
 [data-theme="dark"],
 :root.dark {
@@ -308,8 +301,6 @@ a11ytips überschreiben können.
   aria-label="Ich bin ein freches a11ytip!"
   data-a11ytip-text="Dieser Text wird angezeigt"
   data-a11ytip-active
-
-  <!-- Styling -->
   data-a11ytip-text-size="2rem"
   data-a11ytip-text-color="hotpink"
   data-a11ytip-bg-color="#1a1a1a"
@@ -329,3 +320,5 @@ a11ytips überschreiben können.
   Hover mich
 </button>
 ```
+
+Vielen Dank und viel Freude mit a11ytip!

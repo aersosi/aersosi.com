@@ -4,8 +4,8 @@ import { type Picture } from "astro:assets";
 import Photo from "./Photo.astro";
 
 export type CarouselSlide = ComponentProps<typeof Picture> & {
-	src: string;
-	alt: string;
+  src: string;
+  alt: string;
 };
 const { width: w, height: h } = Astro.props;
 const aspectRatio = Number(w) / Number(h);
@@ -13,45 +13,26 @@ const width = aspectRatio > 1 ? "100%" : "auto";
 const height = "100%";
 ---
 
-<li class="carousel__slide" style={{ aspectRatio, width, height }}>
-	<Photo
-		{...Astro.props}
-		classWrapper="carousel__slide-photo"
-		aspectRatio={aspectRatio}
-		isCarousel={true}
-		loading="lazy"
-	/>
+<li
+  class="carousel__slide pointer-events-none absolute hidden max-w-full list-none items-center justify-center select-none"
+  style={{ aspectRatio, width, height }}
+>
+  <Photo
+    {...Astro.props}
+    classWrapper="carousel__slide-photo rounded-lg md:rounded-xl max-h-[calc(100vh-2rem)] shadow-lg [&>*]:basis-full"
+    aspectRatio={aspectRatio}
+    isCarousel={true}
+    loading="lazy"
+  />
 </li>
 
-<style lang="scss">
-	.carousel__slide {
-		position: absolute;
-		display: none;
-		justify-content: center;
-		align-items: center;
-		max-width: 100%;
-		list-style: none;
-		user-select: none;
-		pointer-events: none;
+<style>
+  .carousel__slide--visible {
+    display: flex;
+    z-index: 150;
+  }
 
-		* {
-			pointer-events: all;
-		}
-
-		&--visible {
-			display: flex;
-			z-index: 150;
-		}
-	}
-
-	:global(.carousel__slide-photo) {
-		max-height: calc(100vh - 1rem * 2);
-		box-shadow: 0 0 var(--astro-carousel-shadow-size, 1rem)
-			var(--astro-carousel-shadow-color, black);
-		border-radius: var(--astro-carousel-border-radius, 1rem);
-
-		& > * {
-			flex-basis: 100%;
-		}
-	}
+  .carousel__slide * {
+    pointer-events: all;
+  }
 </style>

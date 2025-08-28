@@ -1,10 +1,15 @@
 ---
 pubDate: 2025-08-26
-viewerTitle: "Website-Zoom mit Tailwind"
+viewerTitle: "Zoom-Feature mit Tailwind"
 pageDescription: "Eine einfache Zoom-Funktion für bessere Accessibility durch Tailwind @custom-variant"
-pageTitle: "Website-Zoom mit Tailwind | Arthur Ersosi"
+pageTitle: "Zoom-Feature mit Tailwind @custom-variant | Arthur Ersosi"
 images:
-  [{ src: "src/images/articles/zoom-tailwind-cover.webp", alt: "Website Zoom Feature mit Tailwind Custom Variants" }]
+  [
+    {
+      src: "src/images/articles/zoomCustomVariant-cover.webp",
+      alt: "Website Zoom Feature mit Tailwind @custom-variant Directive ",
+    },
+  ]
 tags: ["Tailwind CSS", "A11y", "CSS", "JavaScript", "Zoom"]
 ---
 
@@ -15,18 +20,17 @@ Menschen das Internet, für die eine größere Schrift hilfreich ist. Die Browse
 Browsern nicht vorhanden. Außerdem haben Entwickler keine Kontrolle darüber, was und wie vergrößert wird. Eine
 integrierte Website-Zoom-Funktion ermöglicht die volle Kontrolle über das Nutzererlebnis.
 
-## Die Lösung: Tailwind @custom-variant
+## Die Lösung: Tailwind @custom-variant Directive
 
 Mehr Accessibility durch Zoom-Funktion. Elegant und skalierbar realisiert mit Tailwind CSS Custom Variants.
 
-Durch `@custom-variant` in Tailwind CSS können wir eigene Präfix-Varianten definieren. Ähnlich wie `dark:` oder
-`hover:`, aber für unsere spezifischen Bedürfnisse. Das bedeutet: Wir können eine `zoom:` Variant erstellen, die nur
-dann aktiv wird, wenn der Zoom-Modus eingeschaltet ist.
+Durch die `@custom-variant` Directive in Tailwind CSS können wir eigene Präfix-Varianten definieren. Ähnlich wie `dark:`
+oder `hover:`, aber für unsere spezifischen Bedürfnisse. Das bedeutet: Wir können eine `zoom:` Variante erstellen, die
+nur dann aktiv wird, wenn der Zoom-Modus eingeschaltet ist.
 
 **Beispiel:**
 
 ```html
-<!-- Mit Tailwind: Custom Zoom Variant -->
 <div class="zoom:text-xl zoom:p-8 p-4 text-base">Text größer im Zoom-Modus</div>
 ```
 
@@ -42,13 +46,13 @@ Genau wie `dark:` für Dark Mode kannst du eine `zoom:` Variant definieren:
 @custom-variant zoom (&:where(.zoom, .zoom *));
 ```
 
-**Alternative mit Data-Attributes:**
+**Alternative mit Data-Attribut:**
 
 ```css
 @custom-variant zoom (&:where([data-zoom="true"], [data-zoom="true"] *));
 ```
 
-Diese Zeile aktiviert Tailwind-Klassen wie `zoom:text-xl` nur, wenn das HTML-Element die entsprechende Klasse oder das
+Diese Zeile aktiviert Tailwind-Klassen wie `zoom:text-xl` nur, wenn das HTML-Tag die entsprechende Klasse oder das
 Data-Attribut hat.
 
 ### 2. Tailwind Variablen
@@ -77,7 +81,7 @@ So sieht meine komplette Implementierung in CSS aus:
   }
 }
 
-/* Das Herzstück. Wir überschreiben die Tailwind Variablen ganz gezielt */
+/* Das Herzstück. Wir überschreiben die Tailwind v4 Variablen ganz gezielt */
 @theme {
   --text-xs: calc(0.75rem * var(--zoom-factor, 1));
   --text-xs--line-height: calc(1.33 * var(--zoom-factor, 1));
@@ -194,10 +198,9 @@ berechnet.
 - **2.1.1 Tastatur-Navigation** (Shift + Control + Z)
 - **4.1.2 Korrekte ARIA-Labels**
 
-### Developer Experience
+### Einfach und intuitiv nutzen
 
 ```html
-<!-- Einfach und intuitiv -->
 <article class="prose zoom:prose-lg">
   <h1 class="zoom:text-4xl text-3xl">Titel wird größer</h1>
   <p class="zoom:text-lg zoom:leading-loose text-base leading-relaxed">Text wird besser lesbar.</p>
@@ -290,6 +293,6 @@ if (!CSS.supports("--custom: property")) {
 
 ## Fazit
 
-Dank **Tailwind Custom Variants** ist es Junior-Developer-leicht, eine skalierbare, performante und barrierefreie
+Dank **Tailwind @custom-variant** ist es Junior-Developer-leicht, eine skalierbare, performante und barrierefreie
 Zoom-Funktion in eine Website zu integrieren. Durch einmaliges Setup kann man mit gewohnten Tailwind-Utilities
 responsive Zoom-Verhalten implementieren. Easy peasy lemon squeezy.
