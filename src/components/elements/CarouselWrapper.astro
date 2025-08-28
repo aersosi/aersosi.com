@@ -18,10 +18,15 @@ const ImgSlideshowLabel = images.length === 1 ? "Bild vergrößern" : "Slideshow
 					data-carousel-index={0}
 					aria-label={ImgSlideshowLabel}
           data-a11ytip-bottom
-					class="entry__link__overlay group !absolute inset-0 grid items-end justify-end p-4 rounded-lg md:rounded-xl">
-					<div class="flex items-center justify-center transition group-hover:scale-115 text-base-500 group-hover:text-primary-600 font-light text-lg lg:text-xl border-2 rounded-full w-10 h-10">
+					class="entry__link__overlay group !absolute inset-0 grid items-end justify-end p-2 sm:p-4 rounded-lg md:rounded-xl">
+
+          <div class="hidden sm:flex items-center justify-center border-2 rounded-full w-10 h-10 transition group-hover:scale-115 text-base-600 group-hover:text-primary-600">
             <Maximize2 size="base" />
-					</div>
+          </div>
+
+          <div class="flex sm:hidden items-center justify-center border-2 rounded-full w-8 h-8 text-primary-600">
+            <Maximize2 size="xs" />
+          </div>
 				</a>
 
 				<Image
@@ -42,14 +47,6 @@ const ImgSlideshowLabel = images.length === 1 ? "Bild vergrößern" : "Slideshow
 					class="bg-secondary-100 aspect-12/6 w-full rounded-lg md:rounded-xl object-cover object-center lg:col-span-2 shadow-lg"
 				/>
 
-        <Text
-          tag="p"
-          variant="textSM"
-          class={`sm:hidden absolute -bottom-10 left-1/2 -translate-1/2 `}
-        >
-          Zum vergrößern klicken
-        </Text>
-
 				<>
 					{images.length > 1 && (
 						<div class="circles absolute bottom-0 flex w-full justify-center gap-3 p-3 md:gap-4">
@@ -60,7 +57,7 @@ const ImgSlideshowLabel = images.length === 1 ? "Bild vergrößern" : "Slideshow
 									 data-a11ytip-top
 								>
 									<div
-										class={`entry__link bg-white hover:bg-primary-600 h-4 w-4 rounded-full shadow-md/50 transition md:h-3.5 md:w-3.5`}
+										class={`entry__link bg-white hover:bg-primary-600 h-2.5 w-2.5 sm:h-4 sm:w-4 rounded-full shadow-md/50 transition md:h-3.5 md:w-3.5`}
 									/>
 								</a>
 							))}
