@@ -10,7 +10,7 @@ images:
     { src: "src/images/projects/pulseRadio/pulseRadio-02.webp", alt: "Pulse Radio Stationsauswahl" },
     { src: "src/images/projects/pulseRadio/pulseRadio-03.webp", alt: "Pulse Radio Einstellungen" },
   ]
-tags: ["Privates Projekt", "Audio Streaming", "Full-Stack", "Next.js", "React", "Frontend-Entwicklung"]
+tags: ["Privat", "Audio Streaming", "Full-Stack", "Next.js", "React", "Frontend-Entwicklung"]
 
 repo:
   name: "GitHub"

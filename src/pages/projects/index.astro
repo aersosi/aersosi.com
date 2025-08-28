@@ -11,7 +11,7 @@ const allProjectsUnsorted = await getCollection("projects");
 const allProjects = allProjectsUnsorted.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 
 const allTags = [...new Set(allProjects.map((post) => post.data.tags).flat())];
-const priorityTags = ["Professionelles Projekt", "Privates Projekt"];
+const priorityTags = ["Professionell", "Privat"];
 const projectTypes = allTags.filter((tag) => priorityTags.includes(tag));
 const otherTags = allTags.filter((tag) => !priorityTags.includes(tag)).sort((a, b) => a.localeCompare(b, "de"));
 ---

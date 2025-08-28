@@ -16,7 +16,7 @@ const tagCounts = allProjects.reduce((acc, post) => {
   return acc;
 }, {});
 
-const priorityTags = ["Professionelles Projekt", "Privates Projekt"];
+const priorityTags = ["Professionell", "Privat"];
 const projectTypes = allTags.filter((tag) => priorityTags.includes(tag));
 const otherTags = allTags.filter((tag) => !priorityTags.includes(tag)).sort((a, b) => a.localeCompare(b, "de"));
 ---

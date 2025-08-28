@@ -8,7 +8,7 @@ images:
     { src: "src/images/projects/rescopedDatagrid/rescopedDatagrid-cover.webp", alt: "rescoped Datagrid Coverbild" },
     { src: "src/images/projects/rescopedDatagrid/rescopedDatagrid-01.webp", alt: "rescoped Datagrid" },
   ]
-tags: ["Professionelles Projekt", "Open Source", "Developer Experience", "Frontend-Entwicklung"]
+tags: ["Professionell", "Open Source", "Developer Experience", "Frontend-Entwicklung"]
 
 demo:
   name: "Live Demo"

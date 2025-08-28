@@ -24,7 +24,7 @@ images:
     { src: "src/images/projects/caryMedical/9-clients.webp", alt: "clients edit" },
     { src: "src/images/projects/caryMedical/10-users.webp", alt: "users edit" },
   ]
-tags: ["Professionelles Projekt", "Angular", "UX (User Experience)", "UI (User Interface)", "Frontend-Entwicklung"]
+tags: ["Professionell", "Angular", "UX (User Experience)", "UI (User Interface)", "Frontend-Entwicklung"]
 
 repo:
   name: "GitHub"

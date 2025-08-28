@@ -10,7 +10,7 @@ images:
     { src: "src/images/projects/deviceList/1-select.webp", alt: "Sales order Lines auswählen" },
     { src: "src/images/projects/deviceList/2-edit.webp", alt: "Daten editieren" },
   ]
-tags: ["Professionelles Projekt", "Angular", "UX (User Experience)", "UI (User Interface)", "Frontend-Entwicklung"]
+tags: ["Professionell", "Angular", "UX (User Experience)", "UI (User Interface)", "Frontend-Entwicklung"]
 
 noLinksText: "Firmeninternes Projekt"
 

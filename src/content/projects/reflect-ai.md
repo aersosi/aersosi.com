@@ -10,7 +10,7 @@ images:
     { src: "src/images/projects/reflectAI/reflectAI-02.webp", alt: "Session Übersicht" },
     { src: "src/images/projects/reflectAI/reflectAI-03.webp", alt: "Session Settings" },
   ]
-tags: ["Privates Projekt", "Künstliche Intelligenz", "React", "Frontend-Entwicklung"]
+tags: ["Privat", "Künstliche Intelligenz", "React", "Frontend-Entwicklung"]
 
 repo:
   name: "GitHub"

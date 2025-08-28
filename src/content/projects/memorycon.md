@@ -11,7 +11,7 @@ images:
     { src: "src/images/projects/memorycon/memorycon-03.webp", alt: "Spielverlauf" },
     { src: "src/images/projects/memorycon/memorycon-04.webp", alt: "Spielende" },
   ]
-tags: ["Privates Projekt", "Spiel", "Next.js", "React", "Frontend-Entwicklung"]
+tags: ["Privat", "Spiel", "Next.js", "React", "Frontend-Entwicklung"]
 
 repo:
   name: "GitHub"

@@ -13,7 +13,7 @@ images:
     { src: "src/images/projects/rescopedDocumentation/rescopedDocumentation-02.webp", alt: "Dokumentation" },
     { src: "src/images/projects/rescopedDocumentation/rescopedDocumentation-03.webp", alt: "Nachrichten-Seite" },
   ]
-tags: ["Professionelles Projekt", "Dokumentation", "Open Source", "Docusaurus", "React", "Frontend-Entwicklung"]
+tags: ["Professionell", "Dokumentation", "Open Source", "Docusaurus", "React", "Frontend-Entwicklung"]
 
 repo:
   name: "GitHub"
