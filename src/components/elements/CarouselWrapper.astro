@@ -49,7 +49,7 @@ const ImgSlideshowLabel = images.length === 1 ? "Bild vergrößern" : "Slideshow
 
 				<>
 					{images.length > 1 && (
-						<div class="circles absolute bottom-0 flex w-full justify-center gap-3 p-3 md:gap-4">
+						<div class="circles absolute bottom-0 flex w-full justify-center gap-2 p-3 sm:gap-4">
 							{images.map((item, index) => (
 								<a href={`?image=${index}`}
 									 data-carousel-index={index}
@@ -57,7 +57,7 @@ const ImgSlideshowLabel = images.length === 1 ? "Bild vergrößern" : "Slideshow
 									 data-a11ytip-top
 								>
 									<div
-										class={`entry__link bg-white hover:bg-primary-600 h-2.5 w-2.5 sm:h-4 sm:w-4 rounded-full shadow-md/50 transition md:h-3.5 md:w-3.5`}
+										class={`entry__link bg-white hover:bg-primary-600 h-2.5 w-2.5 sm:h-3.5 sm:w-3.5 rounded-full shadow-md/50 transition md:h-3.5 md:w-3.5`}
 									/>
 								</a>
 							))}

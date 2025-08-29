@@ -31,7 +31,7 @@
 		"prettier:all": "npx prettier --write ."
 	},
 	"dependencies": {
-		"@aersosi/a11ytip": "^1.1.8",
+		"@aersosi/a11ytip": "^1.1.10",
 		"@astrojs/mdx": "^4.3.0",
 		"@astrojs/sitemap": "^3.4.1",
 		"@astrolib/seo": "^1.0.0-beta.8",
