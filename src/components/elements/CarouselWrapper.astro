@@ -3,6 +3,7 @@ import Text from "@/components/elements/Text.astro";
 import { Image } from "astro:assets";
 import { Carousel } from "@/components/elements/astro-carousel";
 import Maximize2 from "@/lib/icons/Maximize2.astro";
+import { carourselCirclesSize, carourselCirclesWrapperGap } from "../../lib/shared/abstracts";
 
 const { images } = Astro.props;
 const ImgSlideshowLabel = images.length === 1 ? "Bild vergrößern" : "Slideshow öffnen";
@@ -20,11 +21,13 @@ const ImgSlideshowLabel = images.length === 1 ? "Bild vergrößern" : "Slideshow
           data-a11ytip-bottom
 					class="entry__link__overlay group !absolute inset-0 grid items-end justify-end p-2 sm:p-4 rounded-lg md:rounded-xl">
 
-          <div class="hidden sm:flex items-center justify-center border-2 rounded-full w-10 h-10 transition group-hover:scale-115 text-base-600 group-hover:text-primary-600">
+          <!-- Maximize Icon Desktop -->
+          <div class="hidden sm:flex items-center justify-center border-2 rounded-full w-10 h-10 transition group-hover:scale-115 text-base-600 group-hover:text-primary-600 pointer-none">
             <Maximize2 size="base" />
           </div>
 
-          <div class="flex sm:hidden items-center justify-center border-2 rounded-full w-8 h-8 text-primary-600">
+          <!-- Maximize Icon Mobile -->
+          <div class="flex sm:hidden items-center justify-center border-2 rounded-full w-8 h-8 text-primary-600 pointer-none">
             <Maximize2 size="xs" />
           </div>
 				</a>
@@ -49,7 +52,9 @@ const ImgSlideshowLabel = images.length === 1 ? "Bild vergrößern" : "Slideshow
 
 				<>
 					{images.length > 1 && (
-						<div class="circles absolute bottom-0 flex w-full justify-center gap-2 p-3 sm:gap-4">
+						<div
+              class:list={[...carourselCirclesWrapperGap]}
+              class="circles absolute bottom-0 flex w-full justify-center p-3">
 							{images.map((item, index) => (
 								<a href={`?image=${index}`}
 									 data-carousel-index={index}
@@ -57,15 +62,14 @@ const ImgSlideshowLabel = images.length === 1 ? "Bild vergrößern" : "Slideshow
 									 data-a11ytip-top
 								>
 									<div
-										class={`entry__link bg-white hover:bg-primary-600 h-2.5 w-2.5 sm:h-3.5 sm:w-3.5 rounded-full shadow-md/50 transition md:h-3.5 md:w-3.5`}
+                    class:list={[...carourselCirclesSize]}
+										class={`entry__link bg-white hover:bg-primary-600 rounded-full shadow-md/50 transition `}
 									/>
 								</a>
 							))}
 						</div>
 					)}
 				</>
-
-
 			)
 		}
 	</div>

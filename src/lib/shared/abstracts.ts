@@ -11,3 +11,6 @@ export const stackGrid = [
 ];
 
 export const stackGridPadding = ["py-16", "md:py-24", "lg:py-32"];
+
+export const carourselCirclesSize = ["size-2.5", "sm:size-3.5", "md:size-4.5"];
+export const carourselCirclesWrapperGap = ["gap-2.5", "sm:gap-3.5", "md:gap-4.5"];

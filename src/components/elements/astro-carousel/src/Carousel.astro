@@ -1,6 +1,7 @@
 ---
 import type { ComponentProps } from "astro/types";
 import CarouselSlide from "./CarouselSlide.astro";
+import { carourselCirclesSize, carourselCirclesWrapperGap } from "@/lib/shared/abstracts";
 
 interface Props {
   images: Array<ComponentProps<typeof CarouselSlide>>;
@@ -202,11 +203,13 @@ const { images = [], color = "#333" } = Astro.props;
             images.length > 1 && (
               <div
                 id="circle-navigation"
-                class="absolute bottom-6 z-300 flex w-full items-center justify-center gap-4 p-3 md:gap-4"
+                class:list={[...carourselCirclesWrapperGap]}
+                class="absolute bottom-6 z-300 flex w-full items-center justify-center p-3"
               >
                 {images.map((_, i) => (
                   <a
-                    class={`carousel__circle-button carousel__circle hover:bg-primary-600 h-4 w-4 rounded-full bg-white shadow-md/50 transition md:h-3.5 md:w-3.5`}
+                    class:list={[...carourselCirclesSize]}
+                    class={`carousel__circle-button carousel__circle hover:bg-primary-600 rounded-full bg-white shadow-md/50 transition`}
                     data-index={i}
                     aria-label={`Bild ${i + 1} öffnen`}
                     data-a11ytip-top
