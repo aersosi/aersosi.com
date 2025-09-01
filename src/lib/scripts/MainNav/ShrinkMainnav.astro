@@ -1,31 +1,27 @@
 <script>
-  const SCROLL_THRESHOLD = 48;
+  (function () {
+    const SCROLL_THRESHOLD = 48;
 
-  function updateScrolled(isScrolled) {
-    document.documentElement.classList.toggle("scrolled", isScrolled);
-    localStorage.setItem("scrolled", isScrolled ? "true" : "false");
-  }
-
-  function initializeScrolled() {
-    // Aus LocalStorage laden
-    const savedScrolled = localStorage.getItem("scrolled");
-    const isScrolled = savedScrolled === "true";
-
-    updateScrolled(isScrolled);
-
-    // Falls der gespeicherte Wert nicht passt (z.B. wegen anderer Scroll-Position), live prüfen
-    const isOverThreshold = window.scrollY > SCROLL_THRESHOLD;
-    if (isOverThreshold !== isScrolled) {
-      updateScrolled(isOverThreshold);
+    function setInitialScrollState() {
+      if (window.scrollY > SCROLL_THRESHOLD) {
+        document.documentElement.classList.add("scrolled");
+      }
     }
-  }
 
-  // Initial laden
-  initializeScrolled();
+    function handleScroll() {
+      const isScrolled = window.scrollY > SCROLL_THRESHOLD;
+      document.documentElement.classList.toggle("scrolled", isScrolled);
+    }
 
-  // Scroll-Event
-  window.addEventListener("scroll", () => {
-    const isOverThreshold = window.scrollY > SCROLL_THRESHOLD;
-    updateScrolled(isOverThreshold);
-  });
+    setInitialScrollState();
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    // Falls das Script nach dem Laden ausgeführt wird, nochmal prüfen
+    if (document.readyState === "complete") {
+      setInitialScrollState();
+    } else {
+      window.addEventListener("load", setInitialScrollState);
+    }
+  })();
 </script>

@@ -22,12 +22,12 @@ const ImgSlideshowLabel = images.length === 1 ? "Bild vergrößern" : "Slideshow
 					class="entry__link__overlay group !absolute inset-0 grid items-end justify-end p-2 sm:p-4 rounded-lg md:rounded-xl">
 
           <!-- Maximize Icon Desktop -->
-          <div class="hidden sm:flex items-center justify-center border-2 rounded-full w-10 h-10 transition group-hover:scale-115 text-base-600 group-hover:text-primary-600 pointer-none">
+          <div class="hidden sm:flex items-center justify-center border-2 rounded-full size-10 transition-transform group-hover:scale-115 text-base-600 group-hover:text-primary-600 pointer-none">
             <Maximize2 size="base" />
           </div>
 
           <!-- Maximize Icon Mobile -->
-          <div class="flex sm:hidden items-center justify-center border-2 rounded-full w-8 h-8 text-primary-600 pointer-none">
+          <div class="flex sm:hidden items-center justify-center border-2 rounded-full size-8 text-primary-600 pointer-none">
             <Maximize2 size="xs" />
           </div>
 				</a>
@@ -63,7 +63,7 @@ const ImgSlideshowLabel = images.length === 1 ? "Bild vergrößern" : "Slideshow
 								>
 									<div
                     class:list={[...carourselCirclesSize]}
-										class={`entry__link bg-white hover:bg-primary-600 rounded-full shadow-md/50 transition `}
+										class={`entry__link bg-white hover:bg-primary-600 transition-transform hover:scale-130 rounded-full shadow-md/50`}
 									/>
 								</a>
 							))}
