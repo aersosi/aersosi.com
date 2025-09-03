@@ -103,27 +103,45 @@ bleibt.
 
 ## a11ytip dauerhaft aktivieren
 
-Mit dem `data-a11ytip-active` Attribut oder der `a11ytip-active` Klasse kann der aktive Status eines a11ytips dauerhaft
-erzwungen werden.
+Durch Hinzufügen der `.a11ytip-force-active` Klasse an einer beliebigen Stelle im DOM (oberhalb eines a11ytip-Elements)
+können Sie den aktiven Status aller a11ytip dauerhaft erzwingen.
+
+**Beispiel mit der `.a11ytip-force-active`:**
+
+```html
+<body class="a11ytip-force-active">
+  <button data-a11ytip-top aria-label="Ich bin immer sichtbar!">Kein Hover nötig</button>
+  <button data-a11ytip-bottom aria-label="Ich bin immer sichtbar!">Kein Hover nötig</button>
+</body>
+```
+
+Mit dem `data-a11ytip-force-active` Attribut können Sie den aktiven Status eines einzelnen a11ytip dauerhaft erzwingen.
 
 **Beispiel mit Data-Attribut:**
 
 ```html
-<button data-a11ytip-top data-a11ytip-active aria-label="Ich bin immer sichtbar!">Kein Hover nötig</button>
+<button data-a11ytip-top data-a11ytip-force-active aria-label="Ich bin immer sichtbar!">Kein Hover nötig</button>
 ```
 
-**Beispiel mit `a11ytip-active` Klasse:**
+### Tooltips auf Touch-Geräten ausblenden
+
+Wenn Sie alle a11ytip auf Touch-Geräten ausblenden möchten, fügen Sie einfach die `.a11ytip-no-touch` Klasse an einer
+Stelle im DOM oberhalb des a11ytip hinzu. Alle a11ytip werden auf Touch-Geräten ausgeblendet.
+
+**Beispiel:**
 
 ```html
-<button data-a11ytip-top class="a11ytip-active" aria-label="Ich bin immer sichtbar!">Kein Hover nötig</button>
+<body class="a11ytip-no-touch">
+  <button data-a11ytip-top aria-label="Ich bin auf Touch-Geräten nicht aktiv!">Hover mich</button>
+</body>
 ```
 
 ---
 
-## a11ytips konfigurieren mit a11ytip_config.css
+## a11ytip konfigurieren mit a11ytip_config.css
 
 - Überschreiben Sie die Standardkonfiguration nach Ihrem Geschmack.
-- Die CSS-Variablen sind selbsterklärend und steuern die Eigenschaften aller a11ytips.
+- Die CSS-Variablen sind selbsterklärend und steuern die Eigenschaften aller a11ytip.
 - Alle gängigen Farb-, Zeit- und Größenwerte können verwendet werden, z.B. #fafafa, 2s, px, etc.
 
 **Standardkonfiguration:**
@@ -207,8 +225,8 @@ Sie können auch eigene Themes erstellen, indem Sie neue Selektoren in der `a11y
 
 ## Einzelnes a11ytip mit Data-Attributen anpassen
 
-Die CSS-a11ytips unterstützen optionale `data-*` Attribute, mit denen Sie die Standardkonfiguration für ein einzelnes
-a11ytips überschreiben können.
+Die CSS-a11ytip unterstützen optionale `data-*` Attribute, mit denen Sie die Standardkonfiguration für ein einzelnes
+a11ytip überschreiben können.
 
 **Hinweis:** Die Anpassung über Data-Attribute wird derzeit nur in Chrome-basierten Browsern unterstützt.
 
@@ -234,7 +252,7 @@ a11ytips überschreiben können.
 
 2. `data-a11ytip-text`:
    - **Dieses Attribut wird von allen Browsern unterstützt!**
-   - Definiert den Textinhalt des a11ytips.
+   - Definiert den Textinhalt des a11ytip.
    - Dieses Attribut hat Vorrang vor `aria-label`, wenn beide vorhanden sind.
    - Werteformat: Beliebiger Text.
 
@@ -247,7 +265,7 @@ a11ytips überschreiben können.
    - Werteformat: Ein gültiger CSS `<color>` Wert (z.B. `#ffffff`, `rgb(255, 255, 255)` oder `blue`).
 
 5. `data-a11ytip-bg-color`:
-   - Ändert die Hintergrundfarbe des a11ytips.
+   - Ändert die Hintergrundfarbe des a11ytip.
    - Werteformat: Ein gültiger CSS `<color>` Wert.
 
 6. `data-a11ytip-padding-left`, `data-a11ytip-padding-right`, `data-a11ytip-padding-top` und
@@ -273,7 +291,7 @@ a11ytips überschreiben können.
     - Werteformat: CSS `<length>` Werte (z.B. `4px`, `2rem`).
 
 11. `data-a11ytip-transition-duration`:
-    - Passt die Übergangsdauer des a11ytips an.
+    - Passt die Übergangsdauer des a11ytip an.
     - Werteformat: Eine gültige Zeitdauer (z.B. `350ms`, `0.5s`).
 
 12. `data-a11ytip-delay`:
@@ -281,13 +299,13 @@ a11ytips überschreiben können.
     - Werteformat: Eine Zahl in Millisekunden (z.B. `250`, `1000`).
     - Standardwert: `500` (500 Millisekunden).
 
-13. `data-a11ytip-active`:
-    - Erzwingt den aktiven Status eines a11ytips dauerhaft, ohne dass ein Hover-Event erforderlich ist.
+13. `data-a11ytip-force-active`:
+    - Erzwingt den aktiven Status eines a11ytip dauerhaft, ohne dass ein Hover-Event erforderlich ist.
     - Nützlich zum Überprüfen der Positionierung oder während der Entwicklung.
     - Werteformat: Keine Werte erforderlich, allein das Vorhandensein des Attributs aktiviert den Effekt.
 
 14. `data-a11ytip-z-index`:
-    - Steuert die Stapelreihenfolge des a11ytips und bestimmt, ob er über oder unter anderen Elementen erscheint.
+    - Steuert die Stapelreihenfolge des a11ytip und bestimmt, ob er über oder unter anderen Elementen erscheint.
     - Werteformat: Eine positive Ganzzahl (z.B. `100`, `999`, `1000`).
     - Standardwert: `100`.
 
@@ -300,7 +318,7 @@ a11ytips überschreiben können.
   data-a11ytip-top
   aria-label="Ich bin ein freches a11ytip!"
   data-a11ytip-text="Dieser Text wird angezeigt"
-  data-a11ytip-active
+  data-a11ytip-force-active
   data-a11ytip-text-size="2rem"
   data-a11ytip-text-color="hotpink"
   data-a11ytip-bg-color="#1a1a1a"
