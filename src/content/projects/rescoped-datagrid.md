@@ -24,38 +24,24 @@ myRole: "Design Engineer (UI/UX-Designer, Frontend-Developer)"
 
 ## Projektbeschreibung
 
-Das Rescoped Datagrid ist eine spezialisierte Open-Source-Tabellen-Komponente, entwickelt als leichtgewichtige
-Alternative zu komplexen Lösungen wie AG-Grid. Die Komponente basiert auf Angular CDK und Angular Material Table und
-wurde für Anwendungen entwickelt, die Excel-ähnliche Funktionalität mit direkter Inline-Editierung, regel-basierter
-Konfiguration und dynamischen Datenstrukturen benötigen.
-
-## Kern-Features
-
-- **Virtual Scrolling**: Performance-optimiert für große Datenmengen mit CDK Virtual Scroll Viewport (erforderlich
-  bei >1000 Zeilen)
-- **Regel-basiertes System**: Flexible Konfiguration über fünf Regeltypen: placeholder, validate, disable, render,
-  action
-- **Row-Types**: Drei Zeilentypen für hierarchische Strukturen - Global-row, Group-row, Single-row
-- **Inline Editing**: Direkte Doppelklick-Bearbeitung in Tabellenzellen
-- **Batch Operations**: Gruppenweise Datenbearbeitung über Global-row und Group-row
-- **Collapsible Groups**: Akkordeon-ähnliche Gruppierung mit DOM-Optimierung für Performance
-- **Core Components**: Drei spezialisierte Eingabe-Komponenten - mat-datagrid-input, mat-datagrid-combobox,
-  mat-datagrid-datepicker
+Das rescoped Datagrid ist eine spezialisierte Open-Source-Tabellen-Komponente, entwickelt als Alternative zu komplexen
+Lösungen wie AG-Grid. Die Komponente basiert auf Angular CDK und Angular Material Table und bietet Excel-ähnliche
+Funktionalität mit direkter Inline-Editierung, regel-basierter Konfiguration und dynamischen Datenstrukturen für
+Performance-kritische Anwendungen.
 
 ## Kontext
 
-Für die Device List App benötigten wir eine komplexe, dynamische und editierbare Tabellen-Komponente, die umfangreiche
-Datenstrukturen ähnlich wie Excel darstellen kann. Einzelne Felder sollten direkt per Doppelklick editierbar sein, eine
-Kernfunktionalität für effiziente Datenpflege. Verfügbare Lösungen wie AG-Grid wurden evaluiert, jedoch aufgrund der
-Komplexität wurde die Entwicklung einer maßgeschneiderten Lösung entschieden. So entstand das rescoped Datagrid, benannt
-nach unserem Label für alle Open-Source Projekte, das als wiederverwendbare Lösung konzipiert wurde.
+Für die Device List App wurde eine komplexe, editierbare Tabellen-Komponente benötigt, die umfangreiche Datenstrukturen
+ähnlich wie Excel darstellen kann. Einzelne Felder sollten direkt per Doppelklick editierbar sein für effiziente
+Datenpflege. Verfügbare Lösungen wie AG-Grid wurden evaluiert, jedoch aufgrund der Komplexität wurde die Entwicklung
+einer maßgeschneiderten Lösung entschieden. Das rescoped Datagrid entstand als wiederverwendbare Open-Source-Komponente.
 
 ## Meine Aufgaben
 
 Als **Design Engineer** war ich für das komplette UI/UX-Design und die Styling-Integration der Datagrid-Komponente
 verantwortlich. In enger Zusammenarbeit mit dem verantwortlichen Developer übernahm ich:
 
-- **UI/UX-Design:** Komplette visuelle Gestaltung der Tabellen-Komponente nach unserem avodaq Material-Design
+- **UI/UX-Design:** Komplette visuelle Gestaltung der Tabellen-Komponente nach dem avodaq Material-Design
 - **Interaction Design:** Konzeption intuitiver Editier-Workflows und Nutzerinteraktionen für alle Row-Types und
   Regel-Konfigurationen
 - **Developer Experience:** Optimierung der Komponenten-API und Konfigurationsmöglichkeiten für einfache Integration
@@ -63,8 +49,8 @@ verantwortlich. In enger Zusammenarbeit mit dem verantwortlichen Developer über
 - **Publikations-Vorbereitung:** Gestaltung einer konsistenten, dokumentierbaren Benutzeroberfläche für die
   Veröffentlichung
 
-Praktisch jedes sichtbare Element – Formen, Farben, Größen, Abstände, Gruppierung, Anordnung, visuelle Hierarchien,
-Sprache, Tonalität, Animationen – wurde von mir entworfen oder angepasst und ins Frontend integriert.
+Praktisch jedes sichtbare Element — Formen, Farben, Größen, Abstände, Gruppierung, Anordnung, visuelle Hierarchien,
+Sprache, Tonalität, Animationen — wurde von mir entworfen oder angepasst und ins Frontend integriert.
 
 ## Arbeitsprozess
 
@@ -80,7 +66,7 @@ Live-Demo.
 - **Virtual Scrolling UI-Design:** Gestaltung flüssiger Scroll-Interaktionen und visueller Übergänge für große
   Datenmengen mit CDK Virtual Scroll Viewport
 - **Hierarchische Datenstrukturen:** Global-row, Group-row und Single-row Interaktionen mit Batch-Editing-Funktionalität
-- **Flexible Konfiguration:** Einfacher Nutzung oder bei Bedarf umfangreichen Anpassungsmöglichkeiten über das
+- **Flexible Konfiguration:** Balance zwischen einfacher Nutzung und umfangreichen Anpassungsmöglichkeiten über das
   Regel-System
 
 ## Mein Impact
@@ -94,7 +80,7 @@ Live-Demo.
 
 **Technisch:**
 
-- **Community Contribution:** Bereitstellung einer leichtgewichtigen Alternative zu überkomplexen Enterprise-Lösungen
+- **Community Contribution:** Bereitstellung einer Alternative zu Enterprise-Lösungen für Angular-Entwickler
 - **API-Vereinfachung:** Reduzierung der Konfigurationskomplexität für bessere Developer Experience
 
 **Konkret:**
@@ -120,13 +106,13 @@ Live-Demo.
 
 **Testing:** TypeScript, ESLint, Prettier
 
-**Tools & Libraries:** RxJS, Zod, TypeScript, rescoped Datagrid
+**Tools & Libraries:** RxJS, Zod, TypeScript
 
 ## Projektergebnis
 
 Das rescoped Datagrid wurde erfolgreich als spezialisierte Komponente veröffentlicht und als Kernkomponente in der
-Device List App eingesetzt. Die Komponente bewährte sich in der Praxis durch Virtual Scrolling-Performance bei extrem
-großen Datasets und intuitive Bedienung.
+Device List App eingesetzt. Die Komponente bewährte sich in der Praxis durch Virtual Scrolling-Performance bei großen
+Datasets und intuitive Bedienung.
 
 Die Live Demo unter **rescoped.io** demonstriert die wichtigsten Features und dient als Showcase für die Komponente.
 Durch die modulare Architektur konnte das Datagrid auch in weiteren avodaq-Projekten wiederverwendet werden und
