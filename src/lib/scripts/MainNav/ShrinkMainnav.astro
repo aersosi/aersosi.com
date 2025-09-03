@@ -1,27 +1,12 @@
-<script>
+<script is:inline>
   (function () {
     const SCROLL_THRESHOLD = 48;
 
-    function setInitialScrollState() {
-      if (window.scrollY > SCROLL_THRESHOLD) {
-        document.documentElement.classList.add("scrolled");
-      }
+    function updateScrollState() {
+      document.documentElement.classList.toggle("scrolled", window.scrollY > SCROLL_THRESHOLD);
     }
 
-    function handleScroll() {
-      const isScrolled = window.scrollY > SCROLL_THRESHOLD;
-      document.documentElement.classList.toggle("scrolled", isScrolled);
-    }
-
-    setInitialScrollState();
-
-    window.addEventListener("scroll", handleScroll, { passive: true });
-
-    // Falls das Script nach dem Laden ausgeführt wird, nochmal prüfen
-    if (document.readyState === "complete") {
-      setInitialScrollState();
-    } else {
-      window.addEventListener("load", setInitialScrollState);
-    }
+    updateScrollState();
+    window.addEventListener("scroll", updateScrollState, { passive: true });
   })();
 </script>

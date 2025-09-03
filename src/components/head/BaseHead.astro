@@ -3,7 +3,6 @@ import Seo from "./Seo.astro";
 import Meta from "./Meta.astro";
 import Fonts from "./Fonts.astro";
 import Favicons from "./Favicons.astro";
-import ToggleLocalStorage from "@/lib/scripts/ToggleLocalStorage.astro";
 import ToggleA11ytip from "@/lib/scripts/ToggleA11ytip.astro";
 import UpdateYear from "@/lib/scripts/UpdateYear.astro";
 import UpdateClock from "@/lib/scripts/UpdateClock.astro";
@@ -29,6 +28,12 @@ export interface Props {
 const { pageTitle, pageDescription, image, article, publishDate, modifiedDate, author } = Astro.props;
 ---
 
+<!-- Critical scripts -->
+<UpdateTheme />
+<UpdateZoom />
+<ShrinkMainnav />
+<ToggleNavActive />
+
 <Fonts />
 <Seo
   pageTitle={pageTitle}
@@ -42,17 +47,10 @@ const { pageTitle, pageDescription, image, article, publishDate, modifiedDate, a
 <Meta />
 <Favicons />
 
-<!-- scripts -->
-<!--<UpdateTheme />-->
-<!--<UpdateZoom />-->
-<ShrinkMainnav />
-<ToggleLocalStorage />
+<!-- Scripts -->
 <ReadingProgressBar />
 <UpdateYear />
 <UpdateClock />
-<ToggleNavActive />
-
 <ToTopMobileNav />
-
 <ToggleMobileSidenav />
 <ToggleA11ytip />
