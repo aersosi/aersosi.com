@@ -9,7 +9,7 @@ const { images } = Astro.props;
 const ImgSlideshowLabel = images.length === 1 ? "Bild vergrößern" : "Slideshow öffnen";
 ---
 
-<div class="mb-10">
+<div class="print:w-1/2 mb-10">
 	<Carousel images={images} />
 	<div class="entry__entries relative" id="carouselTargetList">
 		{
@@ -47,7 +47,7 @@ const ImgSlideshowLabel = images.length === 1 ? "Bild vergrößern" : "Slideshow
 					layout="constrained"
 					loading="eager"
 					decoding="async"
-					class="print:w-1/2 bg-secondary-100 aspect-12/6 w-full rounded-lg md:rounded-xl object-cover object-center lg:col-span-2 shadow-lg"
+					class="bg-secondary-100 aspect-12/6 w-full rounded-lg md:rounded-xl object-cover object-center lg:col-span-2 shadow-lg"
 				/>
 
 				<>
