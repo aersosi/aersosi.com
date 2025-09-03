@@ -43,7 +43,7 @@ import { stackGrid, stackGridPadding } from "@/lib/shared/abstracts";
             layout="constrained"
             loading="eager"
             decoding="async"
-            class="aspect-12/6 w-full rounded-xl object-cover object-center shadow-lg lg:col-span-2 lg:hidden"
+            class="aspect-12/6 w-full rounded-xl object-cover object-center shadow-lg lg:col-span-2 lg:hidden print:w-1/2"
           />
 
           <!-- Development -->
@@ -83,7 +83,7 @@ import { stackGrid, stackGridPadding } from "@/lib/shared/abstracts";
               layout="constrained"
               loading="eager"
               decoding="async"
-              class="bg-secondary-100 hidden aspect-12/6 w-full rounded-xl object-cover object-center shadow-lg lg:col-span-2 lg:block"
+              class="bg-secondary-100 hidden aspect-12/6 w-full rounded-xl object-cover object-center shadow-lg lg:col-span-2 lg:block print:w-1/2"
             />
 
             {pageContent.personal.paragraphs.map((p) => <Text tag="p">{p}</Text>)}

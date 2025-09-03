@@ -22,7 +22,7 @@ const heightPlaceholder = Math.max(Math.floor(Number(pictureProps.height) / 100)
     src={pictureProps.src}
     width={widthPlaceholder}
     height={heightPlaceholder}
-    class="placeholder bg-secondary-100"
+    class="placeholder bg-secondary-100 print:w-1/2"
     alt=""
     loading="eager"
     quality={10}
@@ -31,7 +31,7 @@ const heightPlaceholder = Math.max(Math.floor(Number(pictureProps.height) / 100)
     {...pictureProps}
     quality={100}
     pictureAttributes={{
-      class: "!my-0",
+      class: "!my-0 print:w-1/2",
     }}
   />
   <slot name="loading">
