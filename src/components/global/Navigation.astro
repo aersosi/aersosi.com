@@ -79,7 +79,7 @@ const navItems = [
       </Button>
     </div>
 
-    <div class="hidden items-center gap-2.5 md:flex">
+    <div class="hidden items-center justify-between gap-2.5 md:flex">
       <Button
         isLink={true}
         iconOnly
@@ -95,7 +95,7 @@ const navItems = [
         </div>
       </Button>
 
-      <div class="mx-auto flex justify-end gap-2.5">
+      <div class="flex gap-2.5">
         {
           navItems.map(({ href, name, Icon }) => (
             <Button
@@ -113,8 +113,8 @@ const navItems = [
           ))
         }
       </div>
-      <ZoomToggle />
-      <ThemeToggle />
+      <!--<ZoomToggle />-->
+      <!--<ThemeToggle />-->
     </div>
 
     <div class="progress-bar scrolled:block absolute right-0 -bottom-0.5 -left-0 hidden h-1 px-4 sm:px-12 md:px-1">
@@ -161,10 +161,10 @@ const navItems = [
     </div>
 
     <!--Dark/Light mode-->
-    <div class="flex gap-2.5">
-      <ZoomToggle isSidenav />
-      <ThemeToggle isSidenav />
-    </div>
+    <!--<div class="flex gap-2.5">-->
+    <!--  <ZoomToggle isSidenav />-->
+    <!--  <ThemeToggle isSidenav />-->
+    <!--</div>-->
   </div>
 </nav>
 
