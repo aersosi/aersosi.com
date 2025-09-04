@@ -253,3 +253,23 @@ code .line::before {
 }
 
 @custom-variant scroll (&:where(.scroll, .scroll *));
+
+svg{
+    transition: transform 400ms ease-in-out;
+}
+a,
+p,
+em,
+span,
+small,
+strong,
+summary,
+blockquote,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    transition: color 400ms ease-in-out, font-size 400ms ease-in-out, line-height 400ms ease-in-out;
+}

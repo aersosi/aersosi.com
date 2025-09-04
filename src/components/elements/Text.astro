@@ -84,8 +84,7 @@ const textColorStyles = [
 
 const headingTextStyles = isHeading ? "font-medium" : "";
 
-const combinedClasses =
-  `${textColorStyles} ${baseClasses} ${headingStyles} ${headingTextStyles} ${className} transition-colors duration-300`.trim();
+const combinedClasses = `${textColorStyles} ${baseClasses} ${headingStyles} ${headingTextStyles} ${className}`.trim();
 ---
 
 <Tag class={combinedClasses} {...rest}>

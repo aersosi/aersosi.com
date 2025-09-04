@@ -17,23 +17,23 @@ const hoverSize = "sm:-inset-x-5 sm:-top-2 sm:-bottom-3";
       <div class={`absolute ${hoverSize} z-20 rounded-2xl`}></div>
       <div class="relative z-10 flex w-full flex-col gap-x-4 md:flex-row md:items-center">
         <div class="hidden sm:block">
-          <Text tag="h3" variant="textLG" class={`transition-colors whitespace-nowrap ${textPrimaryHover}`}>
+          <Text tag="h3" variant="textLG" class={`whitespace-nowrap ${textPrimaryHover}`}>
             {viewerTitle}
             <span class="px-3">—</span><slot />
           </Text>
         </div>
         <div class="grid gap-1 pb-1 sm:hidden">
-          <Text tag="p" variant="textSM" class={`transition-colors whitespace-nowrap ${textPrimaryHover}`}>
+          <Text tag="p" variant="textSM" class={`whitespace-nowrap ${textPrimaryHover}`}>
             <slot />
           </Text>
 
-          <Text tag="h3" variant="textLG" class={`transition-colors whitespace-nowrap ${textPrimaryHover}`}>
+          <Text tag="h3" variant="textLG" class={`whitespace-nowrap ${textPrimaryHover}`}>
             {viewerTitle}
           </Text>
         </div>
       </div>
     </div>
-    <Text tag="p" class={`transition-colors text-pretty relative z-10 ${textPrimaryHover}`}>
+    <Text tag="p" class={`text-pretty relative z-10 ${textPrimaryHover}`}>
       {pageDescription}
     </Text>
   </a>
