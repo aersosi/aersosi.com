@@ -1,17 +1,14 @@
 <script is:inline>
   (function () {
-    const darkStored = localStorage.getItem("darkTheme") === "true";
+    const savedTheme = localStorage.getItem("theme");
     const systemPrefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-    const isDark = darkStored || (!localStorage.getItem("darkTheme") && systemPrefersDark);
+    const isDark = savedTheme ? savedTheme === "dark" : systemPrefersDark;
+
     document.documentElement.classList.toggle("dark", isDark);
 
     function updateTheme(enableDark) {
       document.documentElement.classList.toggle("dark", enableDark);
-      if (enableDark) {
-        localStorage.setItem("darkTheme", "true");
-      } else {
-        localStorage.removeItem("darkTheme");
-      }
+      localStorage.setItem("theme", enableDark ? "dark" : "light");
     }
 
     document.addEventListener("click", (event) => {
@@ -21,7 +18,6 @@
       updateTheme(!currentlyDark);
     });
 
-    // Keyboard-Shortcut
     document.addEventListener("keydown", (event) => {
       if (event.shiftKey && event.ctrlKey && event.key === "D") {
         const currentlyDark = document.documentElement.classList.contains("dark");
