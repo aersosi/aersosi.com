@@ -1,0 +1,13 @@
+<script>
+  // Dirty fix so that the nav doesn't animate on page is scrolled and reload.
+  const transitionClasses = [
+    "transition-[background-color,padding,backdrop-filter,box-shadow,border-color]",
+    "duration-300",
+    "ease-in-out",
+  ];
+
+  const mainNav = document.querySelector("#mainNav");
+  if (mainNav) {
+    transitionClasses.forEach((c) => mainNav.classList.add(c));
+  }
+</script>

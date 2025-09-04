@@ -13,7 +13,8 @@ import ToggleMobileSidenav from "@/lib/scripts/MainNav/ToggleMobileSidenav.astro
 import ToTopMobileNav from "@/lib/scripts/MainNav/ToTopMobileNav.astro";
 
 import ReadingProgressBar from "@/lib/scripts/MainNav/ReadingProgressBar.astro";
-import ShrinkMainnav from "@/lib/scripts/MainNav/ShrinkMainnav.astro";
+import UpdateScroll from "@/lib/scripts/UpdateScroll.astro";
+import AddTransitionClasses from "@/lib/scripts/MainNav/AddTransitionClasses.astro";
 
 export interface Props {
   pageTitle?: string;
@@ -31,7 +32,7 @@ const { pageTitle, pageDescription, image, article, publishDate, modifiedDate, a
 <!-- Critical scripts -->
 <UpdateTheme />
 <UpdateZoom />
-<ShrinkMainnav />
+<UpdateScroll />
 <ToggleNavActive />
 
 <Fonts />
@@ -54,3 +55,4 @@ const { pageTitle, pageDescription, image, article, publishDate, modifiedDate, a
 <ToTopMobileNav />
 <ToggleMobileSidenav />
 <ToggleA11ytip />
+<AddTransitionClasses />

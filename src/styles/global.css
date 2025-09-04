@@ -252,4 +252,4 @@ code .line::before {
     --text-9xl--line-height: calc(1 * var(--zoom-factor, 1));
 }
 
-@custom-variant scrolled (&:where(.scrolled, .scrolled *));
+@custom-variant scroll (&:where(.scroll, .scroll *));
