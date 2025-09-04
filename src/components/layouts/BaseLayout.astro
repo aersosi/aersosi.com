@@ -37,7 +37,25 @@ const {
       author={author}
     />
   </head>
+
   <body class="bg-base-100 dark:bg-base-800 flex h-svh flex-col transition-colors duration-300">
+    <style is:inline>
+      body {
+        visibility: hidden;
+        opacity: 0;
+      }
+    </style>
+
+    <style is:global>
+      body {
+        visibility: visible;
+        opacity: 1;
+        transition:
+          visibility 0.2s linear,
+          opacity 0.2s linear;
+      }
+    </style>
+
     <Navigation />
     <main class="grow pt-10 md:pt-2"><slot /></main>
     <Footer />
