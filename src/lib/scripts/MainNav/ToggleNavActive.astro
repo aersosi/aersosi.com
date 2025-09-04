@@ -1,40 +1,36 @@
 <script is:inline>
-  window.addEventListener("DOMContentLoaded", () => {
+  (function () {
+    const outLineClass = [
+      // light
+      "border-black",
+      "text-black",
+      "hover:bg-black",
+      "focus-visible:ring-black",
+      // dark
+      "dark:text-white",
+      "dark:border-white",
+      "dark:hover:text-black",
+      "dark:hover:bg-white",
+      "dark:focus-visible:ring-white",
+    ];
+
+    const outlinePrimaryClass = [
+      // light
+      "border-primary-600",
+      "text-primary-600",
+      "hover:bg-primary-600",
+      "focus-visible:ring-primary-600",
+      // dark
+      "dark:text-primary-300",
+      "dark:border-primary-300",
+      "dark:focus-visible:ring-primary-300",
+    ];
+
     function toggleNavActive() {
       const hash = window.location.hash;
       const currentUrl = window.location.pathname + hash;
 
-      const allLinks = document.querySelectorAll("nav#mainNav a[href]");
-      const outLineClass = [
-        // light
-        "border-black",
-
-        "text-black",
-        "hover:bg-black",
-        "focus-visible:ring-black",
-        // dark
-        "dark:text-white",
-        "dark:border-white",
-        "dark:hover:text-black",
-        "dark:hover:bg-white",
-        "dark:focus-visible:ring-white",
-      ];
-
-      const outlinePrimaryClass = [
-        // light
-        "border-primary-600",
-
-        "text-primary-600",
-        "hover:bg-primary-600",
-        "focus-visible:ring-primary-600",
-
-        // dark
-        "dark:text-primary-300",
-        "dark:border-primary-300",
-        "dark:focus-visible:ring-primary-300",
-      ];
-
-      allLinks.forEach((el) => {
+      document.querySelectorAll("nav#mainNav a[href]").forEach((el) => {
         const linkHref = el.getAttribute("href");
 
         if (linkHref === currentUrl || linkHref === hash) {
@@ -49,5 +45,5 @@
 
     toggleNavActive();
     window.addEventListener("hashchange", toggleNavActive);
-  });
+  })();
 </script>
