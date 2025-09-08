@@ -1,31 +1,29 @@
 <script is:inline>
-  (function () {
-    const zoomStored = localStorage.getItem("themeDark") === "true";
-    document.documentElement.classList.toggle("dark", zoomStored);
+  const zoomStored = localStorage.getItem("themeDark") === "true";
+  document.documentElement.classList.toggle("dark", zoomStored);
 
-    function updateZoom(enableZoom) {
-      document.documentElement.classList.toggle("dark", enableZoom);
-      if (enableZoom) {
-        localStorage.setItem("themeDark", "true");
-      } else {
-        localStorage.removeItem("themeDark");
-      }
+  function updateZoom(enableZoom) {
+    document.documentElement.classList.toggle("dark", enableZoom);
+    if (enableZoom) {
+      localStorage.setItem("themeDark", "true");
+    } else {
+      localStorage.removeItem("themeDark");
     }
+  }
 
-    document.addEventListener("click", (event) => {
-      const toggle = event.target.closest("[data-theme-toggle]");
-      if (!toggle) return;
+  document.addEventListener("click", (event) => {
+    const toggle = event.target.closest("[data-theme-toggle]");
+    if (!toggle) return;
+    const currentlyZoomed = document.documentElement.classList.contains("dark");
+    updateZoom(!currentlyZoomed);
+  });
+
+  // Keyboard-Shortcut: Shift + Control + D
+  document.addEventListener("keydown", (event) => {
+    if (event.shiftKey && event.ctrlKey && event.key === "D") {
       const currentlyZoomed = document.documentElement.classList.contains("dark");
       updateZoom(!currentlyZoomed);
-    });
-
-    // Keyboard-Shortcut: Shift + Control + D
-    document.addEventListener("keydown", (event) => {
-      if (event.shiftKey && event.ctrlKey && event.key === "D") {
-        const currentlyZoomed = document.documentElement.classList.contains("dark");
-        updateZoom(!currentlyZoomed);
-        event.preventDefault();
-      }
-    });
-  })();
+      event.preventDefault();
+    }
+  });
 </script>

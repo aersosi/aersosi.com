@@ -7,8 +7,6 @@ import mailObfuscation from "astro-mail-obfuscation";
 
 // https://astro.build/config
 export default defineConfig({
-  trailingSlash: "never",
-
   vite: {
     plugins: [tailwindcss()],
   },

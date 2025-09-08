@@ -1,12 +1,10 @@
 <script is:inline>
-  (function () {
-    const SCROLL_THRESHOLD = 0;
+  const SCROLL_THRESHOLD = 0;
 
-    function updateScrollState() {
-      document.documentElement.classList.toggle("scroll", window.scrollY > SCROLL_THRESHOLD);
-    }
+  function updateScrollState() {
+    document.documentElement.classList.toggle("scroll", window.scrollY > SCROLL_THRESHOLD);
+  }
 
-    updateScrollState();
-    window.addEventListener("scroll", updateScrollState, { passive: true });
-  })();
+  updateScrollState();
+  window.addEventListener("scroll", updateScrollState, { passive: true });
 </script>

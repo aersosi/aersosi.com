@@ -1,32 +1,30 @@
 <script is:inline>
-  (function () {
-    // Aus localStorage laden: Nur "true" bedeutet Zoom aktiv
-    const zoomStored = localStorage.getItem("zoom") === "true";
-    document.documentElement.classList.toggle("zoom", zoomStored);
+  // Aus localStorage laden: Nur "true" bedeutet Zoom aktiv
+  const zoomStored = localStorage.getItem("zoom") === "true";
+  document.documentElement.classList.toggle("zoom", zoomStored);
 
-    function updateZoom(enableZoom) {
-      document.documentElement.classList.toggle("zoom", enableZoom);
-      if (enableZoom) {
-        localStorage.setItem("zoom", "true");
-      } else {
-        localStorage.removeItem("zoom");
-      }
+  function updateZoom(enableZoom) {
+    document.documentElement.classList.toggle("zoom", enableZoom);
+    if (enableZoom) {
+      localStorage.setItem("zoom", "true");
+    } else {
+      localStorage.removeItem("zoom");
     }
+  }
 
-    document.addEventListener("click", (event) => {
-      const toggle = event.target.closest("[data-zoom-toggle]");
-      if (!toggle) return;
+  document.addEventListener("click", (event) => {
+    const toggle = event.target.closest("[data-zoom-toggle]");
+    if (!toggle) return;
+    const currentlyZoomed = document.documentElement.classList.contains("zoom");
+    updateZoom(!currentlyZoomed);
+  });
+
+  // Keyboard-Shortcut: Shift + Control + Z
+  document.addEventListener("keydown", (event) => {
+    if (event.shiftKey && event.ctrlKey && event.key === "Z") {
       const currentlyZoomed = document.documentElement.classList.contains("zoom");
       updateZoom(!currentlyZoomed);
-    });
-
-    // Keyboard-Shortcut: Shift + Control + Z
-    document.addEventListener("keydown", (event) => {
-      if (event.shiftKey && event.ctrlKey && event.key === "Z") {
-        const currentlyZoomed = document.documentElement.classList.contains("zoom");
-        updateZoom(!currentlyZoomed);
-        event.preventDefault();
-      }
-    });
-  })();
+      event.preventDefault();
+    }
+  });
 </script>

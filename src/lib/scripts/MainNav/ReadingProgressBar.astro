@@ -1,6 +1,6 @@
 <script>
-  import { debounce } from "../debounce";
   import { throttle } from "../throttle";
+  import { normalizePath } from "../normalizePath";
 
   function updateReadingProgress() {
     const progressBar = document.getElementById("readingProgress");
@@ -13,12 +13,12 @@
     progressBar.style.width = `${progress}%`;
   }
 
-  const excludedExactPaths = ["/", "/404", "/articles", "/projects", "/articles/", "/projects/"];
+  const excludedPaths = ["/", "/404", "/articles", "/projects", "/articles/", "/projects/"];
   const excludedSubPaths = ["/articles/tags", "/projects/tags"];
-  const currentPath = window.location.pathname;
+  const currentPath = normalizePath(window.location.pathname);
 
   const isExcluded =
-    excludedExactPaths.includes(currentPath) || excludedSubPaths.some((path) => currentPath.startsWith(path));
+    excludedPaths.includes(currentPath) || excludedSubPaths.some((path) => currentPath.startsWith(path));
 
   const throttledUpdateProgress = throttle(updateReadingProgress, 25);
 
