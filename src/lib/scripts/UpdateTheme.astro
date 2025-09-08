@@ -1,6 +1,6 @@
 <script is:inline>
-  const zoomStored = localStorage.getItem("themeDark") === "true";
-  document.documentElement.classList.toggle("dark", zoomStored);
+  const themeStored = localStorage.getItem("themeDark") === "true";
+  document.documentElement.classList.toggle("dark", themeStored);
 
   function updateZoom(enableZoom) {
     document.documentElement.classList.toggle("dark", enableZoom);
