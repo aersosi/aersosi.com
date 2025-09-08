@@ -1,3 +1,5 @@
+export const cvTitle = "Curriculum Vitae";
+
 export const cvData = [
   {
     headline: "Berufserfahrung",

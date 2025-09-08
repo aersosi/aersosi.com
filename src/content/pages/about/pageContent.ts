@@ -24,15 +24,20 @@ export const pageContent = {
   },
 
   personal: {
-    paragraphs: [
-      "Mein Fokus ist die Frontend-Entwicklung skalierbarer und moderner Enterprise-Webapplikationen. Dabei lege ich besonderen Wert auf Performance, Code-Qualität und exzellentes UI/UX. Ich arbeite eigenverantwortlich und besonders erfolgreich in agilen, interdisziplinären Teams. Mein ganzheitliches Verständnis des Entwicklungsprozesses verbindet Business, Konzept, Design und Development.",
-      "Seit meinem Berufseinstieg habe ich immer positives Feedback für meine Arbeit bekommen. Ich weiß, was ich kann und wo meine Grenzen liegen und konnte mich bisher immer auf mein analytisches Denken und Urteilsvermögen verlassen. Ich bin zielstrebig und löse hartnäckige Probleme gerne und kreativ. Denn das Erstbeste ist nicht immer das Beste.",
-      "Als anpassungsfähiger Autodidakt liebe ich es zu lernen, wende das Gelernte an und teile es mit anderen. Um mir ein gutes Urteil zu bilden, ist es wichtig, das Für und Wider abzuwägen. Ich bin gerne vorbereitet. Um meine Talente in geordnete Bahnen zu lenken, helfen mir klare Ziele, Termine, Zeitpläne, Absprachen und regelmäßiges Feedback. Als reflektierter und empathischer Mensch zeichne ich mich durch Hilfsbereitschaft aus, denn das Wohl meiner Kolleginnen und Kollegen ist mir wichtig.",
+    intro:
+      "Zuletzt habe ich in agilen, internationalen Teams skalierende Enterprise-Webanwendungen entwickelt. Der Fokus lag dabei auf Performance, Code-Qualität und exzellentem UI/UX. Ich bin ein anpassungsfähiger Autodidakt, der gerne vorbereitet ist. Mein ganzheitliches Verständnis des Entwicklungsprozesses verbindet Business, Konzept, Design und Development.",
+
+    valuesTitle: "Meine Werte und Überzeugungen",
+    values: [
+      "Wichtig ist mir, hilfreich zu sein, einen positiven gesellschaftlichen Beitrag zu leisten und mein Wissen zu teilen. Für mich ist es wesentlich, dass meine Arbeit einen echten Nutzen stiftet und zu Lösungen führt, von denen alle Beteiligten profitieren.",
+      "Nichts auf dieser Welt ist nur gut oder nur schlecht. Ich bin offen für unterschiedliche Standpunkte und erkenne an, dass bei gegensätzlichen Perspektiven gleichzeitig beide richtig sein können. Wichtig ist dann nur, abzuwägen.",
+      "Kooperation und das gemeinsame Entwickeln von Lösungen sind für mich zentrale Elemente erfolgreicher Arbeit. Während Unterschiede häufig im Fokus stehen, lege ich Wert darauf, Gemeinsamkeiten zu finden und Brücken zu bauen. Persönliche Verbindungen und der direkte Austausch sind dabei für mich wichtig.",
+      "Ich lege Wert darauf, qualitativ hochwertige Arbeit zu leisten, ohne mich dabei im Detail zu verlieren. Es bereitet mir keine Schwierigkeiten, Aufgaben abzugeben, denn ich vertraue darauf, dass mein Umfeld kompetent ist.",
+      "Das Leben ist eines der härtesten und auch der Arbeitsalltag kann durchaus herausfordernd werden. Klare Kommunikation und das direkte Ansprechen von Schwierigkeiten gehören für mich dazu. Ich kann sachlich und lösungsorientiert mit Problemen umgehen und traue anderen das ebenso zu.",
+      "Als Optimist vertraue ich darauf, dass die Menschen in meinem Umfeld versuchen, das Beste aus ihren Möglichkeiten zu machen. Ich bin ein geduldiger Mensch, dem das Wohlergehen des Teams am Herzen liegt. Als aktiver Zuhörer schätze ich die Zeit, die andere mir geben.",
     ],
     interestsTitle: "Weitere Interessen",
     interests:
       "Wissenschaft, KI, Kunst, Weltraum & Forschung, Gesellschaft & Politik, Psychologie & Philosophie, Sport und Musik.",
   },
-
-  cvTitle: "Curriculum Vitae",
 };
