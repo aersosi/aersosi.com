@@ -10,6 +10,8 @@ import UpdatePublishedDate from "@/lib/scripts/UpdatePublishedDate.astro";
 
 import aboutCover from "src/images/pages/about-cover.webp";
 import { stackGrid, stackGridPadding } from "@/lib/shared/abstracts";
+import Button from "../../components/elements/Button.astro";
+import Download from "../../lib/icons/Download.astro";
 ---
 
 <BaseLayout
@@ -90,6 +92,20 @@ import { stackGrid, stackGridPadding } from "@/lib/shared/abstracts";
 
             <Text tag="h2" variant="textXL">{pageContent.personal.interestsTitle}</Text>
             <Text tag="p" class="lg:text-balance">{pageContent.personal.interests}</Text>
+
+            <div class="mt-14 sm:w-fit">
+              <Button
+                isLink={true}
+                download="Arthur-Ersosi-ueber.pdf"
+                href="/Arthur-Ersosi-ueber.pdf"
+                size="base"
+                variant="primary"
+                class="not-proseBase"
+              >
+                <Download slot="left-icon" size="lg" class="mr-2" />
+                Über mich herunterladen
+              </Button>
+            </div>
           </Wrapper>
         </div>
       </div>
@@ -141,6 +157,23 @@ import { stackGrid, stackGridPadding } from "@/lib/shared/abstracts";
               </>
             ))
           }
+
+          <div class:list={[...stackGrid]} class="sm:mt-4">
+            <span></span>
+            <div class="sm:w-fit lg:col-span-2">
+              <Button
+                isLink={true}
+                download="Arthur-Ersosi-cv.pdf"
+                href="/Arthur-Ersosi-cv.pdf"
+                size="base"
+                variant="primary"
+                class="not-proseBase"
+              >
+                <Download slot="left-icon" size="lg" class="mr-2" />
+                CV herunterladen
+              </Button>
+            </div>
+          </div>
         </div>
       </Wrapper>
     </Wrapper>
