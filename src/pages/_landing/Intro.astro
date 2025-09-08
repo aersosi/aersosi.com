@@ -6,6 +6,8 @@ import ArrowRight from "@/lib/icons/ArrowRight.astro";
 import { Image } from "astro:assets";
 import portrait from "/src/images/portrait.webp";
 import { stackGrid, stackGridPadding } from "@/lib/shared/abstracts";
+
+const imgClasses = ["aspect-12/8", "lg:aspect-square", "sm:w-2/3", "lg:w-full", "print:w-1/2"];
 ---
 
 <section>
@@ -13,11 +15,6 @@ import { stackGrid, stackGridPadding } from "@/lib/shared/abstracts";
     <div class:list={[...stackGrid, ...stackGridPadding]} class="border-b">
       <div>
         <div class="flex flex-col-reverse gap-x-12 gap-y-10 sm:flex-row sm:items-end">
-          <div class="grid shrink-0 whitespace-nowrap lg:hidden">
-            <!-- Mobile -->
-            <Text tag="h1" variant="text2XL" isPrimary> Arthur Ersosi </Text>
-            <Text tag="p" variant="textLG" isPrimary> Design Engineer </Text>
-          </div>
           <div>
             <Image
               alt="Porträt Arthur Ersosi"
@@ -34,32 +31,29 @@ import { stackGrid, stackGridPadding } from "@/lib/shared/abstracts";
               layout="constrained"
               loading="eager"
               decoding="async"
-              class="bg-secondary-100 aspect-12/10 rounded-xl object-cover object-center shadow-lg lg:aspect-square print:w-1/2"
+              class="bg-secondary-100 aspect-12/6 rounded-xl object-cover object-center shadow-lg lg:aspect-square"
             />
           </div>
         </div>
       </div>
       <div class="grid justify-between gap-8 lg:col-span-2">
-        <div class="hidden whitespace-nowrap lg:grid">
-          <!-- Desktop -->
-          <Text tag="h1" variant="text2XL" isPrimary> Arthur Ersosi </Text>
-          <Text tag="p" variant="textLG" isPrimary> Design Engineer </Text>
-        </div>
-
+        <!-- Desktop -->
         <Wrapper variant="proseBase">
-          <Text tag="h2">
-            <span id="designYear">9</span>+ Jahre Design Expertise trifft auf<br />
+          <Text tag="h1" variant="textXL" isPrimary>
+            <span id="designYear">9</span>+ Jahre Design Expertise trifft auf
+            <br />
             <span id="devYear">7</span>+ Jahre modernes Web-Development
           </Text>
 
           <Text tag="p">
-            Moin! Mein Name ist Arthur (er/ihm) und ich bin ein Design-Engineer; also ein Designer, der programmiert.
-            Ich lebe in Hamburg, aber meine Heimat ist das „World Wide Web“.
+            Moin! Mein Name ist <strong>Arthur Ersosi</strong> (er/ihm) und ich bin ein
+            <strong>Design-Engineer</strong>; also ein Designer, der programmiert. Ich lebe in <strong>Hamburg</strong>,
+            aber meine Heimat ist das „World Wide Web“.
           </Text>
           <Text tag="p">
-            Als Frontend-Developer und UI/UX-Designer-Hybrid habe ich eine unbedingte Leidenschaft für moderne
-            Webanwendungen. Ich liebe es, Themen und Probleme zu durchdringen, an hartnäckigen Herausforderungen
-            dranzubleiben und den Sweet Spot zwischen pragmatischer und eleganter Lösung zu finden.
+            Als <strong>Frontend-Developer</strong> und <strong>UI/UX-Designer</strong>-Hybrid habe ich eine unbedingte
+            Leidenschaft für moderne Webanwendungen. Ich liebe es, Themen und Probleme zu durchdringen, an hartnäckigen
+            Herausforderungen dranzubleiben und den Sweet Spot zwischen pragmatischer und eleganter Lösung zu finden.
           </Text>
           <Text tag="p">
             Das gelingt durch eine klare Vision und Liebe zum Detail, mit dem Anspruch, exzellente Interfaces zu
