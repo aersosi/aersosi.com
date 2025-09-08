@@ -3,18 +3,18 @@ import Text from "@/components/elements/Text.astro";
 
 const { url, viewerTitle, pageDescription } = Astro.props;
 
-const textPrimaryHover = "group-hover:text-primary-600 group-hover:dark:text-primary-300";
-const hoverSize = "sm:-inset-x-5 sm:-top-2 sm:-bottom-3";
+const textPrimaryHover =
+  "transition-colors !duration-200 group-hover:text-primary-600 group-hover:dark:text-primary-300";
+const hoverSize = "absolute sm:-inset-x-5 sm:-top-2.5 sm:-bottom-3";
+const borderStyles = "rounded-xl sm:border-[1.5px] border-primary-600 dark:border-primary-300";
+const hoverStyles =
+  "transition-transform duration-300 scale-97 group-hover:scale-100 opacity-0 group-hover:opacity-100";
 ---
 
 <article class="group relative grid gap-x-12 gap-y-8 lg:items-start">
   <a href={url} aria-label={viewerTitle} class="w-full">
-    <div
-      class={`sm:border border-primary-600 dark:border-primary-300 ${hoverSize} absolute z-0 scale-95 rounded-xl opacity-0 transition-transform group-hover:scale-100 group-hover:opacity-100`}
-    >
-    </div>
+    <div class={`z-0 ${borderStyles} ${hoverSize} ${hoverStyles}`}></div>
     <div>
-      <div class={`absolute ${hoverSize} z-20 rounded-2xl`}></div>
       <div class="relative z-10 flex w-full flex-col gap-x-4 md:flex-row md:items-center">
         <div class="hidden sm:block">
           <Text tag="h3" variant="textLG" class={`whitespace-nowrap ${textPrimaryHover}`}>
