@@ -257,6 +257,7 @@ code .line::before {
 svg{
     transition: transform 400ms ease-in-out;
 }
+
 a,
 p,
 em,
@@ -273,3 +274,4 @@ h5,
 h6 {
     transition: color 400ms ease-in-out, font-size 400ms ease-in-out, line-height 400ms ease-in-out;
 }
+

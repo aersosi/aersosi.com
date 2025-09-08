@@ -1,6 +1,6 @@
 ---
 import { pageContent } from "@/content/pages/about/pageContent";
-import { cvData } from "@/content/pages/about/cvData";
+import { cvData, cvTitle } from "@/content/pages/about/cvData";
 import Wrapper from "@/components/containers/Wrapper.astro";
 import Text from "@/components/elements/Text.astro";
 import { Image } from "astro:assets";
@@ -10,6 +10,8 @@ import UpdatePublishedDate from "@/lib/scripts/UpdatePublishedDate.astro";
 
 import aboutCover from "src/images/pages/about-cover.webp";
 import { stackGrid, stackGridPadding } from "@/lib/shared/abstracts";
+import Button from "../../components/elements/Button.astro";
+import Download from "../../lib/icons/Download.astro";
 ---
 
 <BaseLayout
@@ -22,7 +24,7 @@ import { stackGrid, stackGridPadding } from "@/lib/shared/abstracts";
   <section>
     <Wrapper variant="standard">
       <div class:list={[...stackGrid, ...stackGridPadding]} class="border-b">
-        <div class="grid gap-8">
+        <div class="grid h-fit gap-8">
           <!-- About Me Header -->
           <div class="grid gap-2">
             <Text tag="h1" variant="text2XL" isPrimary>
@@ -47,8 +49,8 @@ import { stackGrid, stackGridPadding } from "@/lib/shared/abstracts";
           />
 
           <!-- Development -->
-          <Wrapper variant="proseBase">
-            <Text tag="h2">{pageContent.development.title}</Text>
+          <Wrapper variant="proseBase" class="pb-6">
+            <Text tag="h2" variant="textXL">{pageContent.development.title}</Text>
             <Text tag="p">{pageContent.development.description}</Text>
 
             <Text tag="h3">{pageContent.development.frameworksTitle}</Text>
@@ -58,15 +60,19 @@ import { stackGrid, stackGridPadding } from "@/lib/shared/abstracts";
             <Text tag="p">{pageContent.development.languages}</Text>
           </Wrapper>
 
-          <hr class="my-2.5 opacity-30 dark:text-white" />
-
           <!-- Design -->
-          <Wrapper variant="proseBase">
+          <Wrapper variant="proseBase" class="pb-6">
             <Text tag="h2" variant="textXL">{pageContent.design.title}</Text>
             <Text tag="p">{pageContent.design.description}</Text>
 
             <Text tag="h3">Tools</Text>
             <Text tag="p">{pageContent.design.tools}</Text>
+          </Wrapper>
+
+          <!-- Personal Interests -->
+          <Wrapper variant="proseBase">
+            <Text tag="h2" variant="textXL">{pageContent.personal.interestsTitle}</Text>
+            <Text tag="p">{pageContent.personal.interests}</Text>
           </Wrapper>
         </div>
 
@@ -86,10 +92,25 @@ import { stackGrid, stackGridPadding } from "@/lib/shared/abstracts";
               class="bg-secondary-100 hidden aspect-12/6 w-full rounded-xl object-cover object-center shadow-lg lg:col-span-2 lg:block print:w-1/2"
             />
 
-            {pageContent.personal.paragraphs.map((p) => <Text tag="p">{p}</Text>)}
+            <Text tag="p">{pageContent.personal.intro}</Text>
 
-            <Text tag="h2" variant="textXL">{pageContent.personal.interestsTitle}</Text>
-            <Text tag="p" class="lg:text-balance">{pageContent.personal.interests}</Text>
+            <Text tag="h2" variant="textXL">{pageContent.personal.valuesTitle}</Text>
+
+            {pageContent.personal.values.map((value) => <Text tag="p">{value}</Text>)}
+
+            <div class="mt-14 sm:w-fit">
+              <Button
+                isLink={true}
+                download="Arthur-Ersosi-ueber.pdf"
+                href="/Arthur-Ersosi-ueber.pdf"
+                size="base"
+                variant="primary"
+                class="not-proseBase"
+              >
+                <Download slot="left-icon" size="lg" class="mr-2" />
+                Über mich herunterladen
+              </Button>
+            </div>
           </Wrapper>
         </div>
       </div>
@@ -99,7 +120,7 @@ import { stackGrid, stackGridPadding } from "@/lib/shared/abstracts";
         <div class:list={[...stackGrid]}>
           <span></span>
           <Text tag="h2" variant="text2XL" class="!my-0" isPrimary>
-            {pageContent.cvTitle}
+            {cvTitle}
           </Text>
         </div>
 
@@ -141,6 +162,23 @@ import { stackGrid, stackGridPadding } from "@/lib/shared/abstracts";
               </>
             ))
           }
+
+          <div class:list={[...stackGrid]} class="sm:mt-4">
+            <span></span>
+            <div class="sm:w-fit lg:col-span-2">
+              <Button
+                isLink={true}
+                download="Arthur-Ersosi-cv.pdf"
+                href="/Arthur-Ersosi-cv.pdf"
+                size="base"
+                variant="primary"
+                class="not-proseBase"
+              >
+                <Download slot="left-icon" size="lg" class="mr-2" />
+                CV herunterladen
+              </Button>
+            </div>
+          </div>
         </div>
       </Wrapper>
     </Wrapper>
