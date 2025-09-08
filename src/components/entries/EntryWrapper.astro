@@ -19,7 +19,7 @@ const hoverStyles =
         <div class="hidden sm:block">
           <Text tag="h3" variant="textLG" class={`whitespace-nowrap ${textPrimaryHover}`}>
             {viewerTitle}
-            <span class="px-3">—</span><slot />
+            <span class="px-3 transition-colors !duration-200">—</span><slot />
           </Text>
         </div>
         <div class="grid gap-1 pb-1 sm:hidden">
