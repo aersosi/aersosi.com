@@ -1,52 +1,25 @@
-<script is:inline>
+<script>
   (function () {
-    const outLineClass = [
-      // light
-      "border-black",
-      "text-black",
-      "hover:bg-black",
-      "focus-visible:ring-black",
-      // dark
-      "dark:text-white",
-      "dark:border-white",
-      "dark:hover:text-black",
-      "dark:hover:bg-white",
-      "dark:focus-visible:ring-white",
-    ];
-
-    const outlinePrimaryClass = [
-      // light
-      "border-primary-600",
-      "text-primary-600",
-      "hover:bg-primary-600",
-      "focus-visible:ring-primary-600",
-      // dark
-      "dark:text-primary-300",
-      "dark:border-primary-300",
-      "dark:focus-visible:ring-primary-300",
-    ];
-
-    function toggleNavActive() {
+    function updateActiveNav() {
       const hash = window.location.hash;
       const currentUrl = window.location.pathname + hash;
 
-      document.querySelectorAll("nav#mainNav a[href]").forEach((el) => {
-        const linkHref = el.getAttribute("href");
+      document.querySelectorAll("nav#mainNav a[href]").forEach((link) => {
+        const linkHref = link.getAttribute("href");
+        const isActive = linkHref === currentUrl || linkHref === hash;
 
-        if (linkHref === currentUrl || linkHref === hash) {
-          outLineClass.forEach((c) => el.classList.remove(c));
-          outlinePrimaryClass.forEach((c) => el.classList.add(c));
-        } else {
-          outlinePrimaryClass.forEach((c) => el.classList.remove(c));
-          outLineClass.forEach((c) => el.classList.add(c));
+        const inactiveButton = link.querySelector(".inactive");
+        const activeButton = link.querySelector(".active");
+
+        if (inactiveButton && activeButton) {
+          inactiveButton.classList.toggle("hidden", isActive);
+          activeButton.classList.toggle("hidden", !isActive);
         }
       });
     }
 
-    // Initial sofort ausführen (kein FOUC)
-    toggleNavActive();
-
-    // Bei Hash-Änderungen erneut anwenden
-    window.addEventListener("hashchange", toggleNavActive);
+    updateActiveNav();
+    window.addEventListener("hashchange", updateActiveNav);
+    window.addEventListener("popstate", updateActiveNav);
   })();
 </script>

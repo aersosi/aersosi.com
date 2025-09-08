@@ -23,9 +23,8 @@ const baseClass = [
   "top-0",
 
   "backdrop-blur-md",
-  "bg-transparent",
-  "bg-base-100/70",
-  "dark:bg-base-800/70",
+  "bg-base-100/50",
+  "dark:bg-base-800/50",
 
   "py-8",
   "lg:py-11",
@@ -49,20 +48,18 @@ const navItems = [
   <div class="w-full max-w-7xl px-4 sm:px-12 lg:px-16">
     <!--Mobile Nav-->
     <div class="flex w-full justify-between md:hidden">
-      <Button
-        isLink={true}
-        iconOnly
-        size="sm"
-        variant="outline"
-        href={"/"}
-        aria-label={"Startseite"}
-        data-a11ytip-bottom
-        class="group"
-      >
-        <div slot="icon" class="transition-transform duration-400 group-hover:scale-115">
-          <AeLogo size="lg" class="group-hover:animate-wiggle" />
-        </div>
-      </Button>
+      <a href={"/"} aria-label={"Startseite"} data-a11ytip-bottom class="group rounded-sm">
+        <Button iconOnly size="sm" variant="outline" class="inactive" tabindex="-1">
+          <div slot="icon" class="transition-transform duration-400 group-hover:scale-115">
+            <AeLogo size="lg" class="group-hover:animate-wiggle" />
+          </div>
+        </Button>
+        <Button iconOnly size="sm" variant="outlinePrimary" class="active hidden" tabindex="-1">
+          <div slot="icon" class="transition-transform duration-400 group-hover:scale-115">
+            <AeLogo size="lg" class="group-hover:animate-wiggle" />
+          </div>
+        </Button>
+      </a>
 
       <Button id="mobileNavBtn" size="sm" variant="outline" class="flex gap-2">
         Menü
@@ -75,36 +72,31 @@ const navItems = [
     </div>
 
     <div class="hidden items-center justify-between gap-2.5 md:flex">
-      <Button
-        isLink={true}
-        iconOnly
-        size="sm"
-        variant="outline"
-        href={"/"}
-        aria-label={"Startseite"}
-        data-a11ytip-bottom
-        class="group"
-      >
-        <div slot="icon" class="transition-transform duration-400 group-hover:scale-115">
-          <AeLogo size="lg" class="group-hover:animate-wiggle" />
-        </div>
-      </Button>
+      <a href={"/"} aria-label={"Startseite"} data-a11ytip-bottom class="group rounded-sm">
+        <Button iconOnly size="sm" variant="outline" class="inactive" tabindex="-1">
+          <div slot="icon" class="transition-transform duration-400 group-hover:scale-115">
+            <AeLogo size="lg" class="group-hover:animate-wiggle" />
+          </div>
+        </Button>
+        <Button iconOnly size="sm" variant="outlinePrimary" class="active hidden" tabindex="-1">
+          <div slot="icon" class="transition-transform duration-400 group-hover:scale-115">
+            <AeLogo size="lg" class="group-hover:animate-wiggle" />
+          </div>
+        </Button>
+      </a>
 
       <div class="flex gap-2.5">
         {
           navItems.map(({ href, name, Icon }) => (
-            <Button
-              isLink={true}
-              iconOnly
-              size="sm"
-              variant="outline"
-              href={href}
-              aria-label={name}
-              data-a11ytip-bottom
-              key={href}
-            >
-              <Icon slot="icon" size="base" />
-            </Button>
+            <a href={href} aria-label={name} data-a11ytip-bottom key={href} class="rounded-sm">
+              <Button iconOnly size="sm" variant="outline" class="inactive" tabindex="-1">
+                <Icon slot="icon" size="base" />
+              </Button>
+
+              <Button iconOnly size="sm" variant="outlinePrimary" class="active hidden" tabindex="-1">
+                <Icon slot="icon" size="base" />
+              </Button>
+            </a>
           ))
         }
       </div>
