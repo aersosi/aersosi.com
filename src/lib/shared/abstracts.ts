@@ -1,5 +1,4 @@
 export const stackGrid = [
-  "mt-0.5",
   "grid",
   "grid-cols-1",
   "lg:grid-cols-3",

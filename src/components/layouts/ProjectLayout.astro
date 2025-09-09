@@ -30,7 +30,7 @@ const relatedProjects = allProjects.filter((project) =>
             <Text tag="h1" isPrimary>
               {frontmatter.viewerTitle}
             </Text>
-            <Text tag="p" variant="textBase">
+            <Text tag="p">
               {frontmatter.pageDescription}
             </Text>
 
@@ -51,7 +51,7 @@ const relatedProjects = allProjects.filter((project) =>
                             data-a11ytip-bottom
                       >
                         {frontmatter.repo.name}
-                        <ExternalLink size="base" class="-mt-0.5" />
+                        <ExternalLink size="base" />
                       </Link>
                     )}
                     {frontmatter.demo && (
@@ -63,13 +63,13 @@ const relatedProjects = allProjects.filter((project) =>
                             data-a11ytip-bottom
                       >
                         {frontmatter.demo.name}
-                        <ExternalLink size="base" class="-mt-0.5" />
+                        <ExternalLink size="base" />
                       </Link>
                     )}
                   </div>
                 ) : (
                   frontmatter.noLinksText && (
-                    <Text tag="p" variant="textBase">
+                    <Text tag="p">
                       {frontmatter.noLinksText}
                     </Text>
                   )
@@ -82,7 +82,7 @@ const relatedProjects = allProjects.filter((project) =>
                     Kunde
                   </Text>
 
-                  <Text tag="p" variant="textBase">
+                  <Text tag="p">
                     {frontmatter.company.companyName}
                   </Text>
                 </div>
@@ -92,7 +92,7 @@ const relatedProjects = allProjects.filter((project) =>
                     Aufgabe im Team ({frontmatter.company.teamSize} Pers.)
                   </Text>
 
-                  <Text tag="p" variant="textBase" class="text-balance">
+                  <Text tag="p" class="text-balance">
                     {frontmatter.myRole}
                   </Text>
                 </div>
@@ -102,7 +102,7 @@ const relatedProjects = allProjects.filter((project) =>
                     Aufgabe
                   </Text>
 
-                  <Text tag="p" variant="textBase" class="text-balance">
+                  <Text tag="p" class="text-balance">
                     {frontmatter.myRole}
                   </Text>
                 </div>

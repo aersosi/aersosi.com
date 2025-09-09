@@ -17,7 +17,7 @@ const { frontmatter } = Astro.props;
           <Text tag="h1" isPrimary>
             {frontmatter.viewerTitle}
           </Text>
-          <Text tag="p" variant="textBase">
+          <Text tag="p">
             {frontmatter.pageDescription}
           </Text>
           <slot name="intro" />

@@ -16,7 +16,7 @@ import Download from "../../lib/icons/Download.astro";
 
 <BaseLayout
   pageTitle="Über mich | Arthur Ersosi"
-  pageDescription="Frontend-Developer und UI/UX-Designer mit 9+ Jahren Design Expertise und 7+ Jahren Web-Development Erfahrung aus Hamburg."
+  pageDescription="Frontend-Developer und UI/UX-Designer mit 9+ Jahren Design Expertise und 7+ Jahren Web-Entwicklung Erfahrung aus Hamburg."
   image="/images/pages/about-cover.webp"
 >
   <UpdatePublishedDate />
@@ -119,7 +119,7 @@ import Download from "../../lib/icons/Download.astro";
       <Wrapper variant="proseBase" class:list={[...stackGridPadding]}>
         <div class:list={[...stackGrid]}>
           <span></span>
-          <Text tag="h2" class="!my-0" isPrimary>
+          <Text tag="h1" class="!my-0" isPrimary>
             {cvTitle}
           </Text>
         </div>
@@ -130,15 +130,15 @@ import Download from "../../lib/icons/Download.astro";
               <>
                 <div class:list={[...stackGrid]}>
                   <span />
-                  <Text tag="h3">{item.headline}</Text>
+                  <Text tag="h2">{item.headline}</Text>
                 </div>
                 {item.entries.map((entry) => (
                   <div class:list={[...stackGrid]} class="!gap-y-0">
-                    <Text tag="h4" class="mb-0 lg:ml-auto">
+                    <Text tag="h3" class="lg:ml-auto">
                       {entry.date}
                     </Text>
                     <div class="lg:col-span-2">
-                      <Text tag="h4" class="mt-2 mb-4 lg:mt-6.5 xl:mt-7">
+                      <Text tag="h3" class="max-lg:mt-0 max-lg:mb-4">
                         {entry.position}
                       </Text>
 

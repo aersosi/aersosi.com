@@ -32,7 +32,7 @@ const relatedPosts = allPosts.filter(
           <Text tag="h1" isPrimary>
             {frontmatter.viewerTitle}
           </Text>
-          <Text tag="p" variant="textBase">
+          <Text tag="p">
             {frontmatter.pageDescription}
           </Text>
 
@@ -52,7 +52,7 @@ const relatedPosts = allPosts.filter(
                         data-a11ytip-bottom
                       >
                         {frontmatter.online.name}
-                        <ExternalLink size="base" class="-mt-0.5" />
+                        <ExternalLink size="base" />
                       </Link>
                     )}
                     {frontmatter.demo && (
@@ -65,7 +65,7 @@ const relatedPosts = allPosts.filter(
                         data-a11ytip-bottom
                       >
                         {frontmatter.demo.name}
-                        <ExternalLink size="base" class="-mt-0.5" />
+                        <ExternalLink size="base" />
                       </Link>
                     )}
                   </div>
