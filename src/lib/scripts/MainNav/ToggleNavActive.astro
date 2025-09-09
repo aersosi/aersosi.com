@@ -5,7 +5,7 @@
     const hash = window.location.hash;
     const currentUrl = normalizePath(window.location.pathname) + hash;
 
-    document.querySelectorAll("nav#mainNav a[href]").forEach((link) => {
+    document.querySelectorAll("nav a.nav-link").forEach((link) => {
       const linkHref = normalizePath(link.getAttribute("href"));
       const isActive =
         linkHref === currentUrl ||
