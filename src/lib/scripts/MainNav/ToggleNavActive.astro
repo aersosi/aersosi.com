@@ -5,15 +5,25 @@
     const hash = window.location.hash;
     const currentUrl = normalizePath(window.location.pathname) + hash;
 
-    document.querySelectorAll("nav#mainNav a[href]").forEach((link) => {
-      const linkHref = normalizePath(link.getAttribute("href"));
-      const isActive =
-        linkHref === currentUrl ||
-        linkHref === normalizePath(window.location.pathname) || // Ohne Hash abgleichen
-        linkHref === hash;
+    document.querySelectorAll(".nav-link").forEach((navLink) => {
+      let linkHref;
 
-      const inactiveButton = link.querySelector(".inactive");
-      const activeButton = link.querySelector(".active");
+      if (navLink.hasAttribute("href")) {
+        linkHref = normalizePath(navLink.getAttribute("href"));
+      } else {
+        const linkElement = navLink.querySelector("a[href]") || navLink.querySelector("[href]");
+        if (linkElement) {
+          linkHref = normalizePath(linkElement.getAttribute("href"));
+        } else {
+          return;
+        }
+      }
+
+      const isActive =
+        linkHref === currentUrl || linkHref === normalizePath(window.location.pathname) || linkHref === hash;
+
+      const inactiveButton = navLink.querySelector(".inactive");
+      const activeButton = navLink.querySelector(".active");
 
       if (inactiveButton && activeButton) {
         inactiveButton.classList.toggle("hidden", isActive);

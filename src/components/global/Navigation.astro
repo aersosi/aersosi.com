@@ -53,7 +53,7 @@ const navItems = [
   <div class="w-full max-w-7xl px-4 sm:px-12 lg:px-16">
     <!--Mobile Nav-->
     <div class="flex w-full justify-between md:hidden">
-      <a href={"/"} aria-label={"Startseite"} data-a11ytip-bottom class="group rounded-sm">
+      <a href={"/"} aria-label={"Startseite"} data-a11ytip-bottom class="group nav-link rounded-sm">
         <Button iconOnly size="sm" variant="outline" class="inactive" tabindex="-1">
           <div slot="icon" class="transition-transform duration-400 group-hover:scale-115">
             <AeLogo size="lg" class="group-hover:animate-wiggle" />
@@ -77,7 +77,7 @@ const navItems = [
     </div>
 
     <div class="hidden items-center justify-between gap-2.5 md:flex">
-      <a href={"/"} aria-label={"Startseite"} data-a11ytip-bottom class="group rounded-sm">
+      <a href={"/"} aria-label={"Startseite"} data-a11ytip-bottom class="group nav-link rounded-sm">
         <Button iconOnly size="sm" variant="outline" class="inactive" tabindex="-1">
           <div slot="icon" class="transition-transform duration-400 group-hover:scale-115">
             <AeLogo size="lg" class="group-hover:animate-wiggle" />
@@ -93,7 +93,7 @@ const navItems = [
       <div class="flex gap-2.5">
         {
           navItems.map(({ href, name, Icon }) => (
-            <a href={href} aria-label={name} data-a11ytip-bottom key={href} class="rounded-sm">
+            <a href={href} aria-label={name} data-a11ytip-bottom key={href} class="nav-link rounded-sm">
               <Button iconOnly size="sm" variant="outline" class="inactive" tabindex="-1">
                 <Icon slot="icon" size="base" />
               </Button>
@@ -147,9 +147,14 @@ const navItems = [
     <div class="border-base-400 dark:border-base-600 grid gap-4 border-t border-b py-8">
       {
         navItems.map(({ href, name }) => (
-          <Link href={href} size="lg" variant="primary">
-            {name}
-          </Link>
+          <div class="nav-link">
+            <Link href={href} size="lg" variant="default" class="inactive">
+              {name}
+            </Link>
+            <Link href={href} size="lg" variant="primary" class="active hidden">
+              {name}
+            </Link>
+          </div>
         ))
       }
     </div>
