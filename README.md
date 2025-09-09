@@ -92,6 +92,13 @@ performance. The project also uses:
 - Content zoom can be triggered via navigation button or sidenav button on mobile
 - Content zoom can also be triggered using the keyboard shortcut Shift + Control + Z
 
+**Reading Progress Bar**
+
+- Visual indicator showing the reading progress in article and project pages
+- Automatically updates as the user scrolls through the content
+- Visually integrated into the navigation bar for a clean interface
+- Intelligently excluded from non-content pages like the home page and listing pages
+
 **Image Slideshow & Zoom**
 
 - Interactive carousel component for displaying multiple images
