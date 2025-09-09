@@ -43,17 +43,13 @@ const otherTags = allTags.filter((tag) => !priorityTags.includes(tag)).sort((a, 
           </Text>
 
           <div class="grid gap-2">
-            <Text tag="h3" class="flex justify-baseline gap-1">
-              Alle Kategorien
-              <span class="flex gap-0.5">
-                (<Link
-                  href="/articles/tags"
-                  size="base"
-                  variant="primary"
-                  aria-label="Index aller Kategorien"
-                  data-a11ytip-bottom>Index</Link
-                >)
-              </span>
+            <Text tag="h3" class="flex gap-1">
+              Alle Kategorien (<Link
+                href="/projects/tags"
+                variant="primary"
+                aria-label="Index aller Kategorien"
+                data-a11ytip-bottom>Index</Link
+              >)
             </Text>
 
             <div class="grid gap-2">
