@@ -27,7 +27,7 @@ const relatedProjects = allProjects.filter((project) =>
     <Wrapper variant="standard">
       <div class:list={[...stackGrid, ...stackGridPadding]}>
         <div class="flex gap-8 flex-col">
-            <Text tag="h1" variant="text2XL" isPrimary>
+            <Text tag="h1" isPrimary>
               {frontmatter.viewerTitle}
             </Text>
             <Text tag="p" variant="textBase">
@@ -36,7 +36,7 @@ const relatedProjects = allProjects.filter((project) =>
 
             <div class="grid gap-8">
               <div class="grid gap-2">
-                <Text tag="h2" variant="textBase">
+                <Text tag="h2">
                   Online
                 </Text>
 
@@ -125,7 +125,7 @@ const relatedProjects = allProjects.filter((project) =>
       <section>
         <Wrapper variant="standard">
           <div class:list={[...stackGrid, ...stackGridPadding]} class="border-t">
-            <Text tag="h2" variant="textBase">
+            <Text tag="h2">
               Ähnliche Projekte
             </Text>
             <div class="flex flex-col gap-12 lg:col-span-2">

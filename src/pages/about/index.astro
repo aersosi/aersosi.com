@@ -27,7 +27,7 @@ import Download from "../../lib/icons/Download.astro";
         <div class="grid h-fit gap-8">
           <!-- About Me Header -->
           <div class="grid gap-2">
-            <Text tag="h1" variant="text2XL" isPrimary>
+            <Text tag="h1" isPrimary>
               {pageContent.viewerTitle}
             </Text>
             <Text tag="p">
@@ -50,7 +50,7 @@ import Download from "../../lib/icons/Download.astro";
 
           <!-- Development -->
           <Wrapper variant="proseBase" class="pb-6">
-            <Text tag="h2" variant="textXL">{pageContent.development.title}</Text>
+            <Text tag="h2">{pageContent.development.title}</Text>
             <Text tag="p">{pageContent.development.description}</Text>
 
             <Text tag="h3">{pageContent.development.frameworksTitle}</Text>
@@ -62,7 +62,7 @@ import Download from "../../lib/icons/Download.astro";
 
           <!-- Design -->
           <Wrapper variant="proseBase" class="pb-6">
-            <Text tag="h2" variant="textXL">{pageContent.design.title}</Text>
+            <Text tag="h2">{pageContent.design.title}</Text>
             <Text tag="p">{pageContent.design.description}</Text>
 
             <Text tag="h3">Tools</Text>
@@ -71,7 +71,7 @@ import Download from "../../lib/icons/Download.astro";
 
           <!-- Personal Interests -->
           <Wrapper variant="proseBase">
-            <Text tag="h2" variant="textXL">{pageContent.personal.interestsTitle}</Text>
+            <Text tag="h2">{pageContent.personal.interestsTitle}</Text>
             <Text tag="p">{pageContent.personal.interests}</Text>
           </Wrapper>
         </div>
@@ -94,7 +94,7 @@ import Download from "../../lib/icons/Download.astro";
 
             <Text tag="p">{pageContent.personal.intro}</Text>
 
-            <Text tag="h2" variant="textXL">{pageContent.personal.valuesTitle}</Text>
+            <Text tag="h2">{pageContent.personal.valuesTitle}</Text>
 
             {pageContent.personal.values.map((value) => <Text tag="p">{value}</Text>)}
 
@@ -119,7 +119,7 @@ import Download from "../../lib/icons/Download.astro";
       <Wrapper variant="proseBase" class:list={[...stackGridPadding]}>
         <div class:list={[...stackGrid]}>
           <span></span>
-          <Text tag="h2" variant="text2XL" class="!my-0" isPrimary>
+          <Text tag="h2" class="!my-0" isPrimary>
             {cvTitle}
           </Text>
         </div>
@@ -130,17 +130,15 @@ import Download from "../../lib/icons/Download.astro";
               <>
                 <div class:list={[...stackGrid]}>
                   <span />
-                  <Text tag="h3" variant="textXL">
-                    {item.headline}
-                  </Text>
+                  <Text tag="h3">{item.headline}</Text>
                 </div>
                 {item.entries.map((entry) => (
                   <div class:list={[...stackGrid]} class="!gap-y-0">
-                    <Text tag="h4" variant="textBase" class="mb-0 lg:ml-auto">
+                    <Text tag="h4" class="mb-0 lg:ml-auto">
                       {entry.date}
                     </Text>
                     <div class="lg:col-span-2">
-                      <Text tag="h4" variant="textBase" class="mt-2 mb-4 lg:mt-6.5 xl:mt-7">
+                      <Text tag="h4" class="mt-2 mb-4 lg:mt-6.5 xl:mt-7">
                         {entry.position}
                       </Text>
 

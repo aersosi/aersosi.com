@@ -2,9 +2,9 @@
   const themeStored = localStorage.getItem("themeDark") === "true";
   document.documentElement.classList.toggle("dark", themeStored);
 
-  function updateZoom(enableZoom) {
-    document.documentElement.classList.toggle("dark", enableZoom);
-    if (enableZoom) {
+  function updateTheme(enableTheme) {
+    document.documentElement.classList.toggle("dark", enableTheme);
+    if (enableTheme) {
       localStorage.setItem("themeDark", "true");
     } else {
       localStorage.removeItem("themeDark");
@@ -14,15 +14,15 @@
   document.addEventListener("click", (event) => {
     const toggle = event.target.closest("[data-theme-toggle]");
     if (!toggle) return;
-    const currentlyZoomed = document.documentElement.classList.contains("dark");
-    updateZoom(!currentlyZoomed);
+    const currentlyThemeed = document.documentElement.classList.contains("dark");
+    updateTheme(!currentlyThemeed);
   });
 
   // Keyboard-Shortcut: Shift + Control + D
   document.addEventListener("keydown", (event) => {
     if (event.shiftKey && event.ctrlKey && event.key === "D") {
-      const currentlyZoomed = document.documentElement.classList.contains("dark");
-      updateZoom(!currentlyZoomed);
+      const currentlyThemeed = document.documentElement.classList.contains("dark");
+      updateTheme(!currentlyThemeed);
       event.preventDefault();
     }
   });

@@ -38,12 +38,12 @@ const otherTags = allTags.filter((tag) => !priorityTags.includes(tag)).sort((a, 
     <Wrapper variant="standard">
       <div class:list={[...stackGrid, ...stackGridPadding]}>
         <div class="grid gap-8">
-          <Text tag="h1" variant="text2XL" isPrimary>
+          <Text tag="h1" isPrimary>
             {tag}
           </Text>
 
           <div class="grid gap-2">
-            <Text tag="h2" variant="textBase" class="flex justify-baseline gap-1">
+            <Text tag="h2" class="flex justify-baseline gap-1">
               Alle Kategorien
               <span class="flex gap-0.5">
                 (<Link
