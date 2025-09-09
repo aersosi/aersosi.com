@@ -27,16 +27,16 @@ const relatedProjects = allProjects.filter((project) =>
     <Wrapper variant="standard">
       <div class:list={[...stackGrid, ...stackGridPadding]}>
         <div class="flex gap-8 flex-col">
-            <Text tag="h1" variant="text2XL" isPrimary>
+            <Text tag="h1" isPrimary>
               {frontmatter.viewerTitle}
             </Text>
-            <Text tag="p" variant="textBase">
+            <Text tag="p">
               {frontmatter.pageDescription}
             </Text>
 
             <div class="grid gap-8">
               <div class="grid gap-2">
-                <Text tag="h2" variant="textBase">
+                <Text tag="h3">
                   Online
                 </Text>
 
@@ -51,7 +51,7 @@ const relatedProjects = allProjects.filter((project) =>
                             data-a11ytip-bottom
                       >
                         {frontmatter.repo.name}
-                        <ExternalLink size="base" class="-mt-0.5" />
+                        <ExternalLink size="base" />
                       </Link>
                     )}
                     {frontmatter.demo && (
@@ -63,13 +63,13 @@ const relatedProjects = allProjects.filter((project) =>
                             data-a11ytip-bottom
                       >
                         {frontmatter.demo.name}
-                        <ExternalLink size="base" class="-mt-0.5" />
+                        <ExternalLink size="base" />
                       </Link>
                     )}
                   </div>
                 ) : (
                   frontmatter.noLinksText && (
-                    <Text tag="p" variant="textBase">
+                    <Text tag="p">
                       {frontmatter.noLinksText}
                     </Text>
                   )
@@ -78,31 +78,31 @@ const relatedProjects = allProjects.filter((project) =>
 
               {frontmatter.company ? (
                 <div class="grid gap-2">
-                  <Text tag="h2">
+                  <Text tag="h3">
                     Kunde
                   </Text>
 
-                  <Text tag="p" variant="textBase">
+                  <Text tag="p">
                     {frontmatter.company.companyName}
                   </Text>
                 </div>
 
                 <div class="grid gap-2">
-                  <Text tag="h2">
+                  <Text tag="h3">
                     Aufgabe im Team ({frontmatter.company.teamSize} Pers.)
                   </Text>
 
-                  <Text tag="p" variant="textBase" class="text-balance">
+                  <Text tag="p" class="text-balance">
                     {frontmatter.myRole}
                   </Text>
                 </div>
               ) : (
                 <div class="grid gap-2">
-                  <Text tag="h2">
+                  <Text tag="h3">
                     Aufgabe
                   </Text>
 
-                  <Text tag="p" variant="textBase" class="text-balance">
+                  <Text tag="p" class="text-balance">
                     {frontmatter.myRole}
                   </Text>
                 </div>
@@ -125,7 +125,7 @@ const relatedProjects = allProjects.filter((project) =>
       <section>
         <Wrapper variant="standard">
           <div class:list={[...stackGrid, ...stackGridPadding]} class="border-t">
-            <Text tag="h2" variant="textBase">
+            <Text tag="h2">
               Ähnliche Projekte
             </Text>
             <div class="flex flex-col gap-12 lg:col-span-2">

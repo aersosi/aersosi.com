@@ -275,3 +275,17 @@ h6 {
     transition: color 400ms ease-in-out, font-size 400ms ease-in-out, line-height 400ms ease-in-out;
 }
 
+@theme {
+    --breakpoint-sm: 640px;
+    --breakpoint-md: 768px;
+    --breakpoint-lg: 1024px;
+    --breakpoint-xl: 1280px;
+    --breakpoint-2xl: 1536px;
+}
+
+/* 2. Max-Variants erstellen */
+@custom-variant max-sm (@media (max-width: theme('--breakpoint-sm')));
+@custom-variant max-md (@media (max-width: theme('--breakpoint-md')));
+@custom-variant max-lg (@media (max-width: theme('--breakpoint-lg')));
+@custom-variant max-xl (@media (max-width: theme('--breakpoint-xl')));
+@custom-variant max-2xl (@media (max-width: theme('--breakpoint-2xl')));

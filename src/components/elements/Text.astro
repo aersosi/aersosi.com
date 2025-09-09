@@ -27,64 +27,54 @@ const textStyles: Record<string, string> = {
   display5XL: "text-4xl sm:text-7xl md:text-8xl lg:text-[10rem] leading-tight tracking-tight",
   display4XL: "text-4xl sm:text-7xl md:text-8xl lg:text-9xl leading-tight tracking-tight",
   display3XL: "text-4xl sm:text-6xl md:text-7xl lg:text-8xl leading-tight tracking-tight",
-  display2XL: "text-5xl sm:text-5xl md:text-6xl lg:text-7xl leading-tight tracking-tight",
+  display3xl: "text-5xl sm:text-5xl md:text-6xl lg:text-7xl leading-tight tracking-tight",
   displayXL: "text-4xl sm:text-4xl md:text-5xl lg:text-6xl leading-tight tracking-tight",
   displayLG: "text-3xl sm:text-3xl md:text-4xl lg:text-5xl leading-tight tracking-tight",
   displayMD: "text-2xl sm:text-2xl md:text-3xl lg:text-4xl leading-tight tracking-tight",
   displaySM: "text-lg sm:text-xl md:text-2xl lg:text-3xl leading-tight",
   displayXS: "text-base sm:text-lg md:text-xl lg:text-2xl leading-tight",
 
-  text2XL: "text-2xl xl:text-3xl 2xl:text-4xl",
-  textXL: "text-xl xl:text-2xl 2xl:text-3xl",
-  textLG: "text-lg xl:text-xl 2xl:text-2xl",
-  textBase: "text-base xl:text-lg 2xl:text-xl",
-  textSM: "text-sm xl:text-base 2xl:text-lg",
-  textXS: "text-xs xl:text-sm 2xl:text-base",
+  text3xl: "text-2xl xl:text-3xl 3xl:text-4xl",
+
+  textXL: "text-xl xl:text-2xl 3xl:text-3xl",
+  textLG: "text-lg xl:text-xl 3xl:text-2xl",
+  textBase: "text-base xl:text-lg 3xl:text-xl",
+  textSM: "text-sm xl:text-base 3xl:text-lg",
+  textXS: "text-xs xl:text-sm 3xl:text-base",
 };
 
-const { tag: Tag = "p", variant = "textBase", class: className = "", isPrimary = false, ...rest } = Astro.props;
+const defaultHeadingStyles: Record<string, string> = {
+  h1: "text-2xl xl:text-3xl 3xl:text-4xl",
+  h2: "text-xl xl:text-2xl 3xl:text-3xl",
+  h3: "text-lg xl:text-xl 3xl:text-2xl",
+  h4: "text-base xl:text-lg 3xl:text-xl",
+  h5: "text-sm xl:text-base 3xl:text-lg",
+  h6: "text-sm xl:text-base 3xl:text-lg",
+};
 
-const baseClasses = textStyles[variant] || textStyles.textBase;
+const { tag: Tag = "p", variant, class: className, isPrimary = false, ...rest } = Astro.props;
 
 const isHeading = ["h1", "h2", "h3", "h4", "h5", "h6"].includes(Tag);
+const hasExplicitVariant = "variant" in Astro.props;
 
-// Individual heading styles
-const h1Styles = Tag === "h1" && "text-xl xl:text-2xl 2xl:text-3xl";
-const h2Styles = Tag === "h2" && "text-lg xl:text-xl 2xl:text-2xl";
-const h3Styles = Tag === "h3" && "text-base xl:text-lg 2xl:text-xl";
-const h4Styles = Tag === "h4" && "text-sm xl:text-base 2xl:text-lg";
-const h5Styles = Tag === "h5" && "text-sm xl:text-base 2xl:text-lg";
-const h6Styles = Tag === "h6" && "text-sm xl:text-base 2xl:text-lg";
+let fontStyles = "";
+if (hasExplicitVariant) {
+  fontStyles = textStyles[variant] || textStyles.textBase;
+} else if (isHeading) {
+  fontStyles = defaultHeadingStyles[Tag];
+} else {
+  fontStyles = textStyles.textBase;
+}
 
-// Combine all heading styles
-const headingStyles =
-  variant === "textBase" && `${h1Styles} ${h2Styles} ${h3Styles} ${h4Styles} ${h5Styles} ${h6Styles}`.trim();
+const headingFontWeight = isHeading ? "font-medium" : "";
+const isDefaultColor = !isPrimary;
+const headingColor = isDefaultColor && isHeading ? "text-black dark:text-white" : "";
+const paragraphColor = isDefaultColor && !isHeading ? "text-base-600 dark:text-base-300" : "";
+const primaryColor = isPrimary ? "text-primary-600 dark:text-primary-300" : "";
 
-// Base text colors für light mode
-const headingLightColor = !isPrimary && isHeading ? "text-black" : "";
-const paragraphLightColor = !isPrimary && !isHeading ? "text-base-600" : "";
-
-// Dark mode text colors
-const headingDarkColor = !isPrimary && isHeading ? "dark:text-white" : "";
-const paragraphDarkColor = !isPrimary && !isHeading ? "dark:text-base-300" : "";
-
-const primaryLightColor = isPrimary ? "text-primary-600" : "";
-const primaryDarkColor = isPrimary ? "dark:text-primary-300" : "";
-
-const textColorStyles = [
-  primaryLightColor,
-  primaryDarkColor,
-  headingLightColor,
-  headingDarkColor,
-  paragraphLightColor,
-  paragraphDarkColor,
-]
+const combinedClasses = [headingColor, paragraphColor, primaryColor, fontStyles, headingFontWeight, className]
   .filter(Boolean)
   .join(" ");
-
-const headingTextStyles = isHeading ? "font-medium" : "";
-
-const combinedClasses = `${textColorStyles} ${baseClasses} ${headingStyles} ${headingTextStyles} ${className}`.trim();
 ---
 
 <Tag class={combinedClasses} {...rest}>

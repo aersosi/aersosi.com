@@ -7,7 +7,7 @@ export type Props = SeoProps;
 const {
   pageTitle = "Arthur Ersosi | Design Engineer",
   pageTitleTemplate = "%s | Arthur Ersosi",
-  pageDescription = "Frontend-Developer und UI/UX-Designer mit 9+ Jahren Design Expertise und 7+ Jahren Web-Development Erfahrung aus Hamburg.",
+  pageDescription = "Frontend-Developer und UI/UX-Designer mit 9+ Jahren Design Expertise und 7+ Jahren Web-Entwicklung Erfahrung aus Hamburg.",
   image = "/img/portrait.webp",
   article = false,
   publishDate,
@@ -107,9 +107,7 @@ const ogImageURL = image.startsWith("http") ? new URL(image) : new URL(image, As
           name: "Arthur Ersosi",
           logo: {
             "@type": "ImageObject",
-            url: Astro.site
-              ? new URL("/img/ae_logo_24x24.svg", Astro.site).toString()
-              : "/img/ae_logo_24x24.svg",
+            url: Astro.site ? new URL("/img/ae_logo_24x24.svg", Astro.site).toString() : "/img/ae_logo_24x24.svg",
           },
         },
         mainEntityOfPage: {
@@ -147,11 +145,7 @@ const ogImageURL = image.startsWith("http") ? new URL(image) : new URL(image, As
         name: "Arthur Ersosi",
         jobTitle: "Design Engineer & Frontend-Developer",
         url: "https://aersosi.com",
-        sameAs: [
-          "https://x.com/aersosi",
-          "https://github.com/aersosi",
-          "https://www.linkedin.com/in/aersosi",
-        ],
+        sameAs: ["https://x.com/aersosi", "https://github.com/aersosi", "https://www.linkedin.com/in/aersosi"],
       })}
     />
   )

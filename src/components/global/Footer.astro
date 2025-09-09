@@ -43,9 +43,7 @@ import { stackGrid, stackGridPadding } from "@/lib/shared/abstracts";
         {
           LinkData.map(({ category, links, linkClass }) => (
             <div class="flex flex-col items-start gap-2">
-              <Text tag="h4" variant="textSM">
-                {category}
-              </Text>
+              <Text tag="h4">{category}</Text>
               {links.map(({ text, href }) => (
                 <Link href={href} size="sm" variant="muted" class={linkClass} key={href}>
                   {text}
@@ -58,10 +56,10 @@ import { stackGrid, stackGridPadding } from "@/lib/shared/abstracts";
 
       <div class:list={[...stackGrid]} class="md:grid-cols-2">
         <div>
-          <Text tag="p" variant="textBase"> Hamburg, Germany </Text>
+          <Text tag="p"> Hamburg, Germany </Text>
           <Text id="clock" tag="p" variant="textSM" />
         </div>
-        <Text tag="p" variant="textBase">
+        <Text tag="p">
           © Copyright <span id="copyrightYear">2025</span>, Arthur Ersosi. <br />Alle Rechte vorbehalten.
         </Text>
       </div>

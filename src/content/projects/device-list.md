@@ -1,7 +1,7 @@
 ---
 pubDate: 2025-06-08
 viewerTitle: "Device List"
-pageDescription: "Angular Webanwendung zur Verwaltung von Hard- und Software, Servicedaten und Lizenzen von Kunden"
+pageDescription: "Angular Webanwendung zur Verwaltung von Hard- und Software, Servicedaten und Lizenzen"
 pageTitle: "Device List | Datenmanagement-Anwendung | Arthur Ersosi"
 images:
   [

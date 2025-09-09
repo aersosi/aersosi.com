@@ -67,7 +67,7 @@ const pageData = [
   <section>
     <Wrapper variant="standard">
       <div class:list={[...stackGrid, ...stackGridPadding]} class="border-b lg:pt-40">
-        <Text tag="h1" variant="textSM">Overview</Text>
+        <Text tag="h1">Overview</Text>
         <Text tag="p" variant="textSM" class="lg:col-span-2"> All pages </Text>
       </div>
       <div class="">
@@ -75,15 +75,11 @@ const pageData = [
           pageData.map((category) => (
             <>
               <div class:list={[...stackGrid, ...stackGridPadding]}>
-                <Text tag="h3" variant="textBase">
-                  {category.categoryTitle}
-                </Text>
+                <Text tag="h3">{category.categoryTitle}</Text>
                 <div class="grid grid-cols-2 gap-x-4 gap-y-8 lg:col-span-2 lg:grid-cols-3">
                   {category.links.map((section) => (
                     <div>
-                      <Text tag="h4" variant="textSM">
-                        {section.sectionTitle}
-                      </Text>
+                      <Text tag="h4">{section.sectionTitle}</Text>
                       <div class="mt-1 flex flex-col gap-1 text-xs">
                         {section.links.map((link) => (
                           <a

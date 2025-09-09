@@ -14,12 +14,11 @@ import { stackGrid, stackGridPadding } from "@/lib/shared/abstracts";
   <section>
     <Wrapper variant="standard">
       <div class:list={[...stackGrid, ...stackGridPadding]}>
-        <div class="flex flex-col gap-8">
-          <Text tag="h1" variant="text2XL" isPrimary> 404 — Nichts gefunden </Text>
-          <Text tag="p" variant="textBase"> Sie fühlen sich verloren? Sie sind nicht allein.</Text>
-        </div>
-        <div class="flex flex-col gap-8 lg:col-span-2">
-          <Text tag="p" variant="textBase">
+        <Text tag="h1" isPrimary> 404 — Nichts gefunden </Text>
+        <div class="grid gap-8 lg:col-span-2 lg:mt-2.5">
+          <Text tag="p"> Sie fühlen sich verloren? Sie sind nicht allein.</Text>
+
+          <Text tag="p">
             Diese Seite existiert nicht, hat nie existiert oder wurde versehentlich oder absichtlich entfernt
             ¯\_(ツ)_/¯. Überprüfen Sie, ob Sie sich vertippt haben, oder gehen Sie zur Startseite zurück.
           </Text>

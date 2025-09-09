@@ -29,10 +29,10 @@ const relatedPosts = allPosts.filter(
     <Wrapper variant="standard">
       <div class:list={[...stackGrid, ...stackGridPadding]}>
         <div class="flex flex-col gap-8">
-          <Text tag="h1" variant="text2XL" isPrimary>
+          <Text tag="h1" isPrimary>
             {frontmatter.viewerTitle}
           </Text>
-          <Text tag="p" variant="textBase">
+          <Text tag="p">
             {frontmatter.pageDescription}
           </Text>
 
@@ -40,7 +40,7 @@ const relatedPosts = allPosts.filter(
             <div class="grid gap-2">
               {
                 frontmatter.online && (
-                  <Text tag="h2" variant="textBase"> Online</Text>
+                  <Text tag="h3"> Online</Text>
                   <div class="flex gap-6">
                     {frontmatter.online && (
                       <Link
@@ -52,7 +52,7 @@ const relatedPosts = allPosts.filter(
                         data-a11ytip-bottom
                       >
                         {frontmatter.online.name}
-                        <ExternalLink size="base" class="-mt-0.5" />
+                        <ExternalLink size="base" />
                       </Link>
                     )}
                     {frontmatter.demo && (
@@ -65,7 +65,7 @@ const relatedPosts = allPosts.filter(
                         data-a11ytip-bottom
                       >
                         {frontmatter.demo.name}
-                        <ExternalLink size="base" class="-mt-0.5" />
+                        <ExternalLink size="base" />
                       </Link>
                     )}
                   </div>
@@ -91,7 +91,7 @@ const relatedPosts = allPosts.filter(
       <section>
         <Wrapper variant="standard">
           <div class:list={[...stackGrid, ...stackGridPadding]} class="border-t">
-            <Text tag="h2" variant="textBase">
+            <Text tag="h2">
               Ähnliche Artikel
             </Text>
             <div class="flex flex-col gap-12 lg:col-span-2">

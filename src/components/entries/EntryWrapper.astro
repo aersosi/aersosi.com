@@ -17,7 +17,7 @@ const hoverStyles =
     <div>
       <div class="relative z-10 flex w-full flex-col gap-x-4 md:flex-row md:items-center">
         <div class="hidden sm:block">
-          <Text tag="h3" variant="textLG" class={`whitespace-nowrap ${textPrimaryHover}`}>
+          <Text tag="h3" class={`whitespace-nowrap ${textPrimaryHover}`}>
             {viewerTitle}
             <span class="px-3 transition-colors !duration-200">—</span><slot />
           </Text>
@@ -27,7 +27,7 @@ const hoverStyles =
             <slot />
           </Text>
 
-          <Text tag="h3" variant="textLG" class={`whitespace-nowrap ${textPrimaryHover}`}>
+          <Text tag="h3" class={`whitespace-nowrap ${textPrimaryHover}`}>
             {viewerTitle}
           </Text>
         </div>
