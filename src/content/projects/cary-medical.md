@@ -27,13 +27,13 @@ images:
 tags: ["Professionell", "Angular", "UX (User Experience)", "UI (User Interface)", "Frontend-Entwicklung"]
 
 repo:
-  name: "GitHub"
-  href: "https://github.com/"
-  ariaLabel: "CARY Medical App GitHub Repository"
+  name: "Online"
+  href: "https://www.avodaq.com/de/leistungen/connected-healthcare/cary-medical/"
+  ariaLabel: "CARY Medical Webseite"
 demo:
-  name: "Clickdummy"
+  name: "Figma Clickdummy"
   href: "https://www.figma.com/proto/utA8yWI9XWm5KNJJMDAY2u/CARY-Medical-%E2%80%93-Clickdummy?node-id=3-39&t=XorI7lhwAwQGlNNj-1&scaling=contain&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=3%3A39"
-  ariaLabel: "CARY Medical App Live Clickdummy"
+  ariaLabel: "CARY Medical Figma Clickdummy"
 
 company:
   companyName: "avodaq AG, Hamburg"
