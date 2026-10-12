@@ -53,31 +53,22 @@ import Download from "../../lib/icons/Download.astro";
             class="aspect-12/6 w-full rounded-xl object-cover object-center shadow-lg lg:col-span-2 lg:hidden print:w-1/2"
           />
 
-          <!-- Development -->
-          <Wrapper variant="proseBase" class="pb-6">
-            <Text tag="h2">{pageContent.development.title}</Text>
-            <Text tag="p">{pageContent.development.description}</Text>
-
-            <Text tag="h3">{pageContent.development.frameworksTitle}</Text>
-            <Text tag="p">{pageContent.development.frameworks}</Text>
-
-            <Text tag="h3">{pageContent.development.languagesTitle}</Text>
-            <Text tag="p">{pageContent.development.languages}</Text>
-          </Wrapper>
-
-          <!-- Design -->
-          <Wrapper variant="proseBase" class="pb-6">
-            <Text tag="h2">{pageContent.design.title}</Text>
-            <Text tag="p">{pageContent.design.description}</Text>
-
-            <Text tag="h3">Tools</Text>
-            <Text tag="p">{pageContent.design.tools}</Text>
-          </Wrapper>
-
-          <!-- Personal Interests -->
+          <!-- Hardskills -->
           <Wrapper variant="proseBase">
-            <Text tag="h2">{pageContent.personal.interestsTitle}</Text>
-            <Text tag="p">{pageContent.personal.interests}</Text>
+            <Text tag="h2">{pageContent.hardskills.title}</Text>
+            <Text tag="p">{pageContent.hardskills.description}</Text>
+          </Wrapper>
+
+          <!-- Softskills -->
+          <Wrapper variant="proseBase">
+            <Text tag="h2">{pageContent.softskills.title}</Text>
+            <Text tag="p">{pageContent.softskills.description}</Text>
+          </Wrapper>
+
+          <!-- Language -->
+          <Wrapper variant="proseBase">
+            <Text tag="h2">{pageContent.language.title}</Text>
+            <Text tag="p">{pageContent.language.description}</Text>
           </Wrapper>
         </div>
 
@@ -96,8 +87,6 @@ import Download from "../../lib/icons/Download.astro";
               decoding="async"
               class="bg-secondary-100 hidden aspect-12/6 w-full rounded-xl object-cover object-center shadow-lg lg:col-span-2 lg:block print:w-1/2"
             />
-
-            <Text tag="p">{pageContent.personal.intro}</Text>
 
             <Text tag="h2">{pageContent.personal.valuesTitle}</Text>
 
@@ -145,6 +134,13 @@ import Download from "../../lib/icons/Download.astro";
                       </div>
 
                       <Text tag="p">{entry.description}</Text>
+                      {(Array.isArray(entry.bullets) ? entry.bullets : [entry.bullets]).map((bullet) => (
+                        <div class="flex items-center gap-4">
+                          <Text tag="p" class="!my-2">
+                            - {bullet}
+                          </Text>
+                        </div>
+                      ))}
                     </div>
                   </div>
                 ))}
