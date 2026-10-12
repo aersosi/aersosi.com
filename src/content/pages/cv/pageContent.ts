@@ -1,6 +1,5 @@
 export const pageContent = {
   viewerTitle: "Curriculum Vitae",
-  publishedDateLabel: "Aktualisiert am",
   headerImgAlt: "Curriculum Vitae Image Beschreibung",
 
   development: {
