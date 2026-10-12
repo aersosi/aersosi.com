@@ -100,7 +100,7 @@ const ogImageURL = image.startsWith("http") ? new URL(image) : new URL(image, As
         author: {
           "@type": "Person",
           name: author || "Arthur Ersosi",
-          url: "https://aersosi.com/about",
+          url: "https://aersosi.com/cv",
         },
         publisher: {
           "@type": "Person",
@@ -128,7 +128,7 @@ const ogImageURL = image.startsWith("http") ? new URL(image) : new URL(image, As
         author: {
           "@type": "Person",
           name: "Arthur Ersosi",
-          url: "https://aersosi.com/about",
+          url: "https://aersosi.com/cv",
         },
       })}
     />
@@ -136,7 +136,7 @@ const ogImageURL = image.startsWith("http") ? new URL(image) : new URL(image, As
 }
 
 {
-  Astro.url?.pathname === "/about" && (
+  Astro.url?.pathname === "/cv" && (
     <script
       type="application/ld+json"
       set:html={JSON.stringify({

@@ -1,7 +1,7 @@
 export const pageContent = {
-  viewerTitle: "Über mich",
+  viewerTitle: "Curriculum Vitae",
   publishedDateLabel: "Aktualisiert am",
-  headerImgAlt: "Über mich Image Beschreibung",
+  headerImgAlt: "Curriculum Vitae Image Beschreibung",
 
   development: {
     title: "Development",

@@ -1,7 +1,7 @@
 export const pageMeta = {
-  viewerTitle: "Über mich",
+  viewerTitle: "Curriculum Vitae",
   pageDescription:
     "Frontend-Developer und UI/UX-Designer mit 9+ Jahren Design Expertise und 7+ Jahren Web-Entwicklung Erfahrung aus Hamburg.",
-  pageTitle: "Über mich | Arthur Ersosi",
-  headerImgAlt: "Über mich Image Beschreibung",
+  pageTitle: "Curriculum Vitae | Arthur Ersosi",
+  headerImgAlt: "Curriculum Vitae Image Beschreibung",
 };

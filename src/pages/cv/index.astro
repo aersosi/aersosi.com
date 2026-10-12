@@ -1,6 +1,6 @@
 ---
-import { pageContent } from "@/content/pages/about/pageContent";
-import { cvData, cvTitle } from "@/content/pages/about/cvData";
+import { pageContent } from "@/content/pages/cv/pageContent";
+import { cvData, cvTitle } from "@/content/pages/cv/cvData";
 import Wrapper from "@/components/containers/Wrapper.astro";
 import Text from "@/components/elements/Text.astro";
 import { Image } from "astro:assets";
@@ -8,16 +8,16 @@ import MapPin from "@/lib/icons/MapPin.astro";
 import BaseLayout from "@/components/layouts/BaseLayout.astro";
 import UpdatePublishedDate from "@/lib/scripts/UpdatePublishedDate.astro";
 
-import aboutCover from "src/images/pages/about-cover.webp";
+import cvCover from "src/images/pages/cv-cover.webp";
 import { stackGrid, stackGridPadding } from "@/lib/shared/abstracts";
 import Button from "../../components/elements/Button.astro";
 import Download from "../../lib/icons/Download.astro";
 ---
 
 <BaseLayout
-  pageTitle="Über mich | Arthur Ersosi"
+  pageTitle="Curriculum Vitae | Arthur Ersosi"
   pageDescription="Frontend-Developer und UI/UX-Designer mit 9+ Jahren Design Expertise und 7+ Jahren Web-Entwicklung Erfahrung aus Hamburg."
-  image="/images/pages/about-cover.webp"
+  image="/images/pages/cv-cover.webp"
 >
   <UpdatePublishedDate />
 
@@ -39,7 +39,7 @@ import Download from "../../lib/icons/Download.astro";
           <!-- Cover Image -->
           <Image
             alt={pageContent.headerImgAlt}
-            src={aboutCover}
+            src={cvCover}
             widths={[320, 480, 640, 768, 1024, 1280, 1440]}
             sizes="(max-width: 639px) 100vw, (max-width: 767px) 100vw, (max-width: 1023px) 50vw, (max-width: 1279px) 33vw, (max-width: 1439px) 25vw, 400px"
             layout="constrained"
@@ -83,7 +83,7 @@ import Download from "../../lib/icons/Download.astro";
           <Wrapper variant="proseBase">
             <Image
               alt={pageContent.headerImgAlt}
-              src={aboutCover}
+              src={cvCover}
               widths={[320, 480, 640, 768, 1024, 1280, 1440]}
               sizes="(max-width: 639px) 100vw, (max-width: 767px) 100vw, (max-width: 1023px) 50vw, (max-width: 1279px) 33vw, (max-width: 1439px) 25vw, 400px"
               layout="constrained"
